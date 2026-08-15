@@ -90,7 +90,9 @@ def main():
     )
     
     # Configure Substitution Attack
-    rng = np.random.default_rng(attack_cfg["seed"])
+    attack_seed = args.attack_seed if args.attack_seed is not None else attack_cfg["seed"]
+    logger.info(f"Attack RNG seed: {attack_seed}")
+    rng = np.random.default_rng(attack_seed)
     
     sub_cfg = attack_cfg["attacks"]["substitution"]
     if not sub_cfg["enabled"]:
@@ -130,8 +132,21 @@ def main():
     
     # Configure Generator
     # Set min_abs_drift dynamically from baseline
-    baseline_mae = model_cfg.get("baseline_metrics", {}).get("mae", 52.0)
-    logger.info(f"Using baseline MAE of {baseline_mae:.2f} as min_abs_drift threshold (informative).")
+    # NOTE: configs/model.yaml:baseline_metrics was overwritten by the Phase 2A run
+    # (it now holds the DEFENDED model's numbers). The threshold must stay pinned to
+    # the Phase 1 baseline value for comparability across phases, so it is passed
+    # explicitly rather than read from the config.
+    if args.threshold is not None:
+        baseline_mae = args.threshold
+    else:
+        baseline_mae = model_cfg.get("baseline_metrics", {}).get("mae", 52.0)
+        logger.warning(
+            "No --threshold given; reading from configs/model.yaml (=%.2f). "
+            "This file was overwritten by Phase 2A -- pass --threshold 52.02 for "
+            "comparability with Phase 1E.",
+            baseline_mae,
+        )
+    logger.info(f"Using {baseline_mae:.2f} K as min_abs_drift threshold (informative).")
     
     generator = AttackGenerator(
         attacks=[attack_sub, attack_ins, attack_del, attack_arr],
