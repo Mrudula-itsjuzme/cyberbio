@@ -25,6 +25,24 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model-dir", type=str, default="results/models/transformer_regressor")
     parser.add_argument("--out-file", type=str, default="phase1e_results.jsonl")
+    parser.add_argument(
+        "--attack-seed",
+        type=int,
+        default=None,
+        help=(
+            "Override configs/attack.yaml seed. Phase 2B uses a FRESH seed so the "
+            "candidate set differs from Phase 1E, while holding it IDENTICAL across "
+            "the models being compared -- the attacks are generated from the sample "
+            "PSMILES, not from model gradients, so the same seed yields the same "
+            "candidate strings for every model. That makes the comparison paired."
+        ),
+    )
+    parser.add_argument(
+        "--threshold",
+        type=float,
+        default=None,
+        help="Override the drift threshold (default: baseline_metrics.mae from model.yaml).",
+    )
     args = parser.parse_args()
 
     logger.info("Loading configs...")
