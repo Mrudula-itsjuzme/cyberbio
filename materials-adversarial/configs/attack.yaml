@@ -1,0 +1,59 @@
+# Attack configuration
+#
+# STATUS: mechanics IMPLEMENTED. Substitution's replacement pool is PENDING.
+
+seed: 20260815
+n_variants: 5                   # candidates per sample per attack
+
+# Positions whose edit GUARANTEES an invalid representation. Editing them would
+# measure the validity filter rather than model robustness. Exposed as flags so
+# the effect of relaxing them stays measurable rather than assumed.
+protection:
+  protect_attachments: true     # '*' / '[*]' -- without these it is not a repeat unit
+  protect_ring_closures: true   # breaking one of a pair guarantees invalidity
+  protect_branches: true        # unmatched parenthesis guarantees invalidity
+
+attacks:
+  substitution:
+    enabled: true
+    n_edits: 1
+    role_preserving: true       # atoms replaced only by atoms
+    # PENDING(dataset): derive from the TRAINING-SPLIT vocabulary. Deliberately
+    # not hardcoded -- a hand-written replacement list would encode the author's
+    # chemical priors into the headline result, and a pool that does not match
+    # the training distribution measures out-of-distribution handling instead of
+    # adversarial robustness.
+    allowed_tokens: null
+
+  insertion:
+    enabled: true
+    n_edits: 1
+    allowed_tokens: null        # null => sample from the sequence's own tokens
+
+  deletion:
+    enabled: true
+    n_edits: 1
+
+  reordering:
+    enabled: true
+    n_edits: 1
+    window: 3                   # LOCAL only; arbitrary shuffling is not a
+                                # chemically meaningful perturbation
+
+# Attack success is NOT simply "the prediction changed".
+success_criterion:
+  min_abs_drift: null           # PENDING: set relative to baseline test MAE, so
+                                # "meaningful drift" is calibrated to model error
+  max_changes: 1
+  require_valid: true
+  # Under the strict-UNCHECKED policy an UNCHECKED candidate is not valid. With
+  # RDKit absent this yields zero successes -- the honest outcome, not a bug.
+  count_unchecked_as_valid: false
+
+validation:
+  check_plausibility: true
+  log_rejected_candidates: true # failed attempts are recorded, not discarded
+
+output:
+  records_dir: data/attacks
+  format: jsonl

@@ -1,0 +1,422 @@
+{
+  "audited_path": "data/raw",
+  "n_files": 1,
+  "files": [
+    {
+      "file": "data/raw/final_polymer_properties_fromliterature.csv",
+      "size_bytes": 178587,
+      "status": "ok",
+      "n_rows": 741,
+      "n_columns": 32,
+      "columns": [
+        {
+          "name": "Name",
+          "dtype": "str",
+          "n_non_null": 741,
+          "n_null": 0,
+          "n_unique": 720
+        },
+        {
+          "name": "PSMILES",
+          "dtype": "str",
+          "n_non_null": 741,
+          "n_null": 0,
+          "n_unique": 656
+        },
+        {
+          "name": "Bandgap (eV)",
+          "dtype": "float64",
+          "n_non_null": 111,
+          "n_null": 630,
+          "n_unique": 104
+        },
+        {
+          "name": "CO2 Permeability (Barrer)",
+          "dtype": "float64",
+          "n_non_null": 62,
+          "n_null": 679,
+          "n_unique": 57
+        },
+        {
+          "name": "Compressive Strength (MPa)",
+          "dtype": "float64",
+          "n_non_null": 114,
+          "n_null": 627,
+          "n_unique": 103
+        },
+        {
+          "name": "Crystallization Temperature (K)",
+          "dtype": "float64",
+          "n_non_null": 115,
+          "n_null": 626,
+          "n_unique": 106
+        },
+        {
+          "name": "Elongation at Break (%)",
+          "dtype": "float64",
+          "n_non_null": 151,
+          "n_null": 590,
+          "n_unique": 141
+        },
+        {
+          "name": "Flexural Strength (MPa)",
+          "dtype": "float64",
+          "n_non_null": 101,
+          "n_null": 640,
+          "n_unique": 96
+        },
+        {
+          "name": "Tg (K)",
+          "dtype": "float64",
+          "n_non_null": 443,
+          "n_null": 298,
+          "n_unique": 393
+        },
+        {
+          "name": "H2 Permeability (Barrer)",
+          "dtype": "float64",
+          "n_non_null": 57,
+          "n_null": 684,
+          "n_unique": 54
+        },
+        {
+          "name": "Hardness (MPa)",
+          "dtype": "float64",
+          "n_non_null": 85,
+          "n_null": 656,
+          "n_unique": 81
+        },
+        {
+          "name": "Impact Strength (kJ/m2)",
+          "dtype": "float64",
+          "n_non_null": 89,
+          "n_null": 652,
+          "n_unique": 85
+        },
+        {
+          "name": "Ion Exchange Capacity (meq/g)",
+          "dtype": "float64",
+          "n_non_null": 71,
+          "n_null": 670,
+          "n_unique": 68
+        },
+        {
+          "name": "Limiting Oxygen Index (%)",
+          "dtype": "float64",
+          "n_non_null": 95,
+          "n_null": 646,
+          "n_unique": 83
+        },
+        {
+          "name": "Lower Critical Solution Temperature (K)",
+          "dtype": "float64",
+          "n_non_null": 107,
+          "n_null": 634,
+          "n_unique": 82
+        },
+        {
+          "name": "Tm (K)",
+          "dtype": "float64",
+          "n_non_null": 168,
+          "n_null": 573,
+          "n_unique": 158
+        },
+        {
+          "name": "Methanol Permeability (cm2/s)",
+          "dtype": "float64",
+          "n_non_null": 30,
+          "n_null": 711,
+          "n_unique": 28
+        },
+        {
+          "name": "O2 Permeability (Barrer)",
+          "dtype": "float64",
+          "n_non_null": 62,
+          "n_null": 679,
+          "n_unique": 57
+        },
+        {
+          "name": "Refractive Index",
+          "dtype": "float64",
+          "n_non_null": 148,
+          "n_null": 593,
+          "n_unique": 132
+        },
+        {
+          "name": "Swelling Degree (%)",
+          "dtype": "float64",
+          "n_non_null": 87,
+          "n_null": 654,
+          "n_unique": 80
+        },
+        {
+          "name": "Thermal Conductivity (W/m K)",
+          "dtype": "float64",
+          "n_non_null": 131,
+          "n_null": 610,
+          "n_unique": 121
+        },
+        {
+          "name": "Tensile Strength (MPa)",
+          "dtype": "float64",
+          "n_non_null": 167,
+          "n_null": 574,
+          "n_unique": 157
+        },
+        {
+          "name": "Td (K)",
+          "dtype": "float64",
+          "n_non_null": 173,
+          "n_null": 568,
+          "n_unique": 161
+        },
+        {
+          "name": "Upper Critical Solution Temperature (K)",
+          "dtype": "float64",
+          "n_non_null": 57,
+          "n_null": 684,
+          "n_unique": 47
+        },
+        {
+          "name": "Water Contact Angle (deg)",
+          "dtype": "float64",
+          "n_non_null": 175,
+          "n_null": 566,
+          "n_unique": 165
+        },
+        {
+          "name": "Water Uptake (%)",
+          "dtype": "float64",
+          "n_non_null": 130,
+          "n_null": 611,
+          "n_unique": 117
+        },
+        {
+          "name": "Young's Modulus (MPa)",
+          "dtype": "float64",
+          "n_non_null": 171,
+          "n_null": 570,
+          "n_unique": 161
+        },
+        {
+          "name": "Dielectric Constant Electronic",
+          "dtype": "float64",
+          "n_non_null": 295,
+          "n_null": 446,
+          "n_unique": 188
+        },
+        {
+          "name": "Dielectric Constant Ionic",
+          "dtype": "float64",
+          "n_non_null": 295,
+          "n_null": 446,
+          "n_unique": 238
+        },
+        {
+          "name": "Dielectric Constant Total",
+          "dtype": "float64",
+          "n_non_null": 295,
+          "n_null": 446,
+          "n_unique": 202
+        },
+        {
+          "name": "PSMILES_2",
+          "dtype": "str",
+          "n_non_null": 741,
+          "n_null": 0,
+          "n_unique": 581
+        },
+        {
+          "name": "PSMILES_4",
+          "dtype": "str",
+          "n_non_null": 741,
+          "n_null": 0,
+          "n_unique": 581
+        }
+      ],
+      "per_numeric_column_non_null_counts": {
+        "Bandgap (eV)": 111,
+        "CO2 Permeability (Barrer)": 62,
+        "Compressive Strength (MPa)": 114,
+        "Crystallization Temperature (K)": 115,
+        "Elongation at Break (%)": 151,
+        "Flexural Strength (MPa)": 101,
+        "Tg (K)": 443,
+        "H2 Permeability (Barrer)": 57,
+        "Hardness (MPa)": 85,
+        "Impact Strength (kJ/m2)": 89,
+        "Ion Exchange Capacity (meq/g)": 71,
+        "Limiting Oxygen Index (%)": 95,
+        "Lower Critical Solution Temperature (K)": 107,
+        "Tm (K)": 168,
+        "Methanol Permeability (cm2/s)": 30,
+        "O2 Permeability (Barrer)": 62,
+        "Refractive Index": 148,
+        "Swelling Degree (%)": 87,
+        "Thermal Conductivity (W/m K)": 131,
+        "Tensile Strength (MPa)": 167,
+        "Td (K)": 173,
+        "Upper Critical Solution Temperature (K)": 57,
+        "Water Contact Angle (deg)": 175,
+        "Water Uptake (%)": 130,
+        "Young's Modulus (MPa)": 171,
+        "Dielectric Constant Electronic": 295,
+        "Dielectric Constant Ionic": 295,
+        "Dielectric Constant Total": 295
+      },
+      "representation_column_candidates": {
+        "PSMILES": {
+          "score": 1.0,
+          "frac_fully_tokenizable": 1.0,
+          "frac_containing_attachment_star": 1.0,
+          "frac_balanced_parens": 1.0,
+          "length_min": 4,
+          "length_median": 20.0,
+          "length_max": 170,
+          "n_sampled": 500,
+          "unknown_char_histogram": {}
+        },
+        "PSMILES_2": {
+          "score": 1.0,
+          "frac_fully_tokenizable": 1.0,
+          "frac_containing_attachment_star": 1.0,
+          "frac_balanced_parens": 1.0,
+          "length_min": 6,
+          "length_median": 34.0,
+          "length_max": 220,
+          "n_sampled": 500,
+          "unknown_char_histogram": {}
+        },
+        "PSMILES_4": {
+          "score": 1.0,
+          "frac_fully_tokenizable": 1.0,
+          "frac_containing_attachment_star": 1.0,
+          "frac_balanced_parens": 1.0,
+          "length_min": 10,
+          "length_median": 66.0,
+          "length_max": 438,
+          "n_sampled": 500,
+          "unknown_char_histogram": {}
+        },
+        "Name": {
+          "score": 0.168,
+          "frac_fully_tokenizable": 0.036,
+          "frac_containing_attachment_star": 0.0,
+          "frac_balanced_parens": 1.0,
+          "length_min": 2,
+          "length_median": 29.0,
+          "length_max": 134,
+          "n_sampled": 500,
+          "unknown_char_histogram": {
+            "e": 991,
+            "l": 951,
+            "y": 826,
+            "t": 645,
+            "r": 472,
+            "a": 429,
+            "i": 413,
+            "h": 280,
+            " ": 257,
+            "m": 197
+          }
+        }
+      },
+      "proposed_representation_column": {
+        "name": "PSMILES",
+        "confirmed": false,
+        "note": "PROPOSAL ONLY -- confirm before use"
+      },
+      "tg_column_candidates": {
+        "Tg (K)": {
+          "n_non_null": 443,
+          "units": {
+            "n": 443,
+            "min": 146.0,
+            "max": 589.0,
+            "mean": 338.39278016794583,
+            "median": 346.3458937,
+            "std": 88.89815130033851,
+            "n_negative": 0,
+            "n_above_400": 100,
+            "n_below_150": 3,
+            "shift_correlation_ratio_at_273K": 0.0692,
+            "verdict": "undetermined",
+            "reason": "range is consistent with more than one unit convention",
+            "requires_human_confirmation": true
+          }
+        }
+      },
+      "proposed_tg_column": {
+        "name": "Tg (K)",
+        "confirmed": false,
+        "note": "PROPOSAL ONLY"
+      },
+      "duplicate_analysis": {
+        "n_rows": 443,
+        "n_unique_representations": 373,
+        "n_representations_appearing_more_than_once": 31,
+        "n_conflicting_representations": 31,
+        "max_conflict_spread": 320.9205192,
+        "n_near_duplicates_after_normalization": 3,
+        "conflict_examples": [
+          {
+            "representation": "[*]CC([*])(C=C)C",
+            "values": [
+              215.8143478,
+              536.734867
+            ],
+            "spread": 320.9205192,
+            "differs_by_approx_273.15": false
+          },
+          {
+            "representation": "[*]NCCCCCC([*])=O",
+            "values": [
+              321.0029412,
+              323.4710526,
+              327.7122059,
+              345.4926667,
+              357.4459259,
+              443.0298658,
+              505.318038
+            ],
+            "spread": 184.3150968,
+            "differs_by_approx_273.15": false
+          },
+          {
+            "representation": "[*]CC(C)(C(O)=O)[*]",
+            "values": [
+              285.9839286,
+              453.5411765
+            ],
+            "spread": 167.5572479,
+            "differs_by_approx_273.15": false
+          },
+          {
+            "representation": "[*]C(C[*])C1=CC=CC=C1",
+            "values": [
+              237.3696721,
+              319.8169231,
+              370.8178093,
+              371.1314305,
+              371.6028302,
+              372.2173333
+            ],
+            "spread": 134.8476612,
+            "differs_by_approx_273.15": false
+          },
+          {
+            "representation": "O[C@@H]1[C@H](O)[C@H](O[*])[C@@H](CO)O[C@H]1[*]",
+            "values": [
+              299.8863636,
+              347.325,
+              376.5375
+            ],
+            "spread": 76.65113640000004,
+            "differs_by_approx_273.15": false
+          }
+        ],
+        "resolution_policy": "NOT AUTO-RESOLVED -- requires an explicit human decision"
+      }
+    }
+  ]
+}

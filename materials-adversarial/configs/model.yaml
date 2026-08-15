@@ -1,0 +1,23 @@
+name: transformer_regressor
+device: cpu
+architecture:
+  vocab_size: 100
+  d_model: 64
+  n_layers: 2
+  n_heads: 4
+  dim_feedforward: 128
+  dropout: 0.1
+  max_seq_len: 256
+  pooling: mean
+training:
+  seed: 20260815
+  batch_size: 16
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  epochs: 50
+  early_stopping_patience: 10
+  monitor: val_mae
+baseline_metrics:
+  mae: 46.20376968383789
+  rmse: 59.355552673339844
+  r2: -2.6353466510772705

@@ -1,0 +1,36 @@
+# Tokenizer configuration
+#
+# STATUS: rules IMPLEMENTED and tested. Vocabulary PENDING (data-derived).
+#
+# Tokenization operates on chemically meaningful units. The regex alternation
+# order is load-bearing: two-letter elements (Cl, Br) and bracket atoms must be
+# matched before the single-character class, or 'Cl' silently becomes 'C' plus a
+# stray 'l'. Regression tests pin this.
+
+name: psmiles_chemical
+
+special_tokens:                 # <pad> is pinned to id 0
+  - "<pad>"
+  - "<unk>"
+  - "<bos>"
+  - "<eos>"
+
+# Behaviour on an unrecognised character.
+#   raise -- default; fail loudly
+#   char  -- emit the raw character; used when building the vocabulary so
+#            unexpected grammar surfaces as data
+#   unk   -- emit <unk>; BREAKS the round-trip guarantee
+on_unknown: raise
+
+# Ordering rule: specials first, then (descending frequency, ascending
+# lexicographic). The lexicographic tiebreak is what makes vocabulary
+# construction deterministic across corpus row orderings.
+min_frequency: 1
+
+# --- PENDING: built from the TRAINING SPLIT ONLY, never the full dataset ---
+vocab_size: null
+vocab_artifact: data/processed/vocab.json
+
+# Round-trip: detokenize(tokenize(x)) == x holds exactly when tokenization
+# completes without unknowns. See docs/PROJECT_WORKSPACE.md S4 for what breaks it.
+verify_round_trip: true

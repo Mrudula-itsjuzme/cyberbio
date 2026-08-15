@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "materials-adversarial"
+version = "0.1.0"
+description = "A unified adversarial framework for robust materials sequence modelling (Phase 1: attack side)"
+requires-python = ">=3.10"
+
+# Hard dependencies are ONLY what the data-independent scaffold actually needs.
+# torch and rdkit are deliberately NOT here -- see optional-dependencies below.
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+# Cheminformatics. Needed for canonicalization, dedup and representation validity.
+# Until this is installed, the validator reports UNCHECKED and never claims validity.
+chem = ["rdkit>=2023.9"]
+
+# Target model. Deferred: hyperparameters cannot be chosen until the dataset is
+# audited, and this machine has no GPU. Install the CPU wheel explicitly:
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+model = ["torch>=2.0"]
+
+dev = ["pytest>=7.4", "pytest-cov"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+filterwarnings = ["error::DeprecationWarning:materials_adv.*"]

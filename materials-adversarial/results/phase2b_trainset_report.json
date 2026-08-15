@@ -1,0 +1,62 @@
+{
+  "natural_dedup": {
+    "variant": "natural_dedup",
+    "clean_training_samples": 204,
+    "adversarial_before_dedup": 1112,
+    "duplicates_adv_vs_adv_removed": 11,
+    "duplicates_adv_vs_clean_removed": 19,
+    "total_duplicates_removed": 30,
+    "adversarial_after_dedup": 1082,
+    "total_training_rows": 1286,
+    "attack_family_counts_raw": {
+      "substitution": 336,
+      "deletion": 335,
+      "insertion": 314,
+      "rearrangement": 127
+    },
+    "attack_family_counts_after_dedup": {
+      "substitution": 335,
+      "insertion": 312,
+      "deletion": 311,
+      "rearrangement": 124
+    },
+    "attack_family_counts_final": {
+      "substitution": 335,
+      "insertion": 312,
+      "deletion": 311,
+      "rearrangement": 124
+    },
+    "balance_note": null,
+    "output": "data/processed/train_aug_phase2b.csv"
+  },
+  "balanced": {
+    "variant": "balanced",
+    "clean_training_samples": 204,
+    "adversarial_before_dedup": 1112,
+    "duplicates_adv_vs_adv_removed": 11,
+    "duplicates_adv_vs_clean_removed": 19,
+    "total_duplicates_removed": 30,
+    "adversarial_after_dedup": 496,
+    "total_training_rows": 700,
+    "attack_family_counts_raw": {
+      "substitution": 336,
+      "deletion": 335,
+      "insertion": 314,
+      "rearrangement": 127
+    },
+    "attack_family_counts_after_dedup": {
+      "substitution": 335,
+      "insertion": 312,
+      "deletion": 311,
+      "rearrangement": 124
+    },
+    "attack_family_counts_final": {
+      "deletion": 124,
+      "insertion": 124,
+      "rearrangement": 124,
+      "substitution": 124
+    },
+    "balance_note": "Down-sampled every family to 124 (rearrangement is the binding constraint), discarding 586 examples (54.2%).",
+    "output": "data/processed/train_aug_phase2b_balanced.csv"
+  }
+}

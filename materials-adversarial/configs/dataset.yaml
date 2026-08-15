@@ -1,0 +1,43 @@
+# Dataset configuration
+#
+# STATUS: BLOCKED. Every null below is an unmade decision, not a default.
+# utils/config.py::require_resolved() raises on null, so these cannot leak into
+# a run as an implicit None.
+#
+# Source (identified, NOT yet obtained):
+#   Paper : Wang et al., "OpenPoly: A Polymer Database Empowering Benchmarking
+#           and Multi-property Predictions", Chinese Journal of Polymer Science
+#           (2025). DOI: 10.1007/s10118-025-3402-y   [PAYWALLED -- schema unverified]
+#   Data  : https://github.com/WangGroupFDU/Openpoly_benchmark
+#           data/final_polymer_properties_fromliterature.csv
+#           data/final_polymer_property_counts_fromliterature.csv
+#
+# Fill these in ONLY from the output of scripts/audit_dataset.py.
+
+name: openpoly
+raw_dir: data/raw
+processed_dir: data/processed
+
+# --- PENDING: must come from the audit, never assumed ---
+file: final_polymer_properties_fromliterature.csv                      # exact filename
+representation_column: "PSMILES"     # PSMILES column   (audit proposes, human confirms)
+target_column: "Tg (K)"             # Tg column        (audit proposes, human confirms)
+target_units: "K"              # "K" | "C"        (audit reports evidence only)
+n_usable_records: 443          # MEASURED count of non-null Tg rows
+
+# Duplicate handling. Mean / keep-first / drop are NOT equivalent choices, and
+# one likely cause of conflict is a Kelvin/Celsius mix -- averaging those would
+# manufacture a value wrong in both units.
+duplicate_policy: drop_all          # "keep_first" | "mean" | "drop_all"
+conflict_tolerance: 1.0         # degrees; conflicts above this need a decision
+
+# --- Splitting ---
+split:
+  strategy: scaffold            # scaffold (primary) | random (secondary comparison)
+  train_frac: 0.70
+  val_frac: 0.15
+  test_frac: 0.15
+  seed: 20260815
+  artifact: data/processed/splits.json
+  # The test set is SEALED: attacks are developed against validation only.
+  test_sealed: true
