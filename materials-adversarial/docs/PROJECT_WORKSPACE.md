@@ -219,12 +219,16 @@ attack's own bookkeeping, so a buggy attack cannot under-report perturbation siz
 
 | # | Experiment | Status |
 |---|---|---|
-| 1 | Clean baseline | DONE — (MAE: 52 K) |
-| 2 | Substitution attacks | DONE — 3 successful adversarial examples |
-| 3 | Insertion attacks | NOT STARTED |
-| 4 | Deletion attacks | NOT STARTED |
-| 5 | Local rearrangement | NOT STARTED |
-| 6–11 | Comparison, multi-step, probabilistic, MCMC, adv. training, re-attack | OUT OF SCOPE |
+| 1 | Clean baseline | DONE — test MAE 52.02 K |
+| 2 | Substitution attacks | DONE — Phase 1D |
+| 3 | Insertion attacks | DONE — Phase 1E |
+| 4 | Deletion attacks | DONE — Phase 1E |
+| 5 | Local rearrangement | DONE — Phase 1E |
+| 6 | Attack comparison / attribution | DONE — Phase 1F |
+| — | Adversarial training (2A) | DONE — clean result later found confounded |
+| — | **Controlled defense ablation (2B)** | DONE — single seed; clean gain did not survive the scaler control |
+| — | **Multi-seed confirmation (2C)** | **DONE — 2B's large robustness effects do NOT replicate; only worst-case (max) drift reduction is consistent** |
+| 7–11 | Multi-step, probabilistic, MCMC, re-attack | NOT STARTED — Phase 3, on hold |
 
 ---
 
@@ -251,13 +255,20 @@ reported alongside drift, or the headline number will silently confound the two.
 
 | # | Issue | Status |
 |---|---|---|
-| 1 | **OpenPoly dataset absent.** No polymer data anywhere on the machine. | **OPEN — blocking** |
+| 1 | **OpenPoly dataset absent.** No polymer data anywhere on the machine. | **RESOLVED** — supplied 2026-08-15, audited, 247 usable Tg records |
 | 2 | Paper paywalled; schema unverifiable without the files. | OPEN — mitigated by discovery-based audit |
 | 3 | pandas 3.0 uses a `str` dtype, not `object`. An `== object` check found **zero** text columns, so the audit would have silently reported "no representation column" for a good file. | **FIXED** — `_is_text_dtype()` handles both; regression test added |
 | 4 | Tokenizer regex ordering: single-char class before `Br\|Cl` turns `Cl` into `C` + stray `l`. | **PREVENTED** — ordering pinned by regression tests |
 | 5 | Naive largest-gap bimodality probe failed on a synthetic 50/50 °C+K mixture. | **FIXED** — replaced with shift-correlation |
 | 6 | System ROS 2 install exports a global `PYTHONPATH`; pytest autoloads its plugins, which crash on missing `lark`. | **WORKED AROUND** — `scripts/run_tests.sh`. Environment quirk, not a project bug |
 | 7 | No GPU; ~3.5Gi RAM free. | KNOWN — CPU-only; constrains model size |
+| 8 | **Scaler refit on augmented data (Phase 2A confounder).** `train()` refit `TargetScaler` on whatever frame it received, shifting the normalization mean by -10.09 K between Phase 1 and 2A and making the clean-MAE comparison uninterpretable. | **CONTROLLED** — Phase 2B adds `scaler_path` to load a fixed scaler; confounder quantified at ~76% of the reported gain |
+| 9 | **`train()` overwrote `configs/model.yaml:baseline_metrics` on every run.** After Phase 2A the config held the *defended* model's metrics, so `run_attacks.py` silently used 46.20 K instead of 52.02 K as its drift threshold. | **FIXED** — runs write `metrics.json` beside their own checkpoint; `write_back_config=False`; threshold passed explicitly via `--threshold` |
+| 10 | **Undetected duplicate class.** 19 "adversarial" training strings were byte-identical to clean training strings — sample-weight inflation, not augmentation. Distinct from the 11 adv-vs-adv duplicates reported in 2A. | **FIXED in 2B** — both classes removed and reported separately |
+| 11 | **Stale scaffold-era tests.** 6 tests in `test_attacks.py` / `test_scaffold_integrity.py` / `test_audit_script.py` assert the pre-data blocked state (`TokenRole.ATOM`, stubs raising, configs null, `data/raw` empty). Phases 1–2A intentionally resolved all of these. | **FIXED in 2C** — all 6 updated to the current contract, none deleted; 200 tests pass |
+| 12 | **`@register_attack` dropped from three attacks.** The Phase 1D/1E rewrites of insertion, deletion and rearrangement lost their registry decorators, leaving only `substitution` registered — `build_attack("deletion")` raised `KeyError`. Experiments construct attacks directly, so no result is affected, but the pluggability contract was silently broken. | **FIXED in 2C** — decorators restored; two tests pin all four registered and buildable |
+| 13 | **Two API inconsistencies** (noted, not fixed): `RearrangementAttack` lost its `window_size >= 2` validation and degrades to zero candidates instead of raising; substitution guards a missing pool with `PendingImplementation` while insertion uses a required positional argument. | **OPEN — cosmetic.** Both behaviours are safe; tests pin the actual behaviour rather than an aspirational one |
+| 14 | **`reordering.py` is dead code.** Superseded by `rearrangement.py`, which all experiments use. Still imports and registers itself. | **OPEN — cosmetic.** Left in place rather than deleted mid-experiment; candidate for removal before publication |
 
 ---
 
@@ -454,6 +465,357 @@ An explicitly requested programmatic audit was performed to guarantee the integr
 
 ---
 
+## Phase 2B: Controlled Defense Ablation
+
+*Executed 2026-08-15. The Phase 2A record above is preserved unchanged.*
+
+### Motivation
+
+Phase 2A reported a clean test MAE improvement of 52.02 K -> 46.20 K and
+attributed it to adversarial training. The Phase 2A audit identified a
+confounder that makes that attribution unsafe, so Phase 2B re-runs the
+experiment with normalization statistics held fixed.
+
+### The confounder
+
+`training/train.py` fitted `TargetScaler` on whatever training frame it was
+given. Phase 1 passed the clean training split; Phase 2A passed the *augmented*
+frame. The 1,112 adversarial rows inherit their parent polymer's Tg, so
+frequently-attacked polymers gained statistical weight and the normalization
+constants moved:
+
+| Scaler | mean (K) | std (K) | Fitted on |
+|---|---|---|---|
+| Phase 1 baseline | **330.713124** | **88.046275** | 204 clean training targets |
+| Phase 2A defended | 320.621346 | 87.751057 | 1,316 augmented rows |
+| **Phase 2B (this phase)** | **330.713124** | **88.046275** | **loaded from Phase 1, NOT refit** |
+
+The mean shifted by **-10.09 K**. Since MAE is reported in Kelvin after
+`inverse_transform`, the baseline and defended models were decoding predictions
+through different affine maps. "Adversarial training helped" and "the decoder
+shifted toward the test targets" were therefore not separable.
+
+The test targets all lie in 418.7-496.0 K, well above both scaler means, so a
+downward mean shift is not neutral with respect to this particular test set.
+
+### Experimental controls
+
+Held identical to Phase 1: architecture, tokenizer, vocabulary, split artifact,
+optimizer (AdamW), learning rate (1e-3), weight decay (1e-4), epoch budget (50),
+early-stopping patience (10), seed (20260815), and evaluation procedure.
+
+Changed, by design: adversarial augmentation of the training set only.
+
+Implementation: `train()` gained a `scaler_path` argument. When supplied it
+*loads* the scaler instead of fitting one, and logs what refitting *would* have
+produced (here mean=321.470130, delta -9.24 K) so the counterfactual is recorded
+rather than inferred. It also gained `write_back_config=False`, because the
+Phase 2A run had overwritten `configs/model.yaml:baseline_metrics` with the
+defended model's numbers. Each run now writes `metrics.json` beside its own
+checkpoint, so no run can overwrite another's recorded results.
+
+### Training-set construction
+
+Built from the **existing** Phase 2A augmentation artifact rather than
+regenerating it — regenerating would re-run the attack RNG and change which
+adversarial strings exist, adding a second difference between 2A and 2B.
+
+| Quantity | Count |
+|---|---|
+| Clean training samples | 204 |
+| Adversarial before deduplication | 1,112 |
+| Duplicates removed: adversarial vs adversarial | **11** |
+| Duplicates removed: adversarial identical to a clean training string | **19** |
+| **Total duplicates removed** | **30** |
+| Adversarial after deduplication | **1,082** |
+| Total Phase 2B training rows | 1,286 |
+
+The second duplicate class was not reported in Phase 2A. Those 19 rows were
+labelled "adversarial" but are byte-identical to clean training strings, so they
+functioned purely as sample-weight inflation on already-present polymers.
+
+Attack-family counts:
+
+| Family | Phase 2A raw | After dedup | Share |
+|---|---|---|---|
+| Substitution | 336 | 335 | 31.0% |
+| Insertion | 314 | 312 | 28.8% |
+| Deletion | 335 | 311 | 28.7% |
+| Rearrangement | 127 | 124 | 11.5% |
+
+### On balancing the mixture
+
+The brief preferred a balanced mixture *if achievable without changing other
+conditions*. It is not. Rearrangement is validity-limited at 124 examples, so
+equalising families would discard **586 of 1,082 adversarial examples (54.2%)**,
+changing augmentation volume drastically — a second confounder in an experiment
+whose entire purpose is removing one.
+
+Following the brief's fallback, the deduplicated natural mixture is the
+**primary** Phase 2B condition, and a balanced variant was run as a **secondary
+diagnostic**. The diagnostic confirms the concern: the balanced model scores
+**68.56 K** test MAE, substantially worse than both the baseline and the natural
+variant. Augmentation volume, not family balance, dominates at this data scale.
+
+### Results
+
+**Clean evaluation** — identical validation (n=37) and sealed test (n=6) samples
+throughout. Phase 1 and Phase 2A reproduce their recorded values exactly, which
+validates the evaluation harness.
+
+| Model | Val MAE | Val RMSE | Val R² | Test MAE | Test RMSE | Test R² |
+|---|---|---|---|---|---|---|
+| Phase 1 baseline | 79.04 | 99.38 | -0.15 | **52.02** | 71.30 | -4.25 |
+| Phase 2A defended | 79.50 | 100.06 | -0.17 | **46.20** | 59.36 | -2.64 |
+| **Phase 2B controlled** | **74.34** | **97.08** | **-0.10** | **50.64** | 62.09 | -2.98 |
+| Phase 2B balanced *(diagnostic)* | 92.38 | 110.96 | -0.43 | 68.56 | 85.73 | -6.58 |
+
+**Robustness** — a fresh attack set (seed 20260902, 651 candidates, 330 valid,
+only 22.0% string overlap with Phase 1E) was generated and applied **identically**
+to both models. Attacks are generated from sample PSMILES rather than model
+gradients, so a shared seed yields an identical candidate set, making this a
+*paired* comparison. Verified programmatically: `candidate_sets_identical: true`.
+
+| Family | n | Mean drift | Median | P95 | Max | >52.02 K rate |
+|---|---|---|---|---|---|---|
+| Substitution | 88 | 13.0 -> **7.0** | 7.9 -> 4.6 | 39.1 -> 19.8 | 102.7 -> 32.7 | 3.4% -> **0.0%** |
+| Insertion | 85 | 30.7 -> **19.3** | 19.8 -> 13.9 | 95.5 -> 53.4 | 130.7 -> 98.4 | 20.0% -> **5.9%** |
+| Deletion | 94 | 30.7 -> **16.8** | 21.6 -> 13.8 | 85.3 -> 42.2 | 153.9 -> 66.8 | 17.0% -> **3.2%** |
+| Rearrangement | 63 | 8.0 -> 8.0 | 5.9 -> 5.3 | 26.7 -> 21.4 | 30.6 -> **35.0** | 0.0% -> 0.0% |
+
+*(baseline -> Phase 2B controlled)*
+
+Pooled paired comparison over the 330 valid candidates: mean |drift| 21.64 K ->
+13.16 K, a **8.48 K reduction**, with **63.9%** of individual candidates improved.
+
+### Attribution
+
+| Quantity | Value |
+|---|---|
+| Phase 2A apparent improvement (52.02 -> 46.20) | **5.81 K** |
+| Phase 2B improvement surviving the control (52.02 -> 50.64) | **1.38 K** |
+| Residual associated with the scaler change | **4.44 K** |
+| Fraction of the 2A clean-MAE gain surviving the control | **~24%** |
+
+**The Phase 2A clean-MAE result is NOT robust to this control.** Roughly
+three-quarters of the reported clean improvement is associated with the
+normalization change rather than with adversarial training. The controlled clean
+improvement of 1.38 K on a 6-sample test set is well inside noise and should not
+be reported as a clean-performance benefit.
+
+**The robustness result IS robust to this control**, and is in fact stronger
+under it. Drift reductions persist across every length-changing family under a
+fixed scaler, a fresh attack set, and a paired design: deletion mean drift
+-13.9 K, insertion -11.4 K, substitution -6.0 K, and threshold-breach rates
+falling by roughly two-thirds to five-sixths. This is the defensible Phase 2
+finding.
+
+A diagnostic decoding the Phase 2A model's outputs through the Phase 1 scaler
+gives 42.82 K. This is *not* a valid model score — it deliberately mismatches
+training and inference normalization — but it confirms that this test set's MAE
+is highly sensitive to the decoder's affine constants, which is precisely why
+the control was necessary.
+
+### Limitations
+
+1. **The 6-sample test set dominates every clean-metric caveat.** A 1.38 K
+   difference across 6 points is not a meaningful effect size. All clean MAE
+   comparisons here, including Phase 2A's, are statistically fragile. Validation
+   (n=37) is more trustworthy and shows the same direction: 79.04 -> 74.34 K.
+2. **Negative R² throughout.** Every model, baseline included, predicts worse
+   than the test mean on this test set. The model is a controlled attack target,
+   not a competitive Tg predictor, exactly as scoped.
+3. **Attribution is associational, not causal.** This is a single controlled
+   comparison with one seed. It shows the 2A clean result does not survive the
+   control; it does not prove the scaler shift *caused* the difference. Multiple
+   seeds would be needed to separate the effect from run-to-run variance.
+4. **Single seed.** No variance estimate across training runs. The 8.48 K pooled
+   drift reduction has no confidence interval.
+5. **The target-preservation assumption is inherited unchanged** from Phase 2A:
+   adversarial edits are assumed not to alter true physical Tg. This remains
+   chemically unjustified and bounds the physical interpretation of every
+   robustness number here.
+6. **The 52.02 K threshold is an exploratory reference**, derived from the
+   fragile 6-sample baseline MAE. It is retained only for comparability with
+   Phase 1E, not as a principled definition of attack success.
+7. **Deduplication and scaler control were changed together** relative to 2A.
+   The 30 removed duplicates are ~2.8% of the augmented rows, so their effect is
+   likely small, but it is not separately isolated.
+
+---
+
+## Phase 2C: Multi-Seed Robustness Confirmation
+
+*Executed 2026-08-15. Phase 2A and 2B records preserved unchanged.*
+
+### Objective
+
+Determine whether the Phase 2B robustness improvement is reproducible across
+random seeds. Phase 2B was a single-seed result with no variance estimate.
+
+### Setup
+
+Identical to the Phase 2B control in every respect: Phase 1 `TargetScaler`
+frozen (mean 330.713124, std 88.046275, loaded not refit — verified identical in
+all 10 runs), same tokenizer, same scaffold split artifact, same architecture,
+same optimizer settings, same adversarial training set
+(`train_aug_phase2b.csv`, 1,286 rows), same attack budgets.
+
+**5 seeds x 2 conditions = 10 independent trainings**: 20260815–20260819.
+`train()` gained a `seed` argument controlling weight init, DataLoader shuffling
+and dropout masks. Baseline runs confirm `n_train=204` (clean only); defended
+runs use the 1,286-row augmented set.
+
+Attacks use a per-seed fresh attack seed, so each seed sees a *different*
+candidate set, while baseline and defended **within** a seed see an *identical*
+one. Verified programmatically: `matched_candidate_sets_all_seeds: true`.
+
+**The test set was never loaded by this phase.** All reporting is on validation
+(n=37); model selection used validation MAE only.
+
+### Clean validation results
+
+| Seed | Baseline MAE | Defended MAE | Δ | Baseline R² | Defended R² |
+|---|---|---|---|---|---|
+| 20260815 | 79.04 | 74.34 | **−4.71** | −0.15 | −0.10 |
+| 20260816 | 79.06 | 79.03 | −0.03 | 0.04 | 0.05 |
+| 20260817 | 78.79 | 83.84 | **+5.05** | −0.07 | −0.12 |
+| 20260818 | 77.64 | 83.54 | **+5.91** | 0.01 | −0.14 |
+| 20260819 | 79.95 | 77.80 | −2.15 | −0.06 | −0.01 |
+
+| Metric | Baseline (mean ± SD) | Defended (mean ± SD) |
+|---|---|---|
+| MAE | **78.90 ± 0.83** | **79.71 ± 4.02** |
+| RMSE | 94.73 ± 3.35 | 95.48 ± 3.63 |
+| R² | −0.05 ± 0.07 | −0.06 ± 0.08 |
+
+Clean MAE difference (defended − baseline): **+0.81 ± 4.58 K**, sign flipping
+across seeds (−4.71, −0.03, +5.05, +5.91, −2.15).
+
+**There is no clean-performance benefit.** The difference is centred near zero
+with a standard deviation five times its magnitude. Note also that adversarial
+training *increased* run-to-run variance substantially (SD 0.83 → 4.02 K).
+
+### Adversarial validation results
+
+Per-family, mean ± SD of the per-seed statistic across 5 seeds:
+
+| Family | Metric | Baseline | Defended | Mean reduction | Same sign in all 5 seeds? |
+|---|---|---|---|---|---|
+| Substitution | mean | 9.96 ± 2.33 | 9.14 ± 2.56 | 0.82 | No |
+| | P95 | 34.02 ± 16.01 | 32.31 ± 14.26 | 1.70 | No |
+| | max | 77.76 ± 34.44 | 60.64 ± 20.28 | 17.12 | No |
+| | >52.02 K | 2.1% ± 3.1 | 1.9% ± 2.6 | 0.2 pp | No |
+| Insertion | mean | 25.20 ± 4.87 | 23.58 ± 2.83 | 1.61 | No |
+| | P95 | 69.69 ± 20.24 | 64.54 ± 8.40 | 5.15 | No |
+| | **max** | 144.40 ± 51.70 | 97.65 ± 19.84 | **46.75** | **Yes** |
+| | >52.02 K | 10.7% ± 5.2 | 11.0% ± 3.5 | −0.3 pp | No |
+| Deletion | mean | 24.54 ± 5.39 | 21.76 ± 2.04 | 2.79 | No |
+| | median | 16.49 ± 3.54 | 17.15 ± 2.66 | −0.66 | No |
+| | P95 | 68.43 ± 16.83 | 62.14 ± 8.89 | 6.29 | No |
+| | max | 136.50 ± 39.82 | 87.87 ± 10.95 | 48.62 | No |
+| | >52.02 K | 11.6% ± 5.8 | 8.7% ± 2.3 | 2.9 pp | No |
+| Rearrangement | mean | 7.35 ± 1.71 | 6.98 ± 0.84 | 0.37 | No |
+| | P95 | 24.22 ± 5.99 | 22.16 ± 2.35 | 2.07 | No |
+| | max | 36.90 ± 19.50 | 35.94 ± 5.41 | 0.96 | No |
+
+**Pooled across all seeds (1,767 matched candidate pairs):**
+
+| Quantity | Value |
+|---|---|
+| Mean \|drift\| baseline | 17.76 K |
+| Mean \|drift\| defended | 16.28 K |
+| Mean reduction | **1.48 K** |
+| Candidates improved | **52.4%** |
+| Wilcoxon signed-rank | W=737,380, p=0.042 |
+
+### Interpretation — Phase 2B does NOT replicate
+
+**The large Phase 2B robustness reductions were substantially seed-specific.**
+
+Phase 2B (seed 20260815) reported insertion mean drift 32.5 → 20.7 K (−11.8 K)
+and deletion 30.9 → 18.4 K (−12.4 K). Across 5 seeds those same reductions are
+**1.61 ± 5.77 K** and **2.79 ± 6.74 K** — an order of magnitude smaller, with
+standard deviations exceeding the effects. Seed 20260815 was a favourable draw.
+
+Direction is not consistent either. Of 16 family×metric combinations, only
+**one** — insertion max drift — reduced in all 5 seeds. Deletion *median* drift
+went the wrong way on average (−0.66 K, i.e. defended was worse).
+
+The pooled effect (1.48 K, 52.4% of candidates improved) is barely above the
+50% coin-flip line. The Wilcoxon p=0.042 is reported, but I do **not** claim
+statistical significance for the intervention: the test pairs *candidates*, and
+candidates within a seed share a model, so the observations are not independent.
+The correct unit of independence is the seed (n=5), and at that level the
+effects are indistinguishable from noise. A p-value computed over 1,767
+non-independent points overstates the evidence.
+
+**What survives:** a consistent reduction in *worst-case* drift for
+length-changing attacks — insertion max 144.4 → 97.7 K (all 5 seeds), deletion
+max 136.5 → 87.9 K (4 of 5). Defended models are also markedly less variable in
+their adversarial behaviour (e.g. insertion max SD 51.70 → 19.84). Adversarial
+training appears to clip the tail without shifting the central tendency.
+
+**What does not survive:** any claim about mean or median drift reduction, the
+>52.02 K breach rate, or clean performance.
+
+### Statistical honesty
+
+No significance claim is made for the seed-level comparison. With n=5 a t-test
+would be underpowered and its normality assumption unverifiable; nothing here
+justifies one. The Wilcoxon over matched candidates is reported as a descriptive
+paired statistic with its non-independence caveat recorded in
+`results/phase2c_audit.json`. Directional consistency across seeds
+(`reduction_all_seeds_positive`) is used as the primary robustness criterion,
+because with 5 points a sign test is more defensible than a distributional one.
+
+### Test repair (also requested this phase)
+
+Six stale tests were repaired, none deleted. All 200 tests now pass.
+
+| Test | Was | Now |
+|---|---|---|
+| `test_classify_token` | `TokenRole.ATOM` | Split into `ALIPHATIC_ATOM`/`AROMATIC_ATOM`, `DISCONNECT` separated; new regressions pin both Phase 1D fixes |
+| `test_reordering_*` | Tested dead `reordering.py` | Retargeted to `rearrangement.py`, the module all experiments actually use |
+| `test_*_stubs_raise` | Asserted `PendingImplementation` | Assert the implementations exist; new test pins the Phase 2B `scaler_path`/`write_back_config`/`seed` controls |
+| `test_importing_package_does_not_pull_in_torch` | Whole package torch-free | Scoped to the analysis layers (tokenizer/attacks/validation/evaluation), where the property still holds and matters |
+| `test_shipped_configs_..._null` | Asserted configs null | Inverted: asserts configs are resolved, so a clobbered config is caught |
+| `test_real_data_dir_is_currently_empty` | Asserted `data/raw` empty | Inverted: asserts the OpenPoly file is present |
+
+**Bug found during repair:** the Phase 1D/1E rewrites of insertion, deletion and
+rearrangement **dropped their `@register_attack` decorators**. Only
+`substitution` was registered, so `build_attack("deletion")` raised `KeyError`.
+Experiments construct attacks directly, so no result is affected — but the
+pluggable-attack contract was silently broken. Decorators restored; two tests now
+pin it.
+
+Two genuine inconsistencies noted rather than papered over: `RearrangementAttack`
+lost its `window_size >= 2` validation (degrades to zero candidates instead of
+raising), and substitution guards a missing pool with `PendingImplementation`
+while insertion uses a required argument. Both recorded in Problems #13.
+
+### Limitations
+
+1. **5 seeds is a small sample.** SDs are themselves imprecisely estimated. The
+   qualitative conclusion (large 2B effects do not replicate) is robust; the
+   precise magnitudes are not.
+2. **One data split.** All seeds share the same scaffold split, so split-induced
+   variance is not captured and is confounded with the small validation set.
+3. **Validation n=37.** Clean metrics on 37 samples are noisy; the ±4.02 K
+   defended SD partly reflects that.
+4. **Negative R² throughout**, as in every prior phase. The model remains a
+   controlled attack target, not a competitive predictor.
+5. **Adversarial training set held fixed** across seeds. Regenerating it per
+   seed would add augmentation variance to the estimate — deliberately excluded,
+   so these SDs understate total pipeline variance.
+6. **The target-preservation assumption is inherited unchanged** and remains
+   chemically unjustified.
+7. **Attack candidates differ across seeds by design.** Between-seed drift
+   variation therefore mixes model variance with candidate-set variance; only
+   within-seed comparisons are matched.
+
+---
+
 ## 12. Open Research Questions
 
 1. **How many usable Tg records exist after dedup?** Determines whether a
@@ -545,11 +907,53 @@ enters `sys.modules`.
 21. **Phase 1F Executed:** Conducted perturbation attribution analysis. Concluded that the massive prediction drift is empirically driven by sequence-length changes (`delta_length != 0`), not by the number of edited tokens.
 22. **Phase 2A Designed & Executed:** Augmented the training dataset with a 25/25/25/25 mixture of the four attack classes under a target-preservation assumption. Clean validation MAE improved (52.02 K -> 46.20 K) and adversarial drift was massively reduced (Insertion mean drift -11K, Deletion max drift -73K).
 23. **Phase 2A Evaluation Audit:** Programmatically verified train/test isolation, 0 overlap between validation and train adversarial strings, and confirmed the exact validation drift metrics. Identified a subtle scaler-fitting confounding factor.
+24. **Phase 2B Designed & Executed (Controlled Defense Ablation):** Re-ran adversarial training with the Phase 1 `TargetScaler` **loaded rather than refit**, holding normalization statistics fixed (mean 330.713124, std 88.046275). Added `scaler_path` and `write_back_config` to `train()`.
+25. **Phase 2B — Second duplicate class found:** Beyond the 11 adversarial-vs-adversarial duplicates reported in 2A, **19** adversarial strings were byte-identical to clean training strings — pure sample-weight inflation. 30 duplicates removed in total, leaving 1,082 adversarial examples.
+26. **Phase 2B — Balancing rejected as primary, run as diagnostic:** Equalising attack families would discard 54.2% of adversarial data (rearrangement is validity-limited at 124), introducing a second confounder. The balanced diagnostic scored 68.56 K test MAE, materially worse, confirming augmentation volume dominates family balance at this data scale.
+27. **Phase 2B — Config write-back bug found:** the Phase 2A run had overwritten `configs/model.yaml:baseline_metrics` with the *defended* model's numbers, so the attack threshold was silently reading 46.20 rather than 52.02. Runs now write `metrics.json` beside their own checkpoint, and the threshold is passed explicitly.
+28. **Phase 2B Result — clean gain does NOT survive the control:** Test MAE 52.02 -> **50.64 K** with the scaler fixed, versus 46.20 K in 2A. Only **1.38 K of the 5.81 K** apparent improvement survives (~24%); **4.44 K is associated with the normalization change**. The Phase 2A clean-performance claim is therefore not robust.
+29. **Phase 2B Result — robustness DOES survive the control:** Under a fixed scaler, a fresh paired attack set (seed 20260902, 22.0% overlap with Phase 1E) and identical candidates for both models, pooled mean |drift| fell 21.64 -> 13.16 K (-8.48 K, 63.9% of candidates improved), with per-family reductions across substitution, insertion and deletion. This is the defensible Phase 2 finding. *(SUPERSEDED by Phase 2C — see #32. This was a single seed and does not replicate.)*
+30. **Phase 2C Designed & Executed:** 5 seeds x 2 conditions = 10 trainings under the exact 2B controls, with the Phase 1 scaler frozen in all 10 (verified identical). Added a `seed` argument to `train()`. Test set never loaded; all reporting on validation (n=37).
+31. **Phase 2C — stale tests repaired, registry bug found:** All 6 obsolete tests updated to the current contract (none deleted); 200 pass. Discovered the Phase 1D/1E rewrites had dropped `@register_attack` from insertion, deletion and rearrangement, leaving only substitution registered. No results affected (experiments construct attacks directly); decorators restored.
+32. **Phase 2C Result — Phase 2B does NOT replicate.** Seed 20260815 gave insertion/deletion mean-drift reductions of ~12 K; across 5 seeds those are **1.61 ± 5.77 K** and **2.79 ± 6.74 K**, SDs exceeding the effects. Only **1 of 16** family x metric combinations (insertion max drift) reduced in all 5 seeds. Pooled reduction 1.48 K, 52.4% of candidates improved — barely above chance. **Phase 2B landed on a favourable seed.**
+33. **Phase 2C Result — no clean benefit:** defended − baseline validation MAE is **+0.81 ± 4.58 K**, sign-flipping across seeds. Adversarial training also *increased* run-to-run variance (SD 0.83 -> 4.02 K).
+34. **Phase 2C — what survives:** worst-case drift reduction for length-changing attacks (insertion max 144.4 -> 97.7 K in all 5 seeds; deletion max 136.5 -> 87.9 K in 4 of 5) and markedly lower variance in adversarial behaviour. Adversarial training clips the tail without shifting central tendency. No significance claim is made at the seed level (n=5).
 
 ---
 
 ## 16. NEXT ACTION
 
-> **Review Phase 2A Audit**
-> 
-> The exhaustive Phase 2A evaluation audit has been performed. No train/test leakage was found, and the robustification results are validated. We are paused here pending instructions for Phase 3.
+> **Review Phase 2C. Phase 3 is NOT started and remains on hold.**
+>
+> The multi-seed confirmation is complete and it overturns the Phase 2B headline.
+>
+> - **Phase 2B's large robustness effects do NOT replicate.** Its ~12 K
+>   insertion/deletion mean-drift reductions become 1.6 ± 5.8 K and 2.8 ± 6.7 K
+>   across 5 seeds. Only 1 of 16 family×metric combinations reduced in every
+>   seed. Phase 2B landed on a favourable seed.
+> - **No clean-performance benefit exists.** Defended − baseline validation MAE
+>   is +0.81 ± 4.58 K, sign-flipping across seeds.
+> - **What survives:** worst-case (max) drift reduction for length-changing
+>   attacks, consistent across seeds, plus markedly lower variance in adversarial
+>   behaviour. Adversarial training clips the tail; it does not shift the centre.
+>
+> The defensible claim has narrowed from "adversarial training reduces prediction
+> drift" to **"adversarial training reduces worst-case drift under length-changing
+> perturbations, without improving average-case drift or clean accuracy."**
+>
+> Decisions needed before any Phase 3 work:
+>
+> 1. **Accept the narrowed claim, or investigate further?** The tail-clipping
+>    effect is real and consistent but much weaker than 2A/2B suggested.
+> 2. **Address the n=37 validation / n=6 test problem.** With 247 total records
+>    the split is the binding constraint on every conclusion. Cross-validation
+>    over multiple splits would separate model variance from split variance —
+>    currently confounded.
+> 3. **Reconsider whether this target model is worth defending.** R² is negative
+>    for every model in every phase. Robustness of a model that underperforms the
+>    mean predictor is of limited scientific interest, and a reviewer will say so.
+>
+> Recommended next step: **multi-split cross-validation** before Phase 3. Phase 2C
+> showed seed variance dominates; split variance is likely larger still and remains
+> entirely unmeasured. Building multi-step attacks on top of an effect this small
+> would compound an unresolved uncertainty rather than resolve it.

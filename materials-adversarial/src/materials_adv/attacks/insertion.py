@@ -4,8 +4,11 @@ import numpy as np
 
 from materials_adv.attacks.base import BaseAttack
 from materials_adv.attacks.generator import AttackOutcome
+from materials_adv.attacks.registry import register_attack
 from materials_adv.attacks.token_space import TokenRole, classify_token, editable_positions
 
+
+@register_attack("insertion")
 class InsertionAttack(BaseAttack):
     def __init__(
         self,

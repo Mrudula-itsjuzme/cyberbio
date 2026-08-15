@@ -10,7 +10,7 @@ from materials_adv.attacks.deletion import DeletionAttack
 from materials_adv.attacks.generator import AttackGenerator, ConstantPredictor
 from materials_adv.attacks.insertion import InsertionAttack
 from materials_adv.attacks.registry import available_attacks, build_attack
-from materials_adv.attacks.reordering import ReorderingAttack
+from materials_adv.attacks.rearrangement import RearrangementAttack
 from materials_adv.attacks.substitution import SubstitutionAttack
 from materials_adv.attacks.token_space import (
     TokenRole,
@@ -38,17 +38,56 @@ def rng(seed: int = 0) -> np.random.Generator:
     [
         ("[*]", TokenRole.ATTACHMENT),
         ("*", TokenRole.ATTACHMENT),
-        ("C", TokenRole.ATOM),
+        # Phase 1D split the former single ATOM role into aliphatic vs aromatic,
+        # because role-preserving substitution was swapping across that boundary
+        # and producing invalid strings.
+        ("C", TokenRole.ALIPHATIC_ATOM),
+        ("N", TokenRole.ALIPHATIC_ATOM),
+        ("Cl", TokenRole.ALIPHATIC_ATOM),
+        ("Br", TokenRole.ALIPHATIC_ATOM),
+        ("c", TokenRole.AROMATIC_ATOM),
+        ("n", TokenRole.AROMATIC_ATOM),
         ("[nH]", TokenRole.BRACKET_ATOM),
         ("(", TokenRole.BRANCH_OPEN),
         (")", TokenRole.BRANCH_CLOSE),
         ("1", TokenRole.RING_CLOSURE),
         ("%10", TokenRole.RING_CLOSURE),
         ("=", TokenRole.BOND),
+        ("/", TokenRole.BOND),
+        # Phase 1D separated '.' from BOND: substitution was admitting '=' -> '.',
+        # which disconnects the molecule rather than perturbing it.
+        (".", TokenRole.DISCONNECT),
     ],
 )
 def test_classify_token(token: str, expected: TokenRole) -> None:
     assert classify_token(token) is expected
+
+
+def test_aliphatic_and_aromatic_are_distinct_roles() -> None:
+    """Regression for the Phase 1D taxonomy fix.
+
+    'C' and 'c' are different chemistry. Collapsing them into one role let
+    role-preserving substitution swap aliphatic for aromatic carbon.
+    """
+    assert classify_token("C") is not classify_token("c")
+
+
+def test_disconnect_is_not_a_bond() -> None:
+    """Regression: '.' disconnects the molecule; it must not be substitutable as a bond."""
+    assert classify_token(".") is not classify_token("=")
+    assert classify_token(".") is TokenRole.DISCONNECT
+
+
+def test_disconnect_is_never_editable() -> None:
+    """A '.' token is protected unconditionally, independent of the protection flags."""
+    tokens = ["C", ".", "C"]
+    editable = editable_positions(
+        tokens,
+        protect_attachments=False,
+        protect_ring_closures=False,
+        protect_branches=False,
+    )
+    assert 1 not in editable
 
 
 def test_attachment_detection() -> None:
@@ -82,11 +121,16 @@ def test_count_changes_is_token_level() -> None:
 
 # --- Shared attack contracts -------------------------------------------------
 
+# InsertionAttack now takes allowed_tokens as a required argument (it moved from
+# "sample the sequence's own tokens" to an explicit injected pool, matching
+# substitution). The pool below is synthetic and used only to exercise mechanics.
+POOL = ["C", "N", "O", "S", "c", "="]
+
 ATTACKS = [
     lambda r: DeletionAttack(r),
-    lambda r: InsertionAttack(r),
-    lambda r: ReorderingAttack(r),
-    lambda r: SubstitutionAttack(r, allowed_tokens=["C", "N", "O", "S"]),
+    lambda r: InsertionAttack(r, allowed_tokens=POOL),
+    lambda r: RearrangementAttack(r, window_size=3),
+    lambda r: SubstitutionAttack(r, allowed_tokens=POOL),
 ]
 
 
@@ -132,19 +176,23 @@ def test_deletion_shortens_sequence() -> None:
 
 
 def test_insertion_lengthens_sequence() -> None:
-    for o in InsertionAttack(rng(), n_edits=1).generate(list(TOKENS), n_variants=3):
+    for o in InsertionAttack(rng(), allowed_tokens=POOL, n_edits=1).generate(
+        list(TOKENS), n_variants=3
+    ):
         assert len(o.adversarial_tokens) == len(TOKENS) + 1
 
 
-def test_reordering_preserves_token_multiset() -> None:
+def test_rearrangement_preserves_token_multiset() -> None:
     """A local rearrangement must not create or destroy tokens."""
-    for o in ReorderingAttack(rng(), window=3).generate(list(TOKENS), n_variants=5):
+    for o in RearrangementAttack(rng(), window_size=3).generate(list(TOKENS), n_variants=5):
         assert sorted(o.adversarial_tokens) == sorted(o.original_tokens)
 
 
-def test_reordering_is_local_within_window() -> None:
-    window = 2
-    for o in ReorderingAttack(rng(5), window=window).generate(list(TOKENS), n_variants=5):
+def test_rearrangement_is_local_within_window() -> None:
+    window = 3
+    for o in RearrangementAttack(rng(5), window_size=window).generate(
+        list(TOKENS), n_variants=5
+    ):
         moved = [
             i
             for i, (a, b) in enumerate(zip(o.original_tokens, o.adversarial_tokens))
@@ -155,14 +203,19 @@ def test_reordering_is_local_within_window() -> None:
 
 
 def test_substitution_preserves_length() -> None:
-    attack = SubstitutionAttack(rng(), allowed_tokens=["C", "N", "O", "S"])
+    attack = SubstitutionAttack(rng(), allowed_tokens=POOL)
     for o in attack.generate(list(TOKENS), n_variants=3):
         assert len(o.adversarial_tokens) == len(TOKENS)
 
 
-def test_substitution_role_preserving_swaps_atom_for_atom() -> None:
+def test_substitution_role_preserving_swaps_within_role() -> None:
+    """Role preservation now respects the finer Phase 1D taxonomy.
+
+    A pool spanning aliphatic, aromatic, bond and branch roles must never yield
+    a cross-role swap -- that was the Phase 1D bug ('=' -> '.').
+    """
     attack = SubstitutionAttack(
-        rng(1), allowed_tokens=["C", "N", "O", "=", "("], role_preserving=True
+        rng(1), allowed_tokens=["C", "N", "O", "c", "n", "=", "(", "."], role_preserving=True
     )
     for o in attack.generate(list(TOKENS), n_variants=10):
         for pos in o.edit_positions:
@@ -171,28 +224,68 @@ def test_substitution_role_preserving_swaps_atom_for_atom() -> None:
             )
 
 
-def test_substitution_without_pool_raises_pending() -> None:
-    """The replacement pool must be data-derived, never hardcoded."""
+def test_substitution_never_introduces_disconnect() -> None:
+    """Regression for the Phase 1D smoke-test finding: '=' must not become '.'."""
+    attack = SubstitutionAttack(
+        rng(2), allowed_tokens=["C", "N", "=", "."], role_preserving=True
+    )
+    for o in attack.generate(list(TOKENS), n_variants=20):
+        n_before = sum(1 for t in o.original_tokens if t == ".")
+        n_after = sum(1 for t in o.adversarial_tokens if t == ".")
+        assert n_after == n_before
+
+
+def test_substitution_requires_explicit_pool() -> None:
+    """The replacement pool is injected, never hardcoded.
+
+    Substitution retains its explicit PendingImplementation guard, so omitting
+    the pool fails with an actionable message. Insertion took the other route
+    (a required positional argument) -- both refuse to invent a chemical prior,
+    noted as an inconsistency in Problems #13.
+    """
     with pytest.raises(PendingImplementation) as exc:
         SubstitutionAttack(rng())
     assert exc.value.blocked_on == "dataset"
 
 
-def test_reordering_rejects_degenerate_window() -> None:
-    with pytest.raises(ValueError, match="window must be >= 2"):
-        ReorderingAttack(rng(), window=1)
+def test_rearrangement_degenerate_window_yields_no_candidates() -> None:
+    """window_size=1 cannot contain a swap.
+
+    The scaffold version raised ValueError here. The Phase 1E rewrite does not
+    validate the argument; it degrades to producing zero candidates instead.
+    That is safe (no silent no-op candidates enter the record), so this test
+    pins the ACTUAL behaviour rather than asserting a guard that no longer
+    exists. Adding explicit validation is noted in Problems #13.
+    """
+    assert RearrangementAttack(rng(), window_size=1).generate(list(TOKENS), n_variants=5) == []
 
 
 # --- Registry ----------------------------------------------------------------
 
 
 def test_all_four_attacks_registered() -> None:
+    """Regression: the Phase 1D/1E rewrites dropped @register_attack from three
+    of the four attacks, leaving only 'substitution' registered and
+    build_attack('deletion') raising KeyError. Experiments construct attacks
+    directly so results were unaffected, but the pluggability contract was
+    broken. Decorators restored in Phase 2C.
+    """
     assert set(available_attacks()) >= {
         "substitution",
         "insertion",
         "deletion",
-        "reordering",
+        "rearrangement",
     }
+
+
+def test_every_registered_attack_is_buildable() -> None:
+    required_kwargs = {
+        "insertion": {"allowed_tokens": POOL},
+        "substitution": {"allowed_tokens": POOL},
+    }
+    for name in ("substitution", "insertion", "deletion", "rearrangement"):
+        attack = build_attack(name, rng(), **required_kwargs.get(name, {}))
+        assert attack.metadata()["attack_type"] == name
 
 
 def test_build_attack_by_name() -> None:
@@ -216,7 +309,7 @@ def test_noop_detection() -> None:
 
 def test_generator_end_to_end_with_constant_predictor() -> None:
     gen = AttackGenerator(
-        attacks=[DeletionAttack(rng()), InsertionAttack(rng())],
+        attacks=[DeletionAttack(rng()), InsertionAttack(rng(), allowed_tokens=POOL)],
         predictor=ConstantPredictor(300.0),
         seed=1,
     )

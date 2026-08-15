@@ -62,8 +62,14 @@ class PolymerDataset(Dataset):
             "target": torch.tensor(self.scaler.transform(row["target"]), dtype=torch.float32)
         }
 
-def train(config_path: str = "configs/model.yaml", dataset_config_path: str = "configs/dataset.yaml", augmented_train_path: str = None, out_dir: str = "results/models/transformer_regressor", scaler_path: str = None, write_back_config: bool = True):
+def train(config_path: str = "configs/model.yaml", dataset_config_path: str = "configs/dataset.yaml", augmented_train_path: str = None, out_dir: str = "results/models/transformer_regressor", scaler_path: str = None, write_back_config: bool = True, seed: int = None):
     """Train the Tg regressor.
+
+    seed:
+        Overrides configs/model.yaml:training.seed. Phase 2C runs 5 independent
+        seeds to estimate run-to-run variance, which every single-seed result up
+        to Phase 2B lacked. Controls weight init, DataLoader shuffling and
+        dropout masks.
 
     scaler_path:
         If given, LOAD this TargetScaler instead of fitting one on the training
@@ -80,11 +86,13 @@ def train(config_path: str = "configs/model.yaml", dataset_config_path: str = "c
     cfg = load_config(config_path)
     data_cfg = load_config(dataset_config_path)
     
-    # Seeding
-    seed = cfg["training"]["seed"]
+    # Seeding. Covers weight init, DataLoader(shuffle=True) batch order and
+    # dropout masks -- all three draw from torch's global RNG.
+    seed = seed if seed is not None else cfg["training"]["seed"]
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
+    logger.info(f"Training seed: {seed}")
     
     proc_dir = Path(data_cfg["processed_dir"])
     df = pd.read_csv(proc_dir / "processed.csv")

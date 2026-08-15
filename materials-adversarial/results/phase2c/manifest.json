@@ -1,0 +1,17 @@
+{
+  "seeds": [
+    20260815,
+    20260816,
+    20260817,
+    20260818,
+    20260819
+  ],
+  "conditions": [
+    "baseline",
+    "defended"
+  ],
+  "scaler": "results/models/transformer_regressor/scaler.json",
+  "adv_train": "data/processed/train_aug_phase2b.csv",
+  "attack_seed_base": 20270000,
+  "note": "test set never loaded; model selection on validation MAE only"
+}

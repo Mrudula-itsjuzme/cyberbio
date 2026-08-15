@@ -42,9 +42,16 @@ def test_empty_directory_exits_nonzero_with_guidance(tmp_path) -> None:
     assert "No data will be fabricated" in result.stderr
 
 
-def test_real_data_dir_is_currently_empty() -> None:
-    """Documents the live blocker: if this fails, the data has arrived."""
-    assert audit.discover_files(ROOT / "data" / "raw") == []
+def test_real_data_is_present() -> None:
+    """Was 'data/raw is empty', documenting the Phase 1 blocker.
+
+    The OpenPoly file arrived on 2026-08-15 and the blocker is resolved, so the
+    assertion inverts: the audited dataset must still be there. If this fails,
+    the raw data has gone missing and every downstream result is unreproducible.
+    """
+    files = audit.discover_files(ROOT / "data" / "raw")
+    assert files, "data/raw is empty -- the OpenPoly file is missing"
+    assert any("final_polymer_properties" in f.name for f in files)
 
 
 # --- Representation-column discovery -----------------------------------------
