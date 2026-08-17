@@ -11,6 +11,8 @@ from materials_adv.attacks.substitution import SubstitutionAttack
 from materials_adv.attacks.insertion import InsertionAttack
 from materials_adv.attacks.deletion import DeletionAttack
 from materials_adv.attacks.rearrangement import RearrangementAttack
+from materials_adv.attacks.randomization import SmilesRandomizationAttack
+from materials_adv.attacks.probabilistic import ProbabilisticMCMCAttack
 from materials_adv.data.scaler import TargetScaler
 from materials_adv.models.regression import TransformerRegressor
 from materials_adv.models.transformer import TransformerRegressorModel
@@ -130,6 +132,24 @@ def main():
         protect_branches=attack_cfg["protection"]["protect_branches"]
     )
     
+    attack_rand = SmilesRandomizationAttack(
+        rng=rng,
+        protect_attachments=attack_cfg["protection"]["protect_attachments"],
+        protect_ring_closures=attack_cfg["protection"]["protect_ring_closures"],
+        protect_branches=attack_cfg["protection"]["protect_branches"]
+    )
+    
+    attack_mcmc = ProbabilisticMCMCAttack(
+        rng=rng,
+        predictor=predictor,
+        allowed_tokens=vocab,
+        steps=50,
+        temperature=10.0,
+        protect_attachments=attack_cfg["protection"]["protect_attachments"],
+        protect_ring_closures=attack_cfg["protection"]["protect_ring_closures"],
+        protect_branches=attack_cfg["protection"]["protect_branches"]
+    )
+    
     # Configure Generator
     # Set min_abs_drift dynamically from baseline
     # NOTE: configs/model.yaml:baseline_metrics was overwritten by the Phase 2A run
@@ -149,7 +169,7 @@ def main():
     logger.info(f"Using {baseline_mae:.2f} K as min_abs_drift threshold (informative).")
     
     generator = AttackGenerator(
-        attacks=[attack_sub, attack_ins, attack_del, attack_arr],
+        attacks=[attack_sub, attack_ins, attack_del, attack_arr, attack_rand, attack_mcmc],
         predictor=predictor,
         seed=attack_cfg["seed"],
         check_plausibility=attack_cfg["validation"]["check_plausibility"]

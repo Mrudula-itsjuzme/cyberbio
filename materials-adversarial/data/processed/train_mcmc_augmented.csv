@@ -1,0 +1,403 @@
+Name,PSMILES,Bandgap (eV),CO2 Permeability (Barrer),Compressive Strength (MPa),Crystallization Temperature (K),Elongation at Break (%),Flexural Strength (MPa),Tg (K),H2 Permeability (Barrer),Hardness (MPa),Impact Strength (kJ/m2),Ion Exchange Capacity (meq/g),Limiting Oxygen Index (%),Lower Critical Solution Temperature (K),Tm (K),Methanol Permeability (cm2/s),O2 Permeability (Barrer),Refractive Index,Swelling Degree (%),Thermal Conductivity (W/m K),Tensile Strength (MPa),Td (K),Upper Critical Solution Temperature (K),Water Contact Angle (deg),Water Uptake (%),Young's Modulus (MPa),Dielectric Constant Electronic,Dielectric Constant Ionic,Dielectric Constant Total,PSMILES_2,PSMILES_4,canonical_smiles,dataset
+PES,[*]OCCOC(CCC([*])=O)=O,3.2925,7.316666667,193.7,481.47,40.86571429,107.8111111,485.5032864,37.00666667,55.94666667,3.4,1.092142857,,348.15,382.4709639,,7.316666667,1.644113636,4.82,0.993714286,24.04446154,684.5137255,,68.20845679,39.19083333,1261.16,,,,*OCCOC(=O)CCC(=O)OCCOC(=O)CCC(*)=O,*OCCOC(=O)CCC(=O)OCCOC(=O)CCC(=O)OCCOC(=O)CCC(=O)OCCOC(=O)CCC(*)=O,*OCCOC(=O)CCC(*)=O,clean
+PBT,[*]OCCCCOC(C1=CC=C(C([*])=O)C=C1)=O,1.841666667,,253.3333333,466.7602326,58.98537037,73.935,320.1451539,450.0,136.6666667,22.6225,,22.73095238,305.15,496.7439572,,,1.503,,0.27,53.6904878,624.4442857,,56.16470588,0.334,1930.170833,,,,*OCCCCOC(=O)c1ccc(C(=O)OCCCCOC(=O)c2ccc(C(*)=O)cc2)cc1,*OCCCCOC(=O)c1ccc(C(=O)OCCCCOC(=O)c2ccc(C(=O)OCCCCOC(=O)c3ccc(C(=O)OCCCCOC(=O)c4ccc(C(*)=O)cc4)cc3)cc2)cc1,*OCCCCOC(=O)c1ccc(C(*)=O)cc1,clean
+PBS,[*]OCCCCOC(CCC([*])=O)=O,0.895140244,,9.3875,385.6441176,190.5156716,34.33791667,243.1226797,,115.75,9.351428571,,25.03148148,473.15,386.8413011,,,1.642071429,217.5,0.6275,34.79211268,634.0678571,,76.67777778,5.351888889,547.6591837,,,,*OCCCCOC(=O)CCC(=O)OCCCCOC(=O)CCC(*)=O,*OCCCCOC(=O)CCC(=O)OCCCCOC(=O)CCC(=O)OCCCCOC(=O)CCC(=O)OCCCCOC(=O)CCC(*)=O,*OCCCCOC(=O)CCC(*)=O,clean
+PSS,[*]CC(C1=CC=C(S(O)(=O)=O)C=C1)[*],2.014736842,1109.0,0.32,391.15,44.48,,373.4585106,80.0,293.3333333,,2.56,,328.15,514.4277778,,1109.0,1.487329412,166.75,0.366305556,25.51238095,607.275,308.15,47.61257353,80.0,614.1428846,,,,*CC(CC(*)c1ccc(S(=O)(=O)O)cc1)c1ccc(S(=O)(=O)O)cc1,*CC(CC(CC(CC(*)c1ccc(S(=O)(=O)O)cc1)c1ccc(S(=O)(=O)O)cc1)c1ccc(S(=O)(=O)O)cc1)c1ccc(S(=O)(=O)O)cc1,*CC(*)c1ccc(S(=O)(=O)O)cc1,clean
+starch,OC1C([*])C(CO)OC(O[*])C1O,,,7.226,,74.46702703,45.695,332.2517188,,838.3333333,12.29666667,,30.93333333,303.0875,442.08,,,1.492636364,61.364,,10.31629787,572.8324138,,63.8527907,34.90230769,371.8271429,,,,*OC1OC(CO)C(OC2OC(CO)C(*)C(O)C2O)C(O)C1O,*OC1OC(CO)C(OC2OC(CO)C(OC3OC(CO)C(OC4OC(CO)C(*)C(O)C4O)C(O)C3O)C(O)C2O)C(O)C1O,*OC1OC(CO)C(*)C(O)C1O,clean
+PTMC,[*]OCCCOC([*])=O,,,48.41333333,,542.126,,256.1657627,,,,,,308.8166667,310.476087,,,,,,9.62,544.3227273,,75.35,12.765,5.83875,,,,*OCCCOC(=O)OCCCOC(*)=O,*OCCCOC(=O)OCCCOC(=O)OCCCOC(=O)OCCCOC(*)=O,*OCCCOC(*)=O,clean
+PA12,[*]NCCCCCCCCCCCC([*])=O,,,773.0,422.8154545,206.6090909,58.0,319.204,,,30.575,,,,452.7014925,,,,,0.472666667,47.172,634.8485714,,77.68,1.0,1130.415385,,,,*NCCCCCCCCCCCC(=O)NCCCCCCCCCCCC(*)=O,*NCCCCCCCCCCCC(=O)NCCCCCCCCCCCC(=O)NCCCCCCCCCCCC(=O)NCCCCCCCCCCCC(*)=O,*NCCCCCCCCCCCC(*)=O,clean
+PA11,[*]NCCCCCCCCCCC([*])=O,,,,443.65,215.9,,319.5172727,,,31.53166667,,,,457.7833333,,,,,,38.61111111,661.7055556,,91.68,0.283,982.9166667,,,,*NCCCCCCCCCCC(=O)NCCCCCCCCCCC(*)=O,*NCCCCCCCCCCC(=O)NCCCCCCCCCCC(=O)NCCCCCCCCCCC(=O)NCCCCCCCCCCC(*)=O,*NCCCCCCCCCCC(*)=O,clean
+PPG,[*]OCC(C)O[*],,140.0,,388.65,265.4,,218.3781579,,,,,,304.5428571,364.7166667,,140.0,1.447,21.33333333,,8.32,588.15,308.15,68.48380952,3.05,312.85,,,,*OCC(C)OOCC(C)O*,*OCC(C)OOCC(C)OOCC(C)OOCC(C)O*,*OCC(C)O*,clean
+PBO,[*]C2=NC1=CC(N=C(C4=CC=C([*])C=C4)O3)=C3C=C1O2,2.484,261.7666667,313.75,375.35,4.09,247.0,410.1075,,,54.99333333,,68.0,,388.15,,261.7666667,2.387075,,0.260583333,1008.481818,901.6465517,,59.47722222,0.78,114482.931,,,,*c1ccc(-c2nc3cc4nc(-c5ccc(-c6nc7cc8nc(*)oc8cc7o6)cc5)oc4cc3o2)cc1,*c1ccc(-c2nc3cc4nc(-c5ccc(-c6nc7cc8nc(-c9ccc(-c%10nc%11cc%12nc(-c%13ccc(-c%14nc%15cc%16nc(*)oc%16cc%15o%14)cc%13)oc%12cc%11o%10)cc9)oc8cc7o6)cc5)oc4cc3o2)cc1,*c1ccc(-c2nc3cc4nc(*)oc4cc3o2)cc1,clean
+chitin,[H][C@@]1(C[*])C([H])(CO)O[C@](CO[*])([H])[C@@]([H])(NC(C)=O)[C@@](O)1[H],,,1.03226,506.15,17.05,,482.1916667,,332.6523333,,,,303.15,439.4,,,1.5285,,0.5125,81.58333333,622.8766667,,58.7375,71.0,5488.61875,,,,*CC1C(CO)OC(COCC2C(CO)OC(CO*)C(NC(C)=O)C2O)C(NC(C)=O)C1O,*CC1C(CO)OC(COCC2C(CO)OC(COCC3C(CO)OC(COCC4C(CO)OC(CO*)C(NC(C)=O)C4O)C(NC(C)=O)C3O)C(NC(C)=O)C2O)C(NC(C)=O)C1O,*C[C@@H]1C(CO)O[C@@H](CO*)[C@@H](NC(C)=O)[C@H]1O,clean
+MEH-PPV,[*]C1=C(OC)C=C(/C=C/[*])C(OCC(CC)CCCC)=C1,2.144081633,,,458.15,,,343.0670213,,370.0,,,,,411.65,,,1.6485,,,,614.5875,,89.775,,9300.0,,,,*C=Cc1cc(OC)c(C=Cc2cc(OC)c(*)cc2OCC(CC)CCCC)cc1OCC(CC)CCCC,*C=Cc1cc(OC)c(C=Cc2cc(OC)c(C=Cc3cc(OC)c(C=Cc4cc(OC)c(*)cc4OCC(CC)CCCC)cc3OCC(CC)CCCC)cc2OCC(CC)CCCC)cc1OCC(CC)CCCC,*/C=C/c1cc(OC)c(*)cc1OCC(CC)CCCC,clean
+PPV,[*]/C=C/C1=CC=C([*])C=C1,2.381037736,,,397.75,,,390.2394737,,82.68333333,,0.91,,,454.15,,,1.875,,,39.9,611.15,,131.0,19.1,10876.77778,,,,*C=Cc1ccc(C=Cc2ccc(*)cc2)cc1,*C=Cc1ccc(C=Cc2ccc(C=Cc3ccc(C=Cc4ccc(*)cc4)cc3)cc2)cc1,*/C=C/c1ccc(*)cc1,clean
+PFO,[*]C1=CC(CCCCCCCC)=C(C2=C(CCCCCCCC)C=C([*])C=C2)C=C1,2.932222222,,,408.8642857,,,339.95,,,,,,,428.4833333,,,1.695,,3.15,42.0,673.8166667,308.65,124.75,,12947.33333,,,,*c1ccc(-c2ccc(-c3ccc(-c4ccc(*)cc4CCCCCCCC)c(CCCCCCCC)c3)cc2CCCCCCCC)c(CCCCCCCC)c1,*c1ccc(-c2ccc(-c3ccc(-c4ccc(-c5ccc(-c6ccc(-c7ccc(-c8ccc(*)cc8CCCCCCCC)c(CCCCCCCC)c7)cc6CCCCCCCC)c(CCCCCCCC)c5)cc4CCCCCCCC)c(CCCCCCCC)c3)cc2CCCCCCCC)c(CCCCCCCC)c1,*c1ccc(-c2ccc(*)cc2CCCCCCCC)c(CCCCCCCC)c1,clean
+PCN,C[Si]([*])(CCCC#N)O[*],2.686597222,,0.00113,617.15,7.215,,527.35,,168.0,,,,,598.15,,,1.83,,0.2525,35.458,602.15,,65.95555556,,9427.5,,,,*O[Si](C)(CCCC#N)O[Si](*)(C)CCCC#N,*O[Si](C)(CCCC#N)O[Si](C)(CCCC#N)O[Si](C)(CCCC#N)O[Si](*)(C)CCCC#N,*O[Si](*)(C)CCCC#N,clean
+Poly(phenylacetylene),*/C=C(\*)c1ccc(OCC(O)CCCC)cc1,,,,,,,324.0,,,,,,,,,,,,,,,,,,,,,,*C=C(C=C(*)c1ccc(OCC(O)CCCC)cc1)c1ccc(OCC(O)CCCC)cc1,*C=C(C=C(C=C(C=C(*)c1ccc(OCC(O)CCCC)cc1)c1ccc(OCC(O)CCCC)cc1)c1ccc(OCC(O)CCCC)cc1)c1ccc(OCC(O)CCCC)cc1,*/C=C(\*)c1ccc(OCC(O)CCCC)cc1,clean
+Poly-PhNDI,*=CC1CC(C=*)C2C(=O)N(c3ccccc3)C(=O)C12,,,,,,,495.0,,,,,,,,,,,,,,,,,,,,,,*CC1CC(CCC2CC(C*)C3C(=O)N(c4ccccc4)C(=O)C23)C2C(=O)N(c3ccccc3)C(=O)C12,*CC1CC(CCC2CC(CCC3CC(CCC4CC(C*)C5C(=O)N(c6ccccc6)C(=O)C45)C4C(=O)N(c5ccccc5)C(=O)C34)C3C(=O)N(c4ccccc4)C(=O)C23)C2C(=O)N(c3ccccc3)C(=O)C12,*=CC1CC(C=*)C2C(=O)N(c3ccccc3)C(=O)C12,clean
+"Poly[biphenyl-4,4 \'91 -diylcarbonyl(6-methoxy-1,3-phenylene)[bis(trifluoromethyl)methylene](4-methoxy-1,3-phenylene)carbonyl ] ( P3 )",*C(=O)c1cc(C(c2ccc(OC)c(C(=O)c3ccc(-c4ccc(*)cc4)cc3)c2)(C(F)(F)F)C(F)(F)F)ccc1OC,,,,,,,463.0,,,,,,,,,,,,,,,,,,,,,,*C(=O)c1cc(C(c2ccc(OC)c(C(=O)c3ccc(-c4ccc(C(=O)c5cc(C(c6ccc(OC)c(C(=O)c7ccc(-c8ccc(*)cc8)cc7)c6)(C(F)(F)F)C(F)(F)F)ccc5OC)cc4)cc3)c2)(C(F)(F)F)C(F)(F)F)ccc1OC,*C(=O)c1cc(C(c2ccc(OC)c(C(=O)c3ccc(-c4ccc(C(=O)c5cc(C(c6ccc(OC)c(C(=O)c7ccc(-c8ccc(C(=O)c9cc(C(c%10ccc(OC)c(C(=O)c%11ccc(-c%12ccc(C(=O)c%13cc(C(c%14ccc(OC)c(C(=O)c%15ccc(-c%16ccc(*)cc%16)cc%15)c%14)(C(F)(F)F)C(F)(F)F)ccc%13OC)cc%12)cc%11)c%10)(C(F)(F)F)C(F)(F)F)ccc9OC)cc8)cc7)c6)(C(F)(F)F)C(F)(F)F)ccc5OC)cc4)cc3)c2)(C(F)(F)F)C(F)(F)F)ccc1OC,*C(=O)c1cc(C(c2ccc(OC)c(C(=O)c3ccc(-c4ccc(*)cc4)cc3)c2)(C(F)(F)F)C(F)(F)F)ccc1OC,clean
+Polychlorotrifluoroethylene_(PCTFE),*C(F)(F)C(*)(F)Cl,,,,,,,325.0,,,,,,,,,,,,,,,,,,,,,,*C(F)(F)C(F)(Cl)C(F)(F)C(*)(F)Cl,*C(F)(F)C(F)(Cl)C(F)(F)C(F)(Cl)C(F)(F)C(F)(Cl)C(F)(F)C(*)(F)Cl,*C(F)(F)C(*)(F)Cl,clean
+fluorinated ethylene-propylene copolymer,*C(F)(F)C(F)(F)C(F)(F)C(*)(F)C(F)(F)F,,,,,,,353.15,,,,,,,,,,,,,,,,,,,,,,*C(F)(F)C(F)(F)C(F)(F)C(F)(C(F)(F)F)C(F)(F)C(F)(F)C(F)(F)C(*)(F)C(F)(F)F,*C(F)(F)C(F)(F)C(F)(F)C(F)(C(F)(F)F)C(F)(F)C(F)(F)C(F)(F)C(F)(C(F)(F)F)C(F)(F)C(F)(F)C(F)(F)C(F)(C(F)(F)F)C(F)(F)C(F)(F)C(F)(F)C(*)(F)C(F)(F)F,*C(F)(F)C(F)(F)C(F)(F)C(*)(F)C(F)(F)F,clean
+perfluoroalkoxy resin,*C(F)(F)C(F)(F)C(F)(OC(F)(F)C(F)(F)C(F)(F)F)C(*)(F)F,,,,,,,281.65,,,,,,,,,,,,,,,,,,,,,,*C(F)(F)C(F)(F)C(F)(OC(F)(F)C(F)(F)C(F)(F)F)C(F)(F)C(F)(F)C(F)(F)C(F)(OC(F)(F)C(F)(F)C(F)(F)F)C(*)(F)F,*C(F)(F)C(F)(F)C(F)(OC(F)(F)C(F)(F)C(F)(F)F)C(F)(F)C(F)(F)C(F)(F)C(F)(OC(F)(F)C(F)(F)C(F)(F)F)C(F)(F)C(F)(F)C(F)(F)C(F)(OC(F)(F)C(F)(F)C(F)(F)F)C(F)(F)C(F)(F)C(F)(F)C(F)(OC(F)(F)C(F)(F)C(F)(F)F)C(*)(F)F,*C(F)(F)C(F)(F)C(F)(OC(F)(F)C(F)(F)C(F)(F)F)C(*)(F)F,clean
+perfluorinated ionomer,*C(F)(F)C(F)(F)C(F)(OC(F)(F)C(F)(OC(F)(F)C(F)(F)S(=O)(=O)[O-])C(F)(F)F)C(*)(F)F,,,,,,,410.65,,,,,,,,,,,,,,,,,,,,,,*C(F)(F)C(F)(F)C(F)(OC(F)(F)C(F)(OC(F)(F)C(F)(F)S(=O)(=O)[O-])C(F)(F)F)C(F)(F)C(F)(F)C(F)(F)C(F)(OC(F)(F)C(F)(OC(F)(F)C(F)(F)S(=O)(=O)[O-])C(F)(F)F)C(*)(F)F,*C(F)(F)C(F)(F)C(F)(OC(F)(F)C(F)(OC(F)(F)C(F)(F)S(=O)(=O)[O-])C(F)(F)F)C(F)(F)C(F)(F)C(F)(F)C(F)(OC(F)(F)C(F)(OC(F)(F)C(F)(F)S(=O)(=O)[O-])C(F)(F)F)C(F)(F)C(F)(F)C(F)(F)C(F)(OC(F)(F)C(F)(OC(F)(F)C(F)(F)S(=O)(=O)[O-])C(F)(F)F)C(F)(F)C(F)(F)C(F)(F)C(F)(OC(F)(F)C(F)(OC(F)(F)C(F)(F)S(=O)(=O)[O-])C(F)(F)F)C(*)(F)F,*C(F)(F)C(F)(F)C(F)(OC(F)(F)C(F)(OC(F)(F)C(F)(F)S(=O)(=O)[O-])C(F)(F)F)C(*)(F)F,clean
+poly(\uc0\u945 -fluoroacrylate)s,*C(F)C(*)(F)C(=O)OC,,,,,,,413.0,,,,,,,,,,,,,,,,,,,,,,*C(F)C(F)(C(=O)OC)C(F)C(*)(F)C(=O)OC,*C(F)C(F)(C(=O)OC)C(F)C(F)(C(=O)OC)C(F)C(F)(C(=O)OC)C(F)C(*)(F)C(=O)OC,*C(F)C(*)(F)C(=O)OC,clean
+"poly(hexafluoroisopropyl \uc0\u945 ,\u946 -difluoroacrylate )",*C(F)C(*)(F)C(=O)OC(C(F)(F)F)C(F)(F)F,,,,,,,371.0,,,,,,,,,,,,,,,,,,,,,,*C(F)C(F)(C(=O)OC(C(F)(F)F)C(F)(F)F)C(F)C(*)(F)C(=O)OC(C(F)(F)F)C(F)(F)F,*C(F)C(F)(C(=O)OC(C(F)(F)F)C(F)(F)F)C(F)C(F)(C(=O)OC(C(F)(F)F)C(F)(F)F)C(F)C(F)(C(=O)OC(C(F)(F)F)C(F)(F)F)C(F)C(*)(F)C(=O)OC(C(F)(F)F)C(F)(F)F,*C(F)C(*)(F)C(=O)OC(C(F)(F)F)C(F)(F)F,clean
+polychloroprene,*C/C=C(\Cl)C*,,,,,,,226.6,,,,,,,,,,,,,,,,,,,,,,*CC=C(Cl)CCC=C(Cl)C*,*CC=C(Cl)CCC=C(Cl)CCC=C(Cl)CCC=C(Cl)C*,*C/C=C(\Cl)C*,clean
+"Polybutadiene,_cis",*C/C=C\C*,,,,,,,279.0,,,,,,,,,,,,,,,,,,,,,,*CC=CCCC=CC*,*CC=CCCC=CCCC=CCCC=CC*,*C/C=C\C*,clean
+polynorbornene,*C1C2CCC(C2)C1*,,,,,,,313.15,,,,,,,,,,,,,,,,,,,,,,*C1C2CCC(C2)C1C1C2CCC(C2)C1*,*C1C2CCC(C2)C1C1C2CCC(C2)C1C1C2CCC(C2)C1C1C2CCC(C2)C1*,*C1C2CCC(C2)C1*,clean
+Polyacenaphthylene,*C1c2cccc3cccc(c23)C1*,,,,,,,487.0,,,,,,,,,,,,,,,,,,,,,,*C1c2cccc3cccc(c23)C1C1c2cccc3cccc(c23)C1*,*C1c2cccc3cccc(c23)C1C1c2cccc3cccc(c23)C1C1c2cccc3cccc(c23)C1C1c2cccc3cccc(c23)C1*,*C1c2cccc3cccc(c23)C1*,clean
+cyanoacrylate,*CC(*)(C#N)C(=O)OCC,,,,,,,358.15,,,,,,,,,,,,,,,,,,,,,,*CC(C#N)(CC(*)(C#N)C(=O)OCC)C(=O)OCC,*CC(C#N)(CC(C#N)(CC(C#N)(CC(*)(C#N)C(=O)OCC)C(=O)OCC)C(=O)OCC)C(=O)OCC,*CC(*)(C#N)C(=O)OCC,clean
+polymethacrylonitrile,*CC(*)(C)C#N,,,,,,,393.075,,,,,,,,,,,,,,,,,,,,,,*CC(C)(C#N)CC(*)(C)C#N,*CC(C)(C#N)CC(C)(C#N)CC(C)(C#N)CC(*)(C)C#N,*CC(*)(C)C#N,clean
+poly(N-isopropylacrylamide),*CC(*)(C)C(=O)NC(C)C,,,,,,,408.0,,,,,,,,,,,,,,,,,,,,,,*CC(C)(CC(*)(C)C(=O)NC(C)C)C(=O)NC(C)C,*CC(C)(CC(C)(CC(C)(CC(*)(C)C(=O)NC(C)C)C(=O)NC(C)C)C(=O)NC(C)C)C(=O)NC(C)C,*CC(*)(C)C(=O)NC(C)C,clean
+Poly(tert-butyl methacrylate),*CC(*)(C)C(=O)OC(C)(C)C,,,,,,,391.0,,,,,,,,,,,,,,,,,,,,,,*CC(C)(CC(*)(C)C(=O)OC(C)(C)C)C(=O)OC(C)(C)C,*CC(C)(CC(C)(CC(C)(CC(*)(C)C(=O)OC(C)(C)C)C(=O)OC(C)(C)C)C(=O)OC(C)(C)C)C(=O)OC(C)(C)C,*CC(*)(C)C(=O)OC(C)(C)C,clean
+Poly(isopropyl methacrylate),*CC(*)(C)C(=O)OC(C)C,,,,,,,354.0,,,,,,,,,,,,,,,,,,,,,,*CC(C)(CC(*)(C)C(=O)OC(C)C)C(=O)OC(C)C,*CC(C)(CC(C)(CC(C)(CC(*)(C)C(=O)OC(C)C)C(=O)OC(C)C)C(=O)OC(C)C)C(=O)OC(C)C,*CC(*)(C)C(=O)OC(C)C,clean
+Poly(cyclohexyl methacrylate),*CC(*)(C)C(=O)OC1CCCCC1,,,,,,,365.0,,,,,,,,,,,,,,,,,,,,,,*CC(C)(CC(*)(C)C(=O)OC1CCCCC1)C(=O)OC1CCCCC1,*CC(C)(CC(C)(CC(C)(CC(*)(C)C(=O)OC1CCCCC1)C(=O)OC1CCCCC1)C(=O)OC1CCCCC1)C(=O)OC1CCCCC1,*CC(*)(C)C(=O)OC1CCCCC1,clean
+Poly(isobutyl methacrylate),*CC(*)(C)C(=O)OCC(C)C,,,,,,,326.0,,,,,,,,,,,,,,,,,,,,,,*CC(C)(CC(*)(C)C(=O)OCC(C)C)C(=O)OCC(C)C,*CC(C)(CC(C)(CC(C)(CC(*)(C)C(=O)OCC(C)C)C(=O)OCC(C)C)C(=O)OCC(C)C)C(=O)OCC(C)C,*CC(*)(C)C(=O)OCC(C)C,clean
+Poly(2-hydroxypropyl methacrylate)_(HPMA),*CC(*)(C)C(=O)OCC(C)O,,,,,,,349.0,,,,,,,,,,,,,,,,,,,,,,*CC(C)(CC(*)(C)C(=O)OCC(C)O)C(=O)OCC(C)O,*CC(C)(CC(C)(CC(C)(CC(*)(C)C(=O)OCC(C)O)C(=O)OCC(C)O)C(=O)OCC(C)O)C(=O)OCC(C)O,*CC(*)(C)C(=O)OCC(C)O,clean
+Poly(2-ethylhexyl methacrylate),*CC(*)(C)C(=O)OCC(CC)CCCC,,,,,,,263.0,,,,,,,,,,,,,,,,,,,,,,*CC(C)(CC(*)(C)C(=O)OCC(CC)CCCC)C(=O)OCC(CC)CCCC,*CC(C)(CC(C)(CC(C)(CC(*)(C)C(=O)OCC(CC)CCCC)C(=O)OCC(CC)CCCC)C(=O)OCC(CC)CCCC)C(=O)OCC(CC)CCCC,*CC(*)(C)C(=O)OCC(CC)CCCC,clean
+Poly(propyl methacrylate),*CC(*)(C)C(=O)OCCC,,,,,,,311.0,,,,,,,,,,,,,,,,,,,,,,*CC(C)(CC(*)(C)C(=O)OCCC)C(=O)OCCC,*CC(C)(CC(C)(CC(C)(CC(*)(C)C(=O)OCCC)C(=O)OCCC)C(=O)OCCC)C(=O)OCCC,*CC(*)(C)C(=O)OCCC,clean
+Poly(hexyl methacrylate),*CC(*)(C)C(=O)OCCCCCC,,,,,,,260.5,,,,,,,,,,,,,,,,,,,,,,*CC(C)(CC(*)(C)C(=O)OCCCCCC)C(=O)OCCCCCC,*CC(C)(CC(C)(CC(C)(CC(*)(C)C(=O)OCCCCCC)C(=O)OCCCCCC)C(=O)OCCCCCC)C(=O)OCCCCCC,*CC(*)(C)C(=O)OCCCCCC,clean
+Poly(octyl methacrylate),*CC(*)(C)C(=O)OCCCCCCCC,,,,,,,242.0,,,,,,,,,,,,,,,,,,,,,,*CC(C)(CC(*)(C)C(=O)OCCCCCCCC)C(=O)OCCCCCCCC,*CC(C)(CC(C)(CC(C)(CC(*)(C)C(=O)OCCCCCCCC)C(=O)OCCCCCCCC)C(=O)OCCCCCCCC)C(=O)OCCCCCCCC,*CC(*)(C)C(=O)OCCCCCCCC,clean
+Poly(dodecyl methacrylate),*CC(*)(C)C(=O)OCCCCCCCCCCCC,,,,,,,209.5,,,,,,,,,,,,,,,,,,,,,,*CC(C)(CC(*)(C)C(=O)OCCCCCCCCCCCC)C(=O)OCCCCCCCCCCCC,*CC(C)(CC(C)(CC(C)(CC(*)(C)C(=O)OCCCCCCCCCCCC)C(=O)OCCCCCCCCCCCC)C(=O)OCCCCCCCCCCCC)C(=O)OCCCCCCCCCCCC,*CC(*)(C)C(=O)OCCCCCCCCCCCC,clean
+Poly(hexadecyl methacrylate),*CC(*)(C)C(=O)OCCCCCCCCCCCCCCCC,,,,,,,288.0,,,,,,,,,,,,,,,,,,,,,,*CC(C)(CC(*)(C)C(=O)OCCCCCCCCCCCCCCCC)C(=O)OCCCCCCCCCCCCCCCC,*CC(C)(CC(C)(CC(C)(CC(*)(C)C(=O)OCCCCCCCCCCCCCCCC)C(=O)OCCCCCCCCCCCCCCCC)C(=O)OCCCCCCCCCCCCCCCC)C(=O)OCCCCCCCCCCCCCCCC,*CC(*)(C)C(=O)OCCCCCCCCCCCCCCCC,clean
+Poly(octadecyl methacrylate),*CC(*)(C)C(=O)OCCCCCCCCCCCCCCCCCC,,,,,,,173.0,,,,,,,,,,,,,,,,,,,,,,*CC(C)(CC(*)(C)C(=O)OCCCCCCCCCCCCCCCCCC)C(=O)OCCCCCCCCCCCCCCCCCC,*CC(C)(CC(C)(CC(C)(CC(*)(C)C(=O)OCCCCCCCCCCCCCCCCCC)C(=O)OCCCCCCCCCCCCCCCCCC)C(=O)OCCCCCCCCCCCCCCCCCC)C(=O)OCCCCCCCCCCCCCCCCCC,*CC(*)(C)C(=O)OCCCCCCCCCCCCCCCCCC,clean
+Poly[2-(diethylamino)ethyl methacrylate],*CC(*)(C)C(=O)OCCN(CC)CC,,,,,,,293.0,,,,,,,,,,,,,,,,,,,,,,*CC(C)(CC(*)(C)C(=O)OCCN(CC)CC)C(=O)OCCN(CC)CC,*CC(C)(CC(C)(CC(C)(CC(*)(C)C(=O)OCCN(CC)CC)C(=O)OCCN(CC)CC)C(=O)OCCN(CC)CC)C(=O)OCCN(CC)CC,*CC(*)(C)C(=O)OCCN(CC)CC,clean
+Poly[2-(tert-butylamino)ethyl methacrylate],*CC(*)(C)C(=O)OCCNC(C)(C)C,,,,,,,306.0,,,,,,,,,,,,,,,,,,,,,,*CC(C)(CC(*)(C)C(=O)OCCNC(C)(C)C)C(=O)OCCNC(C)(C)C,*CC(C)(CC(C)(CC(C)(CC(*)(C)C(=O)OCCNC(C)(C)C)C(=O)OCCNC(C)(C)C)C(=O)OCCNC(C)(C)C)C(=O)OCCNC(C)(C)C,*CC(*)(C)C(=O)OCCNC(C)(C)C,clean
+poly(benzyl methacrylate ),*CC(*)(C)C(=O)OCc1ccccc1,,,,,,,327.0,,,,,,,,,,,,,,,,,,,,,,*CC(C)(CC(*)(C)C(=O)OCc1ccccc1)C(=O)OCc1ccccc1,*CC(C)(CC(C)(CC(C)(CC(*)(C)C(=O)OCc1ccccc1)C(=O)OCc1ccccc1)C(=O)OCc1ccccc1)C(=O)OCc1ccccc1,*CC(*)(C)C(=O)OCc1ccccc1,clean
+Poly(trimethylsilyl methacrylate),*CC(*)(C)C(=O)O[Si](C)(C)C,,,,,,,341.0,,,,,,,,,,,,,,,,,,,,,,*CC(C)(CC(*)(C)C(=O)O[Si](C)(C)C)C(=O)O[Si](C)(C)C,*CC(C)(CC(C)(CC(C)(CC(*)(C)C(=O)O[Si](C)(C)C)C(=O)O[Si](C)(C)C)C(=O)O[Si](C)(C)C)C(=O)O[Si](C)(C)C,*CC(*)(C)C(=O)O[Si](C)(C)C,clean
+Poly(phenyl methacrylate),*CC(*)(C)C(=O)Oc1ccccc1,,,,,,,383.0,,,,,,,,,,,,,,,,,,,,,,*CC(C)(CC(*)(C)C(=O)Oc1ccccc1)C(=O)Oc1ccccc1,*CC(C)(CC(C)(CC(C)(CC(*)(C)C(=O)Oc1ccccc1)C(=O)Oc1ccccc1)C(=O)Oc1ccccc1)C(=O)Oc1ccccc1,*CC(*)(C)C(=O)Oc1ccccc1,clean
+Poly(sodium methacrylate),*CC(*)(C)C(=O)[O-].[Na+],,,,,,,583.0,,,,,,,,,,,,,,,,,,,,,,*CC(C)(CC(*)(C)C(=O)[O-])C(=O)[O-].[Na+].[Na+],*CC(C)(CC(C)(CC(C)(CC(*)(C)C(=O)[O-])C(=O)[O-])C(=O)[O-])C(=O)[O-].[Na+].[Na+].[Na+].[Na+],*CC(*)(C)C(=O)[O-].[Na+],clean
+Thermoresponsive Poly(methacrylamide),*CC(*)(C)C(N)=O,,,,,,,528.0,,,,,,,,,,,,,,,,,,,,,,*CC(C)(CC(*)(C)C(N)=O)C(N)=O,*CC(C)(CC(C)(CC(C)(CC(*)(C)C(N)=O)C(N)=O)C(N)=O)C(N)=O,*CC(*)(C)C(N)=O,clean
+poly(\uc0\u945 -methyl-p-methylstyrene),*CC(*)(C)c1ccc(C)cc1,,,,,,,456.0,,,,,,,,,,,,,,,,,,,,,,*CC(C)(CC(*)(C)c1ccc(C)cc1)c1ccc(C)cc1,*CC(C)(CC(C)(CC(C)(CC(*)(C)c1ccc(C)cc1)c1ccc(C)cc1)c1ccc(C)cc1)c1ccc(C)cc1,*CC(*)(C)c1ccc(C)cc1,clean
+poly(\uc0\u945 -methylstyrene),*CC(*)(C)c1ccccc1,,,,,,,369.5,,,,,,,,,,,,,,,,,,,,,,*CC(C)(CC(*)(C)c1ccccc1)c1ccccc1,*CC(C)(CC(C)(CC(C)(CC(*)(C)c1ccccc1)c1ccccc1)c1ccccc1)c1ccccc1,*CC(*)(C)c1ccccc1,clean
+poly(vinylidene chloride),*CC(*)(Cl)Cl,,,,,,,273.575,,,,,,,,,,,,,,,,,,,,,,*CC(Cl)(Cl)CC(*)(Cl)Cl,*CC(Cl)(Cl)CC(Cl)(Cl)CC(Cl)(Cl)CC(*)(Cl)Cl,*CC(*)(Cl)Cl,clean
+poly(tert-butylstyrene),*CC(*)(c1ccccc1)C(C)(C)C,,,,,,,403.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)(c1ccccc1)C(C)(C)C)(c1ccccc1)C(C)(C)C,*CC(CC(CC(CC(*)(c1ccccc1)C(C)(C)C)(c1ccccc1)C(C)(C)C)(c1ccccc1)C(C)(C)C)(c1ccccc1)C(C)(C)C,*CC(*)(c1ccccc1)C(C)(C)C,clean
+polyacrylonitrile,*CC(*)C#C,,,,,,,393.0,,,,,,,,,,,,,,,,,,,,,,*CC(C#C)CC(*)C#C,*CC(C#C)CC(C#C)CC(C#C)CC(*)C#C,*CC(*)C#C,clean
+Poly(N-tert-butylacrylamide),*CC(*)C(=O)NC(C)(C)C,,,,,,,401.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)C(=O)NC(C)(C)C)C(=O)NC(C)(C)C,*CC(CC(CC(CC(*)C(=O)NC(C)(C)C)C(=O)NC(C)(C)C)C(=O)NC(C)(C)C)C(=O)NC(C)(C)C,*CC(*)C(=O)NC(C)(C)C,clean
+Poly(2-acrylamido-2-methyl-1-propanesulfonic acid ),*CC(*)C(=O)NC(C)(C)CS(=O)(=O)O,,,,,,,448.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)C(=O)NC(C)(C)CS(=O)(=O)O)C(=O)NC(C)(C)CS(=O)(=O)O,*CC(CC(CC(CC(*)C(=O)NC(C)(C)CS(=O)(=O)O)C(=O)NC(C)(C)CS(=O)(=O)O)C(=O)NC(C)(C)CS(=O)(=O)O)C(=O)NC(C)(C)CS(=O)(=O)O,*CC(*)C(=O)NC(C)(C)CS(=O)(=O)O,clean
+poly(methyl acrylate),*CC(*)C(=O)OC,,,,,,,281.825,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)C(=O)OC)C(=O)OC,*CC(CC(CC(CC(*)C(=O)OC)C(=O)OC)C(=O)OC)C(=O)OC,*CC(*)C(=O)OC,clean
+Poly(tert-butyl acrylate),*CC(*)C(=O)OC(C)(C)C,,,,,,,348.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)C(=O)OC(C)(C)C)C(=O)OC(C)(C)C,*CC(CC(CC(CC(*)C(=O)OC(C)(C)C)C(=O)OC(C)(C)C)C(=O)OC(C)(C)C)C(=O)OC(C)(C)C,*CC(*)C(=O)OC(C)(C)C,clean
+isotactic Poly(isopropyl acrylate),*CC(*)C(=O)OC(C)C,,,,,,,262.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)C(=O)OC(C)C)C(=O)OC(C)C,*CC(CC(CC(CC(*)C(=O)OC(C)C)C(=O)OC(C)C)C(=O)OC(C)C)C(=O)OC(C)C,*CC(*)C(=O)OC(C)C,clean
+Poly(sec-butyl acrylate),*CC(*)C(=O)OC(C)CC,,,,,,,247.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)C(=O)OC(C)CC)C(=O)OC(C)CC,*CC(CC(CC(CC(*)C(=O)OC(C)CC)C(=O)OC(C)CC)C(=O)OC(C)CC)C(=O)OC(C)CC,*CC(*)C(=O)OC(C)CC,clean
+Poly(cyclohexyl acrylate),*CC(*)C(=O)OC1CCCCC1,,,,,,,292.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)C(=O)OC1CCCCC1)C(=O)OC1CCCCC1,*CC(CC(CC(CC(*)C(=O)OC1CCCCC1)C(=O)OC1CCCCC1)C(=O)OC1CCCCC1)C(=O)OC1CCCCC1,*CC(*)C(=O)OC1CCCCC1,clean
+poly(ethyl acrylate ),*CC(*)C(=O)OCC,,,,,,,250.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)C(=O)OCC)C(=O)OCC,*CC(CC(CC(CC(*)C(=O)OCC)C(=O)OCC)C(=O)OCC)C(=O)OCC,*CC(*)C(=O)OCC,clean
+Poly(isobutyl acrylate),*CC(*)C(=O)OCC(C)C,,,,,,,249.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)C(=O)OCC(C)C)C(=O)OCC(C)C,*CC(CC(CC(CC(*)C(=O)OCC(C)C)C(=O)OCC(C)C)C(=O)OCC(C)C)C(=O)OCC(C)C,*CC(*)C(=O)OCC(C)C,clean
+Poly(2-ethylhexyl acrylate),*CC(*)C(=O)OCC(CC)CCCC,,,,,,,223.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)C(=O)OCC(CC)CCCC)C(=O)OCC(CC)CCCC,*CC(CC(CC(CC(*)C(=O)OCC(CC)CCCC)C(=O)OCC(CC)CCCC)C(=O)OCC(CC)CCCC)C(=O)OCC(CC)CCCC,*CC(*)C(=O)OCC(CC)CCCC,clean
+"Poly(2,2,2-trifluoroethyl acrylate)",*CC(*)C(=O)OCC(F)(F)F,,,,,,,263.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)C(=O)OCC(F)(F)F)C(=O)OCC(F)(F)F,*CC(CC(CC(CC(*)C(=O)OCC(F)(F)F)C(=O)OCC(F)(F)F)C(=O)OCC(F)(F)F)C(=O)OCC(F)(F)F,*CC(*)C(=O)OCC(F)(F)F,clean
+Poly(2-cyanoethyl acrylate),*CC(*)C(=O)OCCC#N,,,,,,,277.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)C(=O)OCCC#N)C(=O)OCCC#N,*CC(CC(CC(CC(*)C(=O)OCCC#N)C(=O)OCCC#N)C(=O)OCCC#N)C(=O)OCCC#N,*CC(*)C(=O)OCCC#N,clean
+Poly(hexyl acrylate),*CC(*)C(=O)OCCCCCC,,,,,,,216.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)C(=O)OCCCCCC)C(=O)OCCCCCC,*CC(CC(CC(CC(*)C(=O)OCCCCCC)C(=O)OCCCCCC)C(=O)OCCCCCC)C(=O)OCCCCCC,*CC(*)C(=O)OCCCCCC,clean
+Poly(dodecyl acrylate),*CC(*)C(=O)OCCCCCCCCCCCC,,,,,,,270.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)C(=O)OCCCCCCCCCCCC)C(=O)OCCCCCCCCCCCC,*CC(CC(CC(CC(*)C(=O)OCCCCCCCCCCCC)C(=O)OCCCCCCCCCCCC)C(=O)OCCCCCCCCCCCC)C(=O)OCCCCCCCCCCCC,*CC(*)C(=O)OCCCCCCCCCCCC,clean
+Poly(hexadecyl acrylate),*CC(*)C(=O)OCCCCCCCCCCCCCCCC,,,,,,,308.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)C(=O)OCCCCCCCCCCCCCCCC)C(=O)OCCCCCCCCCCCCCCCC,*CC(CC(CC(CC(*)C(=O)OCCCCCCCCCCCCCCCC)C(=O)OCCCCCCCCCCCCCCCC)C(=O)OCCCCCCCCCCCCCCCC)C(=O)OCCCCCCCCCCCCCCCC,*CC(*)C(=O)OCCCCCCCCCCCCCCCC,clean
+Poly(2-methoxyethyl acrylate),*CC(*)C(=O)OCCOC,,,,,,,223.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)C(=O)OCCOC)C(=O)OCCOC,*CC(CC(CC(CC(*)C(=O)OCCOC)C(=O)OCCOC)C(=O)OCCOC)C(=O)OCCOC,*CC(*)C(=O)OCCOC,clean
+Poly(2-ethoxyethyl acrylate),*CC(*)C(=O)OCCOCC,,,,,,,223.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)C(=O)OCCOCC)C(=O)OCCOCC,*CC(CC(CC(CC(*)C(=O)OCCOCC)C(=O)OCCOCC)C(=O)OCCOCC)C(=O)OCCOCC,*CC(*)C(=O)OCCOCC,clean
+poly(p-methoxyphenyl-p'-acryloyloxy benzoate ),*CC(*)C(=O)OCCOc1ccc(C(=O)Oc2ccc(OC)cc2)cc1,,,,,,,338.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)C(=O)OCCOc1ccc(C(=O)Oc2ccc(OC)cc2)cc1)C(=O)OCCOc1ccc(C(=O)Oc2ccc(OC)cc2)cc1,*CC(CC(CC(CC(*)C(=O)OCCOc1ccc(C(=O)Oc2ccc(OC)cc2)cc1)C(=O)OCCOc1ccc(C(=O)Oc2ccc(OC)cc2)cc1)C(=O)OCCOc1ccc(C(=O)Oc2ccc(OC)cc2)cc1)C(=O)OCCOc1ccc(C(=O)Oc2ccc(OC)cc2)cc1,*CC(*)C(=O)OCCOc1ccc(C(=O)Oc2ccc(OC)cc2)cc1,clean
+Poly(benzyl acrylate),*CC(*)C(=O)OCc1ccccc1,,,,,,,279.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)C(=O)OCc1ccccc1)C(=O)OCc1ccccc1,*CC(CC(CC(CC(*)C(=O)OCc1ccccc1)C(=O)OCc1ccccc1)C(=O)OCc1ccccc1)C(=O)OCc1ccccc1,*CC(*)C(=O)OCc1ccccc1,clean
+Poly(potassium acrylate),*CC(*)C(=O)[O-].[K+],,,,,,,467.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)C(=O)[O-])C(=O)[O-].[K+].[K+],*CC(CC(CC(CC(*)C(=O)[O-])C(=O)[O-])C(=O)[O-])C(=O)[O-].[K+].[K+].[K+].[K+],*CC(*)C(=O)[O-].[K+],clean
+Poly(sodium acrylate),*CC(*)C(=O)[O-].[Na+],,,,,,,503.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)C(=O)[O-])C(=O)[O-].[Na+].[Na+],*CC(CC(CC(CC(*)C(=O)[O-])C(=O)[O-])C(=O)[O-])C(=O)[O-].[Na+].[Na+].[Na+].[Na+],*CC(*)C(=O)[O-].[Na+],clean
+Poly(phenyl vinyl ketone),*CC(*)C(=O)c1ccccc1,,,,,,,347.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)C(=O)c1ccccc1)C(=O)c1ccccc1,*CC(CC(CC(CC(*)C(=O)c1ccccc1)C(=O)c1ccccc1)C(=O)c1ccccc1)C(=O)c1ccccc1,*CC(*)C(=O)c1ccccc1,clean
+poly(vinylcyclohexane),*CC(*)C1CCCCC1,,,,,,,420.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)C1CCCCC1)C1CCCCC1,*CC(CC(CC(CC(*)C1CCCCC1)C1CCCCC1)C1CCCCC1)C1CCCCC1,*CC(*)C1CCCCC1,clean
+Poly(1-butene),*CC(*)CC,,,,,,,249.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC)CC(*)CC,*CC(CC)CC(CC)CC(CC)CC(*)CC,*CC(*)CC,clean
+Poly(1-octene),*CC(*)CCCCCC,,,,,,,210.0,,,,,,,,,,,,,,,,,,,,,,*CC(CCCCCC)CC(*)CCCCCC,*CC(CCCCCC)CC(CCCCCC)CC(CCCCCC)CC(*)CCCCCC,*CC(*)CCCCCC,clean
+Poly(1-octadecene),*CC(*)CCCCCCCCCCCCCCCC,,,,,,,328.0,,,,,,,,,,,,,,,,,,,,,,*CC(CCCCCCCCCCCCCCCC)CC(*)CCCCCCCCCCCCCCCC,*CC(CCCCCCCCCCCCCCCC)CC(CCCCCCCCCCCCCCCC)CC(CCCCCCCCCCCCCCCC)CC(*)CCCCCCCCCCCCCCCC,*CC(*)CCCCCCCCCCCCCCCC,clean
+poly(vinyl fluoride),*CC(*)F,,,,,,,310.075,,,,,,,,,,,,,,,,,,,,,,*CC(F)CC(*)F,*CC(F)CC(F)CC(F)CC(*)F,*CC(*)F,clean
+Poly(vinyl isocyanate),*CC(*)N=C=O,,,,,,,324.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)N=C=O)N=C=O,*CC(CC(CC(CC(*)N=C=O)N=C=O)N=C=O)N=C=O,*CC(*)N=C=O,clean
+Poly(vinyl pivalate),*CC(*)OC(=O)C(C)(C)C,,,,,,,359.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)OC(=O)C(C)(C)C)OC(=O)C(C)(C)C,*CC(CC(CC(CC(*)OC(=O)C(C)(C)C)OC(=O)C(C)(C)C)OC(=O)C(C)(C)C)OC(=O)C(C)(C)C,*CC(*)OC(=O)C(C)(C)C,clean
+Poly(vinyl trifluoroacetate),*CC(*)OC(=O)C(F)(F)F,,,,,,,319.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)OC(=O)C(F)(F)F)OC(=O)C(F)(F)F,*CC(CC(CC(CC(*)OC(=O)C(F)(F)F)OC(=O)C(F)(F)F)OC(=O)C(F)(F)F)OC(=O)C(F)(F)F,*CC(*)OC(=O)C(F)(F)F,clean
+Poly(vinyl cyclohexanoate),*CC(*)OC(=O)C1CCCCC1,,,,,,,349.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)OC(=O)C1CCCCC1)OC(=O)C1CCCCC1,*CC(CC(CC(CC(*)OC(=O)C1CCCCC1)OC(=O)C1CCCCC1)OC(=O)C1CCCCC1)OC(=O)C1CCCCC1,*CC(*)OC(=O)C1CCCCC1,clean
+Poly(vinyl propionate),*CC(*)OC(=O)CC,,,,,,,283.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)OC(=O)CC)OC(=O)CC,*CC(CC(CC(CC(*)OC(=O)CC)OC(=O)CC)OC(=O)CC)OC(=O)CC,*CC(*)OC(=O)CC,clean
+Poly(vinyl malonate),*CC(*)OC(=O)CC(=O)[O-],,,,,,,244.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)OC(=O)CC(=O)[O-])OC(=O)CC(=O)[O-],*CC(CC(CC(CC(*)OC(=O)CC(=O)[O-])OC(=O)CC(=O)[O-])OC(=O)CC(=O)[O-])OC(=O)CC(=O)[O-],*CC(*)OC(=O)CC(=O)[O-],clean
+poly(vinyl butyrate),*CC(*)OC(=O)CCC,,,,,,,337.15,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)OC(=O)CCC)OC(=O)CCC,*CC(CC(CC(CC(*)OC(=O)CCC)OC(=O)CCC)OC(=O)CCC)OC(=O)CCC,*CC(*)OC(=O)CCC,clean
+Poly(vinyl adipate),*CC(*)OC(=O)CCCCC(=O)[O-],,,,,,,228.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)OC(=O)CCCCC(=O)[O-])OC(=O)CCCCC(=O)[O-],*CC(CC(CC(CC(*)OC(=O)CCCCC(=O)[O-])OC(=O)CCCCC(=O)[O-])OC(=O)CCCCC(=O)[O-])OC(=O)CCCCC(=O)[O-],*CC(*)OC(=O)CCCCC(=O)[O-],clean
+Poly(vinyl 4-tert-butylbenzoate),*CC(*)OC(=O)c1ccc(C(C)(C)C)cc1,,,,,,,374.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)OC(=O)c1ccc(C(C)(C)C)cc1)OC(=O)c1ccc(C(C)(C)C)cc1,*CC(CC(CC(CC(*)OC(=O)c1ccc(C(C)(C)C)cc1)OC(=O)c1ccc(C(C)(C)C)cc1)OC(=O)c1ccc(C(C)(C)C)cc1)OC(=O)c1ccc(C(C)(C)C)cc1,*CC(*)OC(=O)c1ccc(C(C)(C)C)cc1,clean
+Poly(vinyl benzoate),*CC(*)OC(=O)c1ccccc1,,,,,,,344.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)OC(=O)c1ccccc1)OC(=O)c1ccccc1,*CC(CC(CC(CC(*)OC(=O)c1ccccc1)OC(=O)c1ccccc1)OC(=O)c1ccccc1)OC(=O)c1ccccc1,*CC(*)OC(=O)c1ccccc1,clean
+Poly(tert-butyl vinyl ether),*CC(*)OC(C)(C)C,,,,,,,361.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)OC(C)(C)C)OC(C)(C)C,*CC(CC(CC(CC(*)OC(C)(C)C)OC(C)(C)C)OC(C)(C)C)OC(C)(C)C,*CC(*)OC(C)(C)C,clean
+Poly(cyclohexyl vinyl ether),*CC(*)OC1CCCCC1,,,,,,,354.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)OC1CCCCC1)OC1CCCCC1,*CC(CC(CC(CC(*)OC1CCCCC1)OC1CCCCC1)OC1CCCCC1)OC1CCCCC1,*CC(*)OC1CCCCC1,clean
+Poly(ethyl vinyl ether),*CC(*)OCC,,,,,,,230.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)OCC)OCC,*CC(CC(CC(CC(*)OCC)OCC)OCC)OCC,*CC(*)OCC,clean
+Poly(isobutyl vinyl ether),*CC(*)OCC(C)C,,,,,,,254.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)OCC(C)C)OCC(C)C,*CC(CC(CC(CC(*)OCC(C)C)OCC(C)C)OCC(C)C)OCC(C)C,*CC(*)OCC(C)C,clean
+Poly(2-ethylhexyl vinyl ether),*CC(*)OCC(CC)CCCC,,,,,,,207.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)OCC(CC)CCCC)OCC(CC)CCCC,*CC(CC(CC(CC(*)OCC(CC)CCCC)OCC(CC)CCCC)OCC(CC)CCCC)OCC(CC)CCCC,*CC(*)OCC(CC)CCCC,clean
+Poly(propyl vinyl ether),*CC(*)OCCC,,,,,,,224.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)OCCC)OCCC,*CC(CC(CC(CC(*)OCCC)OCCC)OCCC)OCCC,*CC(*)OCCC,clean
+Poly(butyl vinyl ether),*CC(*)OCCCC,,,,,,,218.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)OCCCC)OCCCC,*CC(CC(CC(CC(*)OCCCC)OCCCC)OCCCC)OCCCC,*CC(*)OCCCC,clean
+Poly(dodecyl vinyl ether),*CC(*)OCCCCCCCCCCCC,,,,,,,211.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)OCCCCCCCCCCCC)OCCCCCCCCCCCC,*CC(CC(CC(CC(*)OCCCCCCCCCCCC)OCCCCCCCCCCCC)OCCCCCCCCCCCC)OCCCCCCCCCCCC,*CC(*)OCCCCCCCCCCCC,clean
+"Poly(2,4,6-trimethylstyrene)",*CC(*)c1c(C)cc(C)cc1C,,,,,,,435.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)c1c(C)cc(C)cc1C)c1c(C)cc(C)cc1C,*CC(CC(CC(CC(*)c1c(C)cc(C)cc1C)c1c(C)cc(C)cc1C)c1c(C)cc(C)cc1C)c1c(C)cc(C)cc1C,*CC(*)c1c(C)cc(C)cc1C,clean
+"Poly(2,6-dichlorostyrene)",*CC(*)c1c(Cl)cccc1Cl,,,,,,,440.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)c1c(Cl)cccc1Cl)c1c(Cl)cccc1Cl,*CC(CC(CC(CC(*)c1c(Cl)cccc1Cl)c1c(Cl)cccc1Cl)c1c(Cl)cccc1Cl)c1c(Cl)cccc1Cl,*CC(*)c1c(Cl)cccc1Cl,clean
+"Poly(3,5-dimethylstyrene)",*CC(*)c1cc(C)cc(C)c1,,,,,,,377.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)c1cc(C)cc(C)c1)c1cc(C)cc(C)c1,*CC(CC(CC(CC(*)c1cc(C)cc(C)c1)c1cc(C)cc(C)c1)c1cc(C)cc(C)c1)c1cc(C)cc(C)c1,*CC(*)c1cc(C)cc(C)c1,clean
+"Poly(2,5-dimethylstyrene)",*CC(*)c1cc(C)ccc1C,,,,,,,416.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)c1cc(C)ccc1C)c1cc(C)ccc1C,*CC(CC(CC(CC(*)c1cc(C)ccc1C)c1cc(C)ccc1C)c1cc(C)ccc1C)c1cc(C)ccc1C,*CC(*)c1cc(C)ccc1C,clean
+poly(2-(4-vinylphenyl)pyridine),*CC(*)c1ccc(-c2ccccn2)cc1,,,,,,,434.4,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)c1ccc(-c2ccccn2)cc1)c1ccc(-c2ccccn2)cc1,*CC(CC(CC(CC(*)c1ccc(-c2ccccn2)cc1)c1ccc(-c2ccccn2)cc1)c1ccc(-c2ccccn2)cc1)c1ccc(-c2ccccn2)cc1,*CC(*)c1ccc(-c2ccccn2)cc1,clean
+Poly(4-bromostyrene),*CC(*)c1ccc(Br)cc1,,,,,,,391.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)c1ccc(Br)cc1)c1ccc(Br)cc1,*CC(CC(CC(CC(*)c1ccc(Br)cc1)c1ccc(Br)cc1)c1ccc(Br)cc1)c1ccc(Br)cc1,*CC(*)c1ccc(Br)cc1,clean
+poly(ethynylstyrene),*CC(*)c1ccc(C#C)cc1,,,,,,,426.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)c1ccc(C#C)cc1)c1ccc(C#C)cc1,*CC(CC(CC(CC(*)c1ccc(C#C)cc1)c1ccc(C#C)cc1)c1ccc(C#C)cc1)c1ccc(C#C)cc1,*CC(*)c1ccc(C#C)cc1,clean
+Poly(4-tert-butylstyrene),*CC(*)c1ccc(C(C)(C)C)cc1,,,,,,,400.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)c1ccc(C(C)(C)C)cc1)c1ccc(C(C)(C)C)cc1,*CC(CC(CC(CC(*)c1ccc(C(C)(C)C)cc1)c1ccc(C(C)(C)C)cc1)c1ccc(C(C)(C)C)cc1)c1ccc(C(C)(C)C)cc1,*CC(*)c1ccc(C(C)(C)C)cc1,clean
+poly(p-methylstyrene),*CC(*)c1ccc(C)cc1,,,,,,,373.325,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)c1ccc(C)cc1)c1ccc(C)cc1,*CC(CC(CC(CC(*)c1ccc(C)cc1)c1ccc(C)cc1)c1ccc(C)cc1)c1ccc(C)cc1,*CC(*)c1ccc(C)cc1,clean
+"Poly(2,4-dimethylstyrene)",*CC(*)c1ccc(C)cc1C,,,,,,,385.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)c1ccc(C)cc1C)c1ccc(C)cc1C,*CC(CC(CC(CC(*)c1ccc(C)cc1C)c1ccc(C)cc1C)c1ccc(C)cc1C)c1ccc(C)cc1C,*CC(*)c1ccc(C)cc1C,clean
+Poly[4-(1-adamantyl)styrene],*CC(*)c1ccc(C23C[C@H]4C[C@@H](C2)C[C@@H](C3)C4)cc1,,,,,,,490.5,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)c1ccc(C23CC4CC(CC(C4)C2)C3)cc1)c1ccc(C23CC4CC(CC(C4)C2)C3)cc1,*CC(CC(CC(CC(*)c1ccc(C23CC4CC(CC(C4)C2)C3)cc1)c1ccc(C23CC4CC(CC(C4)C2)C3)cc1)c1ccc(C23CC4CC(CC(C4)C2)C3)cc1)c1ccc(C23CC4CC(CC(C4)C2)C3)cc1,*CC(*)c1ccc(C23C[C@H]4C[C@@H](C2)C[C@@H](C3)C4)cc1,clean
+poly(propargyloxystyrene),*CC(*)c1ccc(CC#C)cc1,,,,,,,327.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)c1ccc(CC#C)cc1)c1ccc(CC#C)cc1,*CC(CC(CC(CC(*)c1ccc(CC#C)cc1)c1ccc(CC#C)cc1)c1ccc(CC#C)cc1)c1ccc(CC#C)cc1,*CC(*)c1ccc(CC#C)cc1,clean
+Poly(4-chlorostyrene),*CC(*)c1ccc(Cl)cc1,,,,,,,383.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)c1ccc(Cl)cc1)c1ccc(Cl)cc1,*CC(CC(CC(CC(*)c1ccc(Cl)cc1)c1ccc(Cl)cc1)c1ccc(Cl)cc1)c1ccc(Cl)cc1,*CC(*)c1ccc(Cl)cc1,clean
+Poly(4-fluorostyrene),*CC(*)c1ccc(F)cc1,,,,,,,368.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)c1ccc(F)cc1)c1ccc(F)cc1,*CC(CC(CC(CC(*)c1ccc(F)cc1)c1ccc(F)cc1)c1ccc(F)cc1)c1ccc(F)cc1,*CC(*)c1ccc(F)cc1,clean
+Poly(nitroxylstyrene)s,*CC(*)c1ccc(N([O])C(C)(C)C)cc1,,,,,,,383.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)c1ccc(N(O)C(C)(C)C)cc1)c1ccc(N(O)C(C)(C)C)cc1,*CC(CC(CC(CC(*)c1ccc(N(O)C(C)(C)C)cc1)c1ccc(N(O)C(C)(C)C)cc1)c1ccc(N(O)C(C)(C)C)cc1)c1ccc(N(O)C(C)(C)C)cc1,*CC(*)c1ccc(N([O])C(C)(C)C)cc1,clean
+poly(4-acetoxystyrene),*CC(*)c1ccc(OC(C)=O)cc1,,,,,,,396.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)c1ccc(OC(C)=O)cc1)c1ccc(OC(C)=O)cc1,*CC(CC(CC(CC(*)c1ccc(OC(C)=O)cc1)c1ccc(OC(C)=O)cc1)c1ccc(OC(C)=O)cc1)c1ccc(OC(C)=O)cc1,*CC(*)c1ccc(OC(C)=O)cc1,clean
+Poly(4-methoxystyrene),*CC(*)c1ccc(OC)cc1,,,,,,,386.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)c1ccc(OC)cc1)c1ccc(OC)cc1,*CC(CC(CC(CC(*)c1ccc(OC)cc1)c1ccc(OC)cc1)c1ccc(OC)cc1)c1ccc(OC)cc1,*CC(*)c1ccc(OC)cc1,clean
+Poly(TMSpropargyloxystyrene),*CC(*)c1ccc(OCC#C)cc1,,,,,,,321.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)c1ccc(OCC#C)cc1)c1ccc(OCC#C)cc1,*CC(CC(CC(CC(*)c1ccc(OCC#C)cc1)c1ccc(OCC#C)cc1)c1ccc(OCC#C)cc1)c1ccc(OCC#C)cc1,*CC(*)c1ccc(OCC#C)cc1,clean
+Poly(4-ethoxystyrene),*CC(*)c1ccc(OCC)cc1,,,,,,,359.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)c1ccc(OCC)cc1)c1ccc(OCC)cc1,*CC(CC(CC(CC(*)c1ccc(OCC)cc1)c1ccc(OCC)cc1)c1ccc(OCC)cc1)c1ccc(OCC)cc1,*CC(*)c1ccc(OCC)cc1,clean
+Poly(3-methylstyrene),*CC(*)c1cccc(C)c1,,,,,,,370.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)c1cccc(C)c1)c1cccc(C)c1,*CC(CC(CC(CC(*)c1cccc(C)c1)c1cccc(C)c1)c1cccc(C)c1)c1cccc(C)c1,*CC(*)c1cccc(C)c1,clean
+Poly(3-chlorostyrene),*CC(*)c1cccc(Cl)c1,,,,,,,363.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)c1cccc(Cl)c1)c1cccc(Cl)c1,*CC(CC(CC(CC(*)c1cccc(Cl)c1)c1cccc(Cl)c1)c1cccc(Cl)c1)c1cccc(Cl)c1,*CC(*)c1cccc(Cl)c1,clean
+Poly(vinyl carbazole),*CC(*)c1cccc2c1[nH]c1ccccc12,,,,,,,500.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)c1cccc2c1[nH]c1ccccc12)c1cccc2c1[nH]c1ccccc12,*CC(CC(CC(CC(*)c1cccc2c1[nH]c1ccccc12)c1cccc2c1[nH]c1ccccc12)c1cccc2c1[nH]c1ccccc12)c1cccc2c1[nH]c1ccccc12,*CC(*)c1cccc2c1[nH]c1ccccc12,clean
+Poly(2-chlorostyrene),*CC(*)c1ccccc1Cl,,,,,,,392.0,,,,,,,,,,,,,,,,,,,,,,*CC(CC(*)c1ccccc1Cl)c1ccccc1Cl,*CC(CC(CC(CC(*)c1ccccc1Cl)c1ccccc1Cl)c1ccccc1Cl)c1ccccc1Cl,*CC(*)c1ccccc1Cl,clean
+acrylonitrile-butadiene-acrylate copolymer,*CC(C#N)C/C=C/CCC(*)C(=O)OC,,,,,,,427.15,,,,,,,,,,,,,,,,,,,,,,*CC(C#N)CC=CCCC(CC(C#N)CC=CCCC(*)C(=O)OC)C(=O)OC,*CC(C#N)CC=CCCC(CC(C#N)CC=CCCC(CC(C#N)CC=CCCC(CC(C#N)CC=CCCC(*)C(=O)OC)C(=O)OC)C(=O)OC)C(=O)OC,*CC(C#N)C/C=C/CCC(*)C(=O)OC,clean
+poly(acrylonitrile-co-butadiene-co-styrene),*CC(C#N)C/C=C/CCC(*)c1ccccc1,,,,,,,377.65,,,,,,,,,,,,,,,,,,,,,,*CC(C#N)CC=CCCC(CC(C#N)CC=CCCC(*)c1ccccc1)c1ccccc1,*CC(C#N)CC=CCCC(CC(C#N)CC=CCCC(CC(C#N)CC=CCCC(CC(C#N)CC=CCCC(*)c1ccccc1)c1ccccc1)c1ccccc1)c1ccccc1,*CC(C#N)C/C=C/CCC(*)c1ccccc1,clean
+poly(acrylonitrile-co-styrene-co-acrylate),*CC(C#N)CC(CC(*)C(=O)OC)c1ccccc1,,,,,,,388.15,,,,,,,,,,,,,,,,,,,,,,*CC(C#N)CC(CC(CC(C#N)CC(CC(*)C(=O)OC)c1ccccc1)C(=O)OC)c1ccccc1,*CC(C#N)CC(CC(CC(C#N)CC(CC(CC(C#N)CC(CC(CC(C#N)CC(CC(*)C(=O)OC)c1ccccc1)C(=O)OC)c1ccccc1)C(=O)OC)c1ccccc1)C(=O)OC)c1ccccc1,*CC(C#N)CC(CC(*)C(=O)OC)c1ccccc1,clean
+poly(methacrylic acid-co-methyl methacrylate),*CC(C)(CC(*)(C)C(=O)O)C(=O)OC,,,,,,,395.65,,,,,,,,,,,,,,,,,,,,,,*CC(C)(CC(C)(CC(C)(CC(*)(C)C(=O)O)C(=O)OC)C(=O)O)C(=O)OC,*CC(C)(CC(C)(CC(C)(CC(C)(CC(C)(CC(C)(CC(C)(CC(*)(C)C(=O)O)C(=O)OC)C(=O)O)C(=O)OC)C(=O)O)C(=O)OC)C(=O)O)C(=O)OC,*CC(C)(CC(*)(C)C(=O)O)C(=O)OC,clean
+poly(ethyl acrylate-co-methyl methacrylate),*CC(C)(CC(*)C(=O)OCC)C(=O)OC,,,,,,,264.65,,,,,,,,,,,,,,,,,,,,,,*CC(C)(CC(CC(C)(CC(*)C(=O)OCC)C(=O)OC)C(=O)OCC)C(=O)OC,*CC(C)(CC(CC(C)(CC(CC(C)(CC(CC(C)(CC(*)C(=O)OCC)C(=O)OC)C(=O)OCC)C(=O)OC)C(=O)OCC)C(=O)OC)C(=O)OCC)C(=O)OC,*CC(C)(CC(*)C(=O)OCC)C(=O)OC,clean
+isotactic-polypropylene,*CC(C)CC(*)C,,,,,,,263.15,,,,,,,,,,,,,,,,,,,,,,*CC(C)CC(C)CC(C)CC(*)C,*CC(C)CC(C)CC(C)CC(C)CC(C)CC(C)CC(C)CC(*)C,*CC(C)CC(*)C,clean
+polypropylene glycol,*CC(C)O*,,,,,,,197.65,,,,,,,,,,,,,,,,,,,,,,*CC(C)OCC(C)O*,*CC(C)OCC(C)OCC(C)OCC(C)O*,*CC(C)O*,clean
+poly(styrene-co-butadiene),*CC(C/C=C\CCC(*)C=C)c1ccccc1,,,,,,,233.15,,,,,,,,,,,,,,,,,,,,,,*CC(CC=CCCC(C=C)CC(CC=CCCC(*)C=C)c1ccccc1)c1ccccc1,*CC(CC=CCCC(C=C)CC(CC=CCCC(C=C)CC(CC=CCCC(C=C)CC(CC=CCCC(*)C=C)c1ccccc1)c1ccccc1)c1ccccc1)c1ccccc1,*CC(C/C=C\CCC(*)C=C)c1ccccc1,clean
+styrene-butadiene-styrene triblock copolymer,*CC(C/C=C\CCC(C=C)CC(*)c1ccccc1)c1ccccc1,,,,,,,195.65,,,,,,,,,,,,,,,,,,,,,,*CC(CC=CCCC(C=C)CC(CC(CC=CCCC(C=C)CC(*)c1ccccc1)c1ccccc1)c1ccccc1)c1ccccc1,*CC(CC=CCCC(C=C)CC(CC(CC=CCCC(C=C)CC(CC(CC=CCCC(C=C)CC(CC(CC=CCCC(C=C)CC(*)c1ccccc1)c1ccccc1)c1ccccc1)c1ccccc1)c1ccccc1)c1ccccc1)c1ccccc1)c1ccccc1,*CC(C/C=C\CCC(C=C)CC(*)c1ccccc1)c1ccccc1,clean
+poly(styrene-co-methylmethacrylate),*CC(CC(*)(C)C(=O)OC)c1ccccc1,,,,,,,375.15,,,,,,,,,,,,,,,,,,,,,,*CC(CC(C)(CC(CC(*)(C)C(=O)OC)c1ccccc1)C(=O)OC)c1ccccc1,*CC(CC(C)(CC(CC(C)(CC(CC(C)(CC(CC(*)(C)C(=O)OC)c1ccccc1)C(=O)OC)c1ccccc1)C(=O)OC)c1ccccc1)C(=O)OC)c1ccccc1,*CC(CC(*)(C)C(=O)OC)c1ccccc1,clean
+poly(styrene-co-α-methylstyrene),*CC(CC(*)(C)c1ccccc1)c1ccccc1,,,,,,,320.65,,,,,,,,,,,,,,,,,,,,,,*CC(CC(C)(CC(CC(*)(C)c1ccccc1)c1ccccc1)c1ccccc1)c1ccccc1,*CC(CC(C)(CC(CC(C)(CC(CC(C)(CC(CC(*)(C)c1ccccc1)c1ccccc1)c1ccccc1)c1ccccc1)c1ccccc1)c1ccccc1)c1ccccc1)c1ccccc1,*CC(CC(*)(C)c1ccccc1)c1ccccc1,clean
+poly(styrene-co-acrylonitrile),*CC(CC(*)C#N)c1ccccc1,,,,,,,384.15,,,,,,,,,,,,,,,,,,,,,,*CC(CC(C#N)CC(CC(*)C#N)c1ccccc1)c1ccccc1,*CC(CC(C#N)CC(CC(C#N)CC(CC(C#N)CC(CC(*)C#N)c1ccccc1)c1ccccc1)c1ccccc1)c1ccccc1,*CC(CC(*)C#N)c1ccccc1,clean
+isotactic-polystyrene,*CC(CC(*)c1ccccc1)c1ccccc1,,,,,,,363.15,,,,,,,,,,,,,,,,,,,,,,*CC(CC(CC(CC(*)c1ccccc1)c1ccccc1)c1ccccc1)c1ccccc1,*CC(CC(CC(CC(CC(CC(CC(CC(*)c1ccccc1)c1ccccc1)c1ccccc1)c1ccccc1)c1ccccc1)c1ccccc1)c1ccccc1)c1ccccc1,*CC(CC(*)c1ccccc1)c1ccccc1,clean
+poly(ethyl acrylate-co-methyl methacrylate-co-triammonioethyl methacrylate chloride),*CC(CC(C)(CC(*)(C)C(=O)OCC[N+](C)(C)C)C(=O)OC)C(=O)OCC.[Cl-],,,,,,,333.15,,,,,,,,,,,,,,,,,,,,,,*CC(CC(C)(CC(C)(CC(CC(C)(CC(*)(C)C(=O)OCC[N+](C)(C)C)C(=O)OC)C(=O)OCC)C(=O)OCC[N+](C)(C)C)C(=O)OC)C(=O)OCC.[Cl-].[Cl-],*CC(CC(C)(CC(C)(CC(CC(C)(CC(C)(CC(CC(C)(CC(C)(CC(CC(C)(CC(*)(C)C(=O)OCC[N+](C)(C)C)C(=O)OC)C(=O)OCC)C(=O)OCC[N+](C)(C)C)C(=O)OC)C(=O)OCC)C(=O)OCC[N+](C)(C)C)C(=O)OC)C(=O)OCC)C(=O)OCC[N+](C)(C)C)C(=O)OC)C(=O)OCC.[Cl-].[Cl-].[Cl-].[Cl-],*CC(CC(C)(CC(*)(C)C(=O)OCC[N+](C)(C)C)C(=O)OC)C(=O)OCC.[Cl-],clean
+styrene-ethylene-butylene-styrene triblock copolymer,*CC(CCCCCC(CC)CC(*)c1ccccc1)c1ccccc1,,,,,,,216.65,,,,,,,,,,,,,,,,,,,,,,*CC(CCCCCC(CC)CC(CC(CCCCCC(CC)CC(*)c1ccccc1)c1ccccc1)c1ccccc1)c1ccccc1,*CC(CCCCCC(CC)CC(CC(CCCCCC(CC)CC(CC(CCCCCC(CC)CC(CC(CCCCCC(CC)CC(*)c1ccccc1)c1ccccc1)c1ccccc1)c1ccccc1)c1ccccc1)c1ccccc1)c1ccccc1)c1ccccc1,*CC(CCCCCC(CC)CC(*)c1ccccc1)c1ccccc1,clean
+poly(allyl glycidyl ether ),*CC(COCC=C)O*,,,,,,,195.0,,,,,,,,,,,,,,,,,,,,,,*CC(COCC=C)OCC(COCC=C)O*,*CC(COCC=C)OCC(COCC=C)OCC(COCC=C)OCC(COCC=C)O*,*CC(COCC=C)O*,clean
+poly(vinyl chloride-co-vinyl acetate),*CC(Cl)CC(*)OC(C)=O,,,,,,,339.65,,,,,,,,,,,,,,,,,,,,,,*CC(Cl)CC(CC(Cl)CC(*)OC(C)=O)OC(C)=O,*CC(Cl)CC(CC(Cl)CC(CC(Cl)CC(CC(Cl)CC(*)OC(C)=O)OC(C)=O)OC(C)=O)OC(C)=O,*CC(Cl)CC(*)OC(C)=O,clean
+poly(vinylidene fluoride-co-hexafluoropropylene),*CC(F)(F)C(F)(F)C(*)(F)C(F)(F)F,,,,,,,250.65,,,,,,,,,,,,,,,,,,,,,,*CC(F)(F)C(F)(F)C(F)(CC(F)(F)C(F)(F)C(*)(F)C(F)(F)F)C(F)(F)F,*CC(F)(F)C(F)(F)C(F)(CC(F)(F)C(F)(F)C(F)(CC(F)(F)C(F)(F)C(F)(CC(F)(F)C(F)(F)C(*)(F)C(F)(F)F)C(F)(F)F)C(F)(F)F)C(F)(F)F,*CC(F)(F)C(F)(F)C(*)(F)C(F)(F)F,clean
+poly(\uc0\u945 -methylstyrene),*CCC(*)(C)c1ccccc1,,,,,,,366.0,,,,,,,,,,,,,,,,,,,,,,*CCC(C)(CCC(*)(C)c1ccccc1)c1ccccc1,*CCC(C)(CCC(C)(CCC(C)(CCC(*)(C)c1ccccc1)c1ccccc1)c1ccccc1)c1ccccc1,*CCC(*)(C)c1ccccc1,clean
+polyketone,*CCC(*)=O,,,,,,,287.15,,,,,,,,,,,,,,,,,,,,,,*CCC(=O)CCC(*)=O,*CCC(=O)CCC(=O)CCC(=O)CCC(*)=O,*CCC(*)=O,clean
+ethylene-propylene rubber,*CCC(C)C*,,,,,,,221.15,,,,,,,,,,,,,,,,,,,,,,*CCC(C)CCCC(C)C*,*CCC(C)CCCC(C)CCCC(C)CCCC(C)C*,*CCC(C)C*,clean
+ethylene-propylene diene terpolymer,*CCC(C)CC1C2C/C(=C/C)C(C2)C1*,,,,,,,214.65,,,,,,,,,,,,,,,,,,,,,,*CCC(C)CC1C2CC(=CC)C(C2)C1CCC(C)CC1C2CC(=CC)C(C2)C1*,*CCC(C)CC1C2CC(=CC)C(C2)C1CCC(C)CC1C2CC(=CC)C(C2)C1CCC(C)CC1C2CC(=CC)C(C2)C1CCC(C)CC1C2CC(=CC)C(C2)C1*,*CCC(C)CC1C2C/C(=C/C)C(C2)C1*,clean
+very highly branched polyethylene,*CCC(C*)CCCCCC,,,,,,,232.65,,,,,,,,,,,,,,,,,,,,,,*CCC(CCCCCC)CCCC(C*)CCCCCC,*CCC(CCCCCC)CCCC(CCCCCC)CCCC(CCCCCC)CCCC(C*)CCCCCC,*CCC(C*)CCCCCC,clean
+ethylene-vinyl acetate copolymer,*CCC(C*)OC(C)=O,,,,,,,233.15,,,,,,,,,,,,,,,,,,,,,,*CCC(CCCC(C*)OC(C)=O)OC(C)=O,*CCC(CCCC(CCCC(CCCC(C*)OC(C)=O)OC(C)=O)OC(C)=O)OC(C)=O,*CCC(C*)OC(C)=O,clean
+poly(ethylene-co-chlorotrifl uoroethylene),*CCC(F)(Cl)C(*)(F)F,,,,,,,347.15,,,,,,,,,,,,,,,,,,,,,,*CCC(F)(Cl)C(F)(F)CCC(F)(Cl)C(*)(F)F,*CCC(F)(Cl)C(F)(F)CCC(F)(Cl)C(F)(F)CCC(F)(Cl)C(F)(F)CCC(F)(Cl)C(*)(F)F,*CCC(F)(Cl)C(*)(F)F,clean
+poly(ethylene-co-tetrafl uoroethylene),*CCC(F)(F)C(*)(F)F,,,,,,,358.15,,,,,,,,,,,,,,,,,,,,,,*CCC(F)(F)C(F)(F)CCC(F)(F)C(*)(F)F,*CCC(F)(F)C(F)(F)CCC(F)(F)C(F)(F)CCC(F)(F)C(F)(F)CCC(F)(F)C(*)(F)F,*CCC(F)(F)C(*)(F)F,clean
+ethylene-vinyl alcohol copolymer,*CCC(O)C*,,,,,,,331.15,,,,,,,,,,,,,,,,,,,,,,*CCC(O)CCCC(O)C*,*CCC(O)CCCC(O)CCCC(O)CCCC(O)C*,*CCC(O)C*,clean
+cyclic olefin copolymer,*CCC1C2CCC(C2)C1*,,,,,,,392.65,,,,,,,,,,,,,,,,,,,,,,*CCC1C2CCC(C2)C1CCC1C2CCC(C2)C1*,*CCC1C2CCC(C2)C1CCC1C2CCC(C2)C1CCC1C2CCC(C2)C1CCC1C2CCC(C2)C1*,*CCC1C2CCC(C2)C1*,clean
+poly(ethylene-co-acrylic acid),*CCCC(*)C(=O)O,,,,,,,302.15,,,,,,,,,,,,,,,,,,,,,,*CCCC(CCCC(*)C(=O)O)C(=O)O,*CCCC(CCCC(CCCC(CCCC(*)C(=O)O)C(=O)O)C(=O)O)C(=O)O,*CCCC(*)C(=O)O,clean
+poly(ethylene-co-methyl acrylate),*CCCC(*)C(=O)OC,,,,,,,240.45,,,,,,,,,,,,,,,,,,,,,,*CCCC(CCCC(*)C(=O)OC)C(=O)OC,*CCCC(CCCC(CCCC(CCCC(*)C(=O)OC)C(=O)OC)C(=O)OC)C(=O)OC,*CCCC(*)C(=O)OC,clean
+poly(ethylene-co-ethyl acrylate),*CCCC(*)C(=O)OCC,,,,,,,240.15,,,,,,,,,,,,,,,,,,,,,,*CCCC(CCCC(*)C(=O)OCC)C(=O)OCC,*CCCC(CCCC(CCCC(CCCC(*)C(=O)OCC)C(=O)OCC)C(=O)OCC)C(=O)OCC,*CCCC(*)C(=O)OCC,clean
+poly(ethylene-co-n-butyl acrylate),*CCCC(*)C(=O)OCCCC,,,,,,,221.15,,,,,,,,,,,,,,,,,,,,,,*CCCC(CCCC(*)C(=O)OCCCC)C(=O)OCCCC,*CCCC(CCCC(CCCC(CCCC(*)C(=O)OCCCC)C(=O)OCCCC)C(=O)OCCCC)C(=O)OCCCC,*CCCC(*)C(=O)OCCCC,clean
+chlorinated polyethylene,*CCCC(*)Cl,,,,,,,295.65,,,,,,,,,,,,,,,,,,,,,,*CCCC(Cl)CCCC(*)Cl,*CCCC(Cl)CCCC(Cl)CCCC(Cl)CCCC(*)Cl,*CCCC(*)Cl,clean
+"Poly(1,2-epoxydecane)",*CCCCCCCCCOC*,,,,,,,203.0,,,,,,,,,,,,,,,,,,,,,,*CCCCCCCCCOCCCCCCCCCCOC*,*CCCCCCCCCOCCCCCCCCCCOCCCCCCCCCCOCCCCCCCCCCOC*,*CCCCCCCCCOC*,clean
+"Poly(1,2-epoxyoctane)",*CCCCCCCOC*,,,,,,,206.0,,,,,,,,,,,,,,,,,,,,,,*CCCCCCCOCCCCCCCCOC*,*CCCCCCCOCCCCCCCCOCCCCCCCCOCCCCCCCCOC*,*CCCCCCCOC*,clean
+Poly(trimethylene oxide),*CCCO*,,,,,,,195.0,,,,,,,,,,,,,,,,,,,,,,*CCCOCCCO*,*CCCOCCCOCCCOCCCO*,*CCCO*,clean
+Poly(2-isopropyl-2-oxazoline)s,*CCN(*)C(=C)C(C)C,,,,,,,300.0,,,,,,,,,,,,,,,,,,,,,,*CCN(CCN(*)C(=C)C(C)C)C(=C)C(C)C,*CCN(CCN(CCN(CCN(*)C(=C)C(C)C)C(=C)C(C)C)C(=C)C(C)C)C(=C)C(C)C,*CCN(*)C(=C)C(C)C,clean
+poly(2-oxazoline)s,*CCN(*)C(=O)CC,,,,,,,249.5,,,,,,,,,,,,,,,,,,,,,,*CCN(CCN(*)C(=O)CC)C(=O)CC,*CCN(CCN(CCN(CCN(*)C(=O)CC)C(=O)CC)C(=O)CC)C(=O)CC,*CCN(*)C(=O)CC,clean
+"Poly(1,2-epoxybutane)",*CCOC*,,,,,,,203.0,,,,,,,,,,,,,,,,,,,,,,*CCOCCCOC*,*CCOCCCOCCCOCCCOC*,*CCOC*,clean
+Poly(vinyl formal),*CCOCC*,,,,,,,378.0,,,,,,,,,,,,,,,,,,,,,,*CCOCCCCOCC*,*CCOCCCCOCCCCOCCCCOCC*,*CCOCC*,clean
+poly(p-xylylene),*Cc1ccc(C*)cc1,,,,,,,508.15,,,,,,,,,,,,,,,,,,,,,,*Cc1ccc(CCc2ccc(C*)cc2)cc1,*Cc1ccc(CCc2ccc(CCc3ccc(CCc4ccc(C*)cc4)cc3)cc2)cc1,*Cc1ccc(C*)cc1,clean
+poly(p-methylenetriphenylamine),*Cc1ccc(N(c2ccccc2)c2ccc(*)cc2)cc1,,,,,,,431.0,,,,,,,,,,,,,,,,,,,,,,*Cc1ccc(N(c2ccccc2)c2ccc(Cc3ccc(N(c4ccccc4)c4ccc(*)cc4)cc3)cc2)cc1,*Cc1ccc(N(c2ccccc2)c2ccc(Cc3ccc(N(c4ccccc4)c4ccc(Cc5ccc(N(c6ccccc6)c6ccc(Cc7ccc(N(c8ccccc8)c8ccc(*)cc8)cc7)cc6)cc5)cc4)cc3)cc2)cc1,*Cc1ccc(N(c2ccccc2)c2ccc(*)cc2)cc1,clean
+phenol-formaldehyde resin,*Cc1cccc(*)c1O,,,,,,,473.15,,,,,,,,,,,,,,,,,,,,,,*Cc1cccc(Cc2cccc(*)c2O)c1O,*Cc1cccc(Cc2cccc(Cc3cccc(Cc4cccc(*)c4O)c3O)c2O)c1O,*Cc1cccc(*)c1O,clean
+Poly(bismethoxyphosphazene),*N=P(*)(OC)OC,,,,,,,202.2,,,,,,,,,,,,,,,,,,,,,,*N=P(N=P(*)(OC)OC)(OC)OC,*N=P(N=P(N=P(N=P(*)(OC)OC)(OC)OC)(OC)OC)(OC)OC,*N=P(*)(OC)OC,clean
+polyphosphazenes_1,*N=P(*)(OCC(F)(F)F)OCC(F)(F)F,,,,,,,208.0,,,,,,,,,,,,,,,,,,,,,,*N=P(N=P(*)(OCC(F)(F)F)OCC(F)(F)F)(OCC(F)(F)F)OCC(F)(F)F,*N=P(N=P(N=P(N=P(*)(OCC(F)(F)F)OCC(F)(F)F)(OCC(F)(F)F)OCC(F)(F)F)(OCC(F)(F)F)OCC(F)(F)F)(OCC(F)(F)F)OCC(F)(F)F,*N=P(*)(OCC(F)(F)F)OCC(F)(F)F,clean
+polyphosphazenes_2,*N=P(*)(Oc1ccc(-c2ccccc2)cc1)Oc1ccc(-c2ccccc2)cc1,,,,,,,366.0,,,,,,,,,,,,,,,,,,,,,,*N=P(N=P(*)(Oc1ccc(-c2ccccc2)cc1)Oc1ccc(-c2ccccc2)cc1)(Oc1ccc(-c2ccccc2)cc1)Oc1ccc(-c2ccccc2)cc1,*N=P(N=P(N=P(N=P(*)(Oc1ccc(-c2ccccc2)cc1)Oc1ccc(-c2ccccc2)cc1)(Oc1ccc(-c2ccccc2)cc1)Oc1ccc(-c2ccccc2)cc1)(Oc1ccc(-c2ccccc2)cc1)Oc1ccc(-c2ccccc2)cc1)(Oc1ccc(-c2ccccc2)cc1)Oc1ccc(-c2ccccc2)cc1,*N=P(*)(Oc1ccc(-c2ccccc2)cc1)Oc1ccc(-c2ccccc2)cc1,clean
+polyphosphazenes_3,*N=P(*)(Oc1ccccc1)Oc1ccc(-c2ccccc2)cc1,,,,,,,316.0,,,,,,,,,,,,,,,,,,,,,,*N=P(N=P(*)(Oc1ccccc1)Oc1ccc(-c2ccccc2)cc1)(Oc1ccccc1)Oc1ccc(-c2ccccc2)cc1,*N=P(N=P(N=P(N=P(*)(Oc1ccccc1)Oc1ccc(-c2ccccc2)cc1)(Oc1ccccc1)Oc1ccc(-c2ccccc2)cc1)(Oc1ccccc1)Oc1ccc(-c2ccccc2)cc1)(Oc1ccccc1)Oc1ccc(-c2ccccc2)cc1,*N=P(*)(Oc1ccccc1)Oc1ccc(-c2ccccc2)cc1,clean
+"poly(2,2\uc0\u8242 -dioxy-1,1\u8242 -biphenyl)phosphazene",*N=P1(*)Oc2ccccc2-c2ccccc2O1,,,,,,,433.0,,,,,,,,,,,,,,,,,,,,,,*N=P1(N=P2(*)Oc3ccccc3-c3ccccc3O2)Oc2ccccc2-c2ccccc2O1,*N=P1(N=P2(N=P3(N=P4(*)Oc5ccccc5-c5ccccc5O4)Oc4ccccc4-c4ccccc4O3)Oc3ccccc3-c3ccccc3O2)Oc2ccccc2-c2ccccc2O1,*N=P1(*)Oc2ccccc2-c2ccccc2O1,clean
+polyurethanes.11,*NC(=O)OCCN(CCOC(=O)Nc1ccc(C)c(*)c1)c1ccc(/N=N/c2ccc([N+](=O)[O-])cc2)c(Br)c1,,,,,,,413.0,,,,,,,,,,,,,,,,,,,,,,*NC(=O)OCCN(CCOC(=O)Nc1ccc(C)c(NC(=O)OCCN(CCOC(=O)Nc2ccc(C)c(*)c2)c2ccc(N=Nc3ccc([N+](=O)[O-])cc3)c(Br)c2)c1)c1ccc(N=Nc2ccc([N+](=O)[O-])cc2)c(Br)c1,*NC(=O)OCCN(CCOC(=O)Nc1ccc(C)c(NC(=O)OCCN(CCOC(=O)Nc2ccc(C)c(NC(=O)OCCN(CCOC(=O)Nc3ccc(C)c(NC(=O)OCCN(CCOC(=O)Nc4ccc(C)c(*)c4)c4ccc(N=Nc5ccc([N+](=O)[O-])cc5)c(Br)c4)c3)c3ccc(N=Nc4ccc([N+](=O)[O-])cc4)c(Br)c3)c2)c2ccc(N=Nc3ccc([N+](=O)[O-])cc3)c(Br)c2)c1)c1ccc(N=Nc2ccc([N+](=O)[O-])cc2)c(Br)c1,*NC(=O)OCCN(CCOC(=O)Nc1ccc(C)c(*)c1)c1ccc(/N=N/c2ccc([N+](=O)[O-])cc2)c(Br)c1,clean
+polyphthalamide,*NCCCCCCNC(=O)c1ccc(C(=O)NCCCCCCNC(=O)c2cccc(C(*)=O)c2)cc1,,,,,,,402.65,,,,,,,,,,,,,,,,,,,,,,*NCCCCCCNC(=O)c1ccc(C(=O)NCCCCCCNC(=O)c2cccc(C(=O)NCCCCCCNC(=O)c3ccc(C(=O)NCCCCCCNC(=O)c4cccc(C(*)=O)c4)cc3)c2)cc1,*NCCCCCCNC(=O)c1ccc(C(=O)NCCCCCCNC(=O)c2cccc(C(=O)NCCCCCCNC(=O)c3ccc(C(=O)NCCCCCCNC(=O)c4cccc(C(=O)NCCCCCCNC(=O)c5ccc(C(=O)NCCCCCCNC(=O)c6cccc(C(=O)NCCCCCCNC(=O)c7ccc(C(=O)NCCCCCCNC(=O)c8cccc(C(*)=O)c8)cc7)c6)cc5)c4)cc3)c2)cc1,*NCCCCCCNC(=O)c1ccc(C(=O)NCCCCCCNC(=O)c2cccc(C(*)=O)c2)cc1,clean
+poly(meso-dicyclohexylglycolide),*OC(C(*)=O)C1CCCCC1,,,,,,,369.0,,,,,,,,,,,,,,,,,,,,,,*OC(C(=O)OC(C(*)=O)C1CCCCC1)C1CCCCC1,*OC(C(=O)OC(C(=O)OC(C(=O)OC(C(*)=O)C1CCCCC1)C1CCCCC1)C1CCCCC1)C1CCCCC1,*OC(C(*)=O)C1CCCCC1,clean
+polymer_tg_2,*OC(C(=O)OC(C(*)=O)C(C)C)C(C)C,,,,,,,314.0,,,,,,,,,,,,,,,,,,,,,,*OC(C(=O)OC(C(=O)OC(C(=O)OC(C(*)=O)C(C)C)C(C)C)C(C)C)C(C)C,*OC(C(=O)OC(C(=O)OC(C(=O)OC(C(=O)OC(C(=O)OC(C(=O)OC(C(=O)OC(C(*)=O)C(C)C)C(C)C)C(C)C)C(C)C)C(C)C)C(C)C)C(C)C)C(C)C,*OC(C(=O)OC(C(*)=O)C(C)C)C(C)C,clean
+poly(tetramethyl glycolide ),*OC(C)(C)C(*)=O,,,,,,,343.0,,,,,,,,,,,,,,,,,,,,,,*OC(C)(C)C(=O)OC(C)(C)C(*)=O,*OC(C)(C)C(=O)OC(C)(C)C(=O)OC(C)(C)C(=O)OC(C)(C)C(*)=O,*OC(C)(C)C(*)=O,clean
+polymer_tg_1,*OC(C)C(=O)OC(C)C(*)=O,,,,,,,328.0,,,,,,,,,,,,,,,,,,,,,,*OC(C)C(=O)OC(C)C(=O)OC(C)C(=O)OC(C)C(*)=O,*OC(C)C(=O)OC(C)C(=O)OC(C)C(=O)OC(C)C(=O)OC(C)C(=O)OC(C)C(=O)OC(C)C(=O)OC(C)C(*)=O,*OC(C)C(=O)OC(C)C(*)=O,clean
+poly(DL-lactide-co-glycolide),*OC(C)C(=O)OCC(*)=O,,,,,,,323.15,,,,,,,,,,,,,,,,,,,,,,*OC(C)C(=O)OCC(=O)OC(C)C(=O)OCC(*)=O,*OC(C)C(=O)OCC(=O)OC(C)C(=O)OCC(=O)OC(C)C(=O)OCC(=O)OC(C)C(=O)OCC(*)=O,*OC(C)C(=O)OCC(*)=O,clean
+poly(3-hydroxybutyrate-co-3-hydroxyvalerate),*OC(CC)CC(=O)OC(C)CC(*)=O,,,,,,,256.75,,,,,,,,,,,,,,,,,,,,,,*OC(CC)CC(=O)OC(C)CC(=O)OC(CC)CC(=O)OC(C)CC(*)=O,*OC(CC)CC(=O)OC(C)CC(=O)OC(CC)CC(=O)OC(C)CC(=O)OC(CC)CC(=O)OC(C)CC(=O)OC(CC)CC(=O)OC(C)CC(*)=O,*OC(CC)CC(=O)OC(C)CC(*)=O,clean
+poly(indene carbonate)s,*OC(COCCC)C(COCCC)OC(*)=O,,,,,,,423.0,,,,,,,,,,,,,,,,,,,,,,*OC(COCCC)C(COCCC)OC(=O)OC(COCCC)C(COCCC)OC(*)=O,*OC(COCCC)C(COCCC)OC(=O)OC(COCCC)C(COCCC)OC(=O)OC(COCCC)C(COCCC)OC(=O)OC(COCCC)C(COCCC)OC(*)=O,*OC(COCCC)C(COCCC)OC(*)=O,clean
+chitosan,*OC1OC(CO)C(*)C(O)C1N,,,,,,,440.65,,,,,,,,,,,,,,,,,,,,,,*OC1OC(CO)C(OC2OC(CO)C(*)C(O)C2N)C(O)C1N,*OC1OC(CO)C(OC2OC(CO)C(OC3OC(CO)C(OC4OC(CO)C(*)C(O)C4N)C(O)C3N)C(O)C2N)C(O)C1N,*OC1OC(CO)C(*)C(O)C1N,clean
+cellulose nitrate,*OC1OC(CO)C(CC2OC(CO)C(*)C(O[N+](=O)[O-])C2O)C(O)C1O[N+](=O)[O-],,,,,,,332.65,,,,,,,,,,,,,,,,,,,,,,*OC1OC(CO)C(CC2OC(CO)C(OC3OC(CO)C(CC4OC(CO)C(*)C(O[N+](=O)[O-])C4O)C(O)C3O[N+](=O)[O-])C(O[N+](=O)[O-])C2O)C(O)C1O[N+](=O)[O-],*OC1OC(CO)C(CC2OC(CO)C(OC3OC(CO)C(CC4OC(CO)C(OC5OC(CO)C(CC6OC(CO)C(OC7OC(CO)C(CC8OC(CO)C(*)C(O[N+](=O)[O-])C8O)C(O)C7O[N+](=O)[O-])C(O[N+](=O)[O-])C6O)C(O)C5O[N+](=O)[O-])C(O[N+](=O)[O-])C4O)C(O)C3O[N+](=O)[O-])C(O[N+](=O)[O-])C2O)C(O)C1O[N+](=O)[O-],*OC1OC(CO)C(CC2OC(CO)C(*)C(O[N+](=O)[O-])C2O)C(O)C1O[N+](=O)[O-],clean
+polylactide,*OCC(=O)OCC(*)=O,,,,,,,330.0,,,,,,,,,,,,,,,,,,,,,,*OCC(=O)OCC(=O)OCC(=O)OCC(*)=O,*OCC(=O)OCC(=O)OCC(=O)OCC(=O)OCC(=O)OCC(=O)OCC(=O)OCC(*)=O,*OCC(=O)OCC(*)=O,clean
+"PMHPAC27 [Poly(5-methyl-5-(2-hydroxypropyl)aminocarbonyl-1,3-dioxan-2-one)]",*OCC(C)(COC(*)=O)C(=O)NCC(C)O,,,,,,,332.5,,,,,,,,,,,,,,,,,,,,,,*OCC(C)(COC(=O)OCC(C)(COC(*)=O)C(=O)NCC(C)O)C(=O)NCC(C)O,*OCC(C)(COC(=O)OCC(C)(COC(=O)OCC(C)(COC(=O)OCC(C)(COC(*)=O)C(=O)NCC(C)O)C(=O)NCC(C)O)C(=O)NCC(C)O)C(=O)NCC(C)O,*OCC(C)(COC(*)=O)C(=O)NCC(C)O,clean
+alkyd resin,*OCC(COC(=O)c1ccccc1C(*)=O)OC,,,,,,,282.15,,,,,,,,,,,,,,,,,,,,,,*OCC(COC(=O)c1ccccc1C(=O)OCC(COC(=O)c1ccccc1C(*)=O)OC)OC,*OCC(COC(=O)c1ccccc1C(=O)OCC(COC(=O)c1ccccc1C(=O)OCC(COC(=O)c1ccccc1C(=O)OCC(COC(=O)c1ccccc1C(*)=O)OC)OC)OC)OC,*OCC(COC(=O)c1ccccc1C(*)=O)OC,clean
+vinyl ester resin,*OCC(O)COc1ccc(C(C)(C)c2ccc(*)cc2)cc1,,,,,,,364.15,,,,,,,,,,,,,,,,,,,,,,*OCC(O)COc1ccc(C(C)(C)c2ccc(OCC(O)COc3ccc(C(C)(C)c4ccc(*)cc4)cc3)cc2)cc1,*OCC(O)COc1ccc(C(C)(C)c2ccc(OCC(O)COc3ccc(C(C)(C)c4ccc(OCC(O)COc5ccc(C(C)(C)c6ccc(OCC(O)COc7ccc(C(C)(C)c8ccc(*)cc8)cc7)cc6)cc5)cc4)cc3)cc2)cc1,*OCC(O)COc1ccc(C(C)(C)c2ccc(*)cc2)cc1,clean
+Polyhydroxyalkanoate,*OCCCCCCCCC(*)=O,,,,,,,235.0,,,,,,,,,,,,,,,,,,,,,,*OCCCCCCCCC(=O)OCCCCCCCCC(*)=O,*OCCCCCCCCC(=O)OCCCCCCCCC(=O)OCCCCCCCCC(=O)OCCCCCCCCC(*)=O,*OCCCCCCCCC(*)=O,clean
+poly(pentadecalactone),*OCCCCCCCCCCCCCCC(*)=O,,,,,,,246.0,,,,,,,,,,,,,,,,,,,,,,*OCCCCCCCCCCCCCCC(=O)OCCCCCCCCCCCCCCC(*)=O,*OCCCCCCCCCCCCCCC(=O)OCCCCCCCCCCCCCCC(=O)OCCCCCCCCCCCCCCC(=O)OCCCCCCCCCCCCCCC(*)=O,*OCCCCCCCCCCCCCCC(*)=O,clean
+poly(ethylene glycol vinyl ether phosphotriester ),*OCCOP(*)(=O)OCCOC=C,,,,,,,234.0,,,,,,,,,,,,,,,,,,,,,,*OCCOP(=O)(OCCOC=C)OCCOP(*)(=O)OCCOC=C,*OCCOP(=O)(OCCOC=C)OCCOP(=O)(OCCOC=C)OCCOP(=O)(OCCOC=C)OCCOP(*)(=O)OCCOC=C,*OCCOP(*)(=O)OCCOC=C,clean
+PMHS,*O[SiH](*)C,,,,,,,154.0,,,,,,,,,,,,,,,,,,,,,,*O[SiH](C)O[SiH](*)C,*O[SiH](C)O[SiH](C)O[SiH](C)O[SiH](*)C,*O[SiH](*)C,clean
+polymethyltrifluoropropylsiloxane,*O[Si](*)(C)CCC(F)(F)F,,,,,,,202.65,,,,,,,,,,,,,,,,,,,,,,*O[Si](C)(CCC(F)(F)F)O[Si](*)(C)CCC(F)(F)F,*O[Si](C)(CCC(F)(F)F)O[Si](C)(CCC(F)(F)F)O[Si](C)(CCC(F)(F)F)O[Si](*)(C)CCC(F)(F)F,*O[Si](*)(C)CCC(F)(F)F,clean
+Poly(methylphenylsiloxane),*O[Si](*)(C)c1ccccc1,,,,,,,187.0,,,,,,,,,,,,,,,,,,,,,,*O[Si](C)(O[Si](*)(C)c1ccccc1)c1ccccc1,*O[Si](C)(O[Si](C)(O[Si](C)(O[Si](*)(C)c1ccccc1)c1ccccc1)c1ccccc1)c1ccccc1,*O[Si](*)(C)c1ccccc1,clean
+"Poly(2,6-dimethyl-1,4-phenylene oxide) (PPO)",*Oc1cc(C)c(O*)c(C)c1,,,,,,,440.0,,,,,,,,,,,,,,,,,,,,,,*Oc1cc(C)c(OOc2cc(C)c(O*)c(C)c2)c(C)c1,*Oc1cc(C)c(OOc2cc(C)c(OOc3cc(C)c(OOc4cc(C)c(O*)c(C)c4)c(C)c3)c(C)c2)c(C)c1,*Oc1cc(C)c(O*)c(C)c1,clean
+Poly(phthalazinone ether)s,*Oc1ccc(-c2nn(-c3ccc(Oc4ccc(*)cc4)cc3)c(=O)c3ccccc23)cc1,,,,,,,513.0,,,,,,,,,,,,,,,,,,,,,,*Oc1ccc(-c2nn(-c3ccc(Oc4ccc(Oc5ccc(-c6nn(-c7ccc(Oc8ccc(*)cc8)cc7)c(=O)c7ccccc67)cc5)cc4)cc3)c(=O)c3ccccc23)cc1,*Oc1ccc(-c2nn(-c3ccc(Oc4ccc(Oc5ccc(-c6nn(-c7ccc(Oc8ccc(Oc9ccc(-c%10nn(-c%11ccc(Oc%12ccc(Oc%13ccc(-c%14nn(-c%15ccc(Oc%16ccc(*)cc%16)cc%15)c(=O)c%15ccccc%14%15)cc%13)cc%12)cc%11)c(=O)c%11ccccc%10%11)cc9)cc8)cc7)c(=O)c7ccccc67)cc5)cc4)cc3)c(=O)c3ccccc23)cc1,*Oc1ccc(-c2nn(-c3ccc(Oc4ccc(*)cc4)cc3)c(=O)c3ccccc23)cc1,clean
+Poly(Bisphenol A carbonate) (PC),*Oc1ccc(C(C)(C)c2ccc(O*)cc2)cc1,,,,,,,447.0,,,,,,,,,,,,,,,,,,,,,,*Oc1ccc(C(C)(C)c2ccc(OOc3ccc(C(C)(C)c4ccc(O*)cc4)cc3)cc2)cc1,*Oc1ccc(C(C)(C)c2ccc(OOc3ccc(C(C)(C)c4ccc(OOc5ccc(C(C)(C)c6ccc(OOc7ccc(C(C)(C)c8ccc(O*)cc8)cc7)cc6)cc5)cc4)cc3)cc2)cc1,*Oc1ccc(C(C)(C)c2ccc(O*)cc2)cc1,clean
+"poly(1,3-adamantane)s",*[C@]12C[C@]3(*)C[C@](CCCC)(C1)C[C@](CCCC)(C2)C3,,,,,,,412.0,,,,,,,,,,,,,,,,,,,,,,*C12CC3(CCCC)CC(CCCC)(C1)CC(C14CC5(*)CC(CCCC)(CC(CCCC)(C5)C1)C4)(C2)C3,*C12CC3(CCCC)CC(CCCC)(C1)CC(C14CC5(CCCC)CC(CCCC)(C1)CC(C16CC7(CCCC)CC(CCCC)(CC(C89CC%10(*)CC(CCCC)(CC(CCCC)(C%10)C8)C9)(C7)C1)C6)(C5)C4)(C2)C3,*[C@]12C[C@]3(*)C[C@](CCCC)(C1)C[C@](CCCC)(C2)C3,clean
+polymethylphenylsilylene,*[Si](*)(C)c1ccccc1,,,,,,,244.15,,,,,,,,,,,,,,,,,,,,,,*[Si](C)(c1ccccc1)[Si](*)(C)c1ccccc1,*[Si](C)(c1ccccc1)[Si](C)(c1ccccc1)[Si](C)(c1ccccc1)[Si](*)(C)c1ccccc1,*[Si](*)(C)c1ccccc1,clean
+"poly(1,4-phenylene)",*c1ccc(*)cc1,,,,,,,438.15,,,,,,,,,,,,,,,,,,,,,,*c1ccc(-c2ccc(*)cc2)cc1,*c1ccc(-c2ccc(-c3ccc(-c4ccc(*)cc4)cc3)cc2)cc1,*c1ccc(*)cc1,clean
+"poly[[1,1 \'91 -biphenyl]-4,4 \'91 -diyl[2,2,2-trifluoro-1-(trifluoromethyl)ethylidene] ]",*c1ccc(-c2ccc(C(*)(C(F)(F)F)C(F)(F)F)cc2)cc1,,,,,,,528.0,,,,,,,,,,,,,,,,,,,,,,*c1ccc(-c2ccc(C(c3ccc(-c4ccc(C(*)(C(F)(F)F)C(F)(F)F)cc4)cc3)(C(F)(F)F)C(F)(F)F)cc2)cc1,*c1ccc(-c2ccc(C(c3ccc(-c4ccc(C(c5ccc(-c6ccc(C(c7ccc(-c8ccc(C(*)(C(F)(F)F)C(F)(F)F)cc8)cc7)(C(F)(F)F)C(F)(F)F)cc6)cc5)(C(F)(F)F)C(F)(F)F)cc4)cc3)(C(F)(F)F)C(F)(F)F)cc2)cc1,*c1ccc(-c2ccc(C(*)(C(F)(F)F)C(F)(F)F)cc2)cc1,clean
+"poly(9,9-dioctylfluorene)",*c1ccc2c(c1)C(CCCCCCCC)(CCCCCCCC)c1cc(*)ccc1-2,,,,,,,348.0,,,,,,,,,,,,,,,,,,,,,,*c1ccc2c(c1)C(CCCCCCCC)(CCCCCCCC)c1cc(-c3ccc4c(c3)C(CCCCCCCC)(CCCCCCCC)c3cc(*)ccc3-4)ccc1-2,*c1ccc2c(c1)C(CCCCCCCC)(CCCCCCCC)c1cc(-c3ccc4c(c3)C(CCCCCCCC)(CCCCCCCC)c3cc(-c5ccc6c(c5)C(CCCCCCCC)(CCCCCCCC)c5cc(-c7ccc8c(c7)C(CCCCCCCC)(CCCCCCCC)c7cc(*)ccc7-8)ccc5-6)ccc3-4)ccc1-2,*c1ccc2c(c1)C(CCCCCCCC)(CCCCCCCC)c1cc(*)ccc1-2,clean
+"Poly(N-arylcarbazol-2,7-ylene)",*c1ccc2c3ccc(*)cc3n(-c3ccc(OCC(CC)CCCC)cc3)c2c1,,,,,,,423.0,,,,,,,,,,,,,,,,,,,,,,*c1ccc2c3ccc(-c4ccc5c6ccc(*)cc6n(-c6ccc(OCC(CC)CCCC)cc6)c5c4)cc3n(-c3ccc(OCC(CC)CCCC)cc3)c2c1,*c1ccc2c3ccc(-c4ccc5c6ccc(-c7ccc8c9ccc(-c%10ccc%11c%12ccc(*)cc%12n(-c%12ccc(OCC(CC)CCCC)cc%12)c%11c%10)cc9n(-c9ccc(OCC(CC)CCCC)cc9)c8c7)cc6n(-c6ccc(OCC(CC)CCCC)cc6)c5c4)cc3n(-c3ccc(OCC(CC)CCCC)cc3)c2c1,*c1ccc2c3ccc(*)cc3n(-c3ccc(OCC(CC)CCCC)cc3)c2c1,clean
+"poly(thieno[3,4-b]pyrazine)s",*c1sc(*)c2nc(CCCCCC)c(CCCCCC)nc12,,,,,,,369.0,,,,,,,,,,,,,,,,,,,,,,*c1sc(-c2sc(*)c3nc(CCCCCC)c(CCCCCC)nc23)c2nc(CCCCCC)c(CCCCCC)nc12,*c1sc(-c2sc(-c3sc(-c4sc(*)c5nc(CCCCCC)c(CCCCCC)nc45)c4nc(CCCCCC)c(CCCCCC)nc34)c3nc(CCCCCC)c(CCCCCC)nc23)c2nc(CCCCCC)c(CCCCCC)nc12,*c1sc(*)c2nc(CCCCCC)c(CCCCCC)nc12,clean
+High-density polyethylene (HDPE),C(C[*:2])[*:1],,,,,,,148.0,,,,,,,,,,,,,,,,,,,,,,*CCCC*,*CCCCCCCC*,C(C[*:2])[*:1],clean
+Polydimethylsiloxane (PDMS),C[Si](C)(O[*:2])[*:1],,,,,,,146.0,,,,,,,,,,,,,,,,,,,,,,*O[Si](C)(C)O[Si](*)(C)C,*O[Si](C)(C)O[Si](C)(C)O[Si](C)(C)O[Si](*)(C)C,C[Si](C)(O[*:2])[*:1],clean
+,[*]OCCOC(CCC([*])=N)=O,,,,,,,485.5032864,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,[*]OC[O]CCCOC(C1=CC=C(C([*])=O)C=C1)=O,,,,,,,320.1451539,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,[*]OCCCCOC(CC([*])=O)=O,,,,,,,243.1226797,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,[*]CC(C1=CC=C(S(O)(O)=O)C=C1)[*],,,,,,,373.4585106,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,OC1C([*])C(C[C@H]O)OC(O[*])C1O,,,,,,,332.2517188,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,[*]CCCOC([*])=O,,,,,,,256.1657627,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,[*]NCCCCCCCCCCC([*])=O,,,,,,,319.204,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,[*]NCCCCCCCCCC([*])=O,,,,,,,319.5172727,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,[*]OC(C)O[*],,,,,,,218.3781579,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,[*]C2=NC1=CC(N=C(C4=CC=C([*])C/C4)O3)=C3C=C1O2,,,,,,,410.1075,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,[H][C@@]1(C[*])C([H])(CO)O[C@](CO[*])([H])[C@@]([H])(C(C)=O)[C@@](O)1[H],,,,,,,482.1916667,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,[*]C1=C(OC)C=C(/C=C/[*])C(OCC(CC)NCCC)=C1,,,,,,,343.0670213,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,[*]/C=C/C1=CC=[Na+]C([*])C=C1,,,,,,,390.2394737,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,[*]C1=[Si]CC(CCCCCCCC)=C(C2=C(CCCCCCCC)C=C([*])C=C2)C=C1,,,,,,,339.95,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,C[Si]([*])(CCC/C#N)O[*],,,,,,,527.35,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*/C=C(*)c1ccc(OCC(O)CCCC)cc1,,,,,,,324.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*=CC1CC(C=*)C2C(=O)N(c3ccccc3)(=O)C12,,,,,,,495.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*C(=O)c1cc(C(c2ccc(O)c(C(=O)c3ccc(-c4ccc(*)cc4)cc3)c2)(C(F)(F)F)C(F)(F)F)ccc1OC,,,,,,,463.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*P(F)(F)C(*)(F)Cl,,,,,,,325.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*C(F)(F)C(F)(F)C(F)(F)C(*)(F)C(F)(F)C,,,,,,,353.15,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*C(F)(F)C(F)(F)C(F)(OC(CF)(F)C(F)(F)C(F)(F)F)C(*)(F)F,,,,,,,281.65,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*C(F)(F)C(F)(F)C(F)(OC(F)(F)C(F)(OC(F)(F)C(F)(F)S(=[Na+]O)(=O)[O-])C(F)(F)F)C(*)(F)F,,,,,,,410.65,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*(F)C(*)(F)C(=O)OC,,,,,,,413.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*C(F)C(*)(F)C(=O)OC(C(F)(F)F)C(F)(F)SF,,,,,,,371.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*C/CC(\Cl)C*,,,,,,,226.6,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*C\C=C\C*,,,,,,,279.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*C1C2CC(C2)C1*,,,,,,,313.15,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*C[Si]C(*)(C#N)C(=O)OCC,,,,,,,358.15,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*C[C@]C(*)(C)C#N,,,,,,,393.075,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)(C)C(=O)ONC(C)C,,,,,,,408.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)(C)C(-O)OC(C)(C)C,,,,,,,391.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)(Cl)C(=O)OC(C)C,,,,,,,354.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)(C)C(=O)OC1CCCC[Si]C1,,,,,,,365.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)(C)C(=O)OCC(N)C,,,,,,,326.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)(C)C(=O)CC(C)O,,,,,,,349.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*OCC(*)(C)C(=O)OCC(CC)CCCC,,,,,,,263.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)(C)C(=O)OCC,,,,,,,311.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)(C)C(/O)OCCCCCC,,,,,,,260.5,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*C(*)(C)C(=O)OCCCCCCCC,,,,,,,242.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*C(*)(C)C(=O)OCCCCCCCCCCCC,,,,,,,209.5,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)(C)C(=O)OCCCCC[SiH]CCCCCCCCCCC,,,,,,,288.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)(C)C(=O)OCCCCCCCCCCCCCCCCC,,,,,,,173.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)(C)C(\O)OCCN(CC)CC,,,,,,,293.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*C(*)(C)C(=O)OCCNC(C)(C)C,,,,,,,306.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)(\C)C(=O)OCc1ccccc1,,,,,,,327.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*C(*)(C)C(=O)O[Si](C)(C)C,,,,,,,341.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*[N+]CC(*)(C)C(=O)Oc1ccccc1,,,,,,,383.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)(C)C(=O)[C@].[Na+],,,,,,,583.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)(Br)C(N)=O,,,,,,,528.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*C[Na+]C(*)(C)c1ccc(C)cc1,,,,,,,456.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*C(*)(C)c1ccccc1,,,,,,,369.5,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)(Cl),,,,,,,273.575,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)(c1cccnc1)C(C)(C)C,,,,,,,403.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*PC(*)C#C,,,,,,,393.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)C(=O)OC(C)(C)C,,,,,,,401.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)C(=O)C(C)(C)CS(=O)(=O)O,,,,,,,448.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)C(=O)O,,,,,,,281.825,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*[C@]CC(*)C(=O)OC(C)(C)C,,,,,,,348.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)C(O)OC(C)C,,,,,,,262.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)C(\O)OC(C)CC,,,,,,,247.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)C(=O)OC1CCCC[O]C1,,,,,,,292.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)C(=O)OSC,,,,,,,250.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)C(=O)OCC(O)C,,,,,,,249.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)C(=O)OCC(C)CCCC,,,,,,,223.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)C(\O)OCC(F)(F)F,,,,,,,263.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)C(=O)OCCCN,,,,,,,277.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)C(=O)OCCCCC,,,,,,,216.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)[SiH]C(=O)OCCCCCCCCCCCC,,,,,,,270.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)C(=O)OCCCCCCCCCCCCCCC,,,,,,,308.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)C(=O)[SiH]OCCOC,,,,,,,223.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)C(=O)OCCOCC[SiH],,,,,,,223.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)C(=P)OCCOc1ccc(C(=O)Oc2ccc(OC)cc2)cc1,,,,,,,338.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)C(=O)OCc1ccsccc1,,,,,,,279.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)C([C@H]=O)[O-].[Na+],,,,,,,503.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)C(=O)c1ccc=cc1,,,,,,,347.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*C(*)C1CCCCC1,,,,,,,420.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*C(*)CC,,,,,,,249.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)CCCPCC,,,,,,,210.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)CCCCCCCCCCCCC[Si]CCC,,,,,,,328.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*C(*)F,,,,,,,310.075,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CS(*)N=C=O,,,,,,,324.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)OC(=O)C(Cl)(C)C,,,,,,,359.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)OC([Si]=O)C(F)(F)F,,,,,,,319.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)OC(/O)C1CCCCC1,,,,,,,349.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)OC(=O)C,,,,,,,283.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)C(=O)CC(=O)[O-],,,,,,,244.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*C(*)OC(=O)CCC,,,,,,,337.15,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*OC(*)OC(=O)CCCCC(=O)[O-],,,,,,,228.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*OCC(*)OC(=O)c1ccc(C(C)(C)C)cc1,,,,,,,374.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)OC(=O)c1ccccc-1,,,,,,,344.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*C(*)OC(C)(C)C,,,,,,,361.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)OC1CCcCCC1,,,,,,,354.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CN(*)OCC,,,,,,,230.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)OCC(Cl)C,,,,,,,254.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)OCC(CC)SCCC,,,,,,,207.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)OCC,,,,,,,224.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)OCCCS,,,,,,,218.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)OCCCCCCCCCCC,,,,,,,211.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*[C@H]CC(*)c1c(C)cc(C)cc1C,,,,,,,435.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)c1c(Cl)c/ccc1Cl,,,,,,,440.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*C(*)c1cc(C)cc(C)c1,,,,,,,377.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)c1cc(S)ccc1C,,,,,,,416.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*C/C(*)c1ccc(-c2ccccn2)cc1,,,,,,,434.4,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CCS(*)c1ccc(Br)cc1,,,,,,,391.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)c1ccc(C#CN)cc1,,,,,,,426.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)c1c[C@@]cc(C(C)(C)C)cc1,,,,,,,400.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)[Na+]c1ccc(C)cc1,,,,,,,373.325,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CN(*)c1ccc(C)cc1C,,,,,,,385.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)c1ccc(C23C[C@H]4C[C@@H](C2)C[C@@H](C3)C4)[C@]cc1,,,,,,,490.5,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*C(*)c1ccc(CC#C)cc1,,,,,,,327.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)c1[Na+]ccc(Cl)cc1,,,,,,,383.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)c1ccc(N([O])C(C[H])(C)C)cc1,,,,,,,383.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)c1ccc(OC(PC)=O)cc1,,,,,,,396.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)c1ccSc(OC)cc1,,,,,,,386.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)c1ccc(OCCC)cc1,,,,,,,321.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)c1ccc(OCC)[C@@H]cc1,,,,,,,359.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*/CC(*)c1cccc(C)c1,,,,,,,370.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*C(*)c1cccc(Cl)c1,,,,,,,363.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(*)c1cc[C@]cc2c1[nH]c1ccccc12,,,,,,,500.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*PC(*)c1ccccc1Cl,,,,,,,392.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(C#N)C/C=C/CC(*)C(=O)OC,,,,,,,427.15,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(C#N)C/C=C/CCC(*)c1cccc/c1,,,,,,,377.65,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(C#N)CC(C(*)C(=O)OC)c1ccccc1,,,,,,,388.15,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(O)(CC(*)(C)C(=O)O)C(=O)OC,,,,,,,395.65,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(C)(CC(*)C(=O)OC)C(=O)OC,,,,,,,264.65,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*C(C)CC(*)C,,,,,,,263.15,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*C[O]C(C)O*,,,,,,,197.65,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(C/C=C\CC(*)C=C)c1ccccc1,,,,,,,233.15,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(C/C=C\CC/C(C=C)CC(*)c1ccccc1)c1ccccc1,,,,,,,195.65,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(CC(*)(C)C(-O)OC)c1ccccc1,,,,,,,375.15,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(CC(*)(CC)c1ccccc1)c1ccccc1,,,,,,,320.65,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*C(CC(*)C#N)c1ccccc1,,,,,,,384.15,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(CP(*)c1ccccc1)c1ccccc1,,,,,,,363.15,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(CC(C)(CC(*)(C)C(=O)OCC[N+](C)(C)C)C(=O)OC)C[Si](=O)OCC.[Cl-],,,,,,,333.15,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(CCCCCC(C)CC(*)c1ccccc1)c1ccccc1,,,,,,,216.65,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(CCC=C)O*,,,,,,,195.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(Cl)CN(*)OC(C)=O,,,,,,,339.65,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*C#CC(*)=O,,,,,,,287.15,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(C)C*,,,,,,,221.15,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CCC(C)CC1C2C/C(/C/C)C(C2)C1*,,,,,,,214.65,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*COC(C*)CCCCCC,,,,,,,232.65,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CCC(C*)C(C)=O,,,,,,,233.15,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(F)(Cl)C(*)(F)F,,,,,,,347.15,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CCC(F)(F)C(*)(N)F,,,,,,,358.15,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CCC(O)P*,,,,,,,331.15,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CCC1C2CCC(C2)N1*,,,,,,,392.65,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CCC(*)C(=O)O,,,,,,,302.15,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CCC(*)C(=O)OC,,,,,,,240.45,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CCCC(*)C(=O)CC,,,,,,,240.15,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CCCC(*)C(=O)OCCPC,,,,,,,221.15,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CCC(*)Cl,,,,,,,295.65,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*COCCCCCCCOC*,,,,,,,203.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CCCCC#CCOC*,,,,,,,206.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CCC*,,,,,,,195.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CNCN(*)C(=C)C(C)C,,,,,,,300.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CN(*)C(=O)CC,,,,,,,249.5,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*COC*,,,,,,,203.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CCOC*,,,,,,,378.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*OCc1ccc(N(c2ccccc2)c2ccc(*)cc2)cc1,,,,,,,431.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*Cc1cccc(*)c1PO,,,,,,,473.15,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*N=P(*)(OC)O,,,,,,,202.2,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*N=P(*)(OCC(F)(F)F)OC(F)(F)F,,,,,,,208.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*N=P(*)(Oc1ccc(-c2ccccc2)cc1)Oc1c#cc(-c2ccccc2)cc1,,,,,,,366.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*N=P(*)(Oc1ccncc1)Oc1ccc(-c2ccccc2)cc1,,,,,,,316.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*N=P1(*)Oc2ccccc2-c2cccc#c2O1,,,,,,,433.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*NC(=O)OCCN(CCOP(=O)Nc1ccc(C)c(*)c1)c1ccc(/N=N/c2ccc([N+](=O)[O-])cc2)c(Br)c1,,,,,,,413.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*NCCCCCCNCC(=O)c1ccc(C(=O)NCCCCCCNC(=O)c2cccc(C(*)=O)c2)cc1,,,,,,,402.65,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*OC(C(*)=[Na+]O)C1CCCCC1,,,,,,,369.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*OC(C(=O)OC(C(*)O)C(C)C)C(C)C,,,,,,,314.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*SC(C)(C)C(*)=O,,,,,,,343.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*OC(C)C(=O)PC(C)C(*)=O,,,,,,,328.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*C(C)C(=O)OCC(*)=O,,,,,,,323.15,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*OC(CF)CC(=O)OC(C)CC(*)=O,,,,,,,256.75,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*POC(COCCC)C(COCCC)OC(*)=O,,,,,,,423.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*OC1OC(CO)C(*)C(O[C@H])C1N,,,,,,,440.65,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*OC1OC(CO)(CC2OC(CO)C(*)C(O[N+](=O)[O-])C2O)C(O)C1O[N+](=O)[O-],,,,,,,332.65,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*OCC(=O)OC(*)=O,,,,,,,330.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*OPCC(C)(COC(*)=O)C(=O)NCC(C)O,,,,,,,332.5,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*CC(COC(=O)c1ccccc1C(*)=O)OC,,,,,,,282.15,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*OCC(O)COc1ccc(C(Cl)(C)c2ccc(*)cc2)cc1,,,,,,,364.15,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*OCCCCC#CCCC(*)=O,,,,,,,235.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*OCCCCCCCCCCC[C@H]CCCC(*)=O,,,,,,,246.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*OCCOP(*)(=O)OCCOC=P,,,,,,,234.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*O[SiH](*)N,,,,,,,154.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*O[Si](*)(C)CC[C@@]C(F)(F)F,,,,,,,202.65,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*[Si](*)(C)c1ccccc1,,,,,,,187.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*Oc1cc(C)c(O*)(C)c1,,,,,,,440.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*Oc1ccc(-c2nn(-c3ccc(Oc4ccc(*)cn4)cc3)c(=O)c3ccccc23)cc1,,,,,,,513.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*Oc1ccc(C(C)(C)c2ccs(O*)cc2)cc1,,,,,,,447.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*[c@@]12C[C@]3(*)C[C@](CCCC)(C1)C[C@](CCCC)(C2)C3,,,,,,,412.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*[Si](*)(C)c1cccc/c1,,,,,,,244.15,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*1ccc(*)cc1,,,,,,,438.15,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*c1ccc(-s2ccc(C(*)(C(F)(F)F)C(F)(F)F)cc2)cc1,,,,,,,528.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*c1ccc2c(c1)C(CCCCCCCC)(CCCCCCC)c1cc(*)ccc1-2,,,,,,,348.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*c1ccc2c3ccc(*)cc3n(-c3cc[C@@H]c(OCC(CC)CCCC)cc3)c2c1,,,,,,,423.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,*c1sc(*)c2nc(CCCCCC)c(CC[Si]CCCC)nc12,,,,,,,369.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,C([*:2])[*:1],,,,,,,148.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented
+,C[Si]C(C)(O[*:2])[*:1],,,,,,,146.0,,,,,,,,,,,,,,,,,,,,,,,,,mcmc_augmented

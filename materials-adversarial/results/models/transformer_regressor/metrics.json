@@ -1,0 +1,15 @@
+{
+  "test_mae": 52.01156234741211,
+  "test_rmse": 65.17606353759766,
+  "test_r2": -3.3832831382751465,
+  "best_val_mae": 73.62277221679688,
+  "scaler": {
+    "mean": 330.71312355098047,
+    "std": 88.04627491164044
+  },
+  "scaler_source": "fitted_on_this_training_set",
+  "n_train": 204,
+  "n_val": 37,
+  "n_test": 6,
+  "seed": 42
+}

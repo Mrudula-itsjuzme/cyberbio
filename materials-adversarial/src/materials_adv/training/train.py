@@ -30,6 +30,7 @@ from ..data.tokenizer import tokenize
 from ..data.scaler import TargetScaler
 from ..models.transformer import TransformerRegressorModel
 from ..utils.config import load_config
+from ..evaluation.metrics import length_linear_regression, length_stratified_metrics
 
 logger = logging.getLogger(__name__)
 
@@ -62,7 +63,7 @@ class PolymerDataset(Dataset):
             "target": torch.tensor(self.scaler.transform(row["target"]), dtype=torch.float32)
         }
 
-def train(config_path: str = "configs/model.yaml", dataset_config_path: str = "configs/dataset.yaml", augmented_train_path: str = None, out_dir: str = "results/models/transformer_regressor", scaler_path: str = None, write_back_config: bool = True, seed: int = None):
+def train(config_path: str = "configs/model.yaml", dataset_config_path: str = "configs/dataset.yaml", augmented_train_path: str = None, out_dir: str = "results/models/transformer_regressor", scaler_path: str = None, write_back_config: bool = True, seed: int = None, exploratory_residualize: bool = False):
     """Train the Tg regressor.
 
     seed:
@@ -136,6 +137,25 @@ def train(config_path: str = "configs/model.yaml", dataset_config_path: str = "c
         scaler = TargetScaler()
         scaler.fit(train_df["target"].values)
         logger.info(f"Fitted scaler on training targets (mean={scaler.mean:.6f}, std={scaler.std:.6f})")
+
+    # Compute lengths for baseline gate and stratifications
+    train_lengths = np.array([len(tokenize(x)) for x in train_df["psmiles"]])
+    val_lengths = np.array([len(tokenize(x)) for x in val_df["psmiles"]])
+    test_lengths = np.array([len(tokenize(x)) for x in test_df["psmiles"]])
+    
+    # Baseline gate
+    val_baseline = length_linear_regression(train_lengths, train_df["target"].values, val_lengths, val_df["target"].values)
+    test_baseline = length_linear_regression(train_lengths, train_df["target"].values, test_lengths, test_df["target"].values)
+    logger.info(f"Baseline Gate (Length-only LR) - Val MAE: {val_baseline['mae']:.4f} K, Test MAE: {test_baseline['mae']:.4f} K")
+    
+    if exploratory_residualize:
+        logger.warning("EXPLORATORY: Residualizing length from training targets.")
+        train_baseline = length_linear_regression(train_lengths, train_df["target"].values, train_lengths, train_df["target"].values)
+        train_preds = np.polyval([train_baseline["slope"], train_baseline["intercept"]], train_lengths)
+        train_df["target"] = train_df["target"].values - train_preds
+        # refit scaler on residuals
+        scaler.fit(train_df["target"].values)
+        logger.info(f"Refitted scaler on residualized training targets (mean={scaler.mean:.6f}, std={scaler.std:.6f})")
     
     train_ds = PolymerDataset(train_df, vocab, max_len, scaler)
     val_ds = PolymerDataset(val_df, vocab, max_len, scaler)
@@ -205,9 +225,11 @@ def train(config_path: str = "configs/model.yaml", dataset_config_path: str = "c
         val_preds = np.array(val_preds)
         val_targets = np.array(val_targets)
         
-        # We compute MAE in the original Kelvin scale for logging
         val_preds_inv = scaler.inverse_transform(val_preds)
         val_targets_inv = scaler.inverse_transform(val_targets)
+        if exploratory_residualize:
+            val_preds_inv += np.polyval([val_baseline["slope"], val_baseline["intercept"]], val_lengths)
+            # targets were NOT residualized in val_df
         val_mae = np.mean(np.abs(val_preds_inv - val_targets_inv))
         
         logger.info(f"Epoch {epoch+1}/{epochs} - Train MSE: {train_loss:.4f} - Val MAE: {val_mae:.4f} K")
@@ -242,8 +264,19 @@ def train(config_path: str = "configs/model.yaml", dataset_config_path: str = "c
     test_preds_inv = scaler.inverse_transform(test_preds)
     test_targets_inv = scaler.inverse_transform(test_targets)
     
+    if exploratory_residualize:
+        test_length_preds = np.polyval([test_baseline["slope"], test_baseline["intercept"]], test_lengths)
+        test_preds_inv += test_length_preds
+
     test_mae = np.mean(np.abs(test_preds_inv - test_targets_inv))
     test_rmse = np.sqrt(np.mean((test_preds_inv - test_targets_inv)**2))
+    
+    # Stratified eval
+    stratified = length_stratified_metrics(test_targets_inv, test_preds_inv, test_lengths, n_bins=4)
+    logger.info("Test MAE by length bins: " + ", ".join(f"{k}: {v['mae']:.2f}" for k, v in stratified.items()))
+    
+    if test_mae >= test_baseline['mae']:
+        logger.warning("CONFOUND ALERT: Transformer failed to beat the length-only baseline!")
     
     # R2 on original scale
     ss_tot = np.sum((test_targets_inv - np.mean(test_targets_inv))**2)

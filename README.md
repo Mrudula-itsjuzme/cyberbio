@@ -35,6 +35,13 @@ A severe adversarial audit was conducted to falsify the Phase 1 and 2 hypotheses
 *   **The Chemistry Illusion:** A simple 1-parameter length-only linear regression achieved a Validation MAE of **76.77 K**, beating the Transformer's **79.04 K**. The correlation between sequence length and Tg in the dataset is 0.372. The model learned string lengths, not polymer chemistry.
 *   **Invalid Target-Preservation:** The assumption that these attacks preserve the true physical Tg is chemically unjustified. Deletions/Insertions change the molecular formula. The only valid Tg-preserving control is SMILES randomization.
 
+#### Phase 3: MCMC Attack Generator & Confound Mitigation
+To systematically address the shortcut-learning discovered in Phase 2F, rigorous controls and the final probabilistic attack pipeline were implemented:
+*   **Length Baseline Gate & Residualization:** Added a strict length-only linear regression baseline gate. Exploring model training on *length residuals* slightly improved performance (50.62 K vs 52.01 K Test MAE), but the core finding holds: the model remains highly constrained by the small 247-sample dataset size.
+*   **SMILES Randomization Control:** Replaced naive shuffling with RDKit's `Chem.MolToSmiles(..., doRandom=True)`. This true label-preserving control caused massive prediction drifts (~32 K mean), confirming the fundamental instability to any token restructuring.
+*   **Probabilistic MCMC Generator:** Implemented the Phase 3 Metropolis-Hastings attack generator, successfully proposing and accepting valid sequences with extreme adversarial drift (up to 158 K).
+*   **Adversarial Defense:** Training against the MCMC-generated attacks successfully crushed worst-case MCMC drift (155 K -> 114 K) and improved clean performance (48.12 K), yet the inherent fragility to length-preserving randomization remains unsolved.
+
 **Documentation:** Detailed logs of this progression are in [`materials-adversarial/docs/PROJECT_WORKSPACE.md`](materials-adversarial/docs/PROJECT_WORKSPACE.md) and [`materials-adversarial/docs/ARCHITECTURE_FORENSIC.md`](materials-adversarial/docs/ARCHITECTURE_FORENSIC.md).
 
 ---

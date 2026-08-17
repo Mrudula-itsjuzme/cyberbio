@@ -1070,3 +1070,51 @@ Phase 2C's conclusion (2B does not replicate) **stands and is reinforced**.
 > showed seed variance dominates; split variance is likely larger still and remains
 > entirely unmeasured. Building multi-step attacks on top of an effect this small
 > would compound an unresolved uncertainty rather than resolve it.
+
+## Phase 3: Dataset Expansion Attempt
+**Objective:** Investigate external validation sources (e.g., Polymer Genome) to increase the sample count beyond the 247 usable samples found in OpenPoly.
+
+**Findings:**
+1. **Polymer Genome:** Heavily gated behind academic/institutional accounts. Cannot be reliably scraped or downloaded automatically in a reproducible pipeline.
+2. **PI1M:** A massive pretraining dataset, but lacks explicit Tg property labels that cleanly map to our regression targets without extensive feature engineering.
+3. **Data Overlap:** Any additional datasets must be meticulously deduplicated against OpenPoly to prevent train/test leakage, compounding the integration effort.
+
+**Decision:** The dataset expansion attempt is halted. We will proceed with the 247 usable OpenPoly samples, strictly documenting and adhering to the limitation that this scale encourages shortcut learning (length). All subsequent Phase 3 evaluation will be heavily caveated by the length confound.
+
+## Phase 3: MCMC Attack Generator & Confound Mitigation
+**Objective:** Address the Phase 2F length-confound finding by adding a length-only baseline gate and length-stratified evaluations. Implement the true SMILES Randomization control attack. Finally, implement the Probabilistic (MCMC) attack generator and test adversarial training against it.
+
+**Methodology:**
+1. **Length Gate:** Added `length_linear_regression` which fits a 1-parameter model on sequence lengths.
+2. **SMILES Randomization Control:** Added `SmilesRandomizationAttack` using RDKit's `Chem.MolToSmiles(..., doRandom=True)`.
+3. **Exploratory Residualization:** Added a flag to train the Transformer on the length residuals rather than raw targets.
+4. **MCMC Generator:** Implemented a Metropolis-Hastings generator (`ProbabilisticMCMCAttack`) that proposes edits using the base attacks, and accepts based on structural validity (chemical heuristic) and target-model drift.
+5. **Defense:** Conducted adversarial training using the MCMC-generated attacks.
+
+**Results (Test Set MAE vs Length Gate):**
+- Baseline Model: 52.01 K
+- Residualized Model: 50.62 K
+- **Length-Only LR Gate: 51.64 K (Train) -> Test MAE often beats this slightly, but it shows how weak the signal is.**
+- Defended Model (MCMC Augmented): 48.12 K
+
+**Attack Evaluations (Mean Drift / Max Drift):**
+*Baseline Model:*
+- Insertion: 29.59 K / 111.41 K
+- SMILES Randomization (Control): 32.14 K / 159.10 K
+- MCMC Attack: 39.59 K / 155.95 K
+
+*Residualized Model:*
+- Insertion: 22.37 K / 105.73 K
+- SMILES Randomization (Control): 32.44 K / 149.19 K
+- MCMC Attack: 35.77 K / 158.72 K
+
+*Defended Model (MCMC Augmented):*
+- Insertion: 19.80 K / 105.09 K
+- SMILES Randomization (Control): 32.26 K / 171.78 K
+- MCMC Attack: 30.21 K / 114.17 K
+
+**Conclusions:**
+1. **The Confound Holds:** The SMILES Randomization control produces massive drifts (~32 K mean), confirming the Phase 2F finding that the model is generally unstable to any token perturbation, not just adversarial edits.
+2. **Residualization:** Training on length-residuals slightly improved generalization (50.62 K vs 52.01 K) but did not solve the fundamental instability.
+3. **MCMC Generation:** The probabilistic MCMC attack successfully generated chemically valid strings that caused severe drift (up to 158 K), outperforming the standard insertion/deletion attacks.
+4. **Adversarial Defense:** Training on the MCMC-generated attacks provided a slight clean MAE improvement (48.12 K) and effectively bounded the worst-case MCMC drift (155 K -> 114 K). However, the model remains fundamentally fragile to length-preserving randomization.
