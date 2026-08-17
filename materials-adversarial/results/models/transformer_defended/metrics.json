@@ -1,0 +1,15 @@
+{
+  "test_mae": 0.46014171838760376,
+  "test_rmse": 0.6232627034187317,
+  "test_r2": 0.8021035194396973,
+  "best_val_mae": 0.48036810755729675,
+  "scaler": {
+    "mean": 4.474831296673456,
+    "std": 1.4563050416759802
+  },
+  "scaler_source": "results/models/transformer_regressor/scaler.json",
+  "n_train": 14246,
+  "n_val": 631,
+  "n_test": 632,
+  "seed": 20260815
+}

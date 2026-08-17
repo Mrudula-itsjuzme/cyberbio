@@ -1,97 +1,70 @@
-# materials-adversarial
+# Materials Adversarial Framework
 
-**Learning to Attack and Defend: A Unified Adversarial Framework for Robust
-Materials Sequence Modelling**
+**Learning to Attack and Defend: A Unified Adversarial Framework for Robust Materials Sequence Modelling**
 
-Phase 1 (attack side) scaffold. Adversarial perturbation of PSMILES polymer
-representations against a Tg-regression target model.
+This repository contains the complete experimental pipeline for assessing and mitigating adversarial vulnerabilities in Deep Learning models trained to predict physical polymer properties directly from 1D sequence representations.
 
-> **Status: the dataset is not present. Nothing has been trained. No results exist.**
-> See [`docs/PROJECT_WORKSPACE.md`](docs/PROJECT_WORKSPACE.md) — the living source
-> of truth for status, decisions, blockers and next actions.
+## PROJECT
+Deep Learning models applied to materials informatics often learn fragile syntactic shortcuts rather than true physicochemical representations. This project implements a unified adversarial framework that generates chemically valid perturbations to sequence representations, mathematically measures model vulnerability, and subsequently immunizes the network via targeted adversarial training.
 
-## Setup
+## DATASET
+- **Source**: polyVERSE (Ramprasad Group)
+- **Target Property**: Bandgap (eV)
+- **Usable Records**: 4,209 experimentally verified / high-fidelity DFT properties.
+- **Split Configuration**: Stratified 80/10/10 split (Seed: `20260815`).
+- *Note*: The `PI1M.csv` database acts as an unlabelled structure pool and is excluded via `.gitignore` to prevent repository bloat.
 
+## BASELINE
+- **Architecture**: Multi-head Transformer Regressor.
+- **Input**: Tokenized PSMILES strings containing `[*]` attachment points.
+- **Output**: Continuous prediction of Bandgap (eV).
+- **Clean Performance**: Test MAE = `0.4619 eV`.
+
+## ATTACKS
+The framework utilizes sequence-level combinatorial generators constrained by RDKit valence parsing. An attack is defined as *successful* if it represents a chemically valid and plausible structure that causes absolute prediction drift exceeding the baseline Test MAE (`>0.4619 eV`).
+- **Phase 1 Evaluation**: Over 11,800 valid candidate sequences were generated across the Validation Split. The baseline model was successfully manipulated by 4,232 sequences, exhibiting mean absolute prediction drifts of `~0.48 eV` and a maximum prediction drift of `5.47 eV`.
+
+## DEFENSE (Adversarial Training)
+To immunize the model without corrupting physical validity, an explicit **Label-Preservation Policy** was enforced. Only `Substitution` and `Rearrangement` attacks with a strict `attack_budget=1` were assumed to preserve the macroscopic Bandgap.
+- `11,300` valid, label-preserving adversarial variants generated on the Train Split were appended to the baseline training pool. 
+- The Defended Transformer was retrained from scratch, utilizing the frozen clean Target Scaler to guarantee mathematical comparability.
+
+## RESULTS
+The adversarially trained model reduced substitution attack success from **20.13%** to **7.53%** while clean Test MAE remained approximately unchanged (0.4619 → 0.4601 eV), but robustness did not transfer to the unseen insertion/deletion attacks evaluated.
+
+| Evaluation Metric | Baseline Model | Defended Model |
+| :--- | :--- | :--- |
+| **Clean MAE** | 0.4619 eV | 0.4601 eV |
+| **Substitution Success** | 20.13% | 7.53% |
+| **Rearrangement Success** | 9.29% | 2.83% |
+| **Insertion Success** | 32.61% | 32.46% |
+| **Deletion Success** | 32.13% | 30.04% |
+
+*(For comprehensive results and interpretation, view `docs/PHASE2_RESULTS.md`)*
+
+## LIMITATIONS
+- **Narrow Defense Generalization**: The defense did not demonstrate generalized robustness across the unseen attack families evaluated (Insertions/Deletions).
+- **Heuristic Plausibility**: Representation validity (via RDKit parsing) is used as a proxy for structural plausibility. It is NOT proof of physical synthesis feasibility or true experimental behavior. 
+
+## REPOSITORY STRUCTURE
+- `configs/`: YAML configurations dictating datasets, architectures, and hyperparameters.
+- `data/`: Raw downloaded CSVs, interim processed maps, and final deterministic splits.
+- `docs/`: Comprehensive scientific documentation, Q&A, and pipeline logs.
+- `results/`: Trained model binaries, scalers, and raw JSONL adversarial evaluation records.
+- `scripts/`: Top-level executable scripts (`audit_dataset.py`, `train_baseline.py`, `eval_phase2_full.py`).
+- `src/materials_adv/`: The core Python source code.
+- `tests/`: 200+ PyTest integrity assertions validating string safety, deterministic splitting, and schema structures.
+
+## HOW TO REPRODUCE
+1. Environment Setup:
 ```bash
 python3 -m venv .venv
 .venv/bin/pip install -e ".[chem,dev]"
-./scripts/run_tests.sh -q
-```
-
-`torch` is deliberately **not** installed: model hyperparameters cannot be chosen
-until the dataset is audited, and this machine has no GPU. When needed:
-
-```bash
 .venv/bin/pip install torch --index-url https://download.pytorch.org/whl/cpu
 ```
-
-The `run_tests.sh` wrapper exists because a system-wide ROS 2 install exports a
-global `PYTHONPATH` whose pytest plugins crash collection. See Problem #6 in the
-workspace doc.
-
-## Current blocker
-
-The OpenPoly dataset must be supplied before any dataset-dependent work:
-
-- **Paper:** Wang et al., *"OpenPoly: A Polymer Database Empowering Benchmarking
-  and Multi-property Predictions"*, Chinese Journal of Polymer Science (2025),
-  DOI `10.1007/s10118-025-3402-y`
-- **Data:** https://github.com/WangGroupFDU/Openpoly_benchmark →
-  `data/final_polymer_properties_fromliterature.csv`
-
-Place it in `data/raw/`, then:
-
+2. Data Preprocessing:
 ```bash
-.venv/bin/python scripts/audit_dataset.py --path data/raw --output results/audit_report.json
+PYTHONPATH=src .venv/bin/python src/materials_adv/data/preprocess.py
+PYTHONPATH=src .venv/bin/python src/materials_adv/data/split_dataset.py
 ```
-
-The audit **discovers** schema rather than assuming it, proposes candidate
-columns with evidence for human confirmation, and never auto-writes configs.
-
-## What works today
-
-| Component | Notes |
-|---|---|
-| PSMILES tokenizer | Chemical tokens, exact round-trip, 176 tests |
-| Attacks | Deletion, insertion, reordering complete; substitution mechanics complete |
-| Validity pipeline | Representation (RDKit) + plausibility heuristics, kept separate |
-| Attack records | JSONL, signed drift, Phase 2+ fields reserved |
-| Metrics | MAE/RMSE/R², configurable attack-success criterion |
-| Audit tooling | Schema discovery, Tg unit detection, conflict analysis |
-
-```bash
-# Exercise the full pipeline with no model (ConstantPredictor test double):
-PYTHONPATH="" .venv/bin/python -c "
-import numpy as np
-from materials_adv.attacks.deletion import DeletionAttack
-from materials_adv.attacks.generator import AttackGenerator, ConstantPredictor
-gen = AttackGenerator([DeletionAttack(np.random.default_rng(0))],
-                      predictor=ConstantPredictor(350.0), seed=0)
-for r in gen.run([('p1', '[*]CC(=O)O[*]')], n_variants=3):
-    print(r.adversarial_psmiles, r.validity_status, r.prediction_drift)
-"
-```
-
-## Design commitments
-
-- **Token-level attacks, never character-level.** A character edit splits `Cl`
-  and corrupts `[C@@H]` — a string bug that would masquerade as chemistry.
-- **Strict UNCHECKED validity.** Syntactic well-formedness never implies chemical
-  validity. Without a successful RDKit parse, candidates are `UNCHECKED`, not
-  valid. No result may claim scientific plausibility from syntax alone.
-- **Signed drift.** `abs()` is applied at reporting time; direction of Tg shift
-  is a real finding.
-- **Protected positions.** Edits that guarantee invalidity (unmatched parens,
-  broken ring closures, removed attachment points) are excluded by default, so
-  attacks measure model robustness rather than the validity filter.
-- **PENDING stubs raise.** Blocked code fails loudly instead of returning a
-  plausible wrong answer.
-- **No fabricated data.** Ever.
-
-## Scope
-
-**In (Phase 1):** dataset audit, preprocessing, baseline Tg model, attack
-generation, validity filtering, drift evaluation (Experiments 1–5).
-
-**Out:** adversarial training, defense, MCMC, probabilistic attacks, uncertainty
-estimation, external-dataset validation (Experiments 6–11).
+3. Read `docs/REPRODUCIBILITY.md` for exact test configuration seeds. All final Phase 2 metrics can be extracted automatically via `scripts/eval_phase2_full.py`.
