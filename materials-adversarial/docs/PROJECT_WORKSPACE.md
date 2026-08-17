@@ -918,10 +918,123 @@ enters `sys.modules`.
 32. **Phase 2C Result — Phase 2B does NOT replicate.** Seed 20260815 gave insertion/deletion mean-drift reductions of ~12 K; across 5 seeds those are **1.61 ± 5.77 K** and **2.79 ± 6.74 K**, SDs exceeding the effects. Only **1 of 16** family x metric combinations (insertion max drift) reduced in all 5 seeds. Pooled reduction 1.48 K, 52.4% of candidates improved — barely above chance. **Phase 2B landed on a favourable seed.**
 33. **Phase 2C Result — no clean benefit:** defended − baseline validation MAE is **+0.81 ± 4.58 K**, sign-flipping across seeds. Adversarial training also *increased* run-to-run variance (SD 0.83 -> 4.02 K).
 34. **Phase 2C — what survives:** worst-case drift reduction for length-changing attacks (insertion max 144.4 -> 97.7 K in all 5 seeds; deletion max 136.5 -> 87.9 K in 4 of 5) and markedly lower variance in adversarial behaviour. Adversarial training clips the tail without shifting central tendency. No significance claim is made at the seed level (n=5).
+35. **Phase 2F Forensic Audit — Phase 1F REFUTED.** Length-preserving controls (token shuffle, sequence reverse) produce drift of 32.05 K and 30.44 K versus 24.96 K for a length-increasing edit, consistently across all 5 seeds. The model is globally unstable to token perturbation, not specifically length-sensitive. Phase 1E's "length-preserving" families were mis-specified (rearrangement is an isomerization with ΔMW = 0.00 and 100% formula preservation).
+36. **Phase 2F — length shortcut found.** A length-only linear regression scores 76.77 K validation MAE versus the Transformer's 79.04 K. corr(length, Tg) = 0.372 across 247 samples; the scaffold split sorted long/high-Tg polymers into val/test (mean Tg 330.7/384.5/463.2 K). Bag-of-tokens ridge ties the Transformer. The claim that the model learned chemistry is withdrawn.
+37. **Phase 2F — masking verified correct.** PAD-masked padding is an exact no-op (0.0000 K at +100 pads); predictions are batch- and width-invariant to 3e-05. Masking, pooling and evaluation bugs are refuted. Mean-pool dilution confirmed instead: drift ∝ 1/L, corr(1/L, insertion drift) = +0.575.
+38. **Phase 2F — target-preservation hole widened.** No attack family is representation-level; substitution/insertion/deletion alter molecular formula and rearrangement is an isomerization. 12.9% of "insertion" candidates are canonically identical to the original. SMILES randomization identified as the missing provably-label-preserving control.
+
+---
+
+---
+
+## Phase 2F: Forensic Architecture Audit
+
+*Executed 2026-08-15. All prior records preserved unchanged. Full detail in
+[ARCHITECTURE_FORENSIC.md](ARCHITECTURE_FORENSIC.md); reproduce with
+`.venv/bin/python scripts/forensic_diagnostics.py`.*
+
+An adversarial audit whose goal was to falsify, not support, the existing
+conclusions. It succeeded on the central one.
+
+### Headline: Phase 1F is REFUTED
+
+Phase 1F concluded that length-changing perturbations cause the ~30 K drift.
+A **length-preserving** control — shuffling or reversing the token sequence,
+which preserves the token multiset and the molecular formula exactly — produces
+drift **of the same or larger magnitude, in all 5 seeds**:
+
+| Seed | shuffle (len-preserving) | reverse (len-preserving) | duplicate token (len +1) |
+|---|---|---|---|
+| 20260815 | 36.03 | 38.58 | 38.66 |
+| 20260816 | 40.47 | 37.13 | 24.92 |
+| 20260817 | 20.07 | 17.61 | 18.80 |
+| 20260818 | 24.60 | 23.35 | 18.68 |
+| 20260819 | 39.07 | 35.51 | 23.72 |
+| **mean** | **32.05** | **30.44** | **24.96** |
+
+The model is **globally unstable to token-level perturbation**, not specifically
+length-sensitive. Phase 1E's "length-preserving" families were mis-specified:
+rearrangement permutes a 3-token window (ΔMW = 0.00, formula preserved in 100%
+of cases — an isomerization), and substitution was role-constrained. Neither was
+a strong order perturbation.
+
+### The model may not have learned chemistry
+
+Control baselines (MAE, K; test n=6 is anecdote):
+
+| Model | Val MAE | Test MAE |
+|---|---|---|
+| Mean predictor | 88.48 | 132.54 |
+| **Length-only linear regression** | **76.77** | 76.39 |
+| Bag-of-tokens ridge (α=1) | 79.59 | 43.24 |
+| **Transformer (Phase 1)** | **79.04** | 52.02 |
+
+A one-parameter model on sequence length beats the Transformer on validation.
+corr(length, Tg) = 0.372 over all 247 samples. The scaffold split is confounded:
+train/val/test mean Tg = 330.7 / 384.5 / 463.2 K and mean length = 22.6 / 43.5 /
+56.7. Test Tg lies entirely above the training mean, which explains the
+universally negative R².
+
+### What is definitely correct
+
+Padding, masking, batching and the scaler are **verified correct**. Appending
+PAD-masked positions is an exact no-op (max drift 0.0000 K at +100 pads);
+predictions are batch- and padding-width-invariant to 3e-05. Hypotheses of a
+masking bug, pooling bug or evaluation bug are **refuted**.
+
+### Mechanisms identified
+
+- **Mean-pool dilution:** drift scales as 1/L (corr(1/L, insertion drift) =
+  +0.575). Short sequences drift 75 K, long ones 19 K. Per-sample drift is
+  **not comparable across lengths**, and val/test are systematically longer.
+- **Positional encoding contributes ~5 K of ~30 K** — real but minor (measured
+  by appending unmasked PAD tokens: pure position shift, no chemistry).
+- **Attack families are not severity-matched:** mean |ΔMW| is 0.00
+  (rearrangement) vs 15.75 (insertion). Phase 1E confounds mechanism with
+  chemical severity. 12.9% of "insertion" attacks yield a molecule identical to
+  the original after canonicalization.
+
+### Target-preservation assumption — worse than recorded
+
+No current attack family is a legitimate representation-level perturbation.
+Substitution/insertion/deletion change molecular formula; rearrangement is an
+isomerization. The label-preserving assumption is chemically unjustified for
+**every** family. The missing control is **SMILES randomization** — different
+valid writings of the identical molecule, where Tg is provably unchanged.
+
+### Claims now withdrawn
+
+1. ❌ "Length-changing perturbations cause the vulnerability" — refuted.
+2. ❌ "Positional encoding is the mechanism" — ~5 K of ~30 K.
+3. ❌ "The Transformer learned polymer chemistry" — length-only beats it.
+4. ❌ "Adversarial training improves chemical invariance" — no family preserves
+   chemistry.
+
+Phase 2C's conclusion (2B does not replicate) **stands and is reinforced**.
 
 ---
 
 ## 16. NEXT ACTION
+
+> **Phase 3 remains on hold. Phase 2F has overturned the Phase 1F mechanism.**
+>
+> Recommended order:
+>
+> 1. **SMILES-randomization invariance test** — the only provably
+>    Tg-preserving perturbation. No training required. Converts "drift" from an
+>    assumption-laden quantity into unambiguous model error.
+> 2. **Positional-encoding ablation** (5 seeds, no positional embedding) — makes
+>    the mechanism claim causal rather than observational.
+> 3. **k-fold scaffold cross-validation** of length-only / bag-of-tokens /
+>    Transformer — replaces the n=6 test set and settles whether the Transformer
+>    is learning anything beyond length and token counts.
+>
+> Do **not** add attack families, retrain the defended model, or start
+> multi-step/MCMC attacks until the taxonomy in §6 of the forensic doc is fixed.
+
+---
+
+## 16b. Superseded NEXT ACTION (pre-Phase-2F, retained)
 
 > **Review Phase 2C. Phase 3 is NOT started and remains on hold.**
 >

@@ -1,0 +1,923 @@
+{
+  "dataset_mode": "synthetic",
+  "n_train": 1400,
+  "n_val": 300,
+  "n_test": 300,
+  "baseline_metrics": {
+    "mae": 0.18914064764976501,
+    "rmse": 0.24193747341632843,
+    "r2": 0.9613632559776306
+  },
+  "attack_summary": {
+    "n_attacked": 100,
+    "mean_drift": 0.8682063129544259,
+    "max_drift": 2.0764875411987305,
+    "attack_success_pct": 97.0,
+    "validity_pct": 100.0,
+    "drift_threshold": 0.3,
+    "mcmc_beta": 2.0,
+    "mcmc_steps": 50
+  },
+  "adversarial_examples": [
+    {
+      "original": "nc#F=C4(Br(Br3))43",
+      "adversarial": "NcCC=C4(C(O3))43",
+      "orig_pred": 2.4166524410247803,
+      "adv_pred": 1.4380931854248047,
+      "drift": 0.9785592555999756,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "(Br)Clo(N)",
+      "adversarial": "(o)nc(c)",
+      "orig_pred": 1.4717167615890503,
+      "adv_pred": 0.48718535900115967,
+      "drift": 0.9845314025878906,
+      "n_mutations": 4,
+      "is_valid": true
+    },
+    {
+      "original": "O(O(nO)=oS)",
+      "adversarial": "O(O(-n)cOC)",
+      "orig_pred": 1.5003033876419067,
+      "adv_pred": 1.0388855934143066,
+      "drift": 0.4614177942276001,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "cno(ClBrBr)n5O5",
+      "adversarial": "cn=(F@Br)S5Br5",
+      "orig_pred": 2.968248128890991,
+      "adv_pred": 1.8317127227783203,
+      "drift": 1.136535406112671,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "oSo(BrBr)=cnSnCFo",
+      "adversarial": "oSo(BrBr)FClnSnOFBr",
+      "orig_pred": 3.266727924346924,
+      "adv_pred": 4.900689601898193,
+      "drift": 1.6339616775512695,
+      "n_mutations": 4,
+      "is_valid": true
+    },
+    {
+      "original": "c(Cl)(N)C11",
+      "adversarial": "C(c)(#)c11",
+      "orig_pred": 0.9555152058601379,
+      "adv_pred": 0.5371736288070679,
+      "drift": 0.41834157705307007,
+      "n_mutations": 4,
+      "is_valid": true
+    },
+    {
+      "original": "cOnFSFcFn",
+      "adversarial": "C#BrBrClFcFn",
+      "orig_pred": 2.2171411514282227,
+      "adv_pred": 2.902010679244995,
+      "drift": 0.6848695278167725,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "Cl-F3nBr3",
+      "adversarial": "Cl=#3=o3",
+      "orig_pred": 1.7029094696044922,
+      "adv_pred": 1.2532474994659424,
+      "drift": 0.4496619701385498,
+      "n_mutations": 4,
+      "is_valid": true
+    },
+    {
+      "original": "OSBrn3=FO6Cl5Cl3BrBr6S5Sn",
+      "adversarial": "OSBrn3OnO6C5Cl3BrBr6S5cS",
+      "orig_pred": 5.313294887542725,
+      "adv_pred": 4.663504600524902,
+      "drift": 0.6497902870178223,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "(NF)=F5Br5(C)-ClF(Cl)F2c2O-O",
+      "adversarial": "(NF)=F5C5(C)-o-(N)F2c2O-c",
+      "orig_pred": 4.46309232711792,
+      "adv_pred": 2.9101579189300537,
+      "drift": 1.5529344081878662,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "OBrS(BrCl)co1F1O5F5Cc",
+      "adversarial": "O=O(FCl)cN1F1O5=5Cc",
+      "orig_pred": 4.543135643005371,
+      "adv_pred": 2.9928524494171143,
+      "drift": 1.5502831935882568,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "nFOOcSS(o44)(F6)C6oBr",
+      "adversarial": "nNOCcS=(o44)(n6)#6oBr",
+      "orig_pred": 3.754534959793091,
+      "adv_pred": 3.209033966064453,
+      "drift": 0.5455009937286377,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "OSn(o)",
+      "adversarial": "O-n(n)",
+      "orig_pred": 0.7481141090393066,
+      "adv_pred": 0.41939306259155273,
+      "drift": 0.3287210464477539,
+      "n_mutations": 2,
+      "is_valid": true
+    },
+    {
+      "original": "S6ClSO6",
+      "adversarial": "N6FCO6",
+      "orig_pred": 1.5487525463104248,
+      "adv_pred": 0.5323766469955444,
+      "drift": 1.0163758993148804,
+      "n_mutations": 3,
+      "is_valid": true
+    },
+    {
+      "original": "F(o#C(C)#c(O)=Br)-SC5(FN5)",
+      "adversarial": "F(oSC(C)Cl#(O)FBr)-SC5(FS5)",
+      "orig_pred": 3.357022285461426,
+      "adv_pred": 4.106363773345947,
+      "drift": 0.7493414878845215,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "S2S2=BrN22",
+      "adversarial": "S2-2NMgN22",
+      "orig_pred": 1.5855722427368164,
+      "adv_pred": 0.07611972093582153,
+      "drift": 1.5094525218009949,
+      "n_mutations": 3,
+      "is_valid": true
+    },
+    {
+      "original": "(c6Fn6Cl3Br)c(S3cc)cCCn33",
+      "adversarial": "(O6FF6Cl3Br)c(F3cO)coCn33",
+      "orig_pred": 3.440737247467041,
+      "adv_pred": 4.0591301918029785,
+      "drift": 0.6183929443359375,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "CF5c5Cco#OClN",
+      "adversarial": "BrF5F5FcoBrClClN",
+      "orig_pred": 2.0249953269958496,
+      "adv_pred": 4.10148286819458,
+      "drift": 2.0764875411987305,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "BrSS22C-O(Br)C",
+      "adversarial": "BrNaS22BrBrCl(Cl)C",
+      "orig_pred": 2.0904712677001953,
+      "adv_pred": 3.499041795730591,
+      "drift": 1.4085705280303955,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "on44#(o(Br44=FF)#O)nNBr=oBrCl-Cl33",
+      "adversarial": "o-44#(o(Br44cFF)#=)nNBrCoBrc-Cl33",
+      "orig_pred": 5.466989994049072,
+      "adv_pred": 4.936328411102295,
+      "drift": 0.5306615829467773,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "N44oBr(oS55)",
+      "adversarial": "c44S#(c-55)",
+      "orig_pred": 1.9840911626815796,
+      "adv_pred": 1.1684293746948242,
+      "drift": 0.8156617879867554,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "ScC3(Co)3",
+      "adversarial": "ClBro3(BrCl)3",
+      "orig_pred": 0.8073854446411133,
+      "adv_pred": 2.621999502182007,
+      "drift": 1.8146140575408936,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "N=S#Cl#c(BrN)",
+      "adversarial": "NCl-#oBrc(BrBr)",
+      "orig_pred": 2.0119926929473877,
+      "adv_pred": 3.0779409408569336,
+      "drift": 1.065948247909546,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "(FNn)Br(Br)O-(c1)1",
+      "adversarial": "(CBrF)Br(Br)OBr(Br1)1",
+      "orig_pred": 2.4805142879486084,
+      "adv_pred": 3.218276262283325,
+      "drift": 0.7377619743347168,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "cClc#BrClO33N",
+      "adversarial": "FClc#=o=33o",
+      "orig_pred": 2.6966030597686768,
+      "adv_pred": 1.8019534349441528,
+      "drift": 0.8946496248245239,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "n1Br(OO1)O",
+      "adversarial": "C1N(C#1)O",
+      "orig_pred": 1.4992437362670898,
+      "adv_pred": 0.5159140229225159,
+      "drift": 0.983329713344574,
+      "n_mutations": 4,
+      "is_valid": true
+    },
+    {
+      "original": "Br(N=nc)FnSoNCCBrCl",
+      "adversarial": "S(N=nc)FcS@=CCBrN",
+      "orig_pred": 3.5582873821258545,
+      "adv_pred": 2.184492826461792,
+      "drift": 1.3737945556640625,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "NBrc(N(S)Fn)",
+      "adversarial": "NFC(O(Se)FO)",
+      "orig_pred": 1.9554665088653564,
+      "adv_pred": 1.2947187423706055,
+      "drift": 0.660747766494751,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "FSN2ClnC2O22cNC(O)S33",
+      "adversarial": "FSF2C=C2o22cCC(O)S33",
+      "orig_pred": 2.9765374660491943,
+      "adv_pred": 2.5194180011749268,
+      "drift": 0.4571194648742676,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "Cl4(o3)c4(S3NCl)oScCNS",
+      "adversarial": "Cl4(o3)c4(S3NC)oocCNn",
+      "orig_pred": 3.1196389198303223,
+      "adv_pred": 2.52758526802063,
+      "drift": 0.5920536518096924,
+      "n_mutations": 3,
+      "is_valid": true
+    },
+    {
+      "original": "o#FnC#(FonC)OON5cN5(N)",
+      "adversarial": "BrFFnC#(FonC)OSN5cN5(Br)",
+      "orig_pred": 3.1634738445281982,
+      "adv_pred": 4.4346723556518555,
+      "drift": 1.2711985111236572,
+      "n_mutations": 4,
+      "is_valid": true
+    },
+    {
+      "original": "FNBrN-nS=CccO3n23-oc2",
+      "adversarial": "FNBrN-oSClC=OO3n23-oBr2",
+      "orig_pred": 3.231389045715332,
+      "adv_pred": 4.381898403167725,
+      "drift": 1.1505093574523926,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "F2o6S2FS6",
+      "adversarial": "o2-6N2CC6",
+      "orig_pred": 1.4597227573394775,
+      "adv_pred": 0.5049776434898376,
+      "drift": 0.9547451138496399,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "N2C=c2nNSBrC66n-Cl2(C2FBr)",
+      "adversarial": "N2CSCl2nNSBrC66NClCl2(C2FCl)",
+      "orig_pred": 3.861578941345215,
+      "adv_pred": 4.471043109893799,
+      "drift": 0.609464168548584,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "on44C=ClcClCl-o(NC-o5)5",
+      "adversarial": "on44C=ClcClClClo(NCno5)5",
+      "orig_pred": 3.4879114627838135,
+      "adv_pred": 4.066908836364746,
+      "drift": 0.5789973735809326,
+      "n_mutations": 2,
+      "is_valid": true
+    },
+    {
+      "original": "ClcBr=nBrCoS",
+      "adversarial": "Nco=NBrC=S",
+      "orig_pred": 2.7114579677581787,
+      "adv_pred": 1.5883796215057373,
+      "drift": 1.1230783462524414,
+      "n_mutations": 4,
+      "is_valid": true
+    },
+    {
+      "original": "S-nCloC=nN33S=cn(onF4)4",
+      "adversarial": "S-nCn==ON33n=cn(onF4)4",
+      "orig_pred": 3.441277265548706,
+      "adv_pred": 2.997178554534912,
+      "drift": 0.44409871101379395,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "Sno-(SCln#O(c)n11)",
+      "adversarial": "cnN-(S#n#O(c)n11)",
+      "orig_pred": 2.666057825088501,
+      "adv_pred": 1.795424222946167,
+      "drift": 0.870633602142334,
+      "n_mutations": 3,
+      "is_valid": true
+    },
+    {
+      "original": "oSon22Brn=Br-cNCl#o3O4Cl23o42",
+      "adversarial": "oSon22Brn=Br-cNC#o3O4F23o42",
+      "orig_pred": 4.776485919952393,
+      "adv_pred": 4.251962184906006,
+      "drift": 0.5245237350463867,
+      "n_mutations": 2,
+      "is_valid": true
+    },
+    {
+      "original": "Oc=NF-n6=o-c6Brn=SBr",
+      "adversarial": "OF=NFBrn6=o--6BrnCSBr",
+      "orig_pred": 3.438507080078125,
+      "adv_pred": 4.109248161315918,
+      "drift": 0.670741081237793,
+      "n_mutations": 4,
+      "is_valid": true
+    },
+    {
+      "original": "O3c-(C(c3))",
+      "adversarial": "S3Clc(Cl(Cl3))",
+      "orig_pred": 0.9949390888214111,
+      "adv_pred": 1.7975481748580933,
+      "drift": 0.8026090860366821,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "ooC6CcOc16BrOCl(n3)13",
+      "adversarial": "oBrc6SFOF16BrOCl(n3)13",
+      "orig_pred": 3.3157131671905518,
+      "adv_pred": 4.553213119506836,
+      "drift": 1.2374999523162842,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "cCN=oc#Nn",
+      "adversarial": "cBrFFocCl#n",
+      "orig_pred": 1.458079218864441,
+      "adv_pred": 2.677952289581299,
+      "drift": 1.219873070716858,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "S#n(Brc)",
+      "adversarial": "NNP(CBr)",
+      "orig_pred": 1.222182273864746,
+      "adv_pred": 0.5725036263465881,
+      "drift": 0.649678647518158,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "Br44(Cc)n(C)#FNo#cNN=O5#Br5",
+      "adversarial": "Br44(CBr)Br(#)#FNo#cN#=Cl5#Br5",
+      "orig_pred": 4.092427730560303,
+      "adv_pred": 5.1076436042785645,
+      "drift": 1.0152158737182617,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "ClN33CNn4#(o)S4S#ClC",
+      "adversarial": "ClN33CNBr4#(S)c4SBrClBr",
+      "orig_pred": 3.1249654293060303,
+      "adv_pred": 4.363495349884033,
+      "drift": 1.238529920578003,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "(Soc)NoBr33(Br)#N",
+      "adversarial": "(#oc)N=-33(=)#N",
+      "orig_pred": 2.648512363433838,
+      "adv_pred": 1.548309087753296,
+      "drift": 1.100203275680542,
+      "n_mutations": 4,
+      "is_valid": true
+    },
+    {
+      "original": "(ClCl)o4Br4",
+      "adversarial": "(SC)N4=4",
+      "orig_pred": 1.9346253871917725,
+      "adv_pred": 0.7087576389312744,
+      "drift": 1.225867748260498,
+      "n_mutations": 4,
+      "is_valid": true
+    },
+    {
+      "original": "Clo3O(c3)=cNc",
+      "adversarial": "Clo3O(c3)OcBrc",
+      "orig_pred": 1.8671663999557495,
+      "adv_pred": 2.3958208560943604,
+      "drift": 0.5286544561386108,
+      "n_mutations": 2,
+      "is_valid": true
+    },
+    {
+      "original": "Sooc",
+      "adversarial": "OCNn",
+      "orig_pred": 0.939673662185669,
+      "adv_pred": 0.4539903700351715,
+      "drift": 0.48568329215049744,
+      "n_mutations": 4,
+      "is_valid": true
+    },
+    {
+      "original": "n1(F)SS4C1nc4",
+      "adversarial": "c1(#)nS4C1#c4",
+      "orig_pred": 1.9079535007476807,
+      "adv_pred": 1.3026907444000244,
+      "drift": 0.6052627563476562,
+      "n_mutations": 4,
+      "is_valid": true
+    },
+    {
+      "original": "Br-ClnBr(n)Cl44co22SF1(Br1)Br44ClF",
+      "adversarial": "O--nC(n)Cl44co22SC1(Br1)Cl44ClF",
+      "orig_pred": 5.667929649353027,
+      "adv_pred": 4.680159091949463,
+      "drift": 0.9877705574035645,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "(o2oo2)O",
+      "adversarial": "(O2ClBr2)O",
+      "orig_pred": 0.9808368682861328,
+      "adv_pred": 1.712851881980896,
+      "drift": 0.7320150136947632,
+      "n_mutations": 3,
+      "is_valid": true
+    },
+    {
+      "original": "F-c(Br=nO(n#OCBrCcoo))",
+      "adversarial": "FBrBr(Br=nn(-#OnBrCcoo))",
+      "orig_pred": 3.3524086475372314,
+      "adv_pred": 4.2053093910217285,
+      "drift": 0.8529007434844971,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "F=Sc#(F(cc)oc)(Cc-C)Br33",
+      "adversarial": "NBrSC#(F(cc)oc)(Clc-F)Br33",
+      "orig_pred": 2.9173591136932373,
+      "adv_pred": 3.983225107192993,
+      "drift": 1.0658659934997559,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "C-cOn2CF52(Nc5c)Br66Sn66O",
+      "adversarial": "N-cOn2SS52(NBr5c)Br66Sn66O",
+      "orig_pred": 3.6835567951202393,
+      "adv_pred": 4.3283562660217285,
+      "drift": 0.6447994709014893,
+      "n_mutations": 4,
+      "is_valid": true
+    },
+    {
+      "original": "(Cl)-S#CS#o=FS11OClClBrF",
+      "adversarial": "(Cl)NC#FS#o=FS11OCl=-F",
+      "orig_pred": 4.85115385055542,
+      "adv_pred": 4.007474422454834,
+      "drift": 0.8436794281005859,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "OSnOON",
+      "adversarial": "BrBrOOClBr",
+      "orig_pred": 1.2456436157226562,
+      "adv_pred": 2.621015787124634,
+      "drift": 1.3753721714019775,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "NnCBr-cn(C)",
+      "adversarial": "ClnFBrccCl(O)",
+      "orig_pred": 1.4258259534835815,
+      "adv_pred": 2.422243118286133,
+      "drift": 0.9964171648025513,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "FBr5S1=(N5)nFF=(O1)#cCl",
+      "adversarial": "FBr5S1I(N5)CNo=(O1)=cCl",
+      "orig_pred": 4.385738372802734,
+      "adv_pred": 3.6831657886505127,
+      "drift": 0.7025725841522217,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "Cl4O4ooCn66Br-F=SOnBr",
+      "adversarial": "Cl4Cl4oBrNn66FFF=SOnBr",
+      "orig_pred": 4.323507785797119,
+      "adv_pred": 4.962153434753418,
+      "drift": 0.6386456489562988,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "O(n)Cn66",
+      "adversarial": "Cl(Br)NS66",
+      "orig_pred": 0.6272783279418945,
+      "adv_pred": 1.6278676986694336,
+      "drift": 1.000589370727539,
+      "n_mutations": 4,
+      "is_valid": true
+    },
+    {
+      "original": "SCN(cNc)Nn3=n(SCl3)",
+      "adversarial": "SBrN(nNc)NC3=n(SBr3)",
+      "orig_pred": 2.3632700443267822,
+      "adv_pred": 2.969787359237671,
+      "drift": 0.6065173149108887,
+      "n_mutations": 4,
+      "is_valid": true
+    },
+    {
+      "original": "FClO3SOn3=Fn22",
+      "adversarial": "FClO3OBrn3=BrCl22",
+      "orig_pred": 2.8085100650787354,
+      "adv_pred": 3.6114885807037354,
+      "drift": 0.802978515625,
+      "n_mutations": 4,
+      "is_valid": true
+    },
+    {
+      "original": "N-F=Br(BrFc66o)",
+      "adversarial": "NFClBrF(BrClc66o)",
+      "orig_pred": 2.7030317783355713,
+      "adv_pred": 3.613581418991089,
+      "drift": 0.9105496406555176,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "N=(Cl2=C12c1)SS#O",
+      "adversarial": "ClBr(Cl2=F12S1)SSoO",
+      "orig_pred": 2.220916509628296,
+      "adv_pred": 4.05048942565918,
+      "drift": 1.8295729160308838,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "OS-oCc22",
+      "adversarial": "OnSnSS22",
+      "orig_pred": 0.8573674559593201,
+      "adv_pred": 1.6709399223327637,
+      "drift": 0.8135724663734436,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "nOnSco22o(S11=FN)",
+      "adversarial": "NOnClNBr22o(F11=FN)",
+      "orig_pred": 2.803053379058838,
+      "adv_pred": 3.8003287315368652,
+      "drift": 0.9972753524780273,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "(N55)-O33nBrBr",
+      "adversarial": "(S55)-o33cFC",
+      "orig_pred": 1.989807367324829,
+      "adv_pred": 1.2254972457885742,
+      "drift": 0.7643101215362549,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "(BrClN-o)Cc(O1)-C1",
+      "adversarial": "(BrClBr-o)Cc(S1)FC1",
+      "orig_pred": 2.4183738231658936,
+      "adv_pred": 3.1876537799835205,
+      "drift": 0.769279956817627,
+      "n_mutations": 3,
+      "is_valid": true
+    },
+    {
+      "original": "Cl(C)#(Br)(n)n22=(n-ClSNC)",
+      "adversarial": "Cl(C)S(Br)(n)n22=(nClClccBr)",
+      "orig_pred": 3.2194066047668457,
+      "adv_pred": 3.9015865325927734,
+      "drift": 0.6821799278259277,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "Sn=SCl",
+      "adversarial": "noN-Br",
+      "orig_pred": 1.46116042137146,
+      "adv_pred": 0.8875095844268799,
+      "drift": 0.5736508369445801,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "Cl#FNS#nC(Cl44-Cl)",
+      "adversarial": "Cl#oNSSFC(Br44FCl)",
+      "orig_pred": 3.0521128177642822,
+      "adv_pred": 3.919100522994995,
+      "drift": 0.8669877052307129,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "(F)on-F5#Sc(C)=ClF5Br",
+      "adversarial": "(F)#nBrF5#S#(Br)=Cln5Br",
+      "orig_pred": 3.929861307144165,
+      "adv_pred": 4.721672534942627,
+      "drift": 0.7918112277984619,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "O#o66(C)-C#BrBrOS55FO",
+      "adversarial": "OCo66(C)-=#BrcOC55FC",
+      "orig_pred": 3.975318670272827,
+      "adv_pred": 2.8341705799102783,
+      "drift": 1.1411480903625488,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "Clccc",
+      "adversarial": "OC#O",
+      "orig_pred": 1.2719671726226807,
+      "adv_pred": 0.5025689601898193,
+      "drift": 0.7693982124328613,
+      "n_mutations": 4,
+      "is_valid": true
+    },
+    {
+      "original": "Br#nF3Br3(Br)#nCl-S1oo1BrClNN",
+      "adversarial": "Br#nF3Br3(Br)#-O-S1n=1BroNN",
+      "orig_pred": 5.660107612609863,
+      "adv_pred": 4.700801372528076,
+      "drift": 0.9593062400817871,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "(Co)o11=oClBrNNBr",
+      "adversarial": "(So)o11=Br#oNNc",
+      "orig_pred": 3.0451643466949463,
+      "adv_pred": 2.1864702701568604,
+      "drift": 0.8586940765380859,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "OcS3Fn3Oc",
+      "adversarial": "OCBr3Cl#3Brc",
+      "orig_pred": 1.551564335823059,
+      "adv_pred": 2.5652544498443604,
+      "drift": 1.0136901140213013,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "Cl44NcoO(O3)3",
+      "adversarial": "Cl44NoNBr(N3)3",
+      "orig_pred": 1.9204161167144775,
+      "adv_pred": 2.383939266204834,
+      "drift": 0.46352314949035645,
+      "n_mutations": 4,
+      "is_valid": true
+    },
+    {
+      "original": "Br-SNO(Fc)(F)(S=oc)",
+      "adversarial": "Br-SCO(Fc)(c)(S=#c)",
+      "orig_pred": 2.999807357788086,
+      "adv_pred": 2.527672529220581,
+      "drift": 0.4721348285675049,
+      "n_mutations": 3,
+      "is_valid": true
+    },
+    {
+      "original": "n#coCO",
+      "adversarial": "NBrcBrBrCl",
+      "orig_pred": 0.9192980527877808,
+      "adv_pred": 2.374269723892212,
+      "drift": 1.4549716711044312,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "ccCl6SFon6o2#C2SOBr",
+      "adversarial": "c#Cl6SFon6o2ClBr2SFBr",
+      "orig_pred": 3.775101661682129,
+      "adv_pred": 4.621023178100586,
+      "drift": 0.845921516418457,
+      "n_mutations": 4,
+      "is_valid": true
+    },
+    {
+      "original": "Br6o6ClBrCNOoBr",
+      "adversarial": "C6o6BrpnNO#Br",
+      "orig_pred": 3.4023067951202393,
+      "adv_pred": 2.604870557785034,
+      "drift": 0.7974362373352051,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "OFF66-O44=o#On=S-FcCSc",
+      "adversarial": "OFF66-O44OoNO-=SBrBrcCSc",
+      "orig_pred": 3.9283788204193115,
+      "adv_pred": 4.5138840675354,
+      "drift": 0.5855052471160889,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "cCn-c",
+      "adversarial": "SClFCln",
+      "orig_pred": 0.6694915890693665,
+      "adv_pred": 1.6795918941497803,
+      "drift": 1.0101003050804138,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "coCOncBrN",
+      "adversarial": "FClCClnBrBrCl",
+      "orig_pred": 1.6535418033599854,
+      "adv_pred": 3.0121963024139404,
+      "drift": 1.358654499053955,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "o66BrOFnCcBrcF",
+      "adversarial": "C66BrFFClCBrBrOF",
+      "orig_pred": 2.8716604709625244,
+      "adv_pred": 3.612578868865967,
+      "drift": 0.7409183979034424,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "c(Clco11)O",
+      "adversarial": "C(CcC11)O",
+      "orig_pred": 1.1875033378601074,
+      "adv_pred": 0.5900108814239502,
+      "drift": 0.5974924564361572,
+      "n_mutations": 3,
+      "is_valid": true
+    },
+    {
+      "original": "Brc22nFc",
+      "adversarial": "ClF22SOBr",
+      "orig_pred": 0.9998822212219238,
+      "adv_pred": 1.7862913608551025,
+      "drift": 0.7864091396331787,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "(N-o5)F(Cl=N2=Cl3NClClOo5)noBr4234",
+      "adversarial": "(o-o5)F(ClFn2=Cl3NClClOo5)n#Br4234",
+      "orig_pred": 5.233283519744873,
+      "adv_pred": 5.483692646026611,
+      "drift": 0.2504091262817383,
+      "n_mutations": 4,
+      "is_valid": true
+    },
+    {
+      "original": "(nN6(F)(o56)c4C2S)Cl6#c5Cl426",
+      "adversarial": "(oN6(F)(S56)o4C2S)Cl6#o5Cl426",
+      "orig_pred": 3.943540334701538,
+      "adv_pred": 4.091487407684326,
+      "drift": 0.14794707298278809,
+      "n_mutations": 4,
+      "is_valid": true
+    },
+    {
+      "original": "n5N45-(S=nn)CN4-(NS)cc",
+      "adversarial": "C5N45\\(o=On)CN4-(nS)cc",
+      "orig_pred": 2.7143352031707764,
+      "adv_pred": 2.5391695499420166,
+      "drift": 0.17516565322875977,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "ClCo3cBrCl=cBro3F-F=cClS",
+      "adversarial": "ClCo3cBrCl=cBro3F-FSSClS",
+      "orig_pred": 4.570021152496338,
+      "adv_pred": 5.070493698120117,
+      "drift": 0.5004725456237793,
+      "n_mutations": 2,
+      "is_valid": true
+    },
+    {
+      "original": "(S3)cC#C3F(Cl(c-So11o))",
+      "adversarial": "(S3)cC#=3F(c(nCSo11C))",
+      "orig_pred": 2.7192859649658203,
+      "adv_pred": 2.311556100845337,
+      "drift": 0.4077298641204834,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "oFN#n2o=(n2)#Br(cO)",
+      "adversarial": "oFSOn2Clo(O2)#Br(cO)",
+      "orig_pred": 3.167670726776123,
+      "adv_pred": 3.8207461833953857,
+      "drift": 0.6530754566192627,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "nFO-Br=Cl",
+      "adversarial": "n#O--=Cl",
+      "orig_pred": 1.904155969619751,
+      "adv_pred": 1.14113187789917,
+      "drift": 0.763024091720581,
+      "n_mutations": 2,
+      "is_valid": true
+    },
+    {
+      "original": "Cc1n1S",
+      "adversarial": "oo1F1Cl",
+      "orig_pred": 0.7866718769073486,
+      "adv_pred": 1.2821195125579834,
+      "drift": 0.49544763565063477,
+      "n_mutations": 4,
+      "is_valid": true
+    },
+    {
+      "original": "(n)oc(Br)=(nF)COClBr55",
+      "adversarial": "(Br)oc(Br)C(nN)COMgC55",
+      "orig_pred": 3.694208860397339,
+      "adv_pred": 2.622767925262451,
+      "drift": 1.0714409351348877,
+      "n_mutations": 5,
+      "is_valid": true
+    },
+    {
+      "original": "ClBr-Bro=c=FNOFN#c",
+      "adversarial": "ClBrBrBroClo=FNOSN#O",
+      "orig_pred": 3.6712045669555664,
+      "adv_pred": 4.935365200042725,
+      "drift": 1.2641606330871582,
+      "n_mutations": 5,
+      "is_valid": true
+    }
+  ]
+}
