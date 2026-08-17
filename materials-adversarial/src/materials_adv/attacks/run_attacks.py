@@ -45,6 +45,7 @@ def main():
         default=None,
         help="Override the drift threshold (default: baseline_metrics.mae from model.yaml).",
     )
+    parser.add_argument("--split", type=str, default="val", choices=["train", "val", "test"], help="Dataset split to attack.")
     args = parser.parse_args()
 
     logger.info("Loading configs...")
@@ -62,8 +63,8 @@ def main():
     df = pd.read_csv(proc_dir / "processed.csv")
     rep_col = "original_representation"
     
-    val_indices = splits["val"]
-    val_samples = [(f"sample_{idx}", df.iloc[idx][rep_col]) for idx in val_indices]
+    target_indices = splits[args.split]
+    val_samples = [(f"sample_{idx}", df.iloc[idx][rep_col]) for idx in target_indices]
     
     logger.info("Loading baseline model and scaler...")
     device = torch.device(model_cfg["device"])
