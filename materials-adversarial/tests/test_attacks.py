@@ -171,12 +171,12 @@ def test_number_of_changes_matches_actual_diff(factory) -> None:
 
 
 def test_deletion_shortens_sequence() -> None:
-    for o in DeletionAttack(rng(), n_edits=1).generate(list(TOKENS), n_variants=3):
+    for o in DeletionAttack(rng(), attack_budget=1).generate(list(TOKENS), n_variants=3):
         assert len(o.adversarial_tokens) == len(TOKENS) - 1
 
 
 def test_insertion_lengthens_sequence() -> None:
-    for o in InsertionAttack(rng(), allowed_tokens=POOL, n_edits=1).generate(
+    for o in InsertionAttack(rng(), allowed_tokens=POOL, attack_budget=1).generate(
         list(TOKENS), n_variants=3
     ):
         assert len(o.adversarial_tokens) == len(TOKENS) + 1
@@ -318,7 +318,7 @@ def test_generator_end_to_end_with_constant_predictor() -> None:
     for r in records:
         assert r.sample_id == "s1"
         assert r.original_prediction == 300.0
-        assert r.prediction_drift == 0.0  # constant predictor => zero drift
+        assert r.signed_prediction_drift == 0.0  # constant predictor => zero drift
         assert r.attack_id.startswith("s1:")
 
 
@@ -326,7 +326,7 @@ def test_generator_without_predictor_leaves_predictions_none() -> None:
     gen = AttackGenerator(attacks=[DeletionAttack(rng())], seed=1)
     for r in gen.run([("s1", POLYMER)]):
         assert r.original_prediction is None
-        assert r.prediction_drift is None
+        assert r.signed_prediction_drift is None
 
 
 def test_generator_requires_at_least_one_attack() -> None:

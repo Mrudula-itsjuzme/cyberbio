@@ -38,11 +38,11 @@ class AttackOutcome:
         return count_changes(list(self.original_tokens), list(self.adversarial_tokens))
 
     @property
-    def original_psmiles(self) -> str:
+    def original_representation(self) -> str:
         return "".join(self.original_tokens)
 
     @property
-    def adversarial_psmiles(self) -> str:
+    def adversarial_representation(self) -> str:
         return "".join(self.adversarial_tokens)
 
     @property

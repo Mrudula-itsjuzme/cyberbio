@@ -18,6 +18,6 @@ training:
   early_stopping_patience: 10
   monitor: val_mae
 baseline_metrics:
-  mae: 46.20376968383789
-  rmse: 59.355552673339844
-  r2: -2.6353466510772705
+  mae: 59.69535827636719
+  rmse: 77.74761962890625
+  r2: 0.41119664907455444

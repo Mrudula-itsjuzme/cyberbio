@@ -60,7 +60,7 @@ def main():
         splits = json.load(f)
         
     df = pd.read_csv(proc_dir / "processed.csv")
-    rep_col = dataset_cfg["representation_column"]
+    rep_col = "original_representation"
     
     val_indices = splits["val"]
     val_samples = [(f"sample_{idx}", df.iloc[idx][rep_col]) for idx in val_indices]
@@ -104,7 +104,7 @@ def main():
     attack_sub = SubstitutionAttack(
         rng=rng,
         allowed_tokens=vocab,
-        n_edits=sub_cfg["n_edits"],
+        attack_budget=sub_cfg["attack_budget"],
         role_preserving=sub_cfg["role_preserving"],
         protect_attachments=attack_cfg["protection"]["protect_attachments"],
         protect_ring_closures=attack_cfg["protection"]["protect_ring_closures"],
@@ -112,14 +112,14 @@ def main():
     )
     
     attack_ins = InsertionAttack(
-        rng=rng, allowed_tokens=vocab, n_edits=1,
+        rng=rng, allowed_tokens=vocab, attack_budget=attack_cfg['attacks']['insertion']['attack_budget'],
         protect_attachments=attack_cfg["protection"]["protect_attachments"],
         protect_ring_closures=attack_cfg["protection"]["protect_ring_closures"],
         protect_branches=attack_cfg["protection"]["protect_branches"]
     )
     
     attack_del = DeletionAttack(
-        rng=rng, n_edits=1,
+        rng=rng, attack_budget=attack_cfg['attacks']['insertion']['attack_budget'],
         protect_attachments=attack_cfg["protection"]["protect_attachments"],
         protect_ring_closures=attack_cfg["protection"]["protect_ring_closures"],
         protect_branches=attack_cfg["protection"]["protect_branches"]
@@ -189,23 +189,23 @@ def main():
             # For our record-keeping context
             success = (
                 r.validity_status == "valid" and
-                r.prediction_drift is not None and
-                abs(r.prediction_drift) > baseline_mae
+                r.signed_prediction_drift is not None and
+                abs(r.signed_prediction_drift) > baseline_mae
             )
-            data = dataclasses.asdict(r)
+            data = r.to_dict()
             data["is_successful"] = bool(success)
             f.write(json.dumps(data) + "\n")
             
     # Metrics
     valid_records = [r for r in records if r.validity_status == "valid"]
-    successful_records = [r for r in records if (r.validity_status == "valid" and r.prediction_drift is not None and abs(r.prediction_drift) > baseline_mae)]
+    successful_records = [r for r in records if (r.validity_status == "valid" and r.signed_prediction_drift is not None and abs(r.signed_prediction_drift) > baseline_mae)]
     
     logger.info(f"Total attacks generated: {len(records)}")
     logger.info(f"Valid candidates: {len(valid_records)} ({len(valid_records)/len(records):.1%})")
     logger.info(f"Successful attacks (> {baseline_mae:.2f} K drift): {len(successful_records)} ({len(successful_records)/len(records):.1%})")
     
     if valid_records:
-        drifts = [abs(r.prediction_drift) for r in valid_records if r.prediction_drift is not None]
+        drifts = [abs(r.signed_prediction_drift) for r in valid_records if r.signed_prediction_drift is not None]
         logger.info(f"Average absolute drift (valid only): {np.mean(drifts):.2f} K")
         logger.info(f"Max absolute drift (valid only): {np.max(drifts):.2f} K")
         

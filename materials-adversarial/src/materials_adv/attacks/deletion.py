@@ -13,13 +13,13 @@ class DeletionAttack(BaseAttack):
     def __init__(
         self,
         rng: np.random.Generator,
-        n_edits: int = 1,
+        attack_budget: int = 1,
         protect_attachments: bool = True,
         protect_ring_closures: bool = True,
         protect_branches: bool = True,
     ):
         super().__init__(rng)
-        self.n_edits = n_edits
+        self.attack_budget = attack_budget
         self.protect_attachments = protect_attachments
         self.protect_ring_closures = protect_ring_closures
         self.protect_branches = protect_branches
@@ -40,7 +40,7 @@ class DeletionAttack(BaseAttack):
 
     def generate(self, tokens: list[str], n_variants: int = 1) -> list[AttackOutcome]:
         eligible = self._eligible_deletion_positions(tokens)
-        if len(eligible) < self.n_edits:
+        if len(eligible) < self.attack_budget:
             return []
 
         outcomes = []
@@ -53,7 +53,7 @@ class DeletionAttack(BaseAttack):
             attempts += 1
             
             # Select positions to delete without replacement
-            positions = sorted(self.rng.choice(eligible, size=self.n_edits, replace=False), reverse=True)
+            positions = sorted(self.rng.choice(eligible, size=self.attack_budget, replace=False), reverse=True)
             
             new_tokens = list(tokens)
             deleted_pos = []

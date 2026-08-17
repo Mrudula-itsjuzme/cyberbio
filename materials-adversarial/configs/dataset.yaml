@@ -21,9 +21,10 @@ processed_dir: data/processed
 # --- PENDING: must come from the audit, never assumed ---
 file: final_polymer_properties_fromliterature.csv                      # exact filename
 representation_column: "PSMILES"     # PSMILES column   (audit proposes, human confirms)
-target_column: "Tg (K)"             # Tg column        (audit proposes, human confirms)
+target_property: "Tg"               # Generic property name
+target_column: "Tg (K)"             # Specific column name in CSV
 target_units: "K"              # "K" | "C"        (audit reports evidence only)
-n_usable_records: 443          # MEASURED count of non-null Tg rows
+n_usable_records: 443          # MEASURED count of non-null rows
 
 # Duplicate handling. Mean / keep-first / drop are NOT equivalent choices, and
 # one likely cause of conflict is a Kelvin/Celsius mix -- averaging those would

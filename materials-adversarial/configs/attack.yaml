@@ -16,7 +16,7 @@ protection:
 attacks:
   substitution:
     enabled: true
-    n_edits: 1
+    attack_budget: 1
     role_preserving: true       # atoms replaced only by atoms
     # PENDING(dataset): derive from the TRAINING-SPLIT vocabulary. Deliberately
     # not hardcoded -- a hand-written replacement list would encode the author's
@@ -27,16 +27,16 @@ attacks:
 
   insertion:
     enabled: true
-    n_edits: 1
+    attack_budget: 1
     allowed_tokens: null        # null => sample from the sequence's own tokens
 
   deletion:
     enabled: true
-    n_edits: 1
+    attack_budget: 1
 
   reordering:
     enabled: true
-    n_edits: 1
+    attack_budget: 1
     window: 3                   # LOCAL only; arbitrary shuffling is not a
                                 # chemically meaningful perturbation
 

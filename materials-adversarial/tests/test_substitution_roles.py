@@ -7,7 +7,7 @@ def test_substitution_roles_bonds():
     allowed = ["=", "#", ".", "C", "c", "*"]
     
     attack = SubstitutionAttack(
-        rng=rng, allowed_tokens=allowed, n_edits=1, role_preserving=True
+        rng=rng, allowed_tokens=allowed, attack_budget=1, role_preserving=True
     )
     
     # Candidates for "=" should only be "#", NOT "."
@@ -24,7 +24,7 @@ def test_substitution_roles_atoms():
     allowed = ["C", "O", "N", "c", "n", "o", "Cl"]
     
     attack = SubstitutionAttack(
-        rng=rng, allowed_tokens=allowed, n_edits=1, role_preserving=True
+        rng=rng, allowed_tokens=allowed, attack_budget=1, role_preserving=True
     )
     
     # Aliphatic to aliphatic only
@@ -46,7 +46,7 @@ def test_protected_tokens_not_substituted():
     allowed = ["C", "*", "=", "1"]
     
     attack = SubstitutionAttack(
-        rng=rng, allowed_tokens=allowed, n_edits=1, role_preserving=True
+        rng=rng, allowed_tokens=allowed, attack_budget=1, role_preserving=True
     )
     
     # Attack on a token list containing protected endpoints

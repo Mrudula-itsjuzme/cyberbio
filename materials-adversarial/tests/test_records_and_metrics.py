@@ -25,14 +25,14 @@ from materials_adv.utils.io import read_jsonl, write_jsonl
 REQUIRED_FIELDS = {
     "attack_id",
     "sample_id",
-    "original_psmiles",
-    "adversarial_psmiles",
+    "original_representation",
+    "adversarial_representation",
     "attack_type",
     "number_of_changes",
     "validity_status",
     "original_prediction",
     "adversarial_prediction",
-    "prediction_drift",
+    "signed_prediction_drift",
 }
 
 FUTURE_FIELDS = {
@@ -48,10 +48,13 @@ def make_record(**overrides) -> AttackRecord:
     base = {
         "attack_id": "s1:deletion:0:0",
         "sample_id": "s1",
-        "original_psmiles": "[*]CC[*]",
-        "adversarial_psmiles": "[*]C[*]",
+        "original_representation": "[*]CC[*]",
+        "adversarial_representation": "[*]C[*]",
         "attack_type": "deletion",
         "number_of_changes": 1,
+            "attack_budget": 1,
+            "edited_positions": (),
+            "plausibility_status": "unchecked",
         "validity_status": ValidityStatus.VALID.value,
     }
     return AttackRecord(**{**base, **overrides})
@@ -157,7 +160,7 @@ def test_metrics_reject_empty_and_mismatched() -> None:
 def test_success_is_not_merely_prediction_changed() -> None:
     """A tiny drift below threshold must not count as a success."""
     record = make_record(original_prediction=300.0, adversarial_prediction=300.5,
-                         prediction_drift=0.5)
+                         signed_prediction_drift=0.5)
     assert SuccessCriterion(min_abs_drift=10.0).is_success(record) is False
     assert SuccessCriterion(min_abs_drift=0.1).is_success(record) is True
 
@@ -165,7 +168,7 @@ def test_success_is_not_merely_prediction_changed() -> None:
 def test_unchecked_is_not_success_under_strict_policy() -> None:
     record = make_record(
         validity_status=ValidityStatus.UNCHECKED.value,
-        prediction_drift=50.0,
+        signed_prediction_drift=50.0,
     )
     assert SuccessCriterion(min_abs_drift=1.0).is_success(record) is False
     assert (
@@ -175,13 +178,13 @@ def test_unchecked_is_not_success_under_strict_policy() -> None:
 
 
 def test_perturbation_size_constrains_success() -> None:
-    record = make_record(number_of_changes=5, prediction_drift=50.0)
+    record = make_record(number_of_changes=5, signed_prediction_drift=50.0)
     assert SuccessCriterion(min_abs_drift=1.0, max_changes=1).is_success(record) is False
 
 
 def test_summary_reports_failures_alongside_successes() -> None:
     records = [
-        make_record(attack_id="a", prediction_drift=50.0),
+        make_record(attack_id="a", signed_prediction_drift=50.0),
         make_record(attack_id="b", validity_status=ValidityStatus.INVALID_REPRESENTATION.value),
         make_record(attack_id="c", validity_status=ValidityStatus.UNCHECKED.value),
     ]
@@ -193,8 +196,8 @@ def test_summary_reports_failures_alongside_successes() -> None:
 
 def test_summary_reports_signed_mean_to_expose_directional_bias() -> None:
     records = [
-        make_record(attack_id="a", prediction_drift=-50.0),
-        make_record(attack_id="b", prediction_drift=-30.0),
+        make_record(attack_id="a", signed_prediction_drift=-50.0),
+        make_record(attack_id="b", signed_prediction_drift=-30.0),
     ]
     s = summarize_attacks(records)
     assert s["mean_signed_drift"] == -40.0

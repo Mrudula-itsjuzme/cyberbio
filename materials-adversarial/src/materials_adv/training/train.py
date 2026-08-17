@@ -102,8 +102,8 @@ def train(config_path: str = "configs/model.yaml", dataset_config_path: str = "c
     with open(proc_dir / "vocab.json") as f:
         vocab = json.load(f)
         
-    rep_col = data_cfg["representation_column"]
-    tgt_col = data_cfg["target_column"]
+    rep_col = "original_representation"
+    tgt_col = "property_value"
     
     # We rename columns for convenience
     df = df.rename(columns={rep_col: "psmiles", tgt_col: "target"})

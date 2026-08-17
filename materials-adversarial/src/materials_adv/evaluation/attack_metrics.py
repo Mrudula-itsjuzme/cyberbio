@@ -37,9 +37,9 @@ class SuccessCriterion:
     count_unchecked_as_valid: bool = False
 
     def is_success(self, record: AttackRecord) -> bool:
-        if record.prediction_drift is None:
+        if record.signed_prediction_drift is None:
             return False
-        if abs(record.prediction_drift) < self.min_abs_drift:
+        if abs(record.signed_prediction_drift) < self.min_abs_drift:
             return False
         if self.max_changes is not None and record.number_of_changes > self.max_changes:
             return False
@@ -70,8 +70,8 @@ def summarize_attacks(
     for r in records:
         status_counts[r.validity_status] = status_counts.get(r.validity_status, 0) + 1
 
-    scored = [r for r in records if r.prediction_drift is not None]
-    drifts = np.array([r.prediction_drift for r in scored], dtype=float)
+    scored = [r for r in records if r.signed_prediction_drift is not None]
+    drifts = np.array([r.signed_prediction_drift for r in scored], dtype=float)
     abs_drifts = np.abs(drifts)
     changes = np.array([r.number_of_changes for r in records], dtype=float)
     successes = [r for r in records if criterion.is_success(r)]
@@ -80,7 +80,7 @@ def summarize_attacks(
         "n_total": n_total,
         "n_scored": len(scored),
         "n_unscored": n_total - len(scored),
-        "n_noop": sum(1 for r in records if r.original_psmiles == r.adversarial_psmiles),
+        "n_noop": sum(1 for r in records if r.original_representation == r.adversarial_representation),
         "status_counts": status_counts,
         "n_unchecked": status_counts.get(ValidityStatus.UNCHECKED.value, 0),
         "n_invalid": status_counts.get(ValidityStatus.INVALID_REPRESENTATION.value, 0),

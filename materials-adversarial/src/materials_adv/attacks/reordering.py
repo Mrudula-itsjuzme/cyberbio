@@ -23,16 +23,16 @@ class ReorderingAttack(BaseAttack):
         rng: np.random.Generator,
         *,
         window: int = 3,
-        n_edits: int = 1,
+        attack_budget: int = 1,
         **kwargs,
     ) -> None:
-        super().__init__(rng, window=window, n_edits=n_edits, **kwargs)
+        super().__init__(rng, window=window, attack_budget=attack_budget, **kwargs)
         if window < 2:
             raise ValueError(f"window must be >= 2 for a swap to exist, got {window}")
-        if n_edits < 1:
-            raise ValueError(f"n_edits must be >= 1, got {n_edits}")
+        if attack_budget < 1:
+            raise ValueError(f"attack_budget must be >= 1, got {attack_budget}")
         self.window = window
-        self.n_edits = n_edits
+        self.attack_budget = attack_budget
 
     def generate(self, tokens: list[str], n_variants: int = 1) -> list[AttackOutcome]:
         editable = self._editable(tokens)
@@ -54,7 +54,7 @@ class ReorderingAttack(BaseAttack):
         for _ in range(n_variants):
             working = list(tokens)
             touched: list[int] = []
-            for _ in range(self.n_edits):
+            for _ in range(self.attack_budget):
                 a, b = pairs[int(self.rng.integers(len(pairs)))]
                 working[a], working[b] = working[b], working[a]
                 touched.extend((a, b))
@@ -68,7 +68,7 @@ class ReorderingAttack(BaseAttack):
                     adversarial_tokens=adversarial,
                     attack_type=self.name,
                     edit_positions=tuple(sorted(set(touched))),
-                    params={"window": self.window, "n_edits": self.n_edits},
+                    params={"window": self.window, "attack_budget": self.attack_budget},
                 )
             )
         return outcomes

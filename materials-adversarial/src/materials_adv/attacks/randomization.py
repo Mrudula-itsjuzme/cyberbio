@@ -18,13 +18,13 @@ class SmilesRandomizationAttack(BaseAttack):
     def generate(self, tokens: list[str], n_variants: int = 1) -> list[AttackOutcome]:
         from ..data.tokenizer import tokenize
         
-        original_psmiles = "".join(tokens)
-        mol = Chem.MolFromSmiles(original_psmiles)
+        original_representation = "".join(tokens)
+        mol = Chem.MolFromSmiles(original_representation)
         if mol is None:
             return []
             
         outcomes = []
-        seen = {original_psmiles}
+        seen = {original_representation}
         
         # RDKit's RNG for doRandom=True is global. We don't have direct control 
         # via the numpy Generator, but we can seed python's/rdkit's if needed, 

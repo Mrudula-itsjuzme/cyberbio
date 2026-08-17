@@ -15,42 +15,32 @@ from dataclasses import asdict, dataclass, field
 from enum import Enum
 from typing import Any
 
-SCHEMA_VERSION = "1.0"
-
+SCHEMA_VERSION = "1.1"
 
 class ValidityStatus(str, Enum):
-    """Outcome of the validity pipeline for one candidate.
-
-    UNCHECKED is a first-class outcome, not a failure. With RDKit unavailable, or
-    a check skipped, the honest answer is "we do not know" -- never "invalid".
-    """
-
     VALID = "valid"
     INVALID_REPRESENTATION = "invalid_representation"
     IMPLAUSIBLE = "implausible"
     UNCHECKED = "unchecked"
 
-
 @dataclass(frozen=True, slots=True)
 class AttackRecord:
-    """One attack attempt -- successful, rejected, or unscored.
-
-    Frozen: the pipeline appends records, never edits them in place.
-    Rejected candidates are recorded too, with reasons, so failed attempts are
-    reportable rather than silently dropped.
-    """
-
     attack_id: str
     sample_id: str
-    original_psmiles: str
-    adversarial_psmiles: str
+    original_representation: str
+    adversarial_representation: str
     attack_type: str
+    attack_budget: int
     number_of_changes: int
+    edited_positions: tuple[int, ...]
     validity_status: str
+    plausibility_status: str
 
     original_prediction: float | None = None
     adversarial_prediction: float | None = None
-    prediction_drift: float | None = None  # SIGNED: adversarial - original
+    signed_prediction_drift: float | None = None
+    absolute_prediction_drift: float | None = None
+    attack_success: bool = False
 
     rejection_reasons: tuple[str, ...] = ()
     plausibility_flags: dict[str, bool] = field(default_factory=dict)
@@ -72,6 +62,7 @@ class AttackRecord:
         d = asdict(self)
         d["rejection_reasons"] = list(self.rejection_reasons)
         d["checks_skipped"] = list(self.checks_skipped)
+        d["edited_positions"] = [int(p) for p in self.edited_positions]
         return d
 
     @classmethod
@@ -79,6 +70,7 @@ class AttackRecord:
         d = dict(d)
         d["rejection_reasons"] = tuple(d.get("rejection_reasons", ()))
         d["checks_skipped"] = tuple(d.get("checks_skipped", ()))
+        d["edited_positions"] = tuple(d.get("edited_positions", ()))
         known = {f for f in cls.__dataclass_fields__}
         return cls(**{k: v for k, v in d.items() if k in known})
 
@@ -93,3 +85,4 @@ def compute_drift(original: float | None, adversarial: float | None) -> float | 
     if original is None or adversarial is None:
         return None
     return float(adversarial) - float(original)
+

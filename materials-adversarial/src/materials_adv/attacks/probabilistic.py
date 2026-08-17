@@ -51,9 +51,9 @@ class ProbabilisticMCMCAttack(BaseAttack):
         
         # Initialize proposal generators
         self._proposals = [
-            SubstitutionAttack(rng, allowed_tokens=self.allowed_tokens, n_edits=1, role_preserving=True, protect_attachments=protect_attachments, protect_ring_closures=protect_ring_closures, protect_branches=protect_branches),
-            InsertionAttack(rng, allowed_tokens=self.allowed_tokens, n_edits=1, protect_attachments=protect_attachments, protect_ring_closures=protect_ring_closures, protect_branches=protect_branches),
-            DeletionAttack(rng, n_edits=1, protect_attachments=protect_attachments, protect_ring_closures=protect_ring_closures, protect_branches=protect_branches)
+            SubstitutionAttack(rng, allowed_tokens=self.allowed_tokens, attack_budget=1, role_preserving=True, protect_attachments=protect_attachments, protect_ring_closures=protect_ring_closures, protect_branches=protect_branches),
+            InsertionAttack(rng, allowed_tokens=self.allowed_tokens, attack_budget=1, protect_attachments=protect_attachments, protect_ring_closures=protect_ring_closures, protect_branches=protect_branches),
+            DeletionAttack(rng, attack_budget=1, protect_attachments=protect_attachments, protect_ring_closures=protect_ring_closures, protect_branches=protect_branches)
         ]
 
     def _score_sequence(self, psmiles: str, original_pred: float) -> tuple[float, float, float]:
@@ -76,15 +76,15 @@ class ProbabilisticMCMCAttack(BaseAttack):
             # Cannot score without a predictor
             return []
             
-        original_psmiles = "".join(tokens)
-        original_pred = float(self.predictor.predict([original_psmiles])[0])
+        original_representation = "".join(tokens)
+        original_pred = float(self.predictor.predict([original_representation])[0])
         
         current_tokens = list(tokens)
-        current_psmiles = original_psmiles
+        current_psmiles = original_representation
         current_score, _, _ = self._score_sequence(current_psmiles, original_pred)
         
         outcomes = []
-        seen = {original_psmiles}
+        seen = {original_representation}
         
         # MCMC Loop
         for _ in range(self.steps):
@@ -99,7 +99,7 @@ class ProbabilisticMCMCAttack(BaseAttack):
                 continue
                 
             candidate_outcome = proposals[0]
-            candidate_psmiles = candidate_outcome.adversarial_psmiles
+            candidate_psmiles = candidate_outcome.adversarial_representation
             
             # 2. Score
             new_score, chem_score, att_score = self._score_sequence(candidate_psmiles, original_pred)

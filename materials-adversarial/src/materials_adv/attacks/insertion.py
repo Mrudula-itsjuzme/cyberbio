@@ -14,13 +14,13 @@ class InsertionAttack(BaseAttack):
         self,
         rng: np.random.Generator,
         allowed_tokens: Sequence[str],
-        n_edits: int = 1,
+        attack_budget: int = 1,
         protect_attachments: bool = True,
         protect_ring_closures: bool = True,
         protect_branches: bool = True,
     ):
         super().__init__(rng)
-        self.n_edits = n_edits
+        self.attack_budget = attack_budget
         self.protect_attachments = protect_attachments
         self.protect_ring_closures = protect_ring_closures
         self.protect_branches = protect_branches
@@ -67,9 +67,9 @@ class InsertionAttack(BaseAttack):
         while len(outcomes) < n_variants and attempts < max_attempts:
             attempts += 1
             
-            # Pick insertion positions (can pick the same position multiple times if n_edits > 1)
+            # Pick insertion positions (can pick the same position multiple times if attack_budget > 1)
             # We sort them descending so that inserting doesn't mess up earlier indices.
-            positions = sorted(self.rng.choice(eligible, size=self.n_edits, replace=True), reverse=True)
+            positions = sorted(self.rng.choice(eligible, size=self.attack_budget, replace=True), reverse=True)
             new_tokens = list(tokens)
             
             inserted_pos = []

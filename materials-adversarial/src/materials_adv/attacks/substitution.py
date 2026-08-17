@@ -38,11 +38,11 @@ class SubstitutionAttack(BaseAttack):
         rng: np.random.Generator,
         *,
         allowed_tokens: Sequence[str] | None = None,
-        n_edits: int = 1,
+        attack_budget: int = 1,
         role_preserving: bool = True,
         **kwargs,
     ) -> None:
-        super().__init__(rng, n_edits=n_edits, role_preserving=role_preserving, **kwargs)
+        super().__init__(rng, attack_budget=attack_budget, role_preserving=role_preserving, **kwargs)
         if allowed_tokens is None:
             raise PendingImplementation(
                 what=(
@@ -57,10 +57,10 @@ class SubstitutionAttack(BaseAttack):
                     "Vocabulary.build(train_texts) and pass allowed_tokens=..."
                 ),
             )
-        if n_edits < 1:
-            raise ValueError(f"n_edits must be >= 1, got {n_edits}")
+        if attack_budget < 1:
+            raise ValueError(f"attack_budget must be >= 1, got {attack_budget}")
         self.allowed_tokens = tuple(allowed_tokens)
-        self.n_edits = n_edits
+        self.attack_budget = attack_budget
         self.role_preserving = role_preserving
 
     def _candidates_for(self, token: str) -> tuple[str, ...]:
@@ -87,14 +87,14 @@ class SubstitutionAttack(BaseAttack):
             for i in editable
             if classify_token(tokens[i]) not in excluded and self._candidates_for(tokens[i])
         ]
-        if len(sites) < self.n_edits:
+        if len(sites) < self.attack_budget:
             return []
 
         outcomes: list[AttackOutcome] = []
         seen: set[tuple[str, ...]] = set()
         for _ in range(n_variants):
             working = list(tokens)
-            chosen = self.rng.choice(len(sites), size=self.n_edits, replace=False)
+            chosen = self.rng.choice(len(sites), size=self.attack_budget, replace=False)
             positions = sorted(sites[int(c)] for c in chosen)
             for pos in positions:
                 candidates = self._candidates_for(tokens[pos])
@@ -112,7 +112,7 @@ class SubstitutionAttack(BaseAttack):
                     attack_type=self.name,
                     edit_positions=tuple(positions),
                     params={
-                        "n_edits": self.n_edits,
+                        "attack_budget": self.attack_budget,
                         "role_preserving": self.role_preserving,
                         "pool_size": len(self.allowed_tokens),
                     },
