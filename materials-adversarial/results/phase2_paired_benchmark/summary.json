@@ -1,0 +1,304 @@
+{
+  "clean_summary": {
+    "deletion": {
+      "criterion": {
+        "count_unchecked_as_valid": false,
+        "max_changes": null,
+        "min_abs_drift": 0.4619162976741791,
+        "require_valid": true
+      },
+      "max_abs_drift": 3.4193108081817627,
+      "mean_abs_drift": 0.3845992190541182,
+      "mean_changes": 1.0,
+      "mean_signed_drift": 0.01952289958525903,
+      "median_abs_drift": 0.2824589014053345,
+      "n_implausible": 37,
+      "n_invalid": 1521,
+      "n_noop": 0,
+      "n_scored": 3102,
+      "n_success": 480,
+      "n_total": 3102,
+      "n_unchecked": 0,
+      "n_unscored": 0,
+      "status_counts": {
+        "implausible": 37,
+        "invalid_representation": 1521,
+        "valid": 1544
+      },
+      "success_rate": 0.15473887814313347
+    },
+    "insertion": {
+      "criterion": {
+        "count_unchecked_as_valid": false,
+        "max_changes": null,
+        "min_abs_drift": 0.4619162976741791,
+        "require_valid": true
+      },
+      "max_abs_drift": 4.664816617965698,
+      "mean_abs_drift": 0.42381836643701865,
+      "mean_changes": 1.0,
+      "mean_signed_drift": -0.12387442634075503,
+      "median_abs_drift": 0.28819024562835693,
+      "n_implausible": 34,
+      "n_invalid": 1739,
+      "n_noop": 0,
+      "n_scored": 3160,
+      "n_success": 446,
+      "n_total": 3160,
+      "n_unchecked": 0,
+      "n_unscored": 0,
+      "status_counts": {
+        "implausible": 34,
+        "invalid_representation": 1739,
+        "valid": 1387
+      },
+      "success_rate": 0.14113924050632912
+    },
+    "randomization": {
+      "criterion": {
+        "count_unchecked_as_valid": false,
+        "max_changes": null,
+        "min_abs_drift": 0.4619162976741791,
+        "require_valid": true
+      },
+      "max_abs_drift": 4.728414058685303,
+      "mean_abs_drift": 0.606532104867978,
+      "mean_changes": 20.383908774152676,
+      "mean_signed_drift": -0.18818327728841816,
+      "median_abs_drift": 0.44558286666870117,
+      "n_implausible": 75,
+      "n_invalid": 0,
+      "n_noop": 0,
+      "n_scored": 3157,
+      "n_success": 1496,
+      "n_total": 3157,
+      "n_unchecked": 0,
+      "n_unscored": 0,
+      "status_counts": {
+        "implausible": 75,
+        "valid": 3082
+      },
+      "success_rate": 0.4738675958188153
+    },
+    "rearrangement": {
+      "criterion": {
+        "count_unchecked_as_valid": false,
+        "max_changes": null,
+        "min_abs_drift": 0.4619162976741791,
+        "require_valid": true
+      },
+      "max_abs_drift": 3.062990427017212,
+      "mean_abs_drift": 0.19819508504972508,
+      "mean_changes": 2.0,
+      "mean_signed_drift": -0.004779850483290517,
+      "median_abs_drift": 0.11420392990112305,
+      "n_implausible": 24,
+      "n_invalid": 566,
+      "n_noop": 0,
+      "n_scored": 1363,
+      "n_success": 73,
+      "n_total": 1363,
+      "n_unchecked": 0,
+      "n_unscored": 0,
+      "status_counts": {
+        "implausible": 24,
+        "invalid_representation": 566,
+        "valid": 773
+      },
+      "success_rate": 0.05355832721936904
+    },
+    "substitution": {
+      "criterion": {
+        "count_unchecked_as_valid": false,
+        "max_changes": null,
+        "min_abs_drift": 0.4619162976741791,
+        "require_valid": true
+      },
+      "max_abs_drift": 5.5964226722717285,
+      "mean_abs_drift": 0.2914391928236038,
+      "mean_changes": 1.0,
+      "mean_signed_drift": -0.13465504590585145,
+      "median_abs_drift": 0.14621686935424805,
+      "n_implausible": 42,
+      "n_invalid": 1435,
+      "n_noop": 0,
+      "n_scored": 3081,
+      "n_success": 293,
+      "n_total": 3081,
+      "n_unchecked": 0,
+      "n_unscored": 0,
+      "status_counts": {
+        "implausible": 42,
+        "invalid_representation": 1435,
+        "valid": 1604
+      },
+      "success_rate": 0.09509899383317105
+    }
+  },
+  "criterion": {
+    "min_abs_drift_eV": 0.4619162976741791,
+    "require_valid": true
+  },
+  "defended_summary": {
+    "deletion": {
+      "criterion": {
+        "count_unchecked_as_valid": false,
+        "max_changes": null,
+        "min_abs_drift": 0.4619162976741791,
+        "require_valid": true
+      },
+      "max_abs_drift": 3.8125429153442383,
+      "mean_abs_drift": 0.3821129297764358,
+      "mean_changes": 1.0,
+      "mean_signed_drift": 0.02372561432637375,
+      "median_abs_drift": 0.2719542980194092,
+      "n_implausible": 37,
+      "n_invalid": 1521,
+      "n_noop": 0,
+      "n_scored": 3102,
+      "n_success": 447,
+      "n_total": 3102,
+      "n_unchecked": 0,
+      "n_unscored": 0,
+      "status_counts": {
+        "implausible": 37,
+        "invalid_representation": 1521,
+        "valid": 1544
+      },
+      "success_rate": 0.14410058027079303
+    },
+    "insertion": {
+      "criterion": {
+        "count_unchecked_as_valid": false,
+        "max_changes": null,
+        "min_abs_drift": 0.4619162976741791,
+        "require_valid": true
+      },
+      "max_abs_drift": 5.710323333740234,
+      "mean_abs_drift": 0.42345321457597274,
+      "mean_changes": 1.0,
+      "mean_signed_drift": -0.10227263539652282,
+      "median_abs_drift": 0.28137922286987305,
+      "n_implausible": 34,
+      "n_invalid": 1739,
+      "n_noop": 0,
+      "n_scored": 3160,
+      "n_success": 447,
+      "n_total": 3160,
+      "n_unchecked": 0,
+      "n_unscored": 0,
+      "status_counts": {
+        "implausible": 34,
+        "invalid_representation": 1739,
+        "valid": 1387
+      },
+      "success_rate": 0.14145569620253165
+    },
+    "randomization": {
+      "criterion": {
+        "count_unchecked_as_valid": false,
+        "max_changes": null,
+        "min_abs_drift": 0.4619162976741791,
+        "require_valid": true
+      },
+      "max_abs_drift": 4.14827036857605,
+      "mean_abs_drift": 0.5907257517040398,
+      "mean_changes": 20.383908774152676,
+      "mean_signed_drift": -0.20338565388698535,
+      "median_abs_drift": 0.44840574264526367,
+      "n_implausible": 75,
+      "n_invalid": 0,
+      "n_noop": 0,
+      "n_scored": 3157,
+      "n_success": 1499,
+      "n_total": 3157,
+      "n_unchecked": 0,
+      "n_unscored": 0,
+      "status_counts": {
+        "implausible": 75,
+        "valid": 3082
+      },
+      "success_rate": 0.4748178650617675
+    },
+    "rearrangement": {
+      "criterion": {
+        "count_unchecked_as_valid": false,
+        "max_changes": null,
+        "min_abs_drift": 0.4619162976741791,
+        "require_valid": true
+      },
+      "max_abs_drift": 1.2682914733886719,
+      "mean_abs_drift": 0.13773311207772002,
+      "mean_changes": 2.0,
+      "mean_signed_drift": 0.004180028345859497,
+      "median_abs_drift": 0.08969688415527344,
+      "n_implausible": 24,
+      "n_invalid": 566,
+      "n_noop": 0,
+      "n_scored": 1363,
+      "n_success": 23,
+      "n_total": 1363,
+      "n_unchecked": 0,
+      "n_unscored": 0,
+      "status_counts": {
+        "implausible": 24,
+        "invalid_representation": 566,
+        "valid": 773
+      },
+      "success_rate": 0.016874541452677916
+    },
+    "substitution": {
+      "criterion": {
+        "count_unchecked_as_valid": false,
+        "max_changes": null,
+        "min_abs_drift": 0.4619162976741791,
+        "require_valid": true
+      },
+      "max_abs_drift": 2.5275497436523438,
+      "mean_abs_drift": 0.15513801025284146,
+      "mean_changes": 1.0,
+      "mean_signed_drift": -0.00949714579237084,
+      "median_abs_drift": 0.09063053131103516,
+      "n_implausible": 42,
+      "n_invalid": 1435,
+      "n_noop": 0,
+      "n_scored": 3081,
+      "n_success": 96,
+      "n_total": 3081,
+      "n_unchecked": 0,
+      "n_unscored": 0,
+      "status_counts": {
+        "implausible": 42,
+        "invalid_representation": 1435,
+        "valid": 1604
+      },
+      "success_rate": 0.0311587147030185
+    }
+  },
+  "paired_metrics": {
+    "deletion": {
+      "mean_abs_drift": -0.0024862892776824075,
+      "success_rate": -0.010638297872340441
+    },
+    "insertion": {
+      "mean_abs_drift": -0.00036515186104590924,
+      "success_rate": 0.00031645569620253333
+    },
+    "randomization": {
+      "mean_abs_drift": -0.01580635316393819,
+      "success_rate": 0.000950269242952162
+    },
+    "rearrangement": {
+      "mean_abs_drift": -0.06046197297200506,
+      "success_rate": -0.036683785766691124
+    },
+    "substitution": {
+      "mean_abs_drift": -0.13630118257076235,
+      "success_rate": -0.06394027913015254
+    }
+  },
+  "sample_count": 632,
+  "split": "test",
+  "status": "completed",
+  "total_candidates": 13863
+}

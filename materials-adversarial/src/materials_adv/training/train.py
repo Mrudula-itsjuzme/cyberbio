@@ -14,6 +14,7 @@ from __future__ import annotations
 from ..utils.pending import PendingImplementation
 
 
+import copy
 import json
 import logging
 import random
@@ -24,7 +25,7 @@ import numpy as np
 import pandas as pd
 import torch
 import torch.nn as nn
-from torch.utils.data import Dataset, DataLoader
+from torch.utils.data import Dataset, DataLoader, default_collate
 
 from ..data.tokenizer import tokenize
 from ..data.scaler import TargetScaler
@@ -36,35 +37,49 @@ logger = logging.getLogger(__name__)
 
 class PolymerDataset(Dataset):
     def __init__(self, data, vocab, max_len, scaler: TargetScaler):
-        self.data = data
         self.char2idx = {c: i + 1 for i, c in enumerate(vocab)}
         self.max_len = max_len
         self.scaler = scaler
-        
-    def __len__(self):
-        return len(self.data)
-        
-    def __getitem__(self, idx):
-        row = self.data.iloc[idx]
+        self.rows = [self._encode(row) for _, row in data.iterrows()]
+
+    def _encode(self, row):
         tokens = tokenize(row["psmiles"])
-        ids = [self.char2idx.get(c, 0) for c in tokens]
+        ids = [self.char2idx.get(c, 0) for c in tokens][: self.max_len]
         mask = [False] * len(ids)
-        
-        while len(ids) < self.max_len:
-            ids.append(0)
-            mask.append(True)
-            
-        ids = ids[:self.max_len]
-        mask = mask[:self.max_len]
-        
+        padding = self.max_len - len(ids)
+        ids.extend([0] * padding)
+        mask.extend([True] * padding)
         return {
             "ids": torch.tensor(ids, dtype=torch.long),
             "mask": torch.tensor(mask, dtype=torch.bool),
-            "target": torch.tensor(self.scaler.transform(row["target"]), dtype=torch.float32)
+            "target": torch.tensor(
+                self.scaler.transform(row["target"]), dtype=torch.float32
+            ),
         }
 
+    def __len__(self):
+        return len(self.rows)
+
+    def __getitem__(self, idx):
+        return self.rows[idx]
+
+
+def trim_padded_batch(rows):
+    """Collate and remove only padding beyond this batch's longest sequence.
+
+    Real token ids, positions, masks, and targets remain unchanged. The model's
+    padding mask makes the removed suffix semantically inert; this avoids paying
+    attention cost for all 256 configured positions on every training batch.
+    """
+    batch = default_collate(rows)
+    valid_lengths = (~batch["mask"]).sum(dim=1)
+    width = max(1, int(valid_lengths.max().item()))
+    batch["ids"] = batch["ids"][:, :width]
+    batch["mask"] = batch["mask"][:, :width]
+    return batch
+
 def train(config_path: str = "configs/model.yaml", dataset_config_path: str = "configs/dataset.yaml", augmented_train_path: str = None, out_dir: str = "results/models/transformer_regressor", scaler_path: str = None, write_back_config: bool = True, seed: int = None, exploratory_residualize: bool = False):
-    """Train the Tg regressor.
+    """Train the configured property regressor.
 
     seed:
         Overrides configs/model.yaml:training.seed. Phase 2C runs 5 independent
@@ -86,6 +101,7 @@ def train(config_path: str = "configs/model.yaml", dataset_config_path: str = "c
     """
     cfg = load_config(config_path)
     data_cfg = load_config(dataset_config_path)
+    target_units = data_cfg["target_units"]
     
     # Seeding. Covers weight init, DataLoader(shuffle=True) batch order and
     # dropout masks -- all three draw from torch's global RNG.
@@ -131,7 +147,7 @@ def train(config_path: str = "configs/model.yaml", dataset_config_path: str = "c
         fitted_mean = float(np.mean(train_df["target"].values))
         logger.info(
             f"  (for reference, refitting here would have given mean={fitted_mean:.6f}; "
-            f"delta={fitted_mean - scaler.mean:+.6f} K)"
+            f"delta={fitted_mean - scaler.mean:+.6f} {target_units})"
         )
     else:
         scaler = TargetScaler()
@@ -146,7 +162,7 @@ def train(config_path: str = "configs/model.yaml", dataset_config_path: str = "c
     # Baseline gate
     val_baseline = length_linear_regression(train_lengths, train_df["target"].values, val_lengths, val_df["target"].values)
     test_baseline = length_linear_regression(train_lengths, train_df["target"].values, test_lengths, test_df["target"].values)
-    logger.info(f"Baseline Gate (Length-only LR) - Val MAE: {val_baseline['mae']:.4f} K, Test MAE: {test_baseline['mae']:.4f} K")
+    logger.info(f"Baseline Gate (Length-only LR) - Val MAE: {val_baseline['mae']:.4f} {target_units}, Test MAE: {test_baseline['mae']:.4f} {target_units}")
     
     if exploratory_residualize:
         logger.warning("EXPLORATORY: Residualizing length from training targets.")
@@ -162,9 +178,15 @@ def train(config_path: str = "configs/model.yaml", dataset_config_path: str = "c
     test_ds = PolymerDataset(test_df, vocab, max_len, scaler)
     
     batch_size = cfg["training"]["batch_size"]
-    train_loader = DataLoader(train_ds, batch_size=batch_size, shuffle=True)
-    val_loader = DataLoader(val_ds, batch_size=batch_size)
-    test_loader = DataLoader(test_ds, batch_size=batch_size)
+    train_loader = DataLoader(
+        train_ds, batch_size=batch_size, shuffle=True, collate_fn=trim_padded_batch
+    )
+    val_loader = DataLoader(
+        val_ds, batch_size=batch_size, collate_fn=trim_padded_batch
+    )
+    test_loader = DataLoader(
+        test_ds, batch_size=batch_size, collate_fn=trim_padded_batch
+    )
     
     device = torch.device(cfg["device"])
     
@@ -232,11 +254,11 @@ def train(config_path: str = "configs/model.yaml", dataset_config_path: str = "c
             # targets were NOT residualized in val_df
         val_mae = np.mean(np.abs(val_preds_inv - val_targets_inv))
         
-        logger.info(f"Epoch {epoch+1}/{epochs} - Train MSE: {train_loss:.4f} - Val MAE: {val_mae:.4f} K")
+        logger.info(f"Epoch {epoch+1}/{epochs} - Train MSE: {train_loss:.4f} - Val MAE: {val_mae:.4f} {target_units}")
         
         if val_mae < best_val_mae:
             best_val_mae = val_mae
-            best_model_state = model.state_dict().copy()
+            best_model_state = copy.deepcopy(model.state_dict())
             patience_counter = 0
         else:
             patience_counter += 1

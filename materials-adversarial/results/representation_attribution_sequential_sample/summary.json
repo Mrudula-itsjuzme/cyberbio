@@ -1,0 +1,121 @@
+{
+  "status": "observed",
+  "target_units": "eV",
+  "baseline_metrics": {
+    "mean": {
+      "mae": 1.202245570506841,
+      "rmse": 1.438331480025098,
+      "r2": -0.00013297047513272098,
+      "n": 631,
+      "coverage": 1.0
+    },
+    "length_only": {
+      "mae": 1.0274479792783495,
+      "rmse": 1.3161331317512135,
+      "r2": 0.16258754292616484,
+      "n": 631,
+      "coverage": 1.0
+    },
+    "bag_of_token_counts": {
+      "mae": 0.6574498138209346,
+      "rmse": 0.9000308967489726,
+      "r2": 0.6083892456555529,
+      "n": 631,
+      "coverage": 1.0
+    },
+    "bag_of_token_frequencies": {
+      "mae": 0.6519802859816802,
+      "rmse": 0.8555942044756747,
+      "r2": 0.6461041732752488,
+      "n": 631,
+      "coverage": 1.0
+    },
+    "rdkit_descriptors": {
+      "mae": 0.6564428264071556,
+      "rmse": 0.8689639209648771,
+      "r2": 0.6349576402365523,
+      "n": 631,
+      "coverage": 1.0
+    },
+    "clean_transformer": {
+      "mae": 0.48620693360100453,
+      "rmse": 0.6674459140501553,
+      "r2": 0.7846365843227477,
+      "n": 631,
+      "coverage": 1.0
+    },
+    "defended_transformer": {
+      "mae": 0.4974337678755143,
+      "rmse": 0.6933988982485307,
+      "r2": 0.7675625685847333,
+      "n": 631,
+      "coverage": 1.0
+    }
+  },
+  "dataset_dependence": {
+    "length_target_correlation_train": -0.4246810881469524
+  },
+  "descriptor_names": [
+    "MolWt",
+    "MolLogP",
+    "TPSA",
+    "NumHDonors",
+    "NumHAcceptors",
+    "NumRotatableBonds",
+    "RingCount",
+    "HeavyAtomCount",
+    "FractionCSP3"
+  ],
+  "descriptor_validity": {
+    "train_valid": 2946,
+    "train_total": 2946,
+    "evaluation_valid": 631,
+    "evaluation_total": 631
+  },
+  "positional_sensitivity": {
+    "clean_transformer": {
+      "n": 100,
+      "mean_shuffle_drift": 0.6824092268943787,
+      "median_shuffle_drift": 0.5250059366226196,
+      "mean_reverse_drift": 0.7129127979278564,
+      "median_reverse_drift": 0.4857693910598755
+    },
+    "defended_transformer": {
+      "n": 100,
+      "mean_shuffle_drift": 0.6154653429985046,
+      "median_shuffle_drift": 0.4973520040512085,
+      "mean_reverse_drift": 0.6057583093643188,
+      "median_reverse_drift": 0.4549509286880493
+    }
+  },
+  "representation_invariance": {
+    "clean_transformer": {
+      "n": 100,
+      "mean_score": 0.49342142740355277,
+      "median_score": 0.4891149758371012
+    },
+    "defended_transformer": {
+      "n": 100,
+      "mean_score": 0.5586789748176813,
+      "median_score": 0.550160241511668
+    }
+  },
+  "randomization_validation": {
+    "records": 2200,
+    "validity_rate": 1.0,
+    "canonical_equivalence_rate": 1.0
+  },
+  "defended_minus_clean_invariance_score": {
+    "n": 100,
+    "mean": 0.06525754741412843,
+    "ci_low": 0.044748733081979776,
+    "ci_high": 0.08411688143140181,
+    "status": "estimated"
+  },
+  "interpretation_guardrails": {
+    "randomization": "RDKit graph-equivalent label-preserving control",
+    "permutation": "composition-preserving positional probe; chemical validity not assumed",
+    "occlusion": "model sensitivity probe; chemical validity and target preservation not assumed",
+    "attention": "not used as a standalone explanation"
+  }
+}

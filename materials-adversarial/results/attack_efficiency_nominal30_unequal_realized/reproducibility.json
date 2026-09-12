@@ -1,0 +1,26 @@
+{
+  "git_commit": "3256c9f27e8cf44bf97e92b10c62dd4ec24ec228",
+  "working_tree_dirty": true,
+  "lineage": "polyverse_bandgap",
+  "evaluation_split": "val",
+  "target_units": "eV",
+  "settings": {
+    "seed": 20260910,
+    "query_budget": 30,
+    "max_changes": 3,
+    "require_plausible": true,
+    "beam_width": 4,
+    "branching_factor": 3,
+    "temperature": 0.1,
+    "population_size": 8,
+    "elite_size": 3
+  },
+  "checkpoint_sha256": "0b1bb3f62ca72a897fd84c8e7f3129f8a7a9d75c1179c10debb63e46113731e4",
+  "runtime": {
+    "python": "3.12.3",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "rdkit": "2026.03.5",
+    "torch": "2.13.0+cpu"
+  }
+}

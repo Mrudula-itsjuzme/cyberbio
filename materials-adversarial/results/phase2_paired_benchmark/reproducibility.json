@@ -1,0 +1,20 @@
+{
+  "clean_model": {
+    "dir": "results/models/transformer_regressor",
+    "model_hash": "0b1bb3f62ca72a897fd84c8e7f3129f8a7a9d75c1179c10debb63e46113731e4",
+    "scaler_hash": "5ef15ad16aee156fbc9b6b7872c1534262e3622022190f17c23fc7e3dab12814"
+  },
+  "defended_model": {
+    "dir": "results/models/transformer_defended",
+    "model_hash": "bda109bd0bd7f7843c803ec31c842a5ed1190ed4714e1448e42c28d0c9e7c484",
+    "scaler_hash": "5ef15ad16aee156fbc9b6b7872c1534262e3622022190f17c23fc7e3dab12814"
+  },
+  "git_commit": "3256c9f27e8cf44bf97e92b10c62dd4ec24ec228",
+  "n_variants": 5,
+  "processed_data_hash": "de47e0dca370ab7d48fec87ad0ce5fe80269c84ba7a0a0317a73732d53a7d1ac",
+  "seed": 20260815,
+  "split_name": "test",
+  "split_sample_count": 632,
+  "vocab_hash": "3dd4c162c5d84138d7bf0ea4fb04a0cb81b1b9e9ee705a0e0318a3214d8935bf",
+  "vocab_size": 36
+}

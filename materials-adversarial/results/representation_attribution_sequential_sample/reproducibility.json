@@ -1,0 +1,29 @@
+{
+  "git_commit": "3256c9f27e8cf44bf97e92b10c62dd4ec24ec228",
+  "working_tree_dirty": true,
+  "lineage": "polyverse_bandgap",
+  "evaluation_split": "val",
+  "target_units": "eV",
+  "processed_data": "data/processed/processed.csv",
+  "settings": {
+    "seed": 20260910,
+    "ridge_alpha": 1.0,
+    "randomization_molecules": 100,
+    "randomizations_per_molecule": 10,
+    "permutation_molecules": 100,
+    "occlusion_molecules": 25,
+    "bootstrap_resamples": 2000,
+    "bootstrap_minimum_n": 20
+  },
+  "checkpoint_hashes": {
+    "clean_transformer": "0b1bb3f62ca72a897fd84c8e7f3129f8a7a9d75c1179c10debb63e46113731e4",
+    "defended_transformer": "bda109bd0bd7f7843c803ec31c842a5ed1190ed4714e1448e42c28d0c9e7c484"
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "torch": "2.13.0+cpu",
+    "rdkit": "2026.03.5"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "attack_seeds": {
+    "evaluation": {
+      "deletion": 2643374510,
+      "insertion": 3768799605,
+      "probabilistic_mcmc": {
+        "clean": 2773540076,
+        "mcmc": 1656998080,
+        "mixed": 2644590577,
+        "randomization": 4068070652
+      },
+      "randomization": 4002753367,
+      "rearrangement": 2360642603,
+      "substitution": 4197836045
+    },
+    "training": {
+      "deletion": 2992644101,
+      "insertion": 3828801107,
+      "probabilistic_mcmc": 744848787,
+      "randomization": 341519814,
+      "rearrangement": 1147053980,
+      "substitution": 40767585
+    }
+  },
+  "checkpoint_hashes": {
+    "clean": "0b1bb3f62ca72a897fd84c8e7f3129f8a7a9d75c1179c10debb63e46113731e4",
+    "mcmc": "988845f602e3eb3876141b8688b6dfef4851bd01b449e4444869fa5f8c1bfe57",
+    "mixed": "9889b2319e45251c3d41ffb8133e8390a8bd0627e6b44e65b7988be60899d205",
+    "randomization": "19ab4660d51a8f5be5ad64a1707f3c9df3edd757953f07258263885fa3995066"
+  },
+  "derived_seeds": {
+    "mcmc": 637564715,
+    "mixed": 1670205855,
+    "randomization": 3820612490
+  },
+  "input_hashes": {
+    "configs/attack.yaml": "136fdc5835670ba568836a4ac8fabf403cb2964c7a0441c2663709fdab4e4127",
+    "configs/closed_loop.yaml": "0e9c7fa51dad81b135f8cb6d34fad19e80420f756337743b8808514b9ccf2a32",
+    "configs/dataset.yaml": "cf70bd30d7e0777e42c344711a78209b8b274e4e6ec87dd96d706f89a77b4af8",
+    "configs/model.yaml": "e7fe6c34df6670ce3406e6a093338e509a2dd5e183199ece14050959c0747a0a",
+    "configs/tokenizer.yaml": "25a4c4dae55ba33265c8a2df93c6d52aa3628d196e9c8df9582757b0285ea7e2",
+    "data/processed/processed.csv": "de47e0dca370ab7d48fec87ad0ce5fe80269c84ba7a0a0317a73732d53a7d1ac",
+    "data/processed/splits.json": "4a9d28252d058c0c2e39cf70eb10dd2f79ad57df4e842c3f917cdfe9830ccd02",
+    "data/processed/vocab.json": "3dd4c162c5d84138d7bf0ea4fb04a0cb81b1b9e9ee705a0e0318a3214d8935bf",
+    "results/models/transformer_regressor/metrics.json": "36b25e5d0f5758be91253adeeb093e18e6afffd7d68916fe0482cbdf0e33f1c6",
+    "results/models/transformer_regressor/model.pt": "0b1bb3f62ca72a897fd84c8e7f3129f8a7a9d75c1179c10debb63e46113731e4",
+    "results/models/transformer_regressor/scaler.json": "5ef15ad16aee156fbc9b6b7872c1534262e3622022190f17c23fc7e3dab12814"
+  },
+  "matrix_value": "mean absolute prediction drift in target units",
+  "package_versions": {
+    "PyYAML": "6.0.3",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "rdkit": "2026.3.5",
+    "torch": "2.13.0+cpu"
+  },
+  "pairing_policy": "Fixed attack candidates are shared across models. Model-guided MCMC is regenerated per model and reported as adaptive/unpaired.",
+  "platform": "Linux-6.18.7-76061807-generic-x86_64-with-glibc2.39",
+  "python": "3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]",
+  "schema_version": "phase4.reproducibility.v1",
+  "seed_derivation": "sha256(root_seed:stage[:defense]:attack), reduced modulo 2**32",
+  "settings": {
+    "bootstrap_min_samples": 20,
+    "bootstrap_resamples": 2000,
+    "check_plausibility": true,
+    "n_eval_variants": 5,
+    "n_train_variants": 1,
+    "seed": 20260910
+  },
+  "significance_tests": null,
+  "source": {
+    "git_commit": "3256c9f27e8cf44bf97e92b10c62dd4ec24ec228",
+    "working_tree_dirty": true
+  },
+  "training_bank_policy": "Each attack family is generated once against the clean model and reused unchanged in every defense that includes that family."
+}

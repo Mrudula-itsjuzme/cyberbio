@@ -1,0 +1,15 @@
+phase: 5
+lineage: polyverse_bandgap
+evaluation_split: val
+seed: 20260910
+ridge_alpha: 1.0
+randomization_molecules: 100
+randomizations_per_molecule: 10
+permutation_molecules: 100
+occlusion_molecules: 25
+bootstrap_resamples: 2000
+bootstrap_minimum_n: 20
+models:
+  clean_transformer: results/models/transformer_regressor
+  defended_transformer: results/models/transformer_defended
+

@@ -12,11 +12,32 @@ from __future__ import annotations
 
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
+from collections.abc import Sequence
 from typing import Any, ClassVar
 
 import numpy as np
 
+from ..utils.pending import PendingImplementation
 from .token_space import count_changes
+
+
+def require_token_pool(
+    attack_name: str, allowed_tokens: Sequence[str] | None
+) -> tuple[str, ...]:
+    """Validate a caller-supplied token pool without inventing chemistry."""
+    if allowed_tokens is None:
+        raise PendingImplementation(
+            what=f"{attack_name} requires an explicit `allowed_tokens` pool.",
+            blocked_on="dataset",
+            unblocks_when=(
+                "the training-split vocabulary exists; pass it explicitly as "
+                "allowed_tokens=..."
+            ),
+        )
+    pool = tuple(str(token) for token in allowed_tokens)
+    if not pool:
+        raise ValueError(f"{attack_name} requires a non-empty `allowed_tokens` pool")
+    return pool
 
 
 @dataclass(frozen=True, slots=True)

@@ -1,0 +1,7 @@
+{
+  "status": "completed_but_analysis_invalid",
+  "canonical": false,
+  "reason": "Paired defense deltas and confidence intervals included invalid candidates while cell summaries used valid candidates only",
+  "preservation_policy": "All artifacts retained unchanged; no run4 numerical result is canonical",
+  "superseded_by": "closed_loop_polyverse_bandgap_seed20260910_run5"
+}

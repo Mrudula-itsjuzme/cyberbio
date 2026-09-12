@@ -1,6 +1,6 @@
 # Tokenizer configuration
 #
-# STATUS: rules IMPLEMENTED and tested. Vocabulary PENDING (data-derived).
+# STATUS: rules IMPLEMENTED and tested; vocabulary artifact is data-derived.
 #
 # Tokenization operates on chemically meaningful units. The regex alternation
 # order is load-bearing: two-letter elements (Cl, Br) and bracket atoms must be
@@ -27,8 +27,8 @@ on_unknown: raise
 # construction deterministic across corpus row orderings.
 min_frequency: 1
 
-# --- PENDING: built from the TRAINING SPLIT ONLY, never the full dataset ---
-vocab_size: null
+# Built from the TRAINING SPLIT ONLY, never the full dataset.
+vocab_size: 36
 vocab_artifact: data/processed/vocab.json
 
 # Round-trip: detokenize(tokenize(x)) == x holds exactly when tokenization

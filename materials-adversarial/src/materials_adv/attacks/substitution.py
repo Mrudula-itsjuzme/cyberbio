@@ -25,8 +25,7 @@ from collections.abc import Sequence
 
 import numpy as np
 
-from ..utils.pending import PendingImplementation
-from .base import AttackOutcome, BaseAttack
+from .base import AttackOutcome, BaseAttack, require_token_pool
 from .registry import register_attack
 from .token_space import TokenRole, classify_token
 
@@ -36,30 +35,15 @@ class SubstitutionAttack(BaseAttack):
     def __init__(
         self,
         rng: np.random.Generator,
-        *,
         allowed_tokens: Sequence[str] | None = None,
         attack_budget: int = 1,
         role_preserving: bool = True,
         **kwargs,
     ) -> None:
         super().__init__(rng, attack_budget=attack_budget, role_preserving=role_preserving, **kwargs)
-        if allowed_tokens is None:
-            raise PendingImplementation(
-                what=(
-                    "SubstitutionAttack requires an explicit `allowed_tokens` pool. "
-                    "Mechanics are implemented; the pool is deliberately not hardcoded "
-                    "because a hand-written replacement set would encode the author's "
-                    "chemical priors into the results."
-                ),
-                blocked_on="dataset",
-                unblocks_when=(
-                    "the training-split vocabulary exists; derive the pool from it via "
-                    "Vocabulary.build(train_texts) and pass allowed_tokens=..."
-                ),
-            )
         if attack_budget < 1:
             raise ValueError(f"attack_budget must be >= 1, got {attack_budget}")
-        self.allowed_tokens = tuple(allowed_tokens)
+        self.allowed_tokens = require_token_pool(self.__class__.__name__, allowed_tokens)
         self.attack_budget = attack_budget
         self.role_preserving = role_preserving
 

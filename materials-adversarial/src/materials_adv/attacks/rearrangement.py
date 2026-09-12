@@ -18,6 +18,8 @@ class RearrangementAttack(BaseAttack):
         protect_ring_closures: bool = True,
         protect_branches: bool = True,
     ):
+        if window_size < 2:
+            raise ValueError(f"window_size must be >= 2, got {window_size}")
         super().__init__(rng)
         self.window_size = window_size
         self.protect_attachments = protect_attachments
@@ -80,7 +82,7 @@ class RearrangementAttack(BaseAttack):
                 original_tokens=tuple(tokens),
                 adversarial_tokens=tuple(new_tokens),
                 edit_positions=(start_idx,),
-                attack_type="rearrangement"
+                attack_type=self.name
             ))
 
         return outcomes

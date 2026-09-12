@@ -1,0 +1,2229 @@
+{
+  "attacks": {
+    "deletion": {
+      "clean": {
+        "attack_category": "chemically_valid_target_changing_perturbation",
+        "attack_success_rate": null,
+        "attack_validity_rate": 0.5,
+        "bootstrap_confidence_intervals": {
+          "attack_validity_rate": {
+            "confidence_level": 0.95,
+            "high": 0.5212390272901362,
+            "low": 0.47833919815087894,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 632
+          },
+          "mean_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.41640396168419025,
+            "low": 0.366509952820698,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 578
+          },
+          "median_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.2994513511657715,
+            "low": 0.2537093162536621,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 578
+          },
+          "p90_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.9440036118030559,
+            "low": 0.8102352404594424,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 578
+          },
+          "p95_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 1.239534854888916,
+            "low": 1.0569772720336914,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 578
+          },
+          "stress_threshold_exceedance_rate": {
+            "confidence_level": 0.95,
+            "high": 0.3353214049039099,
+            "low": 0.27759059594695124,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 578
+          }
+        },
+        "bootstrap_note": "Intervals resample source polymers, not correlated candidates. They are descriptive uncertainty intervals, not significance tests.",
+        "candidate_mode": "fixed_paired",
+        "clean_performance_tradeoff": 0.0,
+        "criterion": {
+          "count_unchecked_as_valid": false,
+          "max_changes": null,
+          "min_abs_drift": 0.4619162976741791,
+          "require_valid": true
+        },
+        "defense_delta": {
+          "mean_defense_delta": 0.0,
+          "mean_defense_delta_ci": null,
+          "paired": true
+        },
+        "defense_training_relation": "original_model_attacked",
+        "max_abs_drift": 3.49432635307312,
+        "max_drift_ci": null,
+        "max_drift_ci_note": "Not reported: a bootstrap CI for an observed maximum is not reliable here.",
+        "mean_abs_drift": 0.39026464592019333,
+        "median_abs_drift": 0.2734832763671875,
+        "n_source_samples": 632,
+        "n_total": 3102,
+        "n_valid": 1551,
+        "p90_abs_drift": 0.8744513988494873,
+        "p95_abs_drift": 1.153893232345581,
+        "robustness_transfer": 0.0,
+        "stress_threshold_exceedance_rate": 0.3056092843326886,
+        "success_rate_is_scientifically_meaningful": false
+      },
+      "mcmc": {
+        "attack_category": "chemically_valid_target_changing_perturbation",
+        "attack_success_rate": null,
+        "attack_validity_rate": 0.5,
+        "bootstrap_confidence_intervals": {
+          "attack_validity_rate": {
+            "confidence_level": 0.95,
+            "high": 0.5208007500837449,
+            "low": 0.47771506551671583,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 632
+          },
+          "mean_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.35197270584643076,
+            "low": 0.30258396138762567,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 578
+          },
+          "median_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.22575902938842773,
+            "low": 0.1916036605834961,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 578
+          },
+          "p90_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.8405364602804184,
+            "low": 0.6912238597869873,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 578
+          },
+          "p95_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 1.1388187205791471,
+            "low": 0.9280642807483669,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 578
+          },
+          "stress_threshold_exceedance_rate": {
+            "confidence_level": 0.95,
+            "high": 0.25243412304124424,
+            "low": 0.1992105180130823,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 578
+          }
+        },
+        "bootstrap_note": "Intervals resample source polymers, not correlated candidates. They are descriptive uncertainty intervals, not significance tests.",
+        "candidate_mode": "fixed_paired",
+        "clean_performance_tradeoff": -0.012098019939132953,
+        "criterion": {
+          "count_unchecked_as_valid": false,
+          "max_changes": null,
+          "min_abs_drift": 0.4619162976741791,
+          "require_valid": true
+        },
+        "defense_delta": {
+          "interpretation": "negative values indicate lower defended-model drift",
+          "mean_defense_delta": -0.0628429925649263,
+          "mean_defense_delta_ci": {
+            "confidence_level": 0.95,
+            "high": -0.04099871601264591,
+            "low": -0.0847570992766807,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 578
+          },
+          "median_defense_delta": -0.032479286193847656,
+          "n_pairs": 1551,
+          "paired": true,
+          "pairing_population": "candidates valid under both models",
+          "significance_test": null
+        },
+        "defense_training_relation": "different_attack_family",
+        "max_abs_drift": 3.363633155822754,
+        "max_drift_ci": null,
+        "max_drift_ci_note": "Not reported: a bootstrap CI for an observed maximum is not reliable here.",
+        "mean_abs_drift": 0.327421653355267,
+        "median_abs_drift": 0.21165895462036133,
+        "n_source_samples": 632,
+        "n_total": 3102,
+        "n_valid": 1551,
+        "p90_abs_drift": 0.7510652542114258,
+        "p95_abs_drift": 1.0427045822143555,
+        "robustness_transfer": 0.16102660905076527,
+        "stress_threshold_exceedance_rate": 0.2256608639587363,
+        "success_rate_is_scientifically_meaningful": false
+      },
+      "mixed": {
+        "attack_category": "chemically_valid_target_changing_perturbation",
+        "attack_success_rate": null,
+        "attack_validity_rate": 0.5,
+        "bootstrap_confidence_intervals": {
+          "attack_validity_rate": {
+            "confidence_level": 0.95,
+            "high": 0.5209275747057575,
+            "low": 0.4776389083910568,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 632
+          },
+          "mean_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.3162392263818653,
+            "low": 0.27233478866264277,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 578
+          },
+          "median_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.19910955429077148,
+            "low": 0.1716022491455078,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 578
+          },
+          "p90_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.7421498680114745,
+            "low": 0.5975756645202637,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 578
+          },
+          "p95_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 1.0659944301843642,
+            "low": 0.8636612892150879,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 578
+          },
+          "stress_threshold_exceedance_rate": {
+            "confidence_level": 0.95,
+            "high": 0.20621896559980712,
+            "low": 0.15950144909274194,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 578
+          }
+        },
+        "bootstrap_note": "Intervals resample source polymers, not correlated candidates. They are descriptive uncertainty intervals, not significance tests.",
+        "candidate_mode": "fixed_paired",
+        "clean_performance_tradeoff": -0.02016909622421753,
+        "criterion": {
+          "count_unchecked_as_valid": false,
+          "max_changes": null,
+          "min_abs_drift": 0.4619162976741791,
+          "require_valid": true
+        },
+        "defense_delta": {
+          "interpretation": "negative values indicate lower defended-model drift",
+          "mean_defense_delta": -0.09680122210086353,
+          "mean_defense_delta_ci": {
+            "confidence_level": 0.95,
+            "high": -0.07676626135688645,
+            "low": -0.11681932626164485,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 578
+          },
+          "median_defense_delta": -0.0543208122253418,
+          "n_pairs": 1551,
+          "paired": true,
+          "pairing_population": "candidates valid under both models",
+          "significance_test": null
+        },
+        "defense_training_relation": "mixed_defense_contains_attack",
+        "max_abs_drift": 2.742626667022705,
+        "max_drift_ci": null,
+        "max_drift_ci_note": "Not reported: a bootstrap CI for an observed maximum is not reliable here.",
+        "mean_abs_drift": 0.29346342381932977,
+        "median_abs_drift": 0.18518495559692383,
+        "n_source_samples": 632,
+        "n_total": 3102,
+        "n_valid": 1551,
+        "p90_abs_drift": 0.6585299968719482,
+        "p95_abs_drift": 0.9482805728912354,
+        "robustness_transfer": 0.24803994702778898,
+        "stress_threshold_exceedance_rate": 0.1824629271437782,
+        "success_rate_is_scientifically_meaningful": false
+      },
+      "randomization": {
+        "attack_category": "chemically_valid_target_changing_perturbation",
+        "attack_success_rate": null,
+        "attack_validity_rate": 0.5,
+        "bootstrap_confidence_intervals": {
+          "attack_validity_rate": {
+            "confidence_level": 0.95,
+            "high": 0.521242356478674,
+            "low": 0.47824685787947147,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 632
+          },
+          "mean_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.3191540815677845,
+            "low": 0.2781963206195353,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 578
+          },
+          "median_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.2186145782470703,
+            "low": 0.18543559908866883,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 578
+          },
+          "p90_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.7146818876266479,
+            "low": 0.5964374458789825,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 578
+          },
+          "p95_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 1.046379804611206,
+            "low": 0.8426330500841134,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 578
+          },
+          "stress_threshold_exceedance_rate": {
+            "confidence_level": 0.95,
+            "high": 0.2228789514916682,
+            "low": 0.1737137565993037,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 578
+          }
+        },
+        "bootstrap_note": "Intervals resample source polymers, not correlated candidates. They are descriptive uncertainty intervals, not significance tests.",
+        "candidate_mode": "fixed_paired",
+        "clean_performance_tradeoff": -0.008622571741780216,
+        "criterion": {
+          "count_unchecked_as_valid": false,
+          "max_changes": null,
+          "min_abs_drift": 0.4619162976741791,
+          "require_valid": true
+        },
+        "defense_delta": {
+          "interpretation": "negative values indicate lower defended-model drift",
+          "mean_defense_delta": -0.09150504635504028,
+          "mean_defense_delta_ci": {
+            "confidence_level": 0.95,
+            "high": -0.06631566428320458,
+            "low": -0.11659905126521251,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 578
+          },
+          "median_defense_delta": -0.058257102966308594,
+          "n_pairs": 1551,
+          "paired": true,
+          "pairing_population": "candidates valid under both models",
+          "significance_test": null
+        },
+        "defense_training_relation": "different_attack_family",
+        "max_abs_drift": 3.0343658924102783,
+        "max_drift_ci": null,
+        "max_drift_ci_note": "Not reported: a bootstrap CI for an observed maximum is not reliable here.",
+        "mean_abs_drift": 0.298759599565153,
+        "median_abs_drift": 0.19999122619628906,
+        "n_source_samples": 632,
+        "n_total": 3102,
+        "n_valid": 1551,
+        "p90_abs_drift": 0.6493401527404785,
+        "p95_abs_drift": 0.9478659629821777,
+        "robustness_transfer": 0.23446921803353027,
+        "stress_threshold_exceedance_rate": 0.19858156028368795,
+        "success_rate_is_scientifically_meaningful": false
+      }
+    },
+    "insertion": {
+      "clean": {
+        "attack_category": "chemically_valid_target_changing_perturbation",
+        "attack_success_rate": null,
+        "attack_validity_rate": 0.4629746835443038,
+        "bootstrap_confidence_intervals": {
+          "attack_validity_rate": {
+            "confidence_level": 0.95,
+            "high": 0.4819620253164557,
+            "low": 0.4430300632911392,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 632
+          },
+          "mean_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.47433401129248803,
+            "low": 0.41048392428572383,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 584
+          },
+          "median_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.33038759231567383,
+            "low": 0.27214574813842773,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 584
+          },
+          "p90_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 1.0796427452564243,
+            "low": 0.8845953470468522,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 584
+          },
+          "p95_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 1.5219459533691406,
+            "low": 1.2014558908343298,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 584
+          },
+          "stress_threshold_exceedance_rate": {
+            "confidence_level": 0.95,
+            "high": 0.3612058491712227,
+            "low": 0.3043141359414579,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 584
+          }
+        },
+        "bootstrap_note": "Intervals resample source polymers, not correlated candidates. They are descriptive uncertainty intervals, not significance tests.",
+        "candidate_mode": "fixed_paired",
+        "clean_performance_tradeoff": 0.0,
+        "criterion": {
+          "count_unchecked_as_valid": false,
+          "max_changes": null,
+          "min_abs_drift": 0.4619162976741791,
+          "require_valid": true
+        },
+        "defense_delta": {
+          "mean_defense_delta": 0.0,
+          "mean_defense_delta_ci": null,
+          "paired": true
+        },
+        "defense_training_relation": "original_model_attacked",
+        "max_abs_drift": 6.12006950378418,
+        "max_drift_ci": null,
+        "max_drift_ci_note": "Not reported: a bootstrap CI for an observed maximum is not reliable here.",
+        "mean_abs_drift": 0.44077987289559084,
+        "median_abs_drift": 0.30301713943481445,
+        "n_source_samples": 632,
+        "n_total": 3160,
+        "n_valid": 1463,
+        "p90_abs_drift": 0.981653881072998,
+        "p95_abs_drift": 1.3363489866256706,
+        "robustness_transfer": 0.0,
+        "stress_threshold_exceedance_rate": 0.3342447026657553,
+        "success_rate_is_scientifically_meaningful": false
+      },
+      "mcmc": {
+        "attack_category": "chemically_valid_target_changing_perturbation",
+        "attack_success_rate": null,
+        "attack_validity_rate": 0.4629746835443038,
+        "bootstrap_confidence_intervals": {
+          "attack_validity_rate": {
+            "confidence_level": 0.95,
+            "high": 0.48291930379746834,
+            "low": 0.4439873417721519,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 632
+          },
+          "mean_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.384045099992462,
+            "low": 0.3327524034455414,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 584
+          },
+          "median_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.24589790999889374,
+            "low": 0.2069556713104248,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 584
+          },
+          "p90_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.8662779700756073,
+            "low": 0.7377403974533083,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 584
+          },
+          "p95_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 1.2362568378448486,
+            "low": 0.9902527168393135,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 584
+          },
+          "stress_threshold_exceedance_rate": {
+            "confidence_level": 0.95,
+            "high": 0.2838712149877268,
+            "low": 0.23197518539316755,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 584
+          }
+        },
+        "bootstrap_note": "Intervals resample source polymers, not correlated candidates. They are descriptive uncertainty intervals, not significance tests.",
+        "candidate_mode": "fixed_paired",
+        "clean_performance_tradeoff": -0.012098019939132953,
+        "criterion": {
+          "count_unchecked_as_valid": false,
+          "max_changes": null,
+          "min_abs_drift": 0.4619162976741791,
+          "require_valid": true
+        },
+        "defense_delta": {
+          "interpretation": "negative values indicate lower defended-model drift",
+          "mean_defense_delta": -0.08326341367631601,
+          "mean_defense_delta_ci": {
+            "confidence_level": 0.95,
+            "high": -0.05794916857108743,
+            "low": -0.10999861486216406,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 584
+          },
+          "median_defense_delta": -0.06482601165771484,
+          "n_pairs": 1463,
+          "paired": true,
+          "pairing_population": "candidates valid under both models",
+          "significance_test": null
+        },
+        "defense_training_relation": "different_attack_family",
+        "max_abs_drift": 5.509775876998901,
+        "max_drift_ci": null,
+        "max_drift_ci_note": "Not reported: a bootstrap CI for an observed maximum is not reliable here.",
+        "mean_abs_drift": 0.35751645921927483,
+        "median_abs_drift": 0.22651100158691406,
+        "n_source_samples": 632,
+        "n_total": 3160,
+        "n_valid": 1463,
+        "p90_abs_drift": 0.8095239639282225,
+        "p95_abs_drift": 1.1007371902465806,
+        "robustness_transfer": 0.1889002170841837,
+        "stress_threshold_exceedance_rate": 0.2576896787423103,
+        "success_rate_is_scientifically_meaningful": false
+      },
+      "mixed": {
+        "attack_category": "chemically_valid_target_changing_perturbation",
+        "attack_success_rate": null,
+        "attack_validity_rate": 0.4629746835443038,
+        "bootstrap_confidence_intervals": {
+          "attack_validity_rate": {
+            "confidence_level": 0.95,
+            "high": 0.4825949367088608,
+            "low": 0.4443037974683544,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 632
+          },
+          "mean_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.33981895275752744,
+            "low": 0.2858467273242731,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 584
+          },
+          "median_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.21467979550361632,
+            "low": 0.18369197845458984,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 584
+          },
+          "p90_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.7341014957427975,
+            "low": 0.6258950138092041,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 584
+          },
+          "p95_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 1.1272053718566895,
+            "low": 0.8305142652988438,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 584
+          },
+          "stress_threshold_exceedance_rate": {
+            "confidence_level": 0.95,
+            "high": 0.22922366442163078,
+            "low": 0.18131652903103693,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 584
+          }
+        },
+        "bootstrap_note": "Intervals resample source polymers, not correlated candidates. They are descriptive uncertainty intervals, not significance tests.",
+        "candidate_mode": "fixed_paired",
+        "clean_performance_tradeoff": -0.02016909622421753,
+        "criterion": {
+          "count_unchecked_as_valid": false,
+          "max_changes": null,
+          "min_abs_drift": 0.4619162976741791,
+          "require_valid": true
+        },
+        "defense_delta": {
+          "interpretation": "negative values indicate lower defended-model drift",
+          "mean_defense_delta": -0.12961989091180892,
+          "mean_defense_delta_ci": {
+            "confidence_level": 0.95,
+            "high": -0.10296907547848173,
+            "low": -0.15508213187556533,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 584
+          },
+          "median_defense_delta": -0.07422447204589844,
+          "n_pairs": 1463,
+          "paired": true,
+          "pairing_population": "candidates valid under both models",
+          "significance_test": null
+        },
+        "defense_training_relation": "mixed_defense_contains_attack",
+        "max_abs_drift": 7.1956117153167725,
+        "max_drift_ci": null,
+        "max_drift_ci_note": "Not reported: a bootstrap CI for an observed maximum is not reliable here.",
+        "mean_abs_drift": 0.3111599819837819,
+        "median_abs_drift": 0.19985675811767578,
+        "n_source_samples": 632,
+        "n_total": 3160,
+        "n_valid": 1463,
+        "p90_abs_drift": 0.6719613075256347,
+        "p95_abs_drift": 0.9821457862854001,
+        "robustness_transfer": 0.2940694411936374,
+        "stress_threshold_exceedance_rate": 0.20437457279562543,
+        "success_rate_is_scientifically_meaningful": false
+      },
+      "randomization": {
+        "attack_category": "chemically_valid_target_changing_perturbation",
+        "attack_success_rate": null,
+        "attack_validity_rate": 0.4629746835443038,
+        "bootstrap_confidence_intervals": {
+          "attack_validity_rate": {
+            "confidence_level": 0.95,
+            "high": 0.48132911392405064,
+            "low": 0.4449367088607595,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 632
+          },
+          "mean_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.4264109258445907,
+            "low": 0.3672971395048787,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 584
+          },
+          "median_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.25670052766799917,
+            "low": 0.2225577712059021,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 584
+          },
+          "p90_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.9475264549255371,
+            "low": 0.7985435676574713,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 584
+          },
+          "p95_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 1.3608771181106547,
+            "low": 1.1307334578037251,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 584
+          },
+          "stress_threshold_exceedance_rate": {
+            "confidence_level": 0.95,
+            "high": 0.2980936322958064,
+            "low": 0.2451520179285934,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 584
+          }
+        },
+        "bootstrap_note": "Intervals resample source polymers, not correlated candidates. They are descriptive uncertainty intervals, not significance tests.",
+        "candidate_mode": "fixed_paired",
+        "clean_performance_tradeoff": -0.008622571741780216,
+        "criterion": {
+          "count_unchecked_as_valid": false,
+          "max_changes": null,
+          "min_abs_drift": 0.4619162976741791,
+          "require_valid": true
+        },
+        "defense_delta": {
+          "interpretation": "negative values indicate lower defended-model drift",
+          "mean_defense_delta": -0.04543865338141023,
+          "mean_defense_delta_ci": {
+            "confidence_level": 0.95,
+            "high": -0.012545041622561828,
+            "low": -0.08078516778012433,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 584
+          },
+          "median_defense_delta": -0.04663705825805664,
+          "n_pairs": 1463,
+          "paired": true,
+          "pairing_population": "candidates valid under both models",
+          "significance_test": null
+        },
+        "defense_training_relation": "different_attack_family",
+        "max_abs_drift": 5.115116596221924,
+        "max_drift_ci": null,
+        "max_drift_ci_note": "Not reported: a bootstrap CI for an observed maximum is not reliable here.",
+        "mean_abs_drift": 0.3953412195141806,
+        "median_abs_drift": 0.2395305633544922,
+        "n_source_samples": 632,
+        "n_total": 3160,
+        "n_valid": 1463,
+        "p90_abs_drift": 0.8819889068603514,
+        "p95_abs_drift": 1.2294066190719604,
+        "robustness_transfer": 0.10308695150464242,
+        "stress_threshold_exceedance_rate": 0.27204374572795625,
+        "success_rate_is_scientifically_meaningful": false
+      }
+    },
+    "probabilistic_mcmc": {
+      "clean": {
+        "attack_category": "adversarial_stress_test",
+        "attack_success_rate": null,
+        "attack_validity_rate": 0.9752851711026616,
+        "bootstrap_confidence_intervals": {
+          "attack_validity_rate": {
+            "confidence_level": 0.95,
+            "high": 0.9863751584283904,
+            "low": 0.9632084732923838,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 632
+          },
+          "mean_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.5675420491104546,
+            "low": 0.49720516624944117,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 617
+          },
+          "median_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.3817596435546875,
+            "low": 0.32785145938396454,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 617
+          },
+          "p90_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 1.3758175551891332,
+            "low": 1.1798877489566795,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 617
+          },
+          "p95_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 1.8149652481079102,
+            "low": 1.5423467099666595,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 617
+          },
+          "stress_threshold_exceedance_rate": {
+            "confidence_level": 0.95,
+            "high": 0.4284404414151249,
+            "low": 0.3750406213507547,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 617
+          }
+        },
+        "bootstrap_note": "Intervals resample source polymers, not correlated candidates. They are descriptive uncertainty intervals, not significance tests.",
+        "candidate_mode": "adaptive_unpaired",
+        "clean_performance_tradeoff": 0.0,
+        "criterion": {
+          "count_unchecked_as_valid": false,
+          "max_changes": null,
+          "min_abs_drift": 0.4619162976741791,
+          "require_valid": true
+        },
+        "defense_delta": {
+          "mean_defense_delta": 0.0,
+          "mean_defense_delta_ci": null,
+          "paired": false
+        },
+        "defense_training_relation": "original_model_attacked",
+        "max_abs_drift": 4.515732526779175,
+        "max_drift_ci": null,
+        "max_drift_ci_note": "Not reported: a bootstrap CI for an observed maximum is not reliable here.",
+        "mean_abs_drift": 0.5316474694102673,
+        "median_abs_drift": 0.35440075397491455,
+        "n_source_samples": 632,
+        "n_total": 3156,
+        "n_valid": 3078,
+        "p90_abs_drift": 1.2745967388153079,
+        "p95_abs_drift": 1.6845801591873157,
+        "robustness_transfer": 0.0,
+        "stress_threshold_exceedance_rate": 0.4012345679012346,
+        "success_rate_is_scientifically_meaningful": false
+      },
+      "mcmc": {
+        "attack_category": "adversarial_stress_test",
+        "attack_success_rate": null,
+        "attack_validity_rate": 0.9752851711026616,
+        "bootstrap_confidence_intervals": {
+          "attack_validity_rate": {
+            "confidence_level": 0.95,
+            "high": 0.9867151214288015,
+            "low": 0.9628291621765075,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 632
+          },
+          "mean_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.519241549445248,
+            "low": 0.45057438120454113,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 616
+          },
+          "median_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.3317849814891815,
+            "low": 0.2839719831943512,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 616
+          },
+          "p90_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 1.27034122824669,
+            "low": 1.0613794994354249,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 616
+          },
+          "p95_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 1.785393244922161,
+            "low": 1.4095027446746826,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 616
+          },
+          "stress_threshold_exceedance_rate": {
+            "confidence_level": 0.95,
+            "high": 0.3863699125760529,
+            "low": 0.3324648110174426,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 616
+          }
+        },
+        "bootstrap_note": "Intervals resample source polymers, not correlated candidates. They are descriptive uncertainty intervals, not significance tests.",
+        "candidate_mode": "adaptive_unpaired",
+        "clean_performance_tradeoff": -0.012098019939132953,
+        "criterion": {
+          "count_unchecked_as_valid": false,
+          "max_changes": null,
+          "min_abs_drift": 0.4619162976741791,
+          "require_valid": true
+        },
+        "defense_delta": {
+          "mean_defense_delta": -0.04741863308981531,
+          "mean_defense_delta_ci": null,
+          "note": "Adaptive MCMC candidates differ by target model; no paired inference.",
+          "paired": false
+        },
+        "defense_training_relation": "same_attack_family",
+        "max_abs_drift": 4.318349123001099,
+        "max_drift_ci": null,
+        "max_drift_ci_note": "Not reported: a bootstrap CI for an observed maximum is not reliable here.",
+        "mean_abs_drift": 0.484228836320452,
+        "median_abs_drift": 0.3076751232147217,
+        "n_source_samples": 632,
+        "n_total": 3156,
+        "n_valid": 3078,
+        "p90_abs_drift": 1.1510847091674807,
+        "p95_abs_drift": 1.5707641005516038,
+        "robustness_transfer": 0.08919187209226198,
+        "stress_threshold_exceedance_rate": 0.35834957764782327,
+        "success_rate_is_scientifically_meaningful": false
+      },
+      "mixed": {
+        "attack_category": "adversarial_stress_test",
+        "attack_success_rate": null,
+        "attack_validity_rate": 0.9749285940971121,
+        "bootstrap_confidence_intervals": {
+          "attack_validity_rate": {
+            "confidence_level": 0.95,
+            "high": 0.9866962305986696,
+            "low": 0.9622701331642359,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 632
+          },
+          "mean_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.4463451442900376,
+            "low": 0.38692944105301036,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 616
+          },
+          "median_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.2776274800300598,
+            "low": 0.23938822746276855,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 616
+          },
+          "p90_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 1.100107192993164,
+            "low": 0.8800889396667481,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 616
+          },
+          "p95_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 1.4805134785175322,
+            "low": 1.2464716988801947,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 616
+          },
+          "stress_threshold_exceedance_rate": {
+            "confidence_level": 0.95,
+            "high": 0.3203147918024772,
+            "low": 0.269740150423299,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 616
+          }
+        },
+        "bootstrap_note": "Intervals resample source polymers, not correlated candidates. They are descriptive uncertainty intervals, not significance tests.",
+        "candidate_mode": "adaptive_unpaired",
+        "clean_performance_tradeoff": -0.02016909622421753,
+        "criterion": {
+          "count_unchecked_as_valid": false,
+          "max_changes": null,
+          "min_abs_drift": 0.4619162976741791,
+          "require_valid": true
+        },
+        "defense_delta": {
+          "mean_defense_delta": -0.11574141195003373,
+          "mean_defense_delta_ci": null,
+          "note": "Adaptive MCMC candidates differ by target model; no paired inference.",
+          "paired": false
+        },
+        "defense_training_relation": "mixed_defense_contains_attack",
+        "max_abs_drift": 4.9595115184783936,
+        "max_drift_ci": null,
+        "max_drift_ci_note": "Not reported: a bootstrap CI for an observed maximum is not reliable here.",
+        "mean_abs_drift": 0.41590605746023357,
+        "median_abs_drift": 0.256622314453125,
+        "n_source_samples": 632,
+        "n_total": 3151,
+        "n_valid": 3072,
+        "p90_abs_drift": 0.9947300434112549,
+        "p95_abs_drift": 1.360627734661102,
+        "robustness_transfer": 0.21770330643804336,
+        "stress_threshold_exceedance_rate": 0.2945963541666667,
+        "success_rate_is_scientifically_meaningful": false
+      },
+      "randomization": {
+        "attack_category": "adversarial_stress_test",
+        "attack_success_rate": null,
+        "attack_validity_rate": 0.9752851711026616,
+        "bootstrap_confidence_intervals": {
+          "attack_validity_rate": {
+            "confidence_level": 0.95,
+            "high": 0.9860539931988777,
+            "low": 0.9629620828052387,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 632
+          },
+          "mean_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.503842778718036,
+            "low": 0.437664018543501,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 617
+          },
+          "median_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.32467055320739746,
+            "low": 0.2819638609886169,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 617
+          },
+          "p90_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 1.1750097274780273,
+            "low": 1.0128561496734614,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 617
+          },
+          "p95_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 1.6310051363706546,
+            "low": 1.3518095755577086,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 617
+          },
+          "stress_threshold_exceedance_rate": {
+            "confidence_level": 0.95,
+            "high": 0.3706153842906118,
+            "low": 0.31892365203049206,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 617
+          }
+        },
+        "bootstrap_note": "Intervals resample source polymers, not correlated candidates. They are descriptive uncertainty intervals, not significance tests.",
+        "candidate_mode": "adaptive_unpaired",
+        "clean_performance_tradeoff": -0.008622571741780216,
+        "criterion": {
+          "count_unchecked_as_valid": false,
+          "max_changes": null,
+          "min_abs_drift": 0.4619162976741791,
+          "require_valid": true
+        },
+        "defense_delta": {
+          "mean_defense_delta": -0.0620118087572738,
+          "mean_defense_delta_ci": null,
+          "note": "Adaptive MCMC candidates differ by target model; no paired inference.",
+          "paired": false
+        },
+        "defense_training_relation": "different_attack_family",
+        "max_abs_drift": 5.276919841766357,
+        "max_drift_ci": null,
+        "max_drift_ci_note": "Not reported: a bootstrap CI for an observed maximum is not reliable here.",
+        "mean_abs_drift": 0.4696356606529935,
+        "median_abs_drift": 0.303966760635376,
+        "n_source_samples": 632,
+        "n_total": 3156,
+        "n_valid": 3078,
+        "p90_abs_drift": 1.085740685462952,
+        "p95_abs_drift": 1.5103151082992554,
+        "robustness_transfer": 0.11664084252307405,
+        "stress_threshold_exceedance_rate": 0.3447043534762833,
+        "success_rate_is_scientifically_meaningful": false
+      }
+    },
+    "randomization": {
+      "clean": {
+        "attack_category": "representation_preserving_control",
+        "attack_success_rate": 0.48118105126541205,
+        "attack_validity_rate": 0.9762432689261957,
+        "bootstrap_confidence_intervals": {
+          "attack_success_rate": {
+            "confidence_level": 0.95,
+            "high": 0.504700391052895,
+            "low": 0.45672098513142134,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 617
+          },
+          "attack_validity_rate": {
+            "confidence_level": 0.95,
+            "high": 0.9873297434273044,
+            "low": 0.9636075949367089,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 632
+          },
+          "mean_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.6226940563771727,
+            "low": 0.5649189447052861,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 617
+          },
+          "median_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.46667957305908203,
+            "low": 0.41899010837078093,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 617
+          },
+          "p90_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 1.3768086433410645,
+            "low": 1.219068557024002,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 617
+          },
+          "p95_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 1.8228351593017564,
+            "low": 1.5621808040142022,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 617
+          }
+        },
+        "bootstrap_note": "Intervals resample source polymers, not correlated candidates. They are descriptive uncertainty intervals, not significance tests.",
+        "candidate_mode": "fixed_paired",
+        "clean_performance_tradeoff": 0.0,
+        "criterion": {
+          "count_unchecked_as_valid": false,
+          "max_changes": null,
+          "min_abs_drift": 0.4619162976741791,
+          "require_valid": true
+        },
+        "defense_delta": {
+          "mean_defense_delta": 0.0,
+          "mean_defense_delta_ci": null,
+          "paired": true
+        },
+        "defense_training_relation": "original_model_attacked",
+        "max_abs_drift": 4.728414058685303,
+        "max_drift_ci": null,
+        "max_drift_ci_note": "Not reported: a bootstrap CI for an observed maximum is not reliable here.",
+        "mean_abs_drift": 0.5922747933965159,
+        "median_abs_drift": 0.44191670417785645,
+        "n_source_samples": 632,
+        "n_total": 3157,
+        "n_valid": 3082,
+        "p90_abs_drift": 1.2877851247787477,
+        "p95_abs_drift": 1.7192508339881896,
+        "robustness_transfer": 0.0,
+        "stress_threshold_exceedance_rate": null,
+        "success_rate_is_scientifically_meaningful": true
+      },
+      "mcmc": {
+        "attack_category": "representation_preserving_control",
+        "attack_success_rate": 0.43964957819597666,
+        "attack_validity_rate": 0.9762432689261957,
+        "bootstrap_confidence_intervals": {
+          "attack_success_rate": {
+            "confidence_level": 0.95,
+            "high": 0.4626865671641791,
+            "low": 0.41596365996106427,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 617
+          },
+          "attack_validity_rate": {
+            "confidence_level": 0.95,
+            "high": 0.9873297434273044,
+            "low": 0.9636075949367089,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 632
+          },
+          "mean_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.5811262279831878,
+            "low": 0.5243989076483516,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 617
+          },
+          "median_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.4184541285037994,
+            "low": 0.3731430649757385,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 617
+          },
+          "p90_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 1.330348837375641,
+            "low": 1.183553695678711,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 617
+          },
+          "p95_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 1.7244598865509033,
+            "low": 1.5399775704741478,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 617
+          }
+        },
+        "bootstrap_note": "Intervals resample source polymers, not correlated candidates. They are descriptive uncertainty intervals, not significance tests.",
+        "candidate_mode": "fixed_paired",
+        "clean_performance_tradeoff": -0.012098019939132953,
+        "criterion": {
+          "count_unchecked_as_valid": false,
+          "max_changes": null,
+          "min_abs_drift": 0.4619162976741791,
+          "require_valid": true
+        },
+        "defense_delta": {
+          "interpretation": "negative values indicate lower defended-model drift",
+          "mean_defense_delta": -0.03963764714854325,
+          "mean_defense_delta_ci": {
+            "confidence_level": 0.95,
+            "high": -0.013460617351496557,
+            "low": -0.06473268327442752,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 617
+          },
+          "median_defense_delta": -0.031520843505859375,
+          "n_pairs": 3082,
+          "paired": true,
+          "pairing_population": "candidates valid under both models",
+          "significance_test": null
+        },
+        "defense_training_relation": "different_attack_family",
+        "max_abs_drift": 4.001617908477783,
+        "max_drift_ci": null,
+        "max_drift_ci_note": "Not reported: a bootstrap CI for an observed maximum is not reliable here.",
+        "mean_abs_drift": 0.5526371462479727,
+        "median_abs_drift": 0.3957313299179077,
+        "n_source_samples": 632,
+        "n_total": 3157,
+        "n_valid": 3082,
+        "p90_abs_drift": 1.2459735631942752,
+        "p95_abs_drift": 1.6093269228935236,
+        "robustness_transfer": 0.06692442020237499,
+        "stress_threshold_exceedance_rate": null,
+        "success_rate_is_scientifically_meaningful": true
+      },
+      "mixed": {
+        "attack_category": "representation_preserving_control",
+        "attack_success_rate": 0.27579493835171964,
+        "attack_validity_rate": 0.9762432689261957,
+        "bootstrap_confidence_intervals": {
+          "attack_success_rate": {
+            "confidence_level": 0.95,
+            "high": 0.30016777561631536,
+            "low": 0.2517845554834523,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 617
+          },
+          "attack_validity_rate": {
+            "confidence_level": 0.95,
+            "high": 0.9873297434273044,
+            "low": 0.9620253164556962,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 632
+          },
+          "mean_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.38316184295260386,
+            "low": 0.34112951828117705,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 617
+          },
+          "median_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.2800455093383789,
+            "low": 0.2410269558429718,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 617
+          },
+          "p90_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.8621549606323246,
+            "low": 0.7633646965026856,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 617
+          },
+          "p95_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 1.126288890838623,
+            "low": 0.9606185927987098,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 617
+          }
+        },
+        "bootstrap_note": "Intervals resample source polymers, not correlated candidates. They are descriptive uncertainty intervals, not significance tests.",
+        "candidate_mode": "fixed_paired",
+        "clean_performance_tradeoff": -0.02016909622421753,
+        "criterion": {
+          "count_unchecked_as_valid": false,
+          "max_changes": null,
+          "min_abs_drift": 0.4619162976741791,
+          "require_valid": true
+        },
+        "defense_delta": {
+          "interpretation": "negative values indicate lower defended-model drift",
+          "mean_defense_delta": -0.23080918883287158,
+          "mean_defense_delta_ci": {
+            "confidence_level": 0.95,
+            "high": -0.20559002351375064,
+            "low": -0.25748285726447684,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 617
+          },
+          "median_defense_delta": -0.15267682075500488,
+          "n_pairs": 3082,
+          "paired": true,
+          "pairing_population": "candidates valid under both models",
+          "significance_test": null
+        },
+        "defense_training_relation": "mixed_defense_contains_attack",
+        "max_abs_drift": 2.9042744636535645,
+        "max_drift_ci": null,
+        "max_drift_ci_note": "Not reported: a bootstrap CI for an observed maximum is not reliable here.",
+        "mean_abs_drift": 0.3614656045636444,
+        "median_abs_drift": 0.26213908195495605,
+        "n_source_samples": 632,
+        "n_total": 3157,
+        "n_valid": 3082,
+        "p90_abs_drift": 0.8103637218475342,
+        "p95_abs_drift": 1.0359061956405622,
+        "robustness_transfer": 0.3896994965955768,
+        "stress_threshold_exceedance_rate": null,
+        "success_rate_is_scientifically_meaningful": true
+      },
+      "randomization": {
+        "attack_category": "representation_preserving_control",
+        "attack_success_rate": 0.27157689811810515,
+        "attack_validity_rate": 0.9762432689261957,
+        "bootstrap_confidence_intervals": {
+          "attack_success_rate": {
+            "confidence_level": 0.95,
+            "high": 0.2929522572263722,
+            "low": 0.24991662430923242,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 617
+          },
+          "attack_validity_rate": {
+            "confidence_level": 0.95,
+            "high": 0.9873417721518988,
+            "low": 0.9635730123535001,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 632
+          },
+          "mean_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.37979785474494704,
+            "low": 0.3420116920563248,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 617
+          },
+          "median_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.28028732538223267,
+            "low": 0.24750751852989197,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 617
+          },
+          "p90_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.8418083328008653,
+            "low": 0.7441258335113524,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 617
+          },
+          "p95_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 1.1121768951416016,
+            "low": 0.9507607498764985,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 617
+          }
+        },
+        "bootstrap_note": "Intervals resample source polymers, not correlated candidates. They are descriptive uncertainty intervals, not significance tests.",
+        "candidate_mode": "fixed_paired",
+        "clean_performance_tradeoff": -0.008622571741780216,
+        "criterion": {
+          "count_unchecked_as_valid": false,
+          "max_changes": null,
+          "min_abs_drift": 0.4619162976741791,
+          "require_valid": true
+        },
+        "defense_delta": {
+          "interpretation": "negative values indicate lower defended-model drift",
+          "mean_defense_delta": -0.2318882693879253,
+          "mean_defense_delta_ci": {
+            "confidence_level": 0.95,
+            "high": -0.20523513354569617,
+            "low": -0.2597052172207948,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 617
+          },
+          "median_defense_delta": -0.15212225914001465,
+          "n_pairs": 3082,
+          "paired": true,
+          "pairing_population": "candidates valid under both models",
+          "significance_test": null
+        },
+        "defense_training_relation": "same_attack_family",
+        "max_abs_drift": 2.4412808418273926,
+        "max_drift_ci": null,
+        "max_drift_ci_note": "Not reported: a bootstrap CI for an observed maximum is not reliable here.",
+        "mean_abs_drift": 0.3603865240085906,
+        "median_abs_drift": 0.263927698135376,
+        "n_source_samples": 632,
+        "n_total": 3157,
+        "n_valid": 3082,
+        "p90_abs_drift": 0.7917172193527224,
+        "p95_abs_drift": 1.0229885697364798,
+        "robustness_transfer": 0.39152142210563534,
+        "stress_threshold_exceedance_rate": null,
+        "success_rate_is_scientifically_meaningful": true
+      }
+    },
+    "rearrangement": {
+      "clean": {
+        "attack_category": "chemically_valid_target_changing_perturbation",
+        "attack_success_rate": null,
+        "attack_validity_rate": 0.5716374269005848,
+        "bootstrap_confidence_intervals": {
+          "attack_validity_rate": {
+            "confidence_level": 0.95,
+            "high": 0.6048857380520266,
+            "low": 0.5354400502403824,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 368
+          },
+          "mean_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.21418873469087366,
+            "low": 0.17162172066931705,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 318
+          },
+          "median_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.12982677221298217,
+            "low": 0.10447502136230469,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 318
+          },
+          "p90_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.48510193824768066,
+            "low": 0.36792649984359743,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 318
+          },
+          "p95_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.6562361717224121,
+            "low": 0.49259695827960964,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 318
+          },
+          "stress_threshold_exceedance_rate": {
+            "confidence_level": 0.95,
+            "high": 0.1204679082455478,
+            "low": 0.07049424484242268,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 318
+          }
+        },
+        "bootstrap_note": "Intervals resample source polymers, not correlated candidates. They are descriptive uncertainty intervals, not significance tests.",
+        "candidate_mode": "fixed_paired",
+        "clean_performance_tradeoff": 0.0,
+        "criterion": {
+          "count_unchecked_as_valid": false,
+          "max_changes": null,
+          "min_abs_drift": 0.4619162976741791,
+          "require_valid": true
+        },
+        "defense_delta": {
+          "mean_defense_delta": 0.0,
+          "mean_defense_delta_ci": null,
+          "paired": true
+        },
+        "defense_training_relation": "original_model_attacked",
+        "max_abs_drift": 2.5096189975738525,
+        "max_drift_ci": null,
+        "max_drift_ci_note": "Not reported: a bootstrap CI for an observed maximum is not reliable here.",
+        "mean_abs_drift": 0.19174175890510345,
+        "median_abs_drift": 0.11575126647949219,
+        "n_source_samples": 368,
+        "n_total": 1368,
+        "n_valid": 782,
+        "p90_abs_drift": 0.44614293575286856,
+        "p95_abs_drift": 0.564313960075378,
+        "robustness_transfer": 0.0,
+        "stress_threshold_exceedance_rate": 0.09462915601023018,
+        "success_rate_is_scientifically_meaningful": false
+      },
+      "mcmc": {
+        "attack_category": "chemically_valid_target_changing_perturbation",
+        "attack_success_rate": null,
+        "attack_validity_rate": 0.5716374269005848,
+        "bootstrap_confidence_intervals": {
+          "attack_validity_rate": {
+            "confidence_level": 0.95,
+            "high": 0.6053035343933634,
+            "low": 0.5381805101373447,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 368
+          },
+          "mean_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.17659015032043796,
+            "low": 0.1347244561887453,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 318
+          },
+          "median_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.10162128210067745,
+            "low": 0.0799407958984375,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 318
+          },
+          "p90_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.38333164334297176,
+            "low": 0.27545570909976946,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 318
+          },
+          "p95_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.6481795310974121,
+            "low": 0.3917408531904201,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 318
+          },
+          "stress_threshold_exceedance_rate": {
+            "confidence_level": 0.95,
+            "high": 0.07826637314254263,
+            "low": 0.039187994812994814,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 318
+          }
+        },
+        "bootstrap_note": "Intervals resample source polymers, not correlated candidates. They are descriptive uncertainty intervals, not significance tests.",
+        "candidate_mode": "fixed_paired",
+        "clean_performance_tradeoff": -0.012098019939132953,
+        "criterion": {
+          "count_unchecked_as_valid": false,
+          "max_changes": null,
+          "min_abs_drift": 0.4619162976741791,
+          "require_valid": true
+        },
+        "defense_delta": {
+          "interpretation": "negative values indicate lower defended-model drift",
+          "mean_defense_delta": -0.036532695336110144,
+          "mean_defense_delta_ci": {
+            "confidence_level": 0.95,
+            "high": -0.0188736821771125,
+            "low": -0.05386557813418654,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 318
+          },
+          "median_defense_delta": -0.023606538772583008,
+          "n_pairs": 782,
+          "paired": true,
+          "pairing_population": "candidates valid under both models",
+          "significance_test": null
+        },
+        "defense_training_relation": "different_attack_family",
+        "max_abs_drift": 2.4095041751861572,
+        "max_drift_ci": null,
+        "max_drift_ci_note": "Not reported: a bootstrap CI for an observed maximum is not reliable here.",
+        "mean_abs_drift": 0.1552090635689933,
+        "median_abs_drift": 0.09133636951446533,
+        "n_source_samples": 368,
+        "n_total": 1368,
+        "n_valid": 782,
+        "p90_abs_drift": 0.32681818008422847,
+        "p95_abs_drift": 0.5182613849639877,
+        "robustness_transfer": 0.19053071978019587,
+        "stress_threshold_exceedance_rate": 0.05754475703324808,
+        "success_rate_is_scientifically_meaningful": false
+      },
+      "mixed": {
+        "attack_category": "chemically_valid_target_changing_perturbation",
+        "attack_success_rate": null,
+        "attack_validity_rate": 0.5716374269005848,
+        "bootstrap_confidence_intervals": {
+          "attack_validity_rate": {
+            "confidence_level": 0.95,
+            "high": 0.6041144567148884,
+            "low": 0.5359431801917848,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 368
+          },
+          "mean_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.14705810912942957,
+            "low": 0.11249263632645856,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 318
+          },
+          "median_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.08132457733154297,
+            "low": 0.06348800659179688,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 318
+          },
+          "p90_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.29582881927490234,
+            "low": 0.22631072998046875,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 318
+          },
+          "p95_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.5425229072570801,
+            "low": 0.32247225999832085,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 318
+          },
+          "stress_threshold_exceedance_rate": {
+            "confidence_level": 0.95,
+            "high": 0.05940625352042157,
+            "low": 0.027308192457737322,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 318
+          }
+        },
+        "bootstrap_note": "Intervals resample source polymers, not correlated candidates. They are descriptive uncertainty intervals, not significance tests.",
+        "candidate_mode": "fixed_paired",
+        "clean_performance_tradeoff": -0.02016909622421753,
+        "criterion": {
+          "count_unchecked_as_valid": false,
+          "max_changes": null,
+          "min_abs_drift": 0.4619162976741791,
+          "require_valid": true
+        },
+        "defense_delta": {
+          "interpretation": "negative values indicate lower defended-model drift",
+          "mean_defense_delta": -0.06240686400772056,
+          "mean_defense_delta_ci": {
+            "confidence_level": 0.95,
+            "high": -0.046937851097249905,
+            "low": -0.0783384458951453,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 318
+          },
+          "median_defense_delta": -0.03832650184631348,
+          "n_pairs": 782,
+          "paired": true,
+          "pairing_population": "candidates valid under both models",
+          "significance_test": null
+        },
+        "defense_training_relation": "mixed_defense_contains_attack",
+        "max_abs_drift": 2.190866470336914,
+        "max_drift_ci": null,
+        "max_drift_ci_note": "Not reported: a bootstrap CI for an observed maximum is not reliable here.",
+        "mean_abs_drift": 0.1293348948973829,
+        "median_abs_drift": 0.07109522819519043,
+        "n_source_samples": 368,
+        "n_total": 1368,
+        "n_valid": 782,
+        "p90_abs_drift": 0.2640489101409912,
+        "p95_abs_drift": 0.39839253425598126,
+        "robustness_transfer": 0.32547351377227574,
+        "stress_threshold_exceedance_rate": 0.04219948849104859,
+        "success_rate_is_scientifically_meaningful": false
+      },
+      "randomization": {
+        "attack_category": "chemically_valid_target_changing_perturbation",
+        "attack_success_rate": null,
+        "attack_validity_rate": 0.5716374269005848,
+        "bootstrap_confidence_intervals": {
+          "attack_validity_rate": {
+            "confidence_level": 0.95,
+            "high": 0.6032020434085793,
+            "low": 0.5360661951909477,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 368
+          },
+          "mean_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.14874552167848262,
+            "low": 0.120885557581854,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 318
+          },
+          "median_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.0908722460269928,
+            "low": 0.07587358355522156,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 318
+          },
+          "p90_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.3685293197631836,
+            "low": 0.2754335403442383,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 318
+          },
+          "p95_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.5135296437144279,
+            "low": 0.3840835058689109,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 318
+          },
+          "stress_threshold_exceedance_rate": {
+            "confidence_level": 0.95,
+            "high": 0.06613782348218146,
+            "low": 0.03026216370426724,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 318
+          }
+        },
+        "bootstrap_note": "Intervals resample source polymers, not correlated candidates. They are descriptive uncertainty intervals, not significance tests.",
+        "candidate_mode": "fixed_paired",
+        "clean_performance_tradeoff": -0.008622571741780216,
+        "criterion": {
+          "count_unchecked_as_valid": false,
+          "max_changes": null,
+          "min_abs_drift": 0.4619162976741791,
+          "require_valid": true
+        },
+        "defense_delta": {
+          "interpretation": "negative values indicate lower defended-model drift",
+          "mean_defense_delta": -0.05706582654772512,
+          "mean_defense_delta_ci": {
+            "confidence_level": 0.95,
+            "high": -0.04030545973560266,
+            "low": -0.07393142993380365,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 318
+          },
+          "median_defense_delta": -0.0313565731048584,
+          "n_pairs": 782,
+          "paired": true,
+          "pairing_population": "candidates valid under both models",
+          "significance_test": null
+        },
+        "defense_training_relation": "different_attack_family",
+        "max_abs_drift": 1.5438251495361328,
+        "max_drift_ci": null,
+        "max_drift_ci_note": "Not reported: a bootstrap CI for an observed maximum is not reliable here.",
+        "mean_abs_drift": 0.13467593235737832,
+        "median_abs_drift": 0.08413815498352051,
+        "n_source_samples": 368,
+        "n_total": 1368,
+        "n_valid": 782,
+        "p90_abs_drift": 0.3265451908111572,
+        "p95_abs_drift": 0.4433864831924428,
+        "robustness_transfer": 0.29761814470455583,
+        "stress_threshold_exceedance_rate": 0.04731457800511509,
+        "success_rate_is_scientifically_meaningful": false
+      }
+    },
+    "substitution": {
+      "clean": {
+        "attack_category": "chemically_valid_target_changing_perturbation",
+        "attack_success_rate": null,
+        "attack_validity_rate": 0.522258064516129,
+        "bootstrap_confidence_intervals": {
+          "attack_validity_rate": {
+            "confidence_level": 0.95,
+            "high": 0.5407300759013282,
+            "low": 0.5027405762348993,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 632
+          },
+          "mean_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.3346234793516883,
+            "low": 0.2850719982900993,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 599
+          },
+          "median_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.17745943665504454,
+            "low": 0.146531343460083,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 599
+          },
+          "p90_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.8651722717285159,
+            "low": 0.6816086769104004,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 599
+          },
+          "p95_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 1.3395794141292572,
+            "low": 1.032153590917587,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 599
+          },
+          "stress_threshold_exceedance_rate": {
+            "confidence_level": 0.95,
+            "high": 0.21842970357108324,
+            "low": 0.1755036610682147,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 599
+          }
+        },
+        "bootstrap_note": "Intervals resample source polymers, not correlated candidates. They are descriptive uncertainty intervals, not significance tests.",
+        "candidate_mode": "fixed_paired",
+        "clean_performance_tradeoff": 0.0,
+        "criterion": {
+          "count_unchecked_as_valid": false,
+          "max_changes": null,
+          "min_abs_drift": 0.4619162976741791,
+          "require_valid": true
+        },
+        "defense_delta": {
+          "mean_defense_delta": 0.0,
+          "mean_defense_delta_ci": null,
+          "paired": true
+        },
+        "defense_training_relation": "original_model_attacked",
+        "max_abs_drift": 3.9491419792175293,
+        "max_drift_ci": null,
+        "max_drift_ci_note": "Not reported: a bootstrap CI for an observed maximum is not reliable here.",
+        "mean_abs_drift": 0.3094747110676662,
+        "median_abs_drift": 0.16195058822631836,
+        "n_source_samples": 632,
+        "n_total": 3100,
+        "n_valid": 1619,
+        "p90_abs_drift": 0.7627279281616212,
+        "p95_abs_drift": 1.1911371231079098,
+        "robustness_transfer": 0.0,
+        "stress_threshold_exceedance_rate": 0.19641754169240272,
+        "success_rate_is_scientifically_meaningful": false
+      },
+      "mcmc": {
+        "attack_category": "chemically_valid_target_changing_perturbation",
+        "attack_success_rate": null,
+        "attack_validity_rate": 0.522258064516129,
+        "bootstrap_confidence_intervals": {
+          "attack_validity_rate": {
+            "confidence_level": 0.95,
+            "high": 0.5414446295969334,
+            "low": 0.502585482935921,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 632
+          },
+          "mean_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.32432307887513007,
+            "low": 0.27594569106831895,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 599
+          },
+          "median_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.15449285507202148,
+            "low": 0.12172746658325195,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 599
+          },
+          "p90_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.8805704116821289,
+            "low": 0.7238789653778074,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 599
+          },
+          "p95_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 1.2594089794158927,
+            "low": 0.9943834176659578,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 599
+          },
+          "stress_threshold_exceedance_rate": {
+            "confidence_level": 0.95,
+            "high": 0.22582706463841834,
+            "low": 0.18180852824360105,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 599
+          }
+        },
+        "bootstrap_note": "Intervals resample source polymers, not correlated candidates. They are descriptive uncertainty intervals, not significance tests.",
+        "candidate_mode": "fixed_paired",
+        "clean_performance_tradeoff": -0.012098019939132953,
+        "criterion": {
+          "count_unchecked_as_valid": false,
+          "max_changes": null,
+          "min_abs_drift": 0.4619162976741791,
+          "require_valid": true
+        },
+        "defense_delta": {
+          "interpretation": "negative values indicate lower defended-model drift",
+          "mean_defense_delta": -0.00994864122745356,
+          "mean_defense_delta_ci": {
+            "confidence_level": 0.95,
+            "high": 0.010885397699805803,
+            "low": -0.030672458510018177,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 599
+          },
+          "median_defense_delta": -0.006810188293457031,
+          "n_pairs": 1619,
+          "paired": true,
+          "pairing_population": "candidates valid under both models",
+          "significance_test": null
+        },
+        "defense_training_relation": "different_attack_family",
+        "max_abs_drift": 3.6208348274230957,
+        "max_drift_ci": null,
+        "max_drift_ci_note": "Not reported: a bootstrap CI for an observed maximum is not reliable here.",
+        "mean_abs_drift": 0.2995260698402127,
+        "median_abs_drift": 0.14010143280029297,
+        "n_source_samples": 632,
+        "n_total": 3100,
+        "n_valid": 1619,
+        "p90_abs_drift": 0.8203295230865479,
+        "p95_abs_drift": 1.1240156412124622,
+        "robustness_transfer": 0.03214686328692706,
+        "stress_threshold_exceedance_rate": 0.2038295243977764,
+        "success_rate_is_scientifically_meaningful": false
+      },
+      "mixed": {
+        "attack_category": "chemically_valid_target_changing_perturbation",
+        "attack_success_rate": null,
+        "attack_validity_rate": 0.522258064516129,
+        "bootstrap_confidence_intervals": {
+          "attack_validity_rate": {
+            "confidence_level": 0.95,
+            "high": 0.5406362703750142,
+            "low": 0.5032137826660273,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 632
+          },
+          "mean_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.2759994219768529,
+            "low": 0.23411501905911455,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 599
+          },
+          "median_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.13294097781181322,
+            "low": 0.10698223114013672,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 599
+          },
+          "p90_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.7615640020370478,
+            "low": 0.5767158532142641,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 599
+          },
+          "p95_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 1.099149227142334,
+            "low": 0.9056240570545189,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 599
+          },
+          "stress_threshold_exceedance_rate": {
+            "confidence_level": 0.95,
+            "high": 0.17522082502869854,
+            "low": 0.135434372240361,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 599
+          }
+        },
+        "bootstrap_note": "Intervals resample source polymers, not correlated candidates. They are descriptive uncertainty intervals, not significance tests.",
+        "candidate_mode": "fixed_paired",
+        "clean_performance_tradeoff": -0.02016909622421753,
+        "criterion": {
+          "count_unchecked_as_valid": false,
+          "max_changes": null,
+          "min_abs_drift": 0.4619162976741791,
+          "require_valid": true
+        },
+        "defense_delta": {
+          "interpretation": "negative values indicate lower defended-model drift",
+          "mean_defense_delta": -0.05477107447411559,
+          "mean_defense_delta_ci": {
+            "confidence_level": 0.95,
+            "high": -0.0386767700238079,
+            "low": -0.07051845829485481,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 599
+          },
+          "median_defense_delta": -0.02342677116394043,
+          "n_pairs": 1619,
+          "paired": true,
+          "pairing_population": "candidates valid under both models",
+          "significance_test": null
+        },
+        "defense_training_relation": "mixed_defense_contains_attack",
+        "max_abs_drift": 3.8165197372436523,
+        "max_drift_ci": null,
+        "max_drift_ci_note": "Not reported: a bootstrap CI for an observed maximum is not reliable here.",
+        "mean_abs_drift": 0.25470363659355066,
+        "median_abs_drift": 0.11931753158569336,
+        "n_source_samples": 632,
+        "n_total": 3100,
+        "n_valid": 1619,
+        "p90_abs_drift": 0.6661062240600587,
+        "p95_abs_drift": 0.9794036865234372,
+        "robustness_transfer": 0.1769807758610038,
+        "stress_threshold_exceedance_rate": 0.15565163681284744,
+        "success_rate_is_scientifically_meaningful": false
+      },
+      "randomization": {
+        "attack_category": "chemically_valid_target_changing_perturbation",
+        "attack_success_rate": null,
+        "attack_validity_rate": 0.522258064516129,
+        "bootstrap_confidence_intervals": {
+          "attack_validity_rate": {
+            "confidence_level": 0.95,
+            "high": 0.5420069730513738,
+            "low": 0.502578295849729,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 632
+          },
+          "mean_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.31742631234957475,
+            "low": 0.27498204127130377,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 599
+          },
+          "median_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.18480741977691648,
+            "low": 0.15111494064331055,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 599
+          },
+          "p90_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 0.8166405117511747,
+            "low": 0.6486664974689479,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 599
+          },
+          "p95_abs_drift": {
+            "confidence_level": 0.95,
+            "high": 1.1470383340120291,
+            "low": 0.9788668394088722,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 599
+          },
+          "stress_threshold_exceedance_rate": {
+            "confidence_level": 0.95,
+            "high": 0.22124877800604806,
+            "low": 0.17754683992639075,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 599
+          }
+        },
+        "bootstrap_note": "Intervals resample source polymers, not correlated candidates. They are descriptive uncertainty intervals, not significance tests.",
+        "candidate_mode": "fixed_paired",
+        "clean_performance_tradeoff": -0.008622571741780216,
+        "criterion": {
+          "count_unchecked_as_valid": false,
+          "max_changes": null,
+          "min_abs_drift": 0.4619162976741791,
+          "require_valid": true
+        },
+        "defense_delta": {
+          "interpretation": "negative values indicate lower defended-model drift",
+          "mean_defense_delta": -0.013239725200094655,
+          "mean_defense_delta_ci": {
+            "confidence_level": 0.95,
+            "high": 0.008230186379180476,
+            "low": -0.033038870353313834,
+            "method": "source-polymer clustered percentile bootstrap",
+            "n_resamples": 2000,
+            "n_source_samples": 599
+          },
+          "median_defense_delta": 0.00370025634765625,
+          "n_pairs": 1619,
+          "paired": true,
+          "pairing_population": "candidates valid under both models",
+          "significance_test": null
+        },
+        "defense_training_relation": "different_attack_family",
+        "max_abs_drift": 3.308070182800293,
+        "max_drift_ci": null,
+        "max_drift_ci_note": "Not reported: a bootstrap CI for an observed maximum is not reliable here.",
+        "mean_abs_drift": 0.2962349858675716,
+        "median_abs_drift": 0.16891741752624512,
+        "n_source_samples": 632,
+        "n_total": 3100,
+        "n_valid": 1619,
+        "p90_abs_drift": 0.7413293838500977,
+        "p95_abs_drift": 1.0734953641891476,
+        "robustness_transfer": 0.0427812830147527,
+        "stress_threshold_exceedance_rate": 0.19950586781964175,
+        "success_rate_is_scientifically_meaningful": false
+      }
+    }
+  },
+  "clean_performance": {
+    "clean": {
+      "mae": 0.4619162583737434,
+      "n": 632,
+      "tradeoff_vs_clean": 0.0
+    },
+    "mcmc": {
+      "mae": 0.44981823843461044,
+      "n": 632,
+      "tradeoff_vs_clean": -0.012098019939132953
+    },
+    "mixed": {
+      "mae": 0.44174716214952586,
+      "n": 632,
+      "tradeoff_vs_clean": -0.02016909622421753
+    },
+    "randomization": {
+      "mae": 0.4532936866319632,
+      "n": 632,
+      "tradeoff_vs_clean": -0.008622571741780216
+    }
+  },
+  "schema_version": "phase4.closed_loop.v1",
+  "scientific_scope": {
+    "representation_preserving": [
+      "randomization"
+    ],
+    "stress_tests": [
+      "probabilistic_mcmc"
+    ],
+    "target_changing": [
+      "substitution",
+      "insertion",
+      "deletion",
+      "rearrangement"
+    ],
+    "warning": "Target-changing and stress-test attacks do not inherit measured Tg/bandgap labels. Their threshold exceedance is not target error."
+  }
+}

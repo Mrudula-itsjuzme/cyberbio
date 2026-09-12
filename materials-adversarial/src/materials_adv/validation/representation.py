@@ -127,3 +127,18 @@ def validate_representation(psmiles: str) -> ValidationResult:
         checks_run=tuple(checks_run),
         checks_skipped=tuple(checks_skipped),
     )
+
+
+def canonical_graph_equivalent(left: str, right: str) -> bool:
+    """Verify that two representations parse to the same canonical RDKit graph."""
+    if not has_rdkit():
+        return False
+    from rdkit import Chem, RDLogger  # noqa: PLC0415
+
+    RDLogger.DisableLog("rdApp.*")
+    left_mol, right_mol = Chem.MolFromSmiles(left), Chem.MolFromSmiles(right)
+    if left_mol is None or right_mol is None:
+        return False
+    return Chem.MolToSmiles(left_mol, canonical=True) == Chem.MolToSmiles(
+        right_mol, canonical=True
+    )

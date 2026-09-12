@@ -120,7 +120,7 @@ def main():
     )
     
     attack_del = DeletionAttack(
-        rng=rng, attack_budget=attack_cfg['attacks']['insertion']['attack_budget'],
+        rng=rng, attack_budget=attack_cfg['attacks']['deletion']['attack_budget'],
         protect_attachments=attack_cfg["protection"]["protect_attachments"],
         protect_ring_closures=attack_cfg["protection"]["protect_ring_closures"],
         protect_branches=attack_cfg["protection"]["protect_branches"]

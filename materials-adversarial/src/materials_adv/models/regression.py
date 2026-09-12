@@ -29,9 +29,12 @@ class TransformerRegressor:
         self.target_units = target_units
         self.model.eval()
 
-    def predict(self, psmiles_list: list[str]) -> np.ndarray:
+    def _batch(self, psmiles_list: list[str]):
         tokenized = [tokenize(p) for p in psmiles_list]
         max_len = max((len(t) for t in tokenized), default=1)
+        model_max_len = int(self.model.pos_encoder.num_embeddings)
+        if max_len > model_max_len:
+            raise ValueError(f"sequence length {max_len} exceeds model maximum {model_max_len}")
         
         input_ids = []
         padding_masks = []
@@ -56,8 +59,23 @@ class TransformerRegressor:
         input_tensor = input_tensor.to(device)
         mask_tensor = mask_tensor.to(device)
         
+        return input_tensor, mask_tensor
+
+    def predict(self, psmiles_list: list[str]) -> np.ndarray:
+        input_tensor, mask_tensor = self._batch(psmiles_list)
         with torch.no_grad():
             preds = self.model(input_tensor, padding_mask=mask_tensor)
             
         preds_np = preds.cpu().numpy()
         return self.scaler.inverse_transform(preds_np)
+
+    def encode(self, psmiles_list: list[str]) -> np.ndarray:
+        """Return pooled encoder vectors for representation-consistency probes."""
+        input_tensor, mask_tensor = self._batch(psmiles_list)
+        with torch.no_grad():
+            encoded = self.model.encode(input_tensor, padding_mask=mask_tensor)
+        return encoded.cpu().numpy()
+
+    def predict_token_lists(self, token_lists: list[list[str]]) -> np.ndarray:
+        """Predict token sequences directly, used by non-chemical diagnostic probes."""
+        return self.predict(["".join(tokens) for tokens in token_lists])

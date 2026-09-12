@@ -1,0 +1,55 @@
+schema_version: phase4.closed_loop.v1
+lineage: polyverse_bandgap
+evaluation_split: test
+seed: 20260910
+
+evaluation_protocol:
+  test_use: one_time_final_evaluation_after_validation_phase_freeze
+  defense_selection_split: val
+  prohibit_test_tuning: true
+
+attacks:
+  families:
+    - randomization
+    - probabilistic_mcmc
+    - substitution
+    - insertion
+    - deletion
+    - rearrangement
+  training_variants: 1
+  evaluation_variants: 5
+  mcmc_steps: 50
+  mcmc_temperature: 10.0
+
+defenses:
+  clean: []
+  randomization:
+    - randomization
+  mcmc:
+    - probabilistic_mcmc
+  mixed:
+    - randomization
+    - probabilistic_mcmc
+    - substitution
+    - insertion
+    - deletion
+    - rearrangement
+
+success_criterion:
+  min_abs_drift: 0.4619162976741791
+  max_changes: null
+  require_valid: true
+  count_unchecked_as_valid: false
+
+bootstrap:
+  resamples: 2000
+  min_source_samples: 20
+
+scientific_policy:
+  representation_preserving_label: measured_target
+  target_changing_label: clean_model_teacher_prediction
+  stress_test_label: clean_model_teacher_prediction
+  note: >-
+    Only RDKit SMILES randomization inherits the measured target. Chemistry-changing
+    and stress-test examples use explicit teacher predictions and must not be
+    described as preserving Tg, bandgap, or any other measured target.

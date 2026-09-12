@@ -78,15 +78,20 @@ class ProbabilisticMCMCAttack(BaseAttack):
             
         original_representation = "".join(tokens)
         original_pred = float(self.predictor.predict([original_representation])[0])
+        model_queries = 1
         
         current_tokens = list(tokens)
         current_psmiles = original_representation
-        current_score, _, _ = self._score_sequence(current_psmiles, original_pred)
+        # The original is known valid for the active dataset and has zero drift;
+        # avoid querying the same baseline prediction a second time.
+        current_score = 1.0
         
         outcomes = []
         seen = {original_representation}
         
         # MCMC Loop
+        proposal_attempts = 0
+        accepted_moves = 0
         for _ in range(self.steps):
             if len(outcomes) >= n_variants:
                 break
@@ -94,6 +99,7 @@ class ProbabilisticMCMCAttack(BaseAttack):
             # 1. Propose
             proposal_attack = self.rng.choice(self._proposals)
             proposals = proposal_attack.generate(current_tokens, n_variants=1)
+            proposal_attempts += 1
             
             if not proposals:
                 continue
@@ -103,12 +109,15 @@ class ProbabilisticMCMCAttack(BaseAttack):
             
             # 2. Score
             new_score, chem_score, att_score = self._score_sequence(candidate_psmiles, original_pred)
+            if chem_score > 0:
+                model_queries += 1
             
             # 3. Accept/Reject (Metropolis)
             delta = new_score - current_score
             accept_prob = 1.0 if delta > 0 else math.exp(delta / max(self.temperature, 1e-3))
             
             if self.rng.random() < accept_prob:
+                accepted_moves += 1
                 # Accept
                 current_tokens = list(candidate_outcome.adversarial_tokens)
                 current_psmiles = candidate_psmiles
@@ -135,5 +144,26 @@ class ProbabilisticMCMCAttack(BaseAttack):
                             params=params
                         )
                     )
-                    
-        return outcomes
+
+        # Persist terminal accounting on every returned candidate so a raw bank
+        # remains auditable even when fewer than the requested variants emerge.
+        terminal = {
+            "search_model_queries_including_original": model_queries,
+            "search_candidate_model_queries": model_queries - 1,
+            "search_candidate_proposals": proposal_attempts,
+            "search_accepted_moves": accepted_moves,
+            "search_acceptance_rate": (
+                accepted_moves / proposal_attempts if proposal_attempts else None
+            ),
+            "search_steps_limit": self.steps,
+        }
+        return [
+            AttackOutcome(
+                original_tokens=outcome.original_tokens,
+                adversarial_tokens=outcome.adversarial_tokens,
+                attack_type=outcome.attack_type,
+                edit_positions=outcome.edit_positions,
+                params={**outcome.params, **terminal},
+            )
+            for outcome in outcomes
+        ]

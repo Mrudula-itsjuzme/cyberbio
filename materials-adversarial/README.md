@@ -4,6 +4,12 @@
 
 This repository contains the complete experimental pipeline for assessing and mitigating adversarial vulnerabilities in Deep Learning models trained to predict physical polymer properties directly from 1D sequence representations.
 
+> **Provenance notice:** Historical Tg/K and later bandgap/eV experiments coexist
+> in this directory and must not be combined. See
+> [`docs/CURRENT_STATE_AUDIT.md`](docs/CURRENT_STATE_AUDIT.md) and the current
+> consensus at the top of [`docs/PROJECT_WORKSPACE.md`](docs/PROJECT_WORKSPACE.md)
+> before reusing a checkpoint or number.
+
 ## PROJECT
 Deep Learning models applied to materials informatics often learn fragile syntactic shortcuts rather than true physicochemical representations. This project implements a unified adversarial framework that generates chemically valid perturbations to sequence representations, mathematically measures model vulnerability, and subsequently immunizes the network via targeted adversarial training.
 
@@ -11,7 +17,7 @@ Deep Learning models applied to materials informatics often learn fragile syntac
 - **Source**: polyVERSE (Ramprasad Group)
 - **Target Property**: Bandgap (eV)
 - **Usable Records**: 4,209 experimentally verified / high-fidelity DFT properties.
-- **Split Configuration**: Stratified 80/10/10 split (Seed: `20260815`).
+- **Split Configuration**: Deterministic random 70/15/15 split (Seed: `20260815`), materialized as `data/processed/splits.json`.
 - *Note*: The `PI1M.csv` database acts as an unlabelled structure pool and is excluded via `.gitignore` to prevent repository bloat.
 
 ## BASELINE
@@ -40,7 +46,7 @@ The adversarially trained model reduced substitution attack success from **20.13
 | **Insertion Success** | 32.61% | 32.46% |
 | **Deletion Success** | 32.13% | 30.04% |
 
-*(For comprehensive results and interpretation, view `docs/PHASE2_RESULTS.md`)*
+*(For the original result table, view `docs/FINAL_RESULTS.md`; for its forensic qualification, view `docs/CURRENT_STATE_AUDIT.md`.)*
 
 ## LIMITATIONS
 - **Narrow Defense Generalization**: The defense did not demonstrate generalized robustness across the unseen attack families evaluated (Insertions/Deletions).

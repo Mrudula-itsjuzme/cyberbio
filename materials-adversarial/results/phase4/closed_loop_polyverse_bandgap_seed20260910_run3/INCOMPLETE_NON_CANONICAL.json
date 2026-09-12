@@ -1,0 +1,7 @@
+{
+  "status": "interrupted_during_mcmc_defense_training",
+  "canonical": false,
+  "reason": "Execution process ended during conversation handoff before MCMC checkpoint, mixed checkpoint, or evaluation summary",
+  "preservation_policy": "Partial artifacts and completed randomization checkpoint retained and never reused as canonical output",
+  "superseded_by": "closed_loop_polyverse_bandgap_seed20260910_run4"
+}

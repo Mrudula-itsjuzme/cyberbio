@@ -2,7 +2,7 @@ from typing import Sequence
 
 import numpy as np
 
-from materials_adv.attacks.base import BaseAttack
+from materials_adv.attacks.base import BaseAttack, require_token_pool
 from materials_adv.attacks.generator import AttackOutcome
 from materials_adv.attacks.registry import register_attack
 from materials_adv.attacks.token_space import TokenRole, classify_token, editable_positions
@@ -13,7 +13,7 @@ class InsertionAttack(BaseAttack):
     def __init__(
         self,
         rng: np.random.Generator,
-        allowed_tokens: Sequence[str],
+        allowed_tokens: Sequence[str] | None = None,
         attack_budget: int = 1,
         protect_attachments: bool = True,
         protect_ring_closures: bool = True,
@@ -25,9 +25,14 @@ class InsertionAttack(BaseAttack):
         self.protect_ring_closures = protect_ring_closures
         self.protect_branches = protect_branches
         
-        # Allowed insertion pool: only atoms and bonds
+        if attack_budget < 1:
+            raise ValueError(f"attack_budget must be >= 1, got {attack_budget}")
+
+        token_pool = require_token_pool(self.__class__.__name__, allowed_tokens)
         allowed_roles = {TokenRole.ALIPHATIC_ATOM, TokenRole.AROMATIC_ATOM, TokenRole.BRACKET_ATOM, TokenRole.BOND}
-        self.allowed_pool = [t for t in allowed_tokens if classify_token(t) in allowed_roles]
+        self.allowed_pool = [t for t in token_pool if classify_token(t) in allowed_roles]
+        if not self.allowed_pool:
+            raise ValueError("InsertionAttack token pool contains no insertable tokens")
 
     def _eligible_insertion_positions(self, tokens: list[str]) -> list[int]:
         """Positions where an insertion can occur.

@@ -1,0 +1,7 @@
+{
+  "status": "interrupted_during_first_defense_training",
+  "canonical": false,
+  "reason": "Global 256-token padding caused avoidable CPU work; interrupted before any checkpoint was written",
+  "preservation_policy": "Partial artifacts retained and never overwritten",
+  "superseded_by": "closed_loop_polyverse_bandgap_seed20260910_run3"
+}

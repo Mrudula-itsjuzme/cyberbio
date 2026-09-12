@@ -14,6 +14,7 @@ from __future__ import annotations
 from dataclasses import asdict, dataclass, field
 from enum import Enum
 from typing import Any
+from ..utils.io import to_jsonable
 
 SCHEMA_VERSION = "1.1"
 
@@ -63,7 +64,7 @@ class AttackRecord:
         d["rejection_reasons"] = list(self.rejection_reasons)
         d["checks_skipped"] = list(self.checks_skipped)
         d["edited_positions"] = [int(p) for p in self.edited_positions]
-        return d
+        return to_jsonable(d)
 
     @classmethod
     def from_dict(cls, d: dict[str, Any]) -> AttackRecord:
@@ -85,4 +86,3 @@ def compute_drift(original: float | None, adversarial: float | None) -> float | 
     if original is None or adversarial is None:
         return None
     return float(adversarial) - float(original)
-

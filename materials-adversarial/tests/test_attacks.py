@@ -235,29 +235,34 @@ def test_substitution_never_introduces_disconnect() -> None:
         assert n_after == n_before
 
 
-def test_substitution_requires_explicit_pool() -> None:
-    """The replacement pool is injected, never hardcoded.
-
-    Substitution retains its explicit PendingImplementation guard, so omitting
-    the pool fails with an actionable message. Insertion took the other route
-    (a required positional argument) -- both refuse to invent a chemical prior,
-    noted as an inconsistency in Problems #13.
-    """
+@pytest.mark.parametrize("attack_class", [SubstitutionAttack, InsertionAttack])
+def test_open_attacks_require_explicit_pool(attack_class) -> None:
+    """Open edit operations share one loud, data-derived pool contract."""
     with pytest.raises(PendingImplementation) as exc:
-        SubstitutionAttack(rng())
+        attack_class(rng())
     assert exc.value.blocked_on == "dataset"
+    assert "allowed_tokens" in str(exc.value)
 
 
-def test_rearrangement_degenerate_window_yields_no_candidates() -> None:
-    """window_size=1 cannot contain a swap.
+@pytest.mark.parametrize("attack_class", [SubstitutionAttack, InsertionAttack])
+def test_open_attacks_reject_empty_pool(attack_class) -> None:
+    with pytest.raises(ValueError, match="non-empty"):
+        attack_class(rng(), allowed_tokens=[])
 
-    The scaffold version raised ValueError here. The Phase 1E rewrite does not
-    validate the argument; it degrades to producing zero candidates instead.
-    That is safe (no silent no-op candidates enter the record), so this test
-    pins the ACTUAL behaviour rather than asserting a guard that no longer
-    exists. Adding explicit validation is noted in Problems #13.
-    """
-    assert RearrangementAttack(rng(), window_size=1).generate(list(TOKENS), n_variants=5) == []
+
+def test_rearrangement_rejects_degenerate_window() -> None:
+    with pytest.raises(ValueError, match="window_size must be >= 2"):
+        RearrangementAttack(rng(), window_size=1)
+
+
+def test_deprecated_reordering_routes_to_rearrangement() -> None:
+    from materials_adv.attacks.reordering import ReorderingAttack
+
+    with pytest.warns(DeprecationWarning, match="deprecated"):
+        attack = ReorderingAttack(rng(), window=3)
+    outcomes = attack.generate(list(TOKENS), n_variants=2)
+    assert attack.metadata()["attack_type"] == "reordering"
+    assert all(outcome.attack_type == "reordering" for outcome in outcomes)
 
 
 # --- Registry ----------------------------------------------------------------

@@ -1,0 +1,7 @@
+{
+  "status": "failed_before_training",
+  "canonical": false,
+  "reason": "NumPy scalar candidate metadata was not JSON serializable",
+  "preservation_policy": "Partial artifacts retained and never overwritten",
+  "superseded_by": "closed_loop_polyverse_bandgap_seed20260910_run3"
+}

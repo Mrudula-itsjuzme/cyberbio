@@ -6,7 +6,75 @@ milestone, experiment, bug, architecture change, dataset finding or result.
 **Never fabricate results.** Uncertain items are labelled `PENDING`, `UNKNOWN`
 or `NEEDS VERIFICATION`. Decisions are appended to §14, never silently rewritten.
 
-Last updated: 2026-08-15
+Last updated: 2026-09-10
+
+## How to read this document
+
+This is a chronological research log, not a single timeless status page. Older
+sections are intentionally preserved because they explain decisions and failed
+hypotheses, but their present-tense status statements are historical snapshots.
+
+- **Current consensus:** this section and `CURRENT_STATE_AUDIT.md`.
+- **Superseded hypotheses:** retained below and explicitly identified where the
+  later forensic work falsified or narrowed them.
+- **Historical state:** the original numbered sections record what was true at
+  the time; they must not be quoted as the current implementation state.
+
+### Current consensus (2026-09-10)
+
+The repository contains implemented preprocessing, Transformer training, token
+attacks, RDKit validation, adversarial augmentation, fixed-scaler defense,
+defended-model evaluation, re-attack artifacts, five-seed Tg experiments, RDKit
+SMILES randomization, and a model-guided stochastic generator historically
+named `probabilistic_mcmc`. Research results therefore exist.
+
+Two experimental lineages coexist and must not be merged:
+
+1. **OpenPoly Tg/K:** 247 usable samples, scaffold split 204/37/6; this lineage
+   produced Phases 1E, 2B, 2C, the forensic diagnostics, residualization, and
+   the checked-in Phase 3 stochastic-search artifacts.
+2. **polyVERSE bandgap/eV:** 4,209 rows, split 2,946/631/632; this lineage
+   produced the current README baseline/defended checkpoints and large Phase 2
+   attack files.
+
+The current scientific consensus is conservative:
+
+- Token-level instability exists, but the Tg length-specific mechanism was
+  falsified by length-preserving shuffle/reversal controls.
+- RDKit parseability is not physical plausibility and does not establish label
+  preservation. Substitution, insertion, deletion and rearrangement generally
+  change chemistry.
+- The large bandgap baseline/defended attack comparison is numerically
+  traceable but not paired for five of six families, so causal defense claims
+  remain unverified.
+- The probabilistic generator has run, but lacks the target distribution,
+  Hastings correction and convergence evidence needed for a validated MCMC
+  claim. Treat it as model-guided stochastic search.
+- `reordering` is a deprecated compatibility alias. `rearrangement` is the
+  maintained attack name.
+- New experiment orchestration belongs in `materials_adv.experiments.pipeline`;
+  it freezes one candidate bank, scores both models against it, refuses output
+  overwrites, and supports optional augmentation/defended training callbacks.
+- Repository verification after consolidation: **212 tests passed, 1 skipped**.
+
+The complete evidence trace and unresolved gaps are in
+[`CURRENT_STATE_AUDIT.md`](CURRENT_STATE_AUDIT.md).
+
+### Phase 4 implementation (2026-09-10; not yet run)
+
+Closed-loop attack/defense evaluation is implemented in
+`materials_adv.experiments.closed_loop` with the thin entry point
+`scripts/run_closed_loop.py` and an explicit `configs/closed_loop.yaml`.
+It produces the requested attack-by-defense matrix, raw and paired records,
+clustered bootstrap intervals where sample count permits, immutable config and
+seed metadata, and checkpoint/input hashes. Model-guided MCMC re-attacks are
+adaptive and unpaired; all fixed attacks reuse one candidate bank. Only RDKit
+SMILES randomization is treated as representation-preserving. No Phase 4 models
+have been trained and no Phase 4 numerical results are claimed. See
+[`PHASE4_CLOSED_LOOP.md`](PHASE4_CLOSED_LOOP.md).
+
+Implementation verification: **220 tests passed, 1 skipped**; the Phase 4 CLI
+help/import check, bytecode compilation and `git diff --check` also passed.
 
 ---
 
@@ -23,8 +91,10 @@ filter -> adversarial examples -> drift evaluation -> adversarial training ->
 defended model -> re-attack -> robustness evaluation
 ```
 
-**Phase 1 (current) is the attack side only.** Defense, MCMC, probabilistic
-attacks and uncertainty are out of scope and deliberately unimplemented.
+> **HISTORICAL SNAPSHOT (initial scaffold; superseded):** Phase 1 was then the
+> attack side only. Defense and probabilistic attacks were unimplemented at
+> that time. Defense and the stochastic generator were implemented later; see
+> Current consensus above.
 
 ---
 
@@ -47,7 +117,9 @@ attacks and uncertainty are out of scope and deliberately unimplemented.
 | Experiment 1 (baseline) | NOT STARTED |
 | Experiments 2–5 (attacks) | NOT STARTED |
 
-**Nothing has been trained. No results exist.**
+> **HISTORICAL SNAPSHOT (superseded):** At this point in the chronology nothing
+> had been trained and no research results existed. This is not the current
+> repository state.
 
 ---
 
@@ -228,13 +300,15 @@ attack's own bookkeeping, so a buggy attack cannot under-report perturbation siz
 | — | Adversarial training (2A) | DONE — clean result later found confounded |
 | — | **Controlled defense ablation (2B)** | DONE — single seed; clean gain did not survive the scaler control |
 | — | **Multi-seed confirmation (2C)** | **DONE — 2B's large robustness effects do NOT replicate; only worst-case (max) drift reduction is consistent** |
-| 7–11 | Multi-step, probabilistic, MCMC, re-attack | NOT STARTED — Phase 3, on hold |
+| 7–11 | Multi-step, probabilistic, MCMC, re-attack | **HISTORICAL STATUS, SUPERSEDED** — stochastic search and re-attack artifacts were later added; a validated MCMC method remains UNVERIFIED |
 
 ---
 
 ## 9. Results
 
-**No research results exist.** Nothing has been trained.
+> **HISTORICAL SNAPSHOT (superseded):** No research results existed at this
+> milestone. Later Tg and bandgap training/attack artifacts are present; see
+> Current consensus and `CURRENT_STATE_AUDIT.md`.
 
 The only recorded numbers are scaffold verification, not findings:
 
@@ -267,8 +341,9 @@ reported alongside drift, or the headline number will silently confound the two.
 | 10 | **Undetected duplicate class.** 19 "adversarial" training strings were byte-identical to clean training strings — sample-weight inflation, not augmentation. Distinct from the 11 adv-vs-adv duplicates reported in 2A. | **FIXED in 2B** — both classes removed and reported separately |
 | 11 | **Stale scaffold-era tests.** 6 tests in `test_attacks.py` / `test_scaffold_integrity.py` / `test_audit_script.py` assert the pre-data blocked state (`TokenRole.ATOM`, stubs raising, configs null, `data/raw` empty). Phases 1–2A intentionally resolved all of these. | **FIXED in 2C** — all 6 updated to the current contract, none deleted; 200 tests pass |
 | 12 | **`@register_attack` dropped from three attacks.** The Phase 1D/1E rewrites of insertion, deletion and rearrangement lost their registry decorators, leaving only `substitution` registered — `build_attack("deletion")` raised `KeyError`. Experiments construct attacks directly, so no result is affected, but the pluggability contract was silently broken. | **FIXED in 2C** — decorators restored; two tests pin all four registered and buildable |
-| 13 | **Two API inconsistencies** (noted, not fixed): `RearrangementAttack` lost its `window_size >= 2` validation and degrades to zero candidates instead of raising; substitution guards a missing pool with `PendingImplementation` while insertion uses a required positional argument. | **OPEN — cosmetic.** Both behaviours are safe; tests pin the actual behaviour rather than an aspirational one |
-| 14 | **`reordering.py` is dead code.** Superseded by `rearrangement.py`, which all experiments use. Still imports and registers itself. | **OPEN — cosmetic.** Left in place rather than deleted mid-experiment; candidate for removal before publication |
+| 13 | **Two API inconsistencies:** rearrangement window validation and different open-token-pool constructor behavior. | **FIXED 2026-09-10** — `window_size >= 2` is validated; substitution and insertion share one explicit-pool guard without changing configured experiment behavior |
+| 14 | **`reordering.py` duplicate/dead implementation.** Superseded by `rearrangement.py`, which all experiments use. | **FIXED 2026-09-10** — dependency search found no experiment import; duplicate algorithm removed and historical name retained as a warning-emitting compatibility alias |
+| 15 | **No reusable immutable end-to-end experiment abstraction.** Phase scripts could generate different attack candidates and overwrite shared paths. | **FIXED STRUCTURALLY 2026-09-10** — `materials_adv.experiments.pipeline` creates a fresh run directory, freezes one candidate bank, supports augmentation/defended training callbacks, and enforces paired comparison. Historical scripts/results remain unchanged. |
 
 ---
 
@@ -789,10 +864,10 @@ Experiments construct attacks directly, so no result is affected — but the
 pluggable-attack contract was silently broken. Decorators restored; two tests now
 pin it.
 
-Two genuine inconsistencies noted rather than papered over: `RearrangementAttack`
-lost its `window_size >= 2` validation (degrades to zero candidates instead of
-raising), and substitution guards a missing pool with `PendingImplementation`
-while insertion uses a required argument. Both recorded in Problems #13.
+> **HISTORICAL NOTE (resolved 2026-09-10):** This phase identified that
+> `RearrangementAttack` lacked `window_size >= 2` validation and that substitution
+> and insertion exposed different missing-pool APIs. Both are now resolved; see
+> Problems #13 and the Current consensus.
 
 ### Limitations
 

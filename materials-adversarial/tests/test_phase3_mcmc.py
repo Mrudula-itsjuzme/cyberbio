@@ -57,6 +57,26 @@ def test_smiles_randomization_attack():
         assert outcome.adversarial_representation != "CCO"
         assert len(outcome.adversarial_representation) > 0
 
+def test_smiles_randomization_is_seeded_and_graph_preserving():
+    from rdkit import Chem
+
+    tokens = list(tokenize("CCOC(=O)N"))
+    first = SmilesRandomizationAttack(np.random.default_rng(17)).generate(
+        tokens, n_variants=5
+    )
+    second = SmilesRandomizationAttack(np.random.default_rng(17)).generate(
+        tokens, n_variants=5
+    )
+    assert [item.adversarial_representation for item in first] == [
+        item.adversarial_representation for item in second
+    ]
+    canonical = Chem.MolToSmiles(Chem.MolFromSmiles("CCOC(=O)N"))
+    assert all(
+        Chem.MolToSmiles(Chem.MolFromSmiles(item.adversarial_representation))
+        == canonical
+        for item in first
+    )
+
 class DummyPredictor:
     def __init__(self, target_units="K"):
         self.target_units = target_units

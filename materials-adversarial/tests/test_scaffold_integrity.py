@@ -33,6 +33,8 @@ PACKAGE_MODULES = [
     "materials_adv.evaluation.attack_metrics",
     "materials_adv.evaluation.metrics",
     "materials_adv.evaluation.records",
+    "materials_adv.experiments.pipeline",
+    "materials_adv.experiments.closed_loop",
     "materials_adv.models.regression",
     "materials_adv.models.registry",
     "materials_adv.models.transformer",
@@ -173,9 +175,11 @@ def test_shipped_configs_are_resolved_after_the_audit() -> None:
     from materials_adv.utils.config import get, load_config
 
     dataset = load_config("dataset")
-    assert get(dataset, "representation_column") == "PSMILES"
-    assert get(dataset, "target_column") is not None
-    assert get(dataset, "target_units") is not None
+    assert get(dataset, "name") == "polyverse_bandgap"
+    assert get(dataset, "representation_column") == "smiles"
+    assert get(dataset, "target_column") == "bandgap_chain"
+    assert get(dataset, "target_units") == "eV"
+    assert get(dataset, "n_usable_records") == 4209
     assert get(dataset, "split.test_sealed") is True
 
     model = load_config("model")

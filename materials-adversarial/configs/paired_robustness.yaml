@@ -1,0 +1,40 @@
+# Phase 2 Paired Robustness Benchmark Configuration
+schema_version: phase2.paired_robustness.v1
+lineage: polyverse_bandgap
+evaluation_split: test
+seed: 20260815
+n_variants: 5
+
+dataset:
+  raw_file: data/raw/bandgap_chain.csv
+  processed_file: data/processed/processed.csv
+  splits_file: data/processed/splits.json
+  vocab_file: data/processed/vocab.json
+
+models:
+  clean_baseline: results/models/transformer_regressor
+  defense_a_randomization: results/phase2_paired_robustness/defense_a_randomization
+  defense_b_stress: results/phase2_paired_robustness/defense_b_stress
+
+attacks:
+  families:
+    - randomization
+    - substitution
+    - insertion
+    - deletion
+    - rearrangement
+  window_size: 3
+  attack_budget: 1
+  randomization_attempts: 10
+
+success_criterion:
+  min_abs_drift: 0.4619162976741791
+  require_valid: true
+
+scientific_label_policy:
+  representation_preserving: measured_inherited_equivalent
+  chemistry_changing: clean_model_teacher
+
+bootstrap:
+  n_resamples: 2000
+  confidence_level: 0.95

@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "materials-adversarial"
 version = "0.1.0"
-description = "A unified adversarial framework for robust materials sequence modelling (Phase 1: attack side)"
+description = "An adversarial attack and defense framework for materials sequence models"
 requires-python = ">=3.10"
 
 # Hard dependencies are ONLY what the data-independent scaffold actually needs.

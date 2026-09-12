@@ -1,0 +1,15 @@
+{
+  "test_mae": 0.44807061553001404,
+  "test_rmse": 0.6002970933914185,
+  "test_r2": 0.8164188265800476,
+  "best_val_mae": 0.4629564583301544,
+  "scaler": {
+    "mean": 4.474831296673456,
+    "std": 1.4563050416759802
+  },
+  "scaler_source": "/home/mrudula/Downloads/DL_cyberbio/materials-adversarial/results/models/transformer_regressor/scaler.json",
+  "n_train": 23940,
+  "n_val": 631,
+  "n_test": 632,
+  "seed": 20260815
+}

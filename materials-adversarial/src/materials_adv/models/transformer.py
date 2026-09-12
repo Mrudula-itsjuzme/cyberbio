@@ -45,7 +45,8 @@ class TransformerRegressorModel(nn.Module):
         self.pooling = pooling
         self.regressor = nn.Linear(d_model, 1)
 
-    def forward(self, src, padding_mask=None):
+    def encode(self, src, padding_mask=None):
+        """Return the pooled learned sequence representation before regression."""
         # src: [batch_size, seq_len]
         seq_len = src.size(1)
         positions = torch.arange(seq_len, device=src.device).unsqueeze(0).expand(src.size(0), seq_len)
@@ -69,4 +70,7 @@ class TransformerRegressorModel(nn.Module):
         else:
             raise ValueError(f"Unknown pooling {self.pooling}")
             
-        return self.regressor(out).squeeze(-1)
+        return out
+
+    def forward(self, src, padding_mask=None):
+        return self.regressor(self.encode(src, padding_mask=padding_mask)).squeeze(-1)

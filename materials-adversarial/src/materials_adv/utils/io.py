@@ -15,6 +15,18 @@ from typing import Any
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
+def to_jsonable(value: Any) -> Any:
+    """Recursively convert NumPy-like scalar metadata to JSON-native values."""
+    if isinstance(value, dict):
+        return {str(key): to_jsonable(item) for key, item in value.items()}
+    if isinstance(value, (list, tuple)):
+        return [to_jsonable(item) for item in value]
+    module = type(value).__module__.split(".", 1)[0]
+    if module == "numpy" and hasattr(value, "item"):
+        return value.item()
+    return value
+
+
 def ensure_dir(path: str | Path) -> Path:
     p = Path(path)
     p.mkdir(parents=True, exist_ok=True)
@@ -29,7 +41,7 @@ def write_jsonl(path: str | Path, rows: Iterable[dict[str, Any]], *, append: boo
     n = 0
     with p.open(mode, encoding="utf-8") as fh:
         for row in rows:
-            fh.write(json.dumps(row, ensure_ascii=False, sort_keys=True))
+            fh.write(json.dumps(to_jsonable(row), ensure_ascii=False, sort_keys=True))
             fh.write("\n")
             n += 1
     return n

@@ -1,0 +1,20 @@
+phase: 6
+lineage: polyverse_bandgap
+evaluation_split: val
+n_examples: 25
+seed: 20260910
+query_budget: 12
+max_changes: 3
+require_plausible: true
+max_proposal_multiplier: 200
+beam_width: 4
+branching_factor: 3
+temperature: 0.1
+population_size: 8
+elite_size: 3
+model_dir: results/models/transformer_regressor
+proposal_suite:
+  name: local_chemistry_changing_edits
+  operators: [substitution, insertion, deletion, rearrangement]
+  role_preserving_substitution: true
+  rearrangement_window: 3

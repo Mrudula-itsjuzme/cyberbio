@@ -25,16 +25,17 @@ class SmilesRandomizationAttack(BaseAttack):
             
         outcomes = []
         seen = {original_representation}
-        
-        # RDKit's RNG for doRandom=True is global. We don't have direct control 
-        # via the numpy Generator, but we can seed python's/rdkit's if needed, 
-        # or just rely on the attempts loop to find unique strings.
-        
-        for _ in range(n_variants * 10):
+
+        # Use RDKit's explicitly seeded vector API. MolToSmiles(doRandom=True)
+        # uses global state and made an identically seeded experiment produce a
+        # different primary control candidate bank across processes.
+        rdkit_seed = int(self.rng.integers(1, 2**31 - 1))
+        randomized = Chem.MolToRandomSmilesVect(
+            mol, n_variants * 10, randomSeed=rdkit_seed
+        )
+        for rand_smiles in randomized:
             if len(outcomes) >= n_variants:
                 break
-                
-            rand_smiles = Chem.MolToSmiles(mol, doRandom=True)
             if rand_smiles not in seen:
                 seen.add(rand_smiles)
                 new_tokens = tuple(tokenize(rand_smiles))
@@ -43,6 +44,7 @@ class SmilesRandomizationAttack(BaseAttack):
                         original_tokens=tuple(tokens),
                         adversarial_tokens=new_tokens,
                         attack_type=self.name,
+                        params={"rdkit_random_seed": rdkit_seed},
                     )
                 )
                 
