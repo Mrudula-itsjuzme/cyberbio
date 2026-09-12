@@ -2,75 +2,93 @@
 
 **Learning to Attack and Defend: A Unified Adversarial Framework for Robust Materials Sequence Modelling**
 
-This repository contains the complete experimental pipeline for assessing and mitigating adversarial vulnerabilities in Deep Learning models trained to predict physical polymer properties directly from 1D sequence representations.
+This directory contains the core experimental pipeline for evaluating and improving the adversarial robustness of sequence-based Deep Learning models predicting polymer physical properties directly from 1D representations (PSMILES).
 
-> **Provenance notice:** Historical Tg/K and later bandgap/eV experiments coexist
-> in this directory and must not be combined. See
-> [`docs/CURRENT_STATE_AUDIT.md`](docs/CURRENT_STATE_AUDIT.md) and the current
-> consensus at the top of [`docs/PROJECT_WORKSPACE.md`](docs/PROJECT_WORKSPACE.md)
-> before reusing a checkpoint or number.
+> [!NOTE]
+> **Lineage Context**: Active research focuses exclusively on **polyVERSE Bandgap prediction ($E_g$ in eV)**. Earlier exploratory work on polymer glass-transition temperature ($T_g$ in Kelvin) is documented separately in [`docs/HISTORICAL_TG_LINEAGE.md`](docs/HISTORICAL_TG_LINEAGE.md) and must not be mixed with active configs or evaluation.
 
-## PROJECT
-Deep Learning models applied to materials informatics often learn fragile syntactic shortcuts rather than true physicochemical representations. This project implements a unified adversarial framework that generates chemically valid perturbations to sequence representations, mathematically measures model vulnerability, and subsequently immunizes the network via targeted adversarial training.
+---
 
-## DATASET
+## ACTIVE PROJECT SPECIFICATION
+
+### DATASET
 - **Source**: polyVERSE (Ramprasad Group)
-- **Target Property**: Bandgap (eV)
-- **Usable Records**: 4,209 experimentally verified / high-fidelity DFT properties.
-- **Split Configuration**: Deterministic random 70/15/15 split (Seed: `20260815`), materialized as `data/processed/splits.json`.
-- *Note*: The `PI1M.csv` database acts as an unlabelled structure pool and is excluded via `.gitignore` to prevent repository bloat.
+- **Target Property**: Bandgap ($E_g$ in eV)
+- **Usable Records**: 4,209 high-fidelity DFT polymer property records.
+- **Split Configuration**: Deterministic random 70/15/15 split (Seed: `20260815`), materialized in `data/processed/splits.json`:
+  - **Train**: 2,946 records
+  - **Validation**: 631 records
+  - **Test (Sealed)**: 632 records (`test_sealed: true`)
 
-## BASELINE
-- **Architecture**: Multi-head Transformer Regressor.
-- **Input**: Tokenized PSMILES strings containing `[*]` attachment points.
-- **Output**: Continuous prediction of Bandgap (eV).
-- **Clean Performance**: Test MAE = `0.4619 eV`.
+### BASELINE MODEL
+- **Architecture**: Multi-head Transformer Encoder Regressor.
+- **Input**: Tokenized PSMILES strings containing `[*]` polymer attachment points.
+- **Output**: Continuous bandgap prediction in eV.
+- **Verified Clean Performance**: Test MAE = **0.4619 eV**, Test RMSE = **0.6235 eV**, Test $R^2$ = **0.8019** (Checkpoint: `results/models/transformer_regressor/`).
 
-## ATTACKS
-The framework utilizes sequence-level combinatorial generators constrained by RDKit valence parsing. An attack is defined as *successful* if it represents a chemically valid and plausible structure that causes absolute prediction drift exceeding the baseline Test MAE (`>0.4619 eV`).
-- **Phase 1 Evaluation**: Over 11,800 valid candidate sequences were generated across the Validation Split. The baseline model was successfully manipulated by 4,232 sequences, exhibiting mean absolute prediction drifts of `~0.48 eV` and a maximum prediction drift of `5.47 eV`.
+---
 
-## DEFENSE (Adversarial Training)
-To immunize the model without corrupting physical validity, an explicit **Label-Preservation Policy** was enforced. Only `Substitution` and `Rearrangement` attacks with a strict `attack_budget=1` were assumed to preserve the macroscopic Bandgap.
-- `11,300` valid, label-preserving adversarial variants generated on the Train Split were appended to the baseline training pool. 
-- The Defended Transformer was retrained from scratch, utilizing the frozen clean Target Scaler to guarantee mathematical comparability.
+## ATTACK SEMANTICS & CLASSIFICATION
 
-## RESULTS
-The adversarially trained model reduced substitution attack success from **20.13%** to **7.53%** while clean Test MAE remained approximately unchanged (0.4619 → 0.4601 eV), but robustness did not transfer to the unseen insertion/deletion attacks evaluated.
+Adversarial sequence modifications are evaluated under strict scientific semantic boundaries:
 
-| Evaluation Metric | Baseline Model | Defended Model |
-| :--- | :--- | :--- |
-| **Clean MAE** | 0.4619 eV | 0.4601 eV |
-| **Substitution Success** | 20.13% | 7.53% |
-| **Rearrangement Success** | 9.29% | 2.83% |
-| **Insertion Success** | 32.61% | 32.46% |
-| **Deletion Success** | 32.13% | 30.04% |
+1. **Representation-Preserving Control**:
+   - **RDKit SMILES Randomization**: Generates non-canonical SMILES strings for the *identical* molecular graph. This represents the only provably label-preserving control.
+2. **Chemistry-Changing Stress Tests**:
+   - **Substitution, Insertion, Deletion, Rearrangement, Metropolis-Style Stochastic Search**: Edit atomic tokens or sequence structures. These operations alter chemical identity or stoichiometry and are **NOT** label-preserving. For defense training, their label basis is explicitly clean-model teacher predictions or excluded from supervised target inheritance.
 
-*(For the original result table, view `docs/FINAL_RESULTS.md`; for its forensic qualification, view `docs/CURRENT_STATE_AUDIT.md`.)*
+An attack candidate is defined as *successful* if it passes chemical validity parsing and induces absolute prediction drift exceeding the baseline test MAE ($>0.4619\text{ eV}$).
 
-## LIMITATIONS
-- **Narrow Defense Generalization**: The defense did not demonstrate generalized robustness across the unseen attack families evaluated (Insertions/Deletions).
-- **Heuristic Plausibility**: Representation validity (via RDKit parsing) is used as a proxy for structural plausibility. It is NOT proof of physical synthesis feasibility or true experimental behavior. 
+---
+
+## VERIFIED PAIRED BENCHMARK RESULTS
+
+Trained baseline and defended models were evaluated on an identical, frozen bank of 13,863 attack candidates across the 632-sample sealed test set (`results/phase2_paired_benchmark/summary.json`):
+
+| Evaluation Row | Attack Category | Total Candidates | Valid Candidates | Baseline Success Rate | Defended Success Rate | Paired Delta |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: |
+| **SMILES Randomization** | Representation Control | 3,157 | 3,082 | 47.39% | 47.48% | +0.10% |
+| **Substitution ($b=1$)** | Chemistry Stress Test | 3,081 | 1,604 | 9.51% | 3.12% | -6.39% |
+| **Rearrangement ($b=1$)** | Chemistry Stress Test | 1,363 | 773 | 5.36% | 1.69% | -3.67% |
+| **Insertion ($b=1$)** | Chemistry Stress Test | 3,160 | 1,387 | 14.11% | 14.15% | +0.03% |
+| **Deletion ($b=1$)** | Chemistry Stress Test | 3,102 | 1,544 | 15.47% | 14.41% | -1.06% |
+
+### Key Findings
+- **Targeted Defense Reduction**: Adversarial training on substitution/rearrangement stress tests reduced substitution success rate from 9.51% to 3.12% and rearrangement success rate from 5.36% to 1.69%.
+- **Zero Transfer to Unseen Stress Tests**: The defense provided zero protection against insertion (14.11% $\rightarrow$ 14.15%) or deletion (15.47% $\rightarrow$ 14.41%) stress tests.
+- **Invariance Unsolved**: SMILES randomization drift remained high (~47.4% success rate across both models), confirming that string representation sensitivity is unmitigated by localized token defense.
+
+---
+
+## SCIENTIFIC LIMITATIONS
+- **Defense Generalization**: Localized token defense does not generalize to unseen mutation types or representation-level SMILES shifts.
+- **Validity vs Physicality**: RDKit validity parsing verifies representation syntax, not thermodynamic stability or synthesis feasibility.
+- **Label Inheritance**: Chemistry-altering edits must be treated as stress tests; they do not preserve true experimental bandgap labels.
+
+---
 
 ## REPOSITORY STRUCTURE
-- `configs/`: YAML configurations dictating datasets, architectures, and hyperparameters.
-- `data/`: Raw downloaded CSVs, interim processed maps, and final deterministic splits.
-- `docs/`: Comprehensive scientific documentation, Q&A, and pipeline logs.
-- `results/`: Trained model binaries, scalers, and raw JSONL adversarial evaluation records.
-- `scripts/`: Top-level executable scripts (`audit_dataset.py`, `train_baseline.py`, `eval_phase2_full.py`).
-- `src/materials_adv/`: The core Python source code.
-- `tests/`: 200+ PyTest integrity assertions validating string safety, deterministic splitting, and schema structures.
+- `configs/`: Active YAML configurations (`dataset.yaml`, `model.yaml`, `tokenizer.yaml`, `attack.yaml`).
+- `data/`: Raw CSV inputs, preprocessed outputs, and deterministic split definitions (`splits.json`).
+- `docs/`: Canonical project state (`CANONICAL_PROJECT_STATE.md`), historical lineage documentation (`HISTORICAL_TG_LINEAGE.md`), and scientific audits.
+- `results/`: Verified model checkpoints, scalers, and reproducible evaluation summary artifacts.
+- `scripts/`: Executable pipeline scripts (`run_phase2_paired_benchmark.py`, `run_attack_efficiency.py`, `run_closed_loop.py`, `run_representation_attribution.py`).
+- `src/materials_adv/`: Core Python library modules.
+- `tests/`: 250 unit tests asserting model integrity, attack safety, and deterministic pipeline behavior.
 
-## HOW TO REPRODUCE
-1. Environment Setup:
-```bash
-python3 -m venv .venv
-.venv/bin/pip install -e ".[chem,dev]"
-.venv/bin/pip install torch --index-url https://download.pytorch.org/whl/cpu
-```
-2. Data Preprocessing:
-```bash
-PYTHONPATH=src .venv/bin/python src/materials_adv/data/preprocess.py
-PYTHONPATH=src .venv/bin/python src/materials_adv/data/split_dataset.py
-```
-3. Read `docs/REPRODUCIBILITY.md` for exact test configuration seeds. All final Phase 2 metrics can be extracted automatically via `scripts/eval_phase2_full.py`.
+---
+
+## HOW TO RUN ACTIVE PIPELINE
+1. **Environment Setup**:
+   ```bash
+   python3 -m venv .venv
+   .venv/bin/pip install -e ".[chem,dev]"
+   ```
+2. **Run Test Suite**:
+   ```bash
+   PYTHONPATH=src .venv/bin/python -m pytest -p no:launch_testing
+   ```
+3. **Canonical Paired Evaluation**:
+   ```bash
+   PYTHONPATH=src .venv/bin/python scripts/run_phase2_paired_benchmark.py
+   ```

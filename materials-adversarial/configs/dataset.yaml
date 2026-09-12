@@ -1,7 +1,7 @@
-# Dataset configuration
+# Active Dataset Configuration
 #
-# STATUS: resolved for the active polyVERSE bandgap lineage. Historical
-# OpenPoly/Tg experiments use different schemas and must not reuse this config.
+# Dataset: polyVERSE (Ramprasad Group)
+# Target: Polymer Bandgap (eV)
 
 name: polyverse_bandgap
 raw_dir: data/raw
@@ -14,15 +14,16 @@ target_column: "bandgap_chain"
 target_units: "eV"
 n_usable_records: 4209
 
-# Duplicate handling. Mean / keep-first / drop are NOT equivalent choices, and
-# one likely cause of conflict is a Kelvin/Celsius mix -- averaging those would
-# manufacture a value wrong in both units.
+# Duplicate handling & conflict resolution
 duplicate_policy: drop_all          # "keep_first" | "mean" | "drop_all"
-conflict_tolerance: 1.0         # target units; conflicts above this need a decision
+conflict_tolerance: 1.0             # target units (eV)
 
-# --- Splitting ---
+# --- Splitting Specifications ---
 split:
-  strategy: random              # deterministic shuffle used by split_dataset.py
+  strategy: random                  # deterministic shuffle used by split_dataset.py
+  train: 2946
+  validation: 631
+  test: 632
   train_frac: 0.70
   val_frac: 0.15
   test_frac: 0.15

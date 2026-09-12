@@ -1,4 +1,4 @@
-"""Probabilistic MCMC Attack Generator (Phase 3)."""
+"""Probabilistic Stochastic Search Attack Generator (Phase 3)."""
 
 from __future__ import annotations
 
@@ -19,12 +19,17 @@ from .deletion import DeletionAttack
 
 @register_attack("probabilistic_mcmc")
 class ProbabilisticMCMCAttack(BaseAttack):
-    """MCMC-based attack generator that uses deterministic attacks as proposals.
-    
-    Proposes local modifications, scores them via chemical heuristics and
-    target model prediction drift, and accepts/rejects via Metropolis-Hastings.
+    """Model-guided stochastic search generator (Metropolis-style search).
+
+    Proposes local modifications via deterministic atomic attacks, scores them via
+    chemical validity heuristics and target model prediction drift, and accepts/rejects
+    candidates using a Metropolis acceptance rule.
+
+    NOTE ON TERMINOLOGY: This implementation is a Metropolis-style model-guided stochastic
+    search. It is not formal Metropolis-Hastings MCMC because it does not compute reverse
+    proposal ratio corrections q(x|y)/q(y|x) or track stationary distribution convergence.
     """
-    
+
     def __init__(
         self,
         rng: np.random.Generator,
