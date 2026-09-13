@@ -1,0 +1,6002 @@
+[
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_3655",
+    "transfer_drift": 0.26508665084838867,
+    "clean_prediction": 5.618370056152344,
+    "adv_prediction": 5.353283405303955,
+    "target_drift": 0.6331477165222168
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_2369",
+    "transfer_drift": 1.5326848030090332,
+    "clean_prediction": 4.699333190917969,
+    "adv_prediction": 3.1666483879089355,
+    "target_drift": 0.7287712097167969
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_1215",
+    "transfer_drift": 0.4036235809326172,
+    "clean_prediction": 3.6640098094940186,
+    "adv_prediction": 3.2603862285614014,
+    "target_drift": 1.1054532527923584
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_4015",
+    "transfer_drift": 1.2188081741333008,
+    "clean_prediction": 6.3384809494018555,
+    "adv_prediction": 5.119672775268555,
+    "target_drift": 1.128633975982666
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_517",
+    "transfer_drift": 0.5639462471008301,
+    "clean_prediction": 3.0094456672668457,
+    "adv_prediction": 3.573391914367676,
+    "target_drift": 0.9864022731781006
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_1159",
+    "transfer_drift": 0.06267428398132324,
+    "clean_prediction": 3.213019371032715,
+    "adv_prediction": 3.1503450870513916,
+    "target_drift": 0.7306258678436279
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_2493",
+    "transfer_drift": 1.9570121765136719,
+    "clean_prediction": 4.962664604187012,
+    "adv_prediction": 3.00565242767334,
+    "target_drift": 0.6783456802368164
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_2226",
+    "transfer_drift": 0.7228908538818359,
+    "clean_prediction": 4.244853973388672,
+    "adv_prediction": 3.521963119506836,
+    "target_drift": 1.6637754440307617
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_17",
+    "transfer_drift": 2.632758617401123,
+    "clean_prediction": 0.909358024597168,
+    "adv_prediction": 3.542116641998291,
+    "target_drift": 3.5236315727233887
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_956",
+    "transfer_drift": 1.0698022842407227,
+    "clean_prediction": 3.8251614570617676,
+    "adv_prediction": 2.755359172821045,
+    "target_drift": 0.8267245292663574
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_898",
+    "transfer_drift": 0.4729018211364746,
+    "clean_prediction": 3.067509651184082,
+    "adv_prediction": 2.5946078300476074,
+    "target_drift": 1.0153422355651855
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_1667",
+    "transfer_drift": 0.2817084789276123,
+    "clean_prediction": 2.9530396461486816,
+    "adv_prediction": 2.6713311672210693,
+    "target_drift": 1.584895133972168
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_3362",
+    "transfer_drift": 0.3708209991455078,
+    "clean_prediction": 6.028063774108887,
+    "adv_prediction": 5.657242774963379,
+    "target_drift": 0.6704144477844238
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_3703",
+    "transfer_drift": 1.753453254699707,
+    "clean_prediction": 7.608079433441162,
+    "adv_prediction": 5.854626178741455,
+    "target_drift": 1.7056069374084473
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_793",
+    "transfer_drift": 0.029815673828125,
+    "clean_prediction": 2.798370361328125,
+    "adv_prediction": 2.7685546875,
+    "target_drift": 0.22283196449279785
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_3189",
+    "transfer_drift": 0.38311004638671875,
+    "clean_prediction": 5.657440662384033,
+    "adv_prediction": 5.2743306159973145,
+    "target_drift": 0.6629328727722168
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_2734",
+    "transfer_drift": 1.607499599456787,
+    "clean_prediction": 5.057806015014648,
+    "adv_prediction": 3.4503064155578613,
+    "target_drift": 2.461491584777832
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_1549",
+    "transfer_drift": 1.0073585510253906,
+    "clean_prediction": 4.038893222808838,
+    "adv_prediction": 5.0462517738342285,
+    "target_drift": 3.273710012435913
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_3746",
+    "transfer_drift": 0.41400909423828125,
+    "clean_prediction": 6.160242080688477,
+    "adv_prediction": 5.746232986450195,
+    "target_drift": 1.1754870414733887
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_2736",
+    "transfer_drift": 0.07403326034545898,
+    "clean_prediction": 5.100161552429199,
+    "adv_prediction": 5.174194812774658,
+    "target_drift": 0.5190300941467285
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_1005",
+    "transfer_drift": 0.22348451614379883,
+    "clean_prediction": 2.761148452758789,
+    "adv_prediction": 2.984632968902588,
+    "target_drift": 0.9309978485107422
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_367",
+    "transfer_drift": 1.5579071044921875,
+    "clean_prediction": 2.2228968143463135,
+    "adv_prediction": 3.780803918838501,
+    "target_drift": 1.9158861637115479
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_2223",
+    "transfer_drift": 1.6854438781738281,
+    "clean_prediction": 4.0396318435668945,
+    "adv_prediction": 2.3541879653930664,
+    "target_drift": 1.5108237266540527
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_3386",
+    "transfer_drift": 0.6259193420410156,
+    "clean_prediction": 6.377536773681641,
+    "adv_prediction": 5.751617431640625,
+    "target_drift": 1.347743034362793
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_1160",
+    "transfer_drift": 0.8070118427276611,
+    "clean_prediction": 3.9273838996887207,
+    "adv_prediction": 3.1203720569610596,
+    "target_drift": 1.3397407531738281
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_1072",
+    "transfer_drift": 0.3720993995666504,
+    "clean_prediction": 3.6969833374023438,
+    "adv_prediction": 4.069082736968994,
+    "target_drift": 1.1312944889068604
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_675",
+    "transfer_drift": 1.253645896911621,
+    "clean_prediction": 3.671692371368408,
+    "adv_prediction": 2.418046474456787,
+    "target_drift": 1.8485503196716309
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_754",
+    "transfer_drift": 0.4658670425415039,
+    "clean_prediction": 3.1334285736083984,
+    "adv_prediction": 2.6675615310668945,
+    "target_drift": 0.48236989974975586
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_2459",
+    "transfer_drift": 1.7750482559204102,
+    "clean_prediction": 4.349247932434082,
+    "adv_prediction": 6.124296188354492,
+    "target_drift": 1.039024829864502
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_155",
+    "transfer_drift": 1.3630690574645996,
+    "clean_prediction": 2.29528546333313,
+    "adv_prediction": 3.6583545207977295,
+    "target_drift": 1.4953339099884033
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_2461",
+    "transfer_drift": 1.2786288261413574,
+    "clean_prediction": 4.287570953369141,
+    "adv_prediction": 3.008942127227783,
+    "target_drift": 2.4917051792144775
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_2368",
+    "transfer_drift": 0.13068246841430664,
+    "clean_prediction": 4.469667434692383,
+    "adv_prediction": 4.338984966278076,
+    "target_drift": 0.31954336166381836
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_512",
+    "transfer_drift": 0.10624027252197266,
+    "clean_prediction": 2.9014358520507812,
+    "adv_prediction": 2.7951955795288086,
+    "target_drift": 0.4940645694732666
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_1419",
+    "transfer_drift": 1.1718230247497559,
+    "clean_prediction": 3.6858925819396973,
+    "adv_prediction": 4.857715606689453,
+    "target_drift": 0.9975557327270508
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_2967",
+    "transfer_drift": 0.8366422653198242,
+    "clean_prediction": 5.848812103271484,
+    "adv_prediction": 5.01216983795166,
+    "target_drift": 0.8863186836242676
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_2076",
+    "transfer_drift": 0.6434578895568848,
+    "clean_prediction": 4.490766525268555,
+    "adv_prediction": 3.84730863571167,
+    "target_drift": 2.2895259857177734
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_1298",
+    "transfer_drift": 0.4517946243286133,
+    "clean_prediction": 3.553678512573242,
+    "adv_prediction": 3.101883888244629,
+    "target_drift": 0.845088005065918
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_1468",
+    "transfer_drift": 0.52541184425354,
+    "clean_prediction": 3.618312120437622,
+    "adv_prediction": 3.092900276184082,
+    "target_drift": 1.561072587966919
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_2730",
+    "transfer_drift": 0.031035184860229492,
+    "clean_prediction": 3.700308084487915,
+    "adv_prediction": 3.7313432693481445,
+    "target_drift": 0.34172582626342773
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_1609",
+    "transfer_drift": 0.25962400436401367,
+    "clean_prediction": 5.62885856628418,
+    "adv_prediction": 5.369234561920166,
+    "target_drift": 0.8455972671508789
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_1809",
+    "transfer_drift": 0.37024736404418945,
+    "clean_prediction": 3.321260452270508,
+    "adv_prediction": 2.9510130882263184,
+    "target_drift": 0.9988312721252441
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_3627",
+    "transfer_drift": 1.3959565162658691,
+    "clean_prediction": 6.1944122314453125,
+    "adv_prediction": 4.798455715179443,
+    "target_drift": 1.3088326454162598
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_660",
+    "transfer_drift": 0.783501148223877,
+    "clean_prediction": 3.358822822570801,
+    "adv_prediction": 2.575321674346924,
+    "target_drift": 2.2220094203948975
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_1826",
+    "transfer_drift": 0.4569880962371826,
+    "clean_prediction": 4.423882007598877,
+    "adv_prediction": 3.9668939113616943,
+    "target_drift": 0.8392295837402344
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_2932",
+    "transfer_drift": 1.6060242652893066,
+    "clean_prediction": 4.679160118103027,
+    "adv_prediction": 3.0731358528137207,
+    "target_drift": 2.1590747833251953
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_442",
+    "transfer_drift": 0.08028769493103027,
+    "clean_prediction": 2.886606216430664,
+    "adv_prediction": 2.806318521499634,
+    "target_drift": 0.6030316352844238
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_449",
+    "transfer_drift": 0.4644947052001953,
+    "clean_prediction": 2.934325695037842,
+    "adv_prediction": 3.398820400238037,
+    "target_drift": 0.769925594329834
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_2437",
+    "transfer_drift": 0.8786664009094238,
+    "clean_prediction": 4.819726943969727,
+    "adv_prediction": 3.9410605430603027,
+    "target_drift": 1.8300132751464844
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_2772",
+    "transfer_drift": 0.5750808715820312,
+    "clean_prediction": 5.439387798309326,
+    "adv_prediction": 4.864306926727295,
+    "target_drift": 1.166825771331787
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_3030",
+    "transfer_drift": 1.0078485012054443,
+    "clean_prediction": 4.80488920211792,
+    "adv_prediction": 3.7970407009124756,
+    "target_drift": 0.8727903366088867
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_3779",
+    "transfer_drift": 0.8659563064575195,
+    "clean_prediction": 6.382248878479004,
+    "adv_prediction": 5.516292572021484,
+    "target_drift": 1.1499409675598145
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_2836",
+    "transfer_drift": 0.5034751892089844,
+    "clean_prediction": 5.852705955505371,
+    "adv_prediction": 5.349230766296387,
+    "target_drift": 0.7615165710449219
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_2367",
+    "transfer_drift": 0.6764819622039795,
+    "clean_prediction": 3.8865854740142822,
+    "adv_prediction": 3.2101035118103027,
+    "target_drift": 1.716935157775879
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_1211",
+    "transfer_drift": 0.3248476982116699,
+    "clean_prediction": 3.5591883659362793,
+    "adv_prediction": 3.2343406677246094,
+    "target_drift": 2.208420753479004
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_3019",
+    "transfer_drift": 0.37501001358032227,
+    "clean_prediction": 5.761367321014404,
+    "adv_prediction": 5.386357307434082,
+    "target_drift": 0.6272587776184082
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_3129",
+    "transfer_drift": 0.4821305274963379,
+    "clean_prediction": 5.994880199432373,
+    "adv_prediction": 5.512749671936035,
+    "target_drift": 1.1890311241149902
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_2068",
+    "transfer_drift": 1.083631992340088,
+    "clean_prediction": 4.100346565246582,
+    "adv_prediction": 3.016714572906494,
+    "target_drift": 1.4951567649841309
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_782",
+    "transfer_drift": 0.11342525482177734,
+    "clean_prediction": 3.148240566253662,
+    "adv_prediction": 3.0348153114318848,
+    "target_drift": 0.6840753555297852
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_45",
+    "transfer_drift": 0.10576510429382324,
+    "clean_prediction": 1.91953444480896,
+    "adv_prediction": 1.8137693405151367,
+    "target_drift": 0.6206536293029785
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_3063",
+    "transfer_drift": 1.298377513885498,
+    "clean_prediction": 6.063239097595215,
+    "adv_prediction": 7.361616611480713,
+    "target_drift": 1.1043891906738281
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_903",
+    "transfer_drift": 0.9784178733825684,
+    "clean_prediction": 4.091456413269043,
+    "adv_prediction": 3.1130385398864746,
+    "target_drift": 0.7673678398132324
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_3763",
+    "transfer_drift": 1.4497613906860352,
+    "clean_prediction": 5.015841960906982,
+    "adv_prediction": 3.5660805702209473,
+    "target_drift": 2.0192179679870605
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_990",
+    "transfer_drift": 0.0026857852935791016,
+    "clean_prediction": 3.3584396839141846,
+    "adv_prediction": 3.3557538986206055,
+    "target_drift": 1.687851905822754
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_1689",
+    "transfer_drift": 0.028906822204589844,
+    "clean_prediction": 4.2778167724609375,
+    "adv_prediction": 4.248909950256348,
+    "target_drift": 0.19576072692871094
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_2093",
+    "transfer_drift": 0.06970071792602539,
+    "clean_prediction": 5.741462707519531,
+    "adv_prediction": 5.671761989593506,
+    "target_drift": 0.897301197052002
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_3799",
+    "transfer_drift": 0.11404895782470703,
+    "clean_prediction": 6.124416351318359,
+    "adv_prediction": 6.010367393493652,
+    "target_drift": 1.1011090278625488
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_930",
+    "transfer_drift": 0.7309956550598145,
+    "clean_prediction": 4.402187347412109,
+    "adv_prediction": 3.671191692352295,
+    "target_drift": 1.590409278869629
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_3620",
+    "transfer_drift": 0.94427490234375,
+    "clean_prediction": 5.85349702835083,
+    "adv_prediction": 4.90922212600708,
+    "target_drift": 1.638535976409912
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_2098",
+    "transfer_drift": 0.11477971076965332,
+    "clean_prediction": 3.620462656021118,
+    "adv_prediction": 3.505682945251465,
+    "target_drift": 0.2272930145263672
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_1493",
+    "transfer_drift": 0.18754911422729492,
+    "clean_prediction": 3.8819007873535156,
+    "adv_prediction": 4.0694499015808105,
+    "target_drift": 0.2140028476715088
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_1294",
+    "transfer_drift": 0.13528966903686523,
+    "clean_prediction": 4.3173909187316895,
+    "adv_prediction": 4.452680587768555,
+    "target_drift": 0.5936570167541504
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_2531",
+    "transfer_drift": 1.7408580780029297,
+    "clean_prediction": 4.32158899307251,
+    "adv_prediction": 2.58073091506958,
+    "target_drift": 1.4040453433990479
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_514",
+    "transfer_drift": 0.3219609260559082,
+    "clean_prediction": 2.8398571014404297,
+    "adv_prediction": 2.5178961753845215,
+    "target_drift": 0.9305727481842041
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_244",
+    "transfer_drift": 0.7228913307189941,
+    "clean_prediction": 3.579010486602783,
+    "adv_prediction": 4.301901817321777,
+    "target_drift": 1.5426135063171387
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_466",
+    "transfer_drift": 0.403472900390625,
+    "clean_prediction": 2.799861431121826,
+    "adv_prediction": 3.203334331512451,
+    "target_drift": 1.9077980518341064
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_1171",
+    "transfer_drift": 0.44784069061279297,
+    "clean_prediction": 3.2218070030212402,
+    "adv_prediction": 2.7739663124084473,
+    "target_drift": 1.0635874271392822
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_3842",
+    "transfer_drift": 1.0787968635559082,
+    "clean_prediction": 6.047811985015869,
+    "adv_prediction": 4.969015121459961,
+    "target_drift": 0.8810534477233887
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_3552",
+    "transfer_drift": 1.0035881996154785,
+    "clean_prediction": 6.059392929077148,
+    "adv_prediction": 5.05580472946167,
+    "target_drift": 1.1986351013183594
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_1117",
+    "transfer_drift": 0.0727696418762207,
+    "clean_prediction": 2.29172682762146,
+    "adv_prediction": 2.2189571857452393,
+    "target_drift": 0.2629859447479248
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_3629",
+    "transfer_drift": 0.7709379196166992,
+    "clean_prediction": 6.209312438964844,
+    "adv_prediction": 5.4383745193481445,
+    "target_drift": 1.1669535636901855
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_2356",
+    "transfer_drift": 0.7713980674743652,
+    "clean_prediction": 4.823029041290283,
+    "adv_prediction": 4.051630973815918,
+    "target_drift": 1.2538933753967285
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_1461",
+    "transfer_drift": 0.4045133590698242,
+    "clean_prediction": 3.5433077812194824,
+    "adv_prediction": 3.138794422149658,
+    "target_drift": 0.8219404220581055
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_483",
+    "transfer_drift": 0.5108187198638916,
+    "clean_prediction": 2.9119606018066406,
+    "adv_prediction": 3.4227793216705322,
+    "target_drift": 0.32717204093933105
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_1700",
+    "transfer_drift": 0.5205936431884766,
+    "clean_prediction": 4.594876289367676,
+    "adv_prediction": 4.074282646179199,
+    "target_drift": 1.3227202892303467
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_3290",
+    "transfer_drift": 0.7855782508850098,
+    "clean_prediction": 5.814445972442627,
+    "adv_prediction": 5.028867721557617,
+    "target_drift": 1.2184576988220215
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_2156",
+    "transfer_drift": 0.3419618606567383,
+    "clean_prediction": 3.2834696769714355,
+    "adv_prediction": 3.625431537628174,
+    "target_drift": 2.790864944458008
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_3385",
+    "transfer_drift": 0.7439508438110352,
+    "clean_prediction": 5.904730796813965,
+    "adv_prediction": 5.16077995300293,
+    "target_drift": 1.169081687927246
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_967",
+    "transfer_drift": 0.5449304580688477,
+    "clean_prediction": 3.2172393798828125,
+    "adv_prediction": 2.672308921813965,
+    "target_drift": 1.1733853816986084
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_3072",
+    "transfer_drift": 0.4144415855407715,
+    "clean_prediction": 6.40172815322876,
+    "adv_prediction": 5.987286567687988,
+    "target_drift": 1.2104525566101074
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_3316",
+    "transfer_drift": 0.6182155609130859,
+    "clean_prediction": 5.840282917022705,
+    "adv_prediction": 5.222067356109619,
+    "target_drift": 0.7624106407165527
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_259",
+    "transfer_drift": 0.5689911842346191,
+    "clean_prediction": 3.018906593322754,
+    "adv_prediction": 2.4499154090881348,
+    "target_drift": 1.240156888961792
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_231",
+    "transfer_drift": 0.2519216537475586,
+    "clean_prediction": 2.209737539291382,
+    "adv_prediction": 1.9578158855438232,
+    "target_drift": 1.2704389095306396
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_2052",
+    "transfer_drift": 0.6864814758300781,
+    "clean_prediction": 3.657536506652832,
+    "adv_prediction": 2.971055030822754,
+    "target_drift": 2.033156633377075
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_128",
+    "transfer_drift": 0.12357354164123535,
+    "clean_prediction": 2.214264392852783,
+    "adv_prediction": 2.3378379344940186,
+    "target_drift": 0.23564910888671875
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_2200",
+    "transfer_drift": 0.9083309173583984,
+    "clean_prediction": 4.021552562713623,
+    "adv_prediction": 3.1132216453552246,
+    "target_drift": 1.1388933658599854
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_32",
+    "transfer_drift": 1.5179002285003662,
+    "clean_prediction": 1.173520565032959,
+    "adv_prediction": 2.691420793533325,
+    "target_drift": 2.417356491088867
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_2124",
+    "transfer_drift": 0.43233728408813477,
+    "clean_prediction": 5.480757236480713,
+    "adv_prediction": 5.048419952392578,
+    "target_drift": 1.0266456604003906
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_1654",
+    "transfer_drift": 0.253192663192749,
+    "clean_prediction": 3.2606163024902344,
+    "adv_prediction": 3.0074236392974854,
+    "target_drift": 0.5888113975524902
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_189",
+    "transfer_drift": 0.5624823570251465,
+    "clean_prediction": 2.833040237426758,
+    "adv_prediction": 2.2705578804016113,
+    "target_drift": 0.9381096363067627
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "random",
+    "source_id": "poly_769",
+    "transfer_drift": 0.18893074989318848,
+    "clean_prediction": 3.1635968685150146,
+    "adv_prediction": 2.974666118621826,
+    "target_drift": 0.7065083980560303
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_3655",
+    "transfer_drift": 0.36229848861694336,
+    "clean_prediction": 5.950205326080322,
+    "adv_prediction": 5.587906837463379,
+    "target_drift": 0.8299360275268555
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_2369",
+    "transfer_drift": 0.7287712097167969,
+    "clean_prediction": 4.858950614929199,
+    "adv_prediction": 4.130179405212402,
+    "target_drift": 1.5326848030090332
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_1215",
+    "transfer_drift": 0.1546947956085205,
+    "clean_prediction": 3.171213150024414,
+    "adv_prediction": 3.0165183544158936,
+    "target_drift": 0.7808077335357666
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_4015",
+    "transfer_drift": 0.7069835662841797,
+    "clean_prediction": 6.407103538513184,
+    "adv_prediction": 5.700119972229004,
+    "target_drift": 1.1007184982299805
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_517",
+    "transfer_drift": 0.33475542068481445,
+    "clean_prediction": 2.866514205932617,
+    "adv_prediction": 3.2012696266174316,
+    "target_drift": 0.4989643096923828
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_1159",
+    "transfer_drift": 0.22911500930786133,
+    "clean_prediction": 3.3051934242248535,
+    "adv_prediction": 3.534308433532715,
+    "target_drift": 0.1653890609741211
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_2493",
+    "transfer_drift": 0.4629669189453125,
+    "clean_prediction": 4.619564056396484,
+    "adv_prediction": 4.156597137451172,
+    "target_drift": 2.224945068359375
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_2226",
+    "transfer_drift": 0.8825178146362305,
+    "clean_prediction": 4.907506465911865,
+    "adv_prediction": 4.024988651275635,
+    "target_drift": 1.06144380569458
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_17",
+    "transfer_drift": 2.7479004859924316,
+    "clean_prediction": 0.15965843200683594,
+    "adv_prediction": 2.9075589179992676,
+    "target_drift": 2.9465534687042236
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_956",
+    "transfer_drift": 1.4048078060150146,
+    "clean_prediction": 4.1455912590026855,
+    "adv_prediction": 2.740783452987671,
+    "target_drift": 1.1619458198547363
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_898",
+    "transfer_drift": 0.7293844223022461,
+    "clean_prediction": 2.423020124435425,
+    "adv_prediction": 1.6936357021331787,
+    "target_drift": 0.6012091636657715
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_1667",
+    "transfer_drift": 1.156324863433838,
+    "clean_prediction": 4.574668884277344,
+    "adv_prediction": 3.418344020843506,
+    "target_drift": 0.8759560585021973
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_3362",
+    "transfer_drift": 0.6068487167358398,
+    "clean_prediction": 5.875738620758057,
+    "adv_prediction": 5.268889904022217,
+    "target_drift": 0.6947665214538574
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_3703",
+    "transfer_drift": 1.1632747650146484,
+    "clean_prediction": 6.640470504760742,
+    "adv_prediction": 5.477195739746094,
+    "target_drift": 2.0321717262268066
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_793",
+    "transfer_drift": 0.12643146514892578,
+    "clean_prediction": 2.3436615467071533,
+    "adv_prediction": 2.470093011856079,
+    "target_drift": 0.20727920532226562
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_3189",
+    "transfer_drift": 0.5927715301513672,
+    "clean_prediction": 5.893825531005859,
+    "adv_prediction": 5.301054000854492,
+    "target_drift": 0.8784451484680176
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_2734",
+    "transfer_drift": 2.461491584777832,
+    "clean_prediction": 5.063512325286865,
+    "adv_prediction": 2.602020740509033,
+    "target_drift": 1.607499599456787
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_1549",
+    "transfer_drift": 0.4441056251525879,
+    "clean_prediction": 4.434220790863037,
+    "adv_prediction": 4.878326416015625,
+    "target_drift": 0.6461973190307617
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_3746",
+    "transfer_drift": 0.39321088790893555,
+    "clean_prediction": 5.413145542144775,
+    "adv_prediction": 5.01993465423584,
+    "target_drift": 0.5785403251647949
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_2736",
+    "transfer_drift": 0.6674537658691406,
+    "clean_prediction": 5.141987323760986,
+    "adv_prediction": 5.809441089630127,
+    "target_drift": 0.6163196563720703
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_1005",
+    "transfer_drift": 1.3688104152679443,
+    "clean_prediction": 2.3133983612060547,
+    "adv_prediction": 3.682208776473999,
+    "target_drift": 0.818540096282959
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_367",
+    "transfer_drift": 1.1638402938842773,
+    "clean_prediction": 0.9972608089447021,
+    "adv_prediction": 2.1611011028289795,
+    "target_drift": 2.0614430904388428
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_2223",
+    "transfer_drift": 0.6209018230438232,
+    "clean_prediction": 3.8399479389190674,
+    "adv_prediction": 4.460849761962891,
+    "target_drift": 0.6048622131347656
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_3386",
+    "transfer_drift": 1.199660301208496,
+    "clean_prediction": 6.427052021026611,
+    "adv_prediction": 5.227391719818115,
+    "target_drift": 1.1041278839111328
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_1160",
+    "transfer_drift": 0.7528457641601562,
+    "clean_prediction": 3.785604476928711,
+    "adv_prediction": 4.538450241088867,
+    "target_drift": 1.450294017791748
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_1072",
+    "transfer_drift": 0.7542724609375,
+    "clean_prediction": 3.4568161964416504,
+    "adv_prediction": 4.21108865737915,
+    "target_drift": 0.6259422302246094
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_675",
+    "transfer_drift": 1.8485503196716309,
+    "clean_prediction": 3.4384312629699707,
+    "adv_prediction": 1.5898809432983398,
+    "target_drift": 1.253645896911621
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_754",
+    "transfer_drift": 0.14718341827392578,
+    "clean_prediction": 3.395348072052002,
+    "adv_prediction": 3.5425314903259277,
+    "target_drift": 0.5325446128845215
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_2459",
+    "transfer_drift": 1.0239520072937012,
+    "clean_prediction": 4.994063854217529,
+    "adv_prediction": 6.0180158615112305,
+    "target_drift": 1.9758720397949219
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_155",
+    "transfer_drift": 0.19989585876464844,
+    "clean_prediction": 1.2124292850494385,
+    "adv_prediction": 1.01253342628479,
+    "target_drift": 0.8829753398895264
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_2461",
+    "transfer_drift": 1.0208759307861328,
+    "clean_prediction": 4.374101161956787,
+    "adv_prediction": 3.3532252311706543,
+    "target_drift": 1.382066249847412
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_2368",
+    "transfer_drift": 0.8357157707214355,
+    "clean_prediction": 4.476565361022949,
+    "adv_prediction": 3.6408495903015137,
+    "target_drift": 1.5454392433166504
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_512",
+    "transfer_drift": 0.01199960708618164,
+    "clean_prediction": 2.8269975185394287,
+    "adv_prediction": 2.814997911453247,
+    "target_drift": 0.332125186920166
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_1419",
+    "transfer_drift": 0.9975557327270508,
+    "clean_prediction": 3.757357120513916,
+    "adv_prediction": 4.754912853240967,
+    "target_drift": 1.1718230247497559
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_2967",
+    "transfer_drift": 0.22496938705444336,
+    "clean_prediction": 5.692811965942383,
+    "adv_prediction": 5.4678425788879395,
+    "target_drift": 0.9303641319274902
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_2076",
+    "transfer_drift": 1.3212199211120605,
+    "clean_prediction": 5.187360763549805,
+    "adv_prediction": 3.866140842437744,
+    "target_drift": 0.8347878456115723
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_1298",
+    "transfer_drift": 0.845088005065918,
+    "clean_prediction": 4.114040374755859,
+    "adv_prediction": 3.2689523696899414,
+    "target_drift": 0.4517946243286133
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_1468",
+    "transfer_drift": 1.3596947193145752,
+    "clean_prediction": 3.298025131225586,
+    "adv_prediction": 1.9383304119110107,
+    "target_drift": 1.019930124282837
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_2730",
+    "transfer_drift": 0.05998563766479492,
+    "clean_prediction": 4.520899772644043,
+    "adv_prediction": 4.580885410308838,
+    "target_drift": 0.5702531337738037
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_1609",
+    "transfer_drift": 0.12790822982788086,
+    "clean_prediction": 4.85829496383667,
+    "adv_prediction": 4.986203193664551,
+    "target_drift": 0.6665081977844238
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_1809",
+    "transfer_drift": 0.14741992950439453,
+    "clean_prediction": 4.450892448425293,
+    "adv_prediction": 4.303472518920898,
+    "target_drift": 1.070357084274292
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_3627",
+    "transfer_drift": 0.8669171333312988,
+    "clean_prediction": 5.966146945953369,
+    "adv_prediction": 5.09922981262207,
+    "target_drift": 1.414297103881836
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_660",
+    "transfer_drift": 2.2220094203948975,
+    "clean_prediction": 3.5938801765441895,
+    "adv_prediction": 1.371870756149292,
+    "target_drift": 0.783501148223877
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_1826",
+    "transfer_drift": 0.1879277229309082,
+    "clean_prediction": 4.768972873687744,
+    "adv_prediction": 4.581045150756836,
+    "target_drift": 1.0560076236724854
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_2932",
+    "transfer_drift": 1.1401948928833008,
+    "clean_prediction": 4.4318623542785645,
+    "adv_prediction": 3.2916674613952637,
+    "target_drift": 2.0819382667541504
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_442",
+    "transfer_drift": 0.3448302745819092,
+    "clean_prediction": 2.88210129737854,
+    "adv_prediction": 3.226931571960449,
+    "target_drift": 0.9119999408721924
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_449",
+    "transfer_drift": 0.769925594329834,
+    "clean_prediction": 2.1449244022369385,
+    "adv_prediction": 2.9148499965667725,
+    "target_drift": 0.4644947052001953
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_2437",
+    "transfer_drift": 0.45999860763549805,
+    "clean_prediction": 4.692460060119629,
+    "adv_prediction": 4.232461452484131,
+    "target_drift": 0.25247812271118164
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_2772",
+    "transfer_drift": 1.051004409790039,
+    "clean_prediction": 5.358765125274658,
+    "adv_prediction": 4.307760715484619,
+    "target_drift": 1.005793571472168
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_3030",
+    "transfer_drift": 0.6752300262451172,
+    "clean_prediction": 4.9421281814575195,
+    "adv_prediction": 4.266898155212402,
+    "target_drift": 1.344794750213623
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_3779",
+    "transfer_drift": 0.7423877716064453,
+    "clean_prediction": 6.581609725952148,
+    "adv_prediction": 5.839221954345703,
+    "target_drift": 1.0651607513427734
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_2836",
+    "transfer_drift": 0.42609643936157227,
+    "clean_prediction": 5.636433124542236,
+    "adv_prediction": 5.210336685180664,
+    "target_drift": 0.8137202262878418
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_2367",
+    "transfer_drift": 1.2772676944732666,
+    "clean_prediction": 4.54248571395874,
+    "adv_prediction": 3.2652180194854736,
+    "target_drift": 1.0484960079193115
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_1211",
+    "transfer_drift": 1.3298649787902832,
+    "clean_prediction": 3.6390380859375,
+    "adv_prediction": 2.309173107147217,
+    "target_drift": 0.4657716751098633
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_3019",
+    "transfer_drift": 0.5694136619567871,
+    "clean_prediction": 5.474843502044678,
+    "adv_prediction": 4.905429840087891,
+    "target_drift": 1.0188875198364258
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_3129",
+    "transfer_drift": 0.9988641738891602,
+    "clean_prediction": 6.312241554260254,
+    "adv_prediction": 5.313377380371094,
+    "target_drift": 1.3547296524047852
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_2068",
+    "transfer_drift": 0.4641847610473633,
+    "clean_prediction": 4.925357341766357,
+    "adv_prediction": 4.461172580718994,
+    "target_drift": 0.8600702285766602
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_782",
+    "transfer_drift": 0.18918132781982422,
+    "clean_prediction": 3.496295928955078,
+    "adv_prediction": 3.307114601135254,
+    "target_drift": 0.23358488082885742
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_45",
+    "transfer_drift": 0.05242443084716797,
+    "clean_prediction": 1.7654342651367188,
+    "adv_prediction": 1.7130098342895508,
+    "target_drift": 1.0315637588500977
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_3063",
+    "transfer_drift": 1.1043891906738281,
+    "clean_prediction": 6.062707424163818,
+    "adv_prediction": 7.1670966148376465,
+    "target_drift": 1.298377513885498
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_903",
+    "transfer_drift": 0.25536060333251953,
+    "clean_prediction": 4.152870178222656,
+    "adv_prediction": 3.8975095748901367,
+    "target_drift": 0.6046040058135986
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_3763",
+    "transfer_drift": 0.3807830810546875,
+    "clean_prediction": 5.800574779510498,
+    "adv_prediction": 5.4197916984558105,
+    "target_drift": 1.6764447689056396
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_990",
+    "transfer_drift": 1.2848985195159912,
+    "clean_prediction": 4.0600433349609375,
+    "adv_prediction": 2.7751448154449463,
+    "target_drift": 0.3455507755279541
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_1689",
+    "transfer_drift": 0.0812215805053711,
+    "clean_prediction": 4.344869613647461,
+    "adv_prediction": 4.26364803314209,
+    "target_drift": 0.2503800392150879
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_2093",
+    "transfer_drift": 0.660459041595459,
+    "clean_prediction": 5.630678653717041,
+    "adv_prediction": 4.970219612121582,
+    "target_drift": 0.5100741386413574
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_3799",
+    "transfer_drift": 0.7161288261413574,
+    "clean_prediction": 5.990975379943848,
+    "adv_prediction": 5.27484655380249,
+    "target_drift": 0.5559988021850586
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_930",
+    "transfer_drift": 0.08952808380126953,
+    "clean_prediction": 4.159791469573975,
+    "adv_prediction": 4.070263385772705,
+    "target_drift": 0.5501041412353516
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_3620",
+    "transfer_drift": 1.1686997413635254,
+    "clean_prediction": 6.218690395355225,
+    "adv_prediction": 5.049990653991699,
+    "target_drift": 1.5884904861450195
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_2098",
+    "transfer_drift": 0.07140541076660156,
+    "clean_prediction": 3.9293832778930664,
+    "adv_prediction": 3.857977867126465,
+    "target_drift": 0.2698698043823242
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_1493",
+    "transfer_drift": 0.10572528839111328,
+    "clean_prediction": 4.134727954864502,
+    "adv_prediction": 4.029002666473389,
+    "target_drift": 0.24250078201293945
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_1294",
+    "transfer_drift": 0.0626211166381836,
+    "clean_prediction": 5.058113098144531,
+    "adv_prediction": 5.120734214782715,
+    "target_drift": 0.4064946174621582
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_2531",
+    "transfer_drift": 1.4040453433990479,
+    "clean_prediction": 3.65643048286438,
+    "adv_prediction": 2.252385139465332,
+    "target_drift": 1.7408580780029297
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_514",
+    "transfer_drift": 0.035047292709350586,
+    "clean_prediction": 2.948184013366699,
+    "adv_prediction": 2.98323130607605,
+    "target_drift": 0.31557559967041016
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_244",
+    "transfer_drift": 0.5577940940856934,
+    "clean_prediction": 3.598936080932617,
+    "adv_prediction": 4.1567301750183105,
+    "target_drift": 1.7563691139221191
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_466",
+    "transfer_drift": 0.1640934944152832,
+    "clean_prediction": 1.3134832382202148,
+    "adv_prediction": 1.477576732635498,
+    "target_drift": 0.6477856636047363
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_1171",
+    "transfer_drift": 1.5341811180114746,
+    "clean_prediction": 3.38632869720459,
+    "adv_prediction": 1.8521475791931152,
+    "target_drift": 0.5409440994262695
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_3842",
+    "transfer_drift": 0.7899417877197266,
+    "clean_prediction": 6.226391792297363,
+    "adv_prediction": 5.436450004577637,
+    "target_drift": 1.2236480712890625
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_3552",
+    "transfer_drift": 1.0138444900512695,
+    "clean_prediction": 6.2289204597473145,
+    "adv_prediction": 5.215075969696045,
+    "target_drift": 1.4743070602416992
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_1117",
+    "transfer_drift": 0.005767345428466797,
+    "clean_prediction": 3.129612445831299,
+    "adv_prediction": 3.1353797912597656,
+    "target_drift": 0.7125978469848633
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_3629",
+    "transfer_drift": 0.820000171661377,
+    "clean_prediction": 6.337525844573975,
+    "adv_prediction": 5.517525672912598,
+    "target_drift": 0.7494387626647949
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_2356",
+    "transfer_drift": 0.898923397064209,
+    "clean_prediction": 5.252013683319092,
+    "adv_prediction": 6.150937080383301,
+    "target_drift": 1.180574893951416
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_1461",
+    "transfer_drift": 0.40712618827819824,
+    "clean_prediction": 3.559144973754883,
+    "adv_prediction": 3.1520187854766846,
+    "target_drift": 0.9309797286987305
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_483",
+    "transfer_drift": 0.06636238098144531,
+    "clean_prediction": 2.874298572540283,
+    "adv_prediction": 2.9406609535217285,
+    "target_drift": 0.6216542720794678
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_1700",
+    "transfer_drift": 0.051373958587646484,
+    "clean_prediction": 4.764773368835449,
+    "adv_prediction": 4.816147327423096,
+    "target_drift": 0.8048484325408936
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_3290",
+    "transfer_drift": 1.1323819160461426,
+    "clean_prediction": 5.627871513366699,
+    "adv_prediction": 4.495489597320557,
+    "target_drift": 0.916358470916748
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_2156",
+    "transfer_drift": 0.1911182403564453,
+    "clean_prediction": 3.864656448364258,
+    "adv_prediction": 4.055774688720703,
+    "target_drift": 0.8441996574401855
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_3385",
+    "transfer_drift": 0.467684268951416,
+    "clean_prediction": 5.770463466644287,
+    "adv_prediction": 5.302779197692871,
+    "target_drift": 1.2137537002563477
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_967",
+    "transfer_drift": 0.35526347160339355,
+    "clean_prediction": 3.6871135234832764,
+    "adv_prediction": 4.04237699508667,
+    "target_drift": 0.8406567573547363
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_3072",
+    "transfer_drift": 0.8235831260681152,
+    "clean_prediction": 6.461236953735352,
+    "adv_prediction": 5.637653827667236,
+    "target_drift": 0.8925032615661621
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_3316",
+    "transfer_drift": 0.29271888732910156,
+    "clean_prediction": 6.094316005706787,
+    "adv_prediction": 5.8015971183776855,
+    "target_drift": 0.6870455741882324
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_259",
+    "transfer_drift": 0.6418092250823975,
+    "clean_prediction": 2.709580898284912,
+    "adv_prediction": 2.0677716732025146,
+    "target_drift": 0.5915951728820801
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_231",
+    "transfer_drift": 0.448911190032959,
+    "clean_prediction": 2.2179131507873535,
+    "adv_prediction": 2.6668243408203125,
+    "target_drift": 0.9480516910552979
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_2052",
+    "transfer_drift": 1.7816839218139648,
+    "clean_prediction": 4.170550346374512,
+    "adv_prediction": 2.388866424560547,
+    "target_drift": 0.9539015293121338
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_128",
+    "transfer_drift": 0.02600860595703125,
+    "clean_prediction": 2.509974479675293,
+    "adv_prediction": 2.535983085632324,
+    "target_drift": 0.28490543365478516
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_2200",
+    "transfer_drift": 1.1388933658599854,
+    "clean_prediction": 4.071415424346924,
+    "adv_prediction": 2.9325220584869385,
+    "target_drift": 0.9083309173583984
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_32",
+    "transfer_drift": 0.3459751605987549,
+    "clean_prediction": 0.8526363372802734,
+    "adv_prediction": 1.1986114978790283,
+    "target_drift": 1.8391809463500977
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_2124",
+    "transfer_drift": 0.4575052261352539,
+    "clean_prediction": 6.252964973449707,
+    "adv_prediction": 5.795459747314453,
+    "target_drift": 0.6117358207702637
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_1654",
+    "transfer_drift": 0.20771312713623047,
+    "clean_prediction": 3.5011496543884277,
+    "adv_prediction": 3.2934365272521973,
+    "target_drift": 0.2075662612915039
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_189",
+    "transfer_drift": 0.47075390815734863,
+    "clean_prediction": 2.818356990814209,
+    "adv_prediction": 2.3476030826568604,
+    "target_drift": 0.5977127552032471
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "random",
+    "source_id": "poly_769",
+    "transfer_drift": 0.4191129207611084,
+    "clean_prediction": 3.6086926460266113,
+    "adv_prediction": 3.189579725265503,
+    "target_drift": 0.1948397159576416
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_3655",
+    "transfer_drift": 0.26505422592163086,
+    "clean_prediction": 5.618370056152344,
+    "adv_prediction": 5.883424282073975,
+    "target_drift": 0.20384550094604492
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_2369",
+    "transfer_drift": 0.28171682357788086,
+    "clean_prediction": 4.699333190917969,
+    "adv_prediction": 4.417616367340088,
+    "target_drift": 0.06902837753295898
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_1215",
+    "transfer_drift": 0.27611351013183594,
+    "clean_prediction": 3.6640098094940186,
+    "adv_prediction": 3.9401233196258545,
+    "target_drift": 0.2996249198913574
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_4015",
+    "transfer_drift": 0.0457916259765625,
+    "clean_prediction": 6.3384809494018555,
+    "adv_prediction": 6.292689323425293,
+    "target_drift": 0.33049964904785156
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_517",
+    "transfer_drift": 0.21352815628051758,
+    "clean_prediction": 3.0094456672668457,
+    "adv_prediction": 2.795917510986328,
+    "target_drift": 0.46909546852111816
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_1159",
+    "transfer_drift": 0.0564579963684082,
+    "clean_prediction": 3.213019371032715,
+    "adv_prediction": 3.1565613746643066,
+    "target_drift": 0.15075159072875977
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_2493",
+    "transfer_drift": 0.014916419982910156,
+    "clean_prediction": 4.962664604187012,
+    "adv_prediction": 4.977581024169922,
+    "target_drift": 0.323486328125
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_2226",
+    "transfer_drift": 0.7228908538818359,
+    "clean_prediction": 4.244853973388672,
+    "adv_prediction": 3.521963119506836,
+    "target_drift": 1.6637754440307617
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_17",
+    "transfer_drift": 0.11568975448608398,
+    "clean_prediction": 0.909358024597168,
+    "adv_prediction": 1.025047779083252,
+    "target_drift": 0.6956014633178711
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_956",
+    "transfer_drift": 1.0698022842407227,
+    "clean_prediction": 3.8251614570617676,
+    "adv_prediction": 2.755359172821045,
+    "target_drift": 0.8267245292663574
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_898",
+    "transfer_drift": 0.4685037136077881,
+    "clean_prediction": 3.067509651184082,
+    "adv_prediction": 2.599005937576294,
+    "target_drift": 0.2739424705505371
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_1667",
+    "transfer_drift": 0.034867286682128906,
+    "clean_prediction": 2.9530396461486816,
+    "adv_prediction": 2.9181723594665527,
+    "target_drift": 0.014965534210205078
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_3362",
+    "transfer_drift": 0.13743019104003906,
+    "clean_prediction": 6.028063774108887,
+    "adv_prediction": 5.890633583068848,
+    "target_drift": 0.37430381774902344
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_3703",
+    "transfer_drift": 1.216357707977295,
+    "clean_prediction": 7.608079433441162,
+    "adv_prediction": 6.391721725463867,
+    "target_drift": 0.4301419258117676
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_793",
+    "transfer_drift": 0.11881327629089355,
+    "clean_prediction": 2.798370361328125,
+    "adv_prediction": 2.9171836376190186,
+    "target_drift": 0.13850808143615723
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_3189",
+    "transfer_drift": 0.5781359672546387,
+    "clean_prediction": 5.657440662384033,
+    "adv_prediction": 5.0793046951293945,
+    "target_drift": 0.26691246032714844
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_2734",
+    "transfer_drift": 0.3567514419555664,
+    "clean_prediction": 5.057806015014648,
+    "adv_prediction": 4.701054573059082,
+    "target_drift": 0.2447376251220703
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_1549",
+    "transfer_drift": 0.08195877075195312,
+    "clean_prediction": 4.038893222808838,
+    "adv_prediction": 4.120851993560791,
+    "target_drift": 0.26049184799194336
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_3746",
+    "transfer_drift": 0.41400909423828125,
+    "clean_prediction": 6.160242080688477,
+    "adv_prediction": 5.746232986450195,
+    "target_drift": 1.1754870414733887
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_2736",
+    "transfer_drift": 0.10426139831542969,
+    "clean_prediction": 5.100161552429199,
+    "adv_prediction": 4.9959001541137695,
+    "target_drift": 0.09179496765136719
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_1005",
+    "transfer_drift": 0.818540096282959,
+    "clean_prediction": 2.761148452758789,
+    "adv_prediction": 3.579688549041748,
+    "target_drift": 1.3688104152679443
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_367",
+    "transfer_drift": 0.8902509212493896,
+    "clean_prediction": 2.2228968143463135,
+    "adv_prediction": 3.113147735595703,
+    "target_drift": 0.4703857898712158
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_2223",
+    "transfer_drift": 0.020038604736328125,
+    "clean_prediction": 4.0396318435668945,
+    "adv_prediction": 4.019593238830566,
+    "target_drift": 0.3713080883026123
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_3386",
+    "transfer_drift": 1.3437576293945312,
+    "clean_prediction": 6.377536773681641,
+    "adv_prediction": 5.033779144287109,
+    "target_drift": 1.1906471252441406
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_1160",
+    "transfer_drift": 0.6921124458312988,
+    "clean_prediction": 3.9273838996887207,
+    "adv_prediction": 3.235271453857422,
+    "target_drift": 0.39528560638427734
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_1072",
+    "transfer_drift": 0.09729528427124023,
+    "clean_prediction": 3.6969833374023438,
+    "adv_prediction": 3.794278621673584,
+    "target_drift": 0.19257235527038574
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_675",
+    "transfer_drift": 0.03181028366088867,
+    "clean_prediction": 3.671692371368408,
+    "adv_prediction": 3.703502655029297,
+    "target_drift": 0.12055301666259766
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_754",
+    "transfer_drift": 0.1407487392425537,
+    "clean_prediction": 3.1334285736083984,
+    "adv_prediction": 3.274177312850952,
+    "target_drift": 0.12126326560974121
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_2459",
+    "transfer_drift": 0.12138700485229492,
+    "clean_prediction": 4.349247932434082,
+    "adv_prediction": 4.470634937286377,
+    "target_drift": 0.20080804824829102
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_155",
+    "transfer_drift": 0.03955864906311035,
+    "clean_prediction": 2.29528546333313,
+    "adv_prediction": 2.3348441123962402,
+    "target_drift": 0.08316349983215332
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_2461",
+    "transfer_drift": 0.13361644744873047,
+    "clean_prediction": 4.287570953369141,
+    "adv_prediction": 4.15395450592041,
+    "target_drift": 0.2851414680480957
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_2368",
+    "transfer_drift": 0.12093448638916016,
+    "clean_prediction": 4.469667434692383,
+    "adv_prediction": 4.590601921081543,
+    "target_drift": 0.08186006546020508
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_512",
+    "transfer_drift": 0.1724252700805664,
+    "clean_prediction": 2.9014358520507812,
+    "adv_prediction": 2.729010581970215,
+    "target_drift": 0.11035037040710449
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_1419",
+    "transfer_drift": 0.4893181324005127,
+    "clean_prediction": 3.6858925819396973,
+    "adv_prediction": 3.1965744495391846,
+    "target_drift": 0.4426264762878418
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_2967",
+    "transfer_drift": 0.8548674583435059,
+    "clean_prediction": 5.848812103271484,
+    "adv_prediction": 4.9939446449279785,
+    "target_drift": 0.3866615295410156
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_2076",
+    "transfer_drift": 0.8347878456115723,
+    "clean_prediction": 4.490766525268555,
+    "adv_prediction": 3.6559786796569824,
+    "target_drift": 1.3212199211120605
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_1298",
+    "transfer_drift": 0.41954493522644043,
+    "clean_prediction": 3.553678512573242,
+    "adv_prediction": 3.1341335773468018,
+    "target_drift": 1.7785415649414062
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_1468",
+    "transfer_drift": 0.07070636749267578,
+    "clean_prediction": 3.618312120437622,
+    "adv_prediction": 3.5476057529449463,
+    "target_drift": 0.09225296974182129
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_2730",
+    "transfer_drift": 0.0738682746887207,
+    "clean_prediction": 3.700308084487915,
+    "adv_prediction": 3.6264398097991943,
+    "target_drift": 0.14914464950561523
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_1609",
+    "transfer_drift": 0.005333423614501953,
+    "clean_prediction": 5.62885856628418,
+    "adv_prediction": 5.623525142669678,
+    "target_drift": 0.3049740791320801
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_1809",
+    "transfer_drift": 0.3857693672180176,
+    "clean_prediction": 3.321260452270508,
+    "adv_prediction": 2.9354910850524902,
+    "target_drift": 0.23659467697143555
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_3627",
+    "transfer_drift": 0.5503997802734375,
+    "clean_prediction": 6.1944122314453125,
+    "adv_prediction": 6.74481201171875,
+    "target_drift": 0.5261521339416504
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_660",
+    "transfer_drift": 0.783501148223877,
+    "clean_prediction": 3.358822822570801,
+    "adv_prediction": 2.575321674346924,
+    "target_drift": 2.2220094203948975
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_1826",
+    "transfer_drift": 0.9342837333679199,
+    "clean_prediction": 4.423882007598877,
+    "adv_prediction": 3.489598274230957,
+    "target_drift": 0.6375188827514648
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_2932",
+    "transfer_drift": 1.2454395294189453,
+    "clean_prediction": 4.679160118103027,
+    "adv_prediction": 3.433720588684082,
+    "target_drift": 1.555187702178955
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_442",
+    "transfer_drift": 0.00963449478149414,
+    "clean_prediction": 2.886606216430664,
+    "adv_prediction": 2.896240711212158,
+    "target_drift": 0.00428318977355957
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_449",
+    "transfer_drift": 0.33176708221435547,
+    "clean_prediction": 2.934325695037842,
+    "adv_prediction": 2.6025586128234863,
+    "target_drift": 0.2815992832183838
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_2437",
+    "transfer_drift": 0.25247812271118164,
+    "clean_prediction": 4.819726943969727,
+    "adv_prediction": 4.567248821258545,
+    "target_drift": 0.45999860763549805
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_2772",
+    "transfer_drift": 0.5282416343688965,
+    "clean_prediction": 5.439387798309326,
+    "adv_prediction": 5.967629432678223,
+    "target_drift": 0.6484932899475098
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_3030",
+    "transfer_drift": 0.23745393753051758,
+    "clean_prediction": 4.80488920211792,
+    "adv_prediction": 4.567435264587402,
+    "target_drift": 0.05976390838623047
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_3779",
+    "transfer_drift": 1.0651607513427734,
+    "clean_prediction": 6.382248878479004,
+    "adv_prediction": 5.3170881271362305,
+    "target_drift": 0.7423877716064453
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_2836",
+    "transfer_drift": 0.6896157264709473,
+    "clean_prediction": 5.852705955505371,
+    "adv_prediction": 5.163090229034424,
+    "target_drift": 0.6315903663635254
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_2367",
+    "transfer_drift": 0.6764819622039795,
+    "clean_prediction": 3.8865854740142822,
+    "adv_prediction": 3.2101035118103027,
+    "target_drift": 1.716935157775879
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_1211",
+    "transfer_drift": 0.03594708442687988,
+    "clean_prediction": 3.5591883659362793,
+    "adv_prediction": 3.5232412815093994,
+    "target_drift": 0.08111882209777832
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_3019",
+    "transfer_drift": 0.3717808723449707,
+    "clean_prediction": 5.761367321014404,
+    "adv_prediction": 5.389586448669434,
+    "target_drift": 0.15998363494873047
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_3129",
+    "transfer_drift": 0.6437950134277344,
+    "clean_prediction": 5.994880199432373,
+    "adv_prediction": 5.351085186004639,
+    "target_drift": 0.7129521369934082
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_2068",
+    "transfer_drift": 0.0008935928344726562,
+    "clean_prediction": 4.100346565246582,
+    "adv_prediction": 4.101240158081055,
+    "target_drift": 0.42650508880615234
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_782",
+    "transfer_drift": 0.040060997009277344,
+    "clean_prediction": 3.148240566253662,
+    "adv_prediction": 3.1081795692443848,
+    "target_drift": 0.19422340393066406
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_45",
+    "transfer_drift": 0.3716723918914795,
+    "clean_prediction": 1.91953444480896,
+    "adv_prediction": 2.2912068367004395,
+    "target_drift": 0.10292887687683105
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_3063",
+    "transfer_drift": 1.298377513885498,
+    "clean_prediction": 6.063239097595215,
+    "adv_prediction": 7.361616611480713,
+    "target_drift": 1.1043891906738281
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_903",
+    "transfer_drift": 0.1543889045715332,
+    "clean_prediction": 4.091456413269043,
+    "adv_prediction": 4.245845317840576,
+    "target_drift": 0.09012413024902344
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_3763",
+    "transfer_drift": 0.09855031967163086,
+    "clean_prediction": 5.015841960906982,
+    "adv_prediction": 4.917291641235352,
+    "target_drift": 0.3694324493408203
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_990",
+    "transfer_drift": 0.12735366821289062,
+    "clean_prediction": 3.3584396839141846,
+    "adv_prediction": 3.231086015701294,
+    "target_drift": 0.0033583641052246094
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_1689",
+    "transfer_drift": 0.11016511917114258,
+    "clean_prediction": 4.2778167724609375,
+    "adv_prediction": 4.38798189163208,
+    "target_drift": 0.11148786544799805
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_2093",
+    "transfer_drift": 0.06970071792602539,
+    "clean_prediction": 5.741462707519531,
+    "adv_prediction": 5.671761989593506,
+    "target_drift": 0.897301197052002
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_3799",
+    "transfer_drift": 0.28400659561157227,
+    "clean_prediction": 6.124416351318359,
+    "adv_prediction": 6.408422946929932,
+    "target_drift": 0.24843311309814453
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_930",
+    "transfer_drift": 0.09270477294921875,
+    "clean_prediction": 4.402187347412109,
+    "adv_prediction": 4.494892120361328,
+    "target_drift": 0.1406536102294922
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_3620",
+    "transfer_drift": 0.8829960823059082,
+    "clean_prediction": 5.85349702835083,
+    "adv_prediction": 4.970500946044922,
+    "target_drift": 0.7022929191589355
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_2098",
+    "transfer_drift": 0.4096086025238037,
+    "clean_prediction": 3.620462656021118,
+    "adv_prediction": 4.030071258544922,
+    "target_drift": 0.07793235778808594
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_1493",
+    "transfer_drift": 0.37117600440979004,
+    "clean_prediction": 3.8819007873535156,
+    "adv_prediction": 3.5107247829437256,
+    "target_drift": 0.8392457962036133
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_1294",
+    "transfer_drift": 0.09953165054321289,
+    "clean_prediction": 4.3173909187316895,
+    "adv_prediction": 4.416922569274902,
+    "target_drift": 0.24506187438964844
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_2531",
+    "transfer_drift": 0.09300565719604492,
+    "clean_prediction": 4.32158899307251,
+    "adv_prediction": 4.414594650268555,
+    "target_drift": 0.3559558391571045
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_514",
+    "transfer_drift": 0.24225473403930664,
+    "clean_prediction": 2.8398571014404297,
+    "adv_prediction": 3.0821118354797363,
+    "target_drift": 0.17867445945739746
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_244",
+    "transfer_drift": 0.8501410484313965,
+    "clean_prediction": 3.579010486602783,
+    "adv_prediction": 2.7288694381713867,
+    "target_drift": 1.4586563110351562
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_466",
+    "transfer_drift": 0.30056262016296387,
+    "clean_prediction": 2.799861431121826,
+    "adv_prediction": 3.10042405128479,
+    "target_drift": 0.0013048648834228516
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_1171",
+    "transfer_drift": 0.04154396057128906,
+    "clean_prediction": 3.2218070030212402,
+    "adv_prediction": 3.180263042449951,
+    "target_drift": 0.09612727165222168
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_3842",
+    "transfer_drift": 0.33199501037597656,
+    "clean_prediction": 6.047811985015869,
+    "adv_prediction": 5.715816974639893,
+    "target_drift": 0.37851810455322266
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_3552",
+    "transfer_drift": 0.5606269836425781,
+    "clean_prediction": 6.059392929077148,
+    "adv_prediction": 5.49876594543457,
+    "target_drift": 0.5814194679260254
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_1117",
+    "transfer_drift": 0.0727696418762207,
+    "clean_prediction": 2.29172682762146,
+    "adv_prediction": 2.2189571857452393,
+    "target_drift": 0.2629859447479248
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_3629",
+    "transfer_drift": 0.7494387626647949,
+    "clean_prediction": 6.209312438964844,
+    "adv_prediction": 5.459873676300049,
+    "target_drift": 0.820000171661377
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_2356",
+    "transfer_drift": 0.7100367546081543,
+    "clean_prediction": 4.823029041290283,
+    "adv_prediction": 5.5330657958984375,
+    "target_drift": 0.9075703620910645
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_1461",
+    "transfer_drift": 0.4692854881286621,
+    "clean_prediction": 3.5433077812194824,
+    "adv_prediction": 3.0740222930908203,
+    "target_drift": 0.5117945671081543
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_483",
+    "transfer_drift": 0.31809067726135254,
+    "clean_prediction": 2.9119606018066406,
+    "adv_prediction": 2.593869924545288,
+    "target_drift": 0.45558786392211914
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_1700",
+    "transfer_drift": 0.31415224075317383,
+    "clean_prediction": 4.594876289367676,
+    "adv_prediction": 4.280724048614502,
+    "target_drift": 0.5969791412353516
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_3290",
+    "transfer_drift": 0.22155046463012695,
+    "clean_prediction": 5.814445972442627,
+    "adv_prediction": 5.5928955078125,
+    "target_drift": 0.2514047622680664
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_2156",
+    "transfer_drift": 0.21777939796447754,
+    "clean_prediction": 3.2834696769714355,
+    "adv_prediction": 3.501249074935913,
+    "target_drift": 0.5601434707641602
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_3385",
+    "transfer_drift": 0.05263566970825195,
+    "clean_prediction": 5.904730796813965,
+    "adv_prediction": 5.852095127105713,
+    "target_drift": 0.35772275924682617
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_967",
+    "transfer_drift": 0.5957620143890381,
+    "clean_prediction": 3.2172393798828125,
+    "adv_prediction": 3.8130013942718506,
+    "target_drift": 0.6588709354400635
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_3072",
+    "transfer_drift": 0.007915973663330078,
+    "clean_prediction": 6.40172815322876,
+    "adv_prediction": 6.40964412689209,
+    "target_drift": 0.3327951431274414
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_3316",
+    "transfer_drift": 0.6534056663513184,
+    "clean_prediction": 5.840282917022705,
+    "adv_prediction": 5.186877250671387,
+    "target_drift": 0.7479991912841797
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_259",
+    "transfer_drift": 0.42287635803222656,
+    "clean_prediction": 3.018906593322754,
+    "adv_prediction": 3.4417829513549805,
+    "target_drift": 0.9788134098052979
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_231",
+    "transfer_drift": 0.2519216537475586,
+    "clean_prediction": 2.209737539291382,
+    "adv_prediction": 1.9578158855438232,
+    "target_drift": 1.2704389095306396
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_2052",
+    "transfer_drift": 0.5993142127990723,
+    "clean_prediction": 3.657536506652832,
+    "adv_prediction": 3.0582222938537598,
+    "target_drift": 1.9944982528686523
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_128",
+    "transfer_drift": 0.26111316680908203,
+    "clean_prediction": 2.214264392852783,
+    "adv_prediction": 2.4753775596618652,
+    "target_drift": 0.1655750274658203
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_2200",
+    "transfer_drift": 0.029422283172607422,
+    "clean_prediction": 4.021552562713623,
+    "adv_prediction": 4.0509748458862305,
+    "target_drift": 0.03264665603637695
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_32",
+    "transfer_drift": 0.17299461364746094,
+    "clean_prediction": 1.173520565032959,
+    "adv_prediction": 1.000525951385498,
+    "target_drift": 0.46097874641418457
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_2124",
+    "transfer_drift": 0.3329167366027832,
+    "clean_prediction": 5.480757236480713,
+    "adv_prediction": 5.14784049987793,
+    "target_drift": 0.5581674575805664
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_1654",
+    "transfer_drift": 0.3266415596008301,
+    "clean_prediction": 3.2606163024902344,
+    "adv_prediction": 2.9339747428894043,
+    "target_drift": 0.4907817840576172
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_189",
+    "transfer_drift": 0.07541394233703613,
+    "clean_prediction": 2.833040237426758,
+    "adv_prediction": 2.908454179763794,
+    "target_drift": 0.14501142501831055
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "greedy",
+    "source_id": "poly_769",
+    "transfer_drift": 0.006865262985229492,
+    "clean_prediction": 3.1635968685150146,
+    "adv_prediction": 3.156731605529785,
+    "target_drift": 0.0031418800354003906
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_3655",
+    "transfer_drift": 0.11024713516235352,
+    "clean_prediction": 5.950205326080322,
+    "adv_prediction": 6.060452461242676,
+    "target_drift": 0.3135852813720703
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_2369",
+    "transfer_drift": 0.3093299865722656,
+    "clean_prediction": 4.858950614929199,
+    "adv_prediction": 4.549620628356934,
+    "target_drift": 0.4046502113342285
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_1215",
+    "transfer_drift": 0.3499760627746582,
+    "clean_prediction": 3.171213150024414,
+    "adv_prediction": 3.5211892127990723,
+    "target_drift": 0.482532262802124
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_4015",
+    "transfer_drift": 0.6719484329223633,
+    "clean_prediction": 6.407103538513184,
+    "adv_prediction": 5.73515510559082,
+    "target_drift": 0.8499317169189453
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_517",
+    "transfer_drift": 0.4590785503387451,
+    "clean_prediction": 2.866514205932617,
+    "adv_prediction": 2.407435655593872,
+    "target_drift": 0.2721536159515381
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_1159",
+    "transfer_drift": 0.22911500930786133,
+    "clean_prediction": 3.3051934242248535,
+    "adv_prediction": 3.534308433532715,
+    "target_drift": 0.1653890609741211
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_2493",
+    "transfer_drift": 2.248425006866455,
+    "clean_prediction": 4.619564056396484,
+    "adv_prediction": 2.3711390495300293,
+    "target_drift": 1.5304200649261475
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_2226",
+    "transfer_drift": 0.06460285186767578,
+    "clean_prediction": 4.907506465911865,
+    "adv_prediction": 4.8429036140441895,
+    "target_drift": 0.133331298828125
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_17",
+    "transfer_drift": 0.5749051570892334,
+    "clean_prediction": 0.15965843200683594,
+    "adv_prediction": 0.7345635890960693,
+    "target_drift": 0.23311901092529297
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_956",
+    "transfer_drift": 0.27729296684265137,
+    "clean_prediction": 4.1455912590026855,
+    "adv_prediction": 3.868298292160034,
+    "target_drift": 0.06761765480041504
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_898",
+    "transfer_drift": 0.013932943344116211,
+    "clean_prediction": 2.423020124435425,
+    "adv_prediction": 2.4090871810913086,
+    "target_drift": 0.01720714569091797
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_1667",
+    "transfer_drift": 0.5884346961975098,
+    "clean_prediction": 4.574668884277344,
+    "adv_prediction": 3.986234188079834,
+    "target_drift": 0.07269573211669922
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_3362",
+    "transfer_drift": 0.9193897247314453,
+    "clean_prediction": 5.875738620758057,
+    "adv_prediction": 4.956348896026611,
+    "target_drift": 0.34798765182495117
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_3703",
+    "transfer_drift": 1.340282917022705,
+    "clean_prediction": 6.640470504760742,
+    "adv_prediction": 5.300187587738037,
+    "target_drift": 1.5296969413757324
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_793",
+    "transfer_drift": 0.2734336853027344,
+    "clean_prediction": 2.3436615467071533,
+    "adv_prediction": 2.070227861404419,
+    "target_drift": 0.12904834747314453
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_3189",
+    "transfer_drift": 0.10499143600463867,
+    "clean_prediction": 5.893825531005859,
+    "adv_prediction": 5.788834095001221,
+    "target_drift": 0.7990512847900391
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_2734",
+    "transfer_drift": 0.11519002914428711,
+    "clean_prediction": 5.063512325286865,
+    "adv_prediction": 5.178702354431152,
+    "target_drift": 0.07464075088500977
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_1549",
+    "transfer_drift": 0.0680699348449707,
+    "clean_prediction": 4.434220790863037,
+    "adv_prediction": 4.502290725708008,
+    "target_drift": 0.2908906936645508
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_3746",
+    "transfer_drift": 0.15562105178833008,
+    "clean_prediction": 5.413145542144775,
+    "adv_prediction": 5.257524490356445,
+    "target_drift": 0.17378759384155273
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_2736",
+    "transfer_drift": 0.6674537658691406,
+    "clean_prediction": 5.141987323760986,
+    "adv_prediction": 5.809441089630127,
+    "target_drift": 0.6163196563720703
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_1005",
+    "transfer_drift": 0.14792442321777344,
+    "clean_prediction": 2.3133983612060547,
+    "adv_prediction": 2.461322784423828,
+    "target_drift": 0.07575249671936035
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_367",
+    "transfer_drift": 1.1638402938842773,
+    "clean_prediction": 0.9972608089447021,
+    "adv_prediction": 2.1611011028289795,
+    "target_drift": 2.0614430904388428
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_2223",
+    "transfer_drift": 0.18887782096862793,
+    "clean_prediction": 3.8399479389190674,
+    "adv_prediction": 3.6510701179504395,
+    "target_drift": 0.21386098861694336
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_3386",
+    "transfer_drift": 0.5291323661804199,
+    "clean_prediction": 6.427052021026611,
+    "adv_prediction": 5.897919654846191,
+    "target_drift": 0.8759627342224121
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_1160",
+    "transfer_drift": 0.5335044860839844,
+    "clean_prediction": 3.785604476928711,
+    "adv_prediction": 4.319108963012695,
+    "target_drift": 0.504486083984375
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_1072",
+    "transfer_drift": 0.48426246643066406,
+    "clean_prediction": 3.4568161964416504,
+    "adv_prediction": 3.9410786628723145,
+    "target_drift": 0.2962789535522461
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_675",
+    "transfer_drift": 1.7604639530181885,
+    "clean_prediction": 3.4384312629699707,
+    "adv_prediction": 1.6779673099517822,
+    "target_drift": 0.9862556457519531
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_754",
+    "transfer_drift": 0.03631258010864258,
+    "clean_prediction": 3.395348072052002,
+    "adv_prediction": 3.4316606521606445,
+    "target_drift": 0.01255035400390625
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_2459",
+    "transfer_drift": 0.02421283721923828,
+    "clean_prediction": 4.994063854217529,
+    "adv_prediction": 5.018276691436768,
+    "target_drift": 0.49903392791748047
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_155",
+    "transfer_drift": 0.0698699951171875,
+    "clean_prediction": 1.2124292850494385,
+    "adv_prediction": 1.142559289932251,
+    "target_drift": 0.13950777053833008
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_2461",
+    "transfer_drift": 0.13825607299804688,
+    "clean_prediction": 4.374101161956787,
+    "adv_prediction": 4.23584508895874,
+    "target_drift": 0.2088937759399414
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_2368",
+    "transfer_drift": 0.02547311782836914,
+    "clean_prediction": 4.476565361022949,
+    "adv_prediction": 4.45109224319458,
+    "target_drift": 0.13431501388549805
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_512",
+    "transfer_drift": 0.3628842830657959,
+    "clean_prediction": 2.8269975185394287,
+    "adv_prediction": 3.1898818016052246,
+    "target_drift": 0.24034786224365234
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_1419",
+    "transfer_drift": 0.4426264762878418,
+    "clean_prediction": 3.757357120513916,
+    "adv_prediction": 3.314730644226074,
+    "target_drift": 0.4893181324005127
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_2967",
+    "transfer_drift": 0.6752529144287109,
+    "clean_prediction": 5.692811965942383,
+    "adv_prediction": 5.017559051513672,
+    "target_drift": 0.8366022109985352
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_2076",
+    "transfer_drift": 0.14740324020385742,
+    "clean_prediction": 5.187360763549805,
+    "adv_prediction": 5.039957523345947,
+    "target_drift": 0.13478660583496094
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_1298",
+    "transfer_drift": 0.16641855239868164,
+    "clean_prediction": 4.114040374755859,
+    "adv_prediction": 3.9476218223571777,
+    "target_drift": 0.1301579475402832
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_1468",
+    "transfer_drift": 1.3596947193145752,
+    "clean_prediction": 3.298025131225586,
+    "adv_prediction": 1.9383304119110107,
+    "target_drift": 1.019930124282837
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_2730",
+    "transfer_drift": 0.002368927001953125,
+    "clean_prediction": 4.520899772644043,
+    "adv_prediction": 4.523268699645996,
+    "target_drift": 0.3844757080078125
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_1609",
+    "transfer_drift": 0.3083066940307617,
+    "clean_prediction": 4.85829496383667,
+    "adv_prediction": 4.549988269805908,
+    "target_drift": 0.05977010726928711
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_1809",
+    "transfer_drift": 0.35706186294555664,
+    "clean_prediction": 4.450892448425293,
+    "adv_prediction": 4.093830585479736,
+    "target_drift": 0.25415992736816406
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_3627",
+    "transfer_drift": 1.3088326454162598,
+    "clean_prediction": 5.966146945953369,
+    "adv_prediction": 4.657314300537109,
+    "target_drift": 1.3959565162658691
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_660",
+    "transfer_drift": 0.31746339797973633,
+    "clean_prediction": 3.5938801765441895,
+    "adv_prediction": 3.911343574523926,
+    "target_drift": 0.3730506896972656
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_1826",
+    "transfer_drift": 0.13463973999023438,
+    "clean_prediction": 4.768972873687744,
+    "adv_prediction": 4.63433313369751,
+    "target_drift": 0.27167797088623047
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_2932",
+    "transfer_drift": 2.1590747833251953,
+    "clean_prediction": 4.4318623542785645,
+    "adv_prediction": 2.272787570953369,
+    "target_drift": 1.6060242652893066
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_442",
+    "transfer_drift": 0.43372082710266113,
+    "clean_prediction": 2.88210129737854,
+    "adv_prediction": 3.315822124481201,
+    "target_drift": 0.03914189338684082
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_449",
+    "transfer_drift": 0.2940232753753662,
+    "clean_prediction": 2.1449244022369385,
+    "adv_prediction": 2.4389476776123047,
+    "target_drift": 0.41941118240356445
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_2437",
+    "transfer_drift": 0.45999860763549805,
+    "clean_prediction": 4.692460060119629,
+    "adv_prediction": 4.232461452484131,
+    "target_drift": 0.25247812271118164
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_2772",
+    "transfer_drift": 1.1309027671813965,
+    "clean_prediction": 5.358765125274658,
+    "adv_prediction": 4.227862358093262,
+    "target_drift": 0.8706874847412109
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_3030",
+    "transfer_drift": 0.04237079620361328,
+    "clean_prediction": 4.9421281814575195,
+    "adv_prediction": 4.899757385253906,
+    "target_drift": 0.19029521942138672
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_3779",
+    "transfer_drift": 1.1499409675598145,
+    "clean_prediction": 6.581609725952148,
+    "adv_prediction": 5.431668758392334,
+    "target_drift": 0.8659563064575195
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_2836",
+    "transfer_drift": 0.29441404342651367,
+    "clean_prediction": 5.636433124542236,
+    "adv_prediction": 5.342019081115723,
+    "target_drift": 0.6447916030883789
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_2367",
+    "transfer_drift": 0.2575397491455078,
+    "clean_prediction": 4.54248571395874,
+    "adv_prediction": 4.284945964813232,
+    "target_drift": 0.5681359767913818
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_1211",
+    "transfer_drift": 0.8186490535736084,
+    "clean_prediction": 3.6390380859375,
+    "adv_prediction": 2.8203890323638916,
+    "target_drift": 0.11804842948913574
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_3019",
+    "transfer_drift": 0.041559696197509766,
+    "clean_prediction": 5.474843502044678,
+    "adv_prediction": 5.5164031982421875,
+    "target_drift": 0.21283578872680664
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_3129",
+    "transfer_drift": 0.46038055419921875,
+    "clean_prediction": 6.312241554260254,
+    "adv_prediction": 6.772622108459473,
+    "target_drift": 0.7791295051574707
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_2068",
+    "transfer_drift": 0.3815302848815918,
+    "clean_prediction": 4.925357341766357,
+    "adv_prediction": 4.543827056884766,
+    "target_drift": 0.20928955078125
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_782",
+    "transfer_drift": 0.16509580612182617,
+    "clean_prediction": 3.496295928955078,
+    "adv_prediction": 3.331200122833252,
+    "target_drift": 0.19877910614013672
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_45",
+    "transfer_drift": 1.2811548709869385,
+    "clean_prediction": 1.7654342651367188,
+    "adv_prediction": 3.0465891361236572,
+    "target_drift": 1.148944616317749
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_3063",
+    "transfer_drift": 0.1567821502685547,
+    "clean_prediction": 6.062707424163818,
+    "adv_prediction": 5.905925273895264,
+    "target_drift": 0.7512321472167969
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_903",
+    "transfer_drift": 0.1873483657836914,
+    "clean_prediction": 4.152870178222656,
+    "adv_prediction": 4.340218544006348,
+    "target_drift": 0.47115659713745117
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_3763",
+    "transfer_drift": 0.5657920837402344,
+    "clean_prediction": 5.800574779510498,
+    "adv_prediction": 5.234782695770264,
+    "target_drift": 1.0034751892089844
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_990",
+    "transfer_drift": 0.03337812423706055,
+    "clean_prediction": 4.0600433349609375,
+    "adv_prediction": 4.093421459197998,
+    "target_drift": 0.021251440048217773
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_1689",
+    "transfer_drift": 0.03803110122680664,
+    "clean_prediction": 4.344869613647461,
+    "adv_prediction": 4.382900714874268,
+    "target_drift": 0.08749055862426758
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_2093",
+    "transfer_drift": 0.0862889289855957,
+    "clean_prediction": 5.630678653717041,
+    "adv_prediction": 5.716967582702637,
+    "target_drift": 0.08282995223999023
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_3799",
+    "transfer_drift": 0.17469024658203125,
+    "clean_prediction": 5.990975379943848,
+    "adv_prediction": 5.816285133361816,
+    "target_drift": 0.19486761093139648
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_930",
+    "transfer_drift": 0.08983993530273438,
+    "clean_prediction": 4.159791469573975,
+    "adv_prediction": 4.249631404876709,
+    "target_drift": 0.1848740577697754
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_3620",
+    "transfer_drift": 0.3190741539001465,
+    "clean_prediction": 6.218690395355225,
+    "adv_prediction": 5.899616241455078,
+    "target_drift": 1.0114150047302246
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_2098",
+    "transfer_drift": 0.04261422157287598,
+    "clean_prediction": 3.9293832778930664,
+    "adv_prediction": 3.9719974994659424,
+    "target_drift": 0.263256311416626
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_1493",
+    "transfer_drift": 0.29821252822875977,
+    "clean_prediction": 4.134727954864502,
+    "adv_prediction": 4.432940483093262,
+    "target_drift": 0.2427968978881836
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_1294",
+    "transfer_drift": 0.18958473205566406,
+    "clean_prediction": 5.058113098144531,
+    "adv_prediction": 4.868528366088867,
+    "target_drift": 0.10825157165527344
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_2531",
+    "transfer_drift": 0.08269381523132324,
+    "clean_prediction": 3.65643048286438,
+    "adv_prediction": 3.739124298095703,
+    "target_drift": 0.22015142440795898
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_514",
+    "transfer_drift": 0.1027064323425293,
+    "clean_prediction": 2.948184013366699,
+    "adv_prediction": 3.0508904457092285,
+    "target_drift": 0.050885677337646484
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_244",
+    "transfer_drift": 0.26523780822753906,
+    "clean_prediction": 3.598936080932617,
+    "adv_prediction": 3.333698272705078,
+    "target_drift": 0.4618067741394043
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_466",
+    "transfer_drift": 0.060541629791259766,
+    "clean_prediction": 1.3134832382202148,
+    "adv_prediction": 1.3740248680114746,
+    "target_drift": 0.23635530471801758
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_1171",
+    "transfer_drift": 0.005831241607666016,
+    "clean_prediction": 3.38632869720459,
+    "adv_prediction": 3.380497455596924,
+    "target_drift": 0.22839879989624023
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_3842",
+    "transfer_drift": 0.1376810073852539,
+    "clean_prediction": 6.226391792297363,
+    "adv_prediction": 6.088710784912109,
+    "target_drift": 0.8854813575744629
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_3552",
+    "transfer_drift": 0.5831866264343262,
+    "clean_prediction": 6.2289204597473145,
+    "adv_prediction": 5.645733833312988,
+    "target_drift": 1.1737637519836426
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_1117",
+    "transfer_drift": 0.08607649803161621,
+    "clean_prediction": 3.129612445831299,
+    "adv_prediction": 3.0435359477996826,
+    "target_drift": 0.0835268497467041
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_3629",
+    "transfer_drift": 1.3837823867797852,
+    "clean_prediction": 6.337525844573975,
+    "adv_prediction": 4.9537434577941895,
+    "target_drift": 0.2646818161010742
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_2356",
+    "transfer_drift": 0.7141623497009277,
+    "clean_prediction": 5.252013683319092,
+    "adv_prediction": 4.537851333618164,
+    "target_drift": 0.35952186584472656
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_1461",
+    "transfer_drift": 0.5117945671081543,
+    "clean_prediction": 3.559144973754883,
+    "adv_prediction": 3.0473504066467285,
+    "target_drift": 0.4692854881286621
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_483",
+    "transfer_drift": 0.06645989418029785,
+    "clean_prediction": 2.874298572540283,
+    "adv_prediction": 2.940758466720581,
+    "target_drift": 0.45716285705566406
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_1700",
+    "transfer_drift": 0.27803516387939453,
+    "clean_prediction": 4.764773368835449,
+    "adv_prediction": 5.042808532714844,
+    "target_drift": 0.23824214935302734
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_3290",
+    "transfer_drift": 0.4501514434814453,
+    "clean_prediction": 5.627871513366699,
+    "adv_prediction": 5.177720069885254,
+    "target_drift": 0.3027334213256836
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_2156",
+    "transfer_drift": 0.06439876556396484,
+    "clean_prediction": 3.864656448364258,
+    "adv_prediction": 3.9290552139282227,
+    "target_drift": 0.6368749141693115
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_3385",
+    "transfer_drift": 0.467684268951416,
+    "clean_prediction": 5.770463466644287,
+    "adv_prediction": 5.302779197692871,
+    "target_drift": 1.2137537002563477
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_967",
+    "transfer_drift": 0.6588709354400635,
+    "clean_prediction": 3.6871135234832764,
+    "adv_prediction": 4.34598445892334,
+    "target_drift": 0.5957620143890381
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_3072",
+    "transfer_drift": 0.044722557067871094,
+    "clean_prediction": 6.461236953735352,
+    "adv_prediction": 6.4165143966674805,
+    "target_drift": 0.20004701614379883
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_3316",
+    "transfer_drift": 0.023518085479736328,
+    "clean_prediction": 6.094316005706787,
+    "adv_prediction": 6.117834091186523,
+    "target_drift": 0.36896467208862305
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_259",
+    "transfer_drift": 0.4460158348083496,
+    "clean_prediction": 2.709580898284912,
+    "adv_prediction": 3.1555967330932617,
+    "target_drift": 0.5641124248504639
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_231",
+    "transfer_drift": 1.2704389095306396,
+    "clean_prediction": 2.2179131507873535,
+    "adv_prediction": 0.9474742412567139,
+    "target_drift": 0.2519216537475586
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_2052",
+    "transfer_drift": 0.0053615570068359375,
+    "clean_prediction": 4.170550346374512,
+    "adv_prediction": 4.175911903381348,
+    "target_drift": 0.19654512405395508
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_128",
+    "transfer_drift": 0.04052734375,
+    "clean_prediction": 2.509974479675293,
+    "adv_prediction": 2.469447135925293,
+    "target_drift": 0.5987439155578613
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_2200",
+    "transfer_drift": 0.236602783203125,
+    "clean_prediction": 4.071415424346924,
+    "adv_prediction": 4.308018207550049,
+    "target_drift": 0.396512508392334
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_32",
+    "transfer_drift": 0.46097874641418457,
+    "clean_prediction": 0.8526363372802734,
+    "adv_prediction": 1.313615083694458,
+    "target_drift": 0.17299461364746094
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_2124",
+    "transfer_drift": 0.47684717178344727,
+    "clean_prediction": 6.252964973449707,
+    "adv_prediction": 5.77611780166626,
+    "target_drift": 0.4610166549682617
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_1654",
+    "transfer_drift": 0.43613719940185547,
+    "clean_prediction": 3.5011496543884277,
+    "adv_prediction": 3.0650124549865723,
+    "target_drift": 0.30924224853515625
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_189",
+    "transfer_drift": 0.47075390815734863,
+    "clean_prediction": 2.818356990814209,
+    "adv_prediction": 2.3476030826568604,
+    "target_drift": 0.5977127552032471
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "greedy",
+    "source_id": "poly_769",
+    "transfer_drift": 0.02392411231994629,
+    "clean_prediction": 3.6086926460266113,
+    "adv_prediction": 3.584768533706665,
+    "target_drift": 0.010908842086791992
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3655",
+    "transfer_drift": 0.7336735725402832,
+    "clean_prediction": 5.618370056152344,
+    "adv_prediction": 4.8846964836120605,
+    "target_drift": 1.0317554473876953
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2369",
+    "transfer_drift": 0.12594079971313477,
+    "clean_prediction": 4.699333190917969,
+    "adv_prediction": 4.573392391204834,
+    "target_drift": 0.5653023719787598
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1215",
+    "transfer_drift": 0.3810751438140869,
+    "clean_prediction": 3.6640098094940186,
+    "adv_prediction": 3.2829346656799316,
+    "target_drift": 0.4776320457458496
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_4015",
+    "transfer_drift": 1.092318058013916,
+    "clean_prediction": 6.3384809494018555,
+    "adv_prediction": 5.2461628913879395,
+    "target_drift": 0.6442389488220215
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_517",
+    "transfer_drift": 0.2547023296356201,
+    "clean_prediction": 3.0094456672668457,
+    "adv_prediction": 2.7547433376312256,
+    "target_drift": 0.472900390625
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1159",
+    "transfer_drift": 0.07865333557128906,
+    "clean_prediction": 3.213019371032715,
+    "adv_prediction": 3.134366035461426,
+    "target_drift": 0.22115135192871094
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2493",
+    "transfer_drift": 0.007211208343505859,
+    "clean_prediction": 4.962664604187012,
+    "adv_prediction": 4.969875812530518,
+    "target_drift": 0.39630937576293945
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2226",
+    "transfer_drift": 0.7228908538818359,
+    "clean_prediction": 4.244853973388672,
+    "adv_prediction": 3.521963119506836,
+    "target_drift": 1.6637754440307617
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_17",
+    "transfer_drift": 1.3877208232879639,
+    "clean_prediction": 0.909358024597168,
+    "adv_prediction": 2.297078847885132,
+    "target_drift": 1.0829708576202393
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_956",
+    "transfer_drift": 0.19849777221679688,
+    "clean_prediction": 3.8251614570617676,
+    "adv_prediction": 4.0236592292785645,
+    "target_drift": 0.26951122283935547
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_898",
+    "transfer_drift": 0.4503931999206543,
+    "clean_prediction": 3.067509651184082,
+    "adv_prediction": 2.6171164512634277,
+    "target_drift": 0.479231595993042
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1667",
+    "transfer_drift": 0.05878496170043945,
+    "clean_prediction": 2.9530396461486816,
+    "adv_prediction": 2.894254684448242,
+    "target_drift": 0.5647568702697754
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3362",
+    "transfer_drift": 0.6947665214538574,
+    "clean_prediction": 6.028063774108887,
+    "adv_prediction": 5.333297252655029,
+    "target_drift": 0.6068487167358398
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3703",
+    "transfer_drift": 1.216357707977295,
+    "clean_prediction": 7.608079433441162,
+    "adv_prediction": 6.391721725463867,
+    "target_drift": 0.4301419258117676
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_793",
+    "transfer_drift": 0.01561880111694336,
+    "clean_prediction": 2.798370361328125,
+    "adv_prediction": 2.7827515602111816,
+    "target_drift": 0.16357111930847168
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3189",
+    "transfer_drift": 0.7708249092102051,
+    "clean_prediction": 5.657440662384033,
+    "adv_prediction": 4.886615753173828,
+    "target_drift": 0.43405771255493164
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2734",
+    "transfer_drift": 0.013434410095214844,
+    "clean_prediction": 5.057806015014648,
+    "adv_prediction": 5.071240425109863,
+    "target_drift": 0.3182868957519531
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1549",
+    "transfer_drift": 0.056729793548583984,
+    "clean_prediction": 4.038893222808838,
+    "adv_prediction": 4.095623016357422,
+    "target_drift": 0.5553922653198242
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3746",
+    "transfer_drift": 0.21669435501098633,
+    "clean_prediction": 6.160242080688477,
+    "adv_prediction": 5.94354772567749,
+    "target_drift": 0.6214590072631836
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2736",
+    "transfer_drift": 0.09116888046264648,
+    "clean_prediction": 5.100161552429199,
+    "adv_prediction": 5.008992671966553,
+    "target_drift": 0.37561511993408203
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1005",
+    "transfer_drift": 0.22348451614379883,
+    "clean_prediction": 2.761148452758789,
+    "adv_prediction": 2.984632968902588,
+    "target_drift": 0.9309978485107422
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_367",
+    "transfer_drift": 0.6613438129425049,
+    "clean_prediction": 2.2228968143463135,
+    "adv_prediction": 2.8842406272888184,
+    "target_drift": 1.1051576137542725
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2223",
+    "transfer_drift": 0.11279606819152832,
+    "clean_prediction": 4.0396318435668945,
+    "adv_prediction": 3.926835775375366,
+    "target_drift": 0.4411156177520752
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3386",
+    "transfer_drift": 0.39244604110717773,
+    "clean_prediction": 6.377536773681641,
+    "adv_prediction": 5.985090732574463,
+    "target_drift": 0.6770119667053223
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1160",
+    "transfer_drift": 0.504486083984375,
+    "clean_prediction": 3.9273838996887207,
+    "adv_prediction": 4.431869983673096,
+    "target_drift": 0.5335044860839844
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1072",
+    "transfer_drift": 0.03553199768066406,
+    "clean_prediction": 3.6969833374023438,
+    "adv_prediction": 3.732515335083008,
+    "target_drift": 0.5236883163452148
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_675",
+    "transfer_drift": 0.5760936737060547,
+    "clean_prediction": 3.671692371368408,
+    "adv_prediction": 3.0955986976623535,
+    "target_drift": 1.0618786811828613
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_754",
+    "transfer_drift": 0.4658670425415039,
+    "clean_prediction": 3.1334285736083984,
+    "adv_prediction": 2.6675615310668945,
+    "target_drift": 0.48236989974975586
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2459",
+    "transfer_drift": 0.3637113571166992,
+    "clean_prediction": 4.349247932434082,
+    "adv_prediction": 4.712959289550781,
+    "target_drift": 0.46593284606933594
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_155",
+    "transfer_drift": 0.05134701728820801,
+    "clean_prediction": 2.29528546333313,
+    "adv_prediction": 2.346632480621338,
+    "target_drift": 0.31895947456359863
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2461",
+    "transfer_drift": 0.37653589248657227,
+    "clean_prediction": 4.287570953369141,
+    "adv_prediction": 3.9110350608825684,
+    "target_drift": 0.6511249542236328
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2368",
+    "transfer_drift": 0.9241933822631836,
+    "clean_prediction": 4.469667434692383,
+    "adv_prediction": 3.545474052429199,
+    "target_drift": 1.8111951351165771
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_512",
+    "transfer_drift": 0.04035329818725586,
+    "clean_prediction": 2.9014358520507812,
+    "adv_prediction": 2.8610825538635254,
+    "target_drift": 0.41968870162963867
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1419",
+    "transfer_drift": 0.36780381202697754,
+    "clean_prediction": 3.6858925819396973,
+    "adv_prediction": 3.3180887699127197,
+    "target_drift": 0.8856925964355469
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2967",
+    "transfer_drift": 0.8549184799194336,
+    "clean_prediction": 5.848812103271484,
+    "adv_prediction": 4.993893623352051,
+    "target_drift": 0.505284309387207
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2076",
+    "transfer_drift": 0.44188642501831055,
+    "clean_prediction": 4.490766525268555,
+    "adv_prediction": 4.048880100250244,
+    "target_drift": 1.5935158729553223
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1298",
+    "transfer_drift": 0.4840056896209717,
+    "clean_prediction": 3.553678512573242,
+    "adv_prediction": 3.0696728229522705,
+    "target_drift": 0.5923354625701904
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1468",
+    "transfer_drift": 1.019930124282837,
+    "clean_prediction": 3.618312120437622,
+    "adv_prediction": 2.598381996154785,
+    "target_drift": 1.3596947193145752
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2730",
+    "transfer_drift": 0.26427721977233887,
+    "clean_prediction": 3.700308084487915,
+    "adv_prediction": 3.436030864715576,
+    "target_drift": 0.49437665939331055
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1609",
+    "transfer_drift": 0.0882253646850586,
+    "clean_prediction": 5.62885856628418,
+    "adv_prediction": 5.540633201599121,
+    "target_drift": 0.3849773406982422
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1809",
+    "transfer_drift": 0.37024736404418945,
+    "clean_prediction": 3.321260452270508,
+    "adv_prediction": 2.9510130882263184,
+    "target_drift": 0.9988312721252441
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3627",
+    "transfer_drift": 1.3079514503479004,
+    "clean_prediction": 6.1944122314453125,
+    "adv_prediction": 4.886460781097412,
+    "target_drift": 0.926842212677002
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_660",
+    "transfer_drift": 0.47252964973449707,
+    "clean_prediction": 3.358822822570801,
+    "adv_prediction": 3.831352472305298,
+    "target_drift": 0.514254093170166
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1826",
+    "transfer_drift": 0.20219802856445312,
+    "clean_prediction": 4.423882007598877,
+    "adv_prediction": 4.221683979034424,
+    "target_drift": 0.5697269439697266
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2932",
+    "transfer_drift": 1.3895878791809082,
+    "clean_prediction": 4.679160118103027,
+    "adv_prediction": 3.289572238922119,
+    "target_drift": 1.672011375427246
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_442",
+    "transfer_drift": 0.041272640228271484,
+    "clean_prediction": 2.886606216430664,
+    "adv_prediction": 2.9278788566589355,
+    "target_drift": 0.39182257652282715
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_449",
+    "transfer_drift": 0.4644947052001953,
+    "clean_prediction": 2.934325695037842,
+    "adv_prediction": 3.398820400238037,
+    "target_drift": 0.769925594329834
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2437",
+    "transfer_drift": 0.18098068237304688,
+    "clean_prediction": 4.819726943969727,
+    "adv_prediction": 4.63874626159668,
+    "target_drift": 0.5302062034606934
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2772",
+    "transfer_drift": 1.005793571472168,
+    "clean_prediction": 5.439387798309326,
+    "adv_prediction": 4.433594226837158,
+    "target_drift": 1.051004409790039
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3030",
+    "transfer_drift": 0.7300887107849121,
+    "clean_prediction": 4.80488920211792,
+    "adv_prediction": 4.074800491333008,
+    "target_drift": 0.4745473861694336
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3779",
+    "transfer_drift": 0.41107845306396484,
+    "clean_prediction": 6.382248878479004,
+    "adv_prediction": 5.971170425415039,
+    "target_drift": 0.6186332702636719
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2836",
+    "transfer_drift": 0.4008817672729492,
+    "clean_prediction": 5.852705955505371,
+    "adv_prediction": 5.451824188232422,
+    "target_drift": 0.47472476959228516
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2367",
+    "transfer_drift": 0.10294604301452637,
+    "clean_prediction": 3.8865854740142822,
+    "adv_prediction": 3.783639430999756,
+    "target_drift": 1.6104309558868408
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1211",
+    "transfer_drift": 0.11804842948913574,
+    "clean_prediction": 3.5591883659362793,
+    "adv_prediction": 3.4411399364471436,
+    "target_drift": 0.8186490535736084
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3019",
+    "transfer_drift": 0.05550384521484375,
+    "clean_prediction": 5.761367321014404,
+    "adv_prediction": 5.816871166229248,
+    "target_drift": 0.2628293037414551
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3129",
+    "transfer_drift": 0.41000890731811523,
+    "clean_prediction": 5.994880199432373,
+    "adv_prediction": 6.404889106750488,
+    "target_drift": 0.50244140625
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2068",
+    "transfer_drift": 0.11574077606201172,
+    "clean_prediction": 4.100346565246582,
+    "adv_prediction": 4.216087341308594,
+    "target_drift": 0.46442461013793945
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_782",
+    "transfer_drift": 0.13854646682739258,
+    "clean_prediction": 3.148240566253662,
+    "adv_prediction": 3.0096940994262695,
+    "target_drift": 0.2692685127258301
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_45",
+    "transfer_drift": 0.10576510429382324,
+    "clean_prediction": 1.91953444480896,
+    "adv_prediction": 1.8137693405151367,
+    "target_drift": 0.6206536293029785
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3063",
+    "transfer_drift": 1.298377513885498,
+    "clean_prediction": 6.063239097595215,
+    "adv_prediction": 7.361616611480713,
+    "target_drift": 1.1043891906738281
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_903",
+    "transfer_drift": 0.18572759628295898,
+    "clean_prediction": 4.091456413269043,
+    "adv_prediction": 4.277184009552002,
+    "target_drift": 0.4448575973510742
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3763",
+    "transfer_drift": 0.4959878921508789,
+    "clean_prediction": 5.015841960906982,
+    "adv_prediction": 5.511829853057861,
+    "target_drift": 0.6787838935852051
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_990",
+    "transfer_drift": 0.2256624698638916,
+    "clean_prediction": 3.3584396839141846,
+    "adv_prediction": 3.132777214050293,
+    "target_drift": 0.3927030563354492
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1689",
+    "transfer_drift": 1.6258416175842285,
+    "clean_prediction": 4.2778167724609375,
+    "adv_prediction": 2.651975154876709,
+    "target_drift": 1.8422174453735352
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2093",
+    "transfer_drift": 0.0392155647277832,
+    "clean_prediction": 5.741462707519531,
+    "adv_prediction": 5.702247142791748,
+    "target_drift": 0.4675736427307129
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3799",
+    "transfer_drift": 0.004305362701416016,
+    "clean_prediction": 6.124416351318359,
+    "adv_prediction": 6.128721714019775,
+    "target_drift": 0.48482227325439453
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_930",
+    "transfer_drift": 0.3400540351867676,
+    "clean_prediction": 4.402187347412109,
+    "adv_prediction": 4.742241382598877,
+    "target_drift": 0.4344944953918457
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3620",
+    "transfer_drift": 0.3495669364929199,
+    "clean_prediction": 5.85349702835083,
+    "adv_prediction": 5.50393009185791,
+    "target_drift": 0.6788983345031738
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2098",
+    "transfer_drift": 0.19881224632263184,
+    "clean_prediction": 3.620462656021118,
+    "adv_prediction": 3.81927490234375,
+    "target_drift": 0.12187910079956055
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1493",
+    "transfer_drift": 0.40313148498535156,
+    "clean_prediction": 3.8819007873535156,
+    "adv_prediction": 3.478769302368164,
+    "target_drift": 2.0398168563842773
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1294",
+    "transfer_drift": 0.05810356140136719,
+    "clean_prediction": 4.3173909187316895,
+    "adv_prediction": 4.259287357330322,
+    "target_drift": 0.3404383659362793
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2531",
+    "transfer_drift": 0.234649658203125,
+    "clean_prediction": 4.32158899307251,
+    "adv_prediction": 4.556238651275635,
+    "target_drift": 0.3597538471221924
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_514",
+    "transfer_drift": 0.1495814323425293,
+    "clean_prediction": 2.8398571014404297,
+    "adv_prediction": 2.989438533782959,
+    "target_drift": 0.2375473976135254
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_244",
+    "transfer_drift": 0.5960359573364258,
+    "clean_prediction": 3.579010486602783,
+    "adv_prediction": 4.175046443939209,
+    "target_drift": 1.0180039405822754
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_466",
+    "transfer_drift": 0.403472900390625,
+    "clean_prediction": 2.799861431121826,
+    "adv_prediction": 3.203334331512451,
+    "target_drift": 1.9077980518341064
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1171",
+    "transfer_drift": 0.016657352447509766,
+    "clean_prediction": 3.2218070030212402,
+    "adv_prediction": 3.2051496505737305,
+    "target_drift": 0.12313175201416016
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3842",
+    "transfer_drift": 1.0074357986450195,
+    "clean_prediction": 6.047811985015869,
+    "adv_prediction": 5.04037618637085,
+    "target_drift": 0.667750358581543
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3552",
+    "transfer_drift": 0.9942789077758789,
+    "clean_prediction": 6.059392929077148,
+    "adv_prediction": 5.0651140213012695,
+    "target_drift": 0.7572164535522461
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1117",
+    "transfer_drift": 0.4346001148223877,
+    "clean_prediction": 2.29172682762146,
+    "adv_prediction": 2.7263269424438477,
+    "target_drift": 0.21648263931274414
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3629",
+    "transfer_drift": 0.2968320846557617,
+    "clean_prediction": 6.209312438964844,
+    "adv_prediction": 5.912480354309082,
+    "target_drift": 0.5268073081970215
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2356",
+    "transfer_drift": 0.35952186584472656,
+    "clean_prediction": 4.823029041290283,
+    "adv_prediction": 4.463507175445557,
+    "target_drift": 0.7141623497009277
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1461",
+    "transfer_drift": 0.4045133590698242,
+    "clean_prediction": 3.5433077812194824,
+    "adv_prediction": 3.138794422149658,
+    "target_drift": 0.8219404220581055
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_483",
+    "transfer_drift": 0.20174241065979004,
+    "clean_prediction": 2.9119606018066406,
+    "adv_prediction": 2.7102181911468506,
+    "target_drift": 0.28356504440307617
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1700",
+    "transfer_drift": 0.4920821189880371,
+    "clean_prediction": 4.594876289367676,
+    "adv_prediction": 4.102794170379639,
+    "target_drift": 0.6719107627868652
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3290",
+    "transfer_drift": 0.916358470916748,
+    "clean_prediction": 5.814445972442627,
+    "adv_prediction": 4.898087501525879,
+    "target_drift": 1.1323819160461426
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2156",
+    "transfer_drift": 0.4378483295440674,
+    "clean_prediction": 3.2834696769714355,
+    "adv_prediction": 3.721318006515503,
+    "target_drift": 2.461780548095703
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3385",
+    "transfer_drift": 0.6135144233703613,
+    "clean_prediction": 5.904730796813965,
+    "adv_prediction": 5.2912163734436035,
+    "target_drift": 0.34470558166503906
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_967",
+    "transfer_drift": 0.3757901191711426,
+    "clean_prediction": 3.2172393798828125,
+    "adv_prediction": 2.84144926071167,
+    "target_drift": 1.0593512058258057
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3072",
+    "transfer_drift": 0.4144415855407715,
+    "clean_prediction": 6.40172815322876,
+    "adv_prediction": 5.987286567687988,
+    "target_drift": 1.2104525566101074
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3316",
+    "transfer_drift": 0.1942276954650879,
+    "clean_prediction": 5.840282917022705,
+    "adv_prediction": 5.646055221557617,
+    "target_drift": 0.45864200592041016
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_259",
+    "transfer_drift": 0.38528871536254883,
+    "clean_prediction": 3.018906593322754,
+    "adv_prediction": 3.4041953086853027,
+    "target_drift": 0.22857189178466797
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_231",
+    "transfer_drift": 0.03298544883728027,
+    "clean_prediction": 2.209737539291382,
+    "adv_prediction": 2.1767520904541016,
+    "target_drift": 0.2861514091491699
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2052",
+    "transfer_drift": 0.07948684692382812,
+    "clean_prediction": 3.657536506652832,
+    "adv_prediction": 3.578049659729004,
+    "target_drift": 0.29302453994750977
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_128",
+    "transfer_drift": 0.42526984214782715,
+    "clean_prediction": 2.214264392852783,
+    "adv_prediction": 1.788994550704956,
+    "target_drift": 0.3108787536621094
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2200",
+    "transfer_drift": 0.3653750419616699,
+    "clean_prediction": 4.021552562713623,
+    "adv_prediction": 4.386927604675293,
+    "target_drift": 0.4714040756225586
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_32",
+    "transfer_drift": 0.28336501121520996,
+    "clean_prediction": 1.173520565032959,
+    "adv_prediction": 1.456885576248169,
+    "target_drift": 0.7397365570068359
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2124",
+    "transfer_drift": 0.06915998458862305,
+    "clean_prediction": 5.480757236480713,
+    "adv_prediction": 5.549917221069336,
+    "target_drift": 0.5554060935974121
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1654",
+    "transfer_drift": 0.29255032539367676,
+    "clean_prediction": 3.2606163024902344,
+    "adv_prediction": 2.9680659770965576,
+    "target_drift": 0.6135387420654297
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_189",
+    "transfer_drift": 0.5128891468048096,
+    "clean_prediction": 2.833040237426758,
+    "adv_prediction": 2.3201510906219482,
+    "target_drift": 0.24628520011901855
+  },
+  {
+    "source_model": "ordinary_baseline",
+    "eval_model": "mixed_robust",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_769",
+    "transfer_drift": 0.19879889488220215,
+    "clean_prediction": 3.1635968685150146,
+    "adv_prediction": 2.9647979736328125,
+    "target_drift": 0.9208207130432129
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3655",
+    "transfer_drift": 0.36919689178466797,
+    "clean_prediction": 5.950205326080322,
+    "adv_prediction": 5.581008434295654,
+    "target_drift": 0.45348167419433594
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2369",
+    "transfer_drift": 0.07929039001464844,
+    "clean_prediction": 4.858950614929199,
+    "adv_prediction": 4.779660224914551,
+    "target_drift": 0.25313806533813477
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1215",
+    "transfer_drift": 0.06774210929870605,
+    "clean_prediction": 3.171213150024414,
+    "adv_prediction": 3.23895525932312,
+    "target_drift": 0.294658899307251
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_4015",
+    "transfer_drift": 0.23096036911010742,
+    "clean_prediction": 6.407103538513184,
+    "adv_prediction": 6.176143169403076,
+    "target_drift": 0.92694091796875
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_517",
+    "transfer_drift": 0.03506755828857422,
+    "clean_prediction": 2.866514205932617,
+    "adv_prediction": 2.831446647644043,
+    "target_drift": 0.40706372261047363
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1159",
+    "transfer_drift": 0.010081291198730469,
+    "clean_prediction": 3.3051934242248535,
+    "adv_prediction": 3.295112133026123,
+    "target_drift": 0.15102910995483398
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2493",
+    "transfer_drift": 0.07470560073852539,
+    "clean_prediction": 4.619564056396484,
+    "adv_prediction": 4.544858455657959,
+    "target_drift": 0.6292061805725098
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2226",
+    "transfer_drift": 0.2476511001586914,
+    "clean_prediction": 4.907506465911865,
+    "adv_prediction": 4.659855365753174,
+    "target_drift": 0.3436727523803711
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_17",
+    "transfer_drift": 0.33042144775390625,
+    "clean_prediction": 0.15965843200683594,
+    "adv_prediction": 0.4900798797607422,
+    "target_drift": 1.5881009101867676
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_956",
+    "transfer_drift": 0.13915586471557617,
+    "clean_prediction": 4.1455912590026855,
+    "adv_prediction": 4.284747123718262,
+    "target_drift": 0.30225515365600586
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_898",
+    "transfer_drift": 0.08187627792358398,
+    "clean_prediction": 2.423020124435425,
+    "adv_prediction": 2.341143846511841,
+    "target_drift": 0.22111225128173828
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1667",
+    "transfer_drift": 0.8171982765197754,
+    "clean_prediction": 4.574668884277344,
+    "adv_prediction": 3.7574706077575684,
+    "target_drift": 0.3265256881713867
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3362",
+    "transfer_drift": 0.2804579734802246,
+    "clean_prediction": 5.875738620758057,
+    "adv_prediction": 5.595280647277832,
+    "target_drift": 0.4403409957885742
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3703",
+    "transfer_drift": 1.7056069374084473,
+    "clean_prediction": 6.640470504760742,
+    "adv_prediction": 4.934863567352295,
+    "target_drift": 1.753453254699707
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_793",
+    "transfer_drift": 0.02071404457092285,
+    "clean_prediction": 2.3436615467071533,
+    "adv_prediction": 2.3229475021362305,
+    "target_drift": 0.3988986015319824
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3189",
+    "transfer_drift": 0.15561389923095703,
+    "clean_prediction": 5.893825531005859,
+    "adv_prediction": 5.738211631774902,
+    "target_drift": 0.5555415153503418
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2734",
+    "transfer_drift": 0.13258075714111328,
+    "clean_prediction": 5.063512325286865,
+    "adv_prediction": 4.930931568145752,
+    "target_drift": 0.3593463897705078
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1549",
+    "transfer_drift": 0.6478095054626465,
+    "clean_prediction": 4.434220790863037,
+    "adv_prediction": 5.082030296325684,
+    "target_drift": 0.664405345916748
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3746",
+    "transfer_drift": 0.23856019973754883,
+    "clean_prediction": 5.413145542144775,
+    "adv_prediction": 5.174585342407227,
+    "target_drift": 0.25593996047973633
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2736",
+    "transfer_drift": 0.1630086898803711,
+    "clean_prediction": 5.141987323760986,
+    "adv_prediction": 4.978978633880615,
+    "target_drift": 0.1641702651977539
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1005",
+    "transfer_drift": 0.4040565490722656,
+    "clean_prediction": 2.3133983612060547,
+    "adv_prediction": 2.7174549102783203,
+    "target_drift": 0.30783796310424805
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_367",
+    "transfer_drift": 0.1584181785583496,
+    "clean_prediction": 0.9972608089447021,
+    "adv_prediction": 1.1556789875030518,
+    "target_drift": 1.5117366313934326
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2223",
+    "transfer_drift": 0.18776869773864746,
+    "clean_prediction": 3.8399479389190674,
+    "adv_prediction": 3.65217924118042,
+    "target_drift": 0.747565746307373
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3386",
+    "transfer_drift": 1.1477670669555664,
+    "clean_prediction": 6.427052021026611,
+    "adv_prediction": 5.279284954071045,
+    "target_drift": 0.4320964813232422
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1160",
+    "transfer_drift": 0.3626084327697754,
+    "clean_prediction": 3.785604476928711,
+    "adv_prediction": 4.148212909698486,
+    "target_drift": 0.4315004348754883
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1072",
+    "transfer_drift": 0.7542724609375,
+    "clean_prediction": 3.4568161964416504,
+    "adv_prediction": 4.21108865737915,
+    "target_drift": 0.6259422302246094
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_675",
+    "transfer_drift": 1.8485503196716309,
+    "clean_prediction": 3.4384312629699707,
+    "adv_prediction": 1.5898809432983398,
+    "target_drift": 1.253645896911621
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_754",
+    "transfer_drift": 0.2538571357727051,
+    "clean_prediction": 3.395348072052002,
+    "adv_prediction": 3.649205207824707,
+    "target_drift": 0.38901233673095703
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2459",
+    "transfer_drift": 0.03348398208618164,
+    "clean_prediction": 4.994063854217529,
+    "adv_prediction": 5.027547836303711,
+    "target_drift": 0.4561290740966797
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_155",
+    "transfer_drift": 0.04293251037597656,
+    "clean_prediction": 1.2124292850494385,
+    "adv_prediction": 1.169496774673462,
+    "target_drift": 0.4160177707672119
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2461",
+    "transfer_drift": 0.5240302085876465,
+    "clean_prediction": 4.374101161956787,
+    "adv_prediction": 3.8500709533691406,
+    "target_drift": 0.7934260368347168
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2368",
+    "transfer_drift": 0.0870661735534668,
+    "clean_prediction": 4.476565361022949,
+    "adv_prediction": 4.389499187469482,
+    "target_drift": 0.24667787551879883
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_512",
+    "transfer_drift": 0.04027867317199707,
+    "clean_prediction": 2.8269975185394287,
+    "adv_prediction": 2.867276191711426,
+    "target_drift": 0.2227942943572998
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1419",
+    "transfer_drift": 0.4426264762878418,
+    "clean_prediction": 3.757357120513916,
+    "adv_prediction": 3.314730644226074,
+    "target_drift": 0.4893181324005127
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2967",
+    "transfer_drift": 0.1133127212524414,
+    "clean_prediction": 5.692811965942383,
+    "adv_prediction": 5.579499244689941,
+    "target_drift": 0.8940796852111816
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2076",
+    "transfer_drift": 1.3212199211120605,
+    "clean_prediction": 5.187360763549805,
+    "adv_prediction": 3.866140842437744,
+    "target_drift": 0.8347878456115723
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1298",
+    "transfer_drift": 0.9437575340270996,
+    "clean_prediction": 4.114040374755859,
+    "adv_prediction": 3.1702828407287598,
+    "target_drift": 0.3029298782348633
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1468",
+    "transfer_drift": 0.11042642593383789,
+    "clean_prediction": 3.298025131225586,
+    "adv_prediction": 3.187598705291748,
+    "target_drift": 0.3134801387786865
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2730",
+    "transfer_drift": 1.0613441467285156,
+    "clean_prediction": 4.520899772644043,
+    "adv_prediction": 3.4595556259155273,
+    "target_drift": 0.4420816898345947
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1609",
+    "transfer_drift": 0.8455972671508789,
+    "clean_prediction": 4.85829496383667,
+    "adv_prediction": 4.012697696685791,
+    "target_drift": 0.25962400436401367
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1809",
+    "transfer_drift": 0.04007577896118164,
+    "clean_prediction": 4.450892448425293,
+    "adv_prediction": 4.410816669464111,
+    "target_drift": 0.6355855464935303
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3627",
+    "transfer_drift": 0.22719240188598633,
+    "clean_prediction": 5.966146945953369,
+    "adv_prediction": 6.1933393478393555,
+    "target_drift": 0.4971137046813965
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_660",
+    "transfer_drift": 0.1546792984008789,
+    "clean_prediction": 3.5938801765441895,
+    "adv_prediction": 3.7485594749450684,
+    "target_drift": 0.4413795471191406
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1826",
+    "transfer_drift": 0.2491893768310547,
+    "clean_prediction": 4.768972873687744,
+    "adv_prediction": 4.5197834968566895,
+    "target_drift": 0.37871742248535156
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2932",
+    "transfer_drift": 1.1401948928833008,
+    "clean_prediction": 4.4318623542785645,
+    "adv_prediction": 3.2916674613952637,
+    "target_drift": 2.0819382667541504
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_442",
+    "transfer_drift": 0.3448302745819092,
+    "clean_prediction": 2.88210129737854,
+    "adv_prediction": 3.226931571960449,
+    "target_drift": 0.9119999408721924
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_449",
+    "transfer_drift": 0.248305082321167,
+    "clean_prediction": 2.1449244022369385,
+    "adv_prediction": 2.3932294845581055,
+    "target_drift": 0.3895595073699951
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2437",
+    "transfer_drift": 0.18097162246704102,
+    "clean_prediction": 4.692460060119629,
+    "adv_prediction": 4.511488437652588,
+    "target_drift": 0.29947423934936523
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2772",
+    "transfer_drift": 0.6529536247253418,
+    "clean_prediction": 5.358765125274658,
+    "adv_prediction": 4.705811500549316,
+    "target_drift": 0.7277116775512695
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3030",
+    "transfer_drift": 0.38379859924316406,
+    "clean_prediction": 4.9421281814575195,
+    "adv_prediction": 4.5583295822143555,
+    "target_drift": 0.6740503311157227
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3779",
+    "transfer_drift": 0.8004593849182129,
+    "clean_prediction": 6.581609725952148,
+    "adv_prediction": 5.7811503410339355,
+    "target_drift": 0.4358797073364258
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2836",
+    "transfer_drift": 0.6315903663635254,
+    "clean_prediction": 5.636433124542236,
+    "adv_prediction": 5.004842758178711,
+    "target_drift": 0.6896157264709473
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2367",
+    "transfer_drift": 0.5418534278869629,
+    "clean_prediction": 4.54248571395874,
+    "adv_prediction": 4.000632286071777,
+    "target_drift": 0.8210675716400146
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1211",
+    "transfer_drift": 1.228590488433838,
+    "clean_prediction": 3.6390380859375,
+    "adv_prediction": 2.410447597503662,
+    "target_drift": 0.15543746948242188
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3019",
+    "transfer_drift": 0.4875788688659668,
+    "clean_prediction": 5.474843502044678,
+    "adv_prediction": 4.987264633178711,
+    "target_drift": 0.7630271911621094
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3129",
+    "transfer_drift": 0.7129521369934082,
+    "clean_prediction": 6.312241554260254,
+    "adv_prediction": 5.599289417266846,
+    "target_drift": 0.6437950134277344
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2068",
+    "transfer_drift": 0.0551600456237793,
+    "clean_prediction": 4.925357341766357,
+    "adv_prediction": 4.980517387390137,
+    "target_drift": 0.2771129608154297
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_782",
+    "transfer_drift": 0.39971232414245605,
+    "clean_prediction": 3.496295928955078,
+    "adv_prediction": 3.096583604812622,
+    "target_drift": 0.23554015159606934
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_45",
+    "transfer_drift": 1.2811548709869385,
+    "clean_prediction": 1.7654342651367188,
+    "adv_prediction": 3.0465891361236572,
+    "target_drift": 1.148944616317749
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3063",
+    "transfer_drift": 0.8571991920471191,
+    "clean_prediction": 6.062707424163818,
+    "adv_prediction": 5.205508232116699,
+    "target_drift": 1.171290397644043
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_903",
+    "transfer_drift": 0.2268810272216797,
+    "clean_prediction": 4.152870178222656,
+    "adv_prediction": 3.9259891510009766,
+    "target_drift": 0.2958345413208008
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3763",
+    "transfer_drift": 0.5657920837402344,
+    "clean_prediction": 5.800574779510498,
+    "adv_prediction": 5.234782695770264,
+    "target_drift": 1.0034751892089844
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_990",
+    "transfer_drift": 0.2937605381011963,
+    "clean_prediction": 4.0600433349609375,
+    "adv_prediction": 3.766282796859741,
+    "target_drift": 0.34168171882629395
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1689",
+    "transfer_drift": 0.345306396484375,
+    "clean_prediction": 4.344869613647461,
+    "adv_prediction": 4.690176010131836,
+    "target_drift": 0.26420164108276367
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2093",
+    "transfer_drift": 0.57952880859375,
+    "clean_prediction": 5.630678653717041,
+    "adv_prediction": 5.051149845123291,
+    "target_drift": 0.4413151741027832
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3799",
+    "transfer_drift": 0.7161288261413574,
+    "clean_prediction": 5.990975379943848,
+    "adv_prediction": 5.27484655380249,
+    "target_drift": 0.5559988021850586
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_930",
+    "transfer_drift": 1.5205104351043701,
+    "clean_prediction": 4.159791469573975,
+    "adv_prediction": 2.6392810344696045,
+    "target_drift": 1.4997060298919678
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3620",
+    "transfer_drift": 1.2032642364501953,
+    "clean_prediction": 6.218690395355225,
+    "adv_prediction": 5.015426158905029,
+    "target_drift": 1.258246898651123
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2098",
+    "transfer_drift": 0.25089550018310547,
+    "clean_prediction": 3.9293832778930664,
+    "adv_prediction": 4.180278778076172,
+    "target_drift": 0.2756826877593994
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1493",
+    "transfer_drift": 0.025124549865722656,
+    "clean_prediction": 4.134727954864502,
+    "adv_prediction": 4.159852504730225,
+    "target_drift": 0.25777482986450195
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1294",
+    "transfer_drift": 0.0626211166381836,
+    "clean_prediction": 5.058113098144531,
+    "adv_prediction": 5.120734214782715,
+    "target_drift": 0.4064946174621582
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2531",
+    "transfer_drift": 1.4040453433990479,
+    "clean_prediction": 3.65643048286438,
+    "adv_prediction": 2.252385139465332,
+    "target_drift": 1.7408580780029297
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_514",
+    "transfer_drift": 0.005357265472412109,
+    "clean_prediction": 2.948184013366699,
+    "adv_prediction": 2.9535412788391113,
+    "target_drift": 0.31201839447021484
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_244",
+    "transfer_drift": 0.4555792808532715,
+    "clean_prediction": 3.598936080932617,
+    "adv_prediction": 4.054515361785889,
+    "target_drift": 0.8498086929321289
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_466",
+    "transfer_drift": 0.1640934944152832,
+    "clean_prediction": 1.3134832382202148,
+    "adv_prediction": 1.477576732635498,
+    "target_drift": 0.6477856636047363
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1171",
+    "transfer_drift": 0.09407544136047363,
+    "clean_prediction": 3.38632869720459,
+    "adv_prediction": 3.4804041385650635,
+    "target_drift": 0.501309871673584
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3842",
+    "transfer_drift": 0.8810534477233887,
+    "clean_prediction": 6.226391792297363,
+    "adv_prediction": 5.345338344573975,
+    "target_drift": 1.0787968635559082
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3552",
+    "transfer_drift": 0.11702394485473633,
+    "clean_prediction": 6.2289204597473145,
+    "adv_prediction": 6.111896514892578,
+    "target_drift": 0.5581293106079102
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1117",
+    "transfer_drift": 0.11123323440551758,
+    "clean_prediction": 3.129612445831299,
+    "adv_prediction": 3.2408456802368164,
+    "target_drift": 0.7447166442871094
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3629",
+    "transfer_drift": 0.820000171661377,
+    "clean_prediction": 6.337525844573975,
+    "adv_prediction": 5.517525672912598,
+    "target_drift": 0.7494387626647949
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2356",
+    "transfer_drift": 0.898923397064209,
+    "clean_prediction": 5.252013683319092,
+    "adv_prediction": 6.150937080383301,
+    "target_drift": 1.180574893951416
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1461",
+    "transfer_drift": 0.5216045379638672,
+    "clean_prediction": 3.559144973754883,
+    "adv_prediction": 3.0375404357910156,
+    "target_drift": 0.8285064697265625
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_483",
+    "transfer_drift": 0.054316043853759766,
+    "clean_prediction": 2.874298572540283,
+    "adv_prediction": 2.928614616394043,
+    "target_drift": 0.45235490798950195
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1700",
+    "transfer_drift": 0.020952224731445312,
+    "clean_prediction": 4.764773368835449,
+    "adv_prediction": 4.743821144104004,
+    "target_drift": 0.707390546798706
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3290",
+    "transfer_drift": 0.2931985855102539,
+    "clean_prediction": 5.627871513366699,
+    "adv_prediction": 5.334672927856445,
+    "target_drift": 0.327911376953125
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2156",
+    "transfer_drift": 0.04329490661621094,
+    "clean_prediction": 3.864656448364258,
+    "adv_prediction": 3.821361541748047,
+    "target_drift": 0.4662501811981201
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3385",
+    "transfer_drift": 0.34470558166503906,
+    "clean_prediction": 5.770463466644287,
+    "adv_prediction": 5.425757884979248,
+    "target_drift": 0.6135144233703613
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_967",
+    "transfer_drift": 0.6588709354400635,
+    "clean_prediction": 3.6871135234832764,
+    "adv_prediction": 4.34598445892334,
+    "target_drift": 0.5957620143890381
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3072",
+    "transfer_drift": 0.9905991554260254,
+    "clean_prediction": 6.461236953735352,
+    "adv_prediction": 5.470637798309326,
+    "target_drift": 0.6335349082946777
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_3316",
+    "transfer_drift": 0.29271888732910156,
+    "clean_prediction": 6.094316005706787,
+    "adv_prediction": 5.8015971183776855,
+    "target_drift": 0.6870455741882324
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_259",
+    "transfer_drift": 0.17240548133850098,
+    "clean_prediction": 2.709580898284912,
+    "adv_prediction": 2.881986379623413,
+    "target_drift": 0.584496021270752
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_231",
+    "transfer_drift": 0.07973456382751465,
+    "clean_prediction": 2.2179131507873535,
+    "adv_prediction": 2.297647714614868,
+    "target_drift": 0.36449098587036133
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2052",
+    "transfer_drift": 0.1939678192138672,
+    "clean_prediction": 4.170550346374512,
+    "adv_prediction": 4.364518165588379,
+    "target_drift": 0.2997570037841797
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_128",
+    "transfer_drift": 0.14948344230651855,
+    "clean_prediction": 2.509974479675293,
+    "adv_prediction": 2.3604910373687744,
+    "target_drift": 0.283581018447876
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2200",
+    "transfer_drift": 0.18130874633789062,
+    "clean_prediction": 4.071415424346924,
+    "adv_prediction": 4.2527241706848145,
+    "target_drift": 0.4296112060546875
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_32",
+    "transfer_drift": 0.3459751605987549,
+    "clean_prediction": 0.8526363372802734,
+    "adv_prediction": 1.1986114978790283,
+    "target_drift": 1.8391809463500977
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_2124",
+    "transfer_drift": 0.2546253204345703,
+    "clean_prediction": 6.252964973449707,
+    "adv_prediction": 5.998339653015137,
+    "target_drift": 0.5348448753356934
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_1654",
+    "transfer_drift": 0.5981168746948242,
+    "clean_prediction": 3.5011496543884277,
+    "adv_prediction": 2.9030327796936035,
+    "target_drift": 0.26291775703430176
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_189",
+    "transfer_drift": 0.01192474365234375,
+    "clean_prediction": 2.818356990814209,
+    "adv_prediction": 2.8302817344665527,
+    "target_drift": 0.2883453369140625
+  },
+  {
+    "source_model": "mixed_robust",
+    "eval_model": "ordinary_baseline",
+    "strategy": "metropolis_mcmc",
+    "source_id": "poly_769",
+    "transfer_drift": 0.9208207130432129,
+    "clean_prediction": 3.6086926460266113,
+    "adv_prediction": 2.6878719329833984,
+    "target_drift": 0.19879889488220215
+  }
+]

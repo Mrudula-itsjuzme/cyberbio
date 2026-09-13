@@ -1,0 +1,502 @@
+[
+  {
+    "id": "poly_3655",
+    "representation": "[*]CNC(=O)CCCCCCCCC(=O)N[*]",
+    "prediction": {}
+  },
+  {
+    "id": "poly_2369",
+    "representation": "[*]Oc1ccc(CC(NC(=O)CCc2ccc(OC(=O)CCCCCCC([*])=O)cc2)C(=O)OC)cc1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_1215",
+    "representation": "[*]CCOCCOCCOc1cccc(NC(=O)c2cccc(C(=O)Nc3cccc(O[*])c3)c2)c1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_4015",
+    "representation": "[*]CC1CCC(COC(=O)CCCC(=O)O[*])CC1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_517",
+    "representation": "[*]C(C=C1)=CC=C1C(=S)C(S2)=CC=C2O[*]",
+    "prediction": {}
+  },
+  {
+    "id": "poly_1159",
+    "representation": "[*]C(=O)Nc1cccc(NC(=O)c2ccc3[nH]c(-c4cccc(-c5nc6cc([*])ccc6[nH]5)c4)nc3c2)n1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_2493",
+    "representation": "[*]Oc1c(Cl)cc(NC(=O)NCCCCCCNC([*])=O)cc1Cl",
+    "prediction": {}
+  },
+  {
+    "id": "poly_2226",
+    "representation": "[*]CCCOC(=O)c1cccc(-c2cccc(C(=O)O[*])c2)c1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_17",
+    "representation": "[*]C=C([*])c1cccc(C#C)c1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_956",
+    "representation": "[*]CCCCCCCCCCOC(=O)c1ccc(C=Cc2ccc(C(=O)O[*])cc2)cc1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_898",
+    "representation": "[*]c1cccc(N2C(=O)c3ccc(P(=O)(c4ccccc4)c4ccc5c(c4)C(=O)N([*])C5=O)cc3C2=O)c1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_1667",
+    "representation": "[*]c1cccc(-c2nnc([*])o2)c1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_3362",
+    "representation": "[*]CCCCCCCNC(=O)CCCCCCCCCCCCCCCCCCC(=O)N[*]",
+    "prediction": {}
+  },
+  {
+    "id": "poly_3703",
+    "representation": "[*]CC(O[*])C1CC(F)(F)C1(F)F",
+    "prediction": {}
+  },
+  {
+    "id": "poly_793",
+    "representation": "[*]c1ccc(N2C(=O)c3ccc(P(=O)(c4ccccc4)c4ccc5c(c4)C(=O)N([*])C5=O)cc3C2=O)cc1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_3189",
+    "representation": "[*]CC1CCCC(CNC(=O)CCCCCCCCCCC(=O)N[*])C1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_2734",
+    "representation": "[*]Cc1ccc(COC(=O)C2CCC(C(=O)O[*])CC2)cc1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_1549",
+    "representation": "[*]Nc1cc([*])ccc1CCCCCCCCCCCC",
+    "prediction": {}
+  },
+  {
+    "id": "poly_3746",
+    "representation": "[*]OC(=O)CCS(=O)(=O)CCC([*])=O",
+    "prediction": {}
+  },
+  {
+    "id": "poly_2736",
+    "representation": "[*]CCCCC(=O)NCCCCCCNC(=O)CCCCS[*]",
+    "prediction": {}
+  },
+  {
+    "id": "poly_1005",
+    "representation": "[*]NC(S1)=CC=C1C(C=C2)=CC=C2C(=S)[*]",
+    "prediction": {}
+  },
+  {
+    "id": "poly_367",
+    "representation": "[*]C=C([*])c1nc2ccccc2n1C",
+    "prediction": {}
+  },
+  {
+    "id": "poly_2223",
+    "representation": "[*]C(=O)c1ccc(C(=O)N2CCN([*])CC2)cc1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_3386",
+    "representation": "C([*])C(C)(C(=O)OCCCOC)([*])",
+    "prediction": {}
+  },
+  {
+    "id": "poly_1160",
+    "representation": "[*]NC(S1)=CC=C1C(=O)O[*]",
+    "prediction": {}
+  },
+  {
+    "id": "poly_1072",
+    "representation": "[*]Nc1cc(OC)c([*])cc1OC",
+    "prediction": {}
+  },
+  {
+    "id": "poly_675",
+    "representation": "[*]c1ccc(-c2nnc([*])o2)c(OCC)c1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_754",
+    "representation": "[*]NC(=O)c1ccc(C(=O)Nc2ccc3c(c2)[nH]c(=O)c2cc([*])ccc23)cc1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_2459",
+    "representation": "[*]CC(CC)(CC)CS[*]",
+    "prediction": {}
+  },
+  {
+    "id": "poly_155",
+    "representation": "[*]c1cc(CCCCCCCCCCCC(=O)Oc2ccc([N+](=O)[O-])cc2)c([*])s1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_2461",
+    "representation": "[*]c1ccc(C)c(N2CC(=O)N([*])CC2=O)c1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_2368",
+    "representation": "[*]Oc1ccc(CC(NC(=O)CCc2ccc(OC(=O)CCC([*])=O)cc2)C(=O)OC(C)CC)cc1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_512",
+    "representation": "[*]C(=O)Nc1ccc(NC(=O)c2ccc3c(c2)C(=O)N(c2ccc(Oc4ccc(N5C(=O)c6ccc([*])cc6C5=O)cc4)cc2)C3=O)cc1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_1419",
+    "representation": "[*]CC(S1)=CC=C1OC(=S)[*]",
+    "prediction": {}
+  },
+  {
+    "id": "poly_2967",
+    "representation": "[*]CC([*])C(=O)N1CCOCC1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_2076",
+    "representation": "O([*])C(=O)Oc1c(OC)cc(cc1)C(C)c1ccc(cc1)([*])",
+    "prediction": {}
+  },
+  {
+    "id": "poly_1298",
+    "representation": "[*]Oc1ccc(NC(=O)c2cc(C(=O)Nc3ccc(Oc4ccc(C5(c6ccc([*])cc6)CC6CCC5C6)cc4)cc3)cc(C(C)(C)C)c2)cc1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_1468",
+    "representation": "[*]c1ccc2c(c1)c1cc([*])ccc1n2C(=O)NO",
+    "prediction": {}
+  },
+  {
+    "id": "poly_2730",
+    "representation": "[*]OC(=O)C(Cc1ccccc1)NC(=O)CCCCC(=O)NC(Cc1ccccc1)C(=O)OC1COC2C([*])COC12",
+    "prediction": {}
+  },
+  {
+    "id": "poly_1609",
+    "representation": "[*]CCOCCOCCOC(=O)C=CC(=O)NCCCCCCNC(=O)C=CC(=O)O[*]",
+    "prediction": {}
+  },
+  {
+    "id": "poly_1809",
+    "representation": "[*]CCCCc1nc2cc3sc([*])nc3cc2s1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_3627",
+    "representation": "[*]CC([*])C(=O)NCO",
+    "prediction": {}
+  },
+  {
+    "id": "poly_660",
+    "representation": "[*]CC([*])n1c2ccc(I)cc2c2cc(I)ccc21",
+    "prediction": {}
+  },
+  {
+    "id": "poly_1826",
+    "representation": "[*]Oc1ccc(C(C)(C)c2ccc(Oc3nc([*])nc(Cl)n3)cc2)cc1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_2932",
+    "representation": "[*]C=CC1CC([*])C2CC=CC12",
+    "prediction": {}
+  },
+  {
+    "id": "poly_442",
+    "representation": "[*]c1nc2ccc(-c3ccc4nc(-c5cccc6cc7c([*])cccc7cc56)sc4c3)cc2s1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_449",
+    "representation": "[*]C(S1)=CC=C1C(=S)C(S2)=CC=C2O[*]",
+    "prediction": {}
+  },
+  {
+    "id": "poly_2437",
+    "representation": "[*]Oc1ccc(CC(NC(=O)CCc2ccc(OC(=O)CCCCCCC([*])=O)cc2)C(=O)OC(C)C)cc1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_2772",
+    "representation": "[*]C=CC1CC([*])C(C(=O)OC)C1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_3030",
+    "representation": "[*]NC(c1ccccc1)C(C)(C)C([*])=O",
+    "prediction": {}
+  },
+  {
+    "id": "poly_3779",
+    "representation": "[*]CCCCCCOC(=O)C(=O)O[*]",
+    "prediction": {}
+  },
+  {
+    "id": "poly_2836",
+    "representation": "[*]CCCNC(=O)CCCCC(=O)NCCCO[*]",
+    "prediction": {}
+  },
+  {
+    "id": "poly_2367",
+    "representation": "[*]CC([*])c1ccc(C)c(C)c1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_1211",
+    "representation": "[*]c1ccc2c(c1)c1cc([*])ccc1n2-c1ccccc1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_3019",
+    "representation": "[*]CCCCCCNC(=O)NCCCCNC(=O)N[*]",
+    "prediction": {}
+  },
+  {
+    "id": "poly_3129",
+    "representation": "[*]CC([*])(Cl)C(=O)OC",
+    "prediction": {}
+  },
+  {
+    "id": "poly_2068",
+    "representation": "[*]OC(=O)c1ccc(CCCCCc2ccc(C([*])=O)cc2)cc1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_782",
+    "representation": "[*]c1ccc(Oc2ccc(-c3nc4cc(-c5ccc6nc([*])c(-c7ccccc7)nc6c5)ccc4nc3-c3ccccc3)cc2)cc1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_45",
+    "representation": "[*]C#CC(CO)=C([*])n1c2ccccc2c2ccccc21",
+    "prediction": {}
+  },
+  {
+    "id": "poly_3063",
+    "representation": "[*]CC([*])OC",
+    "prediction": {}
+  },
+  {
+    "id": "poly_903",
+    "representation": "[*]CCCCCCCCCCOc1ccc(OC(=O)c2ccc(C(=O)Oc3ccc(O[*])cc3)cc2)cc1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_3763",
+    "representation": "[*]CC(C)(C)CS([*])(=O)=O",
+    "prediction": {}
+  },
+  {
+    "id": "poly_990",
+    "representation": "[*]Oc1ccc(NC(=O)c2ccc(C(=O)Nc3ccc(Oc4ccc(C5(c6ccc([*])cc6)CC6CCC5C6)cc4)cc3)cc2)cc1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_1689",
+    "representation": "[*]Oc1ccc(C(C)(C)c2ccc(OC(=O)OCCN(CCOC([*])=O)c3ccc(OC)cc3)cc2)cc1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_2093",
+    "representation": "[*]CCCCNC(=O)CCCCCCC(=O)NCCCCNC(=O)C(=O)N[*]",
+    "prediction": {}
+  },
+  {
+    "id": "poly_3799",
+    "representation": "[*]CCOCCOC(=O)C(C)C(=O)O[*]",
+    "prediction": {}
+  },
+  {
+    "id": "poly_930",
+    "representation": "[*]C(=O)OCCOC(=O)c1ccc([*])o1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_3620",
+    "representation": "[*]CCCCCCC(=O)N[*]",
+    "prediction": {}
+  },
+  {
+    "id": "poly_2098",
+    "representation": "[*]Oc1ccc(C2(c3ccc(OC(=O)CCCCCCCCC([*])=O)cc3)c3ccccc3Cc3ccccc32)cc1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_1493",
+    "representation": "[*]CCCOc1ccc(C(=O)OC(=O)c2ccccc2C(=O)OC(=O)c2ccc(O[*])cc2)cc1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_1294",
+    "representation": "[*]CCCCCc1ccc(CCCCCOC(=O)c2ccc(C(=O)O[*])cc2)cc1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_2531",
+    "representation": "[*]NC(CCC(=O)OCc1ccc(Cl)cc1)C([*])=O",
+    "prediction": {}
+  },
+  {
+    "id": "poly_514",
+    "representation": "[*]Nc1cc(NC(=O)Nc2ccc(NC([*])=O)cc2)cc(C(=O)Nc2cccc3c2C(=O)c2ccccc2C3=O)c1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_244",
+    "representation": "[*]NC(=O)C(=S)C(=O)[*]",
+    "prediction": {}
+  },
+  {
+    "id": "poly_466",
+    "representation": "[*]c1cc(-c2ccccc2)c([*])s1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_1171",
+    "representation": "[*]c1ccc(CCc2ccc(N3C(=O)C(=O)N([*])C3=O)cc2)cc1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_3842",
+    "representation": "[*]CCCCNC(=O)O[*]",
+    "prediction": {}
+  },
+  {
+    "id": "poly_3552",
+    "representation": "[*]CCCCCCCCCCC(=O)N[*]",
+    "prediction": {}
+  },
+  {
+    "id": "poly_1117",
+    "representation": "[*]c1cc(OCCCCCCCCCC)cc(-c2nc3cc4sc([*])nc4cc3s2)c1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_3629",
+    "representation": "[*]CCOCCOC(=O)CCCCC(=O)O[*]",
+    "prediction": {}
+  },
+  {
+    "id": "poly_2356",
+    "representation": "[*]COC(S1)=CC=C1O[*]",
+    "prediction": {}
+  },
+  {
+    "id": "poly_1461",
+    "representation": "[*]c1ccc2c(c1)c1ccccc1n2[*]",
+    "prediction": {}
+  },
+  {
+    "id": "poly_483",
+    "representation": "[*]c1cc(C(F)(F)C(F)(F)C(F)(F)F)c([*])s1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_1700",
+    "representation": "[*]CC(=O)OC(=O)c1cccc(O[*])c1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_3290",
+    "representation": "[*]CCCCCCNC(=O)NCCNC(=O)N[*]",
+    "prediction": {}
+  },
+  {
+    "id": "poly_2156",
+    "representation": "[*]Nc1c(Cl)cc([*])cc1Cl",
+    "prediction": {}
+  },
+  {
+    "id": "poly_3385",
+    "representation": "[*]CCCCCCCCCNC(=O)CC(=O)N[*]",
+    "prediction": {}
+  },
+  {
+    "id": "poly_967",
+    "representation": "[*]CC(S1)=CC=C1C(=S)O[*]",
+    "prediction": {}
+  },
+  {
+    "id": "poly_3072",
+    "representation": "[*]CCCOC(=O)C(=O)O[*]",
+    "prediction": {}
+  },
+  {
+    "id": "poly_3316",
+    "representation": "[*]CCCC(C)(C)CNC(=O)CCCCCCCC(=O)N[*]",
+    "prediction": {}
+  },
+  {
+    "id": "poly_259",
+    "representation": "[*]C1=CSC(=C2SC=C(c3ccc([*])cc3)S2)S1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_231",
+    "representation": "[*]N=c1c(=Nc2ccc([*])cc2)c2cccc3cccc1c32",
+    "prediction": {}
+  },
+  {
+    "id": "poly_2052",
+    "representation": "[*]Cc1cc(COC(=O)Nc2ccc(Cc3ccc(NC(=O)O[*])cc3)cc2)cc(C(C)(C)C)c1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_128",
+    "representation": "[*]C1=C2OCCOC2=C(c2ccc(-c3ccc([*])s3)s2)S1(=O)=O",
+    "prediction": {}
+  },
+  {
+    "id": "poly_2200",
+    "representation": "[*]NC(CCCNC(=O)c1ccc(F)cc1)C([*])=O",
+    "prediction": {}
+  },
+  {
+    "id": "poly_32",
+    "representation": "[*]C=C([*])c1ccc([N+](=O)[O-])cc1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_2124",
+    "representation": "[*]OC1(C)CC(C)(C)C(C)(N2CCCC([*])C2)C1C",
+    "prediction": {}
+  },
+  {
+    "id": "poly_1654",
+    "representation": "C(O2)([*])=NN=C2C1=CC=C(C=C1)C2(C1=CC=CC=C1C(=O)O2)C1=CC=C(C=C1)O([*])",
+    "prediction": {}
+  },
+  {
+    "id": "poly_189",
+    "representation": "[*]c1ccc(N(c2ccc(C#N)cc2)c2ccc(N3C(=O)c4ccc(-c5ccc6c(c5)C(=O)N([*])C6=O)cc4C3=O)cc2)cc1",
+    "prediction": {}
+  },
+  {
+    "id": "poly_769",
+    "representation": "[*]c1ccc(-c2nc3cc(-c4ccc5nc([*])c(-c6ccccc6)nc5c4)ccc3nc2-c2ccccc2)cc1",
+    "prediction": {}
+  }
+]

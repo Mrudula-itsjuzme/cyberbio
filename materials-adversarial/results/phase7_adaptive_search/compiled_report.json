@@ -1,0 +1,226 @@
+{
+  "budget_analysis": {
+    "5": {
+      "ordinary_baseline": {
+        "random": {
+          "mean_drift": 0.611881160736084,
+          "stress_success_rate": 0.49,
+          "mean_queries": 4.34,
+          "valid_proposals": 6.61
+        },
+        "greedy": {
+          "mean_drift": 0.4926567363739014,
+          "stress_success_rate": 0.34,
+          "mean_queries": 2.99,
+          "valid_proposals": 7.69
+        },
+        "metropolis_mcmc": {
+          "mean_drift": 0.558193781375885,
+          "stress_success_rate": 0.43,
+          "mean_queries": 3.32,
+          "valid_proposals": 7.25
+        }
+      },
+      "mixed_robust": {
+        "random": {
+          "mean_drift": 0.5323039007186889,
+          "stress_success_rate": 0.44,
+          "mean_queries": 4.46,
+          "valid_proposals": 7.1
+        },
+        "greedy": {
+          "mean_drift": 0.39351755380630493,
+          "stress_success_rate": 0.27,
+          "mean_queries": 3.02,
+          "valid_proposals": 8.35
+        },
+        "metropolis_mcmc": {
+          "mean_drift": 0.46797540664672854,
+          "stress_success_rate": 0.29,
+          "mean_queries": 3.51,
+          "valid_proposals": 7.78
+        }
+      }
+    },
+    "10": {
+      "ordinary_baseline": {
+        "random": {
+          "mean_drift": 0.7087272906303406,
+          "stress_success_rate": 0.59,
+          "mean_queries": 8.25,
+          "valid_proposals": 15.47
+        },
+        "greedy": {
+          "mean_drift": 0.3989424800872803,
+          "stress_success_rate": 0.26,
+          "mean_queries": 3.49,
+          "valid_proposals": 16.55
+        },
+        "metropolis_mcmc": {
+          "mean_drift": 0.5954253673553467,
+          "stress_success_rate": 0.42,
+          "mean_queries": 4.71,
+          "valid_proposals": 19.74
+        }
+      },
+      "mixed_robust": {
+        "random": {
+          "mean_drift": 0.6400943064689636,
+          "stress_success_rate": 0.55,
+          "mean_queries": 8.19,
+          "valid_proposals": 17.0
+        },
+        "greedy": {
+          "mean_drift": 0.46191208839416503,
+          "stress_success_rate": 0.36,
+          "mean_queries": 3.65,
+          "valid_proposals": 18.29
+        },
+        "metropolis_mcmc": {
+          "mean_drift": 0.5014736270904541,
+          "stress_success_rate": 0.36,
+          "mean_queries": 4.83,
+          "valid_proposals": 19.26
+        }
+      }
+    },
+    "20": {
+      "ordinary_baseline": {
+        "random": {
+          "mean_drift": 0.9902652812004089,
+          "stress_success_rate": 0.74,
+          "mean_queries": 15.88,
+          "valid_proposals": 36.86
+        },
+        "greedy": {
+          "mean_drift": 0.4749530267715454,
+          "stress_success_rate": 0.37,
+          "mean_queries": 3.77,
+          "valid_proposals": 36.78
+        },
+        "metropolis_mcmc": {
+          "mean_drift": 0.5678403639793396,
+          "stress_success_rate": 0.45,
+          "mean_queries": 5.69,
+          "valid_proposals": 36.71
+        }
+      },
+      "mixed_robust": {
+        "random": {
+          "mean_drift": 0.7751793360710144,
+          "stress_success_rate": 0.62,
+          "mean_queries": 15.69,
+          "valid_proposals": 36.06
+        },
+        "greedy": {
+          "mean_drift": 0.4109750461578369,
+          "stress_success_rate": 0.3,
+          "mean_queries": 3.71,
+          "valid_proposals": 35.67
+        },
+        "metropolis_mcmc": {
+          "mean_drift": 0.5889019680023193,
+          "stress_success_rate": 0.48,
+          "mean_queries": 5.97,
+          "valid_proposals": 36.53
+        }
+      }
+    },
+    "50": {
+      "ordinary_baseline": {
+        "random": {
+          "mean_drift": 1.186760160923004,
+          "stress_success_rate": 0.9,
+          "mean_queries": 31.18,
+          "valid_proposals": 112.05
+        },
+        "greedy": {
+          "mean_drift": 0.49615792751312254,
+          "stress_success_rate": 0.35,
+          "mean_queries": 3.57,
+          "valid_proposals": 89.2
+        },
+        "metropolis_mcmc": {
+          "mean_drift": 0.6882471513748168,
+          "stress_success_rate": 0.57,
+          "mean_queries": 7.95,
+          "valid_proposals": 93.49
+        }
+      },
+      "mixed_robust": {
+        "random": {
+          "mean_drift": 0.9306556868553162,
+          "stress_success_rate": 0.83,
+          "mean_queries": 30.58,
+          "valid_proposals": 109.44
+        },
+        "greedy": {
+          "mean_drift": 0.4465658760070801,
+          "stress_success_rate": 0.32,
+          "mean_queries": 3.81,
+          "valid_proposals": 90.5
+        },
+        "metropolis_mcmc": {
+          "mean_drift": 0.6060135054588318,
+          "stress_success_rate": 0.48,
+          "mean_queries": 7.78,
+          "valid_proposals": 91.82
+        }
+      }
+    }
+  },
+  "strategy_comparison_budget_50": {
+    "greedy_vs_random": {
+      "mean_difference": -0.6906022334098816,
+      "ci_95_lower": -0.8255518718361854,
+      "ci_95_upper": -0.5607674519419671
+    },
+    "metropolis_mcmc_vs_random": {
+      "mean_difference": -0.4985130095481873,
+      "ci_95_lower": -0.6305279229283333,
+      "ci_95_upper": -0.36773288261890413
+    },
+    "metropolis_mcmc_vs_greedy": {
+      "mean_difference": 0.19208922386169433,
+      "ci_95_lower": 0.07874332368373871,
+      "ci_95_upper": 0.30474763840436936
+    }
+  },
+  "defense_resistance_budget_50": {
+    "random": {
+      "robust_vs_baseline_mean_diff": -0.256104474067688,
+      "ci_95_lower": -0.3769284530878067,
+      "ci_95_upper": -0.13594518196582797
+    },
+    "greedy": {
+      "robust_vs_baseline_mean_diff": -0.049592051506042484,
+      "ci_95_lower": -0.16983173084259032,
+      "ci_95_upper": 0.06350948494672765
+    },
+    "metropolis_mcmc": {
+      "robust_vs_baseline_mean_diff": -0.0822336459159851,
+      "ci_95_lower": -0.19497769397497178,
+      "ci_95_upper": 0.024985657513141624
+    }
+  },
+  "transfer_analysis": {
+    "random": {
+      "baseline_to_robust_mean_drift": 0.6830710387229919,
+      "baseline_to_robust_target_drift": 1.186760160923004,
+      "robust_to_baseline_mean_drift": 0.6908701610565186,
+      "robust_to_baseline_target_drift": 0.9306556868553162
+    },
+    "greedy": {
+      "baseline_to_robust_mean_drift": 0.3637932252883911,
+      "baseline_to_robust_target_drift": 0.49615792751312254,
+      "robust_to_baseline_mean_drift": 0.4163392090797424,
+      "robust_to_baseline_target_drift": 0.4465658760070801
+    },
+    "metropolis_mcmc": {
+      "baseline_to_robust_mean_drift": 0.41253899335861205,
+      "baseline_to_robust_target_drift": 0.6882471513748168,
+      "robust_to_baseline_mean_drift": 0.43999338388442993,
+      "robust_to_baseline_target_drift": 0.6060135054588318
+    }
+  }
+}

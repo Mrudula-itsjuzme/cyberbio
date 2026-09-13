@@ -1,0 +1,10 @@
+{
+  "lambda_adv": 0.1,
+  "lambda_cons": 1.0,
+  "n_train_sources": 500,
+  "query_budget": 50,
+  "train_attack_seed": 20260901,
+  "fresh_attack_seed": 77777777,
+  "clean_mae_tolerance": 0.02,
+  "stress_threshold": 0.1
+}

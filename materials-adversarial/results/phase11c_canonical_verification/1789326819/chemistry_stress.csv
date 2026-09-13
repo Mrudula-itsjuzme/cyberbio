@@ -1,0 +1,6 @@
+Model,Sub_Mean,Del_Mean
+Transformer_Ordinary,0.2912788,0.43266997
+Transformer_ArchControl,0.2814343,0.36227846
+Transformer_MixedRobust,0.26898196,0.28920507
+Transformer_Augmented,0.28086752,0.16923761
+GraphMPNN_Small,0.36479762,0.21733376

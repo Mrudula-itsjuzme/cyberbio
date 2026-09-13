@@ -102,7 +102,11 @@ class BaseAttack(ABC):
 
     @abstractmethod
     def generate(self, tokens: list[str], n_variants: int = 1) -> list[AttackOutcome]:
-        """Produce up to `n_variants` candidates. May return fewer, or none."""
+        """Produce `n_variants` unique perturbed token lists."""
+
+    def enumerate(self, tokens: list[str]) -> list[AttackOutcome]:
+        """Produce all valid perturbation variants for an exhaustive search."""
+        raise NotImplementedError
 
     def metadata(self) -> dict[str, Any]:
         return {

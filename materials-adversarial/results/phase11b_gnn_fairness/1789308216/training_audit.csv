@@ -1,0 +1,3 @@
+Model,Epochs_Trained,Patience,Best_Val_MAE,Time_s
+Transformer_Augmented,18,10,0.5356712,701.6823632717133
+GraphMPNN_Small,48,10,0.41860762,565.6739809513092

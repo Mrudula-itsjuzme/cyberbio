@@ -1,0 +1,5 @@
+Model,Sub_Drift,Del_Drift
+Transformer_Ordinary,0.10177233,0.18282217
+Transformer_MixedRobust,0.1112215,0.13743135
+Transformer_Augmented,0.2871235,0.19395968
+GraphMPNN_Small,0.34273735,0.23215434

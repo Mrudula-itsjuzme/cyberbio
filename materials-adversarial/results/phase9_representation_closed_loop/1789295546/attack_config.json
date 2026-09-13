@@ -1,0 +1,6 @@
+{
+  "attack_type": "representation_preserving_best_of_n",
+  "canonical_equivalence_enforced": true,
+  "query_budget": 50,
+  "search_seed": 20260901
+}

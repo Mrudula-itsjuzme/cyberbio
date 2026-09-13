@@ -1,0 +1,104 @@
+{
+  "models": {
+    "ordinary_baseline": {
+      "mean_drift": 0.4326699376106262,
+      "median_drift": 0.2938394546508789,
+      "p90_drift": 0.9761724472045898,
+      "p95_drift": 1.2115795612335205,
+      "max_drift": 4.089692115783691,
+      "stress_exceedance_rate": 0.3226381461675579,
+      "fixed_stress_threshold": 0.4862
+    },
+    "architecture_control": {
+      "mean_drift": 0.3622784385069169,
+      "median_drift": 0.20683813095092773,
+      "p90_drift": 0.8631606101989746,
+      "p95_drift": 1.1460332870483398,
+      "max_drift": 4.775813817977905,
+      "stress_exceedance_rate": 0.22459893048128343,
+      "fixed_stress_threshold": 0.4862
+    },
+    "randomization_robust": {
+      "mean_drift": 0.3046434078624542,
+      "median_drift": 0.18320369720458984,
+      "p90_drift": 0.6759181022644043,
+      "p95_drift": 0.9998831748962402,
+      "max_drift": 3.9866323471069336,
+      "stress_exceedance_rate": 0.1657754010695187,
+      "fixed_stress_threshold": 0.4862
+    },
+    "mixed_robust": {
+      "mean_drift": 0.28920504881098946,
+      "median_drift": 0.16494321823120117,
+      "p90_drift": 0.6732678413391113,
+      "p95_drift": 0.9289894104003906,
+      "max_drift": 3.1624581813812256,
+      "stress_exceedance_rate": 0.1836007130124777,
+      "fixed_stress_threshold": 0.4862
+    }
+  },
+  "paired_generalization": [
+    {
+      "reference": "ordinary_baseline",
+      "hypothesis": "architecture_control",
+      "metric": "absolute_drift",
+      "mean_difference": -0.07039149304762243,
+      "ci_95_lower": -0.1049348684874448,
+      "ci_95_upper": -0.03381419145699706,
+      "significant": true,
+      "direction": "improved"
+    },
+    {
+      "reference": "ordinary_baseline",
+      "hypothesis": "randomization_robust",
+      "metric": "absolute_drift",
+      "mean_difference": -0.12802652369208514,
+      "ci_95_lower": -0.15695073947761998,
+      "ci_95_upper": -0.09640257606106858,
+      "significant": true,
+      "direction": "improved"
+    },
+    {
+      "reference": "ordinary_baseline",
+      "hypothesis": "mixed_robust",
+      "metric": "absolute_drift",
+      "mean_difference": -0.14346488274354985,
+      "ci_95_lower": -0.17478148796979118,
+      "ci_95_upper": -0.11189434895965931,
+      "significant": true,
+      "direction": "improved"
+    },
+    {
+      "reference": "architecture_control",
+      "hypothesis": "randomization_robust",
+      "metric": "absolute_drift",
+      "mean_difference": -0.05763503064446271,
+      "ci_95_lower": -0.08571637174024939,
+      "ci_95_upper": -0.030176555515398103,
+      "significant": true,
+      "direction": "improved"
+    },
+    {
+      "reference": "architecture_control",
+      "hypothesis": "mixed_robust",
+      "metric": "absolute_drift",
+      "mean_difference": -0.07307338969592742,
+      "ci_95_lower": -0.10167076981853887,
+      "ci_95_upper": -0.04608916378913716,
+      "significant": true,
+      "direction": "improved"
+    },
+    {
+      "reference": "randomization_robust",
+      "hypothesis": "mixed_robust",
+      "metric": "absolute_drift",
+      "mean_difference": -0.015438359051464713,
+      "ci_95_lower": -0.03873789392265619,
+      "ci_95_upper": 0.006684760167636972,
+      "significant": false,
+      "direction": "null"
+    }
+  ],
+  "n_candidates": 561,
+  "n_source_polymers": 561
+}

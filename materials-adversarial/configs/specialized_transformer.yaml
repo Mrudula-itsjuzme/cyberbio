@@ -1,0 +1,27 @@
+# Configuration for Two-Branch Specialized Transformer Model
+#
+# Lineage: polyVERSE Bandgap (eV)
+# Model Family: Two-Branch Specialized Transformer
+
+architecture:
+  d_model: 64
+  n_layers: 2
+  n_heads: 4
+  dim_feedforward: 128
+  dropout: 0.1
+  max_seq_len: 256
+  pooling: "mean"
+  branch_dim: 32
+
+loss_hyperparameters:
+  lambda_repr: 0.5        # Weight for Representation-Invariance Loss (Branch A)
+  lambda_chem: 0.5        # Weight for Chemistry-Sensitivity Margin Loss (Branch B)
+  lambda_div: 0.1         # Weight for Diversity / De-collapse Loss
+  chem_margin: 0.5        # Margin for Branch B substitution distance
+
+training:
+  epochs: 40
+  batch_size: 32
+  learning_rate: 0.001
+  weight_decay: 1.0e-4
+  seed: 20260815

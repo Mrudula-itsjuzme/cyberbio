@@ -103,3 +103,40 @@ class SubstitutionAttack(BaseAttack):
                 )
             )
         return outcomes
+
+    def enumerate(self, tokens: list[str]) -> list[AttackOutcome]:
+        if self.attack_budget != 1:
+            raise NotImplementedError("Exhaustive enumeration currently only supports attack_budget=1")
+            
+        editable = self._editable(tokens)
+        excluded = {TokenRole.BRANCH_OPEN, TokenRole.BRANCH_CLOSE, TokenRole.RING_CLOSURE}
+        sites = [
+            i
+            for i in editable
+            if classify_token(tokens[i]) not in excluded and self._candidates_for(tokens[i])
+        ]
+        
+        outcomes: list[AttackOutcome] = []
+        seen: set[tuple[str, ...]] = set()
+        for pos in sites:
+            for repl in self._candidates_for(tokens[pos]):
+                working = list(tokens)
+                working[pos] = repl
+                adversarial = tuple(working)
+                if adversarial in seen or adversarial == tuple(tokens):
+                    continue
+                seen.add(adversarial)
+                outcomes.append(
+                    AttackOutcome(
+                        original_tokens=tuple(tokens),
+                        adversarial_tokens=adversarial,
+                        attack_type=self.name,
+                        edit_positions=(pos,),
+                        params={
+                            "attack_budget": self.attack_budget,
+                            "role_preserving": self.role_preserving,
+                            "pool_size": len(self.allowed_tokens),
+                        },
+                    )
+                )
+        return outcomes

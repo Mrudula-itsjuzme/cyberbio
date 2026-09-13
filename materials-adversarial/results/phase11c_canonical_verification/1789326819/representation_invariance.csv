@@ -1,0 +1,6 @@
+mean_drift,median_drift,p95,max,Model
+0.61391133,0.43435526,1.8207601,4.01003,Transformer_Ordinary
+0.3821174,0.25554705,1.1539115,3.75174,Transformer_ArchControl
+0.3079796,0.21428943,0.9337201,2.4285696,Transformer_MixedRobust
+0.14707178,0.09335947,0.4845373,1.3816361,Transformer_Augmented
+4.8065797e-08,0.0,4.7683716e-07,9.536743e-07,GraphMPNN_Small

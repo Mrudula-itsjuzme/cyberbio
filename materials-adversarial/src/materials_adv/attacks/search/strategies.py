@@ -20,7 +20,7 @@ class ProposalProtocol(Protocol):
     @property
     def names(self) -> tuple[str, ...]: ...
     def propose(self, tokens: Sequence[str]) -> Proposal | None: ...
-
+    def enumerate_proposals(self, tokens: Sequence[str]) -> list[Proposal]: ...
 
 @dataclass
 class SearchResult:
@@ -90,9 +90,9 @@ class BlackBoxSearch:
         counters = {"proposals": 0, "rep_valid": 0, "valid": 0, "queries": 0, "accepted": 0}
         trace: list[dict] = []
 
-        def evaluate(parent: _Candidate) -> tuple[_Candidate | None, Proposal | None, dict]:
+        def evaluate(parent: _Candidate, precomputed_proposal: Proposal | None = None) -> tuple[_Candidate | None, Proposal | None, dict]:
             counters["proposals"] += 1
-            proposed = self.proposal.propose(parent.tokens)
+            proposed = precomputed_proposal if precomputed_proposal else self.proposal.propose(parent.tokens)
             entry = {"proposal_index": counters["proposals"], "parent": parent.representation,
                      "operator": None, "candidate": None, "representation_valid": False,
                      "plausible": False, "queried": False, "prediction": None,
@@ -164,6 +164,7 @@ class RandomSearch(BlackBoxSearch):
     name = "random"
     def _run(self, original, evaluate, record):
         best, current, queries = original, original, 0
+        failures = 0
         for _ in range(self.max_proposals):
             candidate, _, entry = evaluate(current)
             record(entry)
@@ -171,6 +172,12 @@ class RandomSearch(BlackBoxSearch):
             if candidate is not None:
                 current = candidate
                 best = self._better(best, candidate)
+                failures = 0
+            else:
+                failures += 1
+            if failures >= 3 or self.rng.random() < 0.1:
+                current = original
+                failures = 0
             if queries >= self.query_budget:
                 break
         return best
@@ -179,17 +186,29 @@ class RandomSearch(BlackBoxSearch):
 class GreedySearch(BlackBoxSearch):
     name = "greedy"
     def _run(self, original, evaluate, record):
-        current = best = original
-        queries = 0
-        for _ in range(self.max_proposals):
-            candidate, _, entry = evaluate(current)
-            queries += int(entry["queried"])
-            accepted = candidate is not None and candidate.drift > current.drift
-            if accepted:
-                current = candidate
-                best = self._better(best, candidate)
-            record(entry, accepted)
-            if queries >= self.query_budget: break
+        best, current, queries = original, original, 0
+        while queries < self.query_budget:
+            proposals = self.proposal.enumerate_proposals(current.tokens)
+            if not proposals:
+                break
+            
+            step_best = None
+            for p in proposals:
+                if queries >= self.query_budget:
+                    break
+                candidate, _, entry = evaluate(current, precomputed_proposal=p)
+                record(entry)
+                queries += int(entry["queried"])
+                if candidate is not None:
+                    if step_best is None or candidate.drift > step_best.drift:
+                        step_best = candidate
+            
+            if step_best is not None and step_best.drift > current.drift:
+                current = step_best
+                best = self._better(best, current)
+            else:
+                break
+                
         return best
 
 

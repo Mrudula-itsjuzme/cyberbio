@@ -1,0 +1,13 @@
+{
+  "GraphMPNN": {
+    "path": "/home/mrudula/Downloads/DL_cyberbio/materials-adversarial/results/phase11c_canonical_verification/1789326819/models/graph_mpnn_small/model.pt",
+    "hash": "3fd339c5ebd0d700a05868a0d53ee752c61f378155245855252797c01bcbb81b"
+  },
+  "Transformer_MixedRobust": {
+    "path": "/home/mrudula/Downloads/DL_cyberbio/materials-adversarial/results/phase4_controlled_robustness/mix_robust_0.1/model.pt",
+    "hash": "b81aa245444431a31ae2d95ef25fe8b6f6aae39ac95c60fd05d3303af2567dc7"
+  },
+  "Scaler": {
+    "hash": "5ef15ad16aee156fbc9b6b7872c1534262e3622022190f17c23fc7e3dab12814"
+  }
+}

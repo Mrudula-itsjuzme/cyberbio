@@ -1,0 +1,19 @@
+{
+  "seed": 20261101,
+  "counts": {
+    "rand_generated": 3155,
+    "rand_valid": 3120,
+    "rand_overlap": 0,
+    "rand_final": 3120,
+    "sub_generated": 3085,
+    "sub_valid": 1632,
+    "sub_overlap": 0,
+    "sub_final": 1632
+  },
+  "leakage_audit": {
+    "phase2_candidates_checked": 4486,
+    "rand_overlaps_removed": 0,
+    "sub_overlaps_removed": 0,
+    "note": "Reconstructed Phase 2 pairs due to missing on-disk artifacts."
+  }
+}

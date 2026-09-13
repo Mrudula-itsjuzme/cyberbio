@@ -1,0 +1,37 @@
+{
+  "mode": "mixed_robust",
+  "seed": 20260815,
+  "best_epoch": 30,
+  "best_val_mae": 0.4525947295273958,
+  "val_rmse": 0.638757564284949,
+  "val_r2": 0.8027523283723343,
+  "exposed_test_reference": {
+    "test_mae": 0.41784703956057323,
+    "test_rmse": 0.5608538153299655,
+    "test_r2": 0.8397511116866343,
+    "note": "EXPOSED TEST REFERENCE ONLY; NOT USED FOR MODEL SELECTION"
+  },
+  "parameter_count": 90049,
+  "architecture": {
+    "d_model": 64,
+    "n_layers": 2,
+    "n_heads": 4,
+    "dim_feedforward": 128,
+    "dropout": 0.1,
+    "max_seq_len": 256,
+    "pooling": "mean",
+    "branch_dim": 32
+  },
+  "loss_hyperparameters": {
+    "lambda_consistency": 1.0,
+    "lambda_teacher": 0.5
+  },
+  "pair_counts": {
+    "total_sources": 2946,
+    "rand_valid": 2887,
+    "sub_valid": 1599
+  },
+  "model_hash": "93f8fbb08866bb4896e8dfafb64d5f576fb84024f8456eb23b8d8ff773662c5f",
+  "scaler_hash": "5ef15ad16aee156fbc9b6b7872c1534262e3622022190f17c23fc7e3dab12814",
+  "teacher_hash": "fef6c0e9d7883d90cf580d832a04a95f375df4e237a5df7682e4d014b66ec167"
+}

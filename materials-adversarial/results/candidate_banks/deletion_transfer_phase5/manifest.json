@@ -1,0 +1,13 @@
+{
+  "files": {
+    "deletion_candidates.jsonl": "0eb835e0977fa1c07bf034254db2103b2d22c73f302c13f36a523825be799b91"
+  },
+  "counts": {
+    "generated": 1390,
+    "valid": 607,
+    "overlap_with_clean_train": 33,
+    "final": 561
+  },
+  "seed": 20261105,
+  "attack_budget": 1
+}

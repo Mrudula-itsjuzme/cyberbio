@@ -1,0 +1,49 @@
+{
+  "mode": "control",
+  "seed": 20260815,
+  "best_epoch": 34,
+  "best_val_mae": 0.46127391497580816,
+  "val_rmse": 0.642461285326584,
+  "val_r2": 0.8004582863905066,
+  "exposed_test_reference": {
+    "test_mae": 0.4247091216882975,
+    "test_rmse": 0.5628751125679613,
+    "test_r2": 0.838593967676252,
+    "note": "EXPOSED TEST REFERENCE ONLY; NOT USED FOR MODEL SELECTION"
+  },
+  "parameter_count": 90049,
+  "architecture": {
+    "d_model": 64,
+    "n_layers": 2,
+    "n_heads": 4,
+    "dim_feedforward": 128,
+    "dropout": 0.1,
+    "max_seq_len": 256,
+    "pooling": "mean",
+    "branch_dim": 32
+  },
+  "loss_hyperparameters": {
+    "lambda_repr": 0.0,
+    "lambda_chem": 0.0,
+    "lambda_div": 0.0,
+    "chem_margin": 0.5
+  },
+  "pair_counts": {
+    "total_sources": 2946,
+    "rand_valid": 2887,
+    "sub_valid": 1599
+  },
+  "branch_diagnostics": {
+    "norm_branch_a": 5.459770679473877,
+    "norm_branch_b": 5.557252407073975,
+    "var_branch_a": 0.28114786744117737,
+    "var_branch_b": 0.539300262928009,
+    "cos_sim_branch_a_b": 0.0061477599665522575,
+    "mean_dist_a_rand": 1.866632342338562,
+    "mean_dist_b_rand": 2.5316073894500732,
+    "mean_dist_a_sub": 0.8757466673851013,
+    "mean_dist_b_sub": 1.3367843627929688
+  },
+  "model_hash": "fef6c0e9d7883d90cf580d832a04a95f375df4e237a5df7682e4d014b66ec167",
+  "scaler_hash": "5ef15ad16aee156fbc9b6b7872c1534262e3622022190f17c23fc7e3dab12814"
+}

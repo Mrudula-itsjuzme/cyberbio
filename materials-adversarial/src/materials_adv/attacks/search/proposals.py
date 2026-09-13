@@ -37,3 +37,14 @@ class CompositeProposalOperator:
             return None
         outcome = outcomes[0]
         return Proposal(tuple(outcome.adversarial_tokens), operator.name, outcome)
+
+    def enumerate_proposals(self, tokens: Sequence[str]) -> list[Proposal]:
+        proposals = []
+        for operator in self.operators:
+            try:
+                outcomes = operator.enumerate(list(tokens))
+                for outcome in outcomes:
+                    proposals.append(Proposal(tuple(outcome.adversarial_tokens), operator.name, outcome))
+            except NotImplementedError:
+                continue
+        return proposals

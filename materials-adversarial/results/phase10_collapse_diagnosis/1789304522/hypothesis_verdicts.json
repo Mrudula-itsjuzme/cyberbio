@@ -1,0 +1,11 @@
+{
+  "H1_excessive_weight": "NOT SUPPORTED",
+  "H2_catastrophic_forgetting": "SUPPORTED",
+  "H3_worst_case_bias": "SUPPORTED",
+  "H4_frozen_encoder_preserves": "SUPPORTED",
+  "H5_curriculum_avoids": "SUPPORTED",
+  "H6_random_stable": "NOT SUPPORTED",
+  "success_variant": null,
+  "d0_hash": "placeholder_d0_hash",
+  "adv_dataset_hash": "placeholder_adv_hash"
+}

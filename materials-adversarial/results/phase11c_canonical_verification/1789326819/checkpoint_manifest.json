@@ -1,0 +1,27 @@
+{
+  "Transformer_Ordinary": {
+    "path": "/home/mrudula/Downloads/DL_cyberbio/materials-adversarial/results/models/transformer_regressor/model.pt",
+    "hash": "0b1bb3f62ca72a897fd84c8e7f3129f8a7a9d75c1179c10debb63e46113731e4",
+    "params": 85761
+  },
+  "Transformer_ArchControl": {
+    "path": "/home/mrudula/Downloads/DL_cyberbio/materials-adversarial/results/models/specialized_control/model.pt",
+    "hash": "fef6c0e9d7883d90cf580d832a04a95f375df4e237a5df7682e4d014b66ec167",
+    "params": 90049
+  },
+  "Transformer_MixedRobust": {
+    "path": "/home/mrudula/Downloads/DL_cyberbio/materials-adversarial/results/phase4_controlled_robustness/mix_robust_0.1/model.pt",
+    "hash": "b81aa245444431a31ae2d95ef25fe8b6f6aae39ac95c60fd05d3303af2567dc7",
+    "params": 90049
+  },
+  "Transformer_Augmented": {
+    "path": "/home/mrudula/Downloads/DL_cyberbio/materials-adversarial/results/phase11c_canonical_verification/1789326819/models/transformer_augmented/model.pt",
+    "hash": "d06da5debd6e2a12c9e38e10b5e0783717f02999ed25742271fcf328e38cca44",
+    "params": 90049
+  },
+  "GraphMPNN_Small": {
+    "path": "/home/mrudula/Downloads/DL_cyberbio/materials-adversarial/results/phase11c_canonical_verification/1789326819/models/graph_mpnn_small/model.pt",
+    "hash": "3fd339c5ebd0d700a05868a0d53ee752c61f378155245855252797c01bcbb81b",
+    "params": 27585
+  }
+}

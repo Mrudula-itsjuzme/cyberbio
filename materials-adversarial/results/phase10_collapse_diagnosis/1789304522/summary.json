@@ -1,0 +1,5 @@
+{
+  "phase": 10,
+  "success": false,
+  "message": "All mitigation strategies failed to achieve invariance without catastrophic primary task degradation."
+}

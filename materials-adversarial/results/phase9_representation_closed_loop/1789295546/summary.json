@@ -1,0 +1,70 @@
+{
+  "label": "CANONICAL",
+  "run_id": "1789295546",
+  "verdict": "NOT SUPPORTED",
+  "D0": {
+    "checkpoint": "/home/mrudula/Downloads/DL_cyberbio/materials-adversarial/results/phase4_controlled_robustness/mix_robust_0.1",
+    "model_hash": "b81aa245444431a31ae2d95ef25fe8b6f6aae39ac95c60fd05d3303af2567dc7",
+    "scaler_hash": "5ef15ad16aee156fbc9b6b7872c1534262e3622022190f17c23fc7e3dab12814",
+    "vocab_hash": "3dd4c162c5d84138d7bf0ea4fb04a0cb81b1b9e9ee705a0e0318a3214d8935bf",
+    "val_mae": 0.44110794859587316,
+    "val_rmse": 0.6118140566499108,
+    "val_r2": 0.8190416303949466
+  },
+  "D1": {
+    "model_hash": "664e68701742d3e9b839570b732ad904bf3b2d98b4e69e6fe529c164181470c4",
+    "selected_lambda_adv": 0.1,
+    "val_mae": 1.070153988049442,
+    "val_rmse": 1.3319758995692774,
+    "val_r2": 0.14230573371718547,
+    "mae_degradation": 0.6290460394535689
+  },
+  "training_sources": 500,
+  "adversarial_candidates_found": 500,
+  "validity_canonical_equiv_rate": 1.0,
+  "D0_training_attack_stats": {
+    "n": 500,
+    "mean": 0.6618948898911476,
+    "median": 0.5539092421531677,
+    "p90": 1.1030225038528443,
+    "p95": 1.320938849449154,
+    "max": 2.867037534713745,
+    "stress_rate": 1.0
+  },
+  "fresh_D0_stats": {
+    "n": 100,
+    "mean": 0.5855083981156349,
+    "median": 0.5473411977291107,
+    "p90": 0.9053867340087896,
+    "p95": 1.1293111145496366,
+    "max": 1.8620188236236572,
+    "stress_rate": 1.0
+  },
+  "fresh_D1_stats": {
+    "n": 100,
+    "mean": 0.30982686787843705,
+    "median": 0.16795454919338226,
+    "p90": 0.7691533029079444,
+    "p95": 0.879639223217964,
+    "max": 1.4380816221237183,
+    "stress_rate": 0.72
+  },
+  "paired_improvement": {
+    "mean": 0.2756815302371979,
+    "median": 0.30240097641944885,
+    "ci_95": [
+      0.20610048917680981,
+      0.33973811379820107
+    ],
+    "fraction_improved": 0.8,
+    "fraction_worsened": 0.2,
+    "n": 100
+  },
+  "output_collapse_D1": true,
+  "overfitting": {
+    "drift_D1_on_training_adversaries_mean": 0.07219694477319717,
+    "drift_D1_on_fresh_adversaries_mean": 0.30982686787843705,
+    "overfitting_gap": -0.2376299231052399,
+    "likely_overfitting": true
+  }
+}

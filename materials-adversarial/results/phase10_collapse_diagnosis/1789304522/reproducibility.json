@@ -1,0 +1,5 @@
+{
+  "script": "scripts/run_phase10_repair.py",
+  "d0_hash": "placeholder_d0_hash",
+  "adv_hash": "placeholder_adv_hash"
+}

@@ -1,0 +1,8 @@
+{
+  "run_id": "1789295546",
+  "train_attack_seed": 20260901,
+  "fresh_attack_seed": 77777777,
+  "n_train_sources": 500,
+  "query_budget": 50,
+  "timestamp_utc": "2026-09-13T10:48:57Z"
+}
