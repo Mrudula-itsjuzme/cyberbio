@@ -1,3 +1,6 @@
+> [!NOTE]
+> **Status**: NON-CANONICAL
+
 # Phase 4 — Closed-Loop Adversarial Evaluation
 
 ## Status

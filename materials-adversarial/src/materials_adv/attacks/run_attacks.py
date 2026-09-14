@@ -11,8 +11,8 @@ from materials_adv.attacks.substitution import SubstitutionAttack
 from materials_adv.attacks.insertion import InsertionAttack
 from materials_adv.attacks.deletion import DeletionAttack
 from materials_adv.attacks.rearrangement import RearrangementAttack
-from materials_adv.attacks.randomization import SmilesRandomizationAttack
-from materials_adv.attacks.probabilistic import ProbabilisticMCMCAttack
+from materials_adv.domain.chemistry.attacks.randomization import SmilesRandomizationAttack
+from materials_adv.domain.chemistry.attacks.probabilistic import ProbabilisticMCMCAttack
 from materials_adv.data.scaler import TargetScaler
 from materials_adv.models.regression import TransformerRegressor
 from materials_adv.models.transformer import TransformerRegressorModel

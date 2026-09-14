@@ -1,0 +1,57 @@
+[
+  {
+    "tool": "Quantum ESPRESSO",
+    "installed": "no",
+    "periodic_support": "yes",
+    "polymer_suitability": "yes",
+    "expected_property_type": "bandgap",
+    "computational_cost": "high",
+    "automation_difficulty": "high",
+    "independence_from_GraphMPNN": "yes",
+    "compatibility_with_target": "yes"
+  },
+  {
+    "tool": "GPAW",
+    "installed": "no",
+    "periodic_support": "yes",
+    "polymer_suitability": "yes",
+    "expected_property_type": "bandgap",
+    "computational_cost": "high",
+    "automation_difficulty": "medium",
+    "independence_from_GraphMPNN": "yes",
+    "compatibility_with_target": "yes"
+  },
+  {
+    "tool": "CP2K",
+    "installed": "no",
+    "periodic_support": "yes",
+    "polymer_suitability": "yes",
+    "expected_property_type": "bandgap",
+    "computational_cost": "high",
+    "automation_difficulty": "high",
+    "independence_from_GraphMPNN": "yes",
+    "compatibility_with_target": "yes"
+  },
+  {
+    "tool": "PySCF",
+    "installed": "no",
+    "periodic_support": "yes (via PBC module)",
+    "polymer_suitability": "yes",
+    "expected_property_type": "bandgap",
+    "computational_cost": "high",
+    "automation_difficulty": "medium",
+    "independence_from_GraphMPNN": "yes",
+    "compatibility_with_target": "yes"
+  },
+  {
+    "tool": "xTB",
+    "installed": "no",
+    "periodic_support": "yes",
+    "polymer_suitability": "yes",
+    "expected_property_type": "HOMO-LUMO gap",
+    "computational_cost": "low",
+    "automation_difficulty": "low",
+    "independence_from_GraphMPNN": "yes",
+    "compatibility_with_target": "needs calibration"
+  }
+]

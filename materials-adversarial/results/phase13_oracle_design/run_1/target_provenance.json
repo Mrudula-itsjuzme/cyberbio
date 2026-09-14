@@ -1,0 +1,13 @@
+{
+  "dataset": "polyVERSE (Ramprasad Group)",
+  "property": "Bandgap",
+  "units": "eV",
+  "type": "Computational",
+  "method": "DFT",
+  "functional": "UNKNOWN (Likely PBE or HSE06 based on literature)",
+  "basis_set": "UNKNOWN (Likely PAW based on literature)",
+  "periodic_vs_molecular": "Periodic (1D chain)",
+  "geometry_optimization": "UNKNOWN",
+  "oligomer_representation": "UNKNOWN",
+  "definition": "Electronic bandgap (eV) of a 1D periodic polymer chain computed via DFT."
+}

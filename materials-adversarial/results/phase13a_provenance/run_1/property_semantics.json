@@ -1,0 +1,5 @@
+{
+  "search_term": "bandgap_chain",
+  "context": "PolyVERSE repository explicitly provides datasets for machine learning applications on polymers.",
+  "findings": "bandgap_chain refers to electronic bandgap of 1D periodic polymer chains computed via Density Functional Theory (DFT)."
+}

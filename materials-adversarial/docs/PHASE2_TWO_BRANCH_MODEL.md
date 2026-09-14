@@ -1,3 +1,6 @@
+> [!NOTE]
+> **Status**: HISTORICAL
+
 # Phase 2: Specialized Two-Branch Transformer
 
 ## 1. Architecture Overview

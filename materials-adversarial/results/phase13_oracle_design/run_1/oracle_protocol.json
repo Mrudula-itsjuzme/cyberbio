@@ -1,0 +1,7 @@
+{
+  "step_1": "Calibration run on calibration_manifest.csv",
+  "step_2": "Verify MAE < 0.2 eV against polyVERSE dataset labels",
+  "step_3": "Execute DFT on source_smiles and candidate_smiles for each pair",
+  "step_4": "Compute Delta_T = T(candidate) - T(source)",
+  "step_5": "Report E_G = |Delta_G - Delta_T| and E_S = |Delta_S - Delta_T|"
+}

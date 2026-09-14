@@ -1,0 +1,17 @@
+{
+  "backend": null,
+  "target_quantity": null,
+  "oracle_class": null,
+  "construction_mode": null,
+  "functional": null,
+  "basis": null,
+  "cutoff": null,
+  "k_points": null,
+  "geometry_optimization": null,
+  "periodicity": null,
+  "charge": null,
+  "multiplicity": null,
+  "convergence_parameters": null,
+  "resources": null,
+  "scheduler": "SLURM"
+}

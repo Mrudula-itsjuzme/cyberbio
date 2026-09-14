@@ -1,3 +1,6 @@
+> [!NOTE]
+> **Status**: NON-CANONICAL
+
 # Phase 9: Representation-Preserving Closed-Loop Adversarial Training
 
 ## 1. Objective and Canonical Designation

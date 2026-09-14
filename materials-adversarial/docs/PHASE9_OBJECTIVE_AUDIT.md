@@ -1,3 +1,6 @@
+> [!NOTE]
+> **Status**: HISTORICAL
+
 # Phase 9 Objective Audit
 
 ## 1. Originally Proposed Objective

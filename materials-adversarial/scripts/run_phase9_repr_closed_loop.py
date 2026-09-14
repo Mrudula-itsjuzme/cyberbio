@@ -30,7 +30,7 @@ import torch.nn.functional as F
 from rdkit import Chem
 from torch.utils.data import DataLoader, Dataset
 
-from materials_adv.attacks.randomization import SmilesRandomizationAttack
+from materials_adv.domain.chemistry.attacks.randomization import SmilesRandomizationAttack
 from materials_adv.data.scaler import TargetScaler
 from materials_adv.data.tokenizer import tokenize
 from materials_adv.models.specialized_transformer import TwoBranchTransformerRegressorModel

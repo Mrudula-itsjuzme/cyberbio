@@ -1,0 +1,6 @@
+tool,classification,evidence
+Quantum ESPRESSO,A. MATCHED (In principle) or B. CALIBRATABLE,"Capable of 1D periodic DFT, but exact functional/basis are UNKNOWN, so exact matching is not guaranteed without calibration."
+GPAW,A. MATCHED (In principle) or B. CALIBRATABLE,"Capable of 1D periodic DFT, but exact functional/basis are UNKNOWN, so exact matching is not guaranteed without calibration."
+CP2K,A. MATCHED (In principle) or B. CALIBRATABLE,"Capable of 1D periodic DFT, but exact functional/basis are UNKNOWN, so exact matching is not guaranteed without calibration."
+PySCF,A. MATCHED (In principle) or B. CALIBRATABLE,"Capable of 1D periodic DFT, but exact functional/basis are UNKNOWN, so exact matching is not guaranteed without calibration."
+xTB,B. CALIBRATABLE,"Computes tight-binding HOMO-LUMO gap, not exact DFT periodic bandgap. Mismatched property requires learned regression calibration."

@@ -1,0 +1,11 @@
+{
+  "dataset_name": "polyVERSE Bandgap",
+  "target_column": "bandgap_chain",
+  "property": "Electronic Bandgap",
+  "units": "eV",
+  "type": "COMPUTATIONAL_DFT",
+  "structural_representation": "1D periodic chains",
+  "dft_functional": "UNKNOWN",
+  "basis_set": "UNKNOWN",
+  "matched_oracle_available": "Requires experimental calibration against dataset"
+}

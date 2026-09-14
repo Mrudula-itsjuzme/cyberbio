@@ -1,3 +1,6 @@
+> [!NOTE]
+> **Status**: HISTORICAL
+
 # Phase 5: Unseen Deletion Transfer Generalization
 
 ## Objective

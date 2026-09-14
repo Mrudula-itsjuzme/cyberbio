@@ -16,7 +16,7 @@ import numpy as np
 import pandas as pd
 from rdkit import Chem
 
-from materials_adv.attacks.randomization import SmilesRandomizationAttack
+from materials_adv.domain.chemistry.attacks.randomization import SmilesRandomizationAttack
 from materials_adv.attacks.substitution import SubstitutionAttack
 from materials_adv.data.tokenizer import tokenize
 from materials_adv.validation.pipeline import validate

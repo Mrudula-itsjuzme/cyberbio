@@ -1,3 +1,6 @@
+> [!NOTE]
+> **Status**: CANONICAL
+
 # Phase 10: Adversarial Collapse Diagnosis
 
 ## Goal

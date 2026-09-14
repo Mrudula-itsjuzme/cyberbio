@@ -1,3 +1,6 @@
+> [!NOTE]
+> **Status**: CANONICAL
+
 # Phase 11C: Canonical Architecture Verification
 
 ## 1. Goal and Motivation

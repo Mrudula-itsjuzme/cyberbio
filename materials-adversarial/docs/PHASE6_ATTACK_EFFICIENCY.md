@@ -1,3 +1,6 @@
+> [!NOTE]
+> **Status**: HISTORICAL
+
 # Phase 6 — Attack Family Expansion
 
 ## Research boundary

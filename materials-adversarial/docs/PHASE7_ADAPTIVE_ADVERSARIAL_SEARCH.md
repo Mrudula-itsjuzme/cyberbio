@@ -1,3 +1,6 @@
+> [!NOTE]
+> **Status**: NON-CANONICAL
+
 # Phase 7: Adaptive Adversarial Search
 
 ## Goal

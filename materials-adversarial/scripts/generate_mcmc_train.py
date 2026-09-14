@@ -6,7 +6,7 @@ import pandas as pd
 import yaml
 
 from materials_adv.attacks.generator import AttackGenerator
-from materials_adv.attacks.probabilistic import ProbabilisticMCMCAttack
+from materials_adv.domain.chemistry.attacks.probabilistic import ProbabilisticMCMCAttack
 from materials_adv.utils.config import load_config
 import torch
 from materials_adv.models.transformer import TransformerRegressorModel

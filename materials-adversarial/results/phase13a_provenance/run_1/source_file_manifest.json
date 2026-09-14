@@ -1,0 +1,9 @@
+{
+  "filename": "bandgap_chain.csv",
+  "rows": 4209,
+  "columns": [
+    "SN",
+    "smiles",
+    "bandgap_chain"
+  ]
+}

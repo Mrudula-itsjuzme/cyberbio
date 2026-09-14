@@ -1,0 +1,9 @@
+source_smiles,candidate_smiles,edit_count,target_model,graph_drift,transformer_drift
+[*]OC(=O)CCS(=O)(=O)CCC([*])=O,[*]SC(=O)CCS(=S)(=I)CCC([*])=O,3,GraphMPNN,3.1926193,2.6625624
+[*]CC([*])C(=O)NCO,[*]CC([*])S(=S)NCS,3,Transformer,1.3179092,2.437722
+[*]c1ccc2c(c1)c1cc([*])ccc1n2C(=O)NO,[*]c1ccc2c(c1)c1cc([*])ccc1n2C(=O)NBr,1,Transformer,0.019027233,0.045958042
+[*]CNC(=O)CCCCCCCCC(=O)N[*],[*]CNC(=O)SCCCCCCCC(=O)N[*],1,GraphMPNN,0.7352996,0.18473387
+[*]CNC(=O)CCCCCCCCC(=O)N[*],[*]CSC(=O)CCCCCCCCC(=O)N[*],1,GraphMPNN,0.2916298,0.20946407
+[*]CNC(=O)CCCCCCCCC(=O)N[*],[*]INC(=N)CCCCCCCCC(=O)N[*],2,GraphMPNN,0.7962866,0.41407728
+[*]CNC(=O)CCCCCCCCC(=O)N[*],[*]CNC(=N)SCCCCCCCC(=O)N[*],2,Transformer,0.7900257,0.5798068
+[*]Oc1ccc(CC(NC(=O)CCc2ccc(OC(=O)CCCCCCC([*])=O)cc2)C(=O)OC)cc1,[*]Oc1ccc(NC(NC(=S)CCc2ccc(OC(=O)CCCNCCC([*])=O)cc2)C(=O)OC)cc1,3,GraphMPNN,0.47442913,0.02807045

@@ -1,0 +1,37 @@
+{
+  "project": "materials-adversarial",
+  "canonical_model": "GraphMPNN_Small",
+  "data_split": {
+    "source": "data/processed/processed.csv",
+    "target_column": "Bandgap",
+    "description": "Target is 1D periodic chain Electronic Bandgap computed via DFT. The exact functional and basis set are definitively listed as UNKNOWN."
+  },
+  "results": {
+    "GraphMPNN_Small": {
+      "clean_mae": 0.41119,
+      "equivalent_smiles_drift": 0.0,
+      "substitution_stress": 0.364798,
+      "deletion_stress": 0.217334,
+      "max_bounded_chemistry_drift": 3.19
+    },
+    "Transformer_Ordinary": {
+      "clean_mae": 0.486207,
+      "equivalent_smiles_drift": 0.613911
+    }
+  },
+  "hpc_oracle": {
+    "status": "NOT_FEASIBLE_IN_CURRENT_ENVIRONMENT",
+    "package_dir": "hpc_oracle/",
+    "notes": "Oracle-compatible quantum structure construction/execution is unavailable in the current environment."
+  },
+  "hashes": {
+    "raw_dataset": "4624950592aa7b3be480fec5abea682597569ebc0b02b9c56ceeadc88edcd5db",
+    "processed_dataset": "de47e0dca370ab7d48fec87ad0ce5fe80269c84ba7a0a0317a73732d53a7d1ac",
+    "splits": "4a9d28252d058c0c2e39cf70eb10dd2f79ad57df4e842c3f917cdfe9830ccd02",
+    "vocab": "3dd4c162c5d84138d7bf0ea4fb04a0cb81b1b9e9ee705a0e0318a3214d8935bf",
+    "scaler": "5ef15ad16aee156fbc9b6b7872c1534262e3622022190f17c23fc7e3dab12814",
+    "GraphMPNN_Small_ckpt": "3fd339c5ebd0d700a05868a0d53ee752c61f378155245855252797c01bcbb81b",
+    "Mixed_Robust_Transformer_ckpt": "b81aa245444431a31ae2d95ef25fe8b6f6aae39ac95c60fd05d3303af2567dc7",
+    "Phase12B_search_summary": "MISSING"
+  }
+}

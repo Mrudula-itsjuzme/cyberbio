@@ -7,8 +7,8 @@ from materials_adv.evaluation.metrics import (
     length_linear_regression,
     length_stratified_metrics,
 )
-from materials_adv.attacks.randomization import SmilesRandomizationAttack
-from materials_adv.attacks.probabilistic import ProbabilisticMCMCAttack
+from materials_adv.domain.chemistry.attacks.randomization import SmilesRandomizationAttack
+from materials_adv.domain.chemistry.attacks.probabilistic import ProbabilisticMCMCAttack
 from materials_adv.data.tokenizer import tokenize
 
 def test_length_linear_regression():

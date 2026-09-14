@@ -1,3 +1,6 @@
+> [!NOTE]
+> **Status**: NON-CANONICAL
+
 # Phase 8: True Multi-Edit Adaptive Adversarial Search
 
 ## Goal

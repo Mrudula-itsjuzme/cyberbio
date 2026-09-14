@@ -1,0 +1,5 @@
+{
+  "polymer_structure_construction": "Requires replacing [*] with periodic boundary connections, but no tool available locally to execute this.",
+  "feasibility": "NOT_FEASIBLE_IN_CURRENT_ENVIRONMENT",
+  "reason": "No local quantum chemistry or tight-binding packages are installed (Quantum ESPRESSO, PySCF, xTB, etc. are missing). Blind installation is forbidden."
+}

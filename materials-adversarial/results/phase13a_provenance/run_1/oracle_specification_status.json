@@ -1,0 +1,5 @@
+{
+  "status": "Incomplete Specification",
+  "matched_oracle": "Cannot be finalized. Requires functional matching via empirical calibration.",
+  "calibration_policy": "Must evaluate standard metrics (MAE, RMSE, Bias, Pearson) on calibration_manifest.csv and justify acceptability scientifically without arbitrary thresholds."
+}

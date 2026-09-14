@@ -1,3 +1,6 @@
+> [!NOTE]
+> **Status**: HISTORICAL
+
 # Phase 12: Graph-Native Chemistry Adversarial Stress
 
 ## Overview

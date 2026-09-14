@@ -22,7 +22,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch.utils.data import DataLoader, Dataset
 
-from materials_adv.attacks.randomization import SmilesRandomizationAttack
+from materials_adv.domain.chemistry.attacks.randomization import SmilesRandomizationAttack
 from materials_adv.attacks.substitution import SubstitutionAttack
 from materials_adv.data.scaler import TargetScaler
 from materials_adv.data.tokenizer import tokenize

@@ -1,3 +1,6 @@
+> [!NOTE]
+> **Status**: HISTORICAL
+
 # Phase 11: Representation Architecture Comparison
 
 ## Objective

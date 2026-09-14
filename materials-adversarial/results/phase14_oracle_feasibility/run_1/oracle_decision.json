@@ -1,0 +1,4 @@
+{
+  "verdict": "NOT_FEASIBLE_IN_CURRENT_ENVIRONMENT",
+  "evidence": "Audit of environment via pip and system tools returned empty for PySCF, ASE, xTB, Quantum ESPRESSO. Unable to satisfy oracle calculation without large external dependencies."
+}

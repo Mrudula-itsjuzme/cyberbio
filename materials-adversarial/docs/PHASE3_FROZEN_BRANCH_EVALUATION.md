@@ -1,3 +1,6 @@
+> [!NOTE]
+> **Status**: HISTORICAL
+
 # Phase 3: Frozen Branch Evaluation
 
 ## 1. Goal

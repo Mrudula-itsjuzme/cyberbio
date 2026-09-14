@@ -1,3 +1,6 @@
+> [!NOTE]
+> **Status**: HISTORICAL
+
 # Phase 7: Search Method Audit
 
 ## The Anomaly

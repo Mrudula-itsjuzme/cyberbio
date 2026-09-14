@@ -29,6 +29,10 @@ class UniqueCarbonProposal:
         outcome = AttackOutcome(original, candidate, "test_insert")
         return Proposal(candidate, "test_insert", outcome)
 
+    def enumerate_proposals(self, tokens):
+        p = self.propose(tokens)
+        return [p] if p is not None else []
+
 
 @pytest.mark.parametrize("strategy,kwargs", [
     (RandomSearch, {}), (GreedySearch, {}),

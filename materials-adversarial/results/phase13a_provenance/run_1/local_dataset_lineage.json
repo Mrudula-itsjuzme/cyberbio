@@ -1,0 +1,7 @@
+{
+  "local_path": "data/raw/bandgap_chain.csv",
+  "public_source": "Ramprasad-Group/polyVERSE",
+  "repository_path": "Other/bandgap_chain.csv",
+  "zenodo_doi": "10.5281/zenodo.13352644",
+  "notes": "Directly downloaded from polyVERSE repository."
+}

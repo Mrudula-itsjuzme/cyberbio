@@ -24,7 +24,7 @@ import torch
 import torch.nn.functional as F
 from torch.utils.data import DataLoader, Dataset
 
-from materials_adv.attacks.randomization import SmilesRandomizationAttack
+from materials_adv.domain.chemistry.attacks.randomization import SmilesRandomizationAttack
 from materials_adv.attacks.substitution import SubstitutionAttack
 from materials_adv.attacks.search.proposals import CompositeProposalOperator
 from materials_adv.attacks.search.strategies import MetropolisSearch

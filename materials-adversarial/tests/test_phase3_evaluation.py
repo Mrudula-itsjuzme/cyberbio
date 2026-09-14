@@ -10,7 +10,7 @@ import sys
 import os
 sys.path.insert(0, os.path.abspath("."))
 
-from materials_adv.attacks.randomization import SmilesRandomizationAttack
+from materials_adv.domain.chemistry.attacks.randomization import SmilesRandomizationAttack
 from materials_adv.attacks.substitution import SubstitutionAttack
 from materials_adv.data.tokenizer import tokenize
 from materials_adv.validation.pipeline import validate

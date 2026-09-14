@@ -1,0 +1,6 @@
+Claim,Evidence,Evidence_Level,Canonical_Status
+Data originates from polyVERSE,Matched github repository path Other/bandgap_chain.csv,A,Verified
+Target is Computational DFT,polyVERSE documentation,A,Verified
+Calculated with HSE06,General Ramprasad group literature,B,Unverified
+Calculated with PBE,General Ramprasad group literature,B,Unverified
+Exact functional and basis set,None in local file,C,Unknown

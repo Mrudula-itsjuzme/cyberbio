@@ -1,0 +1,4 @@
+class,description,fidelity,cost,automation
+MATCHED ORACLE,1D Periodic DFT calculation matching original dataset protocol (e.g. VASP with HSE06).,High,Very High,Difficult
+CALIBRATABLE ORACLE,"Semi-empirical or ML-DFT (e.g. xTB, MACE, ALIGNN) calibrated to dataset.",Medium,Low,High
+MISMATCHED ORACLE,Molecular HOMO-LUMO gap of capped oligomers.,Low,Medium,High

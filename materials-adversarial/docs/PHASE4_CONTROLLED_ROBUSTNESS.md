@@ -1,3 +1,6 @@
+> [!NOTE]
+> **Status**: HISTORICAL
+
 # Phase 4: Controlled Robustness Training and Evaluation
 
 ## Scientific Conclusion

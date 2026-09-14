@@ -1,15 +1,38 @@
-# Final Results Table
+# Canonical Final Results
 
-The following table presents the authoritative results of the Phase 2 comparative evaluation exactly as extracted from the raw metric files.
+The following tables represent the mathematically verified, canonical results for the primary architectures studied.
+All evaluations were conducted on the canonical test split without arbitrary edit budget inflation (budget $\le 3$) and utilizing the corrected token padding implementations.
 
-| Evaluation Metric | Baseline Model | Defended Model | Interpretation |
-| :--- | :--- | :--- | :--- |
-| **Clean MAE** | 0.4619 eV | 0.4601 eV | The defense preserved and marginally improved clean accuracy on the sealed test set. |
-| **Substitution Success** | 20.13% | 7.53% | Highly successful local defense against seen attack types. |
-| **Rearrangement Success** | 9.29% | 2.83% | Highly successful local defense against seen attack types. |
-| **Insertion Success** | 32.61% | 32.46% | Complete failure to generalize defense to unseen structural alterations. |
-| **Deletion Success** | 32.13% | 30.04% | Complete failure to generalize defense to unseen structural alterations. |
-| **Mean Adv. Drift** | 0.4655 eV | 0.4290 eV | Overall adversarial sensitivity decreased slightly across the aggregate valid test set. |
-| **Max Adv. Drift** | 5.5894 eV | 5.5167 eV | Extreme vulnerability outliers remain present regardless of defense. |
+## Model Metrics
 
-*Note: All values were evaluated over the identical sealed 10% Test Split using symmetrical adversarial candidate strings generated with `attack-seed = 42`.*
+| Architecture | Parameters | Clean MAE (eV) | RMSE (eV) | R² |
+| :--- | :--- | :---: | :---: | :---: |
+| Transformer_Ordinary | 85,761 | 0.486 | 0.667 | 0.785 |
+| Transformer_ArchControl | 90,049 | 0.461 | 0.642 | 0.800 |
+| Transformer_MixedRobust | 90,049 | 0.441 | 0.612 | 0.819 |
+| Transformer_Augmented | 90,049 | 0.501 | 0.696 | 0.766 |
+| **GraphMPNN_Small** | 27,585 | **0.411** | **0.595** | **0.829** |
+
+## Adversarial Stress Drift
+
+Drift metrics represent the model's sensitivity to structural edits (measured as $\Delta_M = M_{adv} - M_{src}$). Because an independent physical oracle is unavailable, this drift cannot be definitively labelled as absolute error.
+
+| Architecture | Eq-SMILES Drift (eV) | Sub. Stress Drift (eV) | Del. Stress Drift (eV) |
+| :--- | :---: | :---: | :---: |
+| Transformer_Ordinary | 0.614 | 0.291 | 0.433 |
+| Transformer_ArchControl | 0.382 | 0.281 | 0.362 |
+| Transformer_MixedRobust | 0.308 | 0.269 | 0.289 |
+| Transformer_Augmented | 0.147 | 0.281 | 0.169 |
+| **GraphMPNN_Small** | **0.000** | 0.365 | 0.217 |
+
+## Adaptive Search Maximums (Budget $\le 3$)
+
+Under bounded adaptive search (Metropolis-style proposal), the maximum single observed model response for a valid chemistry change was approximately:
+- **GraphMPNN_Small**: ~3.19 eV
+
+## Status
+> [!NOTE]
+> **Status**: CANONICAL
+
+> [!IMPORTANT]
+> The above numbers are **CANONICAL**. Previous results asserting larger drifts (e.g., 5.961 eV) were determined to be `NON-CANONICAL` due to unconstrained edit-budget inflation and representation edge cases.
