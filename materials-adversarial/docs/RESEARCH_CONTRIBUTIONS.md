@@ -1,20 +1,24 @@
-# Demonstrated Scientific Research Contributions
+# Research Contributions
 
-This project makes five explicit, verified contributions to materials informatics and adversarial machine learning:
+Based on the empirical findings, scientific audit, and final leakage-free benchmarking, the contributions of this research are hierarchically structured to explicitly separate representation invariance from chemical robustness regularization.
 
-## 1. Unified Attack-and-Defend Framework for Materials Sequences
-- Developed the first end-to-end framework integrating sequence-level adversarial candidate generation, domain plausibility validation, robustness metrics, and closed-loop min-max defender training within a single pipeline for polymer bandgap prediction.
+> **"The project deliberately separates representation-preserving robustness, where shared supervision is physically justified, from chemistry-changing robustness, where only sensitivity regularization is evaluated without an external property oracle."**
 
-## 2. Probabilistic MCMC Attack Generator (`ProbabilisticMCMCAttack`)
-- Formulated a Metropolis-Hastings stochastic search generator over discrete chemical sequence space. Demonstrated under equal query budget ($Q=20$) that MCMC search achieves **$3.09\times$ higher prediction drift ($0.0965\text{ eV}$)** than random mutation ($0.0312\text{ eV}$) while maintaining **100% chemical candidate validity**.
+## 1. Primary Vulnerability: Sequence Serialization Dependence
+We demonstrate that chemically identical PSMILES serializations produce substantial Transformer prediction variation. By generating randomized but chemically equivalent SMILES (100% graph and formula identity), we observe a mean absolute prediction drift of **0.5991 eV** (RandomSplit baseline) and **0.8968 eV** (ScaffoldSplit baseline). Because repeated inference on identical inputs produces zero drift, this definitively isolates representation/serialization vulnerability rather than stochastic inference noise.
 
-## 3. Multi-Layer Chemical Plausibility Validation (`ChemicalPlausibilityValidator`)
-- Engineered a four-layer chemical validator (`plausibility.py`) enforcing RDKit syntax parsing, valence sanitization, polymer attachment star `*` balance, molecular weight ratio bounds ($[0.5, 1.5] MW$), and Morgan fingerprint Tanimoto structural similarity ($S_{\text{Tanimoto}} \ge 0.5$).
+## 2. Primary Defense: Scientifically Clean Augmentation
+We introduce representation-preserving multi-SMILES augmentation as a scientifically clean defense. Because $molecule(x') = molecule(x)$, it is physically justified that $E_g(x') = E_g(x)$, allowing the model to safely inherit exact ground-truth labels. This defense is highly effective:
+* **Random Split:** Reduces representation drift by ~45.6% ($0.5991 \rightarrow 0.3257$ eV) while slightly improving clean RMSE ($0.6007 \rightarrow 0.5962$ eV).
+* **Scaffold Split:** Reduces representation drift by ~54.5% ($0.8968 \rightarrow 0.4079$ eV) and substantially improves structural out-of-distribution predictive accuracy ($0.6998 \rightarrow 0.6630$ eV).
 
-## 4. Multi-Seed Robustness Gains and Cross-Seed Variance Reduction
-- Verified across 5 independent random seeds ($42, 123, 2026, 777, 999$) that closed-loop adversarial training achieves:
-  - **20.63% reduction in mean absolute prediction drift** ($0.0965\text{ eV} \to 0.0766\text{ eV}$).
-  - **78.5% reduction in cross-seed drift variance** ($\sigma = 0.0466 \to 0.0100$).
+## 3. Secondary Stress Test: Constrained MCMC Exploration
+We designed a constrained Markov Chain Monte Carlo (MCMC) search algorithm to explore chemistry-changing local neighborhoods. Guided by RDKit valence checks, Tanimoto similarity thresholds ($S \ge 0.5$), and attachment-star preservation, this method effectively exposes local model sensitivity, discovering physically plausible structural variants that shift model predictions despite high graph similarity.
 
-## 5. Epistemic Uncertainty Drift Quantification
-- Implemented MC-Dropout uncertainty quantification ($N_{\text{mc}}=15$), demonstrating an **83.33% reduction in epistemic uncertainty drift ($\Delta\sigma$)** under adversarial attack ($0.0006 \to 0.0001$).
+## 4. Secondary Defense Experiment: Robustness Regularization
+We implemented a label-free MCMC consistency regularization term:
+$$L_{\text{cons}}=\mathcal{L}\left(f_\theta(x_{\text{MCMC}}),\operatorname{stopgrad}(f_\theta(x))\right)$$
+This avoids false target inheritance by treating the original clean prediction as a detached soft target. The regularizer successfully makes the model less sensitive to the MCMC perturbation family (reducing MCMC drift). **Crucially, because the edited structures alter molecular identity and lack independently computed $E_g$ labels, this demonstrates robustness regularization rather than evidence of improved physical accuracy.**
+
+## 5. Future Definitive Experiment: Physical Oracle Integration
+To definitively measure physical accuracy on chemistry-changing candidates, future work must substitute the predictive consistency regularizer with a dedicated physical oracle. By independently calculating $E_g(x_{\text{MCMC}})$ using Density Functional Theory (DFT) or retrieving it from a validated property database, adversarial training can move beyond regularization into true physically supervised robust optimization.

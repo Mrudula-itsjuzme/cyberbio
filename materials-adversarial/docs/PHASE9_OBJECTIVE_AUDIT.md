@@ -1,4 +1,8 @@
 > [!NOTE]
+> **Historical Scientific Audit, Findings Retained**
+> This document records the audit that identified original-label inheritance as physically invalid for chemistry-changing perturbations. Its central conclusion remains part of the final methodology. Subsequent experiments replace label inheritance with label-free consistency regularization, which reduces model sensitivity but does not provide physical supervision for changed molecules.
+
+> [!NOTE]
 > **Status**: HISTORICAL
 
 # Phase 9 Objective Audit

@@ -1,0 +1,123 @@
+{
+  "section_a_randomized_smiles_validation": {
+    "n_molecules": 100,
+    "n_variants_per_molecule": 10,
+    "total_pairs_evaluated": 1000,
+    "parse_success_rate": 1.0,
+    "canonical_smiles_match_rate": 1.0,
+    "formula_match_rate": 1.0,
+    "mw_match_rate": 1.0,
+    "tanimoto_1_match_rate": 1.0,
+    "attachment_star_match_rate": 1.0,
+    "control_max_drift_eV": 0.0,
+    "metrics": {
+      "mean_drift_eV": 0.3930897057591551,
+      "ci95_drift_eV": 0.022338979577840798,
+      "median_drift_eV": 0.27778530542521906,
+      "std_drift_eV": 0.36041865341818163,
+      "p90_drift_eV": 0.8956629471540779,
+      "p95_drift_eV": 1.0815725347644845,
+      "max_drift_eV": 2.9134852840654446
+    }
+  },
+  "section_b_fixed_constraint_ablation": {
+    "total_proposals": 500,
+    "rdkit_valid_proposals": 75,
+    "plausible_accepted_proposals": 43,
+    "rdkit_valid_rate": 0.15,
+    "acceptance_rate": 0.086,
+    "plausible_precision_post_rdkit": 0.5733333333333334,
+    "queries_per_plausible_edit": 11.627906976744185,
+    "mean_drift_plausible_edits_eV": 0.10275386753599847
+  },
+  "section_c_explainability_gradient_ablation": {
+    "sample_size_molecules": 30,
+    "mean_boundary_star_gradient_norm": 0.0,
+    "mean_boundary_atom_gradient_norm": 0.04261586679300914,
+    "mean_internal_atom_gradient_norm": 0.02282241785192841,
+    "ratio_boundary_star_vs_boundary_atom": 0.0,
+    "ratio_boundary_atom_vs_internal_atom": 1.8672809808978348
+  },
+  "experiments_matrix": [
+    {
+      "experiment": "RandomSplit_Baseline",
+      "n_train": 2946,
+      "n_test": 632,
+      "clean_rmse_eV": 0.6006785686686341,
+      "clean_mae_eV": 0.46269178466471284,
+      "clean_r2": 0.8169695670037298,
+      "rand_smiles_drift_mean_eV": 0.5990557335834704,
+      "mcmc_drift_mean_eV": 0.20854356895750473
+    },
+    {
+      "experiment": "RandomSplit_MCMCDefended",
+      "n_train": 2946,
+      "n_test": 632,
+      "clean_rmse_eV": 0.6101491095028372,
+      "clean_mae_eV": 0.461715764510935,
+      "clean_r2": 0.811152605984343,
+      "rand_smiles_drift_mean_eV": 0.5916323090749531,
+      "mcmc_drift_mean_eV": 0.16239220592453982
+    },
+    {
+      "experiment": "RandomSplit_RandSmilesAug",
+      "n_train": 8838,
+      "n_test": 632,
+      "clean_rmse_eV": 0.5961516233504397,
+      "clean_mae_eV": 0.46216418349509647,
+      "clean_r2": 0.8197179472455111,
+      "rand_smiles_drift_mean_eV": 0.3256785457961421,
+      "mcmc_drift_mean_eV": 0.1609152192002795
+    },
+    {
+      "experiment": "RandomSplit_CombinedDefense",
+      "n_train": 8838,
+      "n_test": 632,
+      "clean_rmse_eV": 0.6391248656451709,
+      "clean_mae_eV": 0.4953471448902462,
+      "clean_r2": 0.7927901188921598,
+      "rand_smiles_drift_mean_eV": 0.3136406267627311,
+      "mcmc_drift_mean_eV": 0.10968226604307846
+    },
+    {
+      "experiment": "ScaffoldSplit_Baseline",
+      "n_train": 2946,
+      "n_test": 632,
+      "clean_rmse_eV": 0.6998061425722493,
+      "clean_mae_eV": 0.5149246537542883,
+      "clean_r2": 0.773010599519267,
+      "rand_smiles_drift_mean_eV": 0.8968140852785842,
+      "mcmc_drift_mean_eV": 0.22183145000219148
+    },
+    {
+      "experiment": "ScaffoldSplit_MCMCDefended",
+      "n_train": 2946,
+      "n_test": 632,
+      "clean_rmse_eV": 0.7183816802506265,
+      "clean_mae_eV": 0.5555063652561782,
+      "clean_r2": 0.7608003307700365,
+      "rand_smiles_drift_mean_eV": 0.67104483910905,
+      "mcmc_drift_mean_eV": 0.18070350985929468
+    },
+    {
+      "experiment": "ScaffoldSplit_RandSmilesAug",
+      "n_train": 8838,
+      "n_test": 632,
+      "clean_rmse_eV": 0.6630029655904065,
+      "clean_mae_eV": 0.49564466233304855,
+      "clean_r2": 0.7962577868367066,
+      "rand_smiles_drift_mean_eV": 0.4078790796948493,
+      "mcmc_drift_mean_eV": 0.20466204344202818
+    },
+    {
+      "experiment": "ScaffoldSplit_CombinedDefense",
+      "n_train": 8838,
+      "n_test": 632,
+      "clean_rmse_eV": 0.6803010236645085,
+      "clean_mae_eV": 0.49610906235842256,
+      "clean_r2": 0.7854876373130517,
+      "rand_smiles_drift_mean_eV": 0.37764255697892685,
+      "mcmc_drift_mean_eV": 0.18162695205473228
+    }
+  ]
+}

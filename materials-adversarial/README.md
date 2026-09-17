@@ -4,6 +4,8 @@
 > **Explicit Thesis Positioning Statement**:
 > *"This work is a proof-of-concept for constrained adversarial robustness in materials sequence modelling, not a claim of complete chemical realism or universally improved predictive performance."*
 
+> **Central Thesis**: A polymer Transformer exhibits substantial prediction dependence on the serialization of chemically identical PSMILES. Representation-preserving randomized-SMILES augmentation materially reduces this non-invariance and improves scaffold-split generalization. Chemistry-changing MCMC perturbations provide a complementary stress test of local model sensitivity; consistency training can reduce that sensitivity, but physical accuracy on the edited structures remains unverified without an independent property oracle.
+
 [![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/)
 [![PyTorch 2.13](https://img.shields.io/badge/PyTorch-2.13-ee4c2c.svg)](https://pytorch.org/)
 [![RDKit 2026](https://img.shields.io/badge/RDKit-2026.03-green.svg)](https://www.rdkit.org/)
@@ -15,13 +17,13 @@ This repository implements a **unified adversarial learning framework** for eval
 
 ## 🌟 Key Audited Research Findings
 
-All statistics reported below are verified across **5 independent random seeds** ($42, 123, 2026, 777, 999$):
+All statistics reported below are verified across **5 independent random seeds** ($42, 123, 2026, 777, 999$) via `canonical_benchmark_no_leakage.json`:
 
-1. **Prediction Drift Reduction**: Closed-loop adversarial defender training ($\lambda=0.5$) reduces mean absolute prediction drift under MCMC attack from **$0.0965 \pm 0.0466 \text{ eV}$** (baseline) down to **$0.0766 \pm 0.0100 \text{ eV}$** (defended), representing a **20.63% reduction in prediction drift**.
-2. **Cross-Seed Standard Deviation Drop**: Standard deviation across random seeds drops from $0.0466$ to $0.0100$ (**78.5% reduction in cross-seed variance**), proving that adversarial training produces highly consistent robustness across model instances.
-3. **Probabilistic Search Superiority**: Under equal query budgets ($Q=20$), the `ProbabilisticMCMCAttack` generator discovers $3.09\times$ stronger perturbations ($0.0965\text{ eV}$ drift, $100\%$ candidate validity) compared to random mutations ($0.0312\text{ eV}$ drift, $85\%$ validity) or deterministic substitutions ($0.0541\text{ eV}$ drift, $92\%$ validity).
-4. **Epistemic Uncertainty Stabilization**: Epistemic uncertainty shift under attack ($\Delta \sigma$) drops from $0.0006 \pm 0.0008$ to $0.0001 \pm 0.0002$ ($0.0005\text{ eV}$ absolute drop, **83.33% reduction**), preventing model overconfidence in adversarial regions.
-5. **Pareto Clean Accuracy Tradeoff**: Defender training introduces a standard accuracy-robustness tradeoff, shifting Clean RMSE from $1.1439\text{ eV}$ to $1.3672\text{ eV}$ ($+0.2233\text{ eV}$).
+1. **Primary Vulnerability (Representation Drift):** Chemically identical PSMILES serializations produce substantial prediction variation in the Transformer. Randomizing canonical SMILES yields a mean prediction drift of $0.5991 \text{ eV}$ (RandomSplit) and $0.8968 \text{ eV}$ (ScaffoldSplit), exposing severe serialization dependence.
+2. **Primary Defense (Scientifically Clean):** Representation-preserving multi-SMILES augmentation drastically reduces this vulnerability while improving structural out-of-distribution (OOD) generalization. On ScaffoldSplit, it reduces representation drift by 54.5% ($0.8968 \rightarrow 0.4079 \text{ eV}$) and improves Clean RMSE ($0.6998 \rightarrow 0.6630 \text{ eV}$). Because the underlying molecule is physically identical, this augmentation safely inherits the original ground-truth $E_g$ label.
+3. **Secondary Stress Test (MCMC Attack):** Constrained MCMC explores chemistry-changing neighborhoods and exposes local model sensitivity, discovering perturbations that shift predictions by $\sim 0.22 \text{ eV}$ while strictly passing chemical validity filters.
+4. **Secondary Defense Experiment (Robustness Regularization):** Applying a label-free consistency regularizer ($L_{\text{cons}}=\mathcal{L}(f_\theta(x_{\text{MCMC}}), \operatorname{stopgrad}(f_\theta(x)))$) during MCMC training successfully reduces sensitivity to those edits (MCMC drift drops to $0.18 \text{ eV}$). However, because edited structures lack independently computed $E_g$ values, this demonstrates *robustness regularization* rather than evidence of improved physical accuracy.
+5. **Future Definitive Experiment:** Resolving the true band gap of chemistry-changing adversarial candidates requires a dedicated physical oracle (e.g., DFT validation) to provide ground-truth $E_g(x_{\text{MCMC}})$ labels.
 
 ---
 
@@ -127,6 +129,7 @@ PYTHONPATH=. .venv/bin/python scripts/reproducibility_audit.py
 | **Uncertainty UQ** | [`docs/UNCERTAINTY.md`](docs/UNCERTAINTY.md) | MC-Dropout epistemic uncertainty ($\Delta\sigma$) |
 | **Metrics Guide** | [`docs/METRICS.md`](docs/METRICS.md) | Mathematical equations for all metrics |
 | **Experimental Protocol** | [`docs/EXPERIMENTAL_PROTOCOL.md`](docs/EXPERIMENTAL_PROTOCOL.md) | Datasets, 5 random seeds & hyper-parameters |
+| **Data Splits** | [`docs/scaffold_split.md`](docs/scaffold_split.md) | Scaffold split construction and zero-overlap guarantees |
 | **Verified Results** | [`docs/RESULTS.md`](docs/RESULTS.md) | 5-seed statistics & attack comparisons |
 | **Ablation Studies** | [`docs/ABLATION_STUDIES.md`](docs/ABLATION_STUDIES.md) | Lambda sweeps, Tanimoto sweeps & step sweeps |
 | **Reproducibility** | [`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md) | Step-by-step verification commands |

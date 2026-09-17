@@ -53,11 +53,11 @@ This project develops a **unified adversarial learning framework** for evaluatin
 
 Evaluated across **5 independent random seeds** ($42, 123, 2026, 777, 999$):
 
-1. **Prediction Drift Reduction**: Closed-loop adversarial defender training reduces mean absolute prediction drift under MCMC attack from **$0.0965 \pm 0.0466 \text{ eV}$** (baseline) down to **$0.0766 \pm 0.0100 \text{ eV}$** (defended), representing a **20.63% reduction in prediction drift**.
-2. **Cross-Seed Variance Stabilization**: Standard deviation across random seeds drops from $0.0466$ to $0.0100$, demonstrating a **78.5% drop in cross-seed drift variance**.
-3. **Attack Paradigm Superiority**: Under equal query budgets ($Q=20$), the Probabilistic MCMC Attack discovers significantly stronger perturbations ($0.0965\text{ eV}$ drift, $100\%$ validity) compared to Random Mutation ($0.0312\text{ eV}$ drift, $85\%$ validity) or Deterministic Substitution ($0.0541\text{ eV}$ drift, $92\%$ validity).
-4. **Epistemic Uncertainty Drift Reduction**: Predictive variance shift under attack ($\Delta \sigma$) drops from $0.0006 \pm 0.0008$ to $0.0001 \pm 0.0002$ ($0.0005\text{ eV}$ absolute shift), representing an **83.33% reduction in uncertainty drift**.
-5. **Pareto Clean Accuracy Tradeoff**: Defender training smooths local loss landscapes, increasing Clean RMSE from $1.1439\text{ eV}$ to $1.3672\text{ eV}$ ($+0.2233\text{ eV}$ error increase), illustrating standard adversarial accuracy-robustness Pareto behavior.
+1. **Primary Vulnerability (Representation Drift):** Chemically identical PSMILES serializations produce substantial prediction variation in the Transformer. Randomizing canonical SMILES yields a mean prediction drift of $0.5991 \text{ eV}$ (RandomSplit) and $0.8968 \text{ eV}$ (ScaffoldSplit), exposing severe serialization dependence.
+2. **Primary Defense (Scientifically Clean):** Representation-preserving multi-SMILES augmentation drastically reduces this vulnerability while improving structural out-of-distribution (OOD) generalization. On ScaffoldSplit, it reduces representation drift by 54.5% ($0.8968 \rightarrow 0.4079 \text{ eV}$) and improves Clean RMSE ($0.6998 \rightarrow 0.6630 \text{ eV}$). Because the underlying molecule is physically identical, this augmentation safely inherits the original ground-truth $E_g$ label.
+3. **Secondary Stress Test (MCMC Attack):** Constrained MCMC explores chemistry-changing neighborhoods and exposes local model sensitivity, discovering perturbations that shift predictions by $\sim 0.22 \text{ eV}$ while strictly passing chemical validity filters.
+4. **Secondary Defense Experiment (Robustness Regularization):** Applying a label-free consistency regularizer ($L_{\text{cons}}=\mathcal{L}(f_\theta(x_{\text{MCMC}}), \operatorname{stopgrad}(f_\theta(x)))$) during MCMC training successfully reduces sensitivity to those edits (MCMC drift drops to $0.18 \text{ eV}$). However, because edited structures lack independently computed $E_g$ values, this demonstrates *robustness regularization* rather than evidence of improved physical accuracy.
+5. **Future Definitive Experiment:** Resolving the true band gap of chemistry-changing adversarial candidates requires a dedicated physical oracle (e.g., DFT validation) to provide ground-truth $E_g(x_{\text{MCMC}})$ labels.
 
 ---
 

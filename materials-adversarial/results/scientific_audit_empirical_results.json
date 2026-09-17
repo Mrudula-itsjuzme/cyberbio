@@ -1,0 +1,49 @@
+{
+  "task_identity": {
+    "material_system": "Conjugated polymer repeat units (PSMILES strings)",
+    "input_representation": "1D Polymer SMILES (PSMILES) tokenized sequence",
+    "property_predicted": "Chain Electronic Band Gap (E_g)",
+    "physical_unit": "eV (electron-volts)",
+    "dataset_source": "polyVERSE dataset (data/raw/bandgap_chain.csv -> data/processed/processed.csv)",
+    "target_range": {
+      "min": 0.071,
+      "max": 9.8351,
+      "mean": 4.486114682822524,
+      "std": 1.4460110628817398
+    },
+    "total_sample_count": 4209
+  },
+  "leakage_audit": {
+    "exact_canonical_smiles_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "bemis_murcko_scaffold_overlap": {
+      "train_val": 111,
+      "train_test": 110,
+      "val_test": 52
+    },
+    "target_scaler_leakage_note": "Previous benchmark script (run_comprehensive_benchmark_suite.py) fitted scaler on reps[:100] before splitting. Fixed in proper pipeline."
+  },
+  "sequence_length_shortcut": {
+    "pearson_correlation": -0.43098081049703013,
+    "linear_fit_equation": "Bandgap = -0.0330 * Length + 5.7626",
+    "length_model_test_metrics": {
+      "rmse_eV": 1.2325233537686966,
+      "mae_eV": 0.9667681233015115,
+      "r2": 0.22939939315943392
+    }
+  },
+  "full_test_set_clean_performance": {
+    "n_test": 632,
+    "clean_rmse_eV": 0.6006785686686341,
+    "clean_mae_eV": 0.46269178466471284,
+    "clean_r2": 0.8169695670037298
+  },
+  "representation_attack": {
+    "n_samples": 50,
+    "mean_drift_eV": 0.6146889810965551,
+    "max_drift_eV": 1.36216109023061
+  }
+}

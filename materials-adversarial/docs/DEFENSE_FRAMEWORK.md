@@ -4,14 +4,14 @@
 
 The defender objective unifies model training and adversarial attack generation into a single **min-max optimization framework**:
 
-$$\min_{\theta} \mathcal{L}_{\text{defender}}(\theta) = \mathbb{E}_{(x, y) \sim \mathcal{D}} \left[ (1 - \lambda) \mathcal{L}_{\text{clean}}\left(f_\theta(x), y\right) + \lambda \mathcal{L}_{\text{adv\_train}}\left(f_\theta(x_{\text{adv}}'), y\right) \right]$$
+$$\min_{\theta} \mathcal{L}_{\text{defender}}(\theta) = \mathbb{E}_{(x, y) \sim \mathcal{D}} \left[ \mathcal{L}_{\text{clean}}\left(f_\theta(x), y\right) + \lambda \mathcal{L}_{\text{cons}}\left(f_\theta(x_{\text{adv}}'), \operatorname{stopgrad}(f_\theta(x))\right) \right]$$
 
 where:
 - $\theta$ represents the trainable weights of the sequence Transformer model.
 - $\mathcal{L}_{\text{clean}}(f_\theta(x), y) = \left(f_\theta(x) - y\right)^2$ is Mean Squared Error (MSE) on unperturbed training samples.
 - $x_{\text{adv}}' = \text{Attacker}(x; f_\theta)$ is the adversarial candidate generated dynamically by the probabilistic MCMC attack generator acting on input $x$.
-- $\mathcal{L}_{\text{adv\_train}}(f_\theta(x_{\text{adv}}'), y) = \left(f_\theta(x_{\text{adv}}'), y\right)^2$ is the MSE loss on adversarial candidates.
-- $\lambda \in [0.0, 1.0]$ is the adversarial loss weight parameter (default $\lambda = 0.5$).
+- $\mathcal{L}_{\text{cons}}(f_\theta(x_{\text{adv}}'), \operatorname{stopgrad}(f_\theta(x))) = \left(f_\theta(x_{\text{adv}}') - \operatorname{stopgrad}(f_\theta(x))\right)^2$ is the label-free consistency regularization loss, preventing false target inheritance.
+- $\lambda$ is the regularization weight parameter (default $\lambda = 0.5$).
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────────────┐
@@ -24,9 +24,9 @@ where:
 │    - Validate candidates via ChemicalPlausibilityValidator (S_Tanimoto >= 0.5)           │
 │    - Produce adversarial mini-batch {x'_adv,i}_{i=1}^B                                  │
 │ 4. Forward Pass (Adversarial): Compute predictions f_theta(x'_adv,i)                    │
-│    - Compute L_adv = MSE(f_theta(x'_adv), y)                                            │
+│    - Compute L_cons = MSE(f_theta(x'_adv), stopgrad(f_theta(x)))                        │
 │ 5. Loss Fusion & Backprop:                                                              │
-│    - Total Loss L = (1-lambda) * L_clean + lambda * L_adv                               │
+│    - Total Loss L = L_clean + lambda * L_cons                                           │
 │    - Update model weights theta via Adam optimizer                                      │
 └─────────────────────────────────────────────────────────────────────────────────────────┘
 ```
