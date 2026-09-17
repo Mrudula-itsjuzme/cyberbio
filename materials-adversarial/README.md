@@ -11,7 +11,7 @@
 [![RDKit 2026](https://img.shields.io/badge/RDKit-2026.03-green.svg)](https://www.rdkit.org/)
 [![Test Suite](https://img.shields.io/badge/tests-429%20passed-brightgreen.svg)]()
 
-This repository implements a **unified adversarial learning framework** for evaluating and enhancing the robustness of deep sequence-to-property models in materials informatics. Focusing on **solid-state polymer electronic band gap prediction ($E_g$ in eV)** within digital screening pipelines, the framework integrates constrained attack generation, chemical plausibility validation, closed-loop min-max defender training, and MC-Dropout epistemic uncertainty quantification within a single end-to-end pipeline.
+This repository implements a **unified adversarial learning framework** for evaluating and enhancing the robustness of deep sequence-to-property models in materials informatics. Focusing on **solid-state polymer electronic band gap prediction ($E_g$ in eV)** within digital screening pipelines, the framework integrates constrained attack generation, chemical plausibility validation, label-free consistency regularization for chemistry-changing stress tests, and MC-Dropout epistemic uncertainty quantification within a single end-to-end pipeline.
 
 ---
 
@@ -134,7 +134,7 @@ See `results/experimental_summary.md` and `results/canonical_benchmark_no_leakag
 | **Attack Framework** | [`docs/ATTACK_FRAMEWORK.md`](docs/ATTACK_FRAMEWORK.md) | Loss objectives & constraint formulations |
 | **MCMC Attack** | [`docs/MCMC_ATTACK.md`](docs/MCMC_ATTACK.md) | Metropolis-Hastings theory & pseudocode |
 | **Chemical Plausibility** | [`docs/CHEMICAL_PLAUSIBILITY.md`](docs/CHEMICAL_PLAUSIBILITY.md) | RDKit, star balance, MW bounds, Tanimoto |
-| **Defender Framework** | [`docs/DEFENSE_FRAMEWORK.md`](docs/DEFENSE_FRAMEWORK.md) | Closed-loop min-max adversarial training |
+| **Defender Framework** | [`docs/DEFENSE_FRAMEWORK.md`](docs/DEFENSE_FRAMEWORK.md) | Representation-preserving augmentation and label-free MCMC consistency regularization |
 | **Uncertainty UQ** | [`docs/UNCERTAINTY.md`](docs/UNCERTAINTY.md) | MC-Dropout epistemic uncertainty ($\Delta\sigma$) |
 | **Metrics Guide** | [`docs/METRICS.md`](docs/METRICS.md) | Mathematical equations for all metrics |
 | **Experimental Protocol** | [`docs/EXPERIMENTAL_PROTOCOL.md`](docs/EXPERIMENTAL_PROTOCOL.md) | Datasets, 5 random seeds & hyper-parameters |
