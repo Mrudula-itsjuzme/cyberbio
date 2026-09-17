@@ -1,3 +1,8 @@
+> [!WARNING]
+> **Historical Metrics / Superseded Baseline**
+> The metrics and narratives in this document (e.g., 20.63% drift reduction, clean RMSE 1.1439, 83.33% uncertainty drop) belong to an earlier evaluation phase. 
+> Please refer to `results/experimental_summary.md` and `results/canonical_benchmark_no_leakage.json` for the final, leakage-free canonical benchmark matrix, which explicitly separates representation-preserving augmentation from chemistry-changing MCMC stress tests.
+
 # Ablation and Sensitivity Studies
 
 ## 1. Adversarial Loss Weight Sweep ($\lambda$)

@@ -47,14 +47,14 @@ All statistics reported below are verified across **5 independent random seeds**
 │                                                                                             │
 ▼                                                                                             ▼
 [ATTACKER MODULE]                                                             [DEFENDER MODULE]
-• Probabilistic MCMC Candidate Generator                                      • Closed-Loop Min-Max Training
-  - Bioisosteric Functional Group Swaps                                         L = (1-λ) L_clean + λ L_adv
+• Probabilistic MCMC Candidate Generator                                      • Label-Free Consistency Regularization
+  - Bioisosteric Functional Group Swaps                                         L = L_clean + λ L_cons
   - Metropolis Acceptance Sampling                                            • Epistemic Uncertainty (MC-Dropout)
 • Chemical Plausibility Validator                                               - Predictive Mean & Variance
   - RDKit Parsing + Valence Compliance                                        • Multi-Seed Verification (5 Seeds)
   - Attachment Star '*' Balance                                                 - Baseline vs Defended Drift
-  - Tanimoto Similarity (S_Tanimoto >= 0.5)                                     - 20.63% Mean Drift Reduction
-  - Molecular Weight Bounds [0.5, 1.5] MW                                       - 83.33% Uncertainty Drift Drop
+  - Tanimoto Similarity (S_Tanimoto >= 0.5)                                     - 47.4% MCMC Drift Reduction
+  - Molecular Weight Bounds [0.5, 1.5] MW                                       - 54.5% Rep. Drift Drop (Scaffold)
 └──────────────────────────────────────────────┬──────────────────────────────────────────────┘
                                                │
                                                ▼
@@ -99,16 +99,25 @@ PYTHONPATH=. .venv/bin/python scripts/reproducibility_audit.py
 
 ---
 
-## 📊 Summary of Experimental Results (5 Seeds)
+## 📊 Canonical Benchmark Results (Leakage-Free, 5 Seeds)
 
-| Metric | Baseline Model ($\mu \pm \sigma$) | Defended Model ($\mu \pm \sigma$) | Improvement / Tradeoff |
+### 1. Random Split
+| Experiment | Clean RMSE (eV) | Rand-SMILES drift (eV) | MCMC drift (eV) |
 | :--- | :--- | :--- | :--- |
-| **Clean RMSE (eV)** | $1.1439 \pm 0.1128$ | $1.3672 \pm 0.1631$ | $+0.2233\text{ eV}$ (Pareto Accuracy Tradeoff) |
-| **Clean MAE (eV)** | $0.9237 \pm 0.1567$ | $1.1489 \pm 0.1474$ | $+0.2252\text{ eV}$ |
-| **Clean $R^2$** | $0.5583 \pm 0.0911$ | $0.3662 \pm 0.1500$ | $-0.1921$ |
-| **Adversarial RMSE (eV)** | $1.1677 \pm 0.0893$ | $1.3756 \pm 0.1489$ | $+0.2079\text{ eV}$ |
-| **Mean Absolute Drift (eV)** | $\mathbf{0.0965 \pm 0.0466}$ | $\mathbf{0.0766 \pm 0.0100}$ | **20.63% Reduction** |
-| **Epistemic Uncertainty Shift ($\Delta\sigma$)** | $0.0006 \pm 0.0008$ | $0.0001 \pm 0.0002$ | **83.33% Reduction** |
+| **Baseline** | 0.6007 | 0.5991 | 0.2085 |
+| **MCMC-Defended** | 0.6101 | 0.5916 | 0.1624 |
+| **Rand-SMILES Aug** | 0.5962 | 0.3257 | 0.1609 |
+| **Combined Defense** | 0.6391 | 0.3136 | 0.1097 |
+
+### 2. Scaffold Split
+| Experiment | Clean RMSE (eV) | Rand-SMILES drift (eV) | MCMC drift (eV) |
+| :--- | :--- | :--- | :--- |
+| **Baseline** | 0.6998 | 0.8968 | 0.2218 |
+| **MCMC-Defended** | 0.7184 | 0.6710 | 0.1807 |
+| **Rand-SMILES Aug** | 0.6630 | 0.4079 | 0.2047 |
+| **Combined Defense** | 0.6803 | 0.3776 | 0.1816 |
+
+See `results/experimental_summary.md` and `results/canonical_benchmark_no_leakage.json` for MAE, R², and 95% Confidence Intervals.
 
 ---
 
