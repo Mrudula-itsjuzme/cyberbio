@@ -39,21 +39,53 @@ def get_edge_features(bond):
     ]
 
 class GraphDataset(Dataset):
-    def __init__(self, df, max_nodes=256):
+    """Graph featurisation for the GraphMPNN.
+
+    ``strict`` controls what happens to a SMILES string that does not parse.
+
+    * ``strict=False`` (default, historical behaviour): the dataset silently walks
+      forward and returns a DIFFERENT molecule's graph. That is acceptable for clean
+      training data, where it never fires, but it is dangerous for adversarial
+      evaluation: a malformed attack candidate would be scored as if it were valid.
+    * ``strict=True``: raise. Adversarial / evaluation code must use this, so an
+      invalid candidate is rejected instead of silently replaced.
+
+    See docs/FRAMEWORK_V2_BENCHMARK_AUDIT.md section 8.
+    """
+
+    def __init__(self, df, max_nodes=256, strict: bool = False):
         self.smiles = df["original_representation"].tolist()
         self.targets = df["property_value"].astype(float).tolist()
         self.max_nodes = max_nodes
-        
+        self.strict = strict
+        self.skipped_unparseable = 0
+
     def __len__(self):
         return len(self.smiles)
-        
+
+    def _first_parseable_from(self, start: int):
+        """Legacy fallback: locate the next parseable row, or fail loudly."""
+        for offset in range(1, len(self) + 1):
+            nxt = (start + offset) % len(self)
+            if Chem.MolFromSmiles(self.smiles[nxt]) is not None:
+                self.skipped_unparseable += offset
+                return nxt
+        raise ValueError(
+            "GraphDataset: no parseable SMILES in this dataset; refusing to loop forever"
+        )
+
     def __getitem__(self, idx):
         smi = self.smiles[idx]
         y = self.targets[idx]
         mol = Chem.MolFromSmiles(smi)
         if mol is None:
-            # Fallback for invalid SMILES - should not happen in clean data
-            return self.__getitem__((idx + 1) % len(self))
+            if getattr(self, "strict", False):
+                raise ValueError(
+                    f"GraphDataset(strict=True): row {idx} does not parse as SMILES: {smi!r}. "
+                    "Adversarial evaluation must reject an invalid candidate, never "
+                    "silently score a different molecule."
+                )
+            return self.__getitem__(self._first_parseable_from(idx))
             
         n_atoms = mol.GetNumAtoms()
         x = np.zeros((self.max_nodes, 7), dtype=np.float32)

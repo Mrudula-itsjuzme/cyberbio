@@ -1,0 +1,103 @@
+[
+    {
+        "parameter": "backend",
+        "status": "KNOWN",
+        "configured_value": "qe",
+        "explanation": "Explicitly defined implementation (QE)"
+    },
+    {
+        "parameter": "oracle_class",
+        "status": "KNOWN",
+        "configured_value": "calibration_pilot",
+        "explanation": "Explicitly defined mapping subset"
+    },
+    {
+        "parameter": "target_quantity",
+        "status": "KNOWN",
+        "configured_value": "electronic_bandgap_1d",
+        "explanation": "Matched to Phase 13 Bandgap definition"
+    },
+    {
+        "parameter": "functional",
+        "status": "DATASET_UNKNOWN",
+        "configured_value": null,
+        "explanation": "Original polyVERSE DFT functional is missing in metadata."
+    },
+    {
+        "parameter": "pseudopotential_family",
+        "status": "DATASET_UNKNOWN",
+        "configured_value": null,
+        "explanation": "Original polyVERSE pseudopotential is missing in metadata."
+    },
+    {
+        "parameter": "cutoff_wfc",
+        "status": "DATASET_UNKNOWN",
+        "configured_value": null,
+        "explanation": "Cutoff missing; dependent on pseudo."
+    },
+    {
+        "parameter": "cutoff_rho",
+        "status": "DATASET_UNKNOWN",
+        "configured_value": null,
+        "explanation": "Cutoff missing; dependent on pseudo."
+    },
+    {
+        "parameter": "k_points",
+        "status": "DATASET_UNKNOWN",
+        "configured_value": null,
+        "explanation": "BZ sampling density for 1D systems is not detailed in polyVERSE source."
+    },
+    {
+        "parameter": "smearing",
+        "status": "DATASET_UNKNOWN",
+        "configured_value": null,
+        "explanation": "Smearing protocol missing."
+    },
+    {
+        "parameter": "geometry_optimization",
+        "status": "DATASET_UNKNOWN",
+        "configured_value": null,
+        "explanation": "Relaxation protocol unknown."
+    },
+    {
+        "parameter": "periodicity",
+        "status": "KNOWN",
+        "configured_value": "1D",
+        "explanation": "1D chain constraints known from source metadata."
+    },
+    {
+        "parameter": "charge",
+        "status": "KNOWN",
+        "configured_value": 0,
+        "explanation": "Defaulting to neutral systems."
+    },
+    {
+        "parameter": "multiplicity",
+        "status": "KNOWN",
+        "configured_value": 1,
+        "explanation": "Defaulting to singlet ground states."
+    },
+    {
+        "parameter": "convergence_threshold",
+        "status": "DATASET_UNKNOWN",
+        "configured_value": null,
+        "explanation": "Thresholds not published."
+    },
+    {
+        "parameter": "structure_mode",
+        "status": "KNOWN",
+        "configured_value": "EXTERNAL_REQUIRED",
+        "explanation": "Defines building pipeline constraint."
+    },
+    {
+        "parameter": "scheduler_resources",
+        "status": "CLUSTER_REQUIRED",
+        "configured_value": {
+            "nodes": 1,
+            "ntasks": 16,
+            "time": "24:00:00",
+            "partition": "compute"
+        },
+        "explanation": "Requires matching to specific HPC environment limits."
+    }
+]

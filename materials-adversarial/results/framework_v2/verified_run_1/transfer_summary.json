@@ -1,0 +1,16 @@
+{
+  "n_candidates": 30,
+  "graphmpnn_checkpoint_sha256": "3fd339c5ebd0d700a05868a0d53ee752c61f378155245855252797c01bcbb81b",
+  "transformer_checkpoint": "results/models/transformer_regressor/model.pt",
+  "transformer_checkpoint_sha256": "0b1bb3f62ca72a897fd84c8e7f3129f8a7a9d75c1179c10debb63e46113731e4",
+  "mean_abs_graphmpnn_delta_eV": 1.7031725804011026,
+  "mean_abs_transformer_delta_eV": 1.370386020342509,
+  "mean_graphmpnn_delta_eV": -0.5460274775822958,
+  "mean_transformer_delta_eV": -0.7029385646184285,
+  "signed_agreement_rate": 0.8666666666666667,
+  "pearson_r": 0.6990686100622564,
+  "spearman_r": 0.5733036707452726,
+  "transfer_ratio_transformer_over_graphmpnn": 0.804607845447922,
+  "one_way_only": true,
+  "note": "Candidates are chosen by the GraphMPNN and merely re-scored by the Transformer."
+}

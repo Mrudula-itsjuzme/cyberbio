@@ -1,0 +1,24 @@
+{
+    "status": "EXPLORATORY_ONLY",
+    "n2": {
+        "MAE": null,
+        "RMSE": null,
+        "R2": null,
+        "Pearson": null,
+        "Spearman": null
+    },
+    "n3": {
+        "MAE": null,
+        "RMSE": null,
+        "R2": null,
+        "Pearson": null,
+        "Spearman": null
+    },
+    "n4": {
+        "MAE": null,
+        "RMSE": null,
+        "R2": null,
+        "Pearson": null,
+        "Spearman": null
+    }
+}

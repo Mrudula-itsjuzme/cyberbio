@@ -1,0 +1,886 @@
+{
+    "-0.0051": {
+        "status": "MISSING",
+        "filename": "-0.0051_sssp_eff_1.2.upf"
+    },
+    "-0.0120": {
+        "status": "MISSING",
+        "filename": "-0.0120_sssp_eff_1.2.upf"
+    },
+    "-0.0387": {
+        "status": "MISSING",
+        "filename": "-0.0387_sssp_eff_1.2.upf"
+    },
+    "-0.0523": {
+        "status": "MISSING",
+        "filename": "-0.0523_sssp_eff_1.2.upf"
+    },
+    "-0.0607": {
+        "status": "MISSING",
+        "filename": "-0.0607_sssp_eff_1.2.upf"
+    },
+    "-0.1676": {
+        "status": "MISSING",
+        "filename": "-0.1676_sssp_eff_1.2.upf"
+    },
+    "-0.2251": {
+        "status": "MISSING",
+        "filename": "-0.2251_sssp_eff_1.2.upf"
+    },
+    "-0.3959": {
+        "status": "MISSING",
+        "filename": "-0.3959_sssp_eff_1.2.upf"
+    },
+    "-0.4668": {
+        "status": "MISSING",
+        "filename": "-0.4668_sssp_eff_1.2.upf"
+    },
+    "-0.5143": {
+        "status": "MISSING",
+        "filename": "-0.5143_sssp_eff_1.2.upf"
+    },
+    "-0.5291": {
+        "status": "MISSING",
+        "filename": "-0.5291_sssp_eff_1.2.upf"
+    },
+    "-0.5573": {
+        "status": "MISSING",
+        "filename": "-0.5573_sssp_eff_1.2.upf"
+    },
+    "-0.5848": {
+        "status": "MISSING",
+        "filename": "-0.5848_sssp_eff_1.2.upf"
+    },
+    "-0.6379": {
+        "status": "MISSING",
+        "filename": "-0.6379_sssp_eff_1.2.upf"
+    },
+    "-0.6535": {
+        "status": "MISSING",
+        "filename": "-0.6535_sssp_eff_1.2.upf"
+    },
+    "-0.6653": {
+        "status": "MISSING",
+        "filename": "-0.6653_sssp_eff_1.2.upf"
+    },
+    "-0.7717": {
+        "status": "MISSING",
+        "filename": "-0.7717_sssp_eff_1.2.upf"
+    },
+    "-0.7761": {
+        "status": "MISSING",
+        "filename": "-0.7761_sssp_eff_1.2.upf"
+    },
+    "-0.7816": {
+        "status": "MISSING",
+        "filename": "-0.7816_sssp_eff_1.2.upf"
+    },
+    "-0.8429": {
+        "status": "MISSING",
+        "filename": "-0.8429_sssp_eff_1.2.upf"
+    },
+    "-0.8756": {
+        "status": "MISSING",
+        "filename": "-0.8756_sssp_eff_1.2.upf"
+    },
+    "-0.8879": {
+        "status": "MISSING",
+        "filename": "-0.8879_sssp_eff_1.2.upf"
+    },
+    "-0.9612": {
+        "status": "MISSING",
+        "filename": "-0.9612_sssp_eff_1.2.upf"
+    },
+    "-0.9631": {
+        "status": "MISSING",
+        "filename": "-0.9631_sssp_eff_1.2.upf"
+    },
+    "-0.9988": {
+        "status": "MISSING",
+        "filename": "-0.9988_sssp_eff_1.2.upf"
+    },
+    "-1.0032": {
+        "status": "MISSING",
+        "filename": "-1.0032_sssp_eff_1.2.upf"
+    },
+    "-1.0086": {
+        "status": "MISSING",
+        "filename": "-1.0086_sssp_eff_1.2.upf"
+    },
+    "-1.0823": {
+        "status": "MISSING",
+        "filename": "-1.0823_sssp_eff_1.2.upf"
+    },
+    "-1.0988": {
+        "status": "MISSING",
+        "filename": "-1.0988_sssp_eff_1.2.upf"
+    },
+    "-1.0991": {
+        "status": "MISSING",
+        "filename": "-1.0991_sssp_eff_1.2.upf"
+    },
+    "-1.1466": {
+        "status": "MISSING",
+        "filename": "-1.1466_sssp_eff_1.2.upf"
+    },
+    "-1.1760": {
+        "status": "MISSING",
+        "filename": "-1.1760_sssp_eff_1.2.upf"
+    },
+    "-1.1990": {
+        "status": "MISSING",
+        "filename": "-1.1990_sssp_eff_1.2.upf"
+    },
+    "-1.2402": {
+        "status": "MISSING",
+        "filename": "-1.2402_sssp_eff_1.2.upf"
+    },
+    "-1.3124": {
+        "status": "MISSING",
+        "filename": "-1.3124_sssp_eff_1.2.upf"
+    },
+    "-1.3470": {
+        "status": "MISSING",
+        "filename": "-1.3470_sssp_eff_1.2.upf"
+    },
+    "-1.3579": {
+        "status": "MISSING",
+        "filename": "-1.3579_sssp_eff_1.2.upf"
+    },
+    "-1.3622": {
+        "status": "MISSING",
+        "filename": "-1.3622_sssp_eff_1.2.upf"
+    },
+    "-1.3983": {
+        "status": "MISSING",
+        "filename": "-1.3983_sssp_eff_1.2.upf"
+    },
+    "-1.4704": {
+        "status": "MISSING",
+        "filename": "-1.4704_sssp_eff_1.2.upf"
+    },
+    "-1.4800": {
+        "status": "MISSING",
+        "filename": "-1.4800_sssp_eff_1.2.upf"
+    },
+    "-1.5651": {
+        "status": "MISSING",
+        "filename": "-1.5651_sssp_eff_1.2.upf"
+    },
+    "-1.6413": {
+        "status": "MISSING",
+        "filename": "-1.6413_sssp_eff_1.2.upf"
+    },
+    "-1.6421": {
+        "status": "MISSING",
+        "filename": "-1.6421_sssp_eff_1.2.upf"
+    },
+    "-1.6443": {
+        "status": "MISSING",
+        "filename": "-1.6443_sssp_eff_1.2.upf"
+    },
+    "-1.7364": {
+        "status": "MISSING",
+        "filename": "-1.7364_sssp_eff_1.2.upf"
+    },
+    "-1.7726": {
+        "status": "MISSING",
+        "filename": "-1.7726_sssp_eff_1.2.upf"
+    },
+    "-1.8866": {
+        "status": "MISSING",
+        "filename": "-1.8866_sssp_eff_1.2.upf"
+    },
+    "-1.9799": {
+        "status": "MISSING",
+        "filename": "-1.9799_sssp_eff_1.2.upf"
+    },
+    "-2.0066": {
+        "status": "MISSING",
+        "filename": "-2.0066_sssp_eff_1.2.upf"
+    },
+    "-2.0182": {
+        "status": "MISSING",
+        "filename": "-2.0182_sssp_eff_1.2.upf"
+    },
+    "-2.0899": {
+        "status": "MISSING",
+        "filename": "-2.0899_sssp_eff_1.2.upf"
+    },
+    "-2.2044": {
+        "status": "MISSING",
+        "filename": "-2.2044_sssp_eff_1.2.upf"
+    },
+    "-2.2639": {
+        "status": "MISSING",
+        "filename": "-2.2639_sssp_eff_1.2.upf"
+    },
+    "-2.2871": {
+        "status": "MISSING",
+        "filename": "-2.2871_sssp_eff_1.2.upf"
+    },
+    "-2.3259": {
+        "status": "MISSING",
+        "filename": "-2.3259_sssp_eff_1.2.upf"
+    },
+    "-2.3473": {
+        "status": "MISSING",
+        "filename": "-2.3473_sssp_eff_1.2.upf"
+    },
+    "-2.3547": {
+        "status": "MISSING",
+        "filename": "-2.3547_sssp_eff_1.2.upf"
+    },
+    "-2.4260": {
+        "status": "MISSING",
+        "filename": "-2.4260_sssp_eff_1.2.upf"
+    },
+    "-2.4385": {
+        "status": "MISSING",
+        "filename": "-2.4385_sssp_eff_1.2.upf"
+    },
+    "-2.5271": {
+        "status": "MISSING",
+        "filename": "-2.5271_sssp_eff_1.2.upf"
+    },
+    "-2.5434": {
+        "status": "MISSING",
+        "filename": "-2.5434_sssp_eff_1.2.upf"
+    },
+    "-2.5524": {
+        "status": "MISSING",
+        "filename": "-2.5524_sssp_eff_1.2.upf"
+    },
+    "-2.5558": {
+        "status": "MISSING",
+        "filename": "-2.5558_sssp_eff_1.2.upf"
+    },
+    "-2.6064": {
+        "status": "MISSING",
+        "filename": "-2.6064_sssp_eff_1.2.upf"
+    },
+    "-2.6339": {
+        "status": "MISSING",
+        "filename": "-2.6339_sssp_eff_1.2.upf"
+    },
+    "-2.7431": {
+        "status": "MISSING",
+        "filename": "-2.7431_sssp_eff_1.2.upf"
+    },
+    "-2.8308": {
+        "status": "MISSING",
+        "filename": "-2.8308_sssp_eff_1.2.upf"
+    },
+    "-2.8704": {
+        "status": "MISSING",
+        "filename": "-2.8704_sssp_eff_1.2.upf"
+    },
+    "-2.9171": {
+        "status": "MISSING",
+        "filename": "-2.9171_sssp_eff_1.2.upf"
+    },
+    "-2.9288": {
+        "status": "MISSING",
+        "filename": "-2.9288_sssp_eff_1.2.upf"
+    },
+    "-2.9406": {
+        "status": "MISSING",
+        "filename": "-2.9406_sssp_eff_1.2.upf"
+    },
+    "-2.9460": {
+        "status": "MISSING",
+        "filename": "-2.9460_sssp_eff_1.2.upf"
+    },
+    "-3.1902": {
+        "status": "MISSING",
+        "filename": "-3.1902_sssp_eff_1.2.upf"
+    },
+    "-3.2605": {
+        "status": "MISSING",
+        "filename": "-3.2605_sssp_eff_1.2.upf"
+    },
+    "-3.3129": {
+        "status": "MISSING",
+        "filename": "-3.3129_sssp_eff_1.2.upf"
+    },
+    "-3.4120": {
+        "status": "MISSING",
+        "filename": "-3.4120_sssp_eff_1.2.upf"
+    },
+    "-3.4178": {
+        "status": "MISSING",
+        "filename": "-3.4178_sssp_eff_1.2.upf"
+    },
+    "-3.5717": {
+        "status": "MISSING",
+        "filename": "-3.5717_sssp_eff_1.2.upf"
+    },
+    "-3.6376": {
+        "status": "MISSING",
+        "filename": "-3.6376_sssp_eff_1.2.upf"
+    },
+    "-3.7276": {
+        "status": "MISSING",
+        "filename": "-3.7276_sssp_eff_1.2.upf"
+    },
+    "-4.1346": {
+        "status": "MISSING",
+        "filename": "-4.1346_sssp_eff_1.2.upf"
+    },
+    "-4.1961": {
+        "status": "MISSING",
+        "filename": "-4.1961_sssp_eff_1.2.upf"
+    },
+    "-4.3418": {
+        "status": "MISSING",
+        "filename": "-4.3418_sssp_eff_1.2.upf"
+    },
+    "-4.3528": {
+        "status": "MISSING",
+        "filename": "-4.3528_sssp_eff_1.2.upf"
+    },
+    "-4.4262": {
+        "status": "MISSING",
+        "filename": "-4.4262_sssp_eff_1.2.upf"
+    },
+    "-4.4492": {
+        "status": "MISSING",
+        "filename": "-4.4492_sssp_eff_1.2.upf"
+    },
+    "-4.6148": {
+        "status": "MISSING",
+        "filename": "-4.6148_sssp_eff_1.2.upf"
+    },
+    "-4.8822": {
+        "status": "MISSING",
+        "filename": "-4.8822_sssp_eff_1.2.upf"
+    },
+    "-4.9261": {
+        "status": "MISSING",
+        "filename": "-4.9261_sssp_eff_1.2.upf"
+    },
+    "-5.2230": {
+        "status": "MISSING",
+        "filename": "-5.2230_sssp_eff_1.2.upf"
+    },
+    "-5.4085": {
+        "status": "MISSING",
+        "filename": "-5.4085_sssp_eff_1.2.upf"
+    },
+    "-5.4143": {
+        "status": "MISSING",
+        "filename": "-5.4143_sssp_eff_1.2.upf"
+    },
+    "-5.4831": {
+        "status": "MISSING",
+        "filename": "-5.4831_sssp_eff_1.2.upf"
+    },
+    "-5.7178": {
+        "status": "MISSING",
+        "filename": "-5.7178_sssp_eff_1.2.upf"
+    },
+    "-5.9646": {
+        "status": "MISSING",
+        "filename": "-5.9646_sssp_eff_1.2.upf"
+    },
+    "-5.9651": {
+        "status": "MISSING",
+        "filename": "-5.9651_sssp_eff_1.2.upf"
+    },
+    "-6.4592": {
+        "status": "MISSING",
+        "filename": "-6.4592_sssp_eff_1.2.upf"
+    },
+    "-6.9620": {
+        "status": "MISSING",
+        "filename": "-6.9620_sssp_eff_1.2.upf"
+    },
+    "0.0403": {
+        "status": "MISSING",
+        "filename": "0.0403_sssp_eff_1.2.upf"
+    },
+    "0.0681": {
+        "status": "MISSING",
+        "filename": "0.0681_sssp_eff_1.2.upf"
+    },
+    "0.1139": {
+        "status": "MISSING",
+        "filename": "0.1139_sssp_eff_1.2.upf"
+    },
+    "0.1613": {
+        "status": "MISSING",
+        "filename": "0.1613_sssp_eff_1.2.upf"
+    },
+    "0.2119": {
+        "status": "MISSING",
+        "filename": "0.2119_sssp_eff_1.2.upf"
+    },
+    "0.2820": {
+        "status": "MISSING",
+        "filename": "0.2820_sssp_eff_1.2.upf"
+    },
+    "0.2962": {
+        "status": "MISSING",
+        "filename": "0.2962_sssp_eff_1.2.upf"
+    },
+    "0.3385": {
+        "status": "MISSING",
+        "filename": "0.3385_sssp_eff_1.2.upf"
+    },
+    "0.3710": {
+        "status": "MISSING",
+        "filename": "0.3710_sssp_eff_1.2.upf"
+    },
+    "0.4070": {
+        "status": "MISSING",
+        "filename": "0.4070_sssp_eff_1.2.upf"
+    },
+    "0.4451": {
+        "status": "MISSING",
+        "filename": "0.4451_sssp_eff_1.2.upf"
+    },
+    "0.4630": {
+        "status": "MISSING",
+        "filename": "0.4630_sssp_eff_1.2.upf"
+    },
+    "0.5626": {
+        "status": "MISSING",
+        "filename": "0.5626_sssp_eff_1.2.upf"
+    },
+    "0.6007": {
+        "status": "MISSING",
+        "filename": "0.6007_sssp_eff_1.2.upf"
+    },
+    "0.7202": {
+        "status": "MISSING",
+        "filename": "0.7202_sssp_eff_1.2.upf"
+    },
+    "0.7817": {
+        "status": "MISSING",
+        "filename": "0.7817_sssp_eff_1.2.upf"
+    },
+    "0.7920": {
+        "status": "MISSING",
+        "filename": "0.7920_sssp_eff_1.2.upf"
+    },
+    "0.8086": {
+        "status": "MISSING",
+        "filename": "0.8086_sssp_eff_1.2.upf"
+    },
+    "0.8252": {
+        "status": "MISSING",
+        "filename": "0.8252_sssp_eff_1.2.upf"
+    },
+    "0.8552": {
+        "status": "MISSING",
+        "filename": "0.8552_sssp_eff_1.2.upf"
+    },
+    "0.8607": {
+        "status": "MISSING",
+        "filename": "0.8607_sssp_eff_1.2.upf"
+    },
+    "0.8779": {
+        "status": "MISSING",
+        "filename": "0.8779_sssp_eff_1.2.upf"
+    },
+    "1": {
+        "status": "MISSING",
+        "filename": "1_sssp_eff_1.2.upf"
+    },
+    "1.0900": {
+        "status": "MISSING",
+        "filename": "1.0900_sssp_eff_1.2.upf"
+    },
+    "1.1111": {
+        "status": "MISSING",
+        "filename": "1.1111_sssp_eff_1.2.upf"
+    },
+    "1.1370": {
+        "status": "MISSING",
+        "filename": "1.1370_sssp_eff_1.2.upf"
+    },
+    "1.1981": {
+        "status": "MISSING",
+        "filename": "1.1981_sssp_eff_1.2.upf"
+    },
+    "1.2017": {
+        "status": "MISSING",
+        "filename": "1.2017_sssp_eff_1.2.upf"
+    },
+    "1.2519": {
+        "status": "MISSING",
+        "filename": "1.2519_sssp_eff_1.2.upf"
+    },
+    "1.3091": {
+        "status": "MISSING",
+        "filename": "1.3091_sssp_eff_1.2.upf"
+    },
+    "1.3126": {
+        "status": "MISSING",
+        "filename": "1.3126_sssp_eff_1.2.upf"
+    },
+    "1.3725": {
+        "status": "MISSING",
+        "filename": "1.3725_sssp_eff_1.2.upf"
+    },
+    "1.4101": {
+        "status": "MISSING",
+        "filename": "1.4101_sssp_eff_1.2.upf"
+    },
+    "1.4104": {
+        "status": "MISSING",
+        "filename": "1.4104_sssp_eff_1.2.upf"
+    },
+    "1.4880": {
+        "status": "MISSING",
+        "filename": "1.4880_sssp_eff_1.2.upf"
+    },
+    "1.5195": {
+        "status": "MISSING",
+        "filename": "1.5195_sssp_eff_1.2.upf"
+    },
+    "1.5668": {
+        "status": "MISSING",
+        "filename": "1.5668_sssp_eff_1.2.upf"
+    },
+    "1.5673": {
+        "status": "MISSING",
+        "filename": "1.5673_sssp_eff_1.2.upf"
+    },
+    "1.5944": {
+        "status": "MISSING",
+        "filename": "1.5944_sssp_eff_1.2.upf"
+    },
+    "1.6229": {
+        "status": "MISSING",
+        "filename": "1.6229_sssp_eff_1.2.upf"
+    },
+    "1.6306": {
+        "status": "MISSING",
+        "filename": "1.6306_sssp_eff_1.2.upf"
+    },
+    "1.6617": {
+        "status": "MISSING",
+        "filename": "1.6617_sssp_eff_1.2.upf"
+    },
+    "1.6731": {
+        "status": "MISSING",
+        "filename": "1.6731_sssp_eff_1.2.upf"
+    },
+    "1.7877": {
+        "status": "MISSING",
+        "filename": "1.7877_sssp_eff_1.2.upf"
+    },
+    "1.7966": {
+        "status": "MISSING",
+        "filename": "1.7966_sssp_eff_1.2.upf"
+    },
+    "1.8073": {
+        "status": "MISSING",
+        "filename": "1.8073_sssp_eff_1.2.upf"
+    },
+    "1.8966": {
+        "status": "MISSING",
+        "filename": "1.8966_sssp_eff_1.2.upf"
+    },
+    "1.9480": {
+        "status": "MISSING",
+        "filename": "1.9480_sssp_eff_1.2.upf"
+    },
+    "1.9513": {
+        "status": "MISSING",
+        "filename": "1.9513_sssp_eff_1.2.upf"
+    },
+    "1.9580": {
+        "status": "MISSING",
+        "filename": "1.9580_sssp_eff_1.2.upf"
+    },
+    "1.9871": {
+        "status": "MISSING",
+        "filename": "1.9871_sssp_eff_1.2.upf"
+    },
+    "1.9967": {
+        "status": "MISSING",
+        "filename": "1.9967_sssp_eff_1.2.upf"
+    },
+    "10": {
+        "status": "MISSING",
+        "filename": "10_sssp_eff_1.2.upf"
+    },
+    "11": {
+        "status": "MISSING",
+        "filename": "11_sssp_eff_1.2.upf"
+    },
+    "12": {
+        "status": "MISSING",
+        "filename": "12_sssp_eff_1.2.upf"
+    },
+    "14": {
+        "status": "MISSING",
+        "filename": "14_sssp_eff_1.2.upf"
+    },
+    "15": {
+        "status": "MISSING",
+        "filename": "15_sssp_eff_1.2.upf"
+    },
+    "16": {
+        "status": "MISSING",
+        "filename": "16_sssp_eff_1.2.upf"
+    },
+    "17": {
+        "status": "MISSING",
+        "filename": "17_sssp_eff_1.2.upf"
+    },
+    "18": {
+        "status": "MISSING",
+        "filename": "18_sssp_eff_1.2.upf"
+    },
+    "19": {
+        "status": "MISSING",
+        "filename": "19_sssp_eff_1.2.upf"
+    },
+    "2": {
+        "status": "MISSING",
+        "filename": "2_sssp_eff_1.2.upf"
+    },
+    "2.0927": {
+        "status": "MISSING",
+        "filename": "2.0927_sssp_eff_1.2.upf"
+    },
+    "2.1493": {
+        "status": "MISSING",
+        "filename": "2.1493_sssp_eff_1.2.upf"
+    },
+    "2.2102": {
+        "status": "MISSING",
+        "filename": "2.2102_sssp_eff_1.2.upf"
+    },
+    "2.2219": {
+        "status": "MISSING",
+        "filename": "2.2219_sssp_eff_1.2.upf"
+    },
+    "2.2255": {
+        "status": "MISSING",
+        "filename": "2.2255_sssp_eff_1.2.upf"
+    },
+    "2.2654": {
+        "status": "MISSING",
+        "filename": "2.2654_sssp_eff_1.2.upf"
+    },
+    "2.3583": {
+        "status": "MISSING",
+        "filename": "2.3583_sssp_eff_1.2.upf"
+    },
+    "2.4525": {
+        "status": "MISSING",
+        "filename": "2.4525_sssp_eff_1.2.upf"
+    },
+    "2.4538": {
+        "status": "MISSING",
+        "filename": "2.4538_sssp_eff_1.2.upf"
+    },
+    "2.4687": {
+        "status": "MISSING",
+        "filename": "2.4687_sssp_eff_1.2.upf"
+    },
+    "2.5220": {
+        "status": "MISSING",
+        "filename": "2.5220_sssp_eff_1.2.upf"
+    },
+    "2.5376": {
+        "status": "MISSING",
+        "filename": "2.5376_sssp_eff_1.2.upf"
+    },
+    "2.5466": {
+        "status": "MISSING",
+        "filename": "2.5466_sssp_eff_1.2.upf"
+    },
+    "2.6349": {
+        "status": "MISSING",
+        "filename": "2.6349_sssp_eff_1.2.upf"
+    },
+    "2.6449": {
+        "status": "MISSING",
+        "filename": "2.6449_sssp_eff_1.2.upf"
+    },
+    "2.6638": {
+        "status": "MISSING",
+        "filename": "2.6638_sssp_eff_1.2.upf"
+    },
+    "2.6789": {
+        "status": "MISSING",
+        "filename": "2.6789_sssp_eff_1.2.upf"
+    },
+    "2.7823": {
+        "status": "MISSING",
+        "filename": "2.7823_sssp_eff_1.2.upf"
+    },
+    "2.7970": {
+        "status": "MISSING",
+        "filename": "2.7970_sssp_eff_1.2.upf"
+    },
+    "2.8488": {
+        "status": "MISSING",
+        "filename": "2.8488_sssp_eff_1.2.upf"
+    },
+    "2.9485": {
+        "status": "MISSING",
+        "filename": "2.9485_sssp_eff_1.2.upf"
+    },
+    "2.9666": {
+        "status": "MISSING",
+        "filename": "2.9666_sssp_eff_1.2.upf"
+    },
+    "20": {
+        "status": "MISSING",
+        "filename": "20_sssp_eff_1.2.upf"
+    },
+    "23": {
+        "status": "MISSING",
+        "filename": "23_sssp_eff_1.2.upf"
+    },
+    "29": {
+        "status": "MISSING",
+        "filename": "29_sssp_eff_1.2.upf"
+    },
+    "3": {
+        "status": "MISSING",
+        "filename": "3_sssp_eff_1.2.upf"
+    },
+    "3.0800": {
+        "status": "MISSING",
+        "filename": "3.0800_sssp_eff_1.2.upf"
+    },
+    "3.1406": {
+        "status": "MISSING",
+        "filename": "3.1406_sssp_eff_1.2.upf"
+    },
+    "3.3509": {
+        "status": "MISSING",
+        "filename": "3.3509_sssp_eff_1.2.upf"
+    },
+    "3.4704": {
+        "status": "MISSING",
+        "filename": "3.4704_sssp_eff_1.2.upf"
+    },
+    "3.5628": {
+        "status": "MISSING",
+        "filename": "3.5628_sssp_eff_1.2.upf"
+    },
+    "3.5867": {
+        "status": "MISSING",
+        "filename": "3.5867_sssp_eff_1.2.upf"
+    },
+    "3.7022": {
+        "status": "MISSING",
+        "filename": "3.7022_sssp_eff_1.2.upf"
+    },
+    "3.7844": {
+        "status": "MISSING",
+        "filename": "3.7844_sssp_eff_1.2.upf"
+    },
+    "3.8150": {
+        "status": "MISSING",
+        "filename": "3.8150_sssp_eff_1.2.upf"
+    },
+    "3.9022": {
+        "status": "MISSING",
+        "filename": "3.9022_sssp_eff_1.2.upf"
+    },
+    "3.9247": {
+        "status": "MISSING",
+        "filename": "3.9247_sssp_eff_1.2.upf"
+    },
+    "3.9639": {
+        "status": "MISSING",
+        "filename": "3.9639_sssp_eff_1.2.upf"
+    },
+    "30": {
+        "status": "MISSING",
+        "filename": "30_sssp_eff_1.2.upf"
+    },
+    "38": {
+        "status": "MISSING",
+        "filename": "38_sssp_eff_1.2.upf"
+    },
+    "4": {
+        "status": "MISSING",
+        "filename": "4_sssp_eff_1.2.upf"
+    },
+    "4.0516": {
+        "status": "MISSING",
+        "filename": "4.0516_sssp_eff_1.2.upf"
+    },
+    "4.2818": {
+        "status": "MISSING",
+        "filename": "4.2818_sssp_eff_1.2.upf"
+    },
+    "4.4036": {
+        "status": "MISSING",
+        "filename": "4.4036_sssp_eff_1.2.upf"
+    },
+    "4.4352": {
+        "status": "MISSING",
+        "filename": "4.4352_sssp_eff_1.2.upf"
+    },
+    "4.6513": {
+        "status": "MISSING",
+        "filename": "4.6513_sssp_eff_1.2.upf"
+    },
+    "4.6963": {
+        "status": "MISSING",
+        "filename": "4.6963_sssp_eff_1.2.upf"
+    },
+    "4.8587": {
+        "status": "MISSING",
+        "filename": "4.8587_sssp_eff_1.2.upf"
+    },
+    "4.9012": {
+        "status": "MISSING",
+        "filename": "4.9012_sssp_eff_1.2.upf"
+    },
+    "5": {
+        "status": "MISSING",
+        "filename": "5_sssp_eff_1.2.upf"
+    },
+    "5.0535": {
+        "status": "MISSING",
+        "filename": "5.0535_sssp_eff_1.2.upf"
+    },
+    "5.1267": {
+        "status": "MISSING",
+        "filename": "5.1267_sssp_eff_1.2.upf"
+    },
+    "6": {
+        "status": "MISSING",
+        "filename": "6_sssp_eff_1.2.upf"
+    },
+    "6.3504": {
+        "status": "MISSING",
+        "filename": "6.3504_sssp_eff_1.2.upf"
+    },
+    "6.4302": {
+        "status": "MISSING",
+        "filename": "6.4302_sssp_eff_1.2.upf"
+    },
+    "6.8616": {
+        "status": "MISSING",
+        "filename": "6.8616_sssp_eff_1.2.upf"
+    },
+    "6.8883": {
+        "status": "MISSING",
+        "filename": "6.8883_sssp_eff_1.2.upf"
+    },
+    "7": {
+        "status": "MISSING",
+        "filename": "7_sssp_eff_1.2.upf"
+    },
+    "8": {
+        "status": "MISSING",
+        "filename": "8_sssp_eff_1.2.upf"
+    },
+    "9": {
+        "status": "MISSING",
+        "filename": "9_sssp_eff_1.2.upf"
+    }
+}

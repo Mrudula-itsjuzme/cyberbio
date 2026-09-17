@@ -1,36 +1,24 @@
-# Project Story: Evaluating Adversarial Vulnerabilities in Materials ML
+# Project Story: Evaluating Adversarial Robustness in Polymer Property Prediction
 
-## Overview
-This document traces the evolution of our investigation into the robustness of machine learning models for materials science, specifically predicting polymer properties like electronic bandgap from SMILES strings. What began as a straightforward adversarial robustness evaluation revealed deep complexities surrounding chemical representation, model collapse, and the fundamental definition of an adversarial attack in the physical sciences.
+The journey of this repository traces a systematic evolution from identifying representation vulnerabilities to confronting the physical reality of chemical modifications.
 
-## The Representation Vulnerability (Phase 1-8)
-We started with a standard Sequence-to-Sequence (SMILES Transformer) model. Initial tests revealed a severe vulnerability: the model exhibited high prediction drift (~0.404 eV) on "Equivalent-SMILES" edits—syntactically different but chemically identical representations of the same polymer.
+## The Sequence Vulnerability
+The project began by examining sequence-based predictors that operate on SMILES string representations of polymer repeat units. Initial experiments exposed a severe vulnerability: the canonical Transformer baseline exhibited an equivalent-SMILES drift of `0.614 eV`. Merely serializing the identical 2D chemical graph from a different starting atom caused the model's bandgap prediction to fluctuate wildly, exposing a failure of the model to learn the underlying chemical invariant.
 
-We attempted to resolve this by:
-1. **Branch Specialization**: Hypothesizing that separating representation learning from property regression would help. It did not; equivalent-SMILES drift remained high.
-2. **Adversarial Training**: We generated adversarial equivalent-SMILES strings and retrained the model to enforce invariance.
+## Attempted Defenses and Semantic Hypothesis
+We hypothesized that the model lacked a "semantic branch" to differentiate syntax (SMILES ordering) from semantics (chemistry). This two-branch hypothesis was rejected when adversarial fine-tuning resulted in post-hoc collapse, indicating that the representation itself was structurally flawed for robustness.
 
-## The Collapse Diagnosis (Phase 9-10)
-Adversarial retraining resulted in catastrophic model collapse. The MAE exploded to ~2.0 eV. Diagnostics in Phase 10 revealed that forcing sequence models to map diverse, disparate token strings to identical latent representations caused the embedding space to collapse. The continuous latent manifold required for smooth property regression was destroyed.
+## The Architecture Solution: GraphMPNN
+To resolve the representation vulnerability structurally, we pivoted to a Message Passing Neural Network (GraphMPNN). By operating directly on the molecular graph rather than a string serialization, equivalent-SMILES drift was reduced to effectively `0 eV` (limited only by numerical precision). The GraphMPNN also achieved a strong clean validation MAE of `0.411 eV`.
 
-## The Graph Selection (Phase 11-12)
-Realizing that sequence representation was the root cause, we migrated to a Graph Neural Network architecture (GraphMPNN).
-By modeling molecules natively as graphs, the equivalent-SMILES vulnerability was structurally eliminated (drift = 0.000 eV). The GraphMPNN also achieved a superior clean MAE (~0.411 eV) with significantly fewer parameters (27k vs 90k) than the Transformer baseline. 
+## Chemistry-Changing Sensitivities
+While the representation vulnerability was solved, the GraphMPNN remained highly sensitive to valid, bounded chemical modifications (substitutions and deletions). The repaired bounded adaptive multi-substitution search produced a maximum observed GraphMPNN prediction drift of approximately `3.19 eV`. (Deletion was evaluated separately as a fixed stress).
+*(Note: An earlier search bug in Phase 12 falsely reported 5.961 eV due to edit creep (states not strictly constrained to <=3 edits from the original source); this bug was caught in Phase 12B, corrected, and the 5.961 eV result was marked invalid).*
 
-GraphMPNN was officially declared the **canonical** model for the remainder of the project.
+## The Oracle Imperative
+Finding a 3.19 eV prediction change raised a fundamental question: Is the model wrong, or does the chemical edit *actually* change the physical bandgap by 3.19 eV? Without an independent physical reference, this drift cannot be definitively classified as an adversarial error. It might simply be accurate physics.
 
-## Chemistry-Changing Attacks (Phase 12B)
-Having solved the representation vulnerability, we shifted to attacks that genuinely alter the chemistry (insertions, deletions, substitutions). We developed a bounded adaptive search (Metropolis-style) capped at $\le 3$ edits to prevent unbounded polymer fragmentation (a bug that previously produced non-canonical ~5.9 eV drifts).
+## Surrogate Structure and the External Block
+To resolve this, we required a physical oracle (Quantum ESPRESSO). However, we discovered that the source dataset's exact DFT protocol and 3D periodic geometries were incomplete or missing. We designed a transparent, reproducible `CALIBRATABLE_SURROGATE` protocol that constructs finite capped oligomers (n=2, 3, 4) using ETKDG and MMFF94. A 9-job calibration pilot was strictly prepared, hashed, and bundled for cluster handoff.
 
-The repaired bounded search discovered valid chemical edits that induced up to a ~3.19 eV drift in the GraphMPNN prediction.
-
-## The Oracle Block (Phase 13-14)
-The ~3.19 eV response forced a critical scientific realization: **Is this model error, or did the true physical bandgap actually change by ~3.19 eV?**
-Without an independent quantum chemistry oracle (like DFT) to compute the true property of the new candidate polymer, we could not scientifically classify the drift as an adversarial failure. 
-
-We locked the provenance of the target dataset (`bandgap_chain.csv`) to the Ramprasad Group's `polyVERSE` repository. However, the exact DFT functional and basis set used were UNKNOWN. 
-
-An audit of the local environment revealed that no requisite quantum chemistry software (Quantum ESPRESSO, PySCF, ASE) was available. Consequently, the independent oracle was classified as `NOT_FEASIBLE_IN_CURRENT_ENVIRONMENT`.
-
-## Conclusion
-True attack $\to$ defend training for chemistry-changing edits is currently blocked by the lack of an HPC/DFT backend. We have successfully mitigated the representation vulnerability via graph architectures and defined the exact experimental bounds for physical property attacks, paving the way for future evaluation on dedicated computational clusters.
+Ultimately, the real calibration execution was blocked because local access to the required HPC infrastructure (SLURM, `pw.x`, pseudopotentials) is unavailable. The project branch is successfully frozen at this external compute boundary, awaiting physical validation to complete the attack→defend loop.

@@ -1,0 +1,49 @@
+{
+    "protocol_version": "1.0",
+    "timestamp": "2026-09-14T14:49:43.874926Z",
+    "git": {
+        "branch": "oracle-hpc-integration",
+        "commit": "8fd9d85f9be7cdfbc4b982dfb4facc881e6a5903",
+        "parent_release_sha": "c9df47a21734f2ea333e3b884b1a8a7cd20a1630"
+    },
+    "physics_config": {
+        "oracle_class": "CALIBRATABLE_SURROGATE",
+        "oracle_class_status": "SURROGATE_PROTOCOL_CHOICE",
+        "backend_target": "Quantum ESPRESSO",
+        "backend_target_status": "SURROGATE_PROTOCOL_CHOICE",
+        "functional": "PBE",
+        "functional_status": "SURROGATE_PROTOCOL_CHOICE",
+        "pseudopotential_family": "SSSP efficiency 1.2",
+        "pseudopotential_family_status": "SURROGATE_PROTOCOL_CHOICE",
+        "wavefunction_cutoff_Ry": 40,
+        "wavefunction_cutoff_status": "SURROGATE_PROTOCOL_CHOICE",
+        "vacuum_padding_angstrom": 15,
+        "vacuum_padding_status": "SURROGATE_PROTOCOL_CHOICE",
+        "k_points": "Gamma-only",
+        "k_points_status": "SURROGATE_PROTOCOL_CHOICE",
+        "smearing": "Gaussian",
+        "smearing_status": "SURROGATE_PROTOCOL_CHOICE",
+        "smearing_width_Ry": 0.01,
+        "smearing_width_status": "SURROGATE_PROTOCOL_CHOICE"
+    },
+    "structure_generation": {
+        "boundary_condition": "finite capped oligomers",
+        "boundary_condition_status": "SURROGATE_PROTOCOL_CHOICE",
+        "oligomer_lengths": [
+            2,
+            3,
+            4
+        ],
+        "oligomer_lengths_status": "SURROGATE_PROTOCOL_CHOICE",
+        "geometry_source": "ETKDG",
+        "geometry_source_status": "SURROGATE_PROTOCOL_CHOICE",
+        "preoptimization": "MMFF94 with UFF fallback",
+        "preoptimization_status": "SURROGATE_PROTOCOL_CHOICE",
+        "conformer_seed": 42
+    },
+    "pilot": {
+        "selected_polymers": [],
+        "config_hash": "",
+        "manifest_hash": ""
+    }
+}

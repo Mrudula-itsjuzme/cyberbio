@@ -1,0 +1,10 @@
+pilot_id,source_id,smiles,is_unambiguous_2d,oligomer_2_valid,oligomer_3_valid,unique_3d_recoverable,warnings
+pilot_0,poly_802,[*]CC(=S)CO[*],True,True,True,False,
+pilot_1,poly_489,CC(=S)CC(=S),False,False,False,False,"Expected exactly 2 attachment points, found 0."
+pilot_2,poly_831,CC(=S)OC(=S),False,False,False,False,"Expected exactly 2 attachment points, found 0."
+pilot_3,poly_2602,[*]CCCSS[*],True,True,True,False,
+pilot_4,poly_2753,[*]CCS[*],True,True,True,False,
+pilot_5,poly_2623,[*]CCSS[*],True,True,True,False,
+pilot_6,poly_3917,[*]C([*])O,True,True,True,False,
+pilot_7,poly_2957,CNCCCOCO,False,False,False,False,"Expected exactly 2 attachment points, found 0."
+pilot_8,poly_3262,[*]CCON[*],True,True,True,False,

@@ -1,0 +1,10 @@
+pilot_id,smiles,periodic_surrogate_readiness,capped_n2_success,capped_n3_success,capped_n4_success,capped_n2_failure_reason,capped_n3_failure_reason,capped_n4_failure_reason
+pilot_0,[*]CC(=S)CO[*],BLOCKED_MISSING_CELL_PARAMS,True,True,True,,,
+pilot_1,CC(=S)CC(=S),BLOCKED_MISSING_CELL_PARAMS,False,False,False,Ambiguous 2D topology,Ambiguous 2D topology,Ambiguous 2D topology
+pilot_2,CC(=S)OC(=S),BLOCKED_MISSING_CELL_PARAMS,False,False,False,Ambiguous 2D topology,Ambiguous 2D topology,Ambiguous 2D topology
+pilot_3,[*]CCCSS[*],BLOCKED_MISSING_CELL_PARAMS,True,True,True,,,
+pilot_4,[*]CCS[*],BLOCKED_MISSING_CELL_PARAMS,True,True,True,,,
+pilot_5,[*]CCSS[*],BLOCKED_MISSING_CELL_PARAMS,True,True,True,,,
+pilot_6,[*]C([*])O,BLOCKED_MISSING_CELL_PARAMS,True,True,True,,,
+pilot_7,CNCCCOCO,BLOCKED_MISSING_CELL_PARAMS,False,False,False,Ambiguous 2D topology,Ambiguous 2D topology,Ambiguous 2D topology
+pilot_8,[*]CCON[*],BLOCKED_MISSING_CELL_PARAMS,True,True,True,,,

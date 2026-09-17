@@ -1,0 +1,20 @@
+oracle_class: CALIBRATABLE_SURROGATE
+backend: "Quantum ESPRESSO"
+version: "7.2" # Assuming modern QE version for format
+executable: "pw.x"
+
+# Physical choices explicitly marked as SURROGATE_PROTOCOL_CHOICE
+functional: "PBE" # SURROGATE_PROTOCOL_CHOICE
+pseudopotentials: "SSSP_efficiency_1.2" # SURROGATE_PROTOCOL_CHOICE
+basis_cutoff_Ry: 40.0 # SURROGATE_PROTOCOL_CHOICE
+charge_density_cutoff_Ry: 160.0 # SURROGATE_PROTOCOL_CHOICE
+k_point_policy: "gamma_only" # SURROGATE_PROTOCOL_CHOICE (for finite oligomers)
+smearing: "gaussian" # SURROGATE_PROTOCOL_CHOICE
+smearing_width_Ry: 0.01 # SURROGATE_PROTOCOL_CHOICE
+charge: 0
+spin: 1 # multiplicity 1 = singlet
+
+# Geometry Mode
+geometry_mode: "molecular_supercell" # SURROGATE_PROTOCOL_CHOICE
+vacuum_padding_angstrom: 15.0 # SURROGATE_PROTOCOL_CHOICE (distance between oligomer edge and box boundary)
+boundary_assumptions: "Isolated molecule in a large periodic box (Martyna-Tuckerman or sufficient vacuum)" # SURROGATE_PROTOCOL_CHOICE

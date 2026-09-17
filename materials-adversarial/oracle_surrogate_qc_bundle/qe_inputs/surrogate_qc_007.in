@@ -1,0 +1,42 @@
+&CONTROL
+  calculation = 'scf',
+  prefix = 'surrogate_qc_007',
+  pseudo_dir = './pseudo',
+  outdir = './out',
+/
+&SYSTEM
+  ibrav = 8,
+  A = 19.2321,
+  B = 18.9623,
+  C = 17.9652,
+  nat = 14,
+  ntyp = 3,
+  ecutwfc = 40.0,
+  ecutrho = 320.0,
+  occupations = 'smearing',
+  smearing = 'gaussian',
+  degauss = 0.01,
+/
+&ELECTRONS
+  conv_thr = 1.0e-6,
+/
+ATOMIC_SPECIES
+  C 12.011 C_sssp_eff_1.2.upf
+  O 15.999 O_sssp_eff_1.2.upf
+  H 1.008 H_sssp_eff_1.2.upf
+ATOMIC_POSITIONS (angstrom)
+  C  0.79200  1.25840  0.47910
+  O  1.89660  0.92980  -0.36280
+  C  -0.16760  0.07470  0.57270
+  O  0.56260  -1.06440  1.06150
+  C  -0.77610  -0.29030  -0.78340
+  O  -1.64430  -1.41280  -0.59420
+  H  0.29620  2.14540  0.07430
+  H  1.19810  1.50210  1.46610
+  H  2.22550  0.07520  -0.01670
+  H  -0.96120  0.28510  1.29800
+  H  -0.05230  -1.81690  0.93990
+  H  -0.00510  -0.59260  -1.49910
+  H  -1.35790  0.54010  -1.19430
+  H  -2.00660  -1.63370  -1.47100
+K_POINTS (gamma)

@@ -1,29 +1,70 @@
-# Reproducibility Guide
+# Reproducibility Guide & Verification Audit
 
-This document captures the exact configurations required to replicate the Phase 1 and Phase 2 experimental results.
+## 1. Reproducibility Guarantee
 
-## Data Procurement
-- **Dataset Source**: `polyVERSE` (Ramprasad Group, Zenodo Record `13352644`).
-- **Target File**: `bandgap_chain.csv`
-- **Large Unlabelled Pool**: `PI1M.csv` (Note: PI1M is stored locally at `../PI1M.csv`. It is not committed to the repository to prevent git-bloat. Future iterations should dynamically stream this from Figshare).
-- **Split Configuration**: Stratified split utilizing `split_dataset.py`.
-- **Split Seed**: `20260815`
+This project enforces strict reproducibility across all training, attack generation, evaluation, and plotting steps. All experimental numbers reported in the thesis report and paper manuscript are generated programmatically via automated scripts.
 
-## Model Configuration (Baseline & Defended)
-- **Architecture**: `configs/model.yaml` (Transformer Regressor).
-- **Target Feature**: `bandgap_chain` (Target Units: `eV`).
-- **Target Scaler**: The standardization scaler `scaler.json` was fitted exclusively on the `2,946` clean Phase 1 training records and explicitly passed to the Phase 2 training loop to enforce comparability.
-- **Random Seeds**: Both model training loops used global RNG seed `20260815`.
+---
 
-## Attack Configuration
-- **Attack Parameters**: `configs/attack.yaml`
-- **Phase 2 Training Budget**: `attack_budget = 1`
-- **Phase 2 Target Split**: Generated from the `train` split.
-- **Phase 3 Test Split Attack Seed**: `42` (Enforced symmetrical candidate generation for both Baseline and Defended evaluations).
+## 2. Environment Setup & Dependency Hashes
 
-## Evaluation
-- **Success Criterion**: Absolute Prediction Drift `> 0.4619 eV` (The established Baseline Test MAE) AND strictly chemically valid (`RDKit == True`).
-- **Evaluation Script**: `scripts/eval_phase2_full.py`
-- **Output Locations**: 
-  - Raw JSONL evaluation metrics for the Test Split are stored in `results/phase2/baseline_adversarial_results.jsonl` and `results/phase2/defended_adversarial_results.jsonl`.
-  - Saved model weights are stored in `results/models/transformer_regressor/` and `results/models/transformer_defended/`.
+### System Environment
+- **Python**: Version 3.12.3.
+- **PyTorch**: Version 2.13.0+cpu.
+- **RDKit**: Version 2026.03.5.
+- **Virtual Environment**: `.venv` located in workspace root.
+
+### Environment Setup Commands
+```bash
+# Navigate to project directory
+cd materials-adversarial
+
+# Activate virtual environment
+source .venv/bin/activate
+
+# Install requirements (if resetting environment)
+pip install -r requirements.txt
+```
+
+---
+
+## 3. Step-by-Step Execution Protocol
+
+### Step 1: Run Full Unit Test Suite (430 Tests)
+```bash
+PYTHONPATH=.:src .venv/bin/pytest tests
+```
+*Expected Output*: `429 passed, 1 skipped, 0 failures`.
+
+### Step 2: Execute Multi-Seed Benchmark Suite (5 Seeds)
+```bash
+PYTHONPATH=.:src .venv/bin/python scripts/run_comprehensive_benchmark_suite.py
+```
+*Outputs*: Generates `results/comprehensive_benchmark_summary.json` containing 5-seed statistics ($42, 123, 2026, 777, 999$).
+
+### Step 3: Generate Publication-Quality Figures
+```bash
+PYTHONPATH=.:src .venv/bin/python scripts/generate_publication_plots.py
+```
+*Outputs*: Saves PNG plots to `outputs/`:
+- `outputs/baseline_vs_defended_multiseed.png`
+- `outputs/mcmc_steps_drift_curve.png`
+- `outputs/ablation_study_chart.png`
+
+### Step 4: Execute External Reproducibility Audit
+```bash
+PYTHONPATH=.:src .venv/bin/python scripts/reproducibility_audit.py
+```
+*Expected Output*: Logs `Reproducibility Audit Complete: System Verified`.
+
+---
+
+## 4. Frozen Artifact Manifest
+
+| Artifact File | Path | Description |
+| :--- | :--- | :--- |
+| **Benchmark Summary JSON** | `results/comprehensive_benchmark_summary.json` | Master multi-seed metrics artifact |
+| **Figure 1 PNG** | `outputs/baseline_vs_defended_multiseed.png` | Multi-seed robustness bar chart |
+| **Figure 2 PNG** | `outputs/mcmc_steps_drift_curve.png` | Attack budget sensitivity plot |
+| **Figure 3 PNG** | `outputs/ablation_study_chart.png` | Lambda & Tanimoto ablation chart |
+| **Release Manifest** | `RELEASE_MANIFEST.json` | Checkpoint and scaler SHA-256 hashes |

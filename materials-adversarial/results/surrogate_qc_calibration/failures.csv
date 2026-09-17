@@ -1,0 +1,10 @@
+job_id,polymer_id,oligomer_length,dataset_bandgap_eV,surrogate_gap_eV,status,failure_reason
+surrogate_qc_000,pilot_0,2,3.0406,,BACKEND_EXECUTION_BLOCKED,No QE/VASP backend available
+surrogate_qc_001,pilot_0,3,3.0406,,BACKEND_EXECUTION_BLOCKED,No QE/VASP backend available
+surrogate_qc_002,pilot_0,4,3.0406,,BACKEND_EXECUTION_BLOCKED,No QE/VASP backend available
+surrogate_qc_003,pilot_4,2,5.1955,,BACKEND_EXECUTION_BLOCKED,No QE/VASP backend available
+surrogate_qc_004,pilot_4,3,5.1955,,BACKEND_EXECUTION_BLOCKED,No QE/VASP backend available
+surrogate_qc_005,pilot_4,4,5.1955,,BACKEND_EXECUTION_BLOCKED,No QE/VASP backend available
+surrogate_qc_006,pilot_6,2,6.5244,,BACKEND_EXECUTION_BLOCKED,No QE/VASP backend available
+surrogate_qc_007,pilot_6,3,6.5244,,BACKEND_EXECUTION_BLOCKED,No QE/VASP backend available
+surrogate_qc_008,pilot_6,4,6.5244,,BACKEND_EXECUTION_BLOCKED,No QE/VASP backend available

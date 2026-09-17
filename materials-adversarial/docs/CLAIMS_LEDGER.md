@@ -4,7 +4,7 @@ This ledger tracks the hypotheses generated during the project and their final e
 
 | Claim | Status | Evidence | Limitations | Canonical Source |
 | :--- | :--- | :--- | :--- | :--- |
-| Sequence models natively learn chemical equivalence | **REJECTED** | Ordinary Transformer drifted ~0.404 eV on Equivalent-SMILES edits. | - | Phase 1 |
+| Sequence models natively learn chemical equivalence | **REJECTED** | Ordinary Transformer drifted ~0.614 eV on Equivalent-SMILES edits. | - | Phase 1 |
 | Branch-specialization fixes equivalent-SMILES drift | **REJECTED** | Two-Branch control drifted identically to the ordinary baseline (~0.380 eV). | - | Phase 2 |
 | Post-hoc representation adversarial training yields robustness | **REJECTED** | Multi-phase adversarial retraining caused catastrophic representation collapse (MAE exploded to ~2.0 eV). | - | Phase 9, 10 |
 | GNN representations eliminate equivalent-SMILES drift | **SUPPORTED** | GraphMPNN equivalent-SMILES drift is strictly zero by structural definition. | - | Phase 11C, 12 |

@@ -1,0 +1,34 @@
+{
+  "n_sources": 30,
+  "query_budgets": [
+    10,
+    50
+  ],
+  "seed": 42,
+  "by_method": {
+    "greedy": {
+      "phase12b_mean_drift_eV": 1.4527167439460755,
+      "v2_mean_drift_eV": 1.32498832543691,
+      "phase12b_max_drift_eV": 4.498788356781006,
+      "v2_max_drift_eV": 3.055210590362549
+    },
+    "metropolis": {
+      "phase12b_mean_drift_eV": 1.0842415809631347,
+      "v2_mean_drift_eV": 1.3029701749483744,
+      "phase12b_max_drift_eV": 2.507938861846924,
+      "v2_max_drift_eV": 3.055210590362549
+    },
+    "random": {
+      "phase12b_mean_drift_eV": 1.2787293593088787,
+      "v2_mean_drift_eV": 1.0665759364763896,
+      "phase12b_max_drift_eV": 2.9919300079345703,
+      "v2_max_drift_eV": 1.8943266868591309
+    }
+  },
+  "residual_differences_explained_by": [
+    "operator semantics: Phase 12B mutates aliphatic uppercase element TOKENS (aromatic/charged/bracket atoms immutable, 11 allowed tokens); V2 Simple Substitution re-types any heavy atom including aromatic and attachment-adjacent ones (5 allowed elements)",
+    "proposal space: Phase 12B restricts candidates to token-edit-distance <= 3 from the ORIGINAL source and rejects chemical no-ops; V2 restricts to <= 3 operator applications and dedupes canonically",
+    "search implementation: Phase 12B greedy scores a fixed 5-neighbour batch and Phase 12B metropolis uses a fixed temperature of 0.1 in eV, but neither charges the source prediction; V2 recomputes neighbourhoods per step and dedupes before spending a query",
+    "RNG stream: identical seed value, different random consumption order"
+  ]
+}

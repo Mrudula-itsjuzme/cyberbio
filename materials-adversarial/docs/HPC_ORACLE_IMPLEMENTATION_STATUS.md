@@ -1,23 +1,24 @@
 # HPC Oracle Implementation Status
 
-| Component | Status | Test | Limitation |
-| :--- | :--- | :--- | :--- |
-| OracleBackend base contract | IMPLEMENTED | `test_hpc_oracle.py` | None |
-| QuantumEspresso adapter/stub | STUB | `test_hpc_oracle.py` | BLOCKED_BY_BACKEND (No real QE instance locally) |
-| VASP adapter/stub | STUB | `test_hpc_oracle.py` | BLOCKED_BY_BACKEND (No real VASP instance locally) |
-| Config validation | IMPLEMENTED | `hpc_oracle/pipeline.py` | Minimal schema enforcement currently |
-| Matched-oracle scientific guards | IMPLEMENTED | `hpc_oracle/pipeline.py` | Fails immediately on missing parameters |
-| Backend environment checker | IMPLEMENTED | `hpc_oracle/pipeline.py` | Will fail `validate_environment()` in dry-run |
-| Structure preparation contract | STUB | `base.py` | Depends on chemistry backend |
-| Job manifest generation | IMPLEMENTED | `hpc_oracle/pipeline.py` | Uses standard JSON |
-| SLURM generation | IMPLEMENTED | `hpc_oracle/pipeline.py` | Fills `template.slurm` |
-| Dry-run | IMPLEMENTED | CLI `--dry-run` flag | Only generates stubs |
-| Portable export | NOT_IMPLEMENTED | N/A | Need to zip `hpc_oracle/` |
-| Result ingestion | STUB | `hpc_oracle/parsers/` | No real output files to parse |
-| Hash verification | IMPLEMENTED | `hpc_oracle/pipeline.py` | None |
-| Failed-job retention | NOT_IMPLEMENTED | N/A | None |
-| Unit normalization | NOT_IMPLEMENTED | N/A | Depends on specific backend |
-| Calibration analysis | IMPLEMENTED | CLI `--calibration-only` flag | None |
-| Adversarial-error analysis | IMPLEMENTED | `hpc_oracle/analysis/adversarial_error.py` | E_S and E_G formulas correctly implemented |
+## Components
 
-**Verdict**: The HPC system is currently an **HPC migration scaffold**. Full execution readiness is BLOCKED by the absence of local matched QC binaries and resolved physics parameters.
+| Component | Status | Notes |
+| --- | --- | --- |
+| `hpc_oracle.backend.base` | IMPLEMENTED | Structured typed contract established |
+| `hpc_oracle.backend.qe` | PARTIAL | Executable check and skeleton writing implemented. Blocked on real QC physics parameters. |
+| `hpc_oracle.backend.vasp` | PARTIAL | Executable check and skeleton writing implemented. Blocked on licensed POTCAR. |
+| `hpc_oracle.structure.prep` | IMPLEMENTED | Construction hashing and provenance logic is separate from QC backend. |
+| `hpc_oracle.manifests.calibration` | IMPLEMENTED | Supports dataset mapping to deterministic hash job IDs. |
+| `hpc_oracle.manifests.adversarial` | IMPLEMENTED | Generates linked source/candidate pairs for error calculations. |
+| `hpc_oracle.slurm.generator` | IMPLEMENTED | Highly parameterized script builder supporting arrays. |
+| `scripts.check_oracle_backend` | IMPLEMENTED | Verifies QE/VASP setup locally. |
+| `scripts.export_oracle_jobs` | IMPLEMENTED | Dry-run creation of job submission bundles. |
+| `scripts.ingest_oracle_results` | IMPLEMENTED | Converts output into structured JSON for analysis. |
+| `scripts.analyze_oracle_calibration`| IMPLEMENTED | Extracts R², RMSE, MAE, Pearson metrics. |
+| `scripts.analyze_oracle_adversarial`| IMPLEMENTED | Extracts actual $\Delta_T, E_G, E_S$ terms. |
+| `hpc_oracle.analysis.uncertainty` | IMPLEMENTED | Explicit structure for tracking `UNKNOWN` variances. |
+
+## External Blockers
+- Real `pseudopotential` (QE) or `POTCAR` (VASP) required.
+- Actual physical parameter tuning (Functional, KPOINTS, Cutoff, etc.).
+- Active SLURM cluster to submit jobs to.

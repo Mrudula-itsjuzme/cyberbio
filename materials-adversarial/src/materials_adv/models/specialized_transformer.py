@@ -167,6 +167,30 @@ class TwoBranchTransformerRegressor:
         unscaled = self.scaler.inverse_transform(normalized_preds)
         return [float(x) for x in unscaled]
 
+    def predict_with_uncertainty(self, representations: Sequence[str], n_samples: int = 20) -> tuple[list[float], list[float]]:
+        """Perform Monte Carlo Dropout (MC-Dropout) to estimate mean prediction and epistemic variance.
+
+        Returns (mean_predictions, epistemic_variances).
+        """
+        if not representations:
+            return [], []
+        src, mask = self._tokenize_batch(representations)
+        # Enable dropout during inference for MC-Dropout
+        self.model.train()
+        mc_preds = []
+        with torch.no_grad():
+            for _ in range(n_samples):
+                norm_p = self.model(src, padding_mask=mask).cpu().numpy()
+                unscaled_p = self.scaler.inverse_transform(norm_p)
+                mc_preds.append(unscaled_p)
+        self.model.eval()
+        
+        arr = np.array(mc_preds) # [n_samples, batch_size]
+        means = np.mean(arr, axis=0).tolist()
+        vars_ = np.var(arr, axis=0).tolist()
+        return [float(m) for m in means], [float(v) for v in vars_]
+
+
     @torch.no_grad()
     def get_branch_embeddings(
         self, representations: Sequence[str]

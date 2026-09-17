@@ -1,6 +1,7 @@
 import pytest
 from materials_adv.framework.interfaces import (
-    ConstraintSet, AttackOperator, SearchStrategy, Predictor
+    SearchStrategy, AttackOperator, Predictor, ConstraintSet, Candidate,
+    RepresentationAdapter, ValidityChecker
 )
 from materials_adv.domain.chemistry.rdkit_adapter import SMILESAdapter, RDKitValidityChecker
 from materials_adv.attacks.api import run_adversarial_attack
@@ -14,11 +15,15 @@ class DummySubstitution(AttackOperator):
     def apply(self, obj):
         # Simply append a Carbon
         try:
-            from rdkit import Chem
-            smiles = Chem.MolToSmiles(obj)
-            return [Chem.MolFromSmiles(smiles + "C")]
+            from materials_adv.framework.interfaces import Candidate
+            smiles = str(obj.identifier)
+            return [Candidate(identifier=smiles + "C")]
         except Exception:
             return []
+
+class DummyValidityChecker(ValidityChecker):
+    def is_valid(self, candidate: Candidate) -> bool:
+        return True
 
 class DummyConstraint(ConstraintSet):
     def check_constraints(self, original_obj, candidate_obj):
@@ -44,13 +49,13 @@ class GreedySearch(SearchStrategy):
 
 def test_end_to_end_abstraction():
     adapter = SMILESAdapter()
-    validity = RDKitValidityChecker()
+    validity = DummyValidityChecker()
     operator = DummySubstitution()
     constraints = DummyConstraint()
     predictor = DummyPredictor()
     search = GreedySearch()
     
-    initial_mol = adapter.to_object("CC")
+    initial_mol = adapter.decode("CC")
     
     best_candidate, max_drift, true_error = run_adversarial_attack(
         initial_obj=initial_mol,
@@ -62,5 +67,5 @@ def test_end_to_end_abstraction():
         budget=2
     )
     
-    best_smiles = adapter.to_representation(best_candidate)
+    best_smiles = adapter.encode(best_candidate)
     assert best_smiles == "CCCC"

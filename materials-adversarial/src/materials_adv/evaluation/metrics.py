@@ -102,3 +102,50 @@ def length_stratified_metrics(y_true: np.ndarray, y_pred: np.ndarray, lengths: n
             results[bin_name] = regression_metrics(y_true[mask], y_pred[mask])
             
     return results
+
+
+def robustness_metrics(
+    y_true: np.ndarray,
+    y_clean_pred: np.ndarray,
+    y_adv_pred: np.ndarray,
+    valid_flags: np.ndarray | None = None,
+    thresholds: list[float] = [0.5, 1.0],
+) -> dict[str, float]:
+    """Compute comprehensive adversarial robustness metrics for property regression models.
+
+    Metrics returned:
+    - clean_rmse, clean_mae, clean_r2: Baseline performance on clean data
+    - adv_rmse, adv_mae: Model performance on attacked data
+    - mean_absolute_drift: Mean |y_adv_pred - y_clean_pred|
+    - max_absolute_drift: Max |y_adv_pred - y_clean_pred|
+    - attack_success_rate_tau: Fraction of attacks yielding drift > tau
+    - validity_rate: Fraction of generated candidates passing chemical validity checks
+    """
+    y_true = np.asarray(y_true, dtype=float)
+    y_clean_pred = np.asarray(y_clean_pred, dtype=float)
+    y_adv_pred = np.asarray(y_adv_pred, dtype=float)
+
+    if y_clean_pred.shape != y_adv_pred.shape:
+        raise ValueError(f"Shape mismatch: y_clean {y_clean_pred.shape} vs y_adv {y_adv_pred.shape}")
+
+    drift = np.abs(y_adv_pred - y_clean_pred)
+    valid_mask = np.asarray(valid_flags, dtype=bool) if valid_flags is not None else np.ones_like(drift, dtype=bool)
+
+    metrics = {
+        "n_samples": int(len(y_clean_pred)),
+        "clean_rmse": rmse(y_true, y_clean_pred),
+        "clean_mae": mae(y_true, y_clean_pred),
+        "clean_r2": r2(y_true, y_clean_pred),
+        "adv_rmse": rmse(y_true, y_adv_pred),
+        "adv_mae": mae(y_true, y_adv_pred),
+        "mean_absolute_drift": float(np.mean(drift)),
+        "median_absolute_drift": float(np.median(drift)),
+        "max_absolute_drift": float(np.max(drift)) if drift.size > 0 else 0.0,
+        "validity_rate": float(np.mean(valid_mask)) if valid_mask.size > 0 else 1.0,
+    }
+
+    for tau in thresholds:
+        metrics[f"attack_success_rate_tau_{tau}"] = float(np.mean(drift > tau))
+
+    return metrics
+

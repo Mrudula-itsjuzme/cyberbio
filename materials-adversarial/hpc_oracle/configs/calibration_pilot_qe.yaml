@@ -1,0 +1,20 @@
+backend: "qe"
+oracle_class: "calibration_pilot"
+target_quantity: "electronic_bandgap_1d"
+functional: "UNKNOWN"
+pseudopotential_family: "UNKNOWN"
+cutoff_wfc: "UNKNOWN"
+cutoff_rho: "UNKNOWN"
+k_points: "UNKNOWN"
+smearing: "UNKNOWN"
+geometry_optimization: "UNKNOWN"
+periodicity: "1D"
+charge: 0
+multiplicity: 1
+convergence_threshold: "UNKNOWN"
+structure_mode: "EXTERNAL_REQUIRED"
+scheduler_resources:
+  nodes: 1
+  ntasks: 16
+  time: "24:00:00"
+  partition: "compute"

@@ -1,0 +1,10 @@
+job_id,polymer_id,oligomer_length,status,converged,surrogate_gap_eV,HOMO_or_VBM_eV,LUMO_or_CBM_eV,total_energy_eV,SCF_iterations,runtime,warnings,failure_reason,input_hash,output_hash,protocol_hash
+poly_A_n2,poly_A,2,SUCCESS,True,1.5,-5.0,-3.5,-1679.7157953195244,,,[],,mock_hash,mock_hash,mock_hash
+poly_A_n3,poly_A,3,SUCCESS,True,1.3333,-5.0,-3.6667,-1679.7157953195244,,,[],,mock_hash,mock_hash,mock_hash
+poly_A_n4,poly_A,4,SUCCESS,True,1.25,-5.0,-3.75,-1679.7157953195244,,,[],,mock_hash,mock_hash,mock_hash
+poly_B_n2,poly_B,2,SUCCESS,True,2.5,-5.0,-2.5,-1679.7157953195244,,,[],,mock_hash,mock_hash,mock_hash
+poly_B_n3,poly_B,3,SUCCESS,True,2.3333,-5.0,-2.6667,-1679.7157953195244,,,[],,mock_hash,mock_hash,mock_hash
+poly_B_n4,poly_B,4,SUCCESS,True,2.25,-5.0,-2.75,-1679.7157953195244,,,[],,mock_hash,mock_hash,mock_hash
+poly_C_n2,poly_C,2,SUCCESS,True,3.5,-5.0,-1.5,-1679.7157953195244,,,[],,mock_hash,mock_hash,mock_hash
+poly_C_n3,poly_C,3,SUCCESS,True,3.3333,-5.0,-1.6667,-1679.7157953195244,,,[],,mock_hash,mock_hash,mock_hash
+poly_C_n4,poly_C,4,SUCCESS,True,3.25,-5.0,-1.75,-1679.7157953195244,,,[],,mock_hash,mock_hash,mock_hash

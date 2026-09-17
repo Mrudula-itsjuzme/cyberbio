@@ -1,0 +1,12 @@
+&CONTROL
+  calculation = 'scf'
+  pseudo_dir  = 'dummy'
+/
+&SYSTEM
+  ecutwfc = dummy
+  ! Functional: dummy
+/
+&ELECTRONS
+  conv_thr = 1e-06
+/
+! STRUCTURE INSERTED FROM: 

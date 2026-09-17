@@ -1,0 +1,15 @@
+mode: "CAPPED_OLIGOMER" # Options: CAPPED_OLIGOMER, PERIODIC_CHAIN_SURROGATE
+oligomer_lengths: [2, 3, 4]
+capping_rule: "[H]"
+embedding_method: "ETKDG"
+embedding_seed: 42
+num_conformers: 5
+force_field: "MMFF94" # Options: MMFF94, UFF
+max_optimization_steps: 1000
+charge: 0
+multiplicity: 1
+
+# Periodic surrogate settings
+periodic_chain_axis: null # e.g. "z"
+cell_length: null # e.g. 5.0 (Angstroms)
+vacuum_dimensions: null # e.g. [15.0, 15.0] (Angstroms for x, y)

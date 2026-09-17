@@ -1,0 +1,10 @@
+{
+    "hostname": "sandbox",
+    "scheduler_type": "SLURM",
+    "qe_executable_path": "NOT_FOUND",
+    "qe_version": "UNKNOWN",
+    "python_version": "3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]",
+    "pseudopotential_directory": "/home/mrudula/Downloads/DL_cyberbio/materials-adversarial/oracle_surrogate_qc_bundle/qe_inputs/pseudo",
+    "scratch_directory": "UNKNOWN",
+    "timestamp": "2026-09-14T15:06:03.541890Z"
+}

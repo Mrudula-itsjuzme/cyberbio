@@ -40,6 +40,7 @@ class ProbabilisticMCMCAttack(BaseAttack):
         protect_attachments: bool = True,
         protect_ring_closures: bool = True,
         protect_branches: bool = True,
+        min_tanimoto_similarity: float = 0.5,
         **params: Any,
     ) -> None:
         super().__init__(
@@ -53,6 +54,7 @@ class ProbabilisticMCMCAttack(BaseAttack):
         self.allowed_tokens = allowed_tokens or []
         self.steps = steps
         self.temperature = temperature
+        self.min_tanimoto_similarity = min_tanimoto_similarity
         
         # Initialize proposal generators
         self._proposals = [
@@ -61,15 +63,24 @@ class ProbabilisticMCMCAttack(BaseAttack):
             DeletionAttack(rng, attack_budget=1, protect_attachments=protect_attachments, protect_ring_closures=protect_ring_closures, protect_branches=protect_branches)
         ]
 
-    def _score_sequence(self, psmiles: str, original_pred: float) -> tuple[float, float, float]:
+    def _score_sequence(self, psmiles: str, original_psmiles: str, original_pred: float) -> tuple[float, float, float]:
         """Returns (total_score, chemical_score, attack_score)"""
-        # Chemical heuristic (1.0 if valid RDKit parse, 0.0 otherwise)
+        # Chemical heuristic (1.0 if valid RDKit parse, -100.0 otherwise)
         mol = Chem.MolFromSmiles(psmiles)
-        chemical_score = 1.0 if mol is not None else -100.0  # severely penalize invalid syntax
+        if mol is None:
+            return -100.0, -100.0, 0.0
+            
+        chemical_score = 1.0
+        # Optional Tanimoto similarity check
+        if self.min_tanimoto_similarity > 0.0:
+            from materials_adv.domain.chemistry.plausibility import compute_tanimoto_similarity
+            sim = compute_tanimoto_similarity(original_psmiles, psmiles)
+            if sim < self.min_tanimoto_similarity:
+                chemical_score = -50.0  # penalize candidates failing Tanimoto similarity bound
         
         # Attack score: prediction drift
         attack_score = 0.0
-        if self.predictor is not None and mol is not None:
+        if self.predictor is not None:
             pred = float(self.predictor.predict([psmiles])[0])
             attack_score = abs(pred - original_pred)
             
@@ -113,7 +124,7 @@ class ProbabilisticMCMCAttack(BaseAttack):
             candidate_psmiles = candidate_outcome.adversarial_representation
             
             # 2. Score
-            new_score, chem_score, att_score = self._score_sequence(candidate_psmiles, original_pred)
+            new_score, chem_score, att_score = self._score_sequence(candidate_psmiles, original_representation, original_pred)
             if chem_score > 0:
                 model_queries += 1
             
