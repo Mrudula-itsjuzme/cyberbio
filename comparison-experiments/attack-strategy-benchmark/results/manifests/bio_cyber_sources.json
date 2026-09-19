@@ -1,0 +1,107 @@
+[
+    {
+        "source_id": 18666,
+        "split": "test",
+        "label": 1,
+        "SHA256": "99a349c4fd814650e001003a98f2e8ad90a3cf55d6bb286c32f2f71a61ba13ab",
+        "seed": 42
+    },
+    {
+        "source_id": 3636,
+        "split": "test",
+        "label": 0,
+        "SHA256": "4364301b3561c5810df938a978181ee1cddea283b06d864c474184ceb90323fa",
+        "seed": 42
+    },
+    {
+        "source_id": 13810,
+        "split": "test",
+        "label": 1,
+        "SHA256": "41370c76c84a8b834e40f51db9e8ecdbade26781675cbcbb63014ae64cbd48b1",
+        "seed": 42
+    },
+    {
+        "source_id": 9408,
+        "split": "test",
+        "label": 0,
+        "SHA256": "87321bbcd3ead1ff87d0ea2fe58a376f30a8035cbc3fc82a9d59a5aeb77eb6dd",
+        "seed": 42
+    },
+    {
+        "source_id": 13312,
+        "split": "test",
+        "label": 1,
+        "SHA256": "64805f644930a224399696136aaf2af868e65c146b356313c237b68af0262e7b",
+        "seed": 42
+    },
+    {
+        "source_id": 13162,
+        "split": "test",
+        "label": 1,
+        "SHA256": "2affcc91737fb6077463c6ecdf29e251777ed35734f2e849cfdb56c584f3d2b0",
+        "seed": 42
+    },
+    {
+        "source_id": 9785,
+        "split": "test",
+        "label": 0,
+        "SHA256": "27879d3ed275878912d216132c118921f322f06149f473ffa7f4727d2efec068",
+        "seed": 42
+    },
+    {
+        "source_id": 17659,
+        "split": "test",
+        "label": 0,
+        "SHA256": "ffb5a1b5a0171c7ec8a9e9a198426eb9a69d2e675ef775ea262ea9f4f7afcb59",
+        "seed": 42
+    },
+    {
+        "source_id": 690,
+        "split": "test",
+        "label": 1,
+        "SHA256": "b6ae7707a3412f0e6907c8d60a5f04b4cd4e730d6d065960e3eee542cf84eb17",
+        "seed": 42
+    },
+    {
+        "source_id": 13687,
+        "split": "test",
+        "label": 0,
+        "SHA256": "9e07456c45ec642edcaf246d959dd1e76b84faa34acb16693cb79ec1c9d38559",
+        "seed": 42
+    },
+    {
+        "source_id": 601,
+        "split": "test",
+        "label": 0,
+        "SHA256": "14babf770b94073475a33ab15b0d8abc0a09126522299749634771f120301304",
+        "seed": 42
+    },
+    {
+        "source_id": 13354,
+        "split": "test",
+        "label": 0,
+        "SHA256": "4ee17ca1c19c8f02f9f16af6d33cd74b9ede2bae8f5467c93a1d8f2a72803129",
+        "seed": 42
+    },
+    {
+        "source_id": 11514,
+        "split": "test",
+        "label": 0,
+        "SHA256": "e0e7da56016b05ea714fa10704d941868d8bef9ae11501f275e55a6114ac596f",
+        "seed": 42
+    },
+    {
+        "source_id": 6005,
+        "split": "test",
+        "label": 0,
+        "SHA256": "7dee71689a3a587920ce113260332c3d60812801552e3cbcb7f2035913777c46",
+        "seed": 42
+    },
+    {
+        "source_id": 3827,
+        "split": "test",
+        "label": 1,
+        "SHA256": "be240b45558a13571ab0451ffbee3b17cf5dc28ac9533b6f05c8147eda7d2a8c",
+        "seed": 42
+    }
+]
