@@ -1,0 +1,15 @@
+{
+    "exact_duplicate_sequences_total": 0,
+    "cross_split_duplicates_train_test": 0,
+    "cross_split_duplicates_train_val": 0,
+    "mean_length_class_0": 100.0,
+    "mean_length_class_1": 100.0,
+    "mean_motif_pos_class_0": 40.35118447580645,
+    "mean_motif_pos_class_1": 40.70969742063492,
+    "findings": [
+        {
+            "issue": "None",
+            "category": "NO_ISSUE_FOUND"
+        }
+    ]
+}

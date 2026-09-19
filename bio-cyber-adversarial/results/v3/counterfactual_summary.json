@@ -1,0 +1,50 @@
+{
+    "spacing_prob": {
+        "mean_abs_change": 0.011619465351104741,
+        "bootstrap_95_CI": [
+            0.009999603398144246,
+            0.013311986088752746
+        ],
+        "fraction_crossing_threshold": 0.1
+    },
+    "order_prob": {
+        "mean_abs_change": 0.01045426189899445,
+        "bootstrap_95_CI": [
+            0.008908341370522979,
+            0.012044146627187731
+        ],
+        "fraction_crossing_threshold": 0.05
+    },
+    "move_prob": {
+        "mean_abs_change": 0.014435746669769291,
+        "bootstrap_95_CI": [
+            0.012419719830155378,
+            0.016571164324879654
+        ],
+        "fraction_crossing_threshold": 0.08
+    },
+    "bg_prob": {
+        "mean_abs_change": 0.031152033805847176,
+        "bootstrap_95_CI": [
+            0.026953421391546738,
+            0.03548550927639009
+        ],
+        "fraction_crossing_threshold": 0.29
+    },
+    "rmA_prob": {
+        "mean_abs_change": 0.008225941956043242,
+        "bootstrap_95_CI": [
+            0.007064607687294479,
+            0.009406820528209207
+        ],
+        "fraction_crossing_threshold": 0.02
+    },
+    "rmB_prob": {
+        "mean_abs_change": 0.006631574630737308,
+        "bootstrap_95_CI": [
+            0.005499577380716806,
+            0.007938699051737785
+        ],
+        "fraction_crossing_threshold": 0.04
+    }
+}

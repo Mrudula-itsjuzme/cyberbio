@@ -1,0 +1,3 @@
+domain,best_shallow_baseline,best_deep_model,clean_performance,best_attack_flip_rate,best_defense_transfer_flip_rate,adaptive_flip_rate,explainability_p_value,explainability_effect_size
+materials,3-grams,TwoBranchTransformer,,,,,,
+bio-cyber,strong_shallow,CNN_Distance,0.683,0.58,0.58,0.8,2.649707155910619e-07,0.8633893334848081

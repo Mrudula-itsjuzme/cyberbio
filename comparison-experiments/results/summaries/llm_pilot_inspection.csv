@@ -1,0 +1,11 @@
+mode,source_id,source_sequence,LLM proposal,rationale,RDKit validity,constraint result,Tanimoto,edit distance,source prediction,candidate prediction,drift,failure_reason
+objective-aware,3583,[*]OC1C(COC(C)=O)OC([*])C(OC(C)=O)C1O,[*]OC1C(COC(C)=O)OC([*])C(OC(C)=O)C1O,,True,False,1.0,0,6.238099575042725,6.238099575042725,0.0,provider_error
+objective-aware,3602,[*]CC(CCl)(CCl)COC(=O)C(=O)O[*],[*]CC(CCl)(CCl)COC(=O)C(=O)O[*],,True,False,1.0,0,6.32516622543335,6.32516622543335,0.0,provider_error
+objective-aware,3604,[*]NC(CO)C([*])=O,[*]NC(CO)C([*])=O,,True,False,1.0,0,5.532388210296631,5.532388210296631,0.0,provider_error
+objective-aware,3607,[*]Oc1ccc(Cc2ccc(Cc3ccc(OC([*])=O)cc3)cc2)cc1,[*]Oc1ccc(Cc2ccc(Cc3ccc(OC([*])=O)cc3)cc2)cc1,,True,False,1.0,0,4.370055198669434,4.370055198669434,0.0,provider_error
+objective-aware,3609,[*]CCCCCCOc1ccc(C(=O)OC(=O)c2ccc(O[*])cc2)cc1,[*]CCCCCCOc1ccc(C(=O)OC(=O)c2ccc(O[*])cc2)cc1,,True,False,1.0,0,4.256508827209473,4.256508827209473,0.0,provider_error
+iterative,3583,[*]OC1C(COC(C)=O)OC([*])C(OC(C)=O)C1O,[*]OC1C(COC(C)=O)OC([*])C(OC(C)=O)C1O,,True,False,1.0,0,6.238099575042725,6.238099575042725,0.0,provider_error
+iterative,3602,[*]CC(CCl)(CCl)COC(=O)C(=O)O[*],[*]CC(CCl)(CCl)COC(=O)C(=O)O[*],,True,False,1.0,0,6.32516622543335,6.32516622543335,0.0,provider_error
+iterative,3604,[*]NC(CO)C([*])=O,[*]NC(CO)C([*])=O,,True,False,1.0,0,5.532388210296631,5.532388210296631,0.0,provider_error
+iterative,3607,[*]Oc1ccc(Cc2ccc(Cc3ccc(OC([*])=O)cc3)cc2)cc1,[*]Oc1ccc(Cc2ccc(Cc3ccc(OC([*])=O)cc3)cc2)cc1,,True,False,1.0,0,4.370055198669434,4.370055198669434,0.0,provider_error
+iterative,3609,[*]CCCCCCOc1ccc(C(=O)OC(=O)c2ccc(O[*])cc2)cc1,[*]CCCCCCOc1ccc(C(=O)OC(=O)c2ccc(O[*])cc2)cc1,,True,False,1.0,0,4.256508827209473,4.256508827209473,0.0,provider_error

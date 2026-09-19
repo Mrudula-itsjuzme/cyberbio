@@ -1,0 +1,74 @@
+=== BUDGET SWEEP STATISTICAL ANALYSIS ===
+
+--- Budget: 50 ---
+Attacker: canonical_mcmc
+  Mean Drift: 0.6422 (std: 0.5008)
+  95% CI (Bootstrap): [0.6004, 0.6868]
+
+Attacker: evolutionary_search
+  Mean Drift: 0.0000 (std: 0.0000)
+  95% CI (Bootstrap): [0.0000, 0.0000]
+
+Attacker: random_search
+  Mean Drift: 0.0000 (std: 0.0000)
+  95% CI (Bootstrap): [0.0000, 0.0000]
+
+Paired Tests (Wilcoxon Signed-Rank):
+  canonical_mcmc vs evolutionary_search:
+    Mean Paired Delta (canonical_mcmc - evolutionary_search): 0.6422
+    Wilcoxon p-value: 5.6906e-83
+  canonical_mcmc vs random_search:
+    Mean Paired Delta (canonical_mcmc - random_search): 0.6422
+    Wilcoxon p-value: 5.6906e-83
+  evolutionary_search vs random_search:
+    Mean Paired Delta (evolutionary_search - random_search): 0.0000
+    Wilcoxon p-value: nan
+
+--- Budget: 20 ---
+Attacker: canonical_mcmc
+  Mean Drift: 0.5238 (std: 0.4471)
+  95% CI (Bootstrap): [0.4872, 0.5623]
+
+Attacker: evolutionary_search
+  Mean Drift: 0.0000 (std: 0.0000)
+  95% CI (Bootstrap): [0.0000, 0.0000]
+
+Attacker: random_search
+  Mean Drift: 0.0000 (std: 0.0000)
+  95% CI (Bootstrap): [0.0000, 0.0000]
+
+Paired Tests (Wilcoxon Signed-Rank):
+  canonical_mcmc vs evolutionary_search:
+    Mean Paired Delta (canonical_mcmc - evolutionary_search): 0.5238
+    Wilcoxon p-value: 2.5605e-82
+  canonical_mcmc vs random_search:
+    Mean Paired Delta (canonical_mcmc - random_search): 0.5238
+    Wilcoxon p-value: 2.5605e-82
+  evolutionary_search vs random_search:
+    Mean Paired Delta (evolutionary_search - random_search): 0.0000
+    Wilcoxon p-value: nan
+
+--- Budget: 10 ---
+Attacker: canonical_mcmc
+  Mean Drift: 0.4107 (std: 0.3965)
+  95% CI (Bootstrap): [0.3758, 0.4448]
+
+Attacker: evolutionary_search
+  Mean Drift: 0.0000 (std: 0.0000)
+  95% CI (Bootstrap): [0.0000, 0.0000]
+
+Attacker: random_search
+  Mean Drift: 0.0000 (std: 0.0000)
+  95% CI (Bootstrap): [0.0000, 0.0000]
+
+Paired Tests (Wilcoxon Signed-Rank):
+  canonical_mcmc vs evolutionary_search:
+    Mean Paired Delta (canonical_mcmc - evolutionary_search): 0.4107
+    Wilcoxon p-value: 1.1000e-80
+  canonical_mcmc vs random_search:
+    Mean Paired Delta (canonical_mcmc - random_search): 0.4107
+    Wilcoxon p-value: 1.1000e-80
+  evolutionary_search vs random_search:
+    Mean Paired Delta (evolutionary_search - random_search): 0.0000
+    Wilcoxon p-value: nan
+

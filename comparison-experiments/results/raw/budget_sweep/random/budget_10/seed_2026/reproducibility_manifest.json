@@ -1,0 +1,15 @@
+{
+    "args": {
+        "attack": [
+            "random"
+        ],
+        "source_count": 100,
+        "query_budget": 10,
+        "seed": 2026,
+        "output_dir": "/home/mrudula/Downloads/DL_cyberbio/comparison-experiments/results/raw/budget_sweep/random/budget_10/seed_2026"
+    },
+    "environment": "materials-adversarial/.venv",
+    "commit_sha": "50bf120697fac03b1953cbee343e7e4643573724",
+    "model_hash": "f53948cfc6983f619a3ccfd13d9375f3",
+    "source_bank_hash": "c455e7592dca523a913736a46f55c850"
+}

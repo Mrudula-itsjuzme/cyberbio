@@ -1,0 +1,45 @@
+{
+    "total_rows": 20000,
+    "train_rows": 16000,
+    "val_rows": 2000,
+    "test_rows": 2000,
+    "class_counts_by_split": {
+        "test_class_0": 1000,
+        "test_class_1": 1000,
+        "train_class_0": 8000,
+        "train_class_1": 8000,
+        "val_class_0": 1000,
+        "val_class_1": 1000
+    },
+    "sequence_length_distribution": {
+        "count": 20000.0,
+        "mean": 100.0,
+        "std": 0.0,
+        "min": 100.0,
+        "25%": 100.0,
+        "50%": 100.0,
+        "75%": 100.0,
+        "max": 100.0
+    },
+    "duplicates": 0,
+    "motif_position_distribution": {
+        "count": 20000.0,
+        "mean": 40.66505,
+        "std": 23.89612750516257,
+        "min": 0.0,
+        "25%": 20.0,
+        "50%": 41.0,
+        "75%": 61.0,
+        "max": 91.0
+    },
+    "distance_distribution": {
+        "15": 10000,
+        "25": 5036,
+        "5": 4964
+    },
+    "cross_split_overlap": {
+        "train_val": 0,
+        "train_test": 0,
+        "val_test": 0
+    }
+}

@@ -1,0 +1,1 @@
+Systematic structural perturbation required. Apply single-point edits to PSMILES {source_sequence} targeting maximal absolute deviation in predicted bandgap delta.

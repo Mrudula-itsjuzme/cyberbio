@@ -1,0 +1,16 @@
+{
+    "n_train_per_class": 8000,
+    "n_val_per_class": 1000,
+    "n_test_per_class": 1000,
+    "seq_len": 150,
+    "class_1_dist": [
+        30,
+        40
+    ],
+    "class_0_dist": [
+        60,
+        70
+    ],
+    "total_sequences": 20000,
+    "dataset_hash": "bacd4013772f020c97adbf1f3d8aef54a9b7f3368943a269deafdcc12527fd0e"
+}

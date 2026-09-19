@@ -1,0 +1,13 @@
+{
+    "git_SHA": "dced92a45268666838ff099d4085fbf8c2506489",
+    "dirty_state": true,
+    "Python_versions": "3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]",
+    "dependency_versions": "torch=2.13.0+cu130, pandas=3.0.5, numpy=2.5.2",
+    "device": "cpu",
+    "dataset_SHA256": "bacd4013772f020c97adbf1f3d8aef54a9b7f3368943a269deafdcc12527fd0e",
+    "checkpoint_SHA256": "c1bd7e67f541f130268b7d1d515069a09d5d82c79cceb319295bebd5a431a8ef",
+    "frozen_bank_manifest_SHA256": "32244e52bdc55e489ee30fe03a0bed15de64e16df26d26a00351cbd5d96a0ba9",
+    "attack_results_SHA256": "49d6e8267f296ffd491cfdca3ae527593bfc840e41e6bf00be5567bf9829406e",
+    "adaptive_results_SHA256": "7e51bb944075d22d000fa8671c1857722b876ecffb74a08b0fdc6ad54280b9ee",
+    "seed": 42
+}

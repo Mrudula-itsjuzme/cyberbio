@@ -1,0 +1,4 @@
+Task: Adversarial Molecule Generation
+Source: {source_sequence}
+Objective: Maximize prediction drift.
+Output: JSON array of sequences.

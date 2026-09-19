@@ -1,0 +1,10 @@
+defense,attack,budget,label_flip,absolute_probability_change
+cnn_adv_mixed,evolutionary,5,0.0,0.0
+cnn_adv_mixed,evolutionary,20,0.18,0.21536809084704145
+cnn_adv_mixed,evolutionary,50,0.8,0.6479151433706284
+cnn_adv_mixed,mcmc,5,0.18,0.129035532833077
+cnn_adv_mixed,mcmc,20,0.32,0.33865803328400945
+cnn_adv_mixed,mcmc,50,0.78,0.6671781739592553
+cnn_adv_mixed,random,5,0.22,0.13989414358744398
+cnn_adv_mixed,random,20,0.28,0.2583663491869811
+cnn_adv_mixed,random,50,0.5,0.4439611642435193

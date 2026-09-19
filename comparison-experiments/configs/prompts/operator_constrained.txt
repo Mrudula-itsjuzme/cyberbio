@@ -1,0 +1,5 @@
+Source sequence (PSMILES): {source_sequence}
+Propose edits using ONLY the following approved operators:
+- Simple substitution (e.g. swap a halogen)
+- Aliphatic carbon substitution
+- Deletion of terminal functional groups

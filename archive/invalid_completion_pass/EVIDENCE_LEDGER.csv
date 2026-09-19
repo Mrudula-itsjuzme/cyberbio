@@ -1,0 +1,4 @@
+claim_id,document,claim,status,supporting_script,supporting_result,config,dataset/split,seed(s),metric,action_required
+C001,materials-adversarial/docs/CANONICAL_RESULT_INDEX.md,Random-SMILES baseline drift is measurable.,PARTIALLY_SUPPORTED,scripts/run_comprehensive_benchmark_suite.py,results/canonical_benchmark_no_leakage.json,configs/canonical_benchmark.json,scaffold,"42, 123, 2026, 777, 999",mean drift,Extract true metric value
+C002,comparison-experiments/docs/EXPLAINABILITY_ANALYSIS.md,Attacks tend to focus on segments with moderate to high attribution,UNVERIFIED,None,None,None,None,None,None,Rewrite or execute real occlusion script
+C003,docs/DEFENSE_TRANSFER_MATRIX.md,Defenses tend to overfit,UNVERIFIED,None,None,None,None,None,None,"Remove fake results, run real matrix"

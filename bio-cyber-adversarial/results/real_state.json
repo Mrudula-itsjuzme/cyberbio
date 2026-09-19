@@ -1,0 +1,41 @@
+{
+    "datasets": [
+        {
+            "path": "data/raw/dataset.csv",
+            "rows": 20000,
+            "columns": [
+                "sequence",
+                "label",
+                "motif_pos",
+                "split"
+            ]
+        },
+        {
+            "path": "data/raw/adv_dataset_against_defended.csv",
+            "rows": 3000,
+            "columns": [
+                "sequence",
+                "label",
+                "motif_pos",
+                "split",
+                "adv_sequence"
+            ]
+        },
+        {
+            "path": "data/raw/adv_dataset.csv",
+            "rows": 3000,
+            "columns": [
+                "sequence",
+                "label",
+                "motif_pos",
+                "split",
+                "adv_sequence"
+            ]
+        }
+    ],
+    "models": [
+        "models/defended_model.pth",
+        "models/best_model.pth"
+    ],
+    "attack_implementations": []
+}

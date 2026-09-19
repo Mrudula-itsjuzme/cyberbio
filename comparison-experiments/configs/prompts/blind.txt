@@ -1,0 +1,2 @@
+Source sequence (PSMILES): {source_sequence}
+Propose diverse valid candidate PSMILES sequences by mutating the source sequence.

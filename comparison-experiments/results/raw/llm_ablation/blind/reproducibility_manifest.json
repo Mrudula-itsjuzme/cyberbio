@@ -1,0 +1,16 @@
+{
+    "args": {
+        "attack": [
+            "llm_blind"
+        ],
+        "use_real_llm": true,
+        "source_count": 5,
+        "query_budget": 10,
+        "seed": 42,
+        "output_dir": "/home/mrudula/Downloads/DL_cyberbio/comparison-experiments/results/raw/llm_ablation/blind"
+    },
+    "environment": "materials-adversarial/.venv",
+    "commit_sha": "dced92a45268666838ff099d4085fbf8c2506489",
+    "model_hash": "f53948cfc6983f619a3ccfd13d9375f3",
+    "source_bank_hash": "c455e7592dca523a913736a46f55c850"
+}

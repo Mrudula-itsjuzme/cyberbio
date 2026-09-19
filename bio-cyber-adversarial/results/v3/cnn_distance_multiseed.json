@@ -1,0 +1,12 @@
+{
+    "seeds_accuracy": [
+        0.551,
+        0.8675,
+        0.515,
+        0.7605,
+        0.721
+    ],
+    "mean_accuracy": 0.683,
+    "std_accuracy": 0.13201401440756205,
+    "shuffled_baseline_accuracy": 0.497
+}

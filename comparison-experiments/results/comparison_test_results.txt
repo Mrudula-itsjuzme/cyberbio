@@ -1,0 +1,26 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0
+rootdir: /home/mrudula/Downloads/DL_cyberbio/comparison-experiments
+plugins: cov-7.1.0
+collected 53 items
+
+tests/test_adapters.py .                                                 [  1%]
+tests/test_budget_parity.py .                                            [  3%]
+tests/test_budgets.py ...                                                [  9%]
+tests/test_canonical_model.py ..                                         [ 13%]
+tests/test_canonical_model_mock.py ..                                    [ 16%]
+tests/test_cli.py ..                                                     [ 20%]
+tests/test_evolutionary.py .                                             [ 22%]
+tests/test_explicit_seed.py .                                            [ 24%]
+tests/test_llm_guided.py ............                                    [ 47%]
+tests/test_llm_mock.py .                                                 [ 49%]
+tests/test_more_edge_cases.py ....                                       [ 56%]
+tests/test_prompt_hashing.py .                                           [ 58%]
+tests/test_provenance.py ....                                            [ 66%]
+tests/test_random_search.py .                                            [ 67%]
+tests/test_replay_evaluator.py ........                                  [ 83%]
+tests/test_schemas.py .                                                  [ 84%]
+tests/test_statistics.py ...                                             [ 90%]
+tests/test_sweep.py .....                                                [100%]
+
+============================== 53 passed in 3.48s ==============================

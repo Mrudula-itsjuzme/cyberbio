@@ -1,0 +1,1 @@
+Mutate this PSMILES: {source_sequence}

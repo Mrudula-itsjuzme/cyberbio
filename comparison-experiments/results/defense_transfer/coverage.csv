@@ -1,0 +1,67 @@
+defense,attack,n_expected,n_evaluated,status
+specialized_control,random,500,0,"Strict load failed: Error(s) in loading state_dict for TwoBranchTransformerRegressorModel:
+	size mismatch for embedding.weight: copying a param with shape torch.Size([37, 64]) from checkpoint, the shape in current model is torch.Size([40, 64])."
+specialized_control,mcmc,500,0,"Strict load failed: Error(s) in loading state_dict for TwoBranchTransformerRegressorModel:
+	size mismatch for embedding.weight: copying a param with shape torch.Size([37, 64]) from checkpoint, the shape in current model is torch.Size([40, 64])."
+specialized_control,evolutionary,500,0,"Strict load failed: Error(s) in loading state_dict for TwoBranchTransformerRegressorModel:
+	size mismatch for embedding.weight: copying a param with shape torch.Size([37, 64]) from checkpoint, the shape in current model is torch.Size([40, 64])."
+transformer_regressor,random,500,0,No architecture in metrics.json
+transformer_regressor,mcmc,500,0,No architecture in metrics.json
+transformer_regressor,evolutionary,500,0,No architecture in metrics.json
+transformer_defended_phase2b_balanced,random,500,0,No architecture in metrics.json
+transformer_defended_phase2b_balanced,mcmc,500,0,No architecture in metrics.json
+transformer_defended_phase2b_balanced,evolutionary,500,0,No architecture in metrics.json
+transformer_defended,random,500,0,No architecture in metrics.json
+transformer_defended,mcmc,500,0,No architecture in metrics.json
+transformer_defended,evolutionary,500,0,No architecture in metrics.json
+specialized_model,random,500,0,"Strict load failed: Error(s) in loading state_dict for TwoBranchTransformerRegressorModel:
+	size mismatch for embedding.weight: copying a param with shape torch.Size([37, 64]) from checkpoint, the shape in current model is torch.Size([40, 64])."
+specialized_model,mcmc,500,0,"Strict load failed: Error(s) in loading state_dict for TwoBranchTransformerRegressorModel:
+	size mismatch for embedding.weight: copying a param with shape torch.Size([37, 64]) from checkpoint, the shape in current model is torch.Size([40, 64])."
+specialized_model,evolutionary,500,0,"Strict load failed: Error(s) in loading state_dict for TwoBranchTransformerRegressorModel:
+	size mismatch for embedding.weight: copying a param with shape torch.Size([37, 64]) from checkpoint, the shape in current model is torch.Size([40, 64])."
+transformer_regressor_residualized,random,500,0,No architecture in metrics.json
+transformer_regressor_residualized,mcmc,500,0,No architecture in metrics.json
+transformer_regressor_residualized,evolutionary,500,0,No architecture in metrics.json
+transformer_regressor_mcmc_defended,random,500,0,No architecture in metrics.json
+transformer_regressor_mcmc_defended,mcmc,500,0,No architecture in metrics.json
+transformer_regressor_mcmc_defended,evolutionary,500,0,No architecture in metrics.json
+transformer_defended_phase2b,random,500,0,No architecture in metrics.json
+transformer_defended_phase2b,mcmc,500,0,No architecture in metrics.json
+transformer_defended_phase2b,evolutionary,500,0,No architecture in metrics.json
+random_smiles_defense,random,500,0,"Strict load failed: Error(s) in loading state_dict for TwoBranchTransformerRegressorModel:
+	size mismatch for embedding.weight: copying a param with shape torch.Size([37, 64]) from checkpoint, the shape in current model is torch.Size([40, 64])."
+random_smiles_defense,mcmc,500,0,"Strict load failed: Error(s) in loading state_dict for TwoBranchTransformerRegressorModel:
+	size mismatch for embedding.weight: copying a param with shape torch.Size([37, 64]) from checkpoint, the shape in current model is torch.Size([40, 64])."
+random_smiles_defense,evolutionary,500,0,"Strict load failed: Error(s) in loading state_dict for TwoBranchTransformerRegressorModel:
+	size mismatch for embedding.weight: copying a param with shape torch.Size([37, 64]) from checkpoint, the shape in current model is torch.Size([40, 64])."
+random_smiles_defense,random,500,0,"Strict load failed: Error(s) in loading state_dict for TwoBranchTransformerRegressorModel:
+	size mismatch for embedding.weight: copying a param with shape torch.Size([37, 64]) from checkpoint, the shape in current model is torch.Size([40, 64])."
+random_smiles_defense,mcmc,500,0,"Strict load failed: Error(s) in loading state_dict for TwoBranchTransformerRegressorModel:
+	size mismatch for embedding.weight: copying a param with shape torch.Size([37, 64]) from checkpoint, the shape in current model is torch.Size([40, 64])."
+random_smiles_defense,evolutionary,500,0,"Strict load failed: Error(s) in loading state_dict for TwoBranchTransformerRegressorModel:
+	size mismatch for embedding.weight: copying a param with shape torch.Size([37, 64]) from checkpoint, the shape in current model is torch.Size([40, 64])."
+mixed_robustness,random,500,0,"Strict load failed: Error(s) in loading state_dict for TwoBranchTransformerRegressorModel:
+	size mismatch for embedding.weight: copying a param with shape torch.Size([37, 64]) from checkpoint, the shape in current model is torch.Size([40, 64])."
+mixed_robustness,mcmc,500,0,"Strict load failed: Error(s) in loading state_dict for TwoBranchTransformerRegressorModel:
+	size mismatch for embedding.weight: copying a param with shape torch.Size([37, 64]) from checkpoint, the shape in current model is torch.Size([40, 64])."
+mixed_robustness,evolutionary,500,0,"Strict load failed: Error(s) in loading state_dict for TwoBranchTransformerRegressorModel:
+	size mismatch for embedding.weight: copying a param with shape torch.Size([37, 64]) from checkpoint, the shape in current model is torch.Size([40, 64])."
+mixed_robustness,random,500,0,"Strict load failed: Error(s) in loading state_dict for TwoBranchTransformerRegressorModel:
+	size mismatch for embedding.weight: copying a param with shape torch.Size([37, 64]) from checkpoint, the shape in current model is torch.Size([40, 64])."
+mixed_robustness,mcmc,500,0,"Strict load failed: Error(s) in loading state_dict for TwoBranchTransformerRegressorModel:
+	size mismatch for embedding.weight: copying a param with shape torch.Size([37, 64]) from checkpoint, the shape in current model is torch.Size([40, 64])."
+mixed_robustness,evolutionary,500,0,"Strict load failed: Error(s) in loading state_dict for TwoBranchTransformerRegressorModel:
+	size mismatch for embedding.weight: copying a param with shape torch.Size([37, 64]) from checkpoint, the shape in current model is torch.Size([40, 64])."
+random_smiles_defense,random,500,0,"Strict load failed: Error(s) in loading state_dict for TwoBranchTransformerRegressorModel:
+	size mismatch for embedding.weight: copying a param with shape torch.Size([37, 64]) from checkpoint, the shape in current model is torch.Size([40, 64])."
+random_smiles_defense,mcmc,500,0,"Strict load failed: Error(s) in loading state_dict for TwoBranchTransformerRegressorModel:
+	size mismatch for embedding.weight: copying a param with shape torch.Size([37, 64]) from checkpoint, the shape in current model is torch.Size([40, 64])."
+random_smiles_defense,evolutionary,500,0,"Strict load failed: Error(s) in loading state_dict for TwoBranchTransformerRegressorModel:
+	size mismatch for embedding.weight: copying a param with shape torch.Size([37, 64]) from checkpoint, the shape in current model is torch.Size([40, 64])."
+mixed_robustness,random,500,0,"Strict load failed: Error(s) in loading state_dict for TwoBranchTransformerRegressorModel:
+	size mismatch for embedding.weight: copying a param with shape torch.Size([37, 64]) from checkpoint, the shape in current model is torch.Size([40, 64])."
+mixed_robustness,mcmc,500,0,"Strict load failed: Error(s) in loading state_dict for TwoBranchTransformerRegressorModel:
+	size mismatch for embedding.weight: copying a param with shape torch.Size([37, 64]) from checkpoint, the shape in current model is torch.Size([40, 64])."
+mixed_robustness,evolutionary,500,0,"Strict load failed: Error(s) in loading state_dict for TwoBranchTransformerRegressorModel:
+	size mismatch for embedding.weight: copying a param with shape torch.Size([37, 64]) from checkpoint, the shape in current model is torch.Size([40, 64])."

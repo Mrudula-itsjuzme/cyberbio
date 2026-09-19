@@ -1,0 +1,160 @@
+{
+    "majority_class": {
+        "accuracy": 0.5,
+        "balanced_accuracy": 0.5,
+        "f1": 0.0
+    },
+    "sequence_length_LR": {
+        "accuracy": 0.5,
+        "balanced_accuracy": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "confusion_matrix": [
+            [
+                1500,
+                0
+            ],
+            [
+                1500,
+                0
+            ]
+        ]
+    },
+    "1-mer_LogisticRegression": {
+        "accuracy": 0.5093333333333333,
+        "balanced_accuracy": 0.5093333333333333,
+        "precision": 0.5096153846153846,
+        "recall": 0.49466666666666664,
+        "f1": 0.5020297699594046,
+        "confusion_matrix": [
+            [
+                786,
+                714
+            ],
+            [
+                758,
+                742
+            ]
+        ]
+    },
+    "1-mer_RidgeClassifier": {
+        "accuracy": 0.5093333333333333,
+        "balanced_accuracy": 0.5093333333333333,
+        "precision": 0.5096153846153846,
+        "recall": 0.49466666666666664,
+        "f1": 0.5020297699594046,
+        "confusion_matrix": [
+            [
+                786,
+                714
+            ],
+            [
+                758,
+                742
+            ]
+        ]
+    },
+    "2-mer_LogisticRegression": {
+        "accuracy": 0.9353333333333333,
+        "balanced_accuracy": 0.9353333333333333,
+        "precision": 0.9318783068783069,
+        "recall": 0.9393333333333334,
+        "f1": 0.9355909694555112,
+        "confusion_matrix": [
+            [
+                1397,
+                103
+            ],
+            [
+                91,
+                1409
+            ]
+        ]
+    },
+    "2-mer_RidgeClassifier": {
+        "accuracy": 0.936,
+        "balanced_accuracy": 0.9359999999999999,
+        "precision": 0.9319682959048877,
+        "recall": 0.9406666666666667,
+        "f1": 0.9362972793629728,
+        "confusion_matrix": [
+            [
+                1397,
+                103
+            ],
+            [
+                89,
+                1411
+            ]
+        ]
+    },
+    "3-mer_LogisticRegression": {
+        "accuracy": 0.9876666666666667,
+        "balanced_accuracy": 0.9876666666666667,
+        "precision": 0.9854014598540146,
+        "recall": 0.99,
+        "f1": 0.9876953774526106,
+        "confusion_matrix": [
+            [
+                1478,
+                22
+            ],
+            [
+                15,
+                1485
+            ]
+        ]
+    },
+    "3-mer_RidgeClassifier": {
+        "accuracy": 0.989,
+        "balanced_accuracy": 0.989,
+        "precision": 0.988674217188541,
+        "recall": 0.9893333333333333,
+        "f1": 0.9890036654448517,
+        "confusion_matrix": [
+            [
+                1483,
+                17
+            ],
+            [
+                16,
+                1484
+            ]
+        ]
+    },
+    "4-mer_LogisticRegression": {
+        "accuracy": 0.9986666666666667,
+        "balanced_accuracy": 0.9986666666666666,
+        "precision": 1.0,
+        "recall": 0.9973333333333333,
+        "f1": 0.9986648865153538,
+        "confusion_matrix": [
+            [
+                1500,
+                0
+            ],
+            [
+                4,
+                1496
+            ]
+        ]
+    },
+    "4-mer_RidgeClassifier": {
+        "accuracy": 0.9996666666666667,
+        "balanced_accuracy": 0.9996666666666667,
+        "precision": 1.0,
+        "recall": 0.9993333333333333,
+        "f1": 0.9996665555185061,
+        "confusion_matrix": [
+            [
+                1500,
+                0
+            ],
+            [
+                1,
+                1499
+            ]
+        ]
+    }
+}

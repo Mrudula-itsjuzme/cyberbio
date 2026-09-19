@@ -1,0 +1,44 @@
+{
+    "1-mer_LogisticRegression": {
+        "accuracy": 0.487,
+        "balanced_accuracy": 0.487,
+        "precision": 0.4875,
+        "recall": 0.507,
+        "f1": 0.4970588235294118
+    },
+    "2-mer_LogisticRegression": {
+        "accuracy": 0.5115,
+        "balanced_accuracy": 0.5115000000000001,
+        "precision": 0.5116514690982776,
+        "recall": 0.505,
+        "f1": 0.5083039758429794
+    },
+    "3-mer_LogisticRegression": {
+        "accuracy": 0.55,
+        "balanced_accuracy": 0.55,
+        "precision": 0.55175983436853,
+        "recall": 0.533,
+        "f1": 0.5422177009155646
+    },
+    "4-mer_LogisticRegression": {
+        "accuracy": 0.5745,
+        "balanced_accuracy": 0.5745,
+        "precision": 0.5756345177664974,
+        "recall": 0.567,
+        "f1": 0.5712846347607052
+    },
+    "5-mer_LogisticRegression": {
+        "accuracy": 0.649,
+        "balanced_accuracy": 0.649,
+        "precision": 0.6449416342412452,
+        "recall": 0.663,
+        "f1": 0.6538461538461539
+    },
+    "position_aware_baseline": {
+        "accuracy": 0.6435,
+        "balanced_accuracy": 0.6435,
+        "precision": 0.6066914498141264,
+        "recall": 0.816,
+        "f1": 0.6959488272921108
+    }
+}

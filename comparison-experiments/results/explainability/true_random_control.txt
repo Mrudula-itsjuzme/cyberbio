@@ -1,0 +1,7 @@
+n_sources: 20
+mean_edited_attribution: 0.39450167325826785
+mean_matched_random_attribution: 0.4093664057983955
+paired_difference: 0.01259289449911849
+bootstrap_95CI: [nan, nan]
+empirical_p_value: nan
+effect_size: nan

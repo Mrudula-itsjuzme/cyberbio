@@ -1,0 +1,2 @@
+Source sequence (PSMILES): {source_sequence}
+Objective: Propose mutations to maximize absolute prediction drift in the target model.

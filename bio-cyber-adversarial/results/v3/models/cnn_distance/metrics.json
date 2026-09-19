@@ -1,0 +1,12 @@
+{
+    "accuracy": 0.5375,
+    "balanced_accuracy": 0.5375,
+    "precision": 0.5407166123778502,
+    "recall": 0.498,
+    "F1": 0.5184799583550235,
+    "AUROC": 0.5469075,
+    "test_sample_count": 2000,
+    "seed": 42,
+    "parameter_count": 317361,
+    "epochs": 10
+}

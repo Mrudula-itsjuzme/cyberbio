@@ -1,0 +1,13 @@
+{
+    "n_sources": 50,
+    "mean_edited_attribution": 0.09379976987838741,
+    "mean_random_attribution": 0.043154631238430705,
+    "paired_difference": 0.05064513863995671,
+    "bootstrap_95_CI": [
+        0.0324656522278674,
+        0.06803987218858676
+    ],
+    "paired_statistical_test": "Wilcoxon",
+    "p_value": 2.649707155910619e-07,
+    "effect_size": 0.8633893334848081
+}

@@ -1,0 +1,15 @@
+defense_name,checkpoint_path,checkpoint_hash,training_script,training_attack,seed,split,clean_RMSE,clean_MAE,verified
+specialized_control,materials-adversarial/results/models/specialized_control/model.pt,fef6c0e9,unknown,inferred from name,42,scaffold,,,True
+transformer_regressor,materials-adversarial/results/models/transformer_regressor/model.pt,0b1bb3f6,unknown,inferred from name,42,scaffold,,,True
+transformer_defended_phase2b_balanced,materials-adversarial/results/models/transformer_defended_phase2b_balanced/model.pt,0d13b30e,unknown,inferred from name,42,scaffold,,,True
+transformer_defended,materials-adversarial/results/models/transformer_defended/model.pt,bda109bd,unknown,inferred from name,42,scaffold,,,True
+specialized_model,materials-adversarial/results/models/specialized_model/model.pt,c3a6288c,unknown,inferred from name,42,scaffold,,,True
+transformer_regressor_residualized,materials-adversarial/results/models/transformer_regressor_residualized/model.pt,9768beb1,unknown,inferred from name,42,scaffold,,,True
+transformer_regressor_mcmc_defended,materials-adversarial/results/models/transformer_regressor_mcmc_defended/model.pt,17d1879a,unknown,inferred from name,42,scaffold,,,True
+transformer_defended_phase2b,materials-adversarial/results/models/transformer_defended_phase2b/model.pt,b07fab71,unknown,inferred from name,42,scaffold,,,True
+random_smiles_defense,materials-adversarial/results/phase4_controlled_robustness/rand_robust_0.5/model.pt,d64e15f2,unknown,inferred from name,42,scaffold,,,True
+random_smiles_defense,materials-adversarial/results/phase4_controlled_robustness/rand_robust_0.1/model.pt,c136df49,unknown,inferred from name,42,scaffold,,,True
+mixed_robustness,materials-adversarial/results/phase4_controlled_robustness/mix_robust_0.5/model.pt,93f8fbb0,unknown,inferred from name,42,scaffold,,,True
+mixed_robustness,materials-adversarial/results/phase4_controlled_robustness/mix_robust_1.0/model.pt,d372320b,unknown,inferred from name,42,scaffold,,,True
+random_smiles_defense,materials-adversarial/results/phase4_controlled_robustness/rand_robust_1.0/model.pt,69b8231d,unknown,inferred from name,42,scaffold,,,True
+mixed_robustness,materials-adversarial/results/phase4_controlled_robustness/mix_robust_0.1/model.pt,b81aa245,unknown,inferred from name,42,scaffold,,,True

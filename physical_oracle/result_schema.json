@@ -1,0 +1,8 @@
+{
+  "source": "string",
+  "candidate": "string",
+  "attack": "string",
+  "predicted_Eg": "float",
+  "required_oracle_Eg": "float",
+  "difference": "float"
+}

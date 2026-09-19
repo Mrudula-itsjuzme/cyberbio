@@ -1,0 +1,29 @@
+[
+    {
+        "bank_file": "random.jsonl",
+        "row_count": 50,
+        "unique_source_count": 50,
+        "duplicate_candidates": 0,
+        "budget": 50,
+        "seed_distribution": "deterministic",
+        "SHA256": "afeb3a6816cbf8babd452593fd92598d12de8a4492cae796f9e18f35d3cf341d"
+    },
+    {
+        "bank_file": "mcmc.jsonl",
+        "row_count": 50,
+        "unique_source_count": 50,
+        "duplicate_candidates": 0,
+        "budget": 50,
+        "seed_distribution": "deterministic",
+        "SHA256": "d9dd3abfae7cf1d6458b11d9e56f7b54429836f7482e40780cd842a0e805b3d0"
+    },
+    {
+        "bank_file": "evolutionary.jsonl",
+        "row_count": 50,
+        "unique_source_count": 50,
+        "duplicate_candidates": 0,
+        "budget": 50,
+        "seed_distribution": "deterministic",
+        "SHA256": "29f384ccd86e047f4569c0c56e1155a2795649f202f9b49567c85563496548ec"
+    }
+]

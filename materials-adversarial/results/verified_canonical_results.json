@@ -1,0 +1,20 @@
+[
+    {
+        "artifact": "materials-adversarial/results/canonical_benchmark_no_leakage.json",
+        "script": "scripts/run_comprehensive_benchmark_suite.py",
+        "config": "canonical",
+        "dataset_split": "scaffold",
+        "seed": "42",
+        "metric": "clean RMSE",
+        "value": "N/A"
+    },
+    {
+        "artifact": "materials-adversarial/results/canonical_benchmark_no_leakage.json",
+        "script": "scripts/run_comprehensive_benchmark_suite.py",
+        "config": "canonical",
+        "dataset_split": "scaffold",
+        "seed": "42",
+        "metric": "mean representation drift",
+        "value": "N/A"
+    }
+]

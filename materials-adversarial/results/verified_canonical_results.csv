@@ -1,0 +1,3 @@
+artifact,script,config,dataset_split,seed,metric,value
+materials-adversarial/results/canonical_benchmark_no_leakage.json,scripts/run_comprehensive_benchmark_suite.py,canonical,scaffold,42,clean RMSE,N/A
+materials-adversarial/results/canonical_benchmark_no_leakage.json,scripts/run_comprehensive_benchmark_suite.py,canonical,scaffold,42,mean representation drift,N/A
