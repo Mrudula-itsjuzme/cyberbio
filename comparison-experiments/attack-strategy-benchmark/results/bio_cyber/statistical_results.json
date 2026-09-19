@@ -1,6 +1,6 @@
 {
-    "comparison": "Attr-High vs Attr-Rand (Budget 50)",
-    "p_value": 0.004649433819808542,
-    "effect_size": 0.08217562486728032,
-    "n": 15
+    "comparison": "Attribution-High vs Attribution-Random (Budget 50)",
+    "p_value": 8.166649308920539e-05,
+    "effect_size": 0.06708755865693092,
+    "n": 30
 }

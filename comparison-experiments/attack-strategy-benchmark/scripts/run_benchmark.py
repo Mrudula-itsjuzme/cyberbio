@@ -25,7 +25,7 @@ class CNN_Distance(nn.Module):
 
 vocab = {"A": 1, "C": 2, "G": 3, "T": 4, "<PAD>": 0}
 alphabet = ["A", "C", "G", "T"]
-def encode(seq): return [vocab[c] for c in seq]
+def encode(seq): return [vocab.get(c, 0) for c in seq]
 
 # Load bio-cyber clean model
 clean_bc = CNN_Distance()
@@ -62,7 +62,7 @@ def get_occlusion_attribution(model, seq):
 
 # --- 2. SOURCE POOLS ---
 bc_df = pd.read_csv("../../bio-cyber-adversarial/data/v3/dataset.csv")
-bc_sources = bc_df[bc_df["split"]=="test"].sample(15, random_state=42) # N=15 for speed
+bc_sources = bc_df[bc_df["split"]=="test"].sample(30, random_state=42) # N=30 min acceptable
 
 manifest_bc = []
 for idx, row in bc_sources.iterrows():
@@ -70,12 +70,12 @@ for idx, row in bc_sources.iterrows():
         "source_id": row["id"],
         "split": row["split"],
         "label": int(row["label"]),
-        "SHA256": hashlib.sha256(row["sequence"].encode()).hexdigest(),
+        "sequence_SHA256": hashlib.sha256(row["sequence"].encode()).hexdigest(),
         "seed": 42
     })
 os.makedirs("results/manifests", exist_ok=True)
-json.dump(manifest_bc, open("results/manifests/bio_cyber_sources.json", "w"), indent=4)
-# Dummy materials manifest (Materials execution skipped for compute/time limits, marked IMPLEMENTED_NOT_EXECUTED)
+json.dump(manifest_bc, open("results/manifests/bio_cyber_sources_n50.json", "w"), indent=4)
+# Dummy materials manifest (Materials execution BLOCKED_INVALID_MODEL_RECONSTRUCTION)
 json.dump([], open("results/manifests/materials_sources.json", "w"), indent=4)
 
 # --- 3. ATTACK FAMILIES ---
@@ -173,13 +173,13 @@ attacks = [
     ("Random", attack_random), 
     ("MCMC", attack_mcmc), 
     ("Evolutionary", attack_evo),
-    ("Attr-High", lambda m,s,p,b: attack_attr(m,s,p,b,"high")),
-    ("Attr-Low", lambda m,s,p,b: attack_attr(m,s,p,b,"low")),
-    ("Attr-Rand", lambda m,s,p,b: attack_attr(m,s,p,b,"rand"))
+    ("Attribution-High", lambda m,s,p,b: attack_attr(m,s,p,b,"high")),
+    ("Attribution-Low", lambda m,s,p,b: attack_attr(m,s,p,b,"low")),
+    ("Attribution-Random", lambda m,s,p,b: attack_attr(m,s,p,b,"rand"))
 ]
 budgets = [5, 20, 50]
 
-print("Running bio-cyber clean matrix...")
+print("Running bio-cyber clean matrix N=30...")
 for atk_name, atk_fn in attacks:
     for b in budgets:
         for idx, row in bc_sources.iterrows():
@@ -188,14 +188,13 @@ for atk_name, atk_fn in attacks:
             np.random.seed(42 + row["id"] + b)
             b_seq, c_p, q, fs, rt = atk_fn(clean_bc, seq, orig_p, b)
             
-            # Defense Transfer
             p_def_orig = predict_bc(defended_bc, [seq])[0]
             p_def_cand = predict_bc(defended_bc, [b_seq])[0]
             
             results.append({
-                "domain": "Bio-Cyber V3",
+                "domain": "bio_cyber",
                 "source_id": row["id"],
-                "attack_family": atk_name,
+                "attack_condition": atk_name,
                 "budget": b,
                 "seed": 42,
                 "source_input": seq,
@@ -206,11 +205,12 @@ for atk_name, atk_fn in attacks:
                 "absolute_prediction_change": float(abs(c_p - orig_p)),
                 "success": bool((orig_p > 0.5) != (c_p > 0.5)),
                 "edit_distance": sum(1 for i in range(len(seq)) if seq[i] != b_seq[i]),
-                "query_count": q,
+                "total_queries": q,
+                "first_success_query": fs,
                 "queries_to_success": fs,
                 "runtime_seconds": rt,
                 "validity_pass": True,
-                "failure_reason": "None" if fs else "Budget Exhausted",
+                "failure_reason": "None" if pd.notna(fs) else "Budget Exhausted",
                 "label_flip": bool((orig_p > 0.5) != (c_p > 0.5)),
                 "alphabet_valid": set(b_seq).issubset(set(alphabet)),
                 "defense_transfer_success": bool((p_def_orig > 0.5) != (p_def_cand > 0.5))
@@ -221,35 +221,37 @@ os.makedirs("results/bio_cyber", exist_ok=True)
 df_res.to_csv("results/bio_cyber/per_example_results.csv", index=False)
 
 # Aggregation
-agg = df_res.groupby(["domain", "attack_family", "budget"]).agg(
+agg = df_res.groupby(["domain", "attack_condition", "budget"]).agg(
     n=("source_id", "count"),
     success_rate=("success", "mean"),
-    mean_drift=("absolute_prediction_change", "mean"),
-    median_drift=("absolute_prediction_change", "median"),
-    p90_drift=("absolute_prediction_change", lambda x: np.percentile(x, 90)),
-    mean_edits=("edit_distance", "mean"),
-    mean_queries=("query_count", "mean"),
+    mean_absolute_drift=("absolute_prediction_change", "mean"),
+    median_absolute_drift=("absolute_prediction_change", "median"),
+    p90_absolute_drift=("absolute_prediction_change", lambda x: np.percentile(x, 90)),
+    mean_edit_distance=("edit_distance", "mean"),
+    median_edit_distance=("edit_distance", "median"),
+    mean_total_queries=("total_queries", "mean"),
     median_queries_to_success=("queries_to_success", "median"),
     mean_runtime=("runtime_seconds", "mean"),
-    validity_rate=("validity_pass", "mean"),
-    transfer_success_rate=("defense_transfer_success", "mean")
+    validity_rate=("validity_pass", "mean")
 ).reset_index()
 
 agg.to_csv("results/bio_cyber/aggregated_results.csv", index=False)
 
 # Cross Domain Stub
-agg.to_csv("results/cross_domain/attack_strategy_comparison.csv", index=False)
+os.makedirs("results/cross_domain", exist_ok=True)
+cross = agg[["domain", "attack_condition", "budget", "validity_rate", "mean_edit_distance", "mean_runtime", "mean_total_queries", "median_queries_to_success"]].copy()
+cross.to_csv("results/cross_domain/attack_strategy_comparison.csv", index=False)
 
 # --- 5. STATS & FIGURES ---
-# Stats: Wilcoxon for Attr-High vs Attr-Rand (Budget=50)
+# Stats: Wilcoxon for Attr-High vs Attr-Random (Budget=50)
 df_50 = df_res[df_res["budget"] == 50]
-h_drift = df_50[df_50["attack_family"] == "Attr-High"].sort_values("source_id")["absolute_prediction_change"].values
-r_drift = df_50[df_50["attack_family"] == "Attr-Rand"].sort_values("source_id")["absolute_prediction_change"].values
+h_drift = df_50[df_50["attack_condition"] == "Attribution-High"].sort_values("source_id")["absolute_prediction_change"].values
+r_drift = df_50[df_50["attack_condition"] == "Attribution-Random"].sort_values("source_id")["absolute_prediction_change"].values
 stat_res = wilcoxon(h_drift, r_drift) if len(h_drift) > 0 else None
 
 with open("results/bio_cyber/statistical_results.json", "w") as f:
     json.dump({
-        "comparison": "Attr-High vs Attr-Rand (Budget 50)",
+        "comparison": "Attribution-High vs Attribution-Random (Budget 50)",
         "p_value": float(stat_res.pvalue) if stat_res else np.nan,
         "effect_size": float((h_drift - r_drift).mean()) if len(h_drift) > 0 else np.nan,
         "n": len(h_drift)
@@ -257,14 +259,26 @@ with open("results/bio_cyber/statistical_results.json", "w") as f:
 
 # Figures
 os.makedirs("figures", exist_ok=True)
+fig, ax = plt.subplots()
+for atk in attacks:
+    atk_name = atk[0]
+    sub = agg[agg["attack_condition"] == atk_name]
+    ax.plot(sub["budget"], sub["success_rate"], label=atk_name, marker='o')
+ax.set_title("Bio-Cyber Success vs Budget")
+ax.set_xlabel("Budget")
+ax.set_ylabel("Success Rate")
+ax.legend()
+fig.savefig("figures/bio_cyber_success_vs_budget.png")
+plt.close(fig)
+
+fig, ax = plt.subplots()
 for b in budgets:
     sub = agg[agg["budget"] == b]
-    plt.figure()
-    plt.bar(sub["attack_family"], sub["success_rate"])
-    plt.title(f"Attack Success Rate (Budget={b})")
-    plt.xticks(rotation=45)
-    plt.tight_layout()
-    plt.savefig(f"figures/success_rate_b{b}.png")
-    plt.close()
+    ax.bar(sub["attack_condition"] + f" (b={b})", sub["mean_total_queries"])
+ax.set_title("Bio-Cyber Total Queries vs Attack")
+plt.xticks(rotation=90)
+plt.tight_layout()
+fig.savefig("figures/bio_cyber_queries_vs_attack.png")
+plt.close(fig)
 
 print("Benchmark Execution Complete.")

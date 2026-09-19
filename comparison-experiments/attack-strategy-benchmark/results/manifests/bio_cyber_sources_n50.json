@@ -1,0 +1,212 @@
+[
+    {
+        "source_id": 18666,
+        "split": "test",
+        "label": 1,
+        "sequence_SHA256": "99a349c4fd814650e001003a98f2e8ad90a3cf55d6bb286c32f2f71a61ba13ab",
+        "seed": 42
+    },
+    {
+        "source_id": 3636,
+        "split": "test",
+        "label": 0,
+        "sequence_SHA256": "4364301b3561c5810df938a978181ee1cddea283b06d864c474184ceb90323fa",
+        "seed": 42
+    },
+    {
+        "source_id": 13810,
+        "split": "test",
+        "label": 1,
+        "sequence_SHA256": "41370c76c84a8b834e40f51db9e8ecdbade26781675cbcbb63014ae64cbd48b1",
+        "seed": 42
+    },
+    {
+        "source_id": 9408,
+        "split": "test",
+        "label": 0,
+        "sequence_SHA256": "87321bbcd3ead1ff87d0ea2fe58a376f30a8035cbc3fc82a9d59a5aeb77eb6dd",
+        "seed": 42
+    },
+    {
+        "source_id": 13312,
+        "split": "test",
+        "label": 1,
+        "sequence_SHA256": "64805f644930a224399696136aaf2af868e65c146b356313c237b68af0262e7b",
+        "seed": 42
+    },
+    {
+        "source_id": 13162,
+        "split": "test",
+        "label": 1,
+        "sequence_SHA256": "2affcc91737fb6077463c6ecdf29e251777ed35734f2e849cfdb56c584f3d2b0",
+        "seed": 42
+    },
+    {
+        "source_id": 9785,
+        "split": "test",
+        "label": 0,
+        "sequence_SHA256": "27879d3ed275878912d216132c118921f322f06149f473ffa7f4727d2efec068",
+        "seed": 42
+    },
+    {
+        "source_id": 17659,
+        "split": "test",
+        "label": 0,
+        "sequence_SHA256": "ffb5a1b5a0171c7ec8a9e9a198426eb9a69d2e675ef775ea262ea9f4f7afcb59",
+        "seed": 42
+    },
+    {
+        "source_id": 690,
+        "split": "test",
+        "label": 1,
+        "sequence_SHA256": "b6ae7707a3412f0e6907c8d60a5f04b4cd4e730d6d065960e3eee542cf84eb17",
+        "seed": 42
+    },
+    {
+        "source_id": 13687,
+        "split": "test",
+        "label": 0,
+        "sequence_SHA256": "9e07456c45ec642edcaf246d959dd1e76b84faa34acb16693cb79ec1c9d38559",
+        "seed": 42
+    },
+    {
+        "source_id": 601,
+        "split": "test",
+        "label": 0,
+        "sequence_SHA256": "14babf770b94073475a33ab15b0d8abc0a09126522299749634771f120301304",
+        "seed": 42
+    },
+    {
+        "source_id": 13354,
+        "split": "test",
+        "label": 0,
+        "sequence_SHA256": "4ee17ca1c19c8f02f9f16af6d33cd74b9ede2bae8f5467c93a1d8f2a72803129",
+        "seed": 42
+    },
+    {
+        "source_id": 11514,
+        "split": "test",
+        "label": 0,
+        "sequence_SHA256": "e0e7da56016b05ea714fa10704d941868d8bef9ae11501f275e55a6114ac596f",
+        "seed": 42
+    },
+    {
+        "source_id": 6005,
+        "split": "test",
+        "label": 0,
+        "sequence_SHA256": "7dee71689a3a587920ce113260332c3d60812801552e3cbcb7f2035913777c46",
+        "seed": 42
+    },
+    {
+        "source_id": 3827,
+        "split": "test",
+        "label": 1,
+        "sequence_SHA256": "be240b45558a13571ab0451ffbee3b17cf5dc28ac9533b6f05c8147eda7d2a8c",
+        "seed": 42
+    },
+    {
+        "source_id": 2857,
+        "split": "test",
+        "label": 1,
+        "sequence_SHA256": "f98a0af215ba1929f8ac83d7d499acdc859cf67902d97e786481930aa333e8dd",
+        "seed": 42
+    },
+    {
+        "source_id": 7684,
+        "split": "test",
+        "label": 1,
+        "sequence_SHA256": "20f98945dc79fc6ab36d39ec98890a84fe895d852a18f45066ca6596e66ee964",
+        "seed": 42
+    },
+    {
+        "source_id": 1318,
+        "split": "test",
+        "label": 0,
+        "sequence_SHA256": "d9c930ee1eb0b909bab2eac9b31efeb231ab86134dbb2ce93597e323cc9ff807",
+        "seed": 42
+    },
+    {
+        "source_id": 16882,
+        "split": "test",
+        "label": 1,
+        "sequence_SHA256": "250bd5aec8a8b9cac86357b274b243ae4fa91b1f7644ebbceb04ff532d6561bc",
+        "seed": 42
+    },
+    {
+        "source_id": 18547,
+        "split": "test",
+        "label": 1,
+        "sequence_SHA256": "1b52e19483d3cbeb6f7a2aa5860eddfeb74f2769f38c8411ba83a6c15b64de3b",
+        "seed": 42
+    },
+    {
+        "source_id": 6959,
+        "split": "test",
+        "label": 1,
+        "sequence_SHA256": "1c8f2b8a7e532d0dd714dd8935f32c67f8d13eeddf76efb7b150b9b8c5f5c7c8",
+        "seed": 42
+    },
+    {
+        "source_id": 17052,
+        "split": "test",
+        "label": 0,
+        "sequence_SHA256": "ef1aaedbaabbcbfe3f3e92537dfb88e9da72d33e97e1ec37d74138844efce0dd",
+        "seed": 42
+    },
+    {
+        "source_id": 19803,
+        "split": "test",
+        "label": 1,
+        "sequence_SHA256": "edf8d0948db8eb79e8eb8e312677da26d36c5b66c07a0fd01d7dd1b2ef44b3dc",
+        "seed": 42
+    },
+    {
+        "source_id": 11163,
+        "split": "test",
+        "label": 0,
+        "sequence_SHA256": "3b9298161e3bd179b090b986d5afd45671311cf8d29ff011cd987f26b941fed8",
+        "seed": 42
+    },
+    {
+        "source_id": 19245,
+        "split": "test",
+        "label": 0,
+        "sequence_SHA256": "b3e933c3cc5a136048def1a5e847cd0577181182c0e9248e1b6a275cc3d8f3f6",
+        "seed": 42
+    },
+    {
+        "source_id": 1016,
+        "split": "test",
+        "label": 1,
+        "sequence_SHA256": "158a68160cde15bf2bb44da6fa6c3d9e53fd9b521e1658ac3a01a0f4489d934f",
+        "seed": 42
+    },
+    {
+        "source_id": 12164,
+        "split": "test",
+        "label": 1,
+        "sequence_SHA256": "808109831ea51a8d76dedc18ac663939ec45cc5542af0b65ebed64d21846803f",
+        "seed": 42
+    },
+    {
+        "source_id": 10040,
+        "split": "test",
+        "label": 0,
+        "sequence_SHA256": "45558f180d6b32a5579b8d55a9239ec84748f7cef56700e096fa238df42afe3a",
+        "seed": 42
+    },
+    {
+        "source_id": 8194,
+        "split": "test",
+        "label": 1,
+        "sequence_SHA256": "0c3b69402e6b6b9cf90e06452436632bbd3866bcd50ecd8deb289358041f3b03",
+        "seed": 42
+    },
+    {
+        "source_id": 344,
+        "split": "test",
+        "label": 1,
+        "sequence_SHA256": "96cf3988233d489f2b5e5d63c2ebc180d4684cef4aadbb8ced10d1b42be64d81",
+        "seed": 42
+    }
+]
