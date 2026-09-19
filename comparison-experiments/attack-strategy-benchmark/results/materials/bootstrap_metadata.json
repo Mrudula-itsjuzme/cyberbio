@@ -1,4 +1,6 @@
 {
-    "seed": 42,
-    "iterations": 1000
+  "seed": 42,
+  "iterations": 1000,
+  "method": "percentile",
+  "phase": "4.1"
 }

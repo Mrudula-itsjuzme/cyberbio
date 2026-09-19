@@ -1,0 +1,8 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0
+rootdir: /home/mrudula/Downloads/DL_cyberbio/comparison-experiments/attack-strategy-benchmark
+collected 19 items
+
+tests/test_benchmark.py ...................                              [100%]
+
+============================== 19 passed in 1.03s ==============================

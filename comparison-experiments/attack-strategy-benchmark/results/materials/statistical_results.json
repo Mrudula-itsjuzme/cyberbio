@@ -1,338 +1,660 @@
-[
+{
+  "description": "Paired Wilcoxon + Bootstrap CI (N=1000, seed=42). No McNemar: success=NaN.",
+  "attribution_overhead": {
+    "mean": 34.43333333333333,
+    "median": 34.0,
+    "min": 8,
+    "max": 90,
+    "note": "attribution_queries = len(tokenize(source)), NOT 256 padding length"
+  },
+  "paired_comparisons": [
     {
-        "comparison": "MCMC vs Random",
-        "budget": 5,
-        "n": 30,
-        "metrics": {
-            "absolute_prediction_change": {
-                "mean_paired_difference": 0.048360757033030194,
-                "cohen_dz": 0.4474345696137623,
-                "CI_lower": 0.009521701224148273,
-                "CI_upper": 0.08599896433452765,
-                "p_value": 0.028795498649410566
-            },
-            "total_queries": {
-                "mean_paired_difference": 0.26666666666666666,
-                "cohen_dz": 0.2205271385679885,
-                "CI_lower": -0.13333333333333333,
-                "CI_upper": 0.7,
-                "p_value": 0.26269848886244707
-            },
-            "edit_distance": {
-                "mean_paired_difference": 1.4,
-                "cohen_dz": 0.996615895540124,
-                "CI_lower": 0.8666666666666667,
-                "CI_upper": 1.9333333333333333,
-                "p_value": 6.819588957101896e-05
-            }
+      "comparison": "MCMC vs Random",
+      "budget": 5,
+      "metrics": {
+        "absolute_prediction_change": {
+          "n": 30,
+          "mean_diff": 0.05184512535730998,
+          "cohen_dz": 0.32782503077881464,
+          "ci_lower": -0.004769531128307193,
+          "ci_upper": 0.10762980009118717,
+          "p_value": 0.10039735585451126
+        },
+        "attack_model_queries": {
+          "n": 30,
+          "mean_diff": 0.0,
+          "cohen_dz": null,
+          "ci_lower": 0.0,
+          "ci_upper": 0.0,
+          "p_value": NaN
+        },
+        "total_model_queries": {
+          "n": 30,
+          "mean_diff": 0.0,
+          "cohen_dz": null,
+          "ci_lower": 0.0,
+          "ci_upper": 0.0,
+          "p_value": NaN
+        },
+        "proposal_attempts": {
+          "n": 30,
+          "mean_diff": -0.03333333333333333,
+          "cohen_dz": -0.0074473563784189165,
+          "ci_lower": -1.6666666666666667,
+          "ci_upper": 1.4666666666666666,
+          "p_value": 0.807508454029682
+        },
+        "edit_distance": {
+          "n": 30,
+          "mean_diff": 2.6333333333333333,
+          "cohen_dz": 1.3001461937612133,
+          "ci_lower": 1.9666666666666666,
+          "ci_upper": 3.3666666666666667,
+          "p_value": 1.6675319633338147e-05
+        },
+        "runtime_seconds": {
+          "n": 30,
+          "mean_diff": 0.00044555664062501305,
+          "cohen_dz": 0.05768876311615252,
+          "ci_lower": -0.0022402989864349215,
+          "ci_upper": 0.003346779743830372,
+          "p_value": 0.5561132747679949
         }
+      }
     },
     {
-        "comparison": "Evolutionary vs Random",
-        "budget": 5,
-        "n": 30,
-        "metrics": {
-            "absolute_prediction_change": {
-                "mean_paired_difference": 0.05530297209819158,
-                "cohen_dz": 0.3949282168955135,
-                "CI_lower": 0.0028005713596939955,
-                "CI_upper": 0.1046945763627688,
-                "p_value": 0.02084985189139843
-            },
-            "total_queries": {
-                "mean_paired_difference": 2.433333333333333,
-                "cohen_dz": 2.124212261224538,
-                "CI_lower": 2.0,
-                "CI_upper": 2.8666666666666667,
-                "p_value": 1.7993482900820228e-06
-            },
-            "edit_distance": {
-                "mean_paired_difference": 1.0333333333333334,
-                "cohen_dz": 0.7498780864440329,
-                "CI_lower": 0.6,
-                "CI_upper": 1.5333333333333334,
-                "p_value": 0.00035979043267401616
-            }
+      "comparison": "Evolutionary vs Random",
+      "budget": 5,
+      "metrics": {
+        "absolute_prediction_change": {
+          "n": 30,
+          "mean_diff": 0.008422154684861514,
+          "cohen_dz": 0.06611319576247629,
+          "ci_lower": -0.03589754282186428,
+          "ci_upper": 0.05476249071458975,
+          "p_value": 0.6488010185768092
+        },
+        "attack_model_queries": {
+          "n": 30,
+          "mean_diff": 0.0,
+          "cohen_dz": null,
+          "ci_lower": 0.0,
+          "ci_upper": 0.0,
+          "p_value": NaN
+        },
+        "total_model_queries": {
+          "n": 30,
+          "mean_diff": 0.0,
+          "cohen_dz": null,
+          "ci_lower": 0.0,
+          "ci_upper": 0.0,
+          "p_value": NaN
+        },
+        "proposal_attempts": {
+          "n": 30,
+          "mean_diff": -0.4,
+          "cohen_dz": -0.07966010947504086,
+          "ci_lower": -2.334166666666667,
+          "ci_upper": 1.2008333333333325,
+          "p_value": 0.8383083850735207
+        },
+        "edit_distance": {
+          "n": 30,
+          "mean_diff": 0.9,
+          "cohen_dz": 0.6120793644008584,
+          "ci_lower": 0.36666666666666664,
+          "ci_upper": 1.4008333333333325,
+          "p_value": 0.001601583448961933
+        },
+        "runtime_seconds": {
+          "n": 30,
+          "mean_diff": -0.0011567274729410639,
+          "cohen_dz": -0.21623021780434787,
+          "ci_lower": -0.003342608213424657,
+          "ci_upper": 0.0003924800952275847,
+          "p_value": 0.308520769700408
         }
+      }
     },
     {
-        "comparison": "Attribution-High vs Attribution-Random",
-        "budget": 5,
-        "n": 30,
-        "metrics": {
-            "absolute_prediction_change": {
-                "mean_paired_difference": 0.10106841276089353,
-                "cohen_dz": 0.5049201141575124,
-                "CI_lower": 0.020149927698075772,
-                "CI_upper": 0.1727764056995511,
-                "p_value": 0.006641885476426627
-            },
-            "total_queries": {
-                "mean_paired_difference": 1.0,
-                "cohen_dz": 0.5590169943749475,
-                "CI_lower": 0.36666666666666664,
-                "CI_upper": 1.6,
-                "p_value": 0.008217443393034143
-            },
-            "edit_distance": {
-                "mean_paired_difference": -0.03333333333333333,
-                "cohen_dz": -0.0266406307723541,
-                "CI_lower": -0.4666666666666667,
-                "CI_upper": 0.4,
-                "p_value": 0.8559372167887906
-            }
+      "comparison": "Attribution-High vs Attribution-Random",
+      "budget": 5,
+      "metrics": {
+        "absolute_prediction_change": {
+          "n": 30,
+          "mean_diff": 0.02593157639106114,
+          "cohen_dz": 0.14940071017087128,
+          "ci_lower": -0.03354304969310761,
+          "ci_upper": 0.09377506406356889,
+          "p_value": 0.5538124142676271
+        },
+        "attack_model_queries": {
+          "n": 30,
+          "mean_diff": -0.36666666666666664,
+          "cohen_dz": -0.3548323436585332,
+          "ci_lower": -0.7666666666666667,
+          "ci_upper": -0.03333333333333333,
+          "p_value": 0.06559969214707187
+        },
+        "total_model_queries": {
+          "n": 30,
+          "mean_diff": -0.36666666666666664,
+          "cohen_dz": -0.3548323436585332,
+          "ci_lower": -0.8,
+          "ci_upper": -0.03333333333333333,
+          "p_value": 0.06559969214707187
+        },
+        "proposal_attempts": {
+          "n": 30,
+          "mean_diff": -2.566666666666667,
+          "cohen_dz": -0.1497141619185864,
+          "ci_lower": -8.400833333333333,
+          "ci_upper": 4.2,
+          "p_value": 0.1877799737017226
+        },
+        "edit_distance": {
+          "n": 30,
+          "mean_diff": 0.1,
+          "cohen_dz": 0.07418117213828754,
+          "ci_lower": -0.36666666666666664,
+          "ci_upper": 0.6,
+          "p_value": 0.6501101222333465
+        },
+        "runtime_seconds": {
+          "n": 30,
+          "mean_diff": -0.0021701018015543674,
+          "cohen_dz": -0.22724806788788562,
+          "ci_lower": -0.005550869703292854,
+          "ci_upper": 0.0007031695048014237,
+          "p_value": 0.026228994131088257
         }
+      }
     },
     {
-        "comparison": "Attribution-Low vs Attribution-Random",
-        "budget": 5,
-        "n": 30,
-        "metrics": {
-            "absolute_prediction_change": {
-                "mean_paired_difference": -0.06184736490249633,
-                "cohen_dz": -0.525518636104269,
-                "CI_lower": -0.10756829500198364,
-                "CI_upper": -0.023966987182696665,
-                "p_value": 0.009850910466175594
-            },
-            "total_queries": {
-                "mean_paired_difference": -0.5,
-                "cohen_dz": -0.24253562503633297,
-                "CI_lower": -1.2333333333333334,
-                "CI_upper": 0.26749999999999924,
-                "p_value": 0.24638496691767386
-            },
-            "edit_distance": {
-                "mean_paired_difference": -0.5333333333333333,
-                "cohen_dz": -0.41533930532093205,
-                "CI_lower": -0.9674999999999999,
-                "CI_upper": -0.1,
-                "p_value": 0.029180707922342383
-            }
+      "comparison": "Attribution-Low vs Attribution-Random",
+      "budget": 5,
+      "metrics": {
+        "absolute_prediction_change": {
+          "n": 30,
+          "mean_diff": -0.15436323434114457,
+          "cohen_dz": -1.0800006713106747,
+          "ci_lower": -0.20595620571325224,
+          "ci_upper": -0.10671591659386953,
+          "p_value": 1.5144889860530222e-05
+        },
+        "attack_model_queries": {
+          "n": 30,
+          "mean_diff": -2.433333333333333,
+          "cohen_dz": -1.1797817917333513,
+          "ci_lower": -3.1008333333333336,
+          "ci_upper": -1.7333333333333334,
+          "p_value": 0.00011250848290965831
+        },
+        "total_model_queries": {
+          "n": 30,
+          "mean_diff": -2.433333333333333,
+          "cohen_dz": -1.1797817917333513,
+          "ci_lower": -3.1333333333333333,
+          "ci_upper": -1.7,
+          "p_value": 0.00011250848290965831
+        },
+        "proposal_attempts": {
+          "n": 30,
+          "mean_diff": 15.9,
+          "cohen_dz": 0.7764559743087822,
+          "ci_lower": 8.333333333333334,
+          "ci_upper": 22.834166666666665,
+          "p_value": 0.0012158841170340077
+        },
+        "edit_distance": {
+          "n": 30,
+          "mean_diff": -0.7,
+          "cohen_dz": -0.4936995843509858,
+          "ci_lower": -1.1675,
+          "ci_upper": -0.16666666666666666,
+          "p_value": 0.016207611093272484
+        },
+        "runtime_seconds": {
+          "n": 30,
+          "mean_diff": 0.001664940516153971,
+          "cohen_dz": 0.05156377247217171,
+          "ci_lower": -0.0065488819281260095,
+          "ci_upper": 0.015138046542803449,
+          "p_value": 0.0007296018302440643
         }
+      }
     },
     {
-        "comparison": "MCMC vs Random",
-        "budget": 20,
-        "n": 30,
-        "metrics": {
-            "absolute_prediction_change": {
-                "mean_paired_difference": 0.09330400824546814,
-                "cohen_dz": 0.44854592736057414,
-                "CI_lower": 0.02570605588455994,
-                "CI_upper": 0.17924909770488737,
-                "p_value": 0.04320018979244315
-            },
-            "total_queries": {
-                "mean_paired_difference": -0.2,
-                "cohen_dz": -0.07273929674533079,
-                "CI_lower": -1.2008333333333332,
-                "CI_upper": 0.8,
-                "p_value": 0.6535355692993052
-            },
-            "edit_distance": {
-                "mean_paired_difference": 4.4,
-                "cohen_dz": 1.4798801467918874,
-                "CI_lower": 3.3991666666666664,
-                "CI_upper": 5.466666666666667,
-                "p_value": 7.989924979275262e-06
-            }
+      "comparison": "MCMC vs Random",
+      "budget": 20,
+      "metrics": {
+        "absolute_prediction_change": {
+          "n": 30,
+          "mean_diff": 0.11454509248336156,
+          "cohen_dz": 0.7484640001719166,
+          "ci_lower": 0.06419718015938998,
+          "ci_upper": 0.16981041515866915,
+          "p_value": 0.0003449581563472748
+        },
+        "attack_model_queries": {
+          "n": 30,
+          "mean_diff": 0.0,
+          "cohen_dz": null,
+          "ci_lower": 0.0,
+          "ci_upper": 0.0,
+          "p_value": NaN
+        },
+        "total_model_queries": {
+          "n": 30,
+          "mean_diff": 0.0,
+          "cohen_dz": null,
+          "ci_lower": 0.0,
+          "ci_upper": 0.0,
+          "p_value": NaN
+        },
+        "proposal_attempts": {
+          "n": 30,
+          "mean_diff": 1.2666666666666666,
+          "cohen_dz": 0.11461599706461133,
+          "ci_lower": -2.5675000000000003,
+          "ci_upper": 4.701666666666665,
+          "p_value": 0.39854781482967494
+        },
+        "edit_distance": {
+          "n": 30,
+          "mean_diff": 9.6,
+          "cohen_dz": 1.3126118901691817,
+          "ci_lower": 7.099166666666666,
+          "ci_upper": 12.400833333333333,
+          "p_value": 4.402429015960413e-06
+        },
+        "runtime_seconds": {
+          "n": 30,
+          "mean_diff": 0.0015264828999837202,
+          "cohen_dz": 0.10543990485551671,
+          "ci_lower": -0.002808844447135926,
+          "ci_upper": 0.007439286907513929,
+          "p_value": 0.7303419969975948
         }
+      }
     },
     {
-        "comparison": "Evolutionary vs Random",
-        "budget": 20,
-        "n": 30,
-        "metrics": {
-            "absolute_prediction_change": {
-                "mean_paired_difference": 0.12009102354447047,
-                "cohen_dz": 0.753393406649786,
-                "CI_lower": 0.06565217420458794,
-                "CI_upper": 0.17687196627259252,
-                "p_value": 0.00012333691120147705
-            },
-            "total_queries": {
-                "mean_paired_difference": 9.166666666666666,
-                "cohen_dz": 1.9843831839318986,
-                "CI_lower": 7.2,
-                "CI_upper": 10.6,
-                "p_value": 1.2373446138308102e-05
-            },
-            "edit_distance": {
-                "mean_paired_difference": 2.566666666666667,
-                "cohen_dz": 1.0162415599669923,
-                "CI_lower": 1.6666666666666667,
-                "CI_upper": 3.4008333333333325,
-                "p_value": 5.261038474821994e-05
-            }
+      "comparison": "Evolutionary vs Random",
+      "budget": 20,
+      "metrics": {
+        "absolute_prediction_change": {
+          "n": 30,
+          "mean_diff": 0.09525647312402725,
+          "cohen_dz": 0.6492018479878073,
+          "ci_lower": 0.04246998604387045,
+          "ci_upper": 0.14937682891885437,
+          "p_value": 0.0003449581563472748
+        },
+        "attack_model_queries": {
+          "n": 30,
+          "mean_diff": 0.0,
+          "cohen_dz": null,
+          "ci_lower": 0.0,
+          "ci_upper": 0.0,
+          "p_value": NaN
+        },
+        "total_model_queries": {
+          "n": 30,
+          "mean_diff": 0.0,
+          "cohen_dz": null,
+          "ci_lower": 0.0,
+          "ci_upper": 0.0,
+          "p_value": NaN
+        },
+        "proposal_attempts": {
+          "n": 30,
+          "mean_diff": -1.2666666666666666,
+          "cohen_dz": -0.14137814858101266,
+          "ci_lower": -4.566666666666666,
+          "ci_upper": 1.7008333333333325,
+          "p_value": 0.488209861433491
+        },
+        "edit_distance": {
+          "n": 30,
+          "mean_diff": 2.933333333333333,
+          "cohen_dz": 1.3356827093169334,
+          "ci_lower": 2.165833333333333,
+          "ci_upper": 3.7666666666666666,
+          "p_value": 8.64528381837559e-06
+        },
+        "runtime_seconds": {
+          "n": 30,
+          "mean_diff": -0.0018795887629191226,
+          "cohen_dz": -0.21670996691445568,
+          "ci_lower": -0.005059929490089424,
+          "ci_upper": 0.0010773207743962412,
+          "p_value": 0.31839608028531075
         }
+      }
     },
     {
-        "comparison": "Attribution-High vs Attribution-Random",
-        "budget": 20,
-        "n": 30,
-        "metrics": {
-            "absolute_prediction_change": {
-                "mean_paired_difference": 0.010529780139525742,
-                "cohen_dz": 0.07743036497954126,
-                "CI_lower": -0.03623902068162957,
-                "CI_upper": 0.06061538308237991,
-                "p_value": 0.698671667179475
-            },
-            "total_queries": {
-                "mean_paired_difference": 4.7,
-                "cohen_dz": 0.85323019031344,
-                "CI_lower": 2.7333333333333334,
-                "CI_upper": 6.766666666666667,
-                "p_value": 0.0004651821990347991
-            },
-            "edit_distance": {
-                "mean_paired_difference": -0.3,
-                "cohen_dz": -0.18569533817705183,
-                "CI_lower": -0.9333333333333333,
-                "CI_upper": 0.26666666666666666,
-                "p_value": 0.379775474840949
-            }
+      "comparison": "Attribution-High vs Attribution-Random",
+      "budget": 20,
+      "metrics": {
+        "absolute_prediction_change": {
+          "n": 30,
+          "mean_diff": -0.02342099969585736,
+          "cohen_dz": -0.22352067928351993,
+          "ci_lower": -0.059640141259878876,
+          "ci_upper": 0.013798295861730973,
+          "p_value": 0.429067256009819
+        },
+        "attack_model_queries": {
+          "n": 30,
+          "mean_diff": -1.9333333333333333,
+          "cohen_dz": -0.4583919736604541,
+          "ci_lower": -3.6,
+          "ci_upper": -0.6,
+          "p_value": 0.01755232593841686
+        },
+        "total_model_queries": {
+          "n": 30,
+          "mean_diff": -1.9333333333333333,
+          "cohen_dz": -0.4583919736604541,
+          "ci_lower": -3.6666666666666665,
+          "ci_upper": -0.5333333333333333,
+          "p_value": 0.01755232593841686
+        },
+        "proposal_attempts": {
+          "n": 30,
+          "mean_diff": -11.6,
+          "cohen_dz": -0.16521786640089894,
+          "ci_lower": -36.700833333333335,
+          "ci_upper": 13.236666666666663,
+          "p_value": 0.13585603915402655
+        },
+        "edit_distance": {
+          "n": 30,
+          "mean_diff": -0.06666666666666667,
+          "cohen_dz": -0.04423590300547567,
+          "ci_lower": -0.5674999999999999,
+          "ci_upper": 0.43333333333333335,
+          "p_value": 0.8304838802305505
+        },
+        "runtime_seconds": {
+          "n": 30,
+          "mean_diff": -0.002397950490315745,
+          "cohen_dz": -0.2620660127430856,
+          "ci_lower": -0.005713351170221951,
+          "ci_upper": 0.0008480848868687947,
+          "p_value": 0.10483990423381329
         }
+      }
     },
     {
-        "comparison": "Attribution-Low vs Attribution-Random",
-        "budget": 20,
-        "n": 30,
-        "metrics": {
-            "absolute_prediction_change": {
-                "mean_paired_difference": -0.17466701492667197,
-                "cohen_dz": -1.0760991482339695,
-                "CI_lower": -0.22909366234516104,
-                "CI_upper": -0.11719663600747786,
-                "p_value": 1.1920928955078125e-06
-            },
-            "total_queries": {
-                "mean_paired_difference": -1.5666666666666667,
-                "cohen_dz": -0.32729773269763,
-                "CI_lower": -3.2666666666666666,
-                "CI_upper": 0.16749999999999923,
-                "p_value": 0.0746659662442965
-            },
-            "edit_distance": {
-                "mean_paired_difference": -0.8333333333333334,
-                "cohen_dz": -0.4806803557835802,
-                "CI_lower": -1.4333333333333333,
-                "CI_upper": -0.23333333333333334,
-                "p_value": 0.0223446070871177
-            }
+      "comparison": "Attribution-Low vs Attribution-Random",
+      "budget": 20,
+      "metrics": {
+        "absolute_prediction_change": {
+          "n": 30,
+          "mean_diff": -0.21901309341192246,
+          "cohen_dz": -1.4347194080982844,
+          "ci_lower": -0.2718707089001934,
+          "ci_upper": -0.16454798202961685,
+          "p_value": 7.999733741734625e-06
+        },
+        "attack_model_queries": {
+          "n": 30,
+          "mean_diff": -9.2,
+          "cohen_dz": -1.103750352291064,
+          "ci_lower": -12.234166666666665,
+          "ci_upper": -6.3325000000000005,
+          "p_value": 0.0001899879575125705
+        },
+        "total_model_queries": {
+          "n": 30,
+          "mean_diff": -9.2,
+          "cohen_dz": -1.103750352291064,
+          "ci_lower": -12.1,
+          "ci_upper": -6.0,
+          "p_value": 0.0001899879575125705
+        },
+        "proposal_attempts": {
+          "n": 30,
+          "mean_diff": 55.36666666666667,
+          "cohen_dz": 0.761171246952807,
+          "ci_lower": 31.06,
+          "ci_upper": 81.93583333333333,
+          "p_value": 0.0014834976482102416
+        },
+        "edit_distance": {
+          "n": 30,
+          "mean_diff": -0.7,
+          "cohen_dz": -0.449592829858338,
+          "ci_lower": -1.2333333333333334,
+          "ci_upper": -0.13333333333333333,
+          "p_value": 0.03355847682595491
+        },
+        "runtime_seconds": {
+          "n": 30,
+          "mean_diff": -0.0077072064081827795,
+          "cohen_dz": -0.642192483051841,
+          "ci_lower": -0.011893802086512242,
+          "ci_upper": -0.0030921171108881577,
+          "p_value": 0.0006084088236093521
         }
+      }
     },
     {
-        "comparison": "MCMC vs Random",
-        "budget": 50,
-        "n": 30,
-        "metrics": {
-            "absolute_prediction_change": {
-                "mean_paired_difference": 0.18644631629188854,
-                "cohen_dz": 0.9047527722040756,
-                "CI_lower": 0.11384861365581551,
-                "CI_upper": 0.2640681248592834,
-                "p_value": 5.5925920605659485e-05
-            },
-            "total_queries": {
-                "mean_paired_difference": 2.3666666666666667,
-                "cohen_dz": 0.5244317335305251,
-                "CI_lower": 0.8308333333333335,
-                "CI_upper": 4.0,
-                "p_value": 0.024749118856701037
-            },
-            "edit_distance": {
-                "mean_paired_difference": 11.766666666666667,
-                "cohen_dz": 1.8750882902004782,
-                "CI_lower": 9.633333333333333,
-                "CI_upper": 14.167499999999999,
-                "p_value": 3.6627327180761355e-06
-            }
+      "comparison": "MCMC vs Random",
+      "budget": 50,
+      "metrics": {
+        "absolute_prediction_change": {
+          "n": 30,
+          "mean_diff": 0.15935849994421006,
+          "cohen_dz": 0.7016376785987978,
+          "ci_lower": 0.07464462888737519,
+          "ci_upper": 0.23612664436300596,
+          "p_value": 0.0005054883658885956
+        },
+        "attack_model_queries": {
+          "n": 30,
+          "mean_diff": 0.0,
+          "cohen_dz": null,
+          "ci_lower": 0.0,
+          "ci_upper": 0.0,
+          "p_value": NaN
+        },
+        "total_model_queries": {
+          "n": 30,
+          "mean_diff": 0.0,
+          "cohen_dz": null,
+          "ci_lower": 0.0,
+          "ci_upper": 0.0,
+          "p_value": NaN
+        },
+        "proposal_attempts": {
+          "n": 30,
+          "mean_diff": -11.133333333333333,
+          "cohen_dz": -0.6608236830242893,
+          "ci_lower": -17.17,
+          "ci_upper": -5.566666666666666,
+          "p_value": 0.0014689476969478867
+        },
+        "edit_distance": {
+          "n": 30,
+          "mean_diff": 15.766666666666667,
+          "cohen_dz": 1.658978419848154,
+          "ci_lower": 12.565,
+          "ci_upper": 19.066666666666666,
+          "p_value": 1.9065823288307218e-06
+        },
+        "runtime_seconds": {
+          "n": 30,
+          "mean_diff": -0.007715368270874027,
+          "cohen_dz": -0.32783620051015666,
+          "ci_lower": -0.01735303024450937,
+          "ci_upper": -0.0010894866784413686,
+          "p_value": 0.03272089920938015
         }
+      }
     },
     {
-        "comparison": "Evolutionary vs Random",
-        "budget": 50,
-        "n": 30,
-        "metrics": {
-            "absolute_prediction_change": {
-                "mean_paired_difference": 0.23645174702008565,
-                "cohen_dz": 1.2704273630860161,
-                "CI_lower": 0.16867807738482954,
-                "CI_upper": 0.30346211562554043,
-                "p_value": 2.348795533180237e-06
-            },
-            "total_queries": {
-                "mean_paired_difference": 23.433333333333334,
-                "cohen_dz": 2.648008021519311,
-                "CI_lower": 19.933333333333334,
-                "CI_upper": 26.3,
-                "p_value": 2.0991495313282623e-06
-            },
-            "edit_distance": {
-                "mean_paired_difference": 5.866666666666666,
-                "cohen_dz": 1.9153077037879538,
-                "CI_lower": 4.766666666666667,
-                "CI_upper": 7.033333333333333,
-                "p_value": 3.586203629836881e-06
-            }
+      "comparison": "Evolutionary vs Random",
+      "budget": 50,
+      "metrics": {
+        "absolute_prediction_change": {
+          "n": 30,
+          "mean_diff": 0.200335131585598,
+          "cohen_dz": 1.1550879535335534,
+          "ci_lower": 0.13741291301945846,
+          "ci_upper": 0.26267057038843633,
+          "p_value": 2.348795533180237e-06
+        },
+        "attack_model_queries": {
+          "n": 30,
+          "mean_diff": 0.0,
+          "cohen_dz": null,
+          "ci_lower": 0.0,
+          "ci_upper": 0.0,
+          "p_value": NaN
+        },
+        "total_model_queries": {
+          "n": 30,
+          "mean_diff": 0.0,
+          "cohen_dz": null,
+          "ci_lower": 0.0,
+          "ci_upper": 0.0,
+          "p_value": NaN
+        },
+        "proposal_attempts": {
+          "n": 30,
+          "mean_diff": -8.666666666666666,
+          "cohen_dz": -0.7014757822565006,
+          "ci_lower": -13.2675,
+          "ci_upper": -4.799166666666667,
+          "p_value": 0.00030416171814486823
+        },
+        "edit_distance": {
+          "n": 30,
+          "mean_diff": 6.566666666666666,
+          "cohen_dz": 1.7026315597226893,
+          "ci_lower": 5.331666666666666,
+          "ci_upper": 8.000833333333333,
+          "p_value": 1.8385299291469902e-06
+        },
+        "runtime_seconds": {
+          "n": 30,
+          "mean_diff": 0.0013513644536336162,
+          "cohen_dz": 0.02788767969445039,
+          "ci_lower": -0.013042821288108833,
+          "ci_upper": 0.022081190943717938,
+          "p_value": 0.19807579927146435
         }
+      }
     },
     {
-        "comparison": "Attribution-High vs Attribution-Random",
-        "budget": 50,
-        "n": 30,
-        "metrics": {
-            "absolute_prediction_change": {
-                "mean_paired_difference": 0.009362757951021195,
-                "cohen_dz": 0.08467122914798665,
-                "CI_lower": -0.028738841551045585,
-                "CI_upper": 0.047667685641596715,
-                "p_value": 0.3532579607475088
-            },
-            "total_queries": {
-                "mean_paired_difference": 12.866666666666667,
-                "cohen_dz": 0.9648070578807069,
-                "CI_lower": 8.098333333333333,
-                "CI_upper": 17.3,
-                "p_value": 0.00016621622067593912
-            },
-            "edit_distance": {
-                "mean_paired_difference": 0.23333333333333334,
-                "cohen_dz": 0.1322639490993141,
-                "CI_lower": -0.4,
-                "CI_upper": 0.8333333333333334,
-                "p_value": 0.5392545710869423
-            }
+      "comparison": "Attribution-High vs Attribution-Random",
+      "budget": 50,
+      "metrics": {
+        "absolute_prediction_change": {
+          "n": 30,
+          "mean_diff": -0.011002225677172333,
+          "cohen_dz": -0.10687026145244094,
+          "ci_lower": -0.04679353120426336,
+          "ci_upper": 0.024521813790003465,
+          "p_value": 0.9036267967285596
+        },
+        "attack_model_queries": {
+          "n": 30,
+          "mean_diff": -5.733333333333333,
+          "cohen_dz": -0.4384006508816763,
+          "ci_lower": -10.801666666666668,
+          "ci_upper": -1.5316666666666683,
+          "p_value": 0.027707849358079864
+        },
+        "total_model_queries": {
+          "n": 30,
+          "mean_diff": -5.733333333333333,
+          "cohen_dz": -0.4384006508816763,
+          "ci_lower": -10.600833333333332,
+          "ci_upper": -1.4666666666666666,
+          "p_value": 0.027707849358079864
+        },
+        "proposal_attempts": {
+          "n": 30,
+          "mean_diff": -25.6,
+          "cohen_dz": -0.14933208032228407,
+          "ci_lower": -85.0475,
+          "ci_upper": 35.57666666666666,
+          "p_value": 0.23691138937064626
+        },
+        "edit_distance": {
+          "n": 30,
+          "mean_diff": 0.4666666666666667,
+          "cohen_dz": 0.2892865192569344,
+          "ci_lower": -0.1,
+          "ci_upper": 1.0666666666666667,
+          "p_value": 0.10159391552033828
+        },
+        "runtime_seconds": {
+          "n": 30,
+          "mean_diff": -0.014522306124369314,
+          "cohen_dz": -0.5241702411392012,
+          "ci_lower": -0.024704333941141778,
+          "ci_upper": -0.004266864458719893,
+          "p_value": 0.003475155681371689
         }
+      }
     },
     {
-        "comparison": "Attribution-Low vs Attribution-Random",
-        "budget": 50,
-        "n": 30,
-        "metrics": {
-            "absolute_prediction_change": {
-                "mean_paired_difference": -0.1763333444794019,
-                "cohen_dz": -1.0287636790548866,
-                "CI_lower": -0.2407249446337422,
-                "CI_upper": -0.11442423890034362,
-                "p_value": 6.0435525993233764e-05
-            },
-            "total_queries": {
-                "mean_paired_difference": -2.3,
-                "cohen_dz": -0.17646597121518734,
-                "CI_lower": -6.866666666666666,
-                "CI_upper": 2.5008333333333326,
-                "p_value": 0.3091798524960889
-            },
-            "edit_distance": {
-                "mean_paired_difference": -0.6,
-                "cohen_dz": -0.3740272357155222,
-                "CI_lower": -1.1333333333333333,
-                "CI_upper": -0.06666666666666667,
-                "p_value": 0.08047232398410227
-            }
+      "comparison": "Attribution-Low vs Attribution-Random",
+      "budget": 50,
+      "metrics": {
+        "absolute_prediction_change": {
+          "n": 30,
+          "mean_diff": -0.20774555703004202,
+          "cohen_dz": -1.3273184909530775,
+          "ci_lower": -0.259594072488447,
+          "ci_upper": -0.15114329304546117,
+          "p_value": 8.847924025108336e-06
+        },
+        "attack_model_queries": {
+          "n": 30,
+          "mean_diff": -23.566666666666666,
+          "cohen_dz": -1.1551939809156657,
+          "ci_lower": -30.333333333333332,
+          "ci_upper": -16.460000000000004,
+          "p_value": 0.00019506589130048005
+        },
+        "total_model_queries": {
+          "n": 30,
+          "mean_diff": -23.566666666666666,
+          "cohen_dz": -1.1551939809156657,
+          "ci_lower": -30.4025,
+          "ci_upper": -15.862500000000004,
+          "p_value": 0.00019506589130048005
+        },
+        "proposal_attempts": {
+          "n": 30,
+          "mean_diff": 143.7,
+          "cohen_dz": 0.8315170737625125,
+          "ci_lower": 80.35916666666667,
+          "ci_upper": 199.57583333333332,
+          "p_value": 0.000830178096315573
+        },
+        "edit_distance": {
+          "n": 30,
+          "mean_diff": -0.5666666666666667,
+          "cohen_dz": -0.40289962002415824,
+          "ci_lower": -1.0666666666666667,
+          "ci_upper": -0.1,
+          "p_value": 0.06141609683199149
+        },
+        "runtime_seconds": {
+          "n": 30,
+          "mean_diff": -0.018422706921895345,
+          "cohen_dz": -0.4404224593426771,
+          "ci_lower": -0.03215937276681264,
+          "ci_upper": -0.00234782735506693,
+          "p_value": 0.01283373311161995
         }
+      }
     }
-]
+  ]
+}
