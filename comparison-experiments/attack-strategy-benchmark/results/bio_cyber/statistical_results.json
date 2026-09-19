@@ -7,21 +7,22 @@
             "absolute_prediction_change": {
                 "mean_paired_difference": 0.04108723259220521,
                 "cohen_dz": 0.6139807534089892,
+                "CI_lower": 0.017512405191858628,
+                "CI_upper": 0.06638219998683782,
                 "p_value": 0.002560090273618698
             },
             "success": {
                 "mean_paired_difference": 0.03333333333333333,
+                "CI_lower": -0.1,
+                "CI_upper": 0.2,
                 "p_value_mcnemar": 1.0
             },
             "total_queries_to_success": {
                 "mean_paired_difference": -5.633333333333334,
                 "cohen_dz": -0.08095815117895544,
+                "CI_lower": -28.434166666666666,
+                "CI_upper": 17.1675,
                 "p_value": 0.8907458009320663
-            },
-            "edit_distance": {
-                "mean_paired_difference": 2.066666666666667,
-                "cohen_dz": 2.5396189536090255,
-                "p_value": 1.2292669666868995e-06
             }
         }
     },
@@ -33,21 +34,22 @@
             "absolute_prediction_change": {
                 "mean_paired_difference": -0.11580362139890589,
                 "cohen_dz": -1.2692922286213475,
+                "CI_lower": -0.14935462140167746,
+                "CI_upper": -0.08564345728140321,
                 "p_value": 1.862645149230957e-09
             },
             "success": {
                 "mean_paired_difference": -0.23333333333333334,
+                "CI_lower": -0.4,
+                "CI_upper": -0.1,
                 "p_value_mcnemar": 0.015625
             },
             "total_queries_to_success": {
                 "mean_paired_difference": 40.333333333333336,
                 "cohen_dz": 0.5516620490507851,
+                "CI_lower": 17.2325,
+                "CI_upper": 69.03333333333333,
                 "p_value": 0.0169473483375683
-            },
-            "edit_distance": {
-                "mean_paired_difference": -1.0,
-                "cohen_dz": NaN,
-                "p_value": 4.320463057827488e-08
             }
         }
     },
@@ -59,21 +61,22 @@
             "absolute_prediction_change": {
                 "mean_paired_difference": 0.05113578286642828,
                 "cohen_dz": 0.7430172515212098,
+                "CI_lower": 0.02645665431938444,
+                "CI_upper": 0.0776875605317764,
                 "p_value": 0.0005054883658885956
             },
             "success": {
                 "mean_paired_difference": 0.1,
+                "CI_lower": -0.06666666666666667,
+                "CI_upper": 0.26666666666666666,
                 "p_value_mcnemar": 0.453125
             },
             "total_queries_to_success": {
                 "mean_paired_difference": -2.1666666666666665,
                 "cohen_dz": -0.203398301450744,
+                "CI_lower": -5.8675,
+                "CI_upper": 1.4666666666666666,
                 "p_value": 0.34957480612329817
-            },
-            "edit_distance": {
-                "mean_paired_difference": 0.03333333333333333,
-                "cohen_dz": 0.1856953381770519,
-                "p_value": 0.31731050786291415
             }
         }
     },
@@ -85,21 +88,22 @@
             "absolute_prediction_change": {
                 "mean_paired_difference": -0.043713277174780775,
                 "cohen_dz": -0.7103823989625145,
+                "CI_lower": -0.06563782965298742,
+                "CI_upper": -0.022322574448771778,
                 "p_value": 0.0005054883658885956
             },
             "success": {
                 "mean_paired_difference": -0.16666666666666666,
+                "CI_lower": -0.3,
+                "CI_upper": -0.03333333333333333,
                 "p_value_mcnemar": 0.0625
             },
             "total_queries_to_success": {
                 "mean_paired_difference": 4.566666666666666,
                 "cohen_dz": 0.5031428986545099,
+                "CI_lower": 1.5658333333333334,
+                "CI_upper": 7.866666666666666,
                 "p_value": 0.0169473483375683
-            },
-            "edit_distance": {
-                "mean_paired_difference": 0.03333333333333333,
-                "cohen_dz": 0.1856953381770519,
-                "p_value": 0.31731050786291415
             }
         }
     },
@@ -111,21 +115,22 @@
             "absolute_prediction_change": {
                 "mean_paired_difference": 0.16197625619048875,
                 "cohen_dz": 1.0064083128041827,
+                "CI_lower": 0.10588134963142996,
+                "CI_upper": 0.22523272310150788,
                 "p_value": 3.855675458908081e-07
             },
             "success": {
                 "mean_paired_difference": 0.2,
+                "CI_lower": 0.0,
+                "CI_upper": 0.4,
                 "p_value_mcnemar": 0.109375
             },
             "total_queries_to_success": {
                 "mean_paired_difference": -7.833333333333333,
                 "cohen_dz": -0.058747861249607604,
+                "CI_lower": -56.27166666666667,
+                "CI_upper": 41.068333333333335,
                 "p_value": 0.6098340436734595
-            },
-            "edit_distance": {
-                "mean_paired_difference": 7.133333333333334,
-                "cohen_dz": 2.8845266831919774,
-                "p_value": 1.6688878538480105e-06
             }
         }
     },
@@ -137,21 +142,22 @@
             "absolute_prediction_change": {
                 "mean_paired_difference": 0.07424497973794739,
                 "cohen_dz": 0.868260452530172,
+                "CI_lower": 0.04432239477677891,
+                "CI_upper": 0.10598475948674604,
                 "p_value": 1.597777009010315e-05
             },
             "success": {
                 "mean_paired_difference": 0.13333333333333333,
+                "CI_lower": 0.0,
+                "CI_upper": 0.3,
                 "p_value_mcnemar": 0.21875
             },
             "total_queries_to_success": {
                 "mean_paired_difference": -6.766666666666667,
                 "cohen_dz": -0.1565433269422531,
+                "CI_lower": -23.975833333333323,
+                "CI_upper": 2.0,
                 "p_value": 0.2557754175895596
-            },
-            "edit_distance": {
-                "mean_paired_difference": 1.7,
-                "cohen_dz": 3.2319936776748373,
-                "p_value": 6.483651078949148e-07
             }
         }
     },
@@ -163,21 +169,22 @@
             "absolute_prediction_change": {
                 "mean_paired_difference": 0.06375732421875001,
                 "cohen_dz": 0.9865110967874672,
+                "CI_lower": 0.0423554646037519,
+                "CI_upper": 0.08650733985006813,
                 "p_value": 3.460317162747565e-05
             },
             "success": {
                 "mean_paired_difference": 0.16666666666666666,
+                "CI_lower": -0.03333333333333333,
+                "CI_upper": 0.36666666666666664,
                 "p_value_mcnemar": 0.2265625
             },
             "total_queries_to_success": {
                 "mean_paired_difference": -12.0,
                 "cohen_dz": -0.38677493104982047,
+                "CI_lower": -24.435833333333335,
+                "CI_upper": -2.533333333333333,
                 "p_value": 0.097371831739102
-            },
-            "edit_distance": {
-                "mean_paired_difference": 0.0,
-                "cohen_dz": NaN,
-                "p_value": NaN
             }
         }
     },
@@ -189,21 +196,22 @@
             "absolute_prediction_change": {
                 "mean_paired_difference": -0.0421209969247381,
                 "cohen_dz": -0.9132811319962172,
+                "CI_lower": -0.05783119435577344,
+                "CI_upper": -0.0261600145402675,
                 "p_value": 5.5925920605659485e-05
             },
             "success": {
                 "mean_paired_difference": -0.06666666666666667,
+                "CI_lower": -0.23333333333333334,
+                "CI_upper": 0.1,
                 "p_value_mcnemar": 0.6875
             },
             "total_queries_to_success": {
                 "mean_paired_difference": 9.466666666666667,
                 "cohen_dz": 0.3274411075292176,
+                "CI_lower": 0.03250000000000005,
+                "CI_upper": 19.434166666666666,
                 "p_value": 0.36494890663489676
-            },
-            "edit_distance": {
-                "mean_paired_difference": 0.0,
-                "cohen_dz": NaN,
-                "p_value": NaN
             }
         }
     },
@@ -215,21 +223,22 @@
             "absolute_prediction_change": {
                 "mean_paired_difference": 0.2650441617704928,
                 "cohen_dz": 1.1442595790770171,
+                "CI_lower": 0.1863613630551845,
+                "CI_upper": 0.34675318794635435,
                 "p_value": 1.991167664527893e-06
             },
             "success": {
                 "mean_paired_difference": 0.06666666666666667,
+                "CI_lower": -0.2,
+                "CI_upper": 0.3333333333333333,
                 "p_value_mcnemar": 0.803619384765625
             },
             "total_queries_to_success": {
                 "mean_paired_difference": 26.033333333333335,
                 "cohen_dz": 0.09189376946388245,
+                "CI_lower": -77.80416666666666,
+                "CI_upper": 130.7675,
                 "p_value": 0.36579286937663524
-            },
-            "edit_distance": {
-                "mean_paired_difference": 15.433333333333334,
-                "cohen_dz": 4.459143698813404,
-                "p_value": 1.6762987141123665e-06
             }
         }
     },
@@ -241,21 +250,22 @@
             "absolute_prediction_change": {
                 "mean_paired_difference": 0.2664626849815249,
                 "cohen_dz": 1.5711288800721146,
+                "CI_lower": 0.2044541862141341,
+                "CI_upper": 0.3259643131510044,
                 "p_value": 3.5390257835388184e-08
             },
             "success": {
                 "mean_paired_difference": 0.16666666666666666,
+                "CI_lower": -0.06666666666666667,
+                "CI_upper": 0.4,
                 "p_value_mcnemar": 0.266845703125
             },
             "total_queries_to_success": {
                 "mean_paired_difference": -48.03333333333333,
                 "cohen_dz": -0.2568699725013783,
+                "CI_lower": -111.83583333333333,
+                "CI_upper": 14.87083333333333,
                 "p_value": 0.6649741904506596
-            },
-            "edit_distance": {
-                "mean_paired_difference": 6.533333333333333,
-                "cohen_dz": 5.427718001092771,
-                "p_value": 1.4225044788901527e-06
             }
         }
     },
@@ -267,21 +277,22 @@
             "absolute_prediction_change": {
                 "mean_paired_difference": 0.06708755865693092,
                 "cohen_dz": 0.8999250323330249,
+                "CI_lower": 0.04112574492891629,
+                "CI_upper": 0.09519386304542422,
                 "p_value": 8.166649308920539e-05
             },
             "success": {
                 "mean_paired_difference": 0.2,
+                "CI_lower": 0.03333333333333333,
+                "CI_upper": 0.36666666666666664,
                 "p_value_mcnemar": 0.0703125
             },
             "total_queries_to_success": {
                 "mean_paired_difference": -41.9,
                 "cohen_dz": -0.4855591090072162,
+                "CI_lower": -73.16833333333334,
+                "CI_upper": -17.065833333333334,
                 "p_value": 0.0015674245896341455
-            },
-            "edit_distance": {
-                "mean_paired_difference": 0.0,
-                "cohen_dz": NaN,
-                "p_value": NaN
             }
         }
     },
@@ -293,21 +304,22 @@
             "absolute_prediction_change": {
                 "mean_paired_difference": -0.05997419382135074,
                 "cohen_dz": -1.0304416907811145,
+                "CI_lower": -0.07921640450134873,
+                "CI_upper": -0.03852667540932696,
                 "p_value": 1.1920928955078125e-06
             },
             "success": {
                 "mean_paired_difference": -0.1,
+                "CI_lower": -0.3,
+                "CI_upper": 0.1,
                 "p_value_mcnemar": 0.5078125
             },
             "total_queries_to_success": {
                 "mean_paired_difference": 30.733333333333334,
                 "cohen_dz": 0.30830299813875267,
+                "CI_lower": -1.1683333333333332,
+                "CI_upper": 69.33333333333333,
                 "p_value": 0.05337810103902269
-            },
-            "edit_distance": {
-                "mean_paired_difference": 0.0,
-                "cohen_dz": NaN,
-                "p_value": NaN
             }
         }
     }
