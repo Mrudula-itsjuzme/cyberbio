@@ -42,7 +42,7 @@ def row_from_group(domain: str, family: str, variant: str, status: str,
         validity = 1.0
     return {
         "domain": domain, "attack_family": family, "attack_variant": variant,
-        "status": status, "budget": budget, "n_sources": int(g.iloc[:, 0].nunique()),
+        "status": status, "budget": budget, "n_sources": int(g["source_id"].nunique()),
         "mean_drift": drift.mean(), "median_drift": drift.median(), "p90_drift": q90(drift),
         "max_drift": drift.max(), "success_rate": success.mean() if len(success) else np.nan,
         "validity_rate": validity, "target_queries": queries.sum(),

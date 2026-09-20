@@ -18,7 +18,7 @@ This project evaluates the adversarial robustness of Transformer-based sequence 
 - TransPolymer is brittle to both alternate sequence representations and localized topological edits.
 - Data augmentation reduces representation drift and acts as an out-of-distribution regularizer (improving clean Scaffold Split RMSE).
 - Defenses are orthogonal; the CombinedDefense performs best across all evaluated metrics.
-- Multi-seed validation (N=3) confirms that the vulnerability and defense improvements are highly stable across initializations.
+- The defense-comparison suite uses 3 seeds (`42`, `123`, `456`). A separate comprehensive robustness benchmark uses 5 seeds (`42`, `123`, `2026`, `777`, `999`). These are distinct experiment suites and should not be pooled.
 
 ## Reproduction
 To replicate the final verified results, including multi-seed validation and analysis matrix generation:
@@ -30,8 +30,9 @@ PYTHONPATH=. python scripts/run_final_experiments.py --full
 
 ## Artifacts and Documentation
 - **Final Results / Tables:** `results/final/`
-- **Full Research Narrative:** `docs/FINAL_REPORT.md`
-- **Viva / Study Materials:** `docs/VIVA_STUDY_GUIDE.md`, `docs/PROJECT_CHEATSHEET.md`
+- **Canonical Results Index:** `docs/CANONICAL_RESULT_INDEX.md`
+- **Research Narrative Draft:** `docs/FINAL_REPORT_DRAFT.md`
+- **Viva / Study Materials:** `docs/VIVA_GUIDE.md`, `docs/VIVA_DEFENSE_PACK.md`
 
 ## Limitations
 The primary limitation of this study is the lack of a Density Functional Theory (DFT) physical oracle. The MCMC perturbations successfully probe the model's topological sensitivity under chemically constrained edits, but we do not claim that the generated variants perfectly preserve the true physical bandgap label.
