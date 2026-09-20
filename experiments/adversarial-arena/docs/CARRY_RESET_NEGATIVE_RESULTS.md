@@ -1,5 +1,16 @@
 # Negative and Null Results
 
-1. **CEM Degradation**: Seed 20260920 R1 and R2 yielded *negative* G_carry, indicating that carry-state actively harmed search compared to reset-state.
-2. **SMC == Validity-SMC Equivalence**: Implementation inspection reveals that ValiditySMC overrides the uniform family selection with validity_posterior ONLY in the resampling weight `score`, NOT in the candidate generation itself. Since `query_budget=25` is small, the loop deterministically iterates through the parent particles without triggering `resampled`. Thus, the carried `particles` remain exactly identical across SMC and Validity-SMC across all seeds and rounds.
-3. **Query Mismatches**: 12/27 events experienced query mismatches where the attacker overshot or undershot budgets relative to the reset baseline.
+- CEM seed 20260920 R1/R2 had negative raw G_carry.
+- Other CEM seeds were positive.
+- Therefore CEM is heterogeneous, not globally degraded.
+- 12/27 events were query-mismatched.
+- Only 6 matched post-init events remain.
+- SMC and Validity-SMC produced identical realized particle trajectories and attack metrics under the tested configuration.
+- Validity-SMC maintained an extra validity posterior, but it produced no observed incremental effect.
+
+## Mechanism Check (SMC vs Validity-SMC)
+- **FACT**: Particle states were identical across SMC and Validity-SMC.
+- **FACT**: Drifts were identical.
+- **FACT**: Validity-SMC has an extra validity posterior.
+- **FACT**: The posterior participates in scoring.
+- **INFERENCE**: The posterior did not alter realized selection dynamics under this budget.
