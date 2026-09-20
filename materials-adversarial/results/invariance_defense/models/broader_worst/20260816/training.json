@@ -1,0 +1,15 @@
+{
+  "arm": "broader_worst",
+  "seed": 20260816,
+  "lambda": 1.0,
+  "positional": true,
+  "optimizer_steps": 925,
+  "source_examples": 14730,
+  "variant_examples": 58920,
+  "epochs": 5,
+  "wall_seconds": 101.85790599899974,
+  "selected_epoch": 5,
+  "val_mae": 0.4701991987177386,
+  "val_robustness": 0.3427514588789064,
+  "clean_gate_pass": true
+}

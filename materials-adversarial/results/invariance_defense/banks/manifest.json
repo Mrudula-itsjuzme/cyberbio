@@ -1,0 +1,8 @@
+{
+  "created_before_training": true,
+  "split_sha256": "4a9d28252d058c0c2e39cf70eb10dd2f79ad57df4e842c3f917cdfe9830ccd02",
+  "test_cohort_sha256": "05a3965e78c926ac123dcd4e433c80989992162cfe24d94b9976af49eb2f9a20",
+  "test_sources_used": 0,
+  "max_length": 256,
+  "unknown_allowed": false
+}

@@ -1,0 +1,15 @@
+{
+  "arm": "repeat_shift_average",
+  "seed": 20260817,
+  "lambda": 1.0,
+  "positional": true,
+  "optimizer_steps": 925,
+  "source_examples": 14730,
+  "variant_examples": 14730,
+  "epochs": 5,
+  "wall_seconds": 61.81799668199983,
+  "selected_epoch": 5,
+  "val_mae": 0.4520107788278278,
+  "val_robustness": 0.5226138504208633,
+  "clean_gate_pass": true
+}

@@ -1,0 +1,5 @@
+split,bank,sources,variants
+train,broader,2946,11783
+train,repeat_shift,2862,12293
+val,broader,631,2524
+val,repeat_shift,619,2643

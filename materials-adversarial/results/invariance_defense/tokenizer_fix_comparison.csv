@@ -1,0 +1,3 @@
+intervention,mean_drift,median_drift,P95_drift,max_drift
+historical_unknown_star_to_padding,0.6002559953019674,0.4401226043701172,1.7075652837753295,3.252631187438965
+normalized_attachment_token_strict,0.5793618479991833,0.4093938,1.7083834899999997,3.8157127
