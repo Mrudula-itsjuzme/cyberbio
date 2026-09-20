@@ -16,7 +16,7 @@ class CEMSearch:
         ledger, target, started = begin(model, budget); rng = np.random.default_rng(seed)
         source_pred = target.predict(source); k = len(self.families)
         probs = np.full(k, 1.0 / k); effects, valid, invalid = [], set(), 0
-        best, best_effect, history = None, -1.0, []
+        best, best_effect, best_family, history = None, -1.0, None, []
         while ledger.remaining_target:
             evaluated = []
             attempts = 0
@@ -29,7 +29,7 @@ class CEMSearch:
                     invalid += 1; continue
                 effect = abs(target.predict(proposal.candidate) - source_pred)
                 effects.append(effect); valid.add(proposal.candidate); evaluated.append((effect, family_index))
-                if effect > best_effect: best, best_effect = proposal.candidate, effect
+                if effect > best_effect: best, best_effect, best_family = proposal.candidate, effect, family.name
             if not evaluated: break
             elite_n = max(1, int(np.ceil(len(evaluated) * self.elite_fraction)))
             elites = sorted(evaluated, reverse=True)[:elite_n]
@@ -46,4 +46,4 @@ class CEMSearch:
             ledger=ledger, started=started, effects=effects, valid_candidates=valid,
             invalid_count=invalid, best_candidate=best, trajectories={"cem": history},
             metadata={"elite_fraction": self.elite_fraction, "smoothing": self.smoothing,
-                      "entropy_floor": self.entropy_floor})
+                      "entropy_floor": self.entropy_floor, "best_edit_type": best_family})

@@ -1,0 +1,49 @@
+{
+  "methods": [
+    "random",
+    "mcmc",
+    "evolutionary",
+    "thompson",
+    "cem",
+    "smc",
+    "validity_smc"
+  ],
+  "budgets": [
+    25,
+    50,
+    100
+  ],
+  "seeds": [
+    20260920,
+    20260921,
+    20260922
+  ],
+  "source_ids": [
+    "poly_3106",
+    "poly_3222",
+    "poly_2924",
+    "poly_2228",
+    "poly_1940",
+    "poly_2251",
+    "poly_2079",
+    "poly_1595",
+    "poly_3057",
+    "poly_2866"
+  ],
+  "split": "test",
+  "checkpoint": {
+    "checkpoint": "/home/mrudula/Downloads/DL_cyberbio/materials-adversarial/results/phase11c_canonical_verification/1789326819/models/graph_mpnn_small/model.pt",
+    "checkpoint_sha256": "3fd339c5ebd0d700a05868a0d53ee752c61f378155245855252797c01bcbb81b",
+    "scaler": {
+      "mean": 4.474831296673456,
+      "std": 1.4563050416759802
+    },
+    "node_dim": 7,
+    "hidden_dim": 64,
+    "num_layers": 3,
+    "parameters": 27585,
+    "strict": true
+  },
+  "validator": "CanonicalValidator(min_tanimoto=0.5)",
+  "primary_matching": "nominal target-model query budget; actual queries also reported"
+}

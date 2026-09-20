@@ -58,6 +58,7 @@ class ThompsonSearch:
         valid_candidates: set[str] = set()
         invalid_count = 0
         best_candidate = None
+        best_family = None
 
         if budget < 1:
             raise ValueError("budget must include at least the clean-source query")
@@ -97,6 +98,7 @@ class ThompsonSearch:
                 reward = effect - proposal.edit_cost
                 if best_candidate is None or effect >= max(effects[:-1], default=-1.0):
                     best_candidate = proposal.candidate
+                    best_family = proposal.family
             else:
                 invalid_count += 1
 
@@ -140,5 +142,5 @@ class ThompsonSearch:
             metrics=metrics, best_candidate=best_candidate,
             failure_status="PROPOSAL_LIMIT_WITH_UNUSED_QUERY_BUDGET" if stopped_for_proposals else None,
             trajectories={"posterior": trajectory},
-            metadata={"success_threshold": self.success_threshold},
+            metadata={"success_threshold": self.success_threshold, "best_edit_type": best_family},
         )

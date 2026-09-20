@@ -1,0 +1,6 @@
+ablation,mean_drift
+SMC,2.0
+Validity-SMC,2.4
+Boundary-SMC-ValidityOnly,2.45
+Boundary-SMC-UncertaintyOnly,2.6
+Boundary-SMC,2.9

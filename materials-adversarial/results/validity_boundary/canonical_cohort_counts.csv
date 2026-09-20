@@ -1,0 +1,6 @@
+method,available_candidates,sampled_candidates,unique_sources,valid_candidates,excluded_candidates
+substitution,3081,200,176,200,0
+insertion,3160,200,182,200,0
+deletion,3102,200,174,200,0
+randomization,3157,200,179,200,0
+rearrangement,1363,200,161,200,0

@@ -24,8 +24,11 @@ class RandomSearch:
         ledger, target, started = begin(model, budget)
         rng = np.random.default_rng(seed)
         source_pred = target.predict(source)
-        effects, valid, invalid, best, best_effect = [], set(), 0, None, -1.0
-        while ledger.remaining_target:
+        effects, valid, invalid, best, best_effect, best_family = [], set(), 0, None, -1.0, None
+        attempts = 0
+        max_attempts = max(100, budget * 100)
+        while ledger.remaining_target and attempts < max_attempts:
+            attempts += 1
             proposal, generated = _pick(self.families, source, source, rng)
             ledger.proposal_count += generated
             if proposal is None: break
@@ -37,10 +40,11 @@ class RandomSearch:
             effect = abs(target.predict(proposal.candidate) - source_pred)
             effects.append(effect); valid.add(proposal.candidate)
             if effect > best_effect:
-                best, best_effect = proposal.candidate, effect
+                best, best_effect, best_family = proposal.candidate, effect, proposal.family
         return finalize(method="random", seed=seed, source_id=source_id, budget=budget,
             ledger=ledger, started=started, effects=effects, valid_candidates=valid,
-            invalid_count=invalid, best_candidate=best)
+            invalid_count=invalid, best_candidate=best,
+            metadata={"best_edit_type": best_family, "proposal_limit_reached": attempts >= max_attempts})
 
 
 class EvolutionarySearch:
@@ -51,7 +55,7 @@ class EvolutionarySearch:
     def run(self, *, source_id, source, model, validator, budget, seed):
         ledger, target, started = begin(model, budget); rng = np.random.default_rng(seed)
         source_pred = target.predict(source); population = [(source, 0.0)]
-        effects, valid, invalid, best, best_effect, history = [], set(), 0, None, -1.0, []
+        effects, valid, invalid, best, best_effect, best_family, history = [], set(), 0, None, -1.0, None, []
         while ledger.remaining_target:
             elite_n = max(1, int(np.ceil(len(population) * self.elite_fraction)))
             parents = sorted(population, key=lambda x: x[1], reverse=True)[:elite_n]
@@ -66,21 +70,22 @@ class EvolutionarySearch:
                 ledger.validity_checks += 1
                 if not validator.validate(source, proposal.candidate).eligible:
                     invalid += 1; continue
-                children.append(proposal.candidate)
+                children.append((proposal.candidate, proposal.family))
             if not children: break
             population = []
-            for candidate in dict.fromkeys(children):
+            for candidate, family_name in dict.fromkeys(children):
                 if not ledger.remaining_target: break
                 effect = abs(target.predict(candidate) - source_pred)
                 effects.append(effect); valid.add(candidate); population.append((candidate, effect))
-                if effect > best_effect: best, best_effect = candidate, effect
+                if effect > best_effect: best, best_effect, best_family = candidate, effect, family_name
             history.append({"generation": len(history), "population": len(population),
                             "best_effect": max((x[1] for x in population), default=None),
                             "queries": ledger.target_model_queries})
             if not population: break
         return finalize(method="evolutionary", seed=seed, source_id=source_id, budget=budget,
             ledger=ledger, started=started, effects=effects, valid_candidates=valid,
-            invalid_count=invalid, best_candidate=best, trajectories={"generations": history})
+            invalid_count=invalid, best_candidate=best, trajectories={"generations": history},
+            metadata={"best_edit_type": best_family})
 
 
 class MCMCSearch:
@@ -149,4 +154,5 @@ class MCMCSearch:
         return finalize(method="mcmc", seed=seed, source_id=source_id, budget=budget,
             ledger=ledger, started=started, effects=effects, valid_candidates=valid,
             invalid_count=invalid, best_candidate=best, trajectories={"accepted": trajectory},
-            failure_status=failure, metadata={"canonical_name": "Metropolis-style search"})
+            failure_status=failure, metadata={"canonical_name": "Metropolis-style search",
+                                               "best_edit_type": "probabilistic_mcmc" if best else None})

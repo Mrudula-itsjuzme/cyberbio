@@ -1,0 +1,2 @@
+TARGET MODEL CALLS == 0 during local neighbor probing.
+Proof: Predictor object is not instantiated or invoked anywhere in the probe loop. Only `CompositeProposalOperator` and `RDKitValidityChecker` are invoked.

@@ -1,27 +1,22 @@
 import pytest
-import numpy as np
-from src.materials_adv.attacks.search.proposals import Proposal
-from src.materials_adv.attacks.search.strategies import GreedySearch, _Candidate
-from tests.test_phase8 import DummyPredictor
+from tests.test_thompson_search import *
 
-rng = np.random.default_rng(42)
-vocab = ["C", "N", "O"]
-
-class MockProposal:
-    @property
-    def names(self): return ("mock",)
-    def enumerate_proposals(self, tokens):
-        return [
-            Proposal(tuple("CONC"), "mock", None),
-            Proposal(tuple("NONC"), "mock", None)
-        ]
-
-proposal = MockProposal()
-predictor = DummyPredictor("O")
-
-search = GreedySearch(predictor, proposal, rng, query_budget=10, max_changes=3)
-
-res = search.search("CCNC")
-print("Best:", res.best_representation)
-for t in res.trace:
-    print(t)
+def test_debug():
+    good_arm = MockProposal("good", returns_valid=True, mock_drift=100.0)
+    predictor = MockPredictor({"good": good_arm})
+    rng = np.random.default_rng(42)
+    
+    search = ThompsonSamplingSearch(
+        predictor=predictor,
+        proposals=[good_arm],
+        rng=rng,
+        query_budget=5,
+        proposal_budget=10,
+        require_plausible=False,
+        reward_mode="binary",
+        threshold=50.0
+    )
+    result = search.search("C")
+    for i, entry in enumerate(result.trace):
+        print(f"Iter {i}: rejection={entry.get('rejection_reason')}, dup={entry.get('duplicate')}, queried={entry.get('queried')}")
+test_debug()

@@ -1,0 +1,1 @@
+PROMOTE: Boundary-SMC showed held-out benefit with fair target-query accounting. KEEP_EXPERIMENTAL for now pending compute optimizations.
