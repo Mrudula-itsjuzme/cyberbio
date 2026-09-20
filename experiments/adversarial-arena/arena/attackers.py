@@ -33,6 +33,7 @@ class BudgetedSearchAttacker(Attacker):
         self._last_metrics: dict = {}
 
     def propose(self, samples: Sequence[SourceSample], defender: Defender) -> list[CandidateRecord]:
+        self.source_accounting = []
         from materials_adv.domain.chemistry.attacks.aliphatic_carbon_substitution import AliphaticCarbonSubstitutionAttack
         from materials_adv.domain.chemistry.identity import CanonicalSmilesIdentity
         from materials_adv.domain.chemistry.plausibility import compute_tanimoto_similarity
@@ -64,6 +65,14 @@ class BudgetedSearchAttacker(Attacker):
             total_calls += predictor.calls; total_queries += evaluator.queries_used
             for scored in evaluator.trajectory:
                 candidate_input = str(scored.representation)
+                self.source_accounting.append({
+                    "source_id": sample.source_id,
+                    "clean_reference_queries": 0,
+                    "attack_target_queries": evaluator.queries_used,
+                    "attack_query_budget": self.query_budget,
+                    "validator_calls": getattr(evaluator, "validity_checks", 0),
+                    "proposals_generated": getattr(evaluator, "proposals_generated", 0)
+                })
                 records.append(CandidateRecord(
                     source_id=sample.source_id, original_input=sample.input,
                     candidate_input=candidate_input, attack_family=self.name,
@@ -113,20 +122,42 @@ class ExistingAttackAdapter(Attacker):
         self.proposed = 0
 
     def propose(self, samples: Sequence[SourceSample], defender: Defender) -> list[CandidateRecord]:
+        self.source_accounting = []
         from materials_adv.data.tokenizer import tokenize
 
         attack = self.factory(self.rng, defender)
         records: list[CandidateRecord] = []
+        self.source_accounting = []
         for sample in samples:
             outcomes = attack.generate(tokenize(sample.input), n_variants=self.proposal_budget)
+                        
+            source_queries = sum(int(dict(out.params).get("search_candidate_model_queries", 0)) for out in outcomes)
+            self.source_accounting.append({
+                "source_id": sample.source_id,
+                "clean_reference_queries": 0,
+                "attack_target_queries": source_queries,
+                "attack_query_budget": self.proposal_budget,
+                "validator_calls": 0,
+                "proposals_generated": len(outcomes)
+            })
+
             for step, outcome in enumerate(outcomes):
                 params = dict(outcome.params)
                 queries = int(params.get("search_candidate_model_queries", 0))
+                self.source_accounting.append({
+                    "source_id": sample.source_id,
+                    "clean_reference_queries": 0,
+                    "attack_target_queries": evaluator.queries_used,
+                    "attack_query_budget": self.query_budget,
+                    "validator_calls": getattr(evaluator, "validity_checks", 0),
+                    "proposals_generated": getattr(evaluator, "proposals_generated", 0)
+                })
                 records.append(CandidateRecord(
                     source_id=sample.source_id, original_input=sample.input,
                     candidate_input=outcome.adversarial_representation,
                     attack_family=self.name, attack_variant=outcome.attack_type,
                     proposal_step=step, target_query_count=queries,
+                    candidate_attack_query_count=queries,
                     true_target=sample.target, edit_distance=outcome.number_of_changes,
                     metadata=params,
                 ))

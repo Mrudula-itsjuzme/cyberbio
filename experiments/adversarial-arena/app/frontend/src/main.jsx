@@ -167,9 +167,74 @@ function CrossAttackMatrix({ matrix, isAggregate }) {
   );
 }
 
+
+function ProbabilisticSearchPanel({ run }) {
+  if (!run || !run.rounds) return null;
+  const probRounds = run.rounds.filter(r => r.attacker_states && (r.attacker_states['CEM'] || r.attacker_states['SMC'] || r.attacker_states['Validity-SMC']));
+  if (probRounds.length === 0) return null;
+
+  return (
+    <section className="wide" style={{ marginTop: 20 }}>
+      <h2>PROBABILISTIC INTERNAL SEARCH DYNAMICS</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ROUND</th>
+            <th>ATTACKER</th>
+            <th>INTERNAL METRIC</th>
+            <th>VALUE</th>
+          </tr>
+        </thead>
+        <tbody>
+          {probRounds.map((r, i) => {
+            const states = r.attacker_states;
+            const rows = [];
+            
+            if (states['CEM'] && states['CEM'].mean_family_weights) {
+              rows.push(
+                <tr key={`${i}-cem`}>
+                  <td>{r.round}</td>
+                  <td>CEM</td>
+                  <td>Mean Edit Family Weights (Subst / Aliphatic)</td>
+                  <td>[{states['CEM'].mean_family_weights.map(x => x.toFixed(2)).join(', ')}]</td>
+                </tr>
+              );
+            }
+            if (states['SMC'] && states['SMC'].mean_ess) {
+              rows.push(
+                <tr key={`${i}-smc`}>
+                  <td>{r.round}</td>
+                  <td>SMC</td>
+                  <td>Mean Effective Sample Size (ESS) / Resamples</td>
+                  <td>{states['SMC'].mean_ess.toFixed(2)} (resamples: {states['SMC'].total_resamples})</td>
+                </tr>
+              );
+            }
+            if (states['Validity-SMC'] && states['Validity-SMC'].validity_posterior) {
+              const post = states['Validity-SMC'].validity_posterior;
+              // Format posterior: { "substitution": [a, b], ... }
+              const fmtPost = Object.entries(post).map(([k, v]) => `${k}: Beta(${v[0]}, ${v[1]})`).join(' | ');
+              rows.push(
+                <tr key={`${i}-vsmc`}>
+                  <td>{r.round}</td>
+                  <td>Validity-SMC</td>
+                  <td>Validity Posterior (Alpha, Beta)</td>
+                  <td>{fmtPost}</td>
+                </tr>
+              );
+            }
+            return rows;
+          })}
+        </tbody>
+      </table>
+    </section>
+  );
+}
+
 function App() {
   const [runs, setRuns] = useState([]);
   const [selectedSeed, setSelectedSeed] = useState('AGGREGATE');
+  const [curriculum, setCurriculum] = useState('probabilistic');
   const [run, setRun] = useState(null);
   const [runData, setRunData] = useState(null);
   const [redistData, setRedistData] = useState([]);
@@ -184,6 +249,10 @@ function App() {
     // Load redistribution for all views
     fetch('/api/aggregate/redistribution').then(r => r.ok ? r.json() : []).then(setRedistData).catch(() => {});
   }, []);
+
+  useEffect(() => {
+    if (selectedSeed !== 'AGGREGATE') loadSeed(selectedSeed);
+  }, [curriculum, selectedSeed, loadSeed]);
 
   const loadSeed = useCallback((seedId) => {
     setSelectedSeed(seedId);
@@ -242,6 +311,23 @@ function App() {
             ))}
           </div>
         </div>
+      
+        <div className="toolbar" style={{ marginTop: 10 }}>
+          <span style={{ fontSize: 11, fontWeight: 'bold' }}>CURRICULUM:</span>
+          {['baseline', 'probabilistic', 'mixed'].map(c => (
+            <button key={c} onClick={() => setCurriculum(c)}
+              style={{
+                background: curriculum === c ? 'rgba(52, 152, 219, 0.2)' : 'transparent',
+                color: curriculum === c ? '#fff' : '#aaa',
+                border: `1px solid ${curriculum === c ? '#3498db' : '#444'}`,
+                padding: '4px 10px', fontSize: 11, cursor: 'pointer', borderRadius: 3,
+                marginLeft: 5
+              }}>
+              {c.toUpperCase()}
+            </button>
+          ))}
+        </div>
+
       </header>
 
       <div className="loop">
@@ -386,6 +472,7 @@ function App() {
               </section>
               <section className="split">
                 <CrossAttackMatrix matrix={runData?.matrix || []} isAggregate={false} />
+                <ProbabilisticSearchPanel run={run} />
                 <div>
                   <h2>CANDIDATE INSPECTOR</h2>
                   <select onChange={e => setSelectedCand(candidates[e.target.value])}>

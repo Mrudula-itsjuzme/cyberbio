@@ -1,6 +1,6 @@
 import pytest
 from fastapi import HTTPException
-from app.backend.main import health, runs, start_run, run_path, RunRequest
+from app.backend.main import health, runs, run_path, RunRequest
 
 def test_health_and_real_run_listing():
     assert health()["mode"]=="local_offline"

@@ -23,6 +23,13 @@ class CandidateRecord:
     validity_status: str = "unchecked"
     validation_details: dict[str, Any] = field(default_factory=dict)
     target_query_count: int = 0
+    candidate_attack_query_count: int = 0
+    candidate_posthoc_query_count: int = 0
+    clean_reference_queries: int = 0
+    attack_target_queries: int = 0
+    budgeted_attack_queries: int = 0
+    posthoc_scoring_queries: int = 0
+    actual_defender_calls: int = 0
     score: float | None = None
     clean_prediction: float | None = None
     challenging_prediction: float | None = None

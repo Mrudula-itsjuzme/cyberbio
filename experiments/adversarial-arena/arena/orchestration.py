@@ -29,6 +29,8 @@ class ArenaRunner:
             record.clean_prediction, record.challenging_prediction = clean, changed
             record.drift = record.score = abs(changed-clean)
             record.target_query_count += 2
+            record.posthoc_scoring_queries = 2
+            record.candidate_posthoc_query_count = 2
 
     def _evaluate_attackers(self, samples: Sequence[SourceSample]) -> tuple[list[dict], dict[str, float | None]]:
         matrix, means = [], {}
@@ -126,6 +128,30 @@ class ArenaRunner:
                 evolution.extend({"round":round_id,**row} for row in matrix)
                 self.storage.write_json(rdir/"round_summary.json", summary)
                 self.storage.write_json(rdir/"attacker_state.json", self.attackers[arm].get_state())
+
+                # --- Source-level accounting ---
+                source_acc = getattr(self.attackers[arm], "source_accounting", [])
+                if source_acc:
+                    import csv
+                    from collections import defaultdict
+                    posthoc_by_source = defaultdict(int)
+                    for r in records:
+                        if r.validity_status == "valid":
+                            posthoc_by_source[r.source_id] += getattr(r, "candidate_posthoc_query_count", 0)
+                    
+                    for acc in source_acc:
+                        acc["run_id"] = self.storage.path.name
+                        acc["round"] = round_id
+                        acc["attacker"] = arm
+                        acc["posthoc_scoring_queries"] = posthoc_by_source[acc["source_id"]]
+                        acc["actual_defender_calls"] = acc["clean_reference_queries"] + acc["attack_target_queries"] + acc["posthoc_scoring_queries"]
+                    
+                    with (rdir/"query_accounting.csv").open("w", newline="") as handle:
+                        writer = csv.DictWriter(handle, fieldnames=list(source_acc[0].keys()))
+                        writer.writeheader()
+                        writer.writerows(source_acc)
+                # -------------------------------
+
                 if self.controller: self.storage.write_json(rdir/"controller_state.json", self.controller.state())
                 self.storage.write_json(rdir/"COMPLETE.json", {"round":round_id})
                 self.storage.transition("ROUND_COMPLETE", round_id)

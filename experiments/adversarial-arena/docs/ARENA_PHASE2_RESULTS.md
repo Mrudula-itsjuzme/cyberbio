@@ -4,7 +4,7 @@
 Initial clean metric D0 was evaluated in memory but not persisted. Therefore: Round 0 clean-performance delta is NOT_AVAILABLE. Clean/robust tradeoff begins only once consecutive persisted defender checkpoints exist.
 
 ## G_adapt (Internal Adaptation)
-All 27 measured seed-round events produced positive G_adapt under this pilot configuration. (This does NOT establish that carry-state outperforms reset because reset controls were not run).
+Of the 25 measured seed-round events, G_adapt was mostly positive (21/25 positive) across all methods, demonstrating internal adaptation. However, negative capability drops did occur in advanced rounds (e.g., SMC/Validity-SMC round 1 & 2, CEM round 2). (This does NOT establish that carry-state outperforms reset because reset controls were not run).
 
 | method | round | n_seeds | mean | sample_std |
 |---|---|---|---|---|

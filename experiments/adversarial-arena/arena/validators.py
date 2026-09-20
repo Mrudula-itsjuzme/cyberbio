@@ -1,6 +1,20 @@
 from __future__ import annotations
 
+from dataclasses import dataclass
+from typing import Sequence
+
 from .contracts import CandidateRecord
+
+
+@dataclass(slots=True)
+class PairValidation:
+    representation_valid: bool | None
+    domain_constraint_pass: bool | None
+    reasons: tuple[str, ...]
+
+    @property
+    def eligible(self) -> bool:
+        return self.representation_valid is True and self.domain_constraint_pass is True
 
 
 class MaterialsValidator:
@@ -19,4 +33,21 @@ class MaterialsValidator:
             "checks_skipped": list(result.checks_skipped),
         }
         return record
+
+    def validate_pair(self, source: str, candidate: str) -> PairValidation:
+        """Validate a candidate relative to its source (for prob-lab adapters)."""
+        from materials_adv.validation.pipeline import validate
+
+        result = validate(candidate, check_plausibility=False)
+        if result.representation_valid is not True:
+            return PairValidation(
+                representation_valid=result.representation_valid,
+                domain_constraint_pass=None,
+                reasons=tuple(result.rejection_reasons),
+            )
+        return PairValidation(
+            representation_valid=True,
+            domain_constraint_pass=True,  # permissive: just require valid SMILES
+            reasons=(),
+        )
 

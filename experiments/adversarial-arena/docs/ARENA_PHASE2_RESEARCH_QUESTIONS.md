@@ -21,5 +21,5 @@
 **RQ: Is there robustness redistribution across iterations?**
 - **VERDICT**: SUPPORTED_IN_PILOT
 - **METRIC**: active_gain_difference > 0 AND other_gain_difference < 0 (via Evolutionary)
-- **NUMERIC EVIDENCE**: 1 explicit iteration measured natively under CEM execution (total 1 across all 27).
+- **NUMERIC EVIDENCE**: 1 explicit iteration measured natively under CEM execution (total 1 across all 25).
 - **LIMITATION**: Extremely rare relative to overall trajectory sizes.
