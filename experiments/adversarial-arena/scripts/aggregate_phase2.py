@@ -424,7 +424,37 @@ def aggregate():
     calc_stats("T_Evo", transfer_data, "T_Evo")
     calc_stats("ESS_ratio", dynamics_data["smc"] + dynamics_data["validity_smc"], "ess_ratio")
     calc_stats("normalized_entropy", dynamics_data["cem"], "normalized_entropy")
-    write_csv("phase2_statistics.csv", stats)
+    
+    multiseed_stats = []
+    def calc_multiseed_stats(metric_name, data, value_key, method_key="method"):
+        # group by method and round
+        groups = defaultdict(list)
+        for d in data:
+            val = optional_float(d.get(value_key))
+            if not np.isnan(val):
+                groups[(d[method_key], d["round"])].append(val)
+                
+        for (meth, rnd), vals in groups.items():
+            multiseed_stats.append({
+                "metric": metric_name, "method": meth, "round": rnd,
+                "n_seeds": len(vals), "mean": np.mean(vals), "sample_std": np.std(vals, ddof=1) if len(vals)>1 else 0.0,
+                "median": np.median(vals), "min": np.min(vals), "max": np.max(vals),
+                "positive_fraction": sum(1 for v in vals if v > 0) / len(vals) if len(vals) > 0 else np.nan
+            })
+
+    calc_multiseed_stats("mean_drift", attackers_data, "mean_drift")
+    calc_multiseed_stats("best_drift", attackers_data, "best_drift")
+    calc_multiseed_stats("G_adapt", g_adapt_raw, "G_adapt")
+    calc_multiseed_stats("defender_gain_difference", defenders_data, "defender_gain_difference")
+    calc_multiseed_stats("T_Evo", transfer_data, "T_Evo")
+    calc_multiseed_stats("ESS_ratio", dynamics_data["smc"] + dynamics_data["validity_smc"], "ess_ratio")
+    calc_multiseed_stats("normalized_entropy", dynamics_data["cem"], "normalized_entropy")
+    calc_multiseed_stats("valid_per_target_query", val_eff_data, "valid_per_target_query")
+    calc_multiseed_stats("drift_per_target_query", val_eff_data, "drift_per_target_query")
+    
+    write_csv("phase2_multiseed_statistics.csv", multiseed_stats)
+    write_csv("phase2_event_statistics.csv", stats)
+
 
     print("Aggregation complete")
 
