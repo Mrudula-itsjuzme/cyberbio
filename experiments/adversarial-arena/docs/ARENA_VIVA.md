@@ -54,3 +54,13 @@ To measure whether robustness improvements driven by RandomSMILES/MCMC generaliz
 - Short fine-tuning (1 epoch per round)
 - No architectural changes to defender between rounds
 - MCMC and RandomSMILES are structurally similar (both do single-source edits); they are not maximally diverse attack families
+
+## Phase 2: How does True Attacker Adaptation Gain (G_adapt) differ from Adaptive Selection Gain (G_select)?
+$G_{select}$ (from the baseline Thompson controller) measures the improvement gained by switching from one static attacker family to another. The attacker's internal distribution does not change.
+$G_{adapt}$ (from Phase 2) measures the improvement when a probabilistic attacker (like CEM or SMC) updates its own internal proposal distribution (or particle weights). It compares the same algorithmic family against the same defender checkpoint $D_t$, before and after the attacker's internal update.
+
+## Phase 2: What is the purpose of the Validity-SMC attacker?
+Random mutation of SMILES strings often breaks chemical validity (RDKit parsing, valence rules). Validity-SMC incorporates an Empirical Beta-Bernoulli validity model that tracks which edit families successfully produce valid candidates. By downweighting edit families with historically low validity rates, Validity-SMC attempts to achieve higher query efficiency (more drift per target-model query) without fully prohibiting any specific operation.
+
+## Phase 2: Why evaluate Reset vs Carry-State?
+To prove that cross-round adaptation is actually happening. In "carry-state", the attacker preserves its learned distribution into the next round, meaning it starts with knowledge of what worked against $D_t$. In "reset", the attacker throws away that knowledge and starts uniformly against $D_{t+1}$. Comparing the two reveals whether preserving state provides a sustained advantage in the adversarial arms race.

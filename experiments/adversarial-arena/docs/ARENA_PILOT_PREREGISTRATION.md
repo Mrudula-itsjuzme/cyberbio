@@ -38,7 +38,7 @@ Hypotheses will not be edited after results are observed.
 
 ## Analysis definitions
 
-`R(A,D)` is mean absolute prediction drift over valid candidates. Defender gain is `R(A,D_before) / R(A,D_after)`; values above one mean improvement. Clean change is `RMSE_after / RMSE_before`; values above one mean degradation. Transfer gain uses the same ratio for an attacker excluded from the training curriculum. Attacker adaptation gain compares successive selected attackers on the same pre-update defender where data exist.
+`R(A,D)` is mean absolute prediction drift over valid candidates. Defender gain is `R(A,D_before) / R(A,D_after)`; values above one mean improvement. Clean change is `RMSE_after / RMSE_before`; values above one mean degradation. Transfer gain uses the same ratio for an attacker excluded from the training curriculum. Adaptive selection gain compares successive selected attackers on the same pre-update defender where data exist.
 
 No Nash-equilibrium claim will be made. Plateau, oscillation, recovery, and diminishing returns are descriptive labels only.
 
