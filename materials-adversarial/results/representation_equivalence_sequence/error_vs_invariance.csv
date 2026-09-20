@@ -1,0 +1,3 @@
+disagreement_metric,spearman_rho,bootstrap_ci_low,bootstrap_ci_high,n_sources,classification_threshold
+Delta_equiv_original,0.09280528052805279,-0.12188160716839251,0.3059771012756732,100,NOT_RUN_no_preexisting_high_error_threshold
+Delta_equiv_centered,0.1423942394239424,-0.06541804965038937,0.3405067774429406,100,NOT_RUN_no_preexisting_high_error_threshold

@@ -1,0 +1,14 @@
+analysis,feature,estimate,p_value,n_variants
+spearman,token_count_delta,-0.1104900885908372,2.329533912494518e-09,2907
+spearman,character_length_delta,-0.1104900885908372,2.329533912494518e-09,2907
+spearman,tokenization_fragmentation,-0.1566469317057171,1.983955794776762e-17,2907
+spearman,start_point_shift,-0.04426332354220518,0.01700168342239178,2907
+spearman,orientation_flag,0.03236447846689009,0.0810389749223409,2907
+OLS_drift_controlling_for_length,intercept,0.06856409604500589,,2907
+OLS_drift_controlling_for_length,token_count_delta,0.11317286293831558,,2907
+OLS_drift_controlling_for_length,character_length_delta,-0.16108352124170758,,2907
+OLS_drift_controlling_for_length,start_point_shift,-0.03286850993976694,,2907
+OLS_drift_controlling_for_length,orientation_flag,-0.0021897258207415277,,2907
+OLS_drift_controlling_for_length,family_orientation_reversal,-0.002189725820741539,,2907
+OLS_drift_controlling_for_length,family_randomized_atom_ordering,-0.02942742549555856,,2907
+OLS_drift_controlling_for_length,family_start_point_shift,-0.032868509939766706,,2907

@@ -1,0 +1,28 @@
+{
+  "model_type": "TransformerRegressorModel",
+  "architecture": "two-layer Transformer encoder",
+  "property": "polyVERSE polymer Bandgap",
+  "units": "eV",
+  "checkpoint": "results/models/transformer_regressor/model.pt",
+  "checkpoint_sha256": "0b1bb3f62ca72a897fd84c8e7f3129f8a7a9d75c1179c10debb63e46113731e4",
+  "scaler": "results/models/transformer_regressor/scaler.json",
+  "scaler_sha256": "5ef15ad16aee156fbc9b6b7872c1534262e3622022190f17c23fc7e3dab12814",
+  "tokenizer_source": "src/materials_adv/data/tokenizer.py:tokenize",
+  "vocabulary_path": "data/processed/vocab.json",
+  "vocabulary_sha256": "3dd4c162c5d84138d7bf0ea4fb04a0cb81b1b9e9ee705a0e0318a3214d8935bf",
+  "vocabulary_size": 36,
+  "max_sequence_length": 256,
+  "padding": "dynamic per inference batch; right padding with id 0 and boolean padding mask",
+  "truncation": "none; sequences longer than 256 raise ValueError",
+  "unknown_token_behavior": "tokens absent from frozen vocabulary map to id 0 (same index as padding in historical wrapper)",
+  "special_tokens": "none inserted during canonical inference; embedding index 0 reserved for padding",
+  "split_path": "data/processed/splits.json",
+  "split_sha256": "4a9d28252d058c0c2e39cf70eb10dd2f79ad57df4e842c3f917cdfe9830ccd02",
+  "checkpoint_reproduction": {
+    "status": "PASS",
+    "comparison": "results/representation_attribution/baseline_predictions.csv",
+    "n": 631,
+    "absolute_tolerance": 1e-06,
+    "max_absolute_difference": 3.188476558335651e-07
+  }
+}

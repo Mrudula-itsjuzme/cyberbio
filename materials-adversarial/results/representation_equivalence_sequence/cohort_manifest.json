@@ -1,0 +1,805 @@
+{
+  "seed": 20260920,
+  "sources": [
+    {
+      "source_id": "poly_2850",
+      "representation": "[*]CCC(c1ccccc1)C([*])c1ccccc1",
+      "ground_truth": 5.297999999999999,
+      "split": "test",
+      "dataset_row_index": 3577,
+      "seed": 20264497
+    },
+    {
+      "source_id": "poly_2962",
+      "representation": "[*]CCCCOC(=O)NCc1ccc(CNC(=O)O[*])cc1",
+      "ground_truth": 5.4223,
+      "split": "test",
+      "dataset_row_index": 3578,
+      "seed": 20264498
+    },
+    {
+      "source_id": "poly_3558",
+      "representation": "[*]CC([*])(C)C(=O)OC(C(F)(F)F)C(F)(F)F",
+      "ground_truth": 6.0249,
+      "split": "test",
+      "dataset_row_index": 3579,
+      "seed": 20264499
+    },
+    {
+      "source_id": "poly_3018",
+      "representation": "[*]C=CC(C)C([*])C(=O)OCC(C)C",
+      "ground_truth": 5.4923,
+      "split": "test",
+      "dataset_row_index": 3580,
+      "seed": 20264500
+    },
+    {
+      "source_id": "poly_3050",
+      "representation": "[*]CNC(=O)N[*]",
+      "ground_truth": 5.5276,
+      "split": "test",
+      "dataset_row_index": 3581,
+      "seed": 20264501
+    },
+    {
+      "source_id": "poly_732",
+      "representation": "[*]C(=O)c1ccc2c(c1)C(=O)N(c1cccc(-c3nc(-c4ccccc4)nc(-c4cccc(N5C(=O)c6ccc([*])cc6C5=O)c4)n3)c1)C2=O",
+      "ground_truth": 2.9596,
+      "split": "test",
+      "dataset_row_index": 3582,
+      "seed": 20264502
+    },
+    {
+      "source_id": "poly_3106",
+      "representation": "[*]OC1C(COC(C)=O)OC([*])C(OC(C)=O)C1O",
+      "ground_truth": 5.5862,
+      "split": "test",
+      "dataset_row_index": 3583,
+      "seed": 20264503
+    },
+    {
+      "source_id": "poly_352",
+      "representation": "[*]C(=O)c1ccc2c(c1)C(=O)n1c-2nc2ccc(-c3ccc4c(c3)nc3n4C(=O)c4ccc([*])cc4-3)cc21",
+      "ground_truth": 2.4671,
+      "split": "test",
+      "dataset_row_index": 3584,
+      "seed": 20264504
+    },
+    {
+      "source_id": "poly_506",
+      "representation": "[*]c1ccc(Oc2ccc(N3C(=O)c4ccc(S(=O)(=O)c5ccc6c(c5)C(=O)N([*])C6=O)cc4C3=O)cc2Br)c(Br)c1",
+      "ground_truth": 2.6591,
+      "split": "test",
+      "dataset_row_index": 3585,
+      "seed": 20264505
+    },
+    {
+      "source_id": "poly_2175",
+      "representation": "[*]Oc1ccc(C(c2ccc(OC([*])=O)cc2)C(C)C)cc1",
+      "ground_truth": 4.6385,
+      "split": "test",
+      "dataset_row_index": 3586,
+      "seed": 20264506
+    },
+    {
+      "source_id": "poly_2026",
+      "representation": "[*]c1ccc(Oc2ccc(N3C(=O)N([*])C3=O)cc2)cc1",
+      "ground_truth": 4.4993,
+      "split": "test",
+      "dataset_row_index": 3587,
+      "seed": 20264507
+    },
+    {
+      "source_id": "poly_2025",
+      "representation": "[*]C(C#N)=C([*])c1ccccc1",
+      "ground_truth": 4.4976,
+      "split": "test",
+      "dataset_row_index": 3588,
+      "seed": 20264508
+    },
+    {
+      "source_id": "poly_4043",
+      "representation": "[*]CCCC(=O)O[*]",
+      "ground_truth": 6.7015,
+      "split": "test",
+      "dataset_row_index": 3589,
+      "seed": 20264509
+    },
+    {
+      "source_id": "poly_666",
+      "representation": "[*]c1ccc(N2CCC(c3cccc(C4=NN([*])CC4)c3)=N2)cc1",
+      "ground_truth": 2.8836,
+      "split": "test",
+      "dataset_row_index": 3590,
+      "seed": 20264510
+    },
+    {
+      "source_id": "poly_472",
+      "representation": "[*]Oc1ccc(C2(c3ccc(OC([*])=O)cc3)c3cc(N(C)C)ccc3-c3ccc([N+](=O)[O-])cc32)cc1",
+      "ground_truth": 2.6085,
+      "split": "test",
+      "dataset_row_index": 3591,
+      "seed": 20264511
+    },
+    {
+      "source_id": "poly_1682",
+      "representation": "[*]CCCCCCOC(=O)OCCCCCCOC(=O)OCCCCCCOc1ccc(C(=O)c2ccc(O[*])cc2)cc1",
+      "ground_truth": 4.1372,
+      "split": "test",
+      "dataset_row_index": 3592,
+      "seed": 20264512
+    },
+    {
+      "source_id": "poly_2682",
+      "representation": "[*]Oc1ccc(OC(=O)Oc2ccc(OC([*])=O)cc2)cc1Cl",
+      "ground_truth": 5.127999999999999,
+      "split": "test",
+      "dataset_row_index": 3593,
+      "seed": 20264513
+    },
+    {
+      "source_id": "poly_135",
+      "representation": "[*]c1cc(CCOc2ccc(N=Nc3ccc(C#N)cc3)cc2)c([*])s1",
+      "ground_truth": 1.8862,
+      "split": "test",
+      "dataset_row_index": 3594,
+      "seed": 20264514
+    },
+    {
+      "source_id": "poly_1254",
+      "representation": "[*]Nc1ccc([*])cc1C(C)CC",
+      "ground_truth": 3.6224,
+      "split": "test",
+      "dataset_row_index": 3595,
+      "seed": 20264515
+    },
+    {
+      "source_id": "poly_757",
+      "representation": "[*]c1cc(CCCS(=O)(=O)O)c([*])s1",
+      "ground_truth": 2.9846,
+      "split": "test",
+      "dataset_row_index": 3596,
+      "seed": 20264516
+    },
+    {
+      "source_id": "poly_504",
+      "representation": "[*]Nc1ccc2c(c1)Cc1cc(NC(=O)c3cc(C(=O)O)c(C([*])=O)cc3C(=O)O)ccc1-2",
+      "ground_truth": 2.6568,
+      "split": "test",
+      "dataset_row_index": 3597,
+      "seed": 20264517
+    },
+    {
+      "source_id": "poly_2485",
+      "representation": "[*]Oc1ccc(C(CC)c2ccc(OC([*])=O)cc2)cc1",
+      "ground_truth": 4.9315,
+      "split": "test",
+      "dataset_row_index": 3598,
+      "seed": 20264518
+    },
+    {
+      "source_id": "poly_954",
+      "representation": "[*]Oc1ccc(C(C)(C)c2ccc(OC(=O)C=CC([*])=O)cc2)cc1",
+      "ground_truth": 3.2554,
+      "split": "test",
+      "dataset_row_index": 3599,
+      "seed": 20264519
+    },
+    {
+      "source_id": "poly_3434",
+      "representation": "[*]OC([*])CCCCCCCC",
+      "ground_truth": 5.9039,
+      "split": "test",
+      "dataset_row_index": 3600,
+      "seed": 20264520
+    },
+    {
+      "source_id": "poly_2283",
+      "representation": "[*]NC(=O)NCCCCCCNC(=O)Nc1cccc([*])n1",
+      "ground_truth": 4.7392,
+      "split": "test",
+      "dataset_row_index": 3601,
+      "seed": 20264521
+    },
+    {
+      "source_id": "poly_3222",
+      "representation": "[*]CC(CCl)(CCl)COC(=O)C(=O)O[*]",
+      "ground_truth": 5.7194,
+      "split": "test",
+      "dataset_row_index": 3602,
+      "seed": 20264522
+    },
+    {
+      "source_id": "poly_3267",
+      "representation": "[*]NC1CCC(CC2CCC(NC(=O)CCCCC([*])=O)CC2)CC1",
+      "ground_truth": 5.7632,
+      "split": "test",
+      "dataset_row_index": 3603,
+      "seed": 20264523
+    },
+    {
+      "source_id": "poly_2924",
+      "representation": "[*]NC(CO)C([*])=O",
+      "ground_truth": 5.3841,
+      "split": "test",
+      "dataset_row_index": 3604,
+      "seed": 20264524
+    },
+    {
+      "source_id": "poly_378",
+      "representation": "[*]c1ccc2c(c1)C(=O)N(c1ccc(Oc3ccc(N4C(=O)c5ccc(C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C([*])(F)F)cc5C4=O)cc3)cc1)C2=O",
+      "ground_truth": 2.4961,
+      "split": "test",
+      "dataset_row_index": 3605,
+      "seed": 20264525
+    },
+    {
+      "source_id": "poly_525",
+      "representation": "[*]C(=O)c1ccc2c(c1)C(=O)N(c1ccc(C(c3ccccc3)c3ccc(N4C(=O)c5ccc([*])cc5C4=O)cc3)cc1)C2=O",
+      "ground_truth": 2.6830000000000003,
+      "split": "test",
+      "dataset_row_index": 3606,
+      "seed": 20264526
+    },
+    {
+      "source_id": "poly_2228",
+      "representation": "[*]Oc1ccc(Cc2ccc(Cc3ccc(OC([*])=O)cc3)cc2)cc1",
+      "ground_truth": 4.6825,
+      "split": "test",
+      "dataset_row_index": 3607,
+      "seed": 20264527
+    },
+    {
+      "source_id": "poly_8",
+      "representation": "[*]C#CC(=C([*])c1cnc2ccccc2c1)c1cnc2ccccc2c1",
+      "ground_truth": 0.7215,
+      "split": "test",
+      "dataset_row_index": 3608,
+      "seed": 20264528
+    },
+    {
+      "source_id": "poly_1940",
+      "representation": "[*]CCCCCCOc1ccc(C(=O)OC(=O)c2ccc(O[*])cc2)cc1",
+      "ground_truth": 4.4092,
+      "split": "test",
+      "dataset_row_index": 3609,
+      "seed": 20264529
+    },
+    {
+      "source_id": "poly_567",
+      "representation": "[*]C(=O)OC(S1)=CC=C1C(=S)[*]",
+      "ground_truth": 2.7435,
+      "split": "test",
+      "dataset_row_index": 3610,
+      "seed": 20264530
+    },
+    {
+      "source_id": "poly_2888",
+      "representation": "C([*])C(Br)=CC([*])",
+      "ground_truth": 5.3365,
+      "split": "test",
+      "dataset_row_index": 3611,
+      "seed": 20264531
+    },
+    {
+      "source_id": "poly_1115",
+      "representation": "[*]C(=S)N([*])CCC",
+      "ground_truth": 3.4485,
+      "split": "test",
+      "dataset_row_index": 3612,
+      "seed": 20264532
+    },
+    {
+      "source_id": "poly_2737",
+      "representation": "[*]COC(=O)NCCCCCCNC(=O)OCc1ccc([*])o1",
+      "ground_truth": 5.183,
+      "split": "test",
+      "dataset_row_index": 3613,
+      "seed": 20264533
+    },
+    {
+      "source_id": "poly_4203",
+      "representation": "[*]CC([*])(F)C(F)(F)F",
+      "ground_truth": 8.7581,
+      "split": "test",
+      "dataset_row_index": 3614,
+      "seed": 20264534
+    },
+    {
+      "source_id": "poly_1252",
+      "representation": "[*]Oc1ccc(-c2ccc(OC(=O)c3cccc(C([*])=O)c3)cc2)cc1",
+      "ground_truth": 3.6206,
+      "split": "test",
+      "dataset_row_index": 3615,
+      "seed": 20264535
+    },
+    {
+      "source_id": "poly_1172",
+      "representation": "[*]CC([*])n1cc2ccccc2n1",
+      "ground_truth": 3.5251,
+      "split": "test",
+      "dataset_row_index": 3616,
+      "seed": 20264536
+    },
+    {
+      "source_id": "poly_1007",
+      "representation": "[*]c1ccc2c(c1)C(=O)N(c1ccc(C(C)(C)C([*])(C(F)(F)F)C(F)(F)F)cc1)C2=O",
+      "ground_truth": 3.3299,
+      "split": "test",
+      "dataset_row_index": 3617,
+      "seed": 20264537
+    },
+    {
+      "source_id": "poly_2895",
+      "representation": "[*]CC([*])(C)C(=O)Oc1ccccc1",
+      "ground_truth": 5.343999999999999,
+      "split": "test",
+      "dataset_row_index": 3618,
+      "seed": 20264538
+    },
+    {
+      "source_id": "poly_866",
+      "representation": "[*]c1ccc(Cc2ccc(N3C(=O)c4ccc(-c5ccc6c(c5)C(=O)N([*])C6=O)cc4C3=O)c(C(C)(C)C)c2)cc1C(C)(C)C",
+      "ground_truth": 3.1365,
+      "split": "test",
+      "dataset_row_index": 3619,
+      "seed": 20264539
+    },
+    {
+      "source_id": "poly_2817",
+      "representation": "O([*])C(=O)Oc1c(C(C)C)cc(cc1)C(C)(C)c1ccc(cc1)([*])",
+      "ground_truth": 5.2592,
+      "split": "test",
+      "dataset_row_index": 3620,
+      "seed": 20264540
+    },
+    {
+      "source_id": "poly_2251",
+      "representation": "[*]CCCCCCCCCCCCNC(=O)c1cccc(C(=O)N[*])c1",
+      "ground_truth": 4.7049,
+      "split": "test",
+      "dataset_row_index": 3621,
+      "seed": 20264541
+    },
+    {
+      "source_id": "poly_3570",
+      "representation": "[*]CCOC(=O)NNC(=O)CCCCCCCCC(=O)NNC(=O)O[*]",
+      "ground_truth": 6.0415,
+      "split": "test",
+      "dataset_row_index": 3622,
+      "seed": 20264542
+    },
+    {
+      "source_id": "poly_2079",
+      "representation": "[*]Oc1ccc(C(=O)OCCCCCCOC(=O)c2ccc([*])cc2)cc1",
+      "ground_truth": 4.5512,
+      "split": "test",
+      "dataset_row_index": 3623,
+      "seed": 20264543
+    },
+    {
+      "source_id": "poly_3265",
+      "representation": "[*]CCCCCCCCCCNC(=O)CCP(C)(=O)CCC(=O)N[*]",
+      "ground_truth": 5.7618,
+      "split": "test",
+      "dataset_row_index": 3624,
+      "seed": 20264544
+    },
+    {
+      "source_id": "poly_3230",
+      "representation": "[*]CCCCCCCCCCC(=O)N([*])C",
+      "ground_truth": 5.73,
+      "split": "test",
+      "dataset_row_index": 3625,
+      "seed": 20264545
+    },
+    {
+      "source_id": "poly_465",
+      "representation": "[*]C(=O)Nc1cc(NC(=O)c2ccc([*])o2)c(N)cc1N",
+      "ground_truth": 2.5905,
+      "split": "test",
+      "dataset_row_index": 3626,
+      "seed": 20264546
+    },
+    {
+      "source_id": "poly_3212",
+      "representation": "[*]CCCCCNC(=O)N[*]",
+      "ground_truth": 5.7115,
+      "split": "test",
+      "dataset_row_index": 3627,
+      "seed": 20264547
+    },
+    {
+      "source_id": "poly_3162",
+      "representation": "[*]CCCCCCCCNC(=O)NCCCCCCNC(=O)N[*]",
+      "ground_truth": 5.6511,
+      "split": "test",
+      "dataset_row_index": 3628,
+      "seed": 20264548
+    },
+    {
+      "source_id": "poly_443",
+      "representation": "[*]c1[nH]c([*])c2c1CCCC2",
+      "ground_truth": 2.5706,
+      "split": "test",
+      "dataset_row_index": 3629,
+      "seed": 20264549
+    },
+    {
+      "source_id": "poly_2058",
+      "representation": "[*]Oc1ccc(N=CCCCC=Nc2ccc(OC(=O)Nc3cc(NC([*])=O)ccc3C)cc2)cc1",
+      "ground_truth": 4.5321,
+      "split": "test",
+      "dataset_row_index": 3630,
+      "seed": 20264550
+    },
+    {
+      "source_id": "poly_1643",
+      "representation": "[*]OC3=CC=CC(OC2=CC=C(C(C1=CC=C([*])C=C1)(C(F)(F)F)C(F)(F)F)C=C2)=C3C#N",
+      "ground_truth": 4.0846,
+      "split": "test",
+      "dataset_row_index": 3631,
+      "seed": 20264551
+    },
+    {
+      "source_id": "poly_177",
+      "representation": "[*]Nc1ccc(C=Cc2ccc(NC(=C(C#N)C#N)c3ccc(C([*])=C(C#N)C#N)cc3)cc2)cc1",
+      "ground_truth": 2.0183,
+      "split": "test",
+      "dataset_row_index": 3632,
+      "seed": 20264552
+    },
+    {
+      "source_id": "poly_2422",
+      "representation": "[*]COC(C=C1)=CC=C1O[*]",
+      "ground_truth": 4.8786,
+      "split": "test",
+      "dataset_row_index": 3633,
+      "seed": 20264553
+    },
+    {
+      "source_id": "poly_1595",
+      "representation": "[*]CCCCCCCCCOC(=O)c1ccc(-c2ccc(C(=O)O[*])cc2)cc1",
+      "ground_truth": 4.0317,
+      "split": "test",
+      "dataset_row_index": 3634,
+      "seed": 20264554
+    },
+    {
+      "source_id": "poly_3639",
+      "representation": "[*]CCCCCCCc1nnc([*])o1",
+      "ground_truth": 6.124,
+      "split": "test",
+      "dataset_row_index": 3635,
+      "seed": 20264555
+    },
+    {
+      "source_id": "poly_196",
+      "representation": "[*]c1ccc(-c2ccc(-c3ccc(-c4ccc([*])n4CCCCCCCCCCCC)s3)s2)s1",
+      "ground_truth": 2.0944,
+      "split": "test",
+      "dataset_row_index": 3636,
+      "seed": 20264556
+    },
+    {
+      "source_id": "poly_2046",
+      "representation": "[*]CCCCCCCCCCCCCOC(=O)c1ccc(C(=O)NCCCCCCNC(=O)c2ccc(C(=O)O[*])cc2)cc1",
+      "ground_truth": 4.5228,
+      "split": "test",
+      "dataset_row_index": 3637,
+      "seed": 20264557
+    },
+    {
+      "source_id": "poly_1822",
+      "representation": "[*]Oc1ccc(S(=O)(=O)c2ccc(Oc3ccc(C(C)(C)c4ccc([*])cc4)cc3)cc2)c([N-][N+]#N)c1",
+      "ground_truth": 4.2759,
+      "split": "test",
+      "dataset_row_index": 3638,
+      "seed": 20264558
+    },
+    {
+      "source_id": "poly_2429",
+      "representation": "[*]C=C([*])c1ccsc1",
+      "ground_truth": 4.888,
+      "split": "test",
+      "dataset_row_index": 3639,
+      "seed": 20264559
+    },
+    {
+      "source_id": "poly_980",
+      "representation": "[*]c1ccc(Sc2ccc(-c3nc4ccc(-c5ccc6nc([*])c(-c7ccccc7)nc6c5)cc4nc3-c3ccccc3)cc2)cc1",
+      "ground_truth": 3.2954,
+      "split": "test",
+      "dataset_row_index": 3640,
+      "seed": 20264560
+    },
+    {
+      "source_id": "poly_4079",
+      "representation": "[*]CCCCOC(=O)CCCCC(=O)O[*]",
+      "ground_truth": 6.7585,
+      "split": "test",
+      "dataset_row_index": 3641,
+      "seed": 20264561
+    },
+    {
+      "source_id": "poly_2697",
+      "representation": "[*]CC(c1ccccc1)C1C(=O)OC(=O)C1[*]",
+      "ground_truth": 5.1414,
+      "split": "test",
+      "dataset_row_index": 3642,
+      "seed": 20264562
+    },
+    {
+      "source_id": "poly_2625",
+      "representation": "[*]CCS(=O)(=O)CCN1CCN([*])CC1",
+      "ground_truth": 5.0838,
+      "split": "test",
+      "dataset_row_index": 3643,
+      "seed": 20264563
+    },
+    {
+      "source_id": "poly_3057",
+      "representation": "[*]C=CC1CC([*])C(C(=O)OC(C)(C)C)C1C(=O)OC(C)(C)C",
+      "ground_truth": 5.535,
+      "split": "test",
+      "dataset_row_index": 3644,
+      "seed": 20264564
+    },
+    {
+      "source_id": "poly_2236",
+      "representation": "[*]Oc1ccc(C2(c3ccc(OC([*])=O)cc3)CCCC2)cc1",
+      "ground_truth": 4.691,
+      "split": "test",
+      "dataset_row_index": 3645,
+      "seed": 20264565
+    },
+    {
+      "source_id": "poly_1539",
+      "representation": "[*]c1nc(-c2ccccc2)nc(N([*])c2ccccc2)n1",
+      "ground_truth": 3.9647,
+      "split": "test",
+      "dataset_row_index": 3646,
+      "seed": 20264566
+    },
+    {
+      "source_id": "poly_1808",
+      "representation": "[*]c1ccc(Sc2ccc(Sc3ccc(Sc4ccc(S([*])=O)cc4)cc3)cc2)cc1",
+      "ground_truth": 4.2649,
+      "split": "test",
+      "dataset_row_index": 3647,
+      "seed": 20264567
+    },
+    {
+      "source_id": "poly_2866",
+      "representation": "[*]Cc1ccc(COC(=O)CCCCCCC(=O)O[*])cc1",
+      "ground_truth": 5.316,
+      "split": "test",
+      "dataset_row_index": 3648,
+      "seed": 20264568
+    },
+    {
+      "source_id": "poly_1131",
+      "representation": "[*]Oc1ccc(Oc2ccc(Oc3cccc(C(=O)Oc4ccc(OC(=O)c5cccc([*])c5)cc4)c3)cc2)cc1",
+      "ground_truth": 3.47,
+      "split": "test",
+      "dataset_row_index": 3649,
+      "seed": 20264569
+    },
+    {
+      "source_id": "poly_3246",
+      "representation": "[*]CC(OC)C1(C)C(=O)OC(=O)C1([*])C",
+      "ground_truth": 5.7374,
+      "split": "test",
+      "dataset_row_index": 3650,
+      "seed": 20264570
+    },
+    {
+      "source_id": "poly_1877",
+      "representation": "[*]Oc1cc(CCCCCCCCC)cc(OC(=O)c2cccc(C([*])=O)c2)c1",
+      "ground_truth": 4.3277,
+      "split": "test",
+      "dataset_row_index": 3651,
+      "seed": 20264571
+    },
+    {
+      "source_id": "poly_2923",
+      "representation": "[*]CC/C=C\\[*](Cl)",
+      "ground_truth": 5.3832,
+      "split": "test",
+      "dataset_row_index": 3652,
+      "seed": 20264572
+    },
+    {
+      "source_id": "poly_2702",
+      "representation": "[*]Oc1ccc(CC(NC(=O)CCc2ccc(OC(=O)CCCCCCC([*])=O)cc2)C(=O)OCC)cc1",
+      "ground_truth": 5.1441,
+      "split": "test",
+      "dataset_row_index": 3653,
+      "seed": 20264573
+    },
+    {
+      "source_id": "poly_719",
+      "representation": "[*]Sc1ccc(C=Nc2ccc(N=Cc3ccc([*])cc3)cc2)cc1",
+      "ground_truth": 2.9441,
+      "split": "test",
+      "dataset_row_index": 3654,
+      "seed": 20264574
+    },
+    {
+      "source_id": "poly_2288",
+      "representation": "[*]CCCCCCNC(=O)CCCCC(=O)NCCCCCCNC(=O)C(=O)N[*]",
+      "ground_truth": 4.7428,
+      "split": "test",
+      "dataset_row_index": 3655,
+      "seed": 20264575
+    },
+    {
+      "source_id": "poly_1278",
+      "representation": "[*]CC(O)COc1ccc(S(=O)(=O)c2ccc(O[*])c(C)c2)cc1C",
+      "ground_truth": 3.6449,
+      "split": "test",
+      "dataset_row_index": 3656,
+      "seed": 20264576
+    },
+    {
+      "source_id": "poly_1240",
+      "representation": "[*]c1ccc2c(c1)c1cc([*])ccc1n2CCC(=O)NO",
+      "ground_truth": 3.6128,
+      "split": "test",
+      "dataset_row_index": 3657,
+      "seed": 20264577
+    },
+    {
+      "source_id": "poly_3430",
+      "representation": "[*]CCCCOC(=O)C(OC)C(OC)C(=O)O[*]",
+      "ground_truth": 5.8998,
+      "split": "test",
+      "dataset_row_index": 3658,
+      "seed": 20264578
+    },
+    {
+      "source_id": "poly_1731",
+      "representation": "[*]c1cc([*])cc(OCCCCCCCCCCCC)c1",
+      "ground_truth": 4.1758,
+      "split": "test",
+      "dataset_row_index": 3659,
+      "seed": 20264579
+    },
+    {
+      "source_id": "poly_4082",
+      "representation": "[*]CCCCCCCCCCOC(=O)CCCCCCC(=O)O[*]",
+      "ground_truth": 6.7606,
+      "split": "test",
+      "dataset_row_index": 3660,
+      "seed": 20264580
+    },
+    {
+      "source_id": "poly_229",
+      "representation": "[*]c1c2ccccc2c([*])n1C",
+      "ground_truth": 2.1822,
+      "split": "test",
+      "dataset_row_index": 3661,
+      "seed": 20264581
+    },
+    {
+      "source_id": "poly_3128",
+      "representation": "[*]CC1(CO[*])CC2C=CC1C2",
+      "ground_truth": 5.6110000000000015,
+      "split": "test",
+      "dataset_row_index": 3662,
+      "seed": 20264582
+    },
+    {
+      "source_id": "poly_314",
+      "representation": "[*]C=CC(=O)C=Cc1ccc(Sc2ccc([*])o2)o1",
+      "ground_truth": 2.4101,
+      "split": "test",
+      "dataset_row_index": 3663,
+      "seed": 20264583
+    },
+    {
+      "source_id": "poly_273",
+      "representation": "[*]C(=O)Nc1ccc(Nc2ccc(N3C(=O)c4ccc([*])cc4C3=O)cc2)cc1",
+      "ground_truth": 2.3212,
+      "split": "test",
+      "dataset_row_index": 3664,
+      "seed": 20264584
+    },
+    {
+      "source_id": "poly_2091",
+      "representation": "[*]CC([*])c1cccc2c1OCO2",
+      "ground_truth": 4.5638,
+      "split": "test",
+      "dataset_row_index": 3665,
+      "seed": 20264585
+    },
+    {
+      "source_id": "poly_3890",
+      "representation": "[*]CC([*])C(=O)OCCO",
+      "ground_truth": 6.4938,
+      "split": "test",
+      "dataset_row_index": 3666,
+      "seed": 20264586
+    },
+    {
+      "source_id": "poly_733",
+      "representation": "[*]C=Nc1ccc(-c2ccc(N=Cc3ccc(Sc4ccc([*])o4)o3)c(OC)c2)cc1OC",
+      "ground_truth": 2.96,
+      "split": "test",
+      "dataset_row_index": 3667,
+      "seed": 20264587
+    },
+    {
+      "source_id": "poly_3411",
+      "representation": "[*]CCC1CC(=O)N([*])C(=O)C1",
+      "ground_truth": 5.8804,
+      "split": "test",
+      "dataset_row_index": 3668,
+      "seed": 20264588
+    },
+    {
+      "source_id": "poly_1652",
+      "representation": "[*]c1ccc(C2C(c3ccccn3)C([*])C2c2ccccn2)cc1",
+      "ground_truth": 4.0906,
+      "split": "test",
+      "dataset_row_index": 3669,
+      "seed": 20264589
+    },
+    {
+      "source_id": "poly_3638",
+      "representation": "[*]CC([*])(C)C(=O)OC(F)(C(F)(F)F)C(F)(F)F",
+      "ground_truth": 6.1224,
+      "split": "test",
+      "dataset_row_index": 3670,
+      "seed": 20264590
+    },
+    {
+      "source_id": "poly_1529",
+      "representation": "[*]Nc1cc(F)c([*])cc1F",
+      "ground_truth": 3.9538,
+      "split": "test",
+      "dataset_row_index": 3671,
+      "seed": 20264591
+    },
+    {
+      "source_id": "poly_29",
+      "representation": "[*]C=C([*])c1cccc(C#C)n1",
+      "ground_truth": 1.0964,
+      "split": "test",
+      "dataset_row_index": 3672,
+      "seed": 20264592
+    },
+    {
+      "source_id": "poly_2667",
+      "representation": "[*]CCCCNC(=O)C(CCCCCCCCCCCC)C(=O)N[*]",
+      "ground_truth": 5.1121,
+      "split": "test",
+      "dataset_row_index": 3673,
+      "seed": 20264593
+    },
+    {
+      "source_id": "poly_2845",
+      "representation": "[*]CCCNC(=O)NCCCCCCNC(=O)O[*]",
+      "ground_truth": 5.2947,
+      "split": "test",
+      "dataset_row_index": 3674,
+      "seed": 20264594
+    },
+    {
+      "source_id": "poly_3157",
+      "representation": "[*]CCCCN1C(=O)C2C3C=CC(C4C(=O)N([*])C(=O)C34)C2C1=O",
+      "ground_truth": 5.6479,
+      "split": "test",
+      "dataset_row_index": 3675,
+      "seed": 20264595
+    },
+    {
+      "source_id": "poly_1983",
+      "representation": "[*]c1ccc(NC(=O)CCCCCC(=O)Nc2ccc(S([*])(=O)=O)cc2)cc1",
+      "ground_truth": 4.4501,
+      "split": "test",
+      "dataset_row_index": 3676,
+      "seed": 20264596
+    }
+  ]
+}

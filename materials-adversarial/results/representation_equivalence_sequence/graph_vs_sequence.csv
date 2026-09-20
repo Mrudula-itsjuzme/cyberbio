@@ -1,0 +1,3 @@
+model,model_type,clean_metric,mean_equiv_drift,median_equiv_drift,P95_equiv_drift,max_equiv_drift
+GraphMPNN control,GraphMPNN,0.411,4.8065797e-08,0.0,4.7683716e-07,9.536743e-07
+Frozen sequence model,Transformer,0.4619162976741791,0.6002559953019674,0.4401226043701172,1.7075652837753295,3.252631187438965

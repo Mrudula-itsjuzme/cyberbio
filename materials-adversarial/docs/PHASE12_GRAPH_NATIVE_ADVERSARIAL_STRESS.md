@@ -21,7 +21,7 @@ Without a ground-truth physical oracle (e.g., DFT simulation), we can only measu
 We evaluated both models on the pre-generated Phase 3 and Phase 5 candidate banks. To ensure a fair, model-independent comparison, we strictly constrained the evaluation to valid RDKit molecules that mapped to distinct canonical graphs from their source.
 
 ### A. Negative Control (Representation Attack)
-As verified in Phase 11C, the GraphMPNN provides perfect invariance to equivalent SMILES.
+As verified in Phase 11C, the GraphMPNN control showed numerical invariance to the tested equivalent-SMILES serializations. This statement is architecture- and transformation-specific and does not apply to the frozen sequence Transformer.
 - **GraphMPNN Drift:** ~0.00 eV
 - **Mixed-Robust Transformer Drift:** ~0.30 eV
 
