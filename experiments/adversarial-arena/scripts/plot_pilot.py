@@ -40,9 +40,12 @@ def make_plots():
     plt.title("Defender Gain by Round")
     plt.savefig(final/"defender_gain_by_round.png")
     
+    
+    adapt = pd.read_csv(final/"arena_pilot_adaptation.csv")
     plt.figure()
-    plt.plot(rounds["round"], rounds["defender_gain"], marker='o') # using this as placeholder
+    plt.plot(adapt["round"], adapt["adaptation_gain"], marker='o')
     plt.title("Attacker Adaptation Gain")
+
     plt.savefig(final/"attacker_adaptation_gain.png")
     
     plt.figure()

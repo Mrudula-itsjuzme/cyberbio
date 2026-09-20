@@ -77,6 +77,17 @@ class ArenaRunner:
             self.storage.transition("IDLE")
             self.storage.transition("UPDATING_DEFENDER", -1, "clean baseline")
             self.defender.train(clean_train, [], round_id=0)
+            
+            # Baseline cross-attack evaluation against D_0
+            self.storage.transition("EVALUATING", -1)
+            matrix, means = self._evaluate_attackers(clean_validation)
+            rdir0 = self.storage.round_dir(0)
+            rdir0.mkdir(parents=True, exist_ok=True)
+            with (rdir0 / "baseline_cross_attack_matrix.csv").open("w", newline="") as handle:
+                import csv
+                writer=csv.DictWriter(handle, fieldnames=matrix[0].keys()); writer.writeheader(); writer.writerows(matrix)
+            evolution.extend({"round": -1, **row} for row in matrix)
+
 
         previous_means: dict[str, float | None] = {}
         for round_id in range(start_round, rounds):

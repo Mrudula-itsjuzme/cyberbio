@@ -47,11 +47,11 @@ def main():
     
     q_budget = config["query_budget"]
     attackers = {}
-    if curriculum in ["fixed_randomsmiles", "thompson"]:
+    if curriculum in ["fixed_randomsmiles", "thompson", "thompson_leave_one_out"]:
         attackers["RandomSMILES"] = random_smiles_adapter(seed, q_budget)
-    if curriculum in ["fixed_mcmc", "thompson"]:
+    if curriculum in ["fixed_mcmc", "thompson", "thompson_leave_one_out"]:
         attackers["MCMC"] = mcmc_adapter(seed+1, vocab, steps=5, proposal_budget=q_budget)
-    if curriculum in ["fixed_evolutionary", "thompson"]:
+    if curriculum in ["fixed_evolutionary", "thompson", "thompson_leave_one_out"]:
         attackers["Evolutionary"] = evolutionary_adapter(seed+2, query_budget=q_budget)
         
     storage = RunStorage(HERE/"results"/"arena", run_id)
@@ -71,7 +71,7 @@ def main():
         epochs=config["defender"]["epochs_per_round"]
     )
     
-    controller = ThompsonController(list(attackers), seed) if curriculum == "thompson" else None
+    controller = ThompsonController([a for a in attackers if a != "Evolutionary"], seed) if curriculum == "thompson_leave_one_out" else (ThompsonController(list(attackers), seed) if curriculum == "thompson" else None)
     
     config["real_pilot"] = True
     
