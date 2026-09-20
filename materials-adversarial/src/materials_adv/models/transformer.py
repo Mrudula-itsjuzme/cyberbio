@@ -31,11 +31,12 @@ import torch
 import torch.nn as nn
 
 class TransformerRegressorModel(nn.Module):
-    def __init__(self, vocab_size, d_model, n_layers, n_heads, dim_feedforward, dropout, max_seq_len, pooling="mean"):
+    def __init__(self, vocab_size, d_model, n_layers, n_heads, dim_feedforward, dropout, max_seq_len, pooling="mean", use_positional_encoding=True):
         super().__init__()
         # +1 for padding index 0
         self.embedding = nn.Embedding(vocab_size + 1, d_model, padding_idx=0)
         self.pos_encoder = nn.Embedding(max_seq_len, d_model)
+        self.use_positional_encoding = use_positional_encoding
         
         encoder_layer = nn.TransformerEncoderLayer(
             d_model=d_model, nhead=n_heads, dim_feedforward=dim_feedforward, 
@@ -51,7 +52,9 @@ class TransformerRegressorModel(nn.Module):
         seq_len = src.size(1)
         positions = torch.arange(seq_len, device=src.device).unsqueeze(0).expand(src.size(0), seq_len)
         
-        emb = self.embedding(src) + self.pos_encoder(positions)
+        emb = self.embedding(src)
+        if self.use_positional_encoding:
+            emb = emb + self.pos_encoder(positions)
         out = self.transformer_encoder(emb, src_key_padding_mask=padding_mask)
         
         # out: [batch_size, seq_len, d_model]
