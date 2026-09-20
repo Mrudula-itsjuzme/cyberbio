@@ -10,7 +10,7 @@ from arena.contracts import SourceSample
 from arena.state_management import hash_model_state
 
 def build_reference(seed, n_sources, rounds, budget):
-    out_dir = f"results/arena/carry_reset_reference_seed{seed}"
+    out_dir = f"results/arena/smoke_carry_reset_reference_seed{seed}" if args.smoke.lower() == "true" else f"results/arena/carry_reset_reference_seed{seed}"
     os.makedirs(out_dir, exist_ok=True)
     ref_dir = os.path.join(out_dir, "reference_defender")
     os.makedirs(ref_dir, exist_ok=True)
@@ -78,6 +78,7 @@ def build_reference(seed, n_sources, rounds, budget):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
+    parser.add_argument("--smoke", type=str, default="true", help="True for smoke mode")
     parser.add_argument("--seed", type=int, required=True)
     parser.add_argument("--n-sources", type=int, required=True)
     parser.add_argument("--rounds", type=int, required=True)

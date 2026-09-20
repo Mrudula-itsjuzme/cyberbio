@@ -10,10 +10,10 @@ from arena.transpolymer import TransPolymerDefender
 from scripts.run_phase2_pilot import _load_sources, _load_clean_data
 
 def run_paired(args):
-    out_dir = f"results/arena/smoke_carry_reset_{args.method}_paired_seed{args.seed}"
+    out_dir = f"results/arena/smoke_carry_reset_{args.method}_paired_seed{args.seed}" if args.smoke.lower() == "true" else f"results/arena/carry_reset_{args.method}_paired_seed{args.seed}"
     os.makedirs(out_dir, exist_ok=True)
     
-    ref_dir = f"results/arena/carry_reset_reference_seed{args.seed}"
+    ref_dir = f"results/arena/smoke_carry_reset_reference_seed{args.seed}" if args.smoke.lower() == "true" else f"results/arena/carry_reset_reference_seed{args.seed}"
     with open(os.path.join(ref_dir, "source_ids.json")) as f:
         ref_cohort = json.load(f)
         
@@ -105,6 +105,7 @@ def run_paired(args):
                     "method": args.method, "seed": args.seed, "round": r,
                     "reference_checkpoint_id": D_ref.checkpoint_id,
                     "reference_checkpoint_sha256": round_model_hash,
+                    "carry_rng_schedule": rng_schedule, "reset_rng_schedule": rng_schedule,
                     "carry_mean_drift": mc, "reset_mean_drift": mr,
                     "carry_best_drift": bc, "reset_best_drift": br,
                     "G_carry_mean": mc - mr, "G_carry_best": bc - br,
@@ -131,7 +132,7 @@ def run_paired(args):
             
         summary["status"] = "RUN_COMPLETE_FULL"
         summary["stop_reason"] = "MAX_ROUNDS_REACHED"
-        summary["SMOKE_ONLY_NON_CANONICAL"] = True
+        summary["SMOKE_ONLY_NON_CANONICAL"] = (args.smoke.lower() == "true")
     except Exception as e:
         import traceback; traceback.print_exc()
         summary["status"] = "RUN_FAILED"
@@ -146,6 +147,7 @@ def run_paired(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--method", type=str, required=True)
+    parser.add_argument("--smoke", type=str, default="true", help="True for smoke mode")
     parser.add_argument("--seed", type=int, required=True)
     parser.add_argument("--rounds", type=int, required=True)
     parser.add_argument("--query-budget", type=int, required=True)
