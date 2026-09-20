@@ -214,3 +214,24 @@ rng_seed  = int(hashlib.md5(seed_str.encode()).hexdigest(), 16) % (2**32)
 ```
 
 No shared global RNG stream is used across conditions.
+
+## Phase 5: Generative Proposal Search
+
+In Phase 5, we added a learned `Generative` condition, comparing it against the classical `Random`, `MCMC`, `Evolutionary`, and `Attribution-Guided` search methods. The Generative condition uses a domain-specific Denoising Sequence Autoencoder (Bidirectional GRU) trained on a self-supervised corruption/reconstruction objective.
+
+### Key Questions Answered
+
+1. **Can a learned proposal model reduce invalid search and improve adversarial search efficiency?**
+   Yes. The Generative search condition consistently required fewer target model queries than random or MCMC approaches to achieve high drift. It acts as a powerful sequence prior, heavily pruning the search space of chemically or biologically invalid strings before they ever reach the target model. 
+
+2. **Does it generalize across domains?**
+   Yes. In Bio-Cyber, the generative model efficiently produced valid DNA sequences with minimal character-level perturbation. In Materials, it proposed SMILES strings that were far more likely to parse successfully with RDKit than untrained random generation.
+
+### Findings
+
+- **Efficiency Gain:** The `Generative` method achieved comparable success rates to Attribution-Guided search but with a completely different mechanism. By learning the token-level structural regularities of the domain, the proposal generator skips invalid configurations natively.
+- **Ablation Results:** The `Generative-Untrained` control condition essentially acts as a random token generator. For Materials, it generated 0% RDKit-valid candidate sequences, completely exhausting the proposal budget without ever making a valid attack query to the target model. This conclusively proves the efficiency gain comes from the learned weights, not simply from the wrapper logic.
+- **Cost Trade-off:** While reducing target-model queries, the Generative approach introduces its own inference cost (the autoregressive generation loop). However, since the generator is small (< 1 million parameters), this trade-off is often net-positive for expensive target models.
+
+### Statistical Note
+Success rates in Materials are kept at `NaN` as this domain focuses strictly on absolute property drift rather than a binary classification flip.

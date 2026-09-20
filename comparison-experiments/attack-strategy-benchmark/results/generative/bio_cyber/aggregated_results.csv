@@ -1,0 +1,5 @@
+attack_condition,search_budget,absolute_drift,edit_distance,proposal_attempts,valid_candidates,attack_model_queries,total_model_queries,runtime_seconds,generator_inference_count,success,frac_QUERY_BUDGET_EXHAUSTED,frac_PROPOSAL_CAP_REACHED,frac_NO_VALID_CANDIDATE
+Generative,5,0.6163354097865522,79.76666666666667,5.0,5.0,5.0,5.0,1.7233170032501222,5.0,0.3,1.0,0.0,0.0
+Generative,20,0.6848014350359638,79.2,20.0,20.0,20.0,20.0,6.41376895904541,20.0,0.4,1.0,0.0,0.0
+Generative,50,0.70594886263522,79.06666666666666,50.0,50.0,50.0,50.0,18.283042208353677,50.0,0.4,1.0,0.0,0.0
+Generative-Untrained,20,0.6952751890445749,83.03333333333333,20.0,20.0,20.0,20.0,6.653698937098185,20.0,0.4,1.0,0.0,0.0

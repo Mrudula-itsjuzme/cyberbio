@@ -1,0 +1,10 @@
+{
+  "materials_generator": {
+    "RDKit_parse_validity_trained": 0.0,
+    "RDKit_parse_validity_untrained": 0.0
+  },
+  "bio_cyber_generator": {
+    "syntax_validity_trained": 1.0,
+    "syntax_validity_untrained": 1.0
+  }
+}

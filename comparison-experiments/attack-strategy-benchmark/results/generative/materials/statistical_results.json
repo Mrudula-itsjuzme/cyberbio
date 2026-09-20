@@ -1,0 +1,251 @@
+{
+  "5": {
+    "Generative_vs_Random": {
+      "absolute_drift": {
+        "Generative_mean": 0.0,
+        "Random_mean": 0.21334377452731132,
+        "p_value": 1.862645149230957e-09
+      },
+      "edit_distance": {
+        "Generative_mean": 0.0,
+        "Random_mean": 1.1,
+        "p_value": 6.79884997479191e-08
+      },
+      "attack_model_queries": {
+        "Generative_mean": 0.0,
+        "Random_mean": 5.0,
+        "p_value": 4.320463057827488e-08
+      },
+      "proposal_attempts": {
+        "Generative_mean": 50.0,
+        "Random_mean": 10.4,
+        "p_value": 1.6530995771390012e-06
+      },
+      "runtime_seconds": {
+        "Generative_mean": 6.7523589611053465,
+        "Random_mean": 0.011785093943277937,
+        "p_value": 1.862645149230957e-09
+      }
+    },
+    "Generative_vs_MCMC": {
+      "absolute_drift": {
+        "Generative_mean": 0.0,
+        "MCMC_mean": 0.2651888998846213,
+        "p_value": 1.862645149230957e-09
+      },
+      "edit_distance": {
+        "Generative_mean": 0.0,
+        "MCMC_mean": 3.7333333333333334,
+        "p_value": 1.618804276758542e-06
+      },
+      "attack_model_queries": {
+        "Generative_mean": 0.0,
+        "MCMC_mean": 5.0,
+        "p_value": 4.320463057827488e-08
+      },
+      "proposal_attempts": {
+        "Generative_mean": 50.0,
+        "MCMC_mean": 10.366666666666667,
+        "p_value": 1.6678313975036149e-06
+      },
+      "runtime_seconds": {
+        "Generative_mean": 6.7523589611053465,
+        "MCMC_mean": 0.012230650583902951,
+        "p_value": 1.862645149230957e-09
+      }
+    },
+    "Generative_vs_Evolutionary": {
+      "absolute_drift": {
+        "Generative_mean": 0.0,
+        "Evolutionary_mean": 0.22176592921217284,
+        "p_value": 1.862645149230957e-09
+      },
+      "edit_distance": {
+        "Generative_mean": 0.0,
+        "Evolutionary_mean": 2.0,
+        "p_value": 1.1857540915063742e-06
+      },
+      "attack_model_queries": {
+        "Generative_mean": 0.0,
+        "Evolutionary_mean": 5.0,
+        "p_value": 4.320463057827488e-08
+      },
+      "proposal_attempts": {
+        "Generative_mean": 50.0,
+        "Evolutionary_mean": 10.0,
+        "p_value": 1.666775499957924e-06
+      },
+      "runtime_seconds": {
+        "Generative_mean": 6.7523589611053465,
+        "Evolutionary_mean": 0.010628366470336874,
+        "p_value": 1.862645149230957e-09
+      }
+    }
+  },
+  "20": {
+    "Generative_vs_Random": {
+      "absolute_drift": {
+        "Generative_mean": 0.0,
+        "Random_mean": 0.31486092483003936,
+        "p_value": 1.862645149230957e-09
+      },
+      "edit_distance": {
+        "Generative_mean": 0.0,
+        "Random_mean": 1.4,
+        "p_value": 1.961766664332172e-07
+      },
+      "attack_model_queries": {
+        "Generative_mean": 0.0,
+        "Random_mean": 20.0,
+        "p_value": 4.320463057827488e-08
+      },
+      "proposal_attempts": {
+        "Generative_mean": 200.0,
+        "Random_mean": 39.63333333333333,
+        "p_value": 1.7159286750586906e-06
+      },
+      "runtime_seconds": {
+        "Generative_mean": 25.606191547711692,
+        "Random_mean": 0.04236376285552976,
+        "p_value": 1.862645149230957e-09
+      }
+    },
+    "Generative_vs_MCMC": {
+      "absolute_drift": {
+        "Generative_mean": 0.0,
+        "MCMC_mean": 0.4294060173134009,
+        "p_value": 1.862645149230957e-09
+      },
+      "edit_distance": {
+        "Generative_mean": 0.0,
+        "MCMC_mean": 11.0,
+        "p_value": 1.712686559944352e-06
+      },
+      "attack_model_queries": {
+        "Generative_mean": 0.0,
+        "MCMC_mean": 20.0,
+        "p_value": 4.320463057827488e-08
+      },
+      "proposal_attempts": {
+        "Generative_mean": 200.0,
+        "MCMC_mean": 40.9,
+        "p_value": 1.7202594665136766e-06
+      },
+      "runtime_seconds": {
+        "Generative_mean": 25.606191547711692,
+        "MCMC_mean": 0.04389024575551348,
+        "p_value": 1.862645149230957e-09
+      }
+    },
+    "Generative_vs_Evolutionary": {
+      "absolute_drift": {
+        "Generative_mean": 0.0,
+        "Evolutionary_mean": 0.4101173979540666,
+        "p_value": 1.862645149230957e-09
+      },
+      "edit_distance": {
+        "Generative_mean": 0.0,
+        "Evolutionary_mean": 4.333333333333333,
+        "p_value": 1.6136602798486922e-06
+      },
+      "attack_model_queries": {
+        "Generative_mean": 0.0,
+        "Evolutionary_mean": 20.0,
+        "p_value": 4.320463057827488e-08
+      },
+      "proposal_attempts": {
+        "Generative_mean": 200.0,
+        "Evolutionary_mean": 38.36666666666667,
+        "p_value": 1.7019164327509632e-06
+      },
+      "runtime_seconds": {
+        "Generative_mean": 25.606191547711692,
+        "Evolutionary_mean": 0.04048417409261063,
+        "p_value": 1.862645149230957e-09
+      }
+    }
+  },
+  "50": {
+    "Generative_vs_Random": {
+      "absolute_drift": {
+        "Generative_mean": 0.0,
+        "Random_mean": 0.36539178068439165,
+        "p_value": 1.862645149230957e-09
+      },
+      "edit_distance": {
+        "Generative_mean": 0.0,
+        "Random_mean": 1.5,
+        "p_value": 2.5720896368362733e-07
+      },
+      "attack_model_queries": {
+        "Generative_mean": 0.0,
+        "Random_mean": 50.0,
+        "p_value": 4.320463057827488e-08
+      },
+      "proposal_attempts": {
+        "Generative_mean": 500.0,
+        "Random_mean": 106.06666666666666,
+        "p_value": 1.7300371292901245e-06
+      },
+      "runtime_seconds": {
+        "Generative_mean": 85.40507108370463,
+        "Random_mean": 0.10466858545939124,
+        "p_value": 1.862645149230957e-09
+      }
+    },
+    "Generative_vs_MCMC": {
+      "absolute_drift": {
+        "Generative_mean": 0.0,
+        "MCMC_mean": 0.5247502806286017,
+        "p_value": 1.862645149230957e-09
+      },
+      "edit_distance": {
+        "Generative_mean": 0.0,
+        "MCMC_mean": 17.266666666666666,
+        "p_value": 1.7180929312456739e-06
+      },
+      "attack_model_queries": {
+        "Generative_mean": 0.0,
+        "MCMC_mean": 50.0,
+        "p_value": 4.320463057827488e-08
+      },
+      "proposal_attempts": {
+        "Generative_mean": 500.0,
+        "MCMC_mean": 94.93333333333334,
+        "p_value": 1.7245993818153558e-06
+      },
+      "runtime_seconds": {
+        "Generative_mean": 85.40507108370463,
+        "MCMC_mean": 0.09695321718851722,
+        "p_value": 1.862645149230957e-09
+      }
+    },
+    "Generative_vs_Evolutionary": {
+      "absolute_drift": {
+        "Generative_mean": 0.0,
+        "Evolutionary_mean": 0.5657269122699896,
+        "p_value": 1.862645149230957e-09
+      },
+      "edit_distance": {
+        "Generative_mean": 0.0,
+        "Evolutionary_mean": 8.066666666666666,
+        "p_value": 1.6657201609790694e-06
+      },
+      "attack_model_queries": {
+        "Generative_mean": 0.0,
+        "Evolutionary_mean": 50.0,
+        "p_value": 4.320463057827488e-08
+      },
+      "proposal_attempts": {
+        "Generative_mean": 500.0,
+        "Evolutionary_mean": 97.4,
+        "p_value": 1.7256857880058036e-06
+      },
+      "runtime_seconds": {
+        "Generative_mean": 85.40507108370463,
+        "Evolutionary_mean": 0.10601994991302487,
+        "p_value": 1.862645149230957e-09
+      }
+    }
+  }
+}

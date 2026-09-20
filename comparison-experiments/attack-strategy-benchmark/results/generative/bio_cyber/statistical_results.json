@@ -1,0 +1,206 @@
+{
+  "5": {
+    "Generative_vs_Random": {
+      "absolute_drift": {
+        "Generative_mean": 0.6163354097865522,
+        "Random_mean": 0.11580371536935366,
+        "p_value": 1.862645149230957e-09
+      },
+      "edit_distance": {
+        "Generative_mean": 79.76666666666667,
+        "Random_mean": 1.0,
+        "p_value": 1.6416009966164372e-06
+      },
+      "attack_model_queries": {
+        "Generative_mean": 5.0,
+        "Random_mean": 5.0,
+        "p_value": 1.0
+      },
+      "runtime_seconds": {
+        "Generative_mean": 1.7233170032501222,
+        "Random_mean": 0.0024494965871174634,
+        "p_value": 1.862645149230957e-09
+      }
+    },
+    "Generative_vs_MCMC": {
+      "absolute_drift": {
+        "Generative_mean": 0.6163354097865522,
+        "MCMC_mean": 0.15689094796155886,
+        "p_value": 1.862645149230957e-09
+      },
+      "edit_distance": {
+        "Generative_mean": 79.76666666666667,
+        "MCMC_mean": 3.066666666666667,
+        "p_value": 1.6741785256701665e-06
+      },
+      "attack_model_queries": {
+        "Generative_mean": 5.0,
+        "MCMC_mean": 5.0,
+        "p_value": 1.0
+      },
+      "runtime_seconds": {
+        "Generative_mean": 1.7233170032501222,
+        "MCMC_mean": 0.0029930671056111135,
+        "p_value": 1.862645149230957e-09
+      }
+    },
+    "Generative_vs_Evolutionary": {
+      "absolute_drift": {
+        "Generative_mean": 0.6163354097865522,
+        "Evolutionary_mean": 9.397044777870179e-08,
+        "p_value": 1.862645149230957e-09
+      },
+      "edit_distance": {
+        "Generative_mean": 79.76666666666667,
+        "Evolutionary_mean": 0.0,
+        "p_value": 1.6416009966164372e-06
+      },
+      "attack_model_queries": {
+        "Generative_mean": 5.0,
+        "Evolutionary_mean": 5.0,
+        "p_value": 1.0
+      },
+      "runtime_seconds": {
+        "Generative_mean": 1.7233170032501222,
+        "Evolutionary_mean": 0.0017640829086303237,
+        "p_value": 1.862645149230957e-09
+      }
+    }
+  },
+  "20": {
+    "Generative_vs_Random": {
+      "absolute_drift": {
+        "Generative_mean": 0.6848014350359638,
+        "Random_mean": 0.14194419461612898,
+        "p_value": 1.862645149230957e-09
+      },
+      "edit_distance": {
+        "Generative_mean": 79.2,
+        "Random_mean": 1.0,
+        "p_value": 1.6157162365260918e-06
+      },
+      "attack_model_queries": {
+        "Generative_mean": 20.0,
+        "Random_mean": 20.0,
+        "p_value": 1.0
+      },
+      "runtime_seconds": {
+        "Generative_mean": 6.41376895904541,
+        "Random_mean": 0.011205410957336374,
+        "p_value": 1.862645149230957e-09
+      }
+    },
+    "Generative_vs_MCMC": {
+      "absolute_drift": {
+        "Generative_mean": 0.6848014350359638,
+        "MCMC_mean": 0.3039204508066177,
+        "p_value": 3.725290298461914e-09
+      },
+      "edit_distance": {
+        "Generative_mean": 79.2,
+        "MCMC_mean": 8.133333333333333,
+        "p_value": 1.595254879875626e-06
+      },
+      "attack_model_queries": {
+        "Generative_mean": 20.0,
+        "MCMC_mean": 20.0,
+        "p_value": 1.0
+      },
+      "runtime_seconds": {
+        "Generative_mean": 6.41376895904541,
+        "MCMC_mean": 0.011871695518493607,
+        "p_value": 1.862645149230957e-09
+      }
+    },
+    "Generative_vs_Evolutionary": {
+      "absolute_drift": {
+        "Generative_mean": 0.6848014350359638,
+        "Evolutionary_mean": 0.2161891743540764,
+        "p_value": 1.862645149230957e-09
+      },
+      "edit_distance": {
+        "Generative_mean": 79.2,
+        "Evolutionary_mean": 2.7,
+        "p_value": 1.6095549266126638e-06
+      },
+      "attack_model_queries": {
+        "Generative_mean": 20.0,
+        "Evolutionary_mean": 20.0,
+        "p_value": 1.0
+      },
+      "runtime_seconds": {
+        "Generative_mean": 6.41376895904541,
+        "Evolutionary_mean": 0.0074152549107869,
+        "p_value": 1.862645149230957e-09
+      }
+    }
+  },
+  "50": {
+    "Generative_vs_Random": {
+      "absolute_drift": {
+        "Generative_mean": 0.70594886263522,
+        "Random_mean": 0.1965867956789831,
+        "p_value": 1.862645149230957e-09
+      },
+      "edit_distance": {
+        "Generative_mean": 79.06666666666666,
+        "Random_mean": 1.0,
+        "p_value": 1.6710024438606673e-06
+      },
+      "attack_model_queries": {
+        "Generative_mean": 50.0,
+        "Random_mean": 50.0,
+        "p_value": 1.0
+      },
+      "runtime_seconds": {
+        "Generative_mean": 18.283042208353677,
+        "Random_mean": 0.030191349983215276,
+        "p_value": 1.862645149230957e-09
+      }
+    },
+    "Generative_vs_MCMC": {
+      "absolute_drift": {
+        "Generative_mean": 0.70594886263522,
+        "MCMC_mean": 0.4616309574494759,
+        "p_value": 2.0489096641540527e-07
+      },
+      "edit_distance": {
+        "Generative_mean": 79.06666666666666,
+        "MCMC_mean": 16.433333333333334,
+        "p_value": 1.6363965084210647e-06
+      },
+      "attack_model_queries": {
+        "Generative_mean": 50.0,
+        "MCMC_mean": 50.0,
+        "p_value": 1.0
+      },
+      "runtime_seconds": {
+        "Generative_mean": 18.283042208353677,
+        "MCMC_mean": 0.0302464087804158,
+        "p_value": 1.862645149230957e-09
+      }
+    },
+    "Generative_vs_Evolutionary": {
+      "absolute_drift": {
+        "Generative_mean": 0.70594886263522,
+        "Evolutionary_mean": 0.46304948066050805,
+        "p_value": 3.5390257835388184e-08
+      },
+      "edit_distance": {
+        "Generative_mean": 79.06666666666666,
+        "Evolutionary_mean": 7.533333333333333,
+        "p_value": 1.6489105134644262e-06
+      },
+      "attack_model_queries": {
+        "Generative_mean": 50.0,
+        "Evolutionary_mean": 50.0,
+        "p_value": 1.0
+      },
+      "runtime_seconds": {
+        "Generative_mean": 18.283042208353677,
+        "Evolutionary_mean": 0.034431997934977164,
+        "p_value": 1.862645149230957e-09
+      }
+    }
+  }
+}
