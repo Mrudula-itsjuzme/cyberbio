@@ -39,19 +39,47 @@ class ArenaRunner:
                            "mean_robustness_effect": summary["mean_drift"], "n": summary["valid"]})
         return matrix, means
 
-    def run(self, *, clean_train: Sequence[SourceSample], clean_validation: Sequence[SourceSample], rounds: int, config: dict) -> dict:
+    def run(self, *, clean_train: Sequence[SourceSample], clean_validation: Sequence[SourceSample], rounds: int, config: dict, resume: bool = False) -> dict:
         self.storage.write_json(self.storage.path/"config.json", config)
         self.storage.write_json(self.storage.path/"environment.json", self.storage.metadata())
         dataset_text = "\n".join(f"{s.source_id}\t{s.input}\t{s.target}" for s in [*clean_train,*clean_validation])
         self.storage.write_json(self.storage.path/"dataset.json", {"sha256": hashlib.sha256(dataset_text.encode()).hexdigest(),
             "train": len(clean_train), "validation": len(clean_validation)})
         summaries, evolution = [], []
-        self.storage.transition("IDLE")
-        # D0 is genuinely fit on the real clean split before the first attack.
-        self.storage.transition("UPDATING_DEFENDER", -1, "clean baseline")
-        self.defender.train(clean_train, [], round_id=0)
+
+        start_round = 0
+        if resume:
+            for round_id in range(rounds - 1, -1, -1):
+                rdir = self.storage.round_dir(round_id)
+                if (rdir / "COMPLETE.json").exists():
+                    start_round = round_id + 1
+                    break
+            
+            if start_round > 0:
+                print(f"Resuming from round {start_round}")
+                last_rdir = self.storage.round_dir(start_round - 1)
+                # Load previous state
+                if (last_rdir / "defender_checkpoint.json").exists():
+                    self.defender.load_checkpoint(str(last_rdir / "defender_checkpoint.json"))
+                # Load previous summaries if needed, but for now just appending.
+                # Actually, we need to load previous hard examples!
+                for r in range(start_round):
+                    he_file = self.storage.round_dir(r) / "hard_examples.jsonl"
+                    if he_file.exists():
+                        # Read and add to buffer. Wait, buffer.records is a list
+                        import json
+                        from .contracts import CandidateRecord
+                        with open(he_file, "r") as fh:
+                            for line in fh:
+                                self.buffer.records.append(CandidateRecord(**json.loads(line)))
+
+        if start_round == 0:
+            self.storage.transition("IDLE")
+            self.storage.transition("UPDATING_DEFENDER", -1, "clean baseline")
+            self.defender.train(clean_train, [], round_id=0)
+
         previous_means: dict[str, float | None] = {}
-        for round_id in range(rounds):
+        for round_id in range(start_round, rounds):
             started = time.monotonic(); rdir = self.storage.round_dir(round_id)
             try:
                 arm = self.controller.select() if self.controller else list(self.attackers)[round_id % len(self.attackers)]
@@ -103,7 +131,7 @@ class ArenaRunner:
         self._write_csv(final/"arena_hard_example_stats.csv", [{"round":s["round"],"buffer_size":s["hard_example_buffer_size"]} for s in summaries])
         result={"run_id":self.storage.path.name,"status":"RUN_COMPLETE","rounds":summaries,
                 "controller":self.controller.state() if self.controller else None,
-                "scientific_status":"SMOKE_ONLY_NON_CANONICAL"}
+                "scientific_status":"SCIENTIFIC_PILOT" if config.get("real_pilot") else "SMOKE_ONLY_NON_CANONICAL"}
         self.storage.write_json(self.storage.path/"run_summary.json", result)
         self.storage.transition("RUN_COMPLETE", rounds-1)
         return result

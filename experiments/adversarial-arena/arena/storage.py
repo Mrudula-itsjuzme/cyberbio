@@ -8,7 +8,7 @@ from typing import Any
 class RunStorage:
     def __init__(self, root: str | Path, run_id: str):
         self.path = Path(root) / run_id
-        self.path.mkdir(parents=True, exist_ok=False)
+        self.path.mkdir(parents=True, exist_ok=True)
 
     @staticmethod
     def write_json(path: Path, value: Any) -> None:
