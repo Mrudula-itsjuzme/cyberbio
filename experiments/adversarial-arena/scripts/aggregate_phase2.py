@@ -4,7 +4,7 @@ from collections import defaultdict
 import numpy as np
 
 def require_float(val, name, context):
-    if val is None or val == "":
+    if val is None or val == "" or str(val).lower() == "none":
         raise ValueError(f"Missing required float for {name} in {context}")
     return float(val)
 
@@ -27,15 +27,16 @@ def aggregate():
     defenders_data, redistribution_data, tradeoff_data = [], [], []
     diversity_data, summary_data = [], []
     dynamics_data = {"cem": [], "smc": [], "validity_smc": []}
-    
     g_adapt_raw = []
     
-    # Pre-parse candidate overlap sets
-    # method_cands[seed][round][method] = set(smiles)
+    ACTIVE_LABEL = {
+        "cem": "cem",
+        "smc": "smc",
+        "validity_smc": "validity_smc"
+    }
+    
     method_cands = defaultdict(lambda: defaultdict(lambda: defaultdict(set)))
     method_hard_cands = defaultdict(lambda: defaultdict(lambda: defaultdict(set)))
-    
-    # Store validity stats per seed/round for validity efficiency table
     val_eff = defaultdict(lambda: defaultdict(dict))
     
     for rdir in sorted(runs):
@@ -55,13 +56,6 @@ def aggregate():
         total_queries = 0
         val_rate_sum = 0
         wall_clock = 0
-        
-        # Get D0 clean RMSE
-        clean_rmse_D0 = None
-        rd0 = rdir / "round_000"
-        def_m_file0 = rd0 / "defender_metrics.json"
-        if def_m_file0.exists():
-            clean_rmse_D0 = require_float(json.load(open(def_m_file0)).get("rmse"), "rmse", f"{rdir.name}/round_000")
             
         last_clean_rmse = None
         
@@ -90,43 +84,32 @@ def aggregate():
                     for row in csv.DictReader(f):
                         a_data[row["attacker"]] = optional_float(row["mean_drift"])
             
-            # Explicit matching
-            active_attacker_key = None
-            possible_keys = [k for k in a_data.keys() if method.replace("_", "").lower() in k.replace("_", "").replace("-", "").lower()]
-            if len(possible_keys) == 1:
-                active_attacker_key = possible_keys[0]
-            elif method == "validity_smc" and "Validity-SMC" in a_data:
-                active_attacker_key = "Validity-SMC"
-            elif method == "smc" and "SMC" in a_data and "Validity-SMC" not in a_data:
-                active_attacker_key = "SMC"
-            elif method == "cem" and "cem" in a_data:
-                active_attacker_key = "cem"
-                
+            active_attacker_key = ACTIVE_LABEL.get(method)
             if not active_attacker_key or active_attacker_key not in b_data or active_attacker_key not in a_data:
-                print(f"FAILED: Could not securely map {method} in {rdir.name}/round_{round_idx:03d}")
+                print(f"FAILED: Exact mapping required. {method} not strictly matched in {rdir.name}/round_{round_idx:03d}")
                 sys.exit(1)
                 
-            # Log mapping doc
             with open("docs/ARENA_PHASE2_LABEL_MAPPING.md", "a") as mf:
-                mf.write(f"- Mapping `{method}` -> `{active_attacker_key}` (verified in cross_attack_matrix)\n")
+                mf.write(f"- EXACT MAPPING VERIFIED: `{method}` -> `{active_attacker_key}` in {rdir.name}/round_{round_idx:03d}\n")
                 
             active_drift_before = b_data[active_attacker_key]
             active_drift_after = a_data[active_attacker_key]
-            active_gain_difference = active_drift_before - active_drift_after
+            active_gain_difference = active_drift_before - active_drift_after if not np.isnan(active_drift_before) else np.nan
             
+            # clean RMSE logic (provenance fix: it's D_{t+1}, so clean_before is D_{t})
             def_m_file = rd / "defender_metrics.json"
             if def_m_file.exists():
                 clean_after = require_float(json.load(open(def_m_file)).get("rmse"), "rmse", f"{rdir.name}/round_{round_idx:03d}")
             else:
-                clean_after = clean_rmse_D0
+                clean_after = np.nan
                 
             if round_idx == 0:
-                clean_before = clean_rmse_D0
+                clean_before = np.nan # Initial D0 clean RMSE is lost/never persisted
             else:
                 clean_before = last_clean_rmse
             last_clean_rmse = clean_after
             
-            delta_clean_round = clean_after - clean_before
+            delta_clean_round = clean_after - clean_before if clean_before is not np.nan else np.nan
             def_gain_ratio = optional_float(round_info.get("defender_gain"))
             
             rounds_data.append({
@@ -138,7 +121,6 @@ def aggregate():
                 "hard_examples": round_info.get("hard_example_buffer_size", 0)
             })
             
-            # attackers
             total_proposals = require_float(round_info.get("total_proposals", att_data.get("proposal_count")), "proposal_count", f"{rdir.name}/round_{round_idx:03d}")
             best_drift = require_float(att_data.get("best_drift", round_info.get("best_drift")), "best_drift", f"{rdir.name}/round_{round_idx:03d}")
             mean_drift = require_float(att_data.get("mean_drift", round_info.get("mean_drift")), "mean_drift", f"{rdir.name}/round_{round_idx:03d}")
@@ -155,14 +137,13 @@ def aggregate():
                 "runtime": rt
             })
             
-            # diversity (candidates)
             cands_file = rd / "candidates.jsonl"
             uniq_c = 0
             dup_frac = 0.0
             unique_smiles = set()
             if cands_file.exists():
                 cands = [json.loads(line) for line in cands_file.read_text().splitlines() if line.strip()]
-                unique_smiles = set(c.get("candidate_input", "") for c in cands)
+                unique_smiles = set(c.get("candidate_input") for c in cands if c.get("candidate_input"))
                 uniq_c = len(unique_smiles)
                 dup_frac = 1.0 - (uniq_c / len(cands)) if len(cands) > 0 else 0.0
             
@@ -172,7 +153,7 @@ def aggregate():
             hard_smiles = set()
             if hard_file.exists():
                 hcands = [json.loads(line) for line in hard_file.read_text().splitlines() if line.strip()]
-                hard_smiles = set(c.get("candidate_input", "") for c in hcands)
+                hard_smiles = set(c.get("candidate_input") for c in hcands if c.get("candidate_input"))
             method_hard_cands[seed][round_idx][method] = hard_smiles
             
             diversity_data.append({
@@ -181,17 +162,14 @@ def aggregate():
                 "duplicate_fraction": dup_frac
             })
             
-            # dynamics
             d_row = {"method": method, "seed": seed, "round": round_idx}
             if method == "cem":
                 h = optional_float(att_data.get("entropy"))
                 family_names = att_data.get("state_after", {}).get("family_names")
-                if not family_names:
-                    family_names = att_data.get("probs", [])
+                if not family_names: family_names = att_data.get("probs", [])
                 
                 K = len(family_names)
-                if K < 2:
-                    raise ValueError(f"CEM family count K={K} must be >= 2 for seed {seed} round {round_idx}")
+                if K < 2: raise ValueError(f"CEM family count K={K} must be >= 2 for seed {seed} round {round_idx}")
                 
                 h_max = math.log(K)
                 h_norm = h / h_max if not np.isnan(h) else np.nan
@@ -201,7 +179,6 @@ def aggregate():
                 else: collapse_cls = "broad"
                 
                 max_prob = max(att_data.get("probs", [0])) if att_data.get("probs") else np.nan
-                
                 d_row.update({
                     "family_count": K,
                     "entropy": h,
@@ -215,16 +192,13 @@ def aggregate():
             elif method == "smc" or method == "validity_smc":
                 ess = optional_float(att_data.get("ess"))
                 diversity = optional_float(att_data.get("diversity"))
-                # Get actual particle count
                 n_particles = att_data.get("particle_count")
-                if n_particles is None:
-                    n_particles = att_data.get("state_after", {}).get("particle_count")
+                if n_particles is None: n_particles = att_data.get("state_after", {}).get("particle_count")
                 
                 if n_particles is None:
                     raise ValueError(f"Missing SMC particle_count for seed {seed} round {round_idx}")
                     
                 ess_ratio = ess / float(n_particles) if not np.isnan(ess) else np.nan
-                
                 if ess_ratio < 0.20: smc_cls = "severe"
                 elif ess_ratio < 0.50: smc_cls = "moderate"
                 else: smc_cls = "healthy"
@@ -233,7 +207,7 @@ def aggregate():
                     "particle_count": n_particles,
                     "ess": ess,
                     "ess_ratio": ess_ratio,
-                    "resampling_count": 0, # not explicitly tracked unless in summary
+                    "resampling_count": np.nan, # Not explicit in states
                     "diversity": diversity,
                     "classification": smc_cls
                 })
@@ -242,7 +216,6 @@ def aggregate():
                     d_row["beta_b"] = optional_float(att_data.get("beta_b"))
                 dynamics_data[method].append(d_row)
                 
-                # Val Eff
                 drift_per_query = mean_drift / queries if queries > 0 else 0
                 val_per_query = valid_c / queries if queries > 0 else 0
                 val_eff[seed][round_idx][method] = {
@@ -261,7 +234,6 @@ def aggregate():
                     "duplicate_fraction": dup_frac
                 }
 
-            # defenders
             defenders_data.append({
                 "method": method, "seed": seed, "round": round_idx,
                 "checkpoint_before": f"round_{round_idx-1}" if round_idx > 0 else "initial",
@@ -276,24 +248,21 @@ def aggregate():
                 "defender_gain_ratio": def_gain_ratio
             })
 
-            # transfer
             evo_key = "Evolutionary" if "Evolutionary" in b_data else None
             if evo_key:
                 evo_before = b_data[evo_key]
                 evo_after = a_data[evo_key]
-                t_evo = evo_before - evo_after
+                t_evo = evo_before - evo_after if not np.isnan(evo_before) and not np.isnan(evo_after) else np.nan
                 transfer_data.append({
                     "method": method, "seed": seed, "round": round_idx,
                     "R_before": evo_before,
                     "R_after": evo_after,
                     "T_Evo": t_evo
                 })
-                agg_t_evo.append(t_evo)
+                if not np.isnan(t_evo): agg_t_evo.append(t_evo)
                 
-            # redistribution
-            if evo_key:
-                other_gain_diff = evo_before - evo_after
-                redistribution_observed = (active_gain_difference > 0) and (other_gain_diff < 0)
+                other_gain_diff = t_evo
+                redistribution_observed = (active_gain_difference > 0) and (other_gain_diff < 0) if not np.isnan(active_gain_difference) else False
                 if redistribution_observed: redistribution_count += 1
                 redistribution_data.append({
                     "method": method, "seed": seed, "round": round_idx,
@@ -305,13 +274,14 @@ def aggregate():
                     "redistribution_observed": redistribution_observed
                 })
                 
-            # tradeoff
-            delta_clean = clean_after - clean_before
+            delta_clean = clean_after - clean_before if clean_before is not np.nan else np.nan
             delta_robust = active_gain_difference
-            if delta_robust > 0 and delta_clean <= 0: classification = "ROBUST_WIN_CLEAN_WIN"
-            elif delta_robust > 0 and delta_clean > 0: classification = "ROBUST_WIN_CLEAN_COST"
-            elif delta_robust <= 0 and delta_clean <= 0: classification = "ROBUST_LOSS_CLEAN_WIN"
-            else: classification = "ROBUST_LOSS_CLEAN_COST"
+            classification = "NA"
+            if not np.isnan(delta_clean) and not np.isnan(delta_robust):
+                if delta_robust > 0 and delta_clean <= 0: classification = "ROBUST_WIN_CLEAN_WIN"
+                elif delta_robust > 0 and delta_clean > 0: classification = "ROBUST_WIN_CLEAN_COST"
+                elif delta_robust <= 0 and delta_clean <= 0: classification = "ROBUST_LOSS_CLEAN_WIN"
+                else: classification = "ROBUST_LOSS_CLEAN_COST"
             tradeoff_data.append({
                 "method": method, "seed": seed, "round": round_idx,
                 "delta_clean": delta_clean,
@@ -319,17 +289,13 @@ def aggregate():
                 "classification": classification
             })
             
-            # agg
             agg_mean_drift.append(mean_drift)
             agg_best_drift.append(best_drift)
-            agg_def_gain_diff.append(active_gain_difference)
+            if not np.isnan(active_gain_difference): agg_def_gain_diff.append(active_gain_difference)
             total_queries += queries
             val_rate_sum += (valid_c / total_proposals) if total_proposals > 0 else 0
             if not np.isnan(rt): wall_clock += rt
             
-        delta_clean_total = last_clean_rmse - clean_rmse_D0 if clean_rmse_D0 is not None and last_clean_rmse is not None else np.nan
-                
-        # load G_adapt to include in summary
         g_adapt_mean = np.nan
         raw_g = res_dir / "arena_phase2_g_adapt_raw.csv"
         if raw_g.exists():
@@ -345,7 +311,7 @@ def aggregate():
                             "R_before": r["R_At_Dt"],
                             "R_after": r["R_At1_Dt"],
                             "G_adapt": r["G_adapt"],
-                            "query_budget": 250
+                            "query_budget_source": "CONFIG_250"
                         })
                 if g_vals: g_adapt_mean = np.mean(g_vals)
                 
@@ -359,7 +325,6 @@ def aggregate():
             "defender_gain_diff_mean": np.mean(agg_def_gain_diff) if agg_def_gain_diff else np.nan,
             "T_Evo_mean": np.mean(agg_t_evo) if agg_t_evo else np.nan,
             "redistribution_count": redistribution_count,
-            "clean_rmse_delta_total": delta_clean_total,
             "runtime": wall_clock
         })
 
@@ -367,32 +332,27 @@ def aggregate():
         if not data: return
         all_keys = set()
         for d in data: all_keys.update(d.keys())
+        all_keys = list(data[0].keys()) + [k for k in all_keys if k not in data[0].keys()]
         for d in data:
             for k in all_keys:
                 if k not in d: d[k] = ""
-
-        if not data: return
         with open(out_dir / name, "w", newline="") as f:
-            writer = csv.DictWriter(f, fieldnames=data[0].keys())
+            writer = csv.DictWriter(f, fieldnames=all_keys)
             writer.writeheader()
             writer.writerows(data)
             
-    # Process pairwise overlap
     overlap_data = []
     for seed, round_dict in method_cands.items():
         for round_idx, methods_dict in round_dict.items():
             mlist = list(methods_dict.keys())
             for i in range(len(mlist)):
                 for j in range(i+1, len(mlist)):
-                    mA = mlist[i]
-                    mB = mlist[j]
-                    setA = methods_dict[mA]
-                    setB = methods_dict[mB]
+                    mA, mB = mlist[i], mlist[j]
+                    setA, setB = methods_dict[mA], methods_dict[mB]
                     inter = len(setA.intersection(setB))
                     uni = len(setA.union(setB))
                     jaccard = inter / uni if uni > 0 else 0.0
                     
-                    # hard examples
                     hsetA = method_hard_cands[seed][round_idx].get(mA, set())
                     hsetB = method_hard_cands[seed][round_idx].get(mB, set())
                     hinter = len(hsetA.intersection(hsetB))
@@ -410,7 +370,6 @@ def aggregate():
                         "hard_jaccard_overlap": hjaccard
                     })
 
-    # Process validity efficiency
     val_eff_data = []
     for seed, round_dict in val_eff.items():
         for round_idx, methods_dict in round_dict.items():
@@ -442,25 +401,14 @@ def aggregate():
     write_csv("phase2_summary.csv", summary_data)
     write_csv("phase2_g_adapt.csv", g_adapt_raw)
     write_csv("phase2_attacker_overlap.csv", overlap_data)
-    
-    # Needs to handle missing keys in val_eff_data for diff_row gracefully
-    # Ensure all rows have all keys
-    all_eff_keys = set()
-    for row in val_eff_data: all_eff_keys.update(row.keys())
-    for row in val_eff_data:
-        for k in all_eff_keys:
-            if k not in row: row[k] = ""
     write_csv("phase2_validity_efficiency.csv", val_eff_data)
     
-    # Generate Phase 2 Statistics
     stats = []
-    
     def calc_stats(metric_name, data, value_key, method_key="method"):
         method_groups = defaultdict(list)
         for d in data:
             val = optional_float(d.get(value_key))
-            if not np.isnan(val):
-                method_groups[d[method_key]].append(val)
+            if not np.isnan(val): method_groups[d[method_key]].append(val)
                 
         for meth, vals in method_groups.items():
             stats.append({
@@ -471,19 +419,15 @@ def aggregate():
             })
             
     calc_stats("mean_drift", attackers_data, "mean_drift")
-    calc_stats("best_drift", attackers_data, "best_drift")
     calc_stats("G_adapt", g_adapt_raw, "G_adapt")
     calc_stats("defender_gain_difference", defenders_data, "defender_gain_difference")
     calc_stats("T_Evo", transfer_data, "T_Evo")
-    calc_stats("ESS_ratio", dynamics_data["smc"], "ess_ratio")
-    calc_stats("ESS_ratio", dynamics_data["validity_smc"], "ess_ratio")
+    calc_stats("ESS_ratio", dynamics_data["smc"] + dynamics_data["validity_smc"], "ess_ratio")
     calc_stats("normalized_entropy", dynamics_data["cem"], "normalized_entropy")
-    
     write_csv("phase2_statistics.csv", stats)
 
-    print("Aggregation logic complete.")
+    print("Aggregation complete")
 
 if __name__ == "__main__": 
-    # create mapping doc
-    open("docs/ARENA_PHASE2_LABEL_MAPPING.md", "w").write("# Phase 2 Active Attacker Explicit Label Mapping\n")
+    open("docs/ARENA_PHASE2_LABEL_MAPPING.md", "w").write("# Phase 2 Active Attacker Exact Label Mapping\n")
     aggregate()

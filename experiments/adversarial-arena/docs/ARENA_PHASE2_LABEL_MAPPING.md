@@ -1,26 +1,26 @@
-# Phase 2 Active Attacker Explicit Label Mapping
-- Mapping `cem` -> `cem` (verified in cross_attack_matrix)
-- Mapping `cem` -> `cem` (verified in cross_attack_matrix)
-- Mapping `cem` -> `cem` (verified in cross_attack_matrix)
-- Mapping `cem` -> `cem` (verified in cross_attack_matrix)
-- Mapping `cem` -> `cem` (verified in cross_attack_matrix)
-- Mapping `cem` -> `cem` (verified in cross_attack_matrix)
-- Mapping `cem` -> `cem` (verified in cross_attack_matrix)
-- Mapping `cem` -> `cem` (verified in cross_attack_matrix)
-- Mapping `cem` -> `cem` (verified in cross_attack_matrix)
-- Mapping `smc` -> `smc` (verified in cross_attack_matrix)
-- Mapping `smc` -> `smc` (verified in cross_attack_matrix)
-- Mapping `smc` -> `smc` (verified in cross_attack_matrix)
-- Mapping `smc` -> `smc` (verified in cross_attack_matrix)
-- Mapping `smc` -> `smc` (verified in cross_attack_matrix)
-- Mapping `smc` -> `smc` (verified in cross_attack_matrix)
-- Mapping `smc` -> `smc` (verified in cross_attack_matrix)
-- Mapping `validity_smc` -> `validity_smc` (verified in cross_attack_matrix)
-- Mapping `validity_smc` -> `validity_smc` (verified in cross_attack_matrix)
-- Mapping `validity_smc` -> `validity_smc` (verified in cross_attack_matrix)
-- Mapping `validity_smc` -> `validity_smc` (verified in cross_attack_matrix)
-- Mapping `validity_smc` -> `validity_smc` (verified in cross_attack_matrix)
-- Mapping `validity_smc` -> `validity_smc` (verified in cross_attack_matrix)
-- Mapping `validity_smc` -> `validity_smc` (verified in cross_attack_matrix)
-- Mapping `validity_smc` -> `validity_smc` (verified in cross_attack_matrix)
-- Mapping `validity_smc` -> `validity_smc` (verified in cross_attack_matrix)
+# Phase 2 Active Attacker Exact Label Mapping
+- EXACT MAPPING VERIFIED: `cem` -> `cem` in phase2_cem_carry_seed20260920/round_000
+- EXACT MAPPING VERIFIED: `cem` -> `cem` in phase2_cem_carry_seed20260920/round_001
+- EXACT MAPPING VERIFIED: `cem` -> `cem` in phase2_cem_carry_seed20260920/round_002
+- EXACT MAPPING VERIFIED: `cem` -> `cem` in phase2_cem_carry_seed20260921/round_000
+- EXACT MAPPING VERIFIED: `cem` -> `cem` in phase2_cem_carry_seed20260921/round_001
+- EXACT MAPPING VERIFIED: `cem` -> `cem` in phase2_cem_carry_seed20260921/round_002
+- EXACT MAPPING VERIFIED: `cem` -> `cem` in phase2_cem_carry_seed20260922/round_000
+- EXACT MAPPING VERIFIED: `cem` -> `cem` in phase2_cem_carry_seed20260922/round_001
+- EXACT MAPPING VERIFIED: `cem` -> `cem` in phase2_cem_carry_seed20260922/round_002
+- EXACT MAPPING VERIFIED: `smc` -> `smc` in phase2_smc_carry_seed20260920/round_000
+- EXACT MAPPING VERIFIED: `smc` -> `smc` in phase2_smc_carry_seed20260920/round_001
+- EXACT MAPPING VERIFIED: `smc` -> `smc` in phase2_smc_carry_seed20260920/round_002
+- EXACT MAPPING VERIFIED: `smc` -> `smc` in phase2_smc_carry_seed20260921/round_000
+- EXACT MAPPING VERIFIED: `smc` -> `smc` in phase2_smc_carry_seed20260921/round_001
+- EXACT MAPPING VERIFIED: `smc` -> `smc` in phase2_smc_carry_seed20260922/round_000
+- EXACT MAPPING VERIFIED: `smc` -> `smc` in phase2_smc_carry_seed20260922/round_001
+- EXACT MAPPING VERIFIED: `validity_smc` -> `validity_smc` in phase2_validity_smc_carry_seed20260920/round_000
+- EXACT MAPPING VERIFIED: `validity_smc` -> `validity_smc` in phase2_validity_smc_carry_seed20260920/round_001
+- EXACT MAPPING VERIFIED: `validity_smc` -> `validity_smc` in phase2_validity_smc_carry_seed20260920/round_002
+- EXACT MAPPING VERIFIED: `validity_smc` -> `validity_smc` in phase2_validity_smc_carry_seed20260921/round_000
+- EXACT MAPPING VERIFIED: `validity_smc` -> `validity_smc` in phase2_validity_smc_carry_seed20260921/round_001
+- EXACT MAPPING VERIFIED: `validity_smc` -> `validity_smc` in phase2_validity_smc_carry_seed20260921/round_002
+- EXACT MAPPING VERIFIED: `validity_smc` -> `validity_smc` in phase2_validity_smc_carry_seed20260922/round_000
+- EXACT MAPPING VERIFIED: `validity_smc` -> `validity_smc` in phase2_validity_smc_carry_seed20260922/round_001
+- EXACT MAPPING VERIFIED: `validity_smc` -> `validity_smc` in phase2_validity_smc_carry_seed20260922/round_002
