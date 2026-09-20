@@ -1,0 +1,242 @@
+[
+    {
+        "source_id": "mat_test_3905",
+        "split": "test",
+        "SMILES": "[*]Nc1c(C)c(C)c(C(=O)c2ccc(NC(=O)c3ccc(C([*])=O)cc3)cc2)c(C)c1C",
+        "target_Tg": 3.4961,
+        "SMILES_SHA256": "2db2126f08179e57d0608a58cef989745a6b81a0e36822affdcdcb5ab483c914",
+        "seed": 42
+    },
+    {
+        "source_id": "mat_test_3824",
+        "split": "test",
+        "SMILES": "[*]C=CC1CC([*])C(C#N)C1",
+        "target_Tg": 5.8629,
+        "SMILES_SHA256": "71a9170e084772a9dea26e5b56d21498de39ff22f971eb79b447e2ed520d8cab",
+        "seed": 42
+    },
+    {
+        "source_id": "mat_test_4147",
+        "split": "test",
+        "SMILES": "[*]C(=O)NCCCCCCCCNC(=O)c1ccc([*])nc1",
+        "target_Tg": 4.8735,
+        "SMILES_SHA256": "d6ce6d20605a9f3bc7d538d019abd730a4df3982c56449831e55b152a57b407b",
+        "seed": 42
+    },
+    {
+        "source_id": "mat_test_3722",
+        "split": "test",
+        "SMILES": "C(F)(F)C(S1)=CC=C1C(F)(F)C(S2)=CC=C2",
+        "target_Tg": 3.4068,
+        "SMILES_SHA256": "3488be5a4fe9c94556519cca053a78e29ed329e98a675b77b5cd0e5a120890ce",
+        "seed": 42
+    },
+    {
+        "source_id": "mat_test_4073",
+        "split": "test",
+        "SMILES": "COCOCCCO",
+        "target_Tg": 6.5494,
+        "SMILES_SHA256": "2fdfc6b277b6cd9dd2c3e2c82c75f1a58fb91303a461c6aa0fa12eff4bb9c4ed",
+        "seed": 42
+    },
+    {
+        "source_id": "mat_test_3982",
+        "split": "test",
+        "SMILES": "[*]C(=O)c1ccc2c(c1)C(=O)N(c1cccc(Nc3nc(Nc4cccc(N5C(=O)c6ccc([*])cc6C5=O)c4)nc(N(C)C)n3)c1)C2=O",
+        "target_Tg": 2.4856,
+        "SMILES_SHA256": "5cc71011a647a1f70809072c650053d54a38e5fe9d3e99e9d18a90ac82d9d0c5",
+        "seed": 42
+    },
+    {
+        "source_id": "mat_test_3742",
+        "split": "test",
+        "SMILES": "[*]CCOCCOCCOCCOCCOCCOC(=O)NCCCCCCNC(=O)O[*]",
+        "target_Tg": 5.7691,
+        "SMILES_SHA256": "41ed95fd8aa73dd32d6df6acff1101270fd6c5b6b6cef8765f678fe2c4068df0",
+        "seed": 42
+    },
+    {
+        "source_id": "mat_test_3654",
+        "split": "test",
+        "SMILES": "[*]Sc1ccc(C=Nc2ccc(N=Cc3ccc([*])cc3)cc2)cc1",
+        "target_Tg": 2.9441,
+        "SMILES_SHA256": "0d00ec31ca28f6ef9a5413ded016606d93183ba295556f9239125950006fd91b",
+        "seed": 42
+    },
+    {
+        "source_id": "mat_test_4110",
+        "split": "test",
+        "SMILES": "[*]C(=O)N([*])CC=C",
+        "target_Tg": 5.4866,
+        "SMILES_SHA256": "e05aa5aa2c353cdfcec1402f906a02b9f25d4a1d2936bae691a18ddf0c703f75",
+        "seed": 42
+    },
+    {
+        "source_id": "mat_test_3740",
+        "split": "test",
+        "SMILES": "[*]CC(C=C1)=CC=C1CC(S2)=CC=C2[*]",
+        "target_Tg": 4.4417,
+        "SMILES_SHA256": "36149ace2781e320b37d66a50a10c92aeb450f608021621187b43f98e24793ab",
+        "seed": 42
+    },
+    {
+        "source_id": "mat_test_3848",
+        "split": "test",
+        "SMILES": "[*]CCCCCCNC(=O)CCc1ccc(CCC(=O)N[*])cc1",
+        "target_Tg": 5.4647,
+        "SMILES_SHA256": "5556e3a6baf2eea9be5ebfd492a0ca6fe8bd3328dc5e3ee885293cdc1c4e8cc2",
+        "seed": 42
+    },
+    {
+        "source_id": "mat_test_3608",
+        "split": "test",
+        "SMILES": "[*]C#CC(=C([*])c1cnc2ccccc2c1)c1cnc2ccccc2c1",
+        "target_Tg": 0.7215,
+        "SMILES_SHA256": "325a2f085cb04e5393ad8be2fff54eb2279a19bd9fc0e20423777ba0c062b2eb",
+        "seed": 42
+    },
+    {
+        "source_id": "mat_test_3632",
+        "split": "test",
+        "SMILES": "[*]Nc1ccc(C=Cc2ccc(NC(=C(C#N)C#N)c3ccc(C([*])=C(C#N)C#N)cc3)cc2)cc1",
+        "target_Tg": 2.0183,
+        "SMILES_SHA256": "fa94c2f6b13c87763346cb1617f361f745bab67fe489e3564ecb7f93e8a4682e",
+        "seed": 42
+    },
+    {
+        "source_id": "mat_test_3667",
+        "split": "test",
+        "SMILES": "[*]C=Nc1ccc(-c2ccc(N=Cc3ccc(Sc4ccc([*])o4)o3)c(OC)c2)cc1OC",
+        "target_Tg": 2.96,
+        "SMILES_SHA256": "971ece7a265a3a637eddf28ed99372ba08ee2b835ef022b987d1ddb7ed16423c",
+        "seed": 42
+    },
+    {
+        "source_id": "mat_test_4152",
+        "split": "test",
+        "SMILES": "[*]CC([*])(Cl)C#N",
+        "target_Tg": 6.3216,
+        "SMILES_SHA256": "5b9738d6e407bd41c39f4539313cfc279fe8f21c03fb10dc76d167c25d539ce1",
+        "seed": 42
+    },
+    {
+        "source_id": "mat_test_3653",
+        "split": "test",
+        "SMILES": "[*]Oc1ccc(CC(NC(=O)CCc2ccc(OC(=O)CCCCCCC([*])=O)cc2)C(=O)OCC)cc1",
+        "target_Tg": 5.1441,
+        "SMILES_SHA256": "047d81a768af85fd8aa3341c95d4d0ea97c8a2f5842138507574e6ab50a5d01b",
+        "seed": 42
+    },
+    {
+        "source_id": "mat_test_3579",
+        "split": "test",
+        "SMILES": "[*]CC([*])(C)C(=O)OC(C(F)(F)F)C(F)(F)F",
+        "target_Tg": 6.0249,
+        "SMILES_SHA256": "320f2a362f7f5ba3cd2c9df144063154e574ee3cb6533960e2ca1323be41791c",
+        "seed": 42
+    },
+    {
+        "source_id": "mat_test_3833",
+        "split": "test",
+        "SMILES": "[*]Cc1ccc(OCOc2ccc([*])c3cccnc23)c2ncccc12",
+        "target_Tg": 3.4275,
+        "SMILES_SHA256": "0e6aa07a6305239c7b9a57df72fc4673430725bde825c53a55a0bd3b3c1f9766",
+        "seed": 42
+    },
+    {
+        "source_id": "mat_test_3888",
+        "split": "test",
+        "SMILES": "[*]C=CC1CC([*])C(C#N)(CC)C1",
+        "target_Tg": 6.074,
+        "SMILES_SHA256": "d6aadb83fd9af0b8dd41bfa96680d5b7aa4b37b7710f057a24bd0dc0a43b612b",
+        "seed": 42
+    },
+    {
+        "source_id": "mat_test_3910",
+        "split": "test",
+        "SMILES": "[*]CCCOC(=O)CCCCCC(=O)O[*]",
+        "target_Tg": 6.855,
+        "SMILES_SHA256": "7253dfceb811691c404489baaefcdbe4c87b8c2b16e486753d8c097775469dfe",
+        "seed": 42
+    },
+    {
+        "source_id": "mat_test_3708",
+        "split": "test",
+        "SMILES": "[*]c1nc2cc3sc(-c4cc(OCCCC)c([*])cc4OCCCC)nc3cc2s1",
+        "target_Tg": 3.1128,
+        "SMILES_SHA256": "ff018d97de0314d75e785f1c9bb045d47ac051fe1175bdd8dbe29220ece75f07",
+        "seed": 42
+    },
+    {
+        "source_id": "mat_test_3868",
+        "split": "test",
+        "SMILES": "[*]CC(O)COc1ccc(O[*])cc1",
+        "target_Tg": 4.7330000000000005,
+        "SMILES_SHA256": "b241fd791b743158fc3d2b33232c7008bb12dde81e2bdd42c09632f59e0338da",
+        "seed": 42
+    },
+    {
+        "source_id": "mat_test_3626",
+        "split": "test",
+        "SMILES": "[*]C(=O)Nc1cc(NC(=O)c2ccc([*])o2)c(N)cc1N",
+        "target_Tg": 2.5905,
+        "SMILES_SHA256": "5a154dc721dda24b5cf2e4db7c8d3562105b39bf55ec91cacb4d659d4d6a5ac7",
+        "seed": 42
+    },
+    {
+        "source_id": "mat_test_4205",
+        "split": "test",
+        "SMILES": "[*]OC1C(C)(C)C(OC(=O)C2CCC(C([*])=O)CC2)C1(C)C",
+        "target_Tg": 6.3802,
+        "SMILES_SHA256": "25c585395c95f594449fc9520e8e00dd4f9e65b88c236a22fb71f256d312b7a1",
+        "seed": 42
+    },
+    {
+        "source_id": "mat_test_4059",
+        "split": "test",
+        "SMILES": "[*]CC(C)S[*]",
+        "target_Tg": 5.016,
+        "SMILES_SHA256": "474898cd3b40ec8ca5f677e2b46acce1a92c42e3960248c697bbf0c683b3281b",
+        "seed": 42
+    },
+    {
+        "source_id": "mat_test_3687",
+        "split": "test",
+        "SMILES": "[*]Oc1ccc(Cc2ccc(OC([*])=O)cc2)cc1",
+        "target_Tg": 4.6933,
+        "SMILES_SHA256": "1d766ffd810f34bc970c46a73d987bb0d50d8d6e61c9621cdcb7c6703425a5c9",
+        "seed": 42
+    },
+    {
+        "source_id": "mat_test_3944",
+        "split": "test",
+        "SMILES": "[*]CC([*])c1ccc(C)cc1",
+        "target_Tg": 4.8699,
+        "SMILES_SHA256": "1cdfa460e747f69a83d2d46438e166e2b08ce6f7810fd60e6429bae114c02944",
+        "seed": 42
+    },
+    {
+        "source_id": "mat_test_3855",
+        "split": "test",
+        "SMILES": "[*]CCCCCCNC(=O)c1cccc(C(=O)N[*])c1",
+        "target_Tg": 5.0275,
+        "SMILES_SHA256": "972108ebe587b39245eb5567e7bc9f233e4cf25e3c264e3a3171fe831e8c0c05",
+        "seed": 42
+    },
+    {
+        "source_id": "mat_test_4204",
+        "split": "test",
+        "SMILES": "[*]CCCCCCCCCCCCc1nc2ccc(-c3ccc4nc([*])oc4c3)cc2o1",
+        "target_Tg": 4.269,
+        "SMILES_SHA256": "c96f64c5a364a6c3c6df8c257d3e09b891a1bfef36180a6142ae5ddce00b33a4",
+        "seed": 42
+    },
+    {
+        "source_id": "mat_test_3838",
+        "split": "test",
+        "SMILES": "[*]c1sc([*])c(C)c1C",
+        "target_Tg": 3.3114,
+        "SMILES_SHA256": "2e1c0125242d6ed2181788b6b547e9516deb22e9fe166ba627b41faa6b02aced",
+        "seed": 42
+    }
+]

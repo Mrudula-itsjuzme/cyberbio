@@ -1,0 +1,10 @@
+{
+    "checkpoint strict-load succeeds": true,
+    "embedding shape == [37, 64]": true,
+    "vocab length == 36": true,
+    "highest generated token ID <= 36": true,
+    "padding ID == 0": true,
+    "forward output finite": true,
+    "same input gives deterministic eval-mode output": true,
+    "overall_status": "VERIFIED"
+}

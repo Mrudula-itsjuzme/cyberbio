@@ -28,7 +28,9 @@ def run_smoke_test():
         vocab = json.load(f)
         
     df = pd.read_csv(proc_dir / "processed.csv")
-    rep_col = dataset_cfg["representation_column"]
+    rep_col = dataset_cfg.get("representation_column", "original_representation")
+    if rep_col not in df.columns:
+        rep_col = "original_representation"
     
     # Pick 2 samples from the validation set for the smoke test
     with open(proc_dir / "splits.json") as f:
@@ -49,17 +51,17 @@ def run_smoke_test():
     
     rng = np.random.default_rng(42)
     attack_sub = SubstitutionAttack(
-        rng=rng, allowed_tokens=vocab, n_edits=1, role_preserving=True,
+        rng=rng, allowed_tokens=vocab, attack_budget=1, role_preserving=True,
         protect_attachments=True, protect_ring_closures=True, protect_branches=True
     )
     
     attack_ins = InsertionAttack(
-        rng=rng, allowed_tokens=vocab, n_edits=1,
+        rng=rng, allowed_tokens=vocab, attack_budget=1,
         protect_attachments=True, protect_ring_closures=True, protect_branches=True
     )
     
     attack_del = DeletionAttack(
-        rng=rng, n_edits=1,
+        rng=rng, attack_budget=1,
         protect_attachments=True, protect_ring_closures=True, protect_branches=True
     )
     
@@ -88,11 +90,11 @@ def run_smoke_test():
         
         for i, r in enumerate(records):
             print(f"\n  Variant {i+1} [{r.attack_type.upper()}]:")
-            print(f"    Adversarial PSMILES: {r.adversarial_psmiles}")
-            print(f"    Adv Tokens:          {tokenize(r.adversarial_psmiles)}")
+            print(f"    Adversarial PSMILES: {r.adversarial_representation}")
+            print(f"    Adv Tokens:          {tokenize(r.adversarial_representation)}")
             
             if r.attack_type == "substitution":
-                adv_tokens = tokenize(r.adversarial_psmiles)
+                adv_tokens = tokenize(r.adversarial_representation)
                 diffs = [(pos, orig, adv) for pos, (orig, adv) in enumerate(zip(original_tokens, adv_tokens)) if orig != adv]
                 for pos, orig, adv in diffs:
                     print(f"    Edit: Substitution: {orig} -> {adv} at position {pos}")
@@ -105,9 +107,9 @@ def run_smoke_test():
             
             print(f"    Representation Valid: {r.validity_status == 'valid'}")
             print(f"    Rejection Reasons:   {r.rejection_reasons}")
-            print(f"    Original Pred:       {r.original_prediction:.2f} K")
-            print(f"    Adversarial Pred:    {r.adversarial_prediction:.2f} K")
-            print(f"    Prediction Drift:    {abs(r.prediction_drift):.2f} K")
+            print(f"    Original Pred:       {r.original_prediction:.2f} eV")
+            print(f"    Adversarial Pred:    {r.adversarial_prediction:.2f} eV")
+            print(f"    Prediction Drift:    {abs(r.signed_prediction_drift):.2f} eV")
 
 if __name__ == "__main__":
     run_smoke_test()

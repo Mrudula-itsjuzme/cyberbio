@@ -1,0 +1,14 @@
+{
+  "domain": "materials",
+  "dataset_split": "train",
+  "num_training_examples": 1158,
+  "seed": 42,
+  "architecture": "DenoisingSeqAE",
+  "parameter_count": 757349,
+  "epochs": 15,
+  "optimizer": "Adam",
+  "learning_rate": 0.001,
+  "checkpoint_SHA256": "be73d6391c04c0294df44080819531236cfc225e29a57f69b51d73d703add542",
+  "best_val_loss": 0.8286865949630737,
+  "val_exact_match_rate": 0.0390625
+}

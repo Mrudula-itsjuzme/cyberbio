@@ -43,3 +43,15 @@ This project establishes an experimental dataset and baseline pipeline for study
 
 ## Getting Started
 To explore a specific domain, navigate to either `materials-adversarial/` or `bio-cyber-adversarial/` and follow the setup instructions in their respective README files.
+
+## Research Reproducibility
+To run a lightweight smoke test of the attack pipeline:
+```bash
+python materials-adversarial/scripts/run_final_experiments.py --smoke
+```
+
+To extract and format all final aggregated research results (baseline comparisons, ablations, cross-attack metrics, and shortcut figures):
+```bash
+python materials-adversarial/scripts/run_final_experiments.py --full
+```
+The final results, figures, and CSVs will be placed in the `results/final/` directory. Complete documentation of the threat model, failure cases, and ablation analysis can be found in the `docs/` folder.

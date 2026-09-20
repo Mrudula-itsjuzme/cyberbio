@@ -1,0 +1,210 @@
+
+==================================================
+SMOKE TEST: PHASE 1E ATTACKS
+==================================================
+
+[Sample 2946] Original PSMILES: [*]CNC(=O)CCCCCCCCC(=O)N[*]
+Original Tokens: ['[*]', 'C', 'N', 'C', '(', '=', 'O', ')', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', '(', '=', 'O', ')', 'N', '[*]']
+
+  Variant 1 [SUBSTITUTION]:
+    Adversarial PSMILES: [*]CPC(=O)CCCCCCCCC(=O)N[*]
+    Adv Tokens:          ['[*]', 'C', 'P', 'C', '(', '=', 'O', ')', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', '(', '=', 'O', ')', 'N', '[*]']
+    Edit: Substitution: N -> P at position 2
+    Representation Valid: True
+    Rejection Reasons:   ()
+    Original Pred:       5.95 eV
+    Adversarial Pred:    6.06 eV
+    Prediction Drift:    0.11 eV
+
+  Variant 2 [SUBSTITUTION]:
+    Adversarial PSMILES: [*]CNC(=O)CCCCCCICC(=O)N[*]
+    Adv Tokens:          ['[*]', 'C', 'N', 'C', '(', '=', 'O', ')', 'C', 'C', 'C', 'C', 'C', 'C', 'I', 'C', 'C', '(', '=', 'O', ')', 'N', '[*]']
+    Edit: Substitution: C -> I at position 14
+    Representation Valid: True
+    Rejection Reasons:   ()
+    Original Pred:       5.95 eV
+    Adversarial Pred:    5.87 eV
+    Prediction Drift:    0.08 eV
+
+  Variant 3 [SUBSTITUTION]:
+    Adversarial PSMILES: [*]CNC(=O)CCPCCCCCC(=O)N[*]
+    Adv Tokens:          ['[*]', 'C', 'N', 'C', '(', '=', 'O', ')', 'C', 'C', 'P', 'C', 'C', 'C', 'C', 'C', 'C', '(', '=', 'O', ')', 'N', '[*]']
+    Edit: Substitution: C -> P at position 10
+    Representation Valid: True
+    Rejection Reasons:   ()
+    Original Pred:       5.95 eV
+    Adversarial Pred:    5.97 eV
+    Prediction Drift:    0.02 eV
+
+  Variant 4 [INSERTION]:
+    Adversarial PSMILES: [*]C[O-]NC(=O)CCCCCCCCC(=O)N[*]
+    Adv Tokens:          ['[*]', 'C', '[O-]', 'N', 'C', '(', '=', 'O', ')', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', '(', '=', 'O', ')', 'N', '[*]']
+    Edit: Insertion of 1 tokens
+    Representation Valid: False
+    Rejection Reasons:   ('rdkit could not parse the string',)
+    Original Pred:       5.95 eV
+    Adversarial Pred:    5.64 eV
+    Prediction Drift:    0.31 eV
+
+  Variant 5 [INSERTION]:
+    Adversarial PSMILES: [*]CNC(/=O)CCCCCCCCC(=O)N[*]
+    Adv Tokens:          ['[*]', 'C', 'N', 'C', '(', '/', '=', 'O', ')', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', '(', '=', 'O', ')', 'N', '[*]']
+    Edit: Insertion of 1 tokens
+    Representation Valid: False
+    Rejection Reasons:   ('rdkit could not parse the string',)
+    Original Pred:       5.95 eV
+    Adversarial Pred:    5.77 eV
+    Prediction Drift:    0.18 eV
+
+  Variant 6 [INSERTION]:
+    Adversarial PSMILES: [*]CNC(=O)CCCCsCCCCC(=O)N[*]
+    Adv Tokens:          ['[*]', 'C', 'N', 'C', '(', '=', 'O', ')', 'C', 'C', 'C', 'C', 's', 'C', 'C', 'C', 'C', 'C', '(', '=', 'O', ')', 'N', '[*]']
+    Edit: Insertion of 1 tokens
+    Representation Valid: False
+    Rejection Reasons:   ('rdkit could not parse the string',)
+    Original Pred:       5.95 eV
+    Adversarial Pred:    5.52 eV
+    Prediction Drift:    0.43 eV
+
+  Variant 7 [DELETION]:
+    Adversarial PSMILES: [*]CNC(=O)CCCCCCCC(=O)N[*]
+    Adv Tokens:          ['[*]', 'C', 'N', 'C', '(', '=', 'O', ')', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', '(', '=', 'O', ')', 'N', '[*]']
+    Edit: Deletion of 1 tokens
+    Representation Valid: True
+    Rejection Reasons:   ()
+    Original Pred:       5.95 eV
+    Adversarial Pred:    5.41 eV
+    Prediction Drift:    0.54 eV
+
+  Variant 8 [DELETION]:
+    Adversarial PSMILES: [*]CN(=O)CCCCCCCCC(=O)N[*]
+    Adv Tokens:          ['[*]', 'C', 'N', '(', '=', 'O', ')', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', '(', '=', 'O', ')', 'N', '[*]']
+    Edit: Deletion of 1 tokens
+    Representation Valid: False
+    Rejection Reasons:   ('rdkit could not parse the string',)
+    Original Pred:       5.95 eV
+    Adversarial Pred:    5.82 eV
+    Prediction Drift:    0.13 eV
+
+  Variant 9 [DELETION]:
+    Adversarial PSMILES: [*]CNC(=O)CCCCCCCCC(O)N[*]
+    Adv Tokens:          ['[*]', 'C', 'N', 'C', '(', '=', 'O', ')', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', '(', 'O', ')', 'N', '[*]']
+    Edit: Deletion of 1 tokens
+    Representation Valid: True
+    Rejection Reasons:   ()
+    Original Pred:       5.95 eV
+    Adversarial Pred:    6.00 eV
+    Prediction Drift:    0.05 eV
+
+  Variant 10 [REARRANGEMENT]:
+    Adversarial PSMILES: [*]NCC(=O)CCCCCCCCC(=O)N[*]
+    Adv Tokens:          ['[*]', 'N', 'C', 'C', '(', '=', 'O', ')', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', '(', '=', 'O', ')', 'N', '[*]']
+    Edit: Rearrangement of 2 tokens
+    Representation Valid: True
+    Rejection Reasons:   ()
+    Original Pred:       5.95 eV
+    Adversarial Pred:    5.81 eV
+    Prediction Drift:    0.14 eV
+
+[Sample 2947] Original PSMILES: [*]Oc1ccc(CC(NC(=O)CCc2ccc(OC(=O)CCCCCCC([*])=O)cc2)C(=O)OC)cc1
+Original Tokens: ['[*]', 'O', 'c', '1', 'c', 'c', 'c', '(', 'C', 'C', '(', 'N', 'C', '(', '=', 'O', ')', 'C', 'C', 'c', '2', 'c', 'c', 'c', '(', 'O', 'C', '(', '=', 'O', ')', 'C', 'C', 'C', 'C', 'C', 'C', 'C', '(', '[*]', ')', '=', 'O', ')', 'c', 'c', '2', ')', 'C', '(', '=', 'O', ')', 'O', 'C', ')', 'c', 'c', '1']
+
+  Variant 1 [SUBSTITUTION]:
+    Adversarial PSMILES: [*]Oc1ccc(CC(NC(=O)CCc2ccc(NC(=O)CCCCCCC([*])=O)cc2)C(=O)OC)cc1
+    Adv Tokens:          ['[*]', 'O', 'c', '1', 'c', 'c', 'c', '(', 'C', 'C', '(', 'N', 'C', '(', '=', 'O', ')', 'C', 'C', 'c', '2', 'c', 'c', 'c', '(', 'N', 'C', '(', '=', 'O', ')', 'C', 'C', 'C', 'C', 'C', 'C', 'C', '(', '[*]', ')', '=', 'O', ')', 'c', 'c', '2', ')', 'C', '(', '=', 'O', ')', 'O', 'C', ')', 'c', 'c', '1']
+    Edit: Substitution: O -> N at position 25
+    Representation Valid: True
+    Rejection Reasons:   ()
+    Original Pred:       4.86 eV
+    Adversarial Pred:    4.92 eV
+    Prediction Drift:    0.06 eV
+
+  Variant 2 [SUBSTITUTION]:
+    Adversarial PSMILES: [*]Oc1ccc(CC(NC(=O)CCc2ccc(OC(=O)CCCCICC([*])=O)cc2)C(=O)OC)cc1
+    Adv Tokens:          ['[*]', 'O', 'c', '1', 'c', 'c', 'c', '(', 'C', 'C', '(', 'N', 'C', '(', '=', 'O', ')', 'C', 'C', 'c', '2', 'c', 'c', 'c', '(', 'O', 'C', '(', '=', 'O', ')', 'C', 'C', 'C', 'C', 'I', 'C', 'C', '(', '[*]', ')', '=', 'O', ')', 'c', 'c', '2', ')', 'C', '(', '=', 'O', ')', 'O', 'C', ')', 'c', 'c', '1']
+    Edit: Substitution: C -> I at position 35
+    Representation Valid: True
+    Rejection Reasons:   ()
+    Original Pred:       4.86 eV
+    Adversarial Pred:    4.77 eV
+    Prediction Drift:    0.09 eV
+
+  Variant 3 [SUBSTITUTION]:
+    Adversarial PSMILES: [*]Oc1ccc(CC(NC(=O)CCc2ccc(OC(=O)CCCCCCC([*])=O)cc2)C(/O)OC)cc1
+    Adv Tokens:          ['[*]', 'O', 'c', '1', 'c', 'c', 'c', '(', 'C', 'C', '(', 'N', 'C', '(', '=', 'O', ')', 'C', 'C', 'c', '2', 'c', 'c', 'c', '(', 'O', 'C', '(', '=', 'O', ')', 'C', 'C', 'C', 'C', 'C', 'C', 'C', '(', '[*]', ')', '=', 'O', ')', 'c', 'c', '2', ')', 'C', '(', '/', 'O', ')', 'O', 'C', ')', 'c', 'c', '1']
+    Edit: Substitution: = -> / at position 50
+    Representation Valid: True
+    Rejection Reasons:   ()
+    Original Pred:       4.86 eV
+    Adversarial Pred:    4.82 eV
+    Prediction Drift:    0.04 eV
+
+  Variant 4 [INSERTION]:
+    Adversarial PSMILES: [*]Oc1c[nH]cc(CC(NC(=O)CCc2ccc(OC(=O)CCCCCCC([*])=O)cc2)C(=O)OC)cc1
+    Adv Tokens:          ['[*]', 'O', 'c', '1', 'c', '[nH]', 'c', 'c', '(', 'C', 'C', '(', 'N', 'C', '(', '=', 'O', ')', 'C', 'C', 'c', '2', 'c', 'c', 'c', '(', 'O', 'C', '(', '=', 'O', ')', 'C', 'C', 'C', 'C', 'C', 'C', 'C', '(', '[*]', ')', '=', 'O', ')', 'c', 'c', '2', ')', 'C', '(', '=', 'O', ')', 'O', 'C', ')', 'c', 'c', '1']
+    Edit: Insertion of 1 tokens
+    Representation Valid: True
+    Rejection Reasons:   ()
+    Original Pred:       4.86 eV
+    Adversarial Pred:    4.29 eV
+    Prediction Drift:    0.57 eV
+
+  Variant 5 [INSERTION]:
+    Adversarial PSMILES: [*]Oc1ccc(CC(NC(=O)CCc2ccc(OC(=O)C[N-]CCCCCC([*])=O)cc2)C(=O)OC)cc1
+    Adv Tokens:          ['[*]', 'O', 'c', '1', 'c', 'c', 'c', '(', 'C', 'C', '(', 'N', 'C', '(', '=', 'O', ')', 'C', 'C', 'c', '2', 'c', 'c', 'c', '(', 'O', 'C', '(', '=', 'O', ')', 'C', '[N-]', 'C', 'C', 'C', 'C', 'C', 'C', '(', '[*]', ')', '=', 'O', ')', 'c', 'c', '2', ')', 'C', '(', '=', 'O', ')', 'O', 'C', ')', 'c', 'c', '1']
+    Edit: Insertion of 1 tokens
+    Representation Valid: True
+    Rejection Reasons:   ()
+    Original Pred:       4.86 eV
+    Adversarial Pred:    5.38 eV
+    Prediction Drift:    0.52 eV
+
+  Variant 6 [INSERTION]:
+    Adversarial PSMILES: [*]Oc1ccc(CC(NC(=O)CCc2ccc(OC(=O)C[2H]CCCCCC([*])=O)cc2)C(=O)OC)cc1
+    Adv Tokens:          ['[*]', 'O', 'c', '1', 'c', 'c', 'c', '(', 'C', 'C', '(', 'N', 'C', '(', '=', 'O', ')', 'C', 'C', 'c', '2', 'c', 'c', 'c', '(', 'O', 'C', '(', '=', 'O', ')', 'C', '[2H]', 'C', 'C', 'C', 'C', 'C', 'C', '(', '[*]', ')', '=', 'O', ')', 'c', 'c', '2', ')', 'C', '(', '=', 'O', ')', 'O', 'C', ')', 'c', 'c', '1']
+    Edit: Insertion of 1 tokens
+    Representation Valid: False
+    Rejection Reasons:   ('rdkit could not parse the string',)
+    Original Pred:       4.86 eV
+    Adversarial Pred:    5.30 eV
+    Prediction Drift:    0.44 eV
+
+  Variant 7 [DELETION]:
+    Adversarial PSMILES: [*]Oc1cc(CC(NC(=O)CCc2ccc(OC(=O)CCCCCCC([*])=O)cc2)C(=O)OC)cc1
+    Adv Tokens:          ['[*]', 'O', 'c', '1', 'c', 'c', '(', 'C', 'C', '(', 'N', 'C', '(', '=', 'O', ')', 'C', 'C', 'c', '2', 'c', 'c', 'c', '(', 'O', 'C', '(', '=', 'O', ')', 'C', 'C', 'C', 'C', 'C', 'C', 'C', '(', '[*]', ')', '=', 'O', ')', 'c', 'c', '2', ')', 'C', '(', '=', 'O', ')', 'O', 'C', ')', 'c', 'c', '1']
+    Edit: Deletion of 1 tokens
+    Representation Valid: False
+    Rejection Reasons:   ('rdkit could not parse the string',)
+    Original Pred:       4.86 eV
+    Adversarial Pred:    5.05 eV
+    Prediction Drift:    0.19 eV
+
+  Variant 8 [DELETION]:
+    Adversarial PSMILES: [*]Oc1ccc(CC(NC(=O)CCc2ccc(OC(=O)CCCCCC([*])=O)cc2)C(=O)OC)cc1
+    Adv Tokens:          ['[*]', 'O', 'c', '1', 'c', 'c', 'c', '(', 'C', 'C', '(', 'N', 'C', '(', '=', 'O', ')', 'C', 'C', 'c', '2', 'c', 'c', 'c', '(', 'O', 'C', '(', '=', 'O', ')', 'C', 'C', 'C', 'C', 'C', 'C', '(', '[*]', ')', '=', 'O', ')', 'c', 'c', '2', ')', 'C', '(', '=', 'O', ')', 'O', 'C', ')', 'c', 'c', '1']
+    Edit: Deletion of 1 tokens
+    Representation Valid: True
+    Rejection Reasons:   ()
+    Original Pred:       4.86 eV
+    Adversarial Pred:    5.49 eV
+    Prediction Drift:    0.63 eV
+
+  Variant 9 [DELETION]:
+    Adversarial PSMILES: [*]Oc1ccc(CC(NC(=O)CCc2ccc(OC(=O)CCCCCCC([*])=O)c2)C(=O)OC)cc1
+    Adv Tokens:          ['[*]', 'O', 'c', '1', 'c', 'c', 'c', '(', 'C', 'C', '(', 'N', 'C', '(', '=', 'O', ')', 'C', 'C', 'c', '2', 'c', 'c', 'c', '(', 'O', 'C', '(', '=', 'O', ')', 'C', 'C', 'C', 'C', 'C', 'C', 'C', '(', '[*]', ')', '=', 'O', ')', 'c', '2', ')', 'C', '(', '=', 'O', ')', 'O', 'C', ')', 'c', 'c', '1']
+    Edit: Deletion of 1 tokens
+    Representation Valid: False
+    Rejection Reasons:   ('rdkit could not parse the string',)
+    Original Pred:       4.86 eV
+    Adversarial Pred:    5.13 eV
+    Prediction Drift:    0.28 eV
+
+  Variant 10 [REARRANGEMENT]:
+    Adversarial PSMILES: [*]Oc1ccc(CC(NC(=O)CcC2ccc(OC(=O)CCCCCCC([*])=O)cc2)C(=O)OC)cc1
+    Adv Tokens:          ['[*]', 'O', 'c', '1', 'c', 'c', 'c', '(', 'C', 'C', '(', 'N', 'C', '(', '=', 'O', ')', 'C', 'c', 'C', '2', 'c', 'c', 'c', '(', 'O', 'C', '(', '=', 'O', ')', 'C', 'C', 'C', 'C', 'C', 'C', 'C', '(', '[*]', ')', '=', 'O', ')', 'c', 'c', '2', ')', 'C', '(', '=', 'O', ')', 'O', 'C', ')', 'c', 'c', '1']
+    Edit: Rearrangement of 2 tokens
+    Representation Valid: False
+    Rejection Reasons:   ('rdkit could not parse the string',)
+    Original Pred:       4.86 eV
+    Adversarial Pred:    4.81 eV
+    Prediction Drift:    0.05 eV

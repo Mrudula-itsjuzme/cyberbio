@@ -1,0 +1,4 @@
+domain,attack_family,attack_variant,status,budget,n_sources,mean_drift,median_drift,p90_drift,max_drift,success_rate,validity_rate,target_queries,proposal_count,attribution_queries,llm_calls,llm_tokens,runtime,seed,source_artifact
+materials,Generative,Generative-Trained,EXECUTED,5.0,30.0,0.0,0.0,0.0,0.0,NA,0.0,0.0,1500.0,0.0,NA,NA,202.5707688331604,42.0,comparison-experiments/attack-strategy-benchmark/results/generative/materials/per_example_results_trained.csv
+materials,Generative,Generative-Trained,EXECUTED,20.0,30.0,0.0,0.0,0.0,0.0,NA,0.0,0.0,6000.0,0.0,NA,NA,768.1857464313507,42.0,comparison-experiments/attack-strategy-benchmark/results/generative/materials/per_example_results_trained.csv
+materials,Generative,Generative-Trained,EXECUTED,50.0,30.0,0.0,0.0,0.0,0.0,NA,0.0,0.0,15000.0,0.0,NA,NA,2562.152132511139,42.0,comparison-experiments/attack-strategy-benchmark/results/generative/materials/per_example_results_trained.csv

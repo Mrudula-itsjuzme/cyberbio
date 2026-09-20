@@ -1,0 +1,33 @@
+[
+  {
+    "method": "mcmc",
+    "status": "WORKS",
+    "seed": 7,
+    "source_id": "poly_3106",
+    "query_budget": 3,
+    "metrics": {
+      "proposal_count": 2,
+      "validity_checks": 2,
+      "valid_count": 0,
+      "invalid_count": 2,
+      "target_model_queries": 2,
+      "attribution_queries": 0,
+      "surrogate_queries": 0,
+      "runtime_seconds": 0.02614345499932824,
+      "peak_memory_mb": null,
+      "mean_effect": null,
+      "median_effect": null,
+      "p90_effect": null,
+      "best_effect": null,
+      "diversity_score": null
+    },
+    "best_candidate": null,
+    "failure_status": null,
+    "trajectories": {
+      "accepted": []
+    },
+    "metadata": {
+      "canonical_name": "Metropolis-style search"
+    }
+  }
+]

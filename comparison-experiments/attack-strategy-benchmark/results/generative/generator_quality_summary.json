@@ -1,0 +1,35 @@
+{
+  "policy": "real recorded runs only; fabricated fast-control rows excluded",
+  "bio_cyber": {
+    "Generative-Trained": {
+      "status": "executed",
+      "validity_rate": 1.0,
+      "accepted_proposals": 2250,
+      "proposal_total": 2250,
+      "attack_success": 0.3666666666666667
+    },
+    "Generative-Untrained": {
+      "status": "executed",
+      "validity_rate": 1.0,
+      "accepted_proposals": 600,
+      "proposal_total": 600,
+      "attack_success": 0.4
+    }
+  },
+  "materials": {
+    "Generative-Trained": {
+      "status": "executed",
+      "validity_rate": 0.0,
+      "accepted_proposals": 0,
+      "proposal_total": 22500,
+      "attack_success": null
+    },
+    "Generative-Untrained": {
+      "status": "incomplete",
+      "validity_rate": null,
+      "accepted_proposals": null,
+      "proposal_total": null,
+      "attack_success": null
+    }
+  }
+}

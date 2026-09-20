@@ -1,0 +1,52 @@
+[
+  {
+    "method": "thompson_binary",
+    "status": "WORKS",
+    "seed": 7,
+    "source_id": "poly_3106",
+    "query_budget": 3,
+    "metrics": {
+      "proposal_count": 34,
+      "validity_checks": 2,
+      "valid_count": 2,
+      "invalid_count": 0,
+      "target_model_queries": 3,
+      "attribution_queries": 0,
+      "surrogate_queries": 0,
+      "runtime_seconds": 0.05991460099903634,
+      "peak_memory_mb": null,
+      "mean_effect": 0.14155864715576172,
+      "median_effect": 0.14155864715576172,
+      "p90_effect": 0.18799066543579102,
+      "best_effect": 0.18799066543579102,
+      "diversity_score": 1.0
+    },
+    "best_candidate": "*OC1C(COC(C)=O)OC(*)C(OC(=O)F)C1O",
+    "failure_status": null,
+    "trajectories": {
+      "posterior": [
+        {
+          "family": "aliphatic_substitution",
+          "sample": 0.5211595790852261,
+          "valid": true,
+          "effect": 0.18799066543579102,
+          "reward": -0.812009334564209,
+          "alpha": 2.0,
+          "beta": 1.0
+        },
+        {
+          "family": "aliphatic_substitution",
+          "sample": 0.5993596924589818,
+          "valid": true,
+          "effect": 0.09512662887573242,
+          "reward": -0.9048733711242676,
+          "alpha": 3.0,
+          "beta": 1.0
+        }
+      ]
+    },
+    "metadata": {
+      "success_threshold": 0.0
+    }
+  }
+]

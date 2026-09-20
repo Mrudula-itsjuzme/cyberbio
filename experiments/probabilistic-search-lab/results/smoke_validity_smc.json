@@ -1,0 +1,52 @@
+[
+  {
+    "method": "validity_smc",
+    "status": "WORKS",
+    "seed": 7,
+    "source_id": "poly_3106",
+    "query_budget": 3,
+    "metrics": {
+      "proposal_count": 34,
+      "validity_checks": 2,
+      "valid_count": 2,
+      "invalid_count": 0,
+      "target_model_queries": 3,
+      "attribution_queries": 0,
+      "surrogate_queries": 0,
+      "runtime_seconds": 0.06980922900038422,
+      "peak_memory_mb": null,
+      "mean_effect": 0.09577012062072754,
+      "median_effect": 0.09577012062072754,
+      "p90_effect": 0.09784841537475586,
+      "best_effect": 0.09784841537475586,
+      "diversity_score": 1.0
+    },
+    "best_candidate": "*OC1C(COC(C)=O)OC(*)C(OC(C)=O)N1O",
+    "failure_status": null,
+    "trajectories": {
+      "smc": [
+        {
+          "step": 0,
+          "particle_count": 2,
+          "ess": 1.9935790617156084,
+          "weight_entropy": 0.6915359102507355,
+          "resampled": false,
+          "unique_particles": 2,
+          "queries": 3
+        }
+      ]
+    },
+    "metadata": {
+      "particles": 8,
+      "ess_threshold": 0.5,
+      "beta": 1.0,
+      "validity_posterior": {
+        "aliphatic_substitution": {
+          "alpha": 3.0,
+          "beta": 1.0,
+          "p_valid": 0.75
+        }
+      }
+    }
+  }
+]
