@@ -6,8 +6,8 @@
 |------|-------|
 | Branch | `experiments/adversarial-arena-carry-reset` |
 | Scientific execution commit | `043c0de5e4870dea25af25c36e2946bf21e16cc5` |
-| Config-lock commit | `4316137...` |
-| Final analysis/freeze commit | `1885d2020f639a0db226c8a833dfba6f2dc18416` |
+| Config-lock commit | `431613795a3843d9fe0e32fdce09e9cb01d101be` |
+| Final analysis/freeze commit | `b6a8efcc7687a41fd55a7b4ad974498c655ec5cd` |
 
 ## Experiment Scope
 
@@ -77,7 +77,7 @@ The exact operational reason is not fully isolated from the persisted artifacts.
 - Chemistry-changing drift is a model sensitivity measure, not verified physical property preservation
 - No defender co-evolution occurs (shared reference trajectory D_ref is fixed)
 - No causal claim from per-query normalization (descriptive secondary only)
-- SMC and Validity-SMC are mechanistically equivalent under this configuration
+- SMC and Validity-SMC produced identical realized particle trajectories and attack metrics under this tested configuration
 
 ## Integrity Checks
 
