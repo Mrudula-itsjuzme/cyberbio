@@ -30,28 +30,26 @@ def test_d0_ordering():
 def test_reference_checkpoint_identity():
     # Verify the reference checkpoint SHA matches the actual loaded weights on disk for D0 and D1
     from arena.transpolymer import TransPolymerDefender
-    import torch
     
     # Check D_ref_000
-    ref0_path = os.path.join(get_ref_dir(), "round_000", "defender_checkpoint.pt")
-    d0_hash = ""
-    if os.path.exists(ref0_path):
-        m = TransPolymerDefender(None)
-        m.model.load_state_dict(torch.load(ref0_path, map_location="cpu", weights_only=True))
-        d0_hash = hash_model_state(m.model)
-        with open(os.path.join(get_smoke_dir("cem"), "round_000", "reference_evaluation.json")) as f:
-            ev = json.load(f)
-        assert d0_hash == ev["reference_checkpoint_sha256"]
+    ref0_path = os.path.join(get_ref_dir(), "reference_defender", "D_ref_000", "defender_checkpoint.json")
+    assert os.path.exists(ref0_path)
+    m = TransPolymerDefender('../../materials-adversarial', seed=123, checkpoint_dir='results/models/transformer_regressor')
+    m.load_checkpoint(ref0_path)
+    d0_hash = hash_model_state(m)
+    with open(os.path.join(get_smoke_dir("cem"), "round_000", "reference_evaluation.json")) as f:
+        ev = json.load(f)
+    assert d0_hash == ev["reference_checkpoint_sha256"]
     
     # Check D_ref_001
-    ref1_path = os.path.join(get_ref_dir(), "round_001", "defender_checkpoint.pt")
-    if os.path.exists(ref1_path):
-        m = TransPolymerDefender(None)
-        m.model.load_state_dict(torch.load(ref1_path, map_location="cpu", weights_only=True))
-        d1_hash = hash_model_state(m.model)
-        with open(os.path.join(get_smoke_dir("cem"), "round_001", "reference_evaluation.json")) as f:
-            ev = json.load(f)
-        assert d1_hash == ev["reference_checkpoint_sha256"]
+    ref1_path = os.path.join(get_ref_dir(), "reference_defender", "D_ref_001", "defender_checkpoint.json")
+    assert os.path.exists(ref1_path)
+    m = TransPolymerDefender('../../materials-adversarial', seed=123, checkpoint_dir='results/models/transformer_regressor')
+    m.load_checkpoint(ref1_path)
+    d1_hash = hash_model_state(m)
+    with open(os.path.join(get_smoke_dir("cem"), "round_001", "reference_evaluation.json")) as f:
+        ev = json.load(f)
+    assert d1_hash == ev["reference_checkpoint_sha256"]
 
 def test_initial_model_identity():
     # Verify reference initial D0 hash == paired-run initial D0 hash

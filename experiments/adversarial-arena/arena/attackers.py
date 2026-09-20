@@ -130,13 +130,13 @@ class ExistingAttackAdapter(Attacker):
         for sample in samples:
             outcomes = attack.generate(tokenize(sample.input), n_variants=self.proposal_budget)
                         
-            # Real RandomSMILES accounting (no target queries)
+            source_queries = sum(int(dict(out.params).get("search_candidate_model_queries", 0)) for out in outcomes)
             self.source_accounting.append({
                 "source_id": sample.source_id,
                 "clean_reference_queries": 0,
-                "attack_target_queries": 0,
+                "attack_target_queries": source_queries,
                 "attack_query_budget": self.proposal_budget,
-                "validator_calls": 0, # NOT_TRACKED
+                "validator_calls": 0,
                 "proposals_generated": len(outcomes)
             })
 
