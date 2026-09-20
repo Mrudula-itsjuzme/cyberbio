@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import os, sys, json, argparse, hashlib
+import os, sys, json, argparse, hashlib, time
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "materials-adversarial", "src")))
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
@@ -7,12 +7,7 @@ from arena.attackers import random_smiles_adapter
 from arena.transpolymer import TransPolymerDefender
 from scripts.run_phase2_pilot import _load_sources, _load_clean_data
 from arena.contracts import SourceSample
-
-def hash_model(defender):
-    # Dummy hash for now, real implementation would hash state_dict. Let's hash the checkpoint path and repr for simplicity if we can't easily hash bytes.
-    # But user said: "Hash the actual model/checkpoint bytes or deterministic state_dict serialization."
-    # Let's save a temp checkpoint and hash it, or just hash defender._model.state_dict() string representation.
-    return hashlib.sha256(str(defender.checkpoint_id).encode()).hexdigest() # We'll do a better one below
+from arena.state_management import hash_model_state
 
 def build_reference(seed, n_sources, rounds, budget):
     out_dir = f"results/arena/carry_reset_reference_seed{seed}"
@@ -34,32 +29,27 @@ def build_reference(seed, n_sources, rounds, budget):
         learning_rate=0.001
     )
     
-    # Actually hash state dict
-    try:
-        sd = defender.model.state_dict()
-        model_hash = hashlib.sha256(str(sd).encode()).hexdigest()
-    except:
-        model_hash = hashlib.sha256(defender.checkpoint_id.encode()).hexdigest()
+    model_hash = hash_model_state(defender)
 
     attacker = random_smiles_adapter(seed=seed, proposal_budget=budget)
     
     d0_metrics = defender.evaluate(sources)
     with open(os.path.join(out_dir, "initial_defender_metrics.json"), "w") as f:
         json.dump({
+            "stage_index": 0,
             "checkpoint_id": defender.checkpoint_id,
-            "checkpoint_hash": model_hash,
+            "checkpoint_sha256": model_hash,
             "clean_rmse": d0_metrics["rmse"],
             "source_count": len(sources),
             "source_cohort_hash": source_cohort_hash,
-            "timestamp": "D0"
+            "timestamp": time.time()
         }, f)
         
-    # Save D_ref_000
     d0_dir = os.path.join(ref_dir, "D_ref_000")
     os.makedirs(d0_dir, exist_ok=True)
     defender.checkpoint(os.path.join(d0_dir, "defender_checkpoint.json"))
 
-    summary = {"status": "RUN_FAILED", "configured_rounds": rounds, "completed_rounds": 0, "stop_reason": "UNKNOWN"}
+    summary = {"status": "RUN_FAILED", "configured_rounds": rounds, "completed_rounds": 0, "stop_reason": "UNKNOWN", "stage_index": 0}
     try:
         for r in range(rounds):
             hard_examples = attacker.propose(sources, defender)
@@ -72,14 +62,16 @@ def build_reference(seed, n_sources, rounds, budget):
             os.makedirs(round_dir, exist_ok=True)
             defender.checkpoint(os.path.join(round_dir, "defender_checkpoint.json"))
             summary["completed_rounds"] = r + 1
+            summary["stage_index"] = r + 1
             
         summary["status"] = "RUN_COMPLETE_FULL"
         summary["stop_reason"] = "MAX_ROUNDS_REACHED"
     except Exception as e:
+        import traceback; traceback.print_exc()
         summary["stop_reason"] = str(e)
         with open(os.path.join(out_dir, "reference_run_summary.json"), "w") as f:
             json.dump(summary, f)
-        import traceback; traceback.print_exc(); sys.exit(1)
+        sys.exit(1)
     
     with open(os.path.join(out_dir, "reference_run_summary.json"), "w") as f:
         json.dump(summary, f)

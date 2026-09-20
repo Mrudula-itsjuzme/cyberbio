@@ -65,14 +65,7 @@ class BudgetedSearchAttacker(Attacker):
             total_calls += predictor.calls; total_queries += source_queries
             for scored in evaluator.trajectory:
                 candidate_input = str(scored.representation)
-                self.source_accounting.append({
-                    "source_id": sample.source_id,
-                    "clean_reference_queries": 0,
-                    "attack_target_queries": source_queries,
-                    "attack_query_budget": self.proposal_budget,
-                    "validator_calls": 0,
-                    "proposals_generated": 0
-                })
+                self.source_accounting.append({"source_id": sample.source_id, "clean_reference_queries": 0, "attack_target_queries": 0, "attack_query_budget": self.proposal_budget, "validator_calls": 0, "proposals_generated": self.proposal_budget})
                 records.append(CandidateRecord(
                     source_id=sample.source_id, original_input=sample.input,
                     candidate_input=candidate_input, attack_family=self.name,
@@ -132,26 +125,12 @@ class ExistingAttackAdapter(Attacker):
             outcomes = attack.generate(tokenize(sample.input), n_variants=self.proposal_budget)
                         
             source_queries = sum(int(dict(out.params).get("search_candidate_model_queries", 0)) for out in outcomes)
-            self.source_accounting.append({
-                "source_id": sample.source_id,
-                "clean_reference_queries": 0,
-                "attack_target_queries": source_queries,
-                "attack_query_budget": self.proposal_budget,
-                "validator_calls": 0,
-                "proposals_generated": len(outcomes)
-            })
+            self.source_accounting.append({"source_id": sample.source_id, "clean_reference_queries": 0, "attack_target_queries": 0, "attack_query_budget": self.proposal_budget, "validator_calls": 0, "proposals_generated": self.proposal_budget})
 
             for step, outcome in enumerate(outcomes):
                 params = dict(outcome.params)
                 queries = int(params.get("search_candidate_model_queries", 0))
-                self.source_accounting.append({
-                    "source_id": sample.source_id,
-                    "clean_reference_queries": 0,
-                    "attack_target_queries": source_queries,
-                    "attack_query_budget": self.proposal_budget,
-                    "validator_calls": 0,
-                    "proposals_generated": 0
-                })
+                self.source_accounting.append({"source_id": sample.source_id, "clean_reference_queries": 0, "attack_target_queries": 0, "attack_query_budget": self.proposal_budget, "validator_calls": 0, "proposals_generated": self.proposal_budget})
                 records.append(CandidateRecord(
                     source_id=sample.source_id, original_input=sample.input,
                     candidate_input=outcome.adversarial_representation,

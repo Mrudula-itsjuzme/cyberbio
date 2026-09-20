@@ -71,8 +71,8 @@ class _ArenaValidator:
                 domain_constraint_pass=result.domain_constraint_pass,
                 reasons=tuple(result.reasons),
             )
-        except Exception:
-            return Validation(False, False, (), str(e))  # fail-open: let attacker proceed
+        except Exception as e:
+            return Validation(representation_valid=False, domain_constraint_pass=False, reasons=(f"validator_exception:{type(e).__name__}",))
 
 
 # ---------------------------------------------------------------------------
@@ -211,7 +211,7 @@ class CEMAttacker(Attacker):
         all_effects: list[float] = []
 
         for source_index, sample in enumerate(samples):
-            round_seed = self.base_seed + self._round_id * 1000 + source_index
+            round_seed = self._rng_schedule.pop(0) if hasattr(self, "_rng_schedule") and self._rng_schedule else self.base_seed + self._round_id * 1000 + source_index
 
             # Minimal CEM implementation using updated probs as starting point
             ledger = QueryLedger(budget=self.query_budget)
@@ -437,7 +437,7 @@ class SMCAttacker(Attacker):
         final_weights: list[float] = []
 
         for source_index, sample in enumerate(samples):
-            round_seed = self.base_seed + self._round_id * 1000 + source_index
+            round_seed = self._rng_schedule.pop(0) if hasattr(self, "_rng_schedule") and self._rng_schedule else self.base_seed + self._round_id * 1000 + source_index
             ledger = QueryLedger(budget=self.query_budget)
             model = _ArenaTargetModel(defender, ledger)
             source_pred = model.predict(sample.input)
@@ -647,7 +647,7 @@ class ValiditySMCAttacker(SMCAttacker):
         final_weights: list[float] = []
 
         for source_index, sample in enumerate(samples):
-            round_seed = self.base_seed + self._round_id * 1000 + source_index
+            round_seed = self._rng_schedule.pop(0) if hasattr(self, "_rng_schedule") and self._rng_schedule else self.base_seed + self._round_id * 1000 + source_index
             ledger = QueryLedger(budget=self.query_budget)
             model = _ArenaTargetModel(defender, ledger)
             source_pred = model.predict(sample.input)

@@ -70,3 +70,23 @@ def evaluate_attacker_state_pure(attacker, samples, defender):
         "metrics": metrics,
         "adaptive_state_after_eval": get_adaptive_state(temp_att)
     }
+
+def hash_model_state(defender):
+    import hashlib
+    h = hashlib.sha256()
+    try:
+        sd = defender.model.state_dict()
+    except AttributeError:
+        # Fallback if no model, but should not happen for TransPolymer
+        try:
+            sd = defender.state_dict()
+        except:
+            raise RuntimeError("Cannot hash model state")
+    
+    for k in sorted(sd.keys()):
+        h.update(k.encode())
+        t = sd[k].cpu().contiguous()
+        h.update(str(t.dtype).encode())
+        h.update(str(t.shape).encode())
+        h.update(t.numpy().tobytes())
+    return h.hexdigest()

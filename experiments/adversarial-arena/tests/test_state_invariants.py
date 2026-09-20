@@ -1,52 +1,93 @@
-import json, os
+import json, os, hashlib, copy
+from arena.contracts import SourceSample
 
 def get_smoke_dir(method):
     return f"results/arena/smoke_carry_reset_{method}_paired_seed20260920"
 
 def test_cem_reset_state():
     d = get_smoke_dir("cem")
-    with open(os.path.join(d, "round_000", "attacker_state_before.json")) as f:
-        r0 = json.load(f)["reset"]
-    with open(os.path.join(d, "round_001", "attacker_state_before.json")) as f:
-        r1 = json.load(f)["reset"]
+    with open(os.path.join(d, "round_000", "attacker_state_before.json")) as f: r0 = json.load(f)["reset"]
+    with open(os.path.join(d, "round_001", "attacker_state_before.json")) as f: r1 = json.load(f)["reset"]
     assert r0["adaptive_state"] == r1["adaptive_state"]
 
 def test_smc_reset_state():
     d = get_smoke_dir("smc")
-    with open(os.path.join(d, "round_000", "attacker_state_before.json")) as f:
-        r0 = json.load(f)["reset"]
-    with open(os.path.join(d, "round_001", "attacker_state_before.json")) as f:
-        r1 = json.load(f)["reset"]
+    with open(os.path.join(d, "round_000", "attacker_state_before.json")) as f: r0 = json.load(f)["reset"]
+    with open(os.path.join(d, "round_001", "attacker_state_before.json")) as f: r1 = json.load(f)["reset"]
     assert r0["adaptive_state"] == r1["adaptive_state"]
 
 def test_validity_smc_reset_state():
     d = get_smoke_dir("validity_smc")
-    with open(os.path.join(d, "round_000", "attacker_state_before.json")) as f:
-        r0 = json.load(f)["reset"]
-    with open(os.path.join(d, "round_001", "attacker_state_before.json")) as f:
-        r1 = json.load(f)["reset"]
+    with open(os.path.join(d, "round_000", "attacker_state_before.json")) as f: r0 = json.load(f)["reset"]
+    with open(os.path.join(d, "round_001", "attacker_state_before.json")) as f: r1 = json.load(f)["reset"]
     assert r0["adaptive_state"] == r1["adaptive_state"]
 
 def test_cem_carry_hash_chain():
     d = get_smoke_dir("cem")
-    with open(os.path.join(d, "round_000", "attacker_state_after.json")) as f:
-        r0a = json.load(f)["carry"]
-    with open(os.path.join(d, "round_001", "attacker_state_before.json")) as f:
-        r1b = json.load(f)["carry"]
+    with open(os.path.join(d, "round_000", "attacker_state_after.json")) as f: r0a = json.load(f)["carry"]
+    with open(os.path.join(d, "round_001", "attacker_state_before.json")) as f: r1b = json.load(f)["carry"]
     assert r0a["adaptive_state"] == r1b["adaptive_state"]
 
 def test_smc_carry_hash_chain():
     d = get_smoke_dir("smc")
-    with open(os.path.join(d, "round_000", "attacker_state_after.json")) as f:
-        r0a = json.load(f)["carry"]
-    with open(os.path.join(d, "round_001", "attacker_state_before.json")) as f:
-        r1b = json.load(f)["carry"]
+    with open(os.path.join(d, "round_000", "attacker_state_after.json")) as f: r0a = json.load(f)["carry"]
+    with open(os.path.join(d, "round_001", "attacker_state_before.json")) as f: r1b = json.load(f)["carry"]
     assert r0a["adaptive_state"] == r1b["adaptive_state"]
 
 def test_validity_smc_carry_hash_chain():
     d = get_smoke_dir("validity_smc")
-    with open(os.path.join(d, "round_000", "attacker_state_after.json")) as f:
-        r0a = json.load(f)["carry"]
-    with open(os.path.join(d, "round_001", "attacker_state_before.json")) as f:
-        r1b = json.load(f)["carry"]
+    with open(os.path.join(d, "round_000", "attacker_state_after.json")) as f: r0a = json.load(f)["carry"]
+    with open(os.path.join(d, "round_001", "attacker_state_before.json")) as f: r1b = json.load(f)["carry"]
     assert r0a["adaptive_state"] == r1b["adaptive_state"]
+
+class DummyDef:
+    def predict(self, x): return [1.0 for _ in x]
+    @property
+    def calls(self): return 0
+    @calls.setter
+    def calls(self, v): pass
+
+def test_cross_eval_purity_cem():
+    from arena.probabilistic_attackers import cem_attacker
+    from arena.state_management import evaluate_attacker_state_pure, hash_full_state
+    a = cem_attacker(seed=123, query_budget=5, carry_state=True)
+    d = DummyDef()
+    a._rng_schedule = [123]
+    a.propose([SourceSample("S1", "C", 1.0)], d)
+    h1 = hash_full_state(a)
+    a._rng_schedule = [123]
+    evaluate_attacker_state_pure(a, [SourceSample("S2", "C", 1.0)], d)
+    h2 = hash_full_state(a)
+    assert h1 == h2
+
+def test_cross_eval_purity_smc():
+    from arena.probabilistic_attackers import smc_attacker
+    from arena.state_management import evaluate_attacker_state_pure, hash_full_state
+    a = smc_attacker(seed=123, query_budget=5, carry_state=True)
+    d = DummyDef()
+    a._rng_schedule = [123]
+    a.propose([SourceSample("S1", "C", 1.0)], d)
+    h1 = hash_full_state(a)
+    a._rng_schedule = [123]
+    evaluate_attacker_state_pure(a, [SourceSample("S2", "C", 1.0)], d)
+    h2 = hash_full_state(a)
+    assert h1 == h2
+
+def test_cross_eval_purity_validity_smc():
+    from arena.probabilistic_attackers import validity_smc_attacker
+    from arena.state_management import evaluate_attacker_state_pure, hash_full_state
+    a = validity_smc_attacker(seed=123, query_budget=5, carry_state=True)
+    d = DummyDef()
+    a._rng_schedule = [123]
+    a.propose([SourceSample("S1", "C", 1.0)], d)
+    h1 = hash_full_state(a)
+    a._rng_schedule = [123]
+    evaluate_attacker_state_pure(a, [SourceSample("S2", "C", 1.0)], d)
+    h2 = hash_full_state(a)
+    assert h1 == h2
+
+def test_carry_reset_rng_schedule_identical():
+    d = get_smoke_dir("cem")
+    with open(os.path.join(d, "round_000", "rng_schedule.json")) as f: r0 = json.load(f)
+    assert "seeds" in r0
+    assert r0["experiment_round"] == 0

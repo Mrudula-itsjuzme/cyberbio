@@ -4,7 +4,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..",
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from arena.probabilistic_attackers import cem_attacker, smc_attacker, validity_smc_attacker
-from arena.state_management import evaluate_attacker_state_pure, snapshot_attacker_state, hash_adaptive_state, hash_full_state, derive_seed
+from arena.state_management import evaluate_attacker_state_pure, snapshot_attacker_state, hash_adaptive_state, hash_full_state, derive_seed, hash_model_state
 from arena.contracts import SourceSample
 from arena.transpolymer import TransPolymerDefender
 from scripts.run_phase2_pilot import _load_sources, _load_clean_data
@@ -13,7 +13,6 @@ def run_paired(args):
     out_dir = f"results/arena/smoke_carry_reset_{args.method}_paired_seed{args.seed}"
     os.makedirs(out_dir, exist_ok=True)
     
-    # 10. Verify reference cohort identity
     ref_dir = f"results/arena/carry_reset_reference_seed{args.seed}"
     with open(os.path.join(ref_dir, "source_ids.json")) as f:
         ref_cohort = json.load(f)
@@ -26,7 +25,6 @@ def run_paired(args):
         print("Cohort hash mismatch!")
         sys.exit(1)
     
-    # Init attackers - we will inject derived RNG seed per round anyway
     if args.method == "cem":
         A_carry = cem_attacker(seed=args.seed, query_budget=args.query_budget, carry_state=True)
         A_reset = cem_attacker(seed=args.seed, query_budget=args.query_budget, carry_state=False)
@@ -47,16 +45,14 @@ def run_paired(args):
         learning_rate=0.001
     )
     
-    try:
-        model_hash = hashlib.sha256(str(D_ref.model.state_dict()).encode()).hexdigest()
-    except:
-        model_hash = hashlib.sha256(D_ref.checkpoint_id.encode()).hexdigest()
+    model_hash = hash_model_state(D_ref)
         
     d0_metrics = D_ref.evaluate(sources)
     with open(os.path.join(out_dir, "initial_defender_metrics.json"), "w") as f:
         json.dump({
+            "stage_index": 0,
             "checkpoint_id": D_ref.checkpoint_id,
-            "checkpoint_hash": model_hash,
+            "checkpoint_sha256": model_hash,
             "clean_rmse": d0_metrics["rmse"],
             "source_count": len(sources),
             "source_cohort_hash": source_cohort_hash,
@@ -70,30 +66,29 @@ def run_paired(args):
             round_dir = os.path.join(out_dir, f"round_{r:03d}")
             os.makedirs(round_dir, exist_ok=True)
             
-            # 9. Load Reference D_ref_t. MUST exist.
             ref_ckpt = os.path.join(ref_dir, "reference_defender", f"D_ref_{r:03d}", "defender_checkpoint.json")
             if not os.path.exists(ref_ckpt):
                 raise FileNotFoundError(f"Missing reference checkpoint {ref_ckpt}")
             D_ref.load_checkpoint(ref_ckpt)
             
-            # Reset deterministic seed
-            round_seed = derive_seed(args.seed, r, 0, "proposal")
-            A_reset.reset(round_seed)
-            if r == 0:
-                A_carry.reset(round_seed) # Need same start
-            # But wait, carry should keep its algorithmic state. Exogenous RNG matches exactly for the next queries.
-            # In Python, we can't easily force the exact same random sequence without re-seeding the internal PRNG. 
-            # We'll reseed python's random module to ensure identical exploration logic.
-            # Actually, attackers use their init seed. We'll set the `.seed` attribute if they use it.
+            round_model_hash = hash_model_state(D_ref)
+
+            # Build explicit RNG schedule for this round
+            rng_schedule = [derive_seed(args.seed, r, s.source_id, "proposal") for s in sources]
+            with open(os.path.join(round_dir, "rng_schedule.json"), "w") as f:
+                json.dump({"experiment_round": r, "seeds": rng_schedule}, f)
+
+            # Assign schedule
+            A_reset.reset(args.seed)
+            A_carry._rng_schedule = list(rng_schedule)
+            A_reset._rng_schedule = list(rng_schedule)
             
-            # Snapshots Before
             with open(os.path.join(round_dir, "attacker_state_before.json"), "w") as f:
                 json.dump({
                     "carry": snapshot_attacker_state(A_carry),
                     "reset": snapshot_attacker_state(A_reset)
                 }, f)
                 
-            # PRIMARY EVAL ON D_REF
             eval_carry = evaluate_attacker_state_pure(A_carry, sources, D_ref)
             eval_reset = evaluate_attacker_state_pure(A_reset, sources, D_ref)
             
@@ -109,6 +104,7 @@ def run_paired(args):
                 json.dump({
                     "method": args.method, "seed": args.seed, "round": r,
                     "reference_checkpoint_id": D_ref.checkpoint_id,
+                    "reference_checkpoint_sha256": round_model_hash,
                     "carry_mean_drift": mc, "reset_mean_drift": mr,
                     "carry_best_drift": bc, "reset_best_drift": br,
                     "G_carry_mean": mc - mr, "G_carry_best": bc - br,
@@ -120,11 +116,10 @@ def run_paired(args):
                     "reset_mean_drift_per_query": mr / qr if qr else 0
                 }, f)
                 
-            # PROGRESS CARRY STATE (Secondary closed-loop removed/Diagnostic only)
-            # We just propose against D_ref to progress the A_carry memory for the next round
+            # Progress carry state
+            A_carry._rng_schedule = list(rng_schedule) # re-supply for progression
             _ = A_carry.propose(sources, D_ref)
             
-            # Snapshots After
             with open(os.path.join(round_dir, "attacker_state_after.json"), "w") as f:
                 json.dump({
                     "carry": snapshot_attacker_state(A_carry),
@@ -132,11 +127,13 @@ def run_paired(args):
                 }, f)
             
             summary["completed_rounds"] = r + 1
+            summary["stage_index"] = r + 1
             
         summary["status"] = "RUN_COMPLETE_FULL"
         summary["stop_reason"] = "MAX_ROUNDS_REACHED"
         summary["SMOKE_ONLY_NON_CANONICAL"] = True
     except Exception as e:
+        import traceback; traceback.print_exc()
         summary["status"] = "RUN_FAILED"
         summary["stop_reason"] = str(e)
         with open(os.path.join(out_dir, "run_summary.json"), "w") as f:
