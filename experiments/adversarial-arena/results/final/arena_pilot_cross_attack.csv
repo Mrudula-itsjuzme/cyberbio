@@ -1,0 +1,13 @@
+round,defender_checkpoint,attacker,mean_robustness_effect,n
+-1,transformer-D000,RandomSMILES,0.8665989971160889,250
+-1,transformer-D000,MCMC,0.2635333687067032,16
+-1,transformer-D000,Evolutionary,0.36946607173833634,133
+0,transformer-D001,RandomSMILES,0.7427597074508667,250
+0,transformer-D001,MCMC,0.30489390036639047,17
+0,transformer-D001,Evolutionary,0.32903421769930624,127
+1,transformer-D002,RandomSMILES,0.9454035472869873,250
+1,transformer-D002,MCMC,0.2698244783613417,18
+1,transformer-D002,Evolutionary,0.45993104019785314,123
+2,transformer-D003,RandomSMILES,0.9879513645172119,250
+2,transformer-D003,MCMC,0.31858847015782404,19
+2,transformer-D003,Evolutionary,0.41012872667873607,136

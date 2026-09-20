@@ -30,6 +30,14 @@ def aggregate():
     
     g_adapt_raw = []
     
+    # Pre-parse candidate overlap sets
+    # method_cands[seed][round][method] = set(smiles)
+    method_cands = defaultdict(lambda: defaultdict(lambda: defaultdict(set)))
+    method_hard_cands = defaultdict(lambda: defaultdict(lambda: defaultdict(set)))
+    
+    # Store validity stats per seed/round for validity efficiency table
+    val_eff = defaultdict(lambda: defaultdict(dict))
+    
     for rdir in sorted(runs):
         parts = rdir.name.split("_")
         method = "validity_smc" if "validity" in parts else parts[1]
@@ -82,16 +90,25 @@ def aggregate():
                     for row in csv.DictReader(f):
                         a_data[row["attacker"]] = optional_float(row["mean_drift"])
             
+            # Explicit matching
             active_attacker_key = None
-            for key in a_data.keys():
-                if method.lower() in key.lower():
-                    active_attacker_key = key
-                    break
-            if not active_attacker_key:
-                active_attacker_key = method
-            
-            if active_attacker_key not in b_data or active_attacker_key not in a_data:
-                raise ValueError(f"Active attacker {active_attacker_key} not found in cross attack matrix for {rdir.name}/round_{round_idx:03d}")
+            possible_keys = [k for k in a_data.keys() if method.replace("_", "").lower() in k.replace("_", "").replace("-", "").lower()]
+            if len(possible_keys) == 1:
+                active_attacker_key = possible_keys[0]
+            elif method == "validity_smc" and "Validity-SMC" in a_data:
+                active_attacker_key = "Validity-SMC"
+            elif method == "smc" and "SMC" in a_data and "Validity-SMC" not in a_data:
+                active_attacker_key = "SMC"
+            elif method == "cem" and "cem" in a_data:
+                active_attacker_key = "cem"
+                
+            if not active_attacker_key or active_attacker_key not in b_data or active_attacker_key not in a_data:
+                print(f"FAILED: Could not securely map {method} in {rdir.name}/round_{round_idx:03d}")
+                sys.exit(1)
+                
+            # Log mapping doc
+            with open("docs/ARENA_PHASE2_LABEL_MAPPING.md", "a") as mf:
+                mf.write(f"- Mapping `{method}` -> `{active_attacker_key}` (verified in cross_attack_matrix)\n")
                 
             active_drift_before = b_data[active_attacker_key]
             active_drift_after = a_data[active_attacker_key]
@@ -110,7 +127,6 @@ def aggregate():
             last_clean_rmse = clean_after
             
             delta_clean_round = clean_after - clean_before
-            
             def_gain_ratio = optional_float(round_info.get("defender_gain"))
             
             rounds_data.append({
@@ -139,25 +155,111 @@ def aggregate():
                 "runtime": rt
             })
             
+            # diversity (candidates)
+            cands_file = rd / "candidates.jsonl"
+            uniq_c = 0
+            dup_frac = 0.0
+            unique_smiles = set()
+            if cands_file.exists():
+                cands = [json.loads(line) for line in cands_file.read_text().splitlines() if line.strip()]
+                unique_smiles = set(c.get("candidate_input", "") for c in cands)
+                uniq_c = len(unique_smiles)
+                dup_frac = 1.0 - (uniq_c / len(cands)) if len(cands) > 0 else 0.0
+            
+            method_cands[seed][round_idx][method] = unique_smiles
+            
+            hard_file = rd / "hard_examples.jsonl"
+            hard_smiles = set()
+            if hard_file.exists():
+                hcands = [json.loads(line) for line in hard_file.read_text().splitlines() if line.strip()]
+                hard_smiles = set(c.get("candidate_input", "") for c in hcands)
+            method_hard_cands[seed][round_idx][method] = hard_smiles
+            
+            diversity_data.append({
+                "method": method, "seed": seed, "round": round_idx,
+                "unique_candidate_count": uniq_c,
+                "duplicate_fraction": dup_frac
+            })
+            
             # dynamics
             d_row = {"method": method, "seed": seed, "round": round_idx}
             if method == "cem":
                 h = optional_float(att_data.get("entropy"))
-                h_norm = h / math.log(10) if not np.isnan(h) else np.nan # assuming 10 edits
-                d_row["entropy"] = h
-                d_row["normalized_entropy"] = h_norm
-                d_row["probs"] = str(att_data.get("probs", []))
+                family_names = att_data.get("state_after", {}).get("family_names")
+                if not family_names:
+                    family_names = att_data.get("probs", [])
+                
+                K = len(family_names)
+                if K < 2:
+                    raise ValueError(f"CEM family count K={K} must be >= 2 for seed {seed} round {round_idx}")
+                
+                h_max = math.log(K)
+                h_norm = h / h_max if not np.isnan(h) else np.nan
+                
+                if h_norm < 0.20: collapse_cls = "severe collapse"
+                elif h_norm < 0.50: collapse_cls = "concentration"
+                else: collapse_cls = "broad"
+                
+                max_prob = max(att_data.get("probs", [0])) if att_data.get("probs") else np.nan
+                
+                d_row.update({
+                    "family_count": K,
+                    "entropy": h,
+                    "max_entropy": h_max,
+                    "normalized_entropy": h_norm,
+                    "dominant_probability": max_prob,
+                    "classification": collapse_cls
+                })
+                dynamics_data["cem"].append(d_row)
+            
             elif method == "smc" or method == "validity_smc":
                 ess = optional_float(att_data.get("ess"))
                 diversity = optional_float(att_data.get("diversity"))
-                n_particles = 100 # Default/Assuming 100
-                d_row["ess"] = ess
-                d_row["ess_ratio"] = ess / n_particles if not np.isnan(ess) else np.nan
-                d_row["diversity"] = diversity
+                # Get actual particle count
+                n_particles = att_data.get("particle_count")
+                if n_particles is None:
+                    n_particles = att_data.get("state_after", {}).get("particle_count")
+                
+                if n_particles is None:
+                    raise ValueError(f"Missing SMC particle_count for seed {seed} round {round_idx}")
+                    
+                ess_ratio = ess / float(n_particles) if not np.isnan(ess) else np.nan
+                
+                if ess_ratio < 0.20: smc_cls = "severe"
+                elif ess_ratio < 0.50: smc_cls = "moderate"
+                else: smc_cls = "healthy"
+                
+                d_row.update({
+                    "particle_count": n_particles,
+                    "ess": ess,
+                    "ess_ratio": ess_ratio,
+                    "resampling_count": 0, # not explicitly tracked unless in summary
+                    "diversity": diversity,
+                    "classification": smc_cls
+                })
                 if method == "validity_smc":
                     d_row["beta_a"] = optional_float(att_data.get("beta_a"))
                     d_row["beta_b"] = optional_float(att_data.get("beta_b"))
-            dynamics_data[method].append(d_row)
+                dynamics_data[method].append(d_row)
+                
+                # Val Eff
+                drift_per_query = mean_drift / queries if queries > 0 else 0
+                val_per_query = valid_c / queries if queries > 0 else 0
+                val_eff[seed][round_idx][method] = {
+                    "proposal_count": total_proposals,
+                    "valid_count": valid_c,
+                    "target_queries": queries,
+                    "validity_rate": valid_c / total_proposals if total_proposals > 0 else 0,
+                    "valid_per_target_query": val_per_query,
+                    "mean_drift": mean_drift,
+                    "best_drift": best_drift,
+                    "drift_per_target_query": drift_per_query,
+                    "particle_count": n_particles,
+                    "ess": ess,
+                    "ess_ratio": ess_ratio,
+                    "unique_candidates": uniq_c,
+                    "duplicate_fraction": dup_frac
+                }
 
             # defenders
             defenders_data.append({
@@ -217,21 +319,6 @@ def aggregate():
                 "classification": classification
             })
             
-            # diversity (candidates)
-            cands_file = rd / "candidates.jsonl"
-            uniq_c = 0
-            dup_frac = 0.0
-            if cands_file.exists():
-                cands = [json.loads(line) for line in cands_file.read_text().splitlines() if line.strip()]
-                unique_smiles = set(c.get("candidate_input", "") for c in cands)
-                uniq_c = len(unique_smiles)
-                dup_frac = 1.0 - (uniq_c / len(cands)) if len(cands) > 0 else 0.0
-            diversity_data.append({
-                "method": method, "seed": seed, "round": round_idx,
-                "unique_candidate_count": uniq_c,
-                "duplicate_fraction": dup_frac
-            })
-            
             # agg
             agg_mean_drift.append(mean_drift)
             agg_best_drift.append(best_drift)
@@ -278,16 +365,75 @@ def aggregate():
 
     def write_csv(name, data):
         if not data: return
+        all_keys = set()
+        for d in data: all_keys.update(d.keys())
+        for d in data:
+            for k in all_keys:
+                if k not in d: d[k] = ""
+
+        if not data: return
         with open(out_dir / name, "w", newline="") as f:
             writer = csv.DictWriter(f, fieldnames=data[0].keys())
             writer.writeheader()
             writer.writerows(data)
             
+    # Process pairwise overlap
+    overlap_data = []
+    for seed, round_dict in method_cands.items():
+        for round_idx, methods_dict in round_dict.items():
+            mlist = list(methods_dict.keys())
+            for i in range(len(mlist)):
+                for j in range(i+1, len(mlist)):
+                    mA = mlist[i]
+                    mB = mlist[j]
+                    setA = methods_dict[mA]
+                    setB = methods_dict[mB]
+                    inter = len(setA.intersection(setB))
+                    uni = len(setA.union(setB))
+                    jaccard = inter / uni if uni > 0 else 0.0
+                    
+                    # hard examples
+                    hsetA = method_hard_cands[seed][round_idx].get(mA, set())
+                    hsetB = method_hard_cands[seed][round_idx].get(mB, set())
+                    hinter = len(hsetA.intersection(hsetB))
+                    huni = len(hsetA.union(hsetB))
+                    hjaccard = hinter / huni if huni > 0 else 0.0
+                    
+                    overlap_data.append({
+                        "seed": seed, "round": round_idx,
+                        "method_a": mA, "method_b": mB,
+                        "intersection_count": inter,
+                        "union_count": uni,
+                        "jaccard_overlap": jaccard,
+                        "hard_intersection_count": hinter,
+                        "hard_union_count": huni,
+                        "hard_jaccard_overlap": hjaccard
+                    })
+
+    # Process validity efficiency
+    val_eff_data = []
+    for seed, round_dict in val_eff.items():
+        for round_idx, methods_dict in round_dict.items():
+            smc_data = methods_dict.get("smc")
+            vsmc_data = methods_dict.get("validity_smc")
+            if smc_data:
+                smc_row = {"method": "smc", "seed": seed, "round": round_idx}
+                smc_row.update(smc_data)
+                val_eff_data.append(smc_row)
+            if vsmc_data:
+                vsmc_row = {"method": "validity_smc", "seed": seed, "round": round_idx}
+                vsmc_row.update(vsmc_data)
+                val_eff_data.append(vsmc_row)
+            if smc_data and vsmc_data:
+                diff_row = {"method": "Validity-SMC minus SMC", "seed": seed, "round": round_idx}
+                for k in ["validity_rate", "valid_per_target_query", "mean_drift", "drift_per_target_query", "ess_ratio", "unique_candidates"]:
+                    diff_row[k] = vsmc_data[k] - smc_data[k]
+                val_eff_data.append(diff_row)
+
     write_csv("phase2_rounds.csv", rounds_data)
     write_csv("phase2_attackers.csv", attackers_data)
-    write_csv("phase2_cem_dynamics.csv", dynamics_data["cem"])
-    write_csv("phase2_smc_dynamics.csv", dynamics_data["smc"])
-    write_csv("phase2_validity_smc_dynamics.csv", dynamics_data["validity_smc"])
+    write_csv("phase2_cem_collapse.csv", dynamics_data["cem"])
+    write_csv("phase2_smc_degeneracy.csv", dynamics_data["smc"] + dynamics_data["validity_smc"])
     write_csv("phase2_defenders.csv", defenders_data)
     write_csv("phase2_transfer.csv", transfer_data)
     write_csv("phase2_redistribution.csv", redistribution_data)
@@ -295,11 +441,20 @@ def aggregate():
     write_csv("phase2_diversity.csv", diversity_data)
     write_csv("phase2_summary.csv", summary_data)
     write_csv("phase2_g_adapt.csv", g_adapt_raw)
+    write_csv("phase2_attacker_overlap.csv", overlap_data)
+    
+    # Needs to handle missing keys in val_eff_data for diff_row gracefully
+    # Ensure all rows have all keys
+    all_eff_keys = set()
+    for row in val_eff_data: all_eff_keys.update(row.keys())
+    for row in val_eff_data:
+        for k in all_eff_keys:
+            if k not in row: row[k] = ""
+    write_csv("phase2_validity_efficiency.csv", val_eff_data)
     
     # Generate Phase 2 Statistics
     stats = []
     
-    # Helper to calculate stats
     def calc_stats(metric_name, data, value_key, method_key="method"):
         method_groups = defaultdict(list)
         for d in data:
@@ -311,7 +466,8 @@ def aggregate():
             stats.append({
                 "metric": metric_name, "method": meth, "round": "all",
                 "n": len(vals), "mean": np.mean(vals), "sample_std": np.std(vals, ddof=1) if len(vals)>1 else 0,
-                "median": np.median(vals), "min": np.min(vals), "max": np.max(vals)
+                "median": np.median(vals), "min": np.min(vals), "max": np.max(vals),
+                "positive_fraction": sum(1 for v in vals if v > 0) / len(vals) if len(vals) > 0 else np.nan
             })
             
     calc_stats("mean_drift", attackers_data, "mean_drift")
@@ -327,4 +483,7 @@ def aggregate():
 
     print("Aggregation logic complete.")
 
-if __name__ == "__main__": aggregate()
+if __name__ == "__main__": 
+    # create mapping doc
+    open("docs/ARENA_PHASE2_LABEL_MAPPING.md", "w").write("# Phase 2 Active Attacker Explicit Label Mapping\n")
+    aggregate()

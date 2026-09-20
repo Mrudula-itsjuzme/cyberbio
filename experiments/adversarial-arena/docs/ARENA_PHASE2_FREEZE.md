@@ -1,8 +1,13 @@
 # PROBABILISTIC ATTACKER ARENA PHASE FROZEN
 - branch: experiments/adversarial-arena-probabilistic
-- 9 valid runs
-- 3 methods (cem, smc, validity_smc)
+- commit hash: pending
+- 9 runs
+- 3 methods
 - 3 seeds
 - 3 rounds
-- query budget: 250
-- exact limitations: Reset explicitly not tested.
+- 10 sources
+- 25 queries/source
+- 250 target queries/round
+- carry-only design
+- reset NOT_TESTED
+- API tests NOT_RUN_OPTIONAL_DEPENDENCY
