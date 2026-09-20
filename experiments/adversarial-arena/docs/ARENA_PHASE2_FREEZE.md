@@ -1,7 +1,7 @@
 # PROBABILISTIC ATTACKER ARENA PHASE FROZEN
 
 - branch: experiments/adversarial-arena-probabilistic
-- final commit: PENDING
+- scientific freeze commit: 1eaa8cb11de11ca184169922ee43cff7ffb507d4
 - 9 runs (total 25 rounds complete; SMC 21/22 exited cleanly after R1)
 - 3 methods
 - 3 seeds
