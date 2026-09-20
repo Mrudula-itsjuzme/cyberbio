@@ -6,6 +6,7 @@ torch = pytest.importorskip("torch")
 
 from arena.contracts import CandidateRecord, SourceSample
 from arena.transpolymer import TransPolymerDefender
+from arena.attackers import evolutionary_adapter
 
 
 ROOT = Path(__file__).parents[3] / "materials-adversarial"
@@ -43,3 +44,16 @@ def test_transformer_update_uses_only_representation_preserving_hard_examples(tm
         checkpoint_dir="results/models/transformer_regressor", epochs=1)
     restored.load_checkpoint(str(checkpoint))
     assert restored.checkpoint_id == "transformer-D001"
+
+
+def test_evolutionary_adapter_routes_every_prediction_through_accounted_gateway():
+    defender = TransPolymerDefender(ROOT, seed=13,
+        checkpoint_dir="results/models/transformer_regressor", epochs=1)
+    sample = SourceSample("source", "[*]CC(C)CC[*]", 4.0)
+    attacker = evolutionary_adapter(13, query_budget=4, population_size=3, elite_size=1)
+    records = attacker.propose([sample], defender)
+    assert records
+    state = attacker.get_metrics()
+    assert state["target_queries"] <= 4
+    assert state["model_calls_including_sources"] == state["target_queries"] + 1
+    assert all(record.metadata["accounting_invariants"]["one_model_call_per_query"] for record in records)
