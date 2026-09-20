@@ -1,0 +1,3 @@
+round,attacker_t,attacker_t_plus_1,adaptation_gain
+0,MCMC,RandomSMILES,0.6030656284093857
+1,RandomSMILES,MCMC,-0.43786580708447626

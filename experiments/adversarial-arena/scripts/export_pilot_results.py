@@ -29,7 +29,7 @@ def main():
                     
     # Metrics
     # T_j(t) = R(A_j, D_t) - R(A_j, D_{t+1})
-    # G_A(t) = R(A_{t+1}, D_t) - R(A_t, D_t)
+    # G_select(t) = R(A_{t+1}, D_t) - R(A_t, D_t)
     
     ca = list(csv.DictReader(open(final/"arena_pilot_cross_attack.csv")))
     # Group by round and attacker
@@ -53,7 +53,7 @@ def main():
         active_attackers[int(row["round"])] = row["active_attacker"]
         
     with open(final/"arena_pilot_transfer.csv", "w", newline="") as f_t, \
-         open(final/"arena_pilot_adaptation.csv", "w", newline="") as f_a:
+         open(final/"arena_pilot_selection_gain.csv", "w", newline="") as f_a:
         writer_t = csv.writer(f_t)
         writer_t.writerow(["round", "attacker", "transfer_gain"])
         
@@ -72,7 +72,7 @@ def main():
             if t < len(rounds_data) - 1:
                 A_t = active_attackers[t]
                 A_t_next = active_attackers[t+1]
-                # G_A(t) = R(A_{t+1}, D_t) - R(A_t, D_t)
+                # G_select(t) = R(A_{t+1}, D_t) - R(A_t, D_t)
                 ga = D_evals[t][A_t_next] - D_evals[t][A_t]
                 writer_a.writerow([t, A_t, A_t_next, ga])
 

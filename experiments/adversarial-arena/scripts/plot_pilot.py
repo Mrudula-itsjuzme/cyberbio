@@ -41,12 +41,12 @@ def make_plots():
     plt.savefig(final/"defender_gain_by_round.png")
     
     
-    adapt = pd.read_csv(final/"arena_pilot_adaptation.csv")
+    adapt = pd.read_csv(final/"arena_pilot_selection_gain.csv")
     plt.figure()
     plt.plot(adapt["round"], adapt["adaptation_gain"], marker='o')
-    plt.title("Attacker Adaptation Gain")
+    plt.title("Adaptive Selection Gain")
 
-    plt.savefig(final/"attacker_adaptation_gain.png")
+    plt.savefig(final/"adaptive_selection_gain.png")
     
     plt.figure()
     for attacker in thompson["attacker"].unique():
