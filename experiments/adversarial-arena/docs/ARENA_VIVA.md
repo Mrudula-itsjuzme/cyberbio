@@ -1,13 +1,14 @@
-# Arena viva
+# Arena Viva Notes
 
-Adversarial training repeatedly shows a model difficult valid examples and then
-updates it. The attacker searches; the defender predicts and learns; the validator
-is independent authority. Alternation matters because a fixed attack can become
-memorized. The replay buffer prevents immediate forgetting, while unseen-attacker
-columns test transfer. Convergence means an empirical plateau or diminishing
-return, not a proven game-theoretic equilibrium. Clean performance is protected
-because robustness that destroys ordinary accuracy is not useful. RDKit parsing
-only establishes representation validity; chemistry changes can change the true
-bandgap, so source labels are never copied to such candidates. Thompson Sampling
-balances attack families using uncertainty about their past reward.
+## Purpose of Models
+- Ridge regression was exclusively for fast structural engineering verification (smoke system). It provided no scientific evidence.
+- The actual TransPolymer pilot proves the scientific usability of the Arena pipeline.
 
+## Defender Updates
+Defender updates are designed to balance pure supervised regression on clean targets with consistency training on robust perturbations. Chemistry-changing edits without labels cannot blindly reuse the old clean property label in supervised modes, hence only consistent regularization or holding out as diagnostic are valid paths.
+
+## Transfer and Unseen Measurement
+Unseen-attacker transfer is quantified by comparing the performance difference between checkpoints when evaluated by an attacker family not observed during training. Cross-attack evaluations run concurrently at each checkpoint.
+
+## Scientific Replication
+Multi-seed configurations prevent overfitting the analysis to one initialization sequence. Adaptive attacker performance is useful for localized stress-testing but its ultimate success rate doesn't necessarily signal an overall robustness breakdown if evaluated isolated from cross-curriculum baseline metrics.
