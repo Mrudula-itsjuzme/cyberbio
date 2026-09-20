@@ -1,0 +1,7 @@
+__pycache__/
+.pytest_cache/
+*.pyc
+app/frontend/node_modules/
+app/frontend/dist/
+configs/resolved_*.yaml
+

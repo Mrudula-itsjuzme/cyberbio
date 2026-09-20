@@ -1,0 +1,13 @@
+run_id: smoke_seed20260920
+seed: 20260920
+rounds: 2
+source_count: 5
+train_count: 80
+proposal_budget: 2
+hard_example_k: 4
+attackers: [RandomSMILES, MCMC]
+adaptive_attacker: true
+defender:
+  adapter: ridge_smoke
+  warning: Non-canonical loop proof; not the Transformer scientific pilot.
+
