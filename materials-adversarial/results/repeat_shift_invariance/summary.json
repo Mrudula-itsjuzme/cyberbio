@@ -1,0 +1,35 @@
+{
+  "protocol_status": "FAITHFUL_REIMPLEMENTATION",
+  "applicable_sources": 99,
+  "verified_variants": 1181,
+  "excluded_variants": 56,
+  "variant_mean": 0.5286852717399597,
+  "variant_median": 0.40863513946533203,
+  "variant_p90": 1.1918401718139648,
+  "variant_p95": 1.4502015113830566,
+  "variant_max": 2.8591549396514893,
+  "source_worst_mean": 1.1178555488586426,
+  "source_worst_median": 0.9772813320159912,
+  "source_worst_p90": 1.8537898540496827,
+  "source_worst_p95": 2.12089307308197,
+  "source_worst_max": 2.8591549396514893,
+  "source_worst_mean_CI": [
+    1.001542764902115,
+    1.2319596141576767
+  ],
+  "source_worst_median_CI": [
+    0.8122308254241943,
+    1.1793797016143799
+  ],
+  "source_worst_P90_CI": [
+    1.671316146850586,
+    2.119492530822754
+  ],
+  "graph_mean": 0.18144036829471588,
+  "graph_median": 0.15908002853393555,
+  "graph_p95": 0.44402599334716797,
+  "graph_max": 0.6796550750732422,
+  "fraction_broader_worse": 0.797979797979798,
+  "fraction_repeat_reaches_broader_worst": 0.0,
+  "position_rho": 0.15533724228349302
+}
