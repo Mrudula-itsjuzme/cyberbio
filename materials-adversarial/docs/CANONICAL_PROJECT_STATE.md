@@ -108,12 +108,14 @@ Evaluated on an identical, frozen bank of 13,863 candidate sequences across the 
 
 ---
 
-## 8. Final Experiment Execution: 5-Seed Paired Robustness Benchmark
+## 8. Multi-Seed Experiment Suites
 
-*Note: The originally proposed Phase 0 paired benchmark has been fully superseded and implemented as the Canonical 5-Seed Benchmark.*
+Two separate multi-seed experiment suites are retained and must be reported separately:
 
-### Objective Completed
-A rigorous, model-independent paired robustness benchmark comparing clean, representation-augmented, and MCMC-defended models on identical candidate banks has been successfully executed across 5 independent random seeds. 
+1. **Defense-comparison suite (3 seeds)**: `42`, `123`, `456`, produced by `scripts/run_multiseed.py`. This suite compares Baseline, RandSmilesAug, MCMCDefended, and CombinedDefense configurations across RandomSplit and ScaffoldSplit settings.
+2. **Comprehensive robustness benchmark (5 seeds)**: `42`, `123`, `2026`, `777`, `999`, produced by the comprehensive benchmark workflow and reported in the corresponding benchmark artifacts.
+
+These suites answer related but different questions and must not be pooled into a single seed count or treated as interchangeable evidence.
 
 **Conclusion & Final State**:
-The project is considered analytically complete. The remaining work focuses exclusively on narrative framing (acknowledging representation sensitivity as an architectural finding rather than a bug) and defining the requirements for an independent physical oracle (e.g., DFT) as future work to validate the ground-truth properties of chemistry-changing adversarial candidates.
+The core analytical framework is mature, but claims should remain tied to the exact artifact and experiment suite that produced them. Representation sensitivity should be framed as an observed model behavior, and chemistry-changing perturbations still require an independent physical oracle (for example, DFT) before claims about true property preservation can be made.
