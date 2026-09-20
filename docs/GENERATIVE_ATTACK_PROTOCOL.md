@@ -1,0 +1,7 @@
+# Generative Attack Protocol
+
+The implemented model is `DenoisingSeqAE`: token embedding, bidirectional GRU encoder, GRU decoder, and linear token head. It is not a GAN. Training uses train-split sequences with frozen test-source exclusion, character tokenization (A/C/G/T for Bio; historical 36-token Materials vocabulary), random token corruption, teacher forcing, Adam, and padding-masked cross entropy. Checkpoints and SHA-256 manifests are recorded under the benchmark results.
+
+At inference the source is corrupted and decoded autoregressively. Proposals are capped at `10 x target-query budget`; only validator-accepted candidates query the target. Bio validates alphabet/length. Materials uses RDKit parse, canonicalization, historical-vocabulary tokenization, and recorded similarity. Parse failures and exceptions count invalid; the timeout-bounded real Materials-untrained attempt did not complete.
+
+Controls: trained and randomly initialized networks must share architecture, seeds, proposal caps, sampling temperature, source pool, and validators. Recorded Bio trained/untrained runs are usable. Recorded Materials trained yielded zero accepted proposals. Materials untrained is `incomplete`; the hardcoded fast substitute was deleted. Generator inference count, proposal total, accepted candidates, target queries, runtime, drift, and attack success (where defined) are reported separately.

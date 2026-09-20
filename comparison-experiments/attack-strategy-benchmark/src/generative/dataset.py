@@ -11,6 +11,8 @@ from __future__ import annotations
 import numpy as np
 import torch
 from torch.utils.data import Dataset as TorchDataset
+from pathlib import Path
+import pandas as pd
 
 
 class DenoisingDataset(TorchDataset):
@@ -24,15 +26,30 @@ class DenoisingDataset(TorchDataset):
 
     def __init__(
         self,
-        sequences: list[list[int]],  # already tokenised
-        pad_idx: int,
-        vocab_size: int,
-        max_len: int,
+        sequences: list[list[int]] | str | Path,
+        vocab_or_pad: int | dict[str, int],
+        vocab_size: int | None = None,
+        max_len: int = 256,
         noise_rate: float = 0.15,
         seed: int = 42,
+        column: str = "sequence",
+        pad_idx: int | None = None,
     ) -> None:
+        # Backward-compatible file interface retained for the original tests/tools.
+        if isinstance(sequences, (str, Path)):
+            vocab = vocab_or_pad
+            if not isinstance(vocab, dict):
+                raise TypeError("file-backed datasets require a token-to-index vocab")
+            frame = pd.read_csv(sequences)
+            sequences = [[vocab[c] for c in str(s) if c in vocab] for s in frame[column]]
+            pad_idx = 0 if pad_idx is None else pad_idx
+            vocab_size = max(vocab.values())
+        elif pad_idx is None:
+            pad_idx = int(vocab_or_pad)
+        if vocab_size is None:
+            raise TypeError("vocab_size is required for pre-tokenised sequences")
         self.sequences = [s[:max_len] for s in sequences]
-        self.pad_idx = pad_idx
+        self.pad_idx = int(pad_idx)
         self.vocab_size = vocab_size
         self.max_len = max_len
         self.noise_rate = noise_rate

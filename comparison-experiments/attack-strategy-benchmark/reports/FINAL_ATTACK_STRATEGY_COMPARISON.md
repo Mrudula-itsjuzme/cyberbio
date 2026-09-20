@@ -222,15 +222,15 @@ In Phase 5, we added a learned `Generative` condition, comparing it against the 
 ### Key Questions Answered
 
 1. **Can a learned proposal model reduce invalid search and improve adversarial search efficiency?**
-   Yes. The Generative search condition consistently required fewer target model queries than random or MCMC approaches to achieve high drift. It acts as a powerful sequence prior, heavily pruning the search space of chemically or biologically invalid strings before they ever reach the target model. 
+   Not from the recorded cross-domain evidence. The Bio-Cyber generator produced syntactically valid proposals, but the trained Materials generator produced no validator-accepted proposals and made no target-model attack queries.
 
 2. **Does it generalize across domains?**
-   Yes. In Bio-Cyber, the generative model efficiently produced valid DNA sequences with minimal character-level perturbation. In Materials, it proposed SMILES strings that were far more likely to parse successfully with RDKit than untrained random generation.
+   No supported generalization claim is available. The Materials untrained control did not complete as a real run, and the formerly committed fast-control values were hardcoded rather than measured.
 
 ### Findings
 
-- **Efficiency Gain:** The `Generative` method achieved comparable success rates to Attribution-Guided search but with a completely different mechanism. By learning the token-level structural regularities of the domain, the proposal generator skips invalid configurations natively.
-- **Ablation Results:** The `Generative-Untrained` control condition essentially acts as a random token generator. For Materials, it generated 0% RDKit-valid candidate sequences, completely exhausting the proposal budget without ever making a valid attack query to the target model. This conclusively proves the efficiency gain comes from the learned weights, not simply from the wrapper logic.
+- **Bio-Cyber:** Both trained and untrained recorded proposals pass the alphabet validator; this does not establish a trained validity advantage.
+- **Materials:** The trained generator recorded 0% accepted proposals. The untrained control is `INCOMPLETE_BLOCKED_TIMEOUT`; no trained-versus-untrained inference is valid.
 - **Cost Trade-off:** While reducing target-model queries, the Generative approach introduces its own inference cost (the autoregressive generation loop). However, since the generator is small (< 1 million parameters), this trade-off is often net-positive for expensive target models.
 
 ### Statistical Note
