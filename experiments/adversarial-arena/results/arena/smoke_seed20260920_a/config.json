@@ -1,0 +1,18 @@
+{
+  "adaptive_attacker": true,
+  "attackers": [
+    "RandomSMILES",
+    "MCMC"
+  ],
+  "defender": {
+    "adapter": "ridge_smoke",
+    "warning": "Non-canonical loop proof; not the Transformer scientific pilot."
+  },
+  "hard_example_k": 4,
+  "proposal_budget": 2,
+  "rounds": 2,
+  "run_id": "smoke_seed20260920_a",
+  "seed": 20260920,
+  "source_count": 5,
+  "train_count": 80
+}

@@ -1,0 +1,30 @@
+{
+  "alpha": {
+    "MCMC": 1.059269047475103,
+    "RandomSMILES": 1.2423241737801884
+  },
+  "beta": {
+    "MCMC": 1.940730952524897,
+    "RandomSMILES": 1.7576758262198116
+  },
+  "history": [
+    {
+      "draws": {
+        "MCMC": 0.557918844927418,
+        "RandomSMILES": 0.3201102931739179
+      },
+      "selected": "MCMC"
+    },
+    {
+      "draws": {
+        "MCMC": 0.48533021437891466,
+        "RandomSMILES": 0.7070640286121431
+      },
+      "selected": "RandomSMILES"
+    }
+  ],
+  "posterior_means": {
+    "MCMC": 0.353089682491701,
+    "RandomSMILES": 0.4141080579267295
+  }
+}

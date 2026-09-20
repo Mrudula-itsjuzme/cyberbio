@@ -1,0 +1,87 @@
+{
+  "controller": {
+    "alpha": {
+      "MCMC": 1.059269047475103,
+      "RandomSMILES": 1.2423241737801884
+    },
+    "beta": {
+      "MCMC": 1.940730952524897,
+      "RandomSMILES": 1.7576758262198116
+    },
+    "history": [
+      {
+        "draws": {
+          "MCMC": 0.557918844927418,
+          "RandomSMILES": 0.3201102931739179
+        },
+        "selected": "MCMC"
+      },
+      {
+        "draws": {
+          "MCMC": 0.48533021437891466,
+          "RandomSMILES": 0.7070640286121431
+        },
+        "selected": "RandomSMILES"
+      }
+    ],
+    "posterior_means": {
+      "MCMC": 0.353089682491701,
+      "RandomSMILES": 0.4141080579267295
+    }
+  },
+  "rounds": [
+    {
+      "active_attacker": "MCMC",
+      "candidate_diversity": 1.0,
+      "defender_clean_rmse": 0.8547122787942869,
+      "defender_gain": 0.8100987884393281,
+      "defender_robustness": 0.07777222631985725,
+      "drift_per_query": 0.0210010621053152,
+      "family_distribution": {
+        "MCMC": 4
+      },
+      "hard_example_buffer_size": 4,
+      "invalid": 0,
+      "max_drift": 0.09825200285081959,
+      "mean_drift": 0.06300318631594559,
+      "median_drift": 0.06595526930813578,
+      "p90_drift": 0.09108068871490049,
+      "proposal_efficiency": 1.0,
+      "proposals": 4,
+      "queries": 12,
+      "round": 0,
+      "strongest_attacker": "RandomSMILES",
+      "valid": 4,
+      "validity_rate": 1.0,
+      "wall_clock_seconds": 0.2981009590002941
+    },
+    {
+      "active_attacker": "RandomSMILES",
+      "candidate_diversity": 1.0,
+      "defender_clean_rmse": 0.7968976753245909,
+      "defender_gain": 1.2847281069175607,
+      "defender_robustness": 0.24894424096486886,
+      "drift_per_query": 0.15991283171141252,
+      "family_distribution": {
+        "RandomSMILES": 10
+      },
+      "hard_example_buffer_size": 8,
+      "invalid": 0,
+      "max_drift": 0.9296457937625262,
+      "mean_drift": 0.31982566342282504,
+      "median_drift": 0.1799269705256994,
+      "p90_drift": 0.8712749078940689,
+      "proposal_efficiency": 1.0,
+      "proposals": 10,
+      "queries": 20,
+      "round": 1,
+      "strongest_attacker": "RandomSMILES",
+      "valid": 10,
+      "validity_rate": 1.0,
+      "wall_clock_seconds": 0.12010792500041134
+    }
+  ],
+  "run_id": "smoke_seed20260920_a",
+  "scientific_status": "SMOKE_ONLY_NON_CANONICAL",
+  "status": "RUN_COMPLETE"
+}

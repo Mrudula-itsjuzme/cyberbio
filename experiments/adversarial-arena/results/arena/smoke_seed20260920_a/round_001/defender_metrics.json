@@ -1,0 +1,19 @@
+{
+  "adapter_warning": "Smoke-only ridge adapter; Transformer fine-tuning remains required for scientific pilot.",
+  "checkpoint": "/home/mrudula/Downloads/DL_cyberbio/experiments/adversarial-arena/results/arena/smoke_seed20260920_a/round_001/defender_checkpoint.json",
+  "checkpoint_id": "ridge-round-002",
+  "clean_metrics": {
+    "mae": 0.697048148410185,
+    "n": 5,
+    "r2": 0.7180307652335665,
+    "rmse": 0.7968976753245909
+  },
+  "hard_example_count": 4,
+  "robust_drift": 0.24894424096486886,
+  "robustness_gain_ratio": 1.2847281069175607,
+  "round_id": 2,
+  "seed": 20260920,
+  "training_data_size": 84,
+  "training_loss": 0.7143163020327613,
+  "validation_loss": null
+}

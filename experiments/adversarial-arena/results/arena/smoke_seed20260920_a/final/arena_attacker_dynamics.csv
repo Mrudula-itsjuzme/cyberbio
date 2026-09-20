@@ -1,0 +1,3 @@
+round,attacker,mean_drift,validity_rate
+0,MCMC,0.06300318631594559,1.0
+1,RandomSMILES,0.31982566342282504,1.0

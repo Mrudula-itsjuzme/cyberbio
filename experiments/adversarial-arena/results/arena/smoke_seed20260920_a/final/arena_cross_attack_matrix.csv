@@ -1,0 +1,5 @@
+round,defender_checkpoint,attacker,mean_robustness_effect,n
+0,ridge-round-001,RandomSMILES,0.3053374876285758,10
+0,ridge-round-001,MCMC,0.07777222631985725,4
+1,ridge-round-002,RandomSMILES,0.24894424096486886,10
+1,ridge-round-002,MCMC,0.05999148775160612,4
