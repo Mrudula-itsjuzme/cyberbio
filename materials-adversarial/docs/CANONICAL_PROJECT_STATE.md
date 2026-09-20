@@ -119,8 +119,6 @@ These suites answer related but different questions and must not be pooled into 
 
 **Conclusion & Final State**:
 The core analytical framework is mature, but claims should remain tied to the exact artifact and experiment suite that produced them. Representation sensitivity should be framed as an observed model behavior, and chemistry-changing perturbations still require an independent physical oracle (for example, DFT) before claims about true property preservation can be made.
-
-
 ---
 
 ## 9. September 21 Scientific Review — Canonical Addendum
