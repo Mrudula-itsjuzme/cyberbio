@@ -49,6 +49,12 @@ drift therefore does not refute periodic equivalence and the model is not
 described as a periodic-invariance control. Its matched mean/median/P95/max
 drift is `0.181440/0.159080/0.444026/0.679655 eV`.
 
+These results preserve two distinct claims: (A) Phase 5B GraphMPNN predictions
+are essentially invariant to ordinary graph-identical serialization
+permutations; (B) Phase 5C repeat/periodic transformations are not a directly
+comparable invariance control because this GraphMPNN does not encode periodic
+closure.
+
 ## Repeat versus shift and position analysis
 
 Families are never pooled without separate reporting. For `SHIFT`, token
@@ -61,12 +67,18 @@ this is not a causal estimate.
 the unchanged Phase 5B strict bank on the same applicable sources. It records
 overlap, unique broader variants, and one of `REPEAT_SHIFT_SUFFICIENT`,
 `BROADER_EQUIVALENCE_NEEDED`, `TIE`, or `NOT_COMPARABLE`.
-`matched_k_comparison.csv` uses 1,000 deterministic subsamples. Mean expected
-worst drift for repeat-shift versus broader is: k=1 `0.554855/0.587907`, k=2
-`0.764811/0.805534`, k=5 `0.958557/1.044811`, k=10
-`1.109077/1.242696`, and k=20 `1.042222/1.559127 eV`. Eligible source counts
-are 99, 97, 76, 60, and 24. This controls search count, not transformation
-distribution.
+The original `matched_k_comparison.csv` is retained as a secondary,
+changing-cohort diagnostic: eligible source counts fall from 99 at k=1 to 24 at
+k=20. Its k=10-to-k=20 decline therefore compared different populations and is
+not a valid monotonic search-size curve.
+
+The frozen primary comparison is `matched_k_fixed_cohort.csv`. It holds the 24
+sources with at least 20 variants in both banks fixed at every k and uses 5,000
+deterministic nested subsamples without replacement. Mean expected worst drift
+for repeat-shift versus broader is: k=1 `0.419580/0.468425`, k=2
+`0.579210/0.678291`, k=5 `0.784897/0.999580`, k=10
+`0.921969/1.273515`, and k=20 `1.042272/1.561256 eV`. Both series are monotone.
+The broader-minus-repeat difference increases from `0.048845` to `0.518984 eV`.
 
 The broader bank has a higher observed source worst case for 79/99 (`79.80%`)
 of applicable sources; repeat/shift is higher for 20/99. Eleven exact strings
