@@ -5,9 +5,9 @@ import numpy as np
 from typing import Sequence, Any
 
 from arena.contracts import Attacker, CandidateRecord, Defender, SourceSample
-from probabilistic_search_lab.interfaces import TargetModel, Validator, Validation, ProposalFamily, Proposal
-from probabilistic_search_lab.canonical import CanonicalValidator
-from probabilistic_search_lab.proposals import canonical_families
+from arena.prob_lab.interfaces import TargetModel, Validator, Validation, ProposalFamily, Proposal
+from arena.prob_lab.canonical import CanonicalValidator
+from arena.prob_lab.proposals import canonical_families
 
 from cem.search import CEMSearch
 from smc.search import SMCSearch

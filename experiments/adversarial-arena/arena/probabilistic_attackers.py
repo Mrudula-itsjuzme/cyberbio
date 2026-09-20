@@ -72,7 +72,7 @@ class _ArenaValidator:
                 reasons=tuple(result.reasons),
             )
         except Exception:
-            return Validation(True, True, ())  # fail-open: let attacker proceed
+            return Validation(False, False, (), str(e))  # fail-open: let attacker proceed
 
 
 # ---------------------------------------------------------------------------

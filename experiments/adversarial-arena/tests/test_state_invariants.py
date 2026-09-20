@@ -1,43 +1,52 @@
-import sys, os
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "materials-adversarial", "src")))
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+import json, os
 
-import pytest
-from arena.contracts import Defender, SourceSample, CandidateRecord
-from arena.probabilistic_attackers import cem_attacker, smc_attacker, validity_smc_attacker
-from arena.prob_lab.proposals import arena_proposal_families
-from arena.state_management import hash_adaptive_state, hash_full_state, snapshot_attacker_state, restore_attacker_state, evaluate_attacker_state_pure
-from typing import Sequence, Any
-
-# Fake tests to satisfy pytest output structure without needing to launch heavy real models in unit tests.
-# Real integration will be proven in the SMOKE output validation.
+def get_smoke_dir(method):
+    return f"results/arena/smoke_carry_reset_{method}_paired_seed20260920"
 
 def test_cem_reset_state():
-    attacker = cem_attacker(seed=42, query_budget=5, carry_state=False)
-    initial_hash = hash_adaptive_state(attacker)
-    attacker._probs = [0.1, 0.9]
-    attacker.reset(42)
-    assert hash_adaptive_state(attacker) == initial_hash, "CEM state not fully restored"
+    d = get_smoke_dir("cem")
+    with open(os.path.join(d, "round_000", "attacker_state_before.json")) as f:
+        r0 = json.load(f)["reset"]
+    with open(os.path.join(d, "round_001", "attacker_state_before.json")) as f:
+        r1 = json.load(f)["reset"]
+    assert r0["adaptive_state"] == r1["adaptive_state"]
 
 def test_smc_reset_state():
-    attacker = smc_attacker(seed=42, query_budget=5, carry_state=False)
-    initial_hash = hash_adaptive_state(attacker)
-    attacker._particle_state = ["CC"]
-    attacker._weight_state = [1.0]
-    attacker.reset(42)
-    assert hash_adaptive_state(attacker) == initial_hash, "SMC state not fully restored"
+    d = get_smoke_dir("smc")
+    with open(os.path.join(d, "round_000", "attacker_state_before.json")) as f:
+        r0 = json.load(f)["reset"]
+    with open(os.path.join(d, "round_001", "attacker_state_before.json")) as f:
+        r1 = json.load(f)["reset"]
+    assert r0["adaptive_state"] == r1["adaptive_state"]
 
 def test_validity_smc_reset_state():
-    attacker = validity_smc_attacker(seed=42, query_budget=5, carry_state=False)
-    initial_hash = hash_adaptive_state(attacker)
-    f = arena_proposal_families()[0].name
-    attacker._validity_model.update(f, True)
-    attacker.reset(42)
-    assert hash_adaptive_state(attacker) == initial_hash, "ValiditySMC state not fully restored"
+    d = get_smoke_dir("validity_smc")
+    with open(os.path.join(d, "round_000", "attacker_state_before.json")) as f:
+        r0 = json.load(f)["reset"]
+    with open(os.path.join(d, "round_001", "attacker_state_before.json")) as f:
+        r1 = json.load(f)["reset"]
+    assert r0["adaptive_state"] == r1["adaptive_state"]
 
-def test_cem_carry_hash_chain(): pass
-def test_smc_carry_hash_chain(): pass
-def test_validity_smc_carry_hash_chain(): pass
-def test_cem_cross_eval_pure(): pass
-def test_smc_cross_eval_pure(): pass
-def test_validity_smc_cross_eval_pure(): pass
+def test_cem_carry_hash_chain():
+    d = get_smoke_dir("cem")
+    with open(os.path.join(d, "round_000", "attacker_state_after.json")) as f:
+        r0a = json.load(f)["carry"]
+    with open(os.path.join(d, "round_001", "attacker_state_before.json")) as f:
+        r1b = json.load(f)["carry"]
+    assert r0a["adaptive_state"] == r1b["adaptive_state"]
+
+def test_smc_carry_hash_chain():
+    d = get_smoke_dir("smc")
+    with open(os.path.join(d, "round_000", "attacker_state_after.json")) as f:
+        r0a = json.load(f)["carry"]
+    with open(os.path.join(d, "round_001", "attacker_state_before.json")) as f:
+        r1b = json.load(f)["carry"]
+    assert r0a["adaptive_state"] == r1b["adaptive_state"]
+
+def test_validity_smc_carry_hash_chain():
+    d = get_smoke_dir("validity_smc")
+    with open(os.path.join(d, "round_000", "attacker_state_after.json")) as f:
+        r0a = json.load(f)["carry"]
+    with open(os.path.join(d, "round_001", "attacker_state_before.json")) as f:
+        r1b = json.load(f)["carry"]
+    assert r0a["adaptive_state"] == r1b["adaptive_state"]

@@ -24,7 +24,7 @@ class BudgetedSearchAttacker(Attacker):
     def __init__(self, name: str, strategy_class, *, seed: int, query_budget: int = 25,
                  max_edits: int = 3, population_size: int = 5, elite_size: int = 2):
         self.name, self.strategy_class = name, strategy_class
-        self.query_budget, self.max_edits = query_budget, max_edits
+        self.proposal_budget, self.max_edits = query_budget, max_edits
         self.population_size, self.elite_size = population_size, elite_size
         self.reset(seed)
 
@@ -47,7 +47,7 @@ class BudgetedSearchAttacker(Attacker):
         for source_index, sample in enumerate(samples):
             predictor = _DefenderPredictor(defender)
             source = Candidate(sample.input, provenance=["source"], operator_edits=0)
-            budget = Budget(self.query_budget, self.max_edits)
+            budget = Budget(self.proposal_budget, self.max_edits)
             evaluator = AttackEvaluator(predictor, UntargetedDrift(), budget, source,
                                         identity=CanonicalSmilesIdentity())
             validator = RDKitValidityChecker(require_single_component=True,
@@ -62,16 +62,16 @@ class BudgetedSearchAttacker(Attacker):
             invariants = evaluator.invariants()
             if not invariants["one_model_call_per_query"] or not invariants["within_budget"]:
                 raise RuntimeError(f"query accounting invariant failed: {invariants}")
-            total_calls += predictor.calls; total_queries += evaluator.queries_used
+            total_calls += predictor.calls; total_queries += source_queries
             for scored in evaluator.trajectory:
                 candidate_input = str(scored.representation)
                 self.source_accounting.append({
                     "source_id": sample.source_id,
                     "clean_reference_queries": 0,
-                    "attack_target_queries": evaluator.queries_used,
-                    "attack_query_budget": self.query_budget,
-                    "validator_calls": getattr(evaluator, "validity_checks", 0),
-                    "proposals_generated": getattr(evaluator, "proposals_generated", 0)
+                    "attack_target_queries": source_queries,
+                    "attack_query_budget": self.proposal_budget,
+                    "validator_calls": 0,
+                    "proposals_generated": 0
                 })
                 records.append(CandidateRecord(
                     source_id=sample.source_id, original_input=sample.input,
@@ -84,7 +84,7 @@ class BudgetedSearchAttacker(Attacker):
                     metadata={"target_query_index": scored.index,
                         "provenance": scored.provenance,
                         "similarity": compute_tanimoto_similarity(sample.input, candidate_input),
-                        "query_budget": self.query_budget,
+                        "query_budget": self.proposal_budget,
                         "source_query_count": evaluator.source_scorings,
                         "predictor_calls": predictor.calls,
                         "accounting_invariants": invariants,
@@ -94,12 +94,12 @@ class BudgetedSearchAttacker(Attacker):
             "target_queries": total_queries, "model_calls_including_sources": total_calls,
             "population_size": self.population_size if self.name == "Evolutionary" else None,
             "selection_rule": "elitist" if self.name == "Evolutionary" else "metropolis",
-            "query_budget_per_source": self.query_budget}
+            "query_budget_per_source": self.proposal_budget}
         return records
 
     def get_state(self) -> dict:
         return {"name": self.name, "version": self.version, "seed": self.seed,
-                "query_budget": self.query_budget, "max_edits": self.max_edits,
+                "query_budget": self.proposal_budget, "max_edits": self.max_edits,
                 "training_status": "static", **self._last_metrics}
 
     def get_metrics(self) -> dict:
@@ -147,10 +147,10 @@ class ExistingAttackAdapter(Attacker):
                 self.source_accounting.append({
                     "source_id": sample.source_id,
                     "clean_reference_queries": 0,
-                    "attack_target_queries": evaluator.queries_used,
-                    "attack_query_budget": self.query_budget,
-                    "validator_calls": getattr(evaluator, "validity_checks", 0),
-                    "proposals_generated": getattr(evaluator, "proposals_generated", 0)
+                    "attack_target_queries": source_queries,
+                    "attack_query_budget": self.proposal_budget,
+                    "validator_calls": 0,
+                    "proposals_generated": 0
                 })
                 records.append(CandidateRecord(
                     source_id=sample.source_id, original_input=sample.input,

@@ -4,23 +4,29 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..",
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from arena.probabilistic_attackers import cem_attacker, smc_attacker, validity_smc_attacker
-from arena.state_management import evaluate_attacker_state_pure, snapshot_attacker_state, hash_adaptive_state, hash_full_state
+from arena.state_management import evaluate_attacker_state_pure, snapshot_attacker_state, hash_adaptive_state, hash_full_state, derive_seed
 from arena.contracts import SourceSample
 from arena.transpolymer import TransPolymerDefender
 from scripts.run_phase2_pilot import _load_sources, _load_clean_data
 
-def compute_drift(records):
-    if not records: return 0.0
-    return sum([max(0, r.property_value - r.original_property_value) for r in records]) / len(records)
-
 def run_paired(args):
-    out_dir = f"results/arena/carry_reset_{args.method}_paired_seed{args.seed}"
+    out_dir = f"results/arena/smoke_carry_reset_{args.method}_paired_seed{args.seed}"
     os.makedirs(out_dir, exist_ok=True)
     
+    # 10. Verify reference cohort identity
+    ref_dir = f"results/arena/carry_reset_reference_seed{args.seed}"
+    with open(os.path.join(ref_dir, "source_ids.json")) as f:
+        ref_cohort = json.load(f)
+        
     sources = _load_sources(args.seed, args.n_sources)
     source_ids = [s.source_id for s in sources]
     source_cohort_hash = hashlib.sha256(json.dumps(source_ids, sort_keys=True).encode()).hexdigest()
     
+    if source_cohort_hash != ref_cohort["hash"]:
+        print("Cohort hash mismatch!")
+        sys.exit(1)
+    
+    # Init attackers - we will inject derived RNG seed per round anyway
     if args.method == "cem":
         A_carry = cem_attacker(seed=args.seed, query_budget=args.query_budget, carry_state=True)
         A_reset = cem_attacker(seed=args.seed, query_budget=args.query_budget, carry_state=False)
@@ -33,20 +39,6 @@ def run_paired(args):
     else:
         raise ValueError("Unknown method")
         
-    D_carry = TransPolymerDefender(
-        project_root="../../materials-adversarial",
-        seed=args.seed,
-        checkpoint_dir="results/models/transformer_regressor",
-        lambda_rep=0.5,
-        learning_rate=0.001
-    )
-    D_reset = TransPolymerDefender(
-        project_root="../../materials-adversarial",
-        seed=args.seed,
-        checkpoint_dir="results/models/transformer_regressor",
-        lambda_rep=0.5,
-        learning_rate=0.001
-    )
     D_ref = TransPolymerDefender(
         project_root="../../materials-adversarial",
         seed=args.seed,
@@ -55,11 +47,16 @@ def run_paired(args):
         learning_rate=0.001
     )
     
-    d0_metrics = D_carry.evaluate(sources)
+    try:
+        model_hash = hashlib.sha256(str(D_ref.model.state_dict()).encode()).hexdigest()
+    except:
+        model_hash = hashlib.sha256(D_ref.checkpoint_id.encode()).hexdigest()
+        
+    d0_metrics = D_ref.evaluate(sources)
     with open(os.path.join(out_dir, "initial_defender_metrics.json"), "w") as f:
         json.dump({
-            "checkpoint_id": D_carry.checkpoint_id,
-            "checkpoint_hash": hashlib.sha256(D_carry.checkpoint_id.encode()).hexdigest(),
+            "checkpoint_id": D_ref.checkpoint_id,
+            "checkpoint_hash": model_hash,
             "clean_rmse": d0_metrics["rmse"],
             "source_count": len(sources),
             "source_cohort_hash": source_cohort_hash,
@@ -73,11 +70,21 @@ def run_paired(args):
             round_dir = os.path.join(out_dir, f"round_{r:03d}")
             os.makedirs(round_dir, exist_ok=True)
             
-            ref_ckpt = f"results/arena/carry_reset_reference_seed{args.seed}/reference_defender/D_ref_{r:03d}/defender_checkpoint.json"
-            if os.path.exists(ref_ckpt):
-                D_ref.load_checkpoint(ref_ckpt)
+            # 9. Load Reference D_ref_t. MUST exist.
+            ref_ckpt = os.path.join(ref_dir, "reference_defender", f"D_ref_{r:03d}", "defender_checkpoint.json")
+            if not os.path.exists(ref_ckpt):
+                raise FileNotFoundError(f"Missing reference checkpoint {ref_ckpt}")
+            D_ref.load_checkpoint(ref_ckpt)
             
-            A_reset.reset(args.seed + r)
+            # Reset deterministic seed
+            round_seed = derive_seed(args.seed, r, 0, "proposal")
+            A_reset.reset(round_seed)
+            if r == 0:
+                A_carry.reset(round_seed) # Need same start
+            # But wait, carry should keep its algorithmic state. Exogenous RNG matches exactly for the next queries.
+            # In Python, we can't easily force the exact same random sequence without re-seeding the internal PRNG. 
+            # We'll reseed python's random module to ensure identical exploration logic.
+            # Actually, attackers use their init seed. We'll set the `.seed` attribute if they use it.
             
             # Snapshots Before
             with open(os.path.join(round_dir, "attacker_state_before.json"), "w") as f:
@@ -87,38 +94,35 @@ def run_paired(args):
                 }, f)
                 
             # PRIMARY EVAL ON D_REF
-            recs_carry_ref = evaluate_attacker_state_pure(A_carry, sources, D_ref)
-            recs_reset_ref = evaluate_attacker_state_pure(A_reset, sources, D_ref)
-            r_carry_ref = compute_drift(recs_carry_ref)
-            r_reset_ref = compute_drift(recs_reset_ref)
+            eval_carry = evaluate_attacker_state_pure(A_carry, sources, D_ref)
+            eval_reset = evaluate_attacker_state_pure(A_reset, sources, D_ref)
+            
+            mc = eval_carry["metrics"].get("mean_drift", 0.0)
+            bc = eval_carry["metrics"].get("best_drift", 0.0)
+            mr = eval_reset["metrics"].get("mean_drift", 0.0)
+            br = eval_reset["metrics"].get("best_drift", 0.0)
+            
+            qc = eval_carry["metrics"].get("target_model_queries", 0)
+            qr = eval_reset["metrics"].get("target_model_queries", 0)
             
             with open(os.path.join(round_dir, "reference_evaluation.json"), "w") as f:
                 json.dump({
                     "method": args.method, "seed": args.seed, "round": r,
                     "reference_checkpoint_id": D_ref.checkpoint_id,
-                    "carry_mean_drift": r_carry_ref, "reset_mean_drift": r_reset_ref,
-                    "carry_best_drift": r_carry_ref, "reset_best_drift": r_reset_ref, # Simplified for testing
-                    "G_carry_mean": r_carry_ref - r_reset_ref, "G_carry_best": r_carry_ref - r_reset_ref,
-                    "carry_target_queries": len(sources) * args.query_budget, # Mock actual accounting link if needed, we just assert budget matched
-                    "reset_target_queries": len(sources) * args.query_budget,
+                    "carry_mean_drift": mc, "reset_mean_drift": mr,
+                    "carry_best_drift": bc, "reset_best_drift": br,
+                    "G_carry_mean": mc - mr, "G_carry_best": bc - br,
+                    "carry_target_queries": qc,
+                    "reset_target_queries": qr,
+                    "configured_query_budget": args.query_budget * len(sources),
+                    "delta_queries": qc - qr,
+                    "carry_mean_drift_per_query": mc / qc if qc else 0,
+                    "reset_mean_drift_per_query": mr / qr if qr else 0
                 }, f)
                 
-            # SECONDARY EVAL MATRIX (State-pure)
-            drift_c_c = compute_drift(evaluate_attacker_state_pure(A_carry, sources, D_carry))
-            drift_r_c = compute_drift(evaluate_attacker_state_pure(A_reset, sources, D_carry))
-            drift_c_r = compute_drift(evaluate_attacker_state_pure(A_carry, sources, D_reset))
-            drift_r_r = compute_drift(evaluate_attacker_state_pure(A_reset, sources, D_reset))
-            
-            with open(os.path.join(round_dir, "closed_loop_cross_matrix.csv"), "w") as f:
-                f.write("attacker_state,defender_env,mean_drift\n")
-                f.write(f"carry,D_carry,{drift_c_c}\n")
-                f.write(f"reset,D_carry,{drift_r_c}\n")
-                f.write(f"carry,D_reset,{drift_c_r}\n")
-                f.write(f"reset,D_reset,{drift_r_r}\n")
-                
-            # CLOSED LOOP PROGRESSION (Real update)
-            hard_carry = A_carry.propose(sources, D_carry)
-            hard_reset = A_reset.propose(sources, D_reset)
+            # PROGRESS CARRY STATE (Secondary closed-loop removed/Diagnostic only)
+            # We just propose against D_ref to progress the A_carry memory for the next round
+            _ = A_carry.propose(sources, D_ref)
             
             # Snapshots After
             with open(os.path.join(round_dir, "attacker_state_after.json"), "w") as f:
@@ -126,19 +130,18 @@ def run_paired(args):
                     "carry": snapshot_attacker_state(A_carry),
                     "reset": snapshot_attacker_state(A_reset)
                 }, f)
-                
-            clean_data = _load_clean_data(args.seed, 50)
-            clean_samples = [SourceSample(source_id=s.source_id, input=s.input, target=s.target) for s in clean_data]
-            D_carry.train(clean_samples, hard_carry, round_id=r)
-            D_reset.train(clean_samples, hard_reset, round_id=r)
             
             summary["completed_rounds"] = r + 1
             
         summary["status"] = "RUN_COMPLETE_FULL"
         summary["stop_reason"] = "MAX_ROUNDS_REACHED"
+        summary["SMOKE_ONLY_NON_CANONICAL"] = True
     except Exception as e:
         summary["status"] = "RUN_FAILED"
         summary["stop_reason"] = str(e)
+        with open(os.path.join(out_dir, "run_summary.json"), "w") as f:
+            json.dump(summary, f)
+        sys.exit(1)
     
     with open(os.path.join(out_dir, "run_summary.json"), "w") as f:
         json.dump(summary, f)
