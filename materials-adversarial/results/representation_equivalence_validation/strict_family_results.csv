@@ -1,0 +1,5 @@
+family,n_sources,n_variants,median_drift,P95_drift,max_drift
+branch_order_permutation,80,419,0.43072367,1.8776069641113275,3.1986325
+orientation_reversal,75,75,0.41050625,2.153961086273193,3.551546
+randomized_atom_ordering,81,421,0.3587103,1.9233551025390625,3.6328247
+start_point_shift,100,1992,0.41254413,1.658034038543701,3.8157127

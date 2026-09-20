@@ -8,6 +8,7 @@ therefore rejects plausible-looking strings which change repeat-unit chemistry.
 from __future__ import annotations
 
 from dataclasses import asdict, dataclass
+from collections import Counter
 from typing import Any
 
 import numpy as np
@@ -51,6 +52,29 @@ def _attachment_signature(mol: Chem.Mol) -> list[tuple[int, tuple[int, ...], tup
         signature.append((atom.GetDegree(), neighbors, bonds))
     return sorted(signature)
 
+def normalize_attachment_tokens(text: str) -> str:
+    """Normalize RDKit's bare dummy atom to the frozen vocabulary spelling."""
+    out=[]; i=0
+    while i < len(text):
+        if text.startswith("[*]",i): out.append("[*]"); i+=3
+        elif text[i]=="*": out.append("[*]"); i+=1
+        else: out.append(text[i]); i+=1
+    return "".join(out)
+
+def graph_evidence(text: str) -> dict[str, Any]:
+    mol=_mol(text)
+    if mol is None: return {"parse_ok":False}
+    from rdkit.Chem import rdMolDescriptors
+    Chem.AssignStereochemistry(mol, cleanIt=True, force=True)
+    return {"parse_ok":True,"atom_count":mol.GetNumAtoms(),"bond_count":mol.GetNumBonds(),
+        "element_counts":dict(sorted(Counter(a.GetSymbol() for a in mol.GetAtoms()).items())),
+        "formula":rdMolDescriptors.CalcMolFormula(mol),"formal_charge":sum(a.GetFormalCharge() for a in mol.GetAtoms()),
+        "stereocenters":sorted(label for _,label in Chem.FindMolChiralCenters(mol,includeUnassigned=True,useLegacyImplementation=False)),
+        "bond_stereo":sorted(str(b.GetStereo()) for b in mol.GetBonds() if b.GetStereo()!=Chem.BondStereo.STEREONONE),
+        "attachment_signature":_attachment_signature(mol),"connected_components":len(Chem.GetMolFrags(mol)),
+        "canonical_nonisomeric":Chem.MolToSmiles(mol,canonical=True,isomericSmiles=False),
+        "canonical_isomeric":Chem.MolToSmiles(mol,canonical=True,isomericSmiles=True)}
+
 
 def is_equivalent(source: str, variant: str) -> EquivalenceResult:
     """Return a chemistry-aware equivalence decision and auditable evidence."""
@@ -70,6 +94,11 @@ def is_equivalent(source: str, variant: str) -> EquivalenceResult:
     base.update({"source_canonical": left_canon, "variant_canonical": right_canon})
     if left_canon != right_canon:
         return EquivalenceResult(False, "canonical_chemical_graph_changed", base)
+    le,re=graph_evidence(source),graph_evidence(variant)
+    for key in ("atom_count","bond_count","element_counts","formula","formal_charge","stereocenters","bond_stereo","connected_components"):
+        if le[key]!=re[key]:
+            base["mismatched_field"]=key
+            return EquivalenceResult(False,f"{key}_changed",base)
     return EquivalenceResult(True, "canonical_graph_and_attachment_semantics_match", base)
 
 
