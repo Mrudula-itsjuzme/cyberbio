@@ -1,0 +1,4 @@
+defender_checkpoint,attacker,mean_robustness_effect,n
+transformer-D003,RandomSMILES,0.8861592588424683,250
+transformer-D003,MCMC,0.44704491951886344,17
+transformer-D003,Evolutionary,0.35297500265055687,116

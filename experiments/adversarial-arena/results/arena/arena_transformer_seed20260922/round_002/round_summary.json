@@ -1,0 +1,25 @@
+{
+  "active_attacker": "RandomSMILES",
+  "candidate_diversity": 1.0,
+  "defender_clean_rmse": 0.5193947273029486,
+  "defender_gain": 0.8120178025539114,
+  "defender_robustness": 0.8861592588424683,
+  "drift_per_query": 0.35978854703903196,
+  "family_distribution": {
+    "RandomSMILES": 250
+  },
+  "hard_example_buffer_size": 12,
+  "invalid": 0,
+  "max_drift": 3.5918450355529785,
+  "mean_drift": 0.7195770940780639,
+  "median_drift": 0.49192893505096436,
+  "p90_drift": 1.6275835514068604,
+  "proposal_efficiency": 1.0,
+  "proposals": 250,
+  "queries": 500,
+  "round": 2,
+  "strongest_attacker": "RandomSMILES",
+  "valid": 250,
+  "validity_rate": 1.0,
+  "wall_clock_seconds": 17.282279610000842
+}

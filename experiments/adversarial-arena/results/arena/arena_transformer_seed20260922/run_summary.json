@@ -1,0 +1,119 @@
+{
+  "controller": {
+    "alpha": {
+      "MCMC": 1.5408513045154384,
+      "RandomSMILES": 1.4184616651129904
+    },
+    "beta": {
+      "MCMC": 2.4591486954845614,
+      "RandomSMILES": 1.5815383348870096
+    },
+    "history": [
+      {
+        "draws": {
+          "MCMC": 0.6767132479391592,
+          "RandomSMILES": 0.3437061668805967
+        },
+        "selected": "MCMC"
+      },
+      {
+        "draws": {
+          "MCMC": 0.7235893449149646,
+          "RandomSMILES": 0.47086495115035343
+        },
+        "selected": "MCMC"
+      },
+      {
+        "draws": {
+          "MCMC": 0.4189024292426416,
+          "RandomSMILES": 0.9139215536022915
+        },
+        "selected": "RandomSMILES"
+      }
+    ],
+    "posterior_means": {
+      "MCMC": 0.3852128261288596,
+      "RandomSMILES": 0.47282055503766346
+    }
+  },
+  "rounds": [
+    {
+      "active_attacker": "MCMC",
+      "candidate_diversity": 1.0,
+      "defender_clean_rmse": 0.4391175787426722,
+      "defender_gain": 0.4337435862806975,
+      "defender_robustness": 0.5886716842651367,
+      "drift_per_query": 0.05507173023971857,
+      "family_distribution": {
+        "MCMC": 22
+      },
+      "hard_example_buffer_size": 4,
+      "invalid": 0,
+      "max_drift": 0.8006482124328613,
+      "mean_drift": 0.25533256747505884,
+      "median_drift": 0.235701322555542,
+      "p90_drift": 0.5468643903732301,
+      "proposal_efficiency": 1.0,
+      "proposals": 22,
+      "queries": 102,
+      "round": 0,
+      "strongest_attacker": "RandomSMILES",
+      "valid": 22,
+      "validity_rate": 1.0,
+      "wall_clock_seconds": 23.541817585999524
+    },
+    {
+      "active_attacker": "MCMC",
+      "candidate_diversity": 1.0,
+      "defender_clean_rmse": 0.3864392029870582,
+      "defender_gain": 1.1456970585521085,
+      "defender_robustness": 0.44455625329698834,
+      "drift_per_query": 0.10610974828402202,
+      "family_distribution": {
+        "MCMC": 20
+      },
+      "hard_example_buffer_size": 8,
+      "invalid": 0,
+      "max_drift": 1.5512118339538574,
+      "mean_drift": 0.5093267917633056,
+      "median_drift": 0.48653721809387207,
+      "p90_drift": 0.8423259258270265,
+      "proposal_efficiency": 1.0,
+      "proposals": 20,
+      "queries": 96,
+      "round": 1,
+      "strongest_attacker": "RandomSMILES",
+      "valid": 20,
+      "validity_rate": 1.0,
+      "wall_clock_seconds": 21.811673393000092
+    },
+    {
+      "active_attacker": "RandomSMILES",
+      "candidate_diversity": 1.0,
+      "defender_clean_rmse": 0.5193947273029486,
+      "defender_gain": 0.8120178025539114,
+      "defender_robustness": 0.8861592588424683,
+      "drift_per_query": 0.35978854703903196,
+      "family_distribution": {
+        "RandomSMILES": 250
+      },
+      "hard_example_buffer_size": 12,
+      "invalid": 0,
+      "max_drift": 3.5918450355529785,
+      "mean_drift": 0.7195770940780639,
+      "median_drift": 0.49192893505096436,
+      "p90_drift": 1.6275835514068604,
+      "proposal_efficiency": 1.0,
+      "proposals": 250,
+      "queries": 500,
+      "round": 2,
+      "strongest_attacker": "RandomSMILES",
+      "valid": 250,
+      "validity_rate": 1.0,
+      "wall_clock_seconds": 17.282279610000842
+    }
+  ],
+  "run_id": "arena_transformer_seed20260922",
+  "scientific_status": "SCIENTIFIC_PILOT",
+  "status": "RUN_COMPLETE"
+}

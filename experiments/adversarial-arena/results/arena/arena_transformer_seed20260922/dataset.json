@@ -1,0 +1,5 @@
+{
+  "sha256": "6bc3f6342ffd94f0e95d6b8de983d27370bbae989bb70743917fa72c005fc290",
+  "train": 100,
+  "validation": 10
+}

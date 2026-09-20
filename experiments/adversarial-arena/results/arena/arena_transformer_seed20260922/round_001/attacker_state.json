@@ -1,0 +1,8 @@
+{
+  "name": "MCMC",
+  "proposal_budget": 25,
+  "proposed": 93,
+  "seed": 20260923,
+  "training_status": "static",
+  "version": "1"
+}

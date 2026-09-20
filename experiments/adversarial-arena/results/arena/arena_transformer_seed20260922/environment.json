@@ -1,0 +1,6 @@
+{
+  "branch": "experiments/adversarial-arena",
+  "git_commit": "c77e72f8933d6bcae27b40e0aee41d70abd566a6",
+  "platform": "Linux-6.18.7-76061807-generic-x86_64-with-glibc2.39",
+  "python": "3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]"
+}
