@@ -2,7 +2,7 @@
 
 ## 1. Clean vs. Robustness Cost
 - **Claim**: `ROBUSTNESS_IMPROVED_NO_CLEAN_COST`
-- **Evidence**: `broader_worst` achieved massive robustness improvements (1.014 eV reduction) while simultaneously improving Clean MAE (0.3229 -> 0.3218 eV) against a strict apples-to-apples baseline trained on the exact same token grammar.
+- **Evidence**: `broader_worst` achieved massive robustness improvements (1.014 eV reduction, 60.2%) while simultaneously improving Clean MAE (0.4619 → 0.4539 eV, −0.0080 eV) against a strict apples-to-apples baseline trained on the exact same token grammar. *(Note: the value 0.3229 that appeared in an earlier draft of this document was a data entry error — it was a per-source worst-case drift statistic, not a Clean MAE. See `docs/FINAL_METRIC_PROVENANCE.md` for full audit.)*
 
 ## 2. Invariance Training vs. Input Pipeline
 - **Claim**: 100% of the robustness gain comes from the consistency loss.

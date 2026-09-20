@@ -78,6 +78,10 @@ def periodic_closure(text: str):
     mol, stars, neighbors, bond_type = parts
     editable, mapping = _remove_stars(mol, stars)
     left, right = mapping[neighbors[0]], mapping[neighbors[1]]
+    if left == right:
+        # Both attachment markers on one atom do not define a translatable
+        # linear repeat-unit backbone.
+        return None
     # Compute before adding the closure edge: branch bonds are not shift cuts.
     path = list(Chem.GetShortestPath(editable, left, right))
     if editable.GetBondBetweenAtoms(left, right) is None:
