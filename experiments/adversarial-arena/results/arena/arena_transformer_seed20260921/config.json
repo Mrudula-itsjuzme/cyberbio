@@ -1,0 +1,42 @@
+{
+  "attackers": [
+    "RandomSMILES",
+    "MCMC",
+    "Evolutionary"
+  ],
+  "clean_rmse_warning_fraction": 0.1,
+  "curricula": [
+    "fixed_randomsmiles",
+    "fixed_mcmc",
+    "fixed_evolutionary",
+    "thompson"
+  ],
+  "defender": {
+    "adapter": "transpolymer",
+    "batch_size": 16,
+    "chemistry_changing_supervised_weight": 0.0,
+    "epochs_per_round": 1,
+    "initial_checkpoint": "results/models/transformer_regressor",
+    "lambda_representation": 0.1,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001
+  },
+  "hard_example_k": 4,
+  "max_edits": 3,
+  "primary_curriculum": "thompson_leave_one_out",
+  "query_budget": 25,
+  "real_pilot": true,
+  "rounds": 3,
+  "run_type": "scientific_pilot",
+  "seeds": [
+    20260921
+  ],
+  "selection": {
+    "k": 4,
+    "policy": "top_k_drift"
+  },
+  "source_count": 10,
+  "thompson": {
+    "reward": "mean_valid_drift_over_one_plus_mean_valid_drift"
+  }
+}

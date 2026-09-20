@@ -1,0 +1,8 @@
+{
+  "name": "RandomSMILES",
+  "proposal_budget": 25,
+  "proposed": 1000,
+  "seed": 20260921,
+  "training_status": "static",
+  "version": "1"
+}

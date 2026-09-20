@@ -1,0 +1,19 @@
+{"state": "IDLE", "round": null, "detail": null}
+{"state": "UPDATING_DEFENDER", "round": -1, "detail": "clean baseline"}
+{"state": "EVALUATING", "round": -1, "detail": null}
+{"state": "RUNNING_ATTACK", "round": 0, "detail": "MCMC"}
+{"state": "VALIDATING", "round": 0, "detail": null}
+{"state": "UPDATING_DEFENDER", "round": 0, "detail": null}
+{"state": "EVALUATING", "round": 0, "detail": null}
+{"state": "ROUND_COMPLETE", "round": 0, "detail": null}
+{"state": "RUNNING_ATTACK", "round": 1, "detail": "RandomSMILES"}
+{"state": "VALIDATING", "round": 1, "detail": null}
+{"state": "UPDATING_DEFENDER", "round": 1, "detail": null}
+{"state": "EVALUATING", "round": 1, "detail": null}
+{"state": "ROUND_COMPLETE", "round": 1, "detail": null}
+{"state": "RUNNING_ATTACK", "round": 2, "detail": "MCMC"}
+{"state": "VALIDATING", "round": 2, "detail": null}
+{"state": "UPDATING_DEFENDER", "round": 2, "detail": null}
+{"state": "EVALUATING", "round": 2, "detail": null}
+{"state": "ROUND_COMPLETE", "round": 2, "detail": null}
+{"state": "RUN_COMPLETE", "round": 2, "detail": null}

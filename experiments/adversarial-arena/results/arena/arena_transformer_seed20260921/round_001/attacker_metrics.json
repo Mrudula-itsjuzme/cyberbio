@@ -1,0 +1,17 @@
+{
+  "candidate_diversity": 1.0,
+  "drift_per_query": 0.4551680512428284,
+  "family_distribution": {
+    "RandomSMILES": 250
+  },
+  "invalid": 0,
+  "max_drift": 3.8926098346710205,
+  "mean_drift": 0.9103361024856568,
+  "median_drift": 0.7100809812545776,
+  "p90_drift": 1.9751696348190306,
+  "proposal_efficiency": 1.0,
+  "proposals": 250,
+  "queries": 500,
+  "valid": 250,
+  "validity_rate": 1.0
+}

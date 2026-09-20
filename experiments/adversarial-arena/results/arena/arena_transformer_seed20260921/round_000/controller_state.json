@@ -1,0 +1,23 @@
+{
+  "alpha": {
+    "MCMC": 1.2119814442479526,
+    "RandomSMILES": 1.0
+  },
+  "beta": {
+    "MCMC": 1.7880185557520474,
+    "RandomSMILES": 1.0
+  },
+  "history": [
+    {
+      "draws": {
+        "MCMC": 0.718264505675728,
+        "RandomSMILES": 0.6064908714642535
+      },
+      "selected": "MCMC"
+    }
+  ],
+  "posterior_means": {
+    "MCMC": 0.40399381474931756,
+    "RandomSMILES": 0.5
+  }
+}

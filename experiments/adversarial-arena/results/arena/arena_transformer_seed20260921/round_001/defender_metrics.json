@@ -1,0 +1,43 @@
+{
+  "batch_size": 16,
+  "checkpoint": "/tmp/cyberbio-adversarial-arena/experiments/adversarial-arena/results/arena/arena_transformer_seed20260921/round_001/defender_checkpoint.json",
+  "checkpoint_id": "transformer-D002",
+  "clean_mae": 0.6025793996154978,
+  "clean_metrics": {
+    "mae": 0.44833944725036634,
+    "n": 10,
+    "r2": 0.8563637737560181,
+    "rmse": 0.6088621109322377
+  },
+  "clean_r2": 0.6956283914672998,
+  "clean_rmse": 0.7934730545869176,
+  "diagnostic_only_chemistry_changing_count": 4,
+  "epochs": 1,
+  "hard_example_count": 8,
+  "history": [
+    {
+      "clean_loss": 0.06540114884929997,
+      "epoch": 1,
+      "representation_loss": 1.6865006855555944,
+      "training_loss": 0.23405121799026216,
+      "validation_mae": 0.5828754427327975
+    }
+  ],
+  "learning_rate": 0.001,
+  "loss_terms": {
+    "chemistry_changing_supervised": 0.0,
+    "clean_supervised_mse": 1.0,
+    "representation_consistency_mse": 0.1
+  },
+  "optimizer": "AdamW",
+  "representation_hard_example_count": 4,
+  "robust_drift": 0.9810604095458985,
+  "robustness_gain_ratio": 0.9279103443864607,
+  "round_id": 2,
+  "seed": 20260921,
+  "train_split": "canonical train",
+  "training_data_size": 100,
+  "training_loss": 0.23405121799026216,
+  "validation_loss": 0.5828754427327975,
+  "validation_split": "canonical validation"
+}
