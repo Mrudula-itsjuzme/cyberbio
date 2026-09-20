@@ -1,0 +1,54 @@
+=== cem Round 0 ===
+Ref ID: canonical-D0
+Ref SHA256: a1159c6532f75020226f1bef2a8ce35f8005c9fe204850b0be6a0d47286c58ab
+Carry queries: 5 | Reset queries: 5 | Delta: 0
+Carry Mean Drift: 0.14846372604370117 | Reset Mean Drift: 0.14846372604370117 | G_carry_mean: 0.0
+Carry Best Drift: 0.39474916458129883 | Reset Best Drift: 0.39474916458129883 | G_carry_best: 0.0
+Carry hash: 41484868 -> d6028068
+Reset hash: 41484868 -> 41484868
+
+=== cem Round 1 ===
+Ref ID: transformer-D000
+Ref SHA256: 76548fc5b9e0875e9f288374adcb825662a3942a943f737541aa970e2eabe54a
+Carry queries: 5 | Reset queries: 5 | Delta: 0
+Carry Mean Drift: 0.15841078758239746 | Reset Mean Drift: 0.12720108032226562 | G_carry_mean: 0.031209707260131836
+Carry Best Drift: 0.19678354263305664 | Reset Best Drift: 0.19678354263305664 | G_carry_best: 0.0
+Carry hash: d6028068 -> 1d6be75d
+Reset hash: 41484868 -> 41484868
+
+=== smc Round 0 ===
+Ref ID: canonical-D0
+Ref SHA256: a1159c6532f75020226f1bef2a8ce35f8005c9fe204850b0be6a0d47286c58ab
+Carry queries: 5 | Reset queries: 5 | Delta: 0
+Carry Mean Drift: 0.08346390724182129 | Reset Mean Drift: 0.08346390724182129 | G_carry_mean: 0.0
+Carry Best Drift: 0.16392946243286133 | Reset Best Drift: 0.16392946243286133 | G_carry_best: 0.0
+Carry hash: 265eb2ca -> 5767c6a4
+Reset hash: 265eb2ca -> 265eb2ca
+
+=== smc Round 1 ===
+Ref ID: transformer-D000
+Ref SHA256: 76548fc5b9e0875e9f288374adcb825662a3942a943f737541aa970e2eabe54a
+Carry queries: 5 | Reset queries: 5 | Delta: 0
+Carry Mean Drift: 0.3231189250946045 | Reset Mean Drift: 0.17781388759613037 | G_carry_mean: 0.14530503749847412
+Carry Best Drift: 0.9886927604675293 | Reset Best Drift: 0.5165438652038574 | G_carry_best: 0.4721488952636719
+Carry hash: 5767c6a4 -> c73bcc7a
+Reset hash: 265eb2ca -> 265eb2ca
+
+=== validity_smc Round 0 ===
+Ref ID: canonical-D0
+Ref SHA256: a1159c6532f75020226f1bef2a8ce35f8005c9fe204850b0be6a0d47286c58ab
+Carry queries: 5 | Reset queries: 5 | Delta: 0
+Carry Mean Drift: 0.08346390724182129 | Reset Mean Drift: 0.08346390724182129 | G_carry_mean: 0.0
+Carry Best Drift: 0.16392946243286133 | Reset Best Drift: 0.16392946243286133 | G_carry_best: 0.0
+Carry hash: 24bada95 -> 57df9d2e
+Reset hash: 24bada95 -> 24bada95
+
+=== validity_smc Round 1 ===
+Ref ID: transformer-D000
+Ref SHA256: 76548fc5b9e0875e9f288374adcb825662a3942a943f737541aa970e2eabe54a
+Carry queries: 5 | Reset queries: 5 | Delta: 0
+Carry Mean Drift: 0.3231189250946045 | Reset Mean Drift: 0.17781388759613037 | G_carry_mean: 0.14530503749847412
+Carry Best Drift: 0.9886927604675293 | Reset Best Drift: 0.5165438652038574 | G_carry_best: 0.4721488952636719
+Carry hash: 57df9d2e -> b557656d
+Reset hash: 24bada95 -> 24bada95
+

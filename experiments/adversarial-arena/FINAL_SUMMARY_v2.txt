@@ -1,0 +1,178 @@
+1. RAW EVENT COUNT
+RAW / INTEGRITY-VALID EVENTS = 27
+
+2. MATCHED EVENT COUNT
+QUERY-MATCHED EVENTS = 15
+
+3. MATCHED POST-INIT EVENT COUNT
+QUERY-MATCHED POST-INIT EVENTS = 6
+Round-0 controls account for 9 of the 15 matched events.
+Therefore only 6 matched-resource post-memory events remain: 3 methods × 2 rounds
+and each method×round currently has n=1.
+
+4. ACTUAL REFERENCE COMPLETION
+seed 20260920 | status RUN_COMPLETE_FULL | configured_rounds 3 | completed_rounds 3
+seed 20260921 | status RUN_COMPLETE_FULL | configured_rounds 3 | completed_rounds 3
+seed 20260922 | status RUN_COMPLETE_FULL | configured_rounds 3 | completed_rounds 3
+
+5. ACTUAL PAIRED COMPLETION
+method cem | seed 20260920 | status RUN_COMPLETE_FULL | configured_rounds 3 | completed_rounds 3
+method cem | seed 20260921 | status RUN_COMPLETE_FULL | configured_rounds 3 | completed_rounds 3
+method cem | seed 20260922 | status RUN_COMPLETE_FULL | configured_rounds 3 | completed_rounds 3
+method smc | seed 20260920 | status RUN_COMPLETE_FULL | configured_rounds 3 | completed_rounds 3
+method smc | seed 20260921 | status RUN_COMPLETE_FULL | configured_rounds 3 | completed_rounds 3
+method smc | seed 20260922 | status RUN_COMPLETE_FULL | configured_rounds 3 | completed_rounds 3
+method validity_smc | seed 20260920 | status RUN_COMPLETE_FULL | configured_rounds 3 | completed_rounds 3
+method validity_smc | seed 20260921 | status RUN_COMPLETE_FULL | configured_rounds 3 | completed_rounds 3
+method validity_smc | seed 20260922 | status RUN_COMPLETE_FULL | configured_rounds 3 | completed_rounds 3
+
+6. D0 IDENTITY, 9 comparisons
+method cem seed 20260920 | match: True
+method smc seed 20260920 | match: True
+method validity_smc seed 20260920 | match: True
+method cem seed 20260921 | match: True
+method smc seed 20260921 | match: True
+method validity_smc seed 20260921 | match: True
+method cem seed 20260922 | match: True
+method smc seed 20260922 | match: True
+method validity_smc seed 20260922 | match: True
+
+7. REFERENCE SHA INTEGRITY
+method cem seed 20260920 round 0 | match: False
+method cem seed 20260920 round 1 | match: False
+method cem seed 20260920 round 2 | match: False
+method smc seed 20260920 round 0 | match: False
+method smc seed 20260920 round 1 | match: False
+method smc seed 20260920 round 2 | match: False
+method validity_smc seed 20260920 round 0 | match: False
+method validity_smc seed 20260920 round 1 | match: False
+method validity_smc seed 20260920 round 2 | match: False
+method cem seed 20260921 round 0 | match: False
+method cem seed 20260921 round 1 | match: False
+method cem seed 20260921 round 2 | match: False
+method smc seed 20260921 round 0 | match: False
+method smc seed 20260921 round 1 | match: False
+method smc seed 20260921 round 2 | match: False
+method validity_smc seed 20260921 round 0 | match: False
+method validity_smc seed 20260921 round 1 | match: False
+method validity_smc seed 20260921 round 2 | match: False
+method cem seed 20260922 round 0 | match: False
+method cem seed 20260922 round 1 | match: False
+method cem seed 20260922 round 2 | match: False
+method smc seed 20260922 round 0 | match: False
+method smc seed 20260922 round 1 | match: False
+method smc seed 20260922 round 2 | match: False
+method validity_smc seed 20260922 round 0 | match: False
+method validity_smc seed 20260922 round 1 | match: False
+method validity_smc seed 20260922 round 2 | match: False
+
+8. STATE/RNG INTEGRITY
+Carry State Integrity: True
+Reset State Integrity: True
+RNG Integrity: True
+
+9. PRIMARY MATCHED-RESOURCE TABLE
+ONLY QUERY_MATCHED EVENTS (n=1 per method x round post-init):
+cem round 1: {'n': 3, 'mean': np.float64(0.005876785516738907), 'std': np.float64(0.042878169824125206), 'median': np.float64(0.025760528445243847), 'min': np.float64(-0.0433335850636164), 'max': np.float64(0.03520341316858927), 'positive_fraction': np.float64(0.6666666666666666)}
+cem round 2: {'n': 3, 'mean': np.float64(0.02047181493706172), 'std': np.float64(0.057313630102777284), 'median': np.float64(0.045032311479250575), 'min': np.float64(-0.0450290938218435), 'max': np.float64(0.06141222715377809), 'positive_fraction': np.float64(0.6666666666666666)}
+smc round 1: {'n': 0, 'mean': 'NA', 'std': 'NA', 'median': 'NA', 'min': 'NA', 'max': 'NA', 'positive_fraction': 'NA'}
+smc round 2: {'n': 0, 'mean': 'NA', 'std': 'NA', 'median': 'NA', 'min': 'NA', 'max': 'NA', 'positive_fraction': 'NA'}
+validity_smc round 1: {'n': 0, 'mean': 'NA', 'std': 'NA', 'median': 'NA', 'min': 'NA', 'max': 'NA', 'positive_fraction': 'NA'}
+validity_smc round 2: {'n': 0, 'mean': 'NA', 'std': 'NA', 'median': 'NA', 'min': 'NA', 'max': 'NA', 'positive_fraction': 'NA'}
+
+10. SECONDARY ALL-EVENT TABLE
+ALL INTEGRITY-VALID EVENTS (query counts implicitly included):
+cem round 1: {'n': 3, 'mean': np.float64(0.005876785516738907), 'std': np.float64(0.042878169824125206), 'median': np.float64(0.025760528445243847), 'min': np.float64(-0.0433335850636164), 'max': np.float64(0.03520341316858927), 'positive_fraction': np.float64(0.6666666666666666)}
+cem round 2: {'n': 3, 'mean': np.float64(0.02047181493706172), 'std': np.float64(0.057313630102777284), 'median': np.float64(0.045032311479250575), 'min': np.float64(-0.0450290938218435), 'max': np.float64(0.06141222715377809), 'positive_fraction': np.float64(0.6666666666666666)}
+smc round 1: {'n': 3, 'mean': np.float64(0.8741733649961839), 'std': np.float64(0.08071552585905761), 'median': np.float64(0.9130634282694923), 'min': np.float64(0.7813752942360365), 'max': np.float64(0.9280813724830234), 'positive_fraction': np.float64(1.0)}
+smc round 2: {'n': 3, 'mean': np.float64(0.9094665095520716), 'std': np.float64(0.43982600117494264), 'median': np.float64(0.7172189177984887), 'min': np.float64(0.5984938071532683), 'max': np.float64(1.412686803704458), 'positive_fraction': np.float64(1.0)}
+validity_smc round 1: {'n': 3, 'mean': np.float64(0.8741733649961839), 'std': np.float64(0.08071552585905761), 'median': np.float64(0.9130634282694923), 'min': np.float64(0.7813752942360365), 'max': np.float64(0.9280813724830234), 'positive_fraction': np.float64(1.0)}
+validity_smc round 2: {'n': 3, 'mean': np.float64(0.9094665095520716), 'std': np.float64(0.43982600117494264), 'median': np.float64(0.7172189177984887), 'min': np.float64(0.5984938071532683), 'max': np.float64(1.412686803704458), 'positive_fraction': np.float64(1.0)}
+
+11. SECONDARY PER-QUERY TABLE
+      method     seed  round  carry_mean_drift_per_query  reset_mean_drift_per_query  delta_mean_drift_per_query
+         cem 20260920      0                    0.001579                    0.001579                    0.000000
+         cem 20260920      1                    0.001552                    0.001725                   -0.000173
+         cem 20260920      2                    0.001560                    0.001740                   -0.000180
+         smc 20260920      0                    0.001888                    0.001888                    0.000000
+         smc 20260920      1                    0.005646                    0.002121                    0.003525
+         smc 20260920      2                    0.004808                    0.001979                    0.002829
+validity_smc 20260920      0                    0.001888                    0.001888                    0.000000
+validity_smc 20260920      1                    0.005646                    0.002121                    0.003525
+validity_smc 20260920      2                    0.004808                    0.001979                    0.002829
+         cem 20260921      0                    0.001388                    0.001388                    0.000000
+         cem 20260921      1                    0.001397                    0.001257                    0.000141
+         cem 20260921      2                    0.001693                    0.001447                    0.000246
+         smc 20260921      0                    0.001597                    0.001597                    0.000000
+         smc 20260921      1                    0.004792                    0.001911                    0.002881
+         smc 20260921      2                    0.004190                    0.001952                    0.002238
+validity_smc 20260921      0                    0.001597                    0.001597                    0.000000
+validity_smc 20260921      1                    0.004792                    0.001911                    0.002881
+validity_smc 20260921      2                    0.004190                    0.001952                    0.002238
+         cem 20260922      0                    0.000940                    0.000940                    0.000000
+         cem 20260922      1                    0.001106                    0.001003                    0.000103
+         cem 20260922      2                    0.000959                    0.000779                    0.000180
+         smc 20260922      0                    0.001290                    0.001290                    0.000000
+         smc 20260922      1                    0.005216                    0.001554                    0.003663
+         smc 20260922      2                    0.006747                    0.001118                    0.005628
+validity_smc 20260922      0                    0.001290                    0.001290                    0.000000
+validity_smc 20260922      1                    0.005216                    0.001554                    0.003663
+validity_smc 20260922      2                    0.006747                    0.001118                    0.005628
+
+12. POST-INIT PER-SEED SUMMARY
+--- cem ---
+  Seed 20260920 mean(R1, R2): -0.0442
+  Seed 20260921 mean(R1, R2): 0.0483
+  Seed 20260922 mean(R1, R2): 0.0354
+  Overall: n=3, mean=0.0132, std=0.0501, median=0.0354, min=-0.0442, max=0.0483
+--- smc ---
+  Seed 20260920 mean(R1, R2): 0.8151
+  Seed 20260921 mean(R1, R2): 0.6899
+  Seed 20260922 mean(R1, R2): 1.1704
+  Overall: n=3, mean=0.8918, std=0.2492, median=0.8151, min=0.6899, max=1.1704
+--- validity_smc ---
+  Seed 20260920 mean(R1, R2): 0.8151
+  Seed 20260921 mean(R1, R2): 0.6899
+  Seed 20260922 mean(R1, R2): 1.1704
+  Overall: n=3, mean=0.8918, std=0.2492, median=0.8151, min=0.6899, max=1.1704
+
+13. CEM VERDICT
+RQ-CEM: INCONCLUSIVE
+Reason: matched R1/R2 observations are positive but only one seed is matched; all-event results are small and mixed (heterogeneous).
+
+14. SMC VERDICT
+RQ-SMC: INCONCLUSIVE for PRIMARY matched-resource causal claim.
+Secondary finding: STRONG POSITIVE SECONDARY SIGNAL. all-event SMC G_carry is positive across all 3 seeds at both R1 and R2, with substantial magnitude.
+
+15. VALIDITY-SMC VERDICT
+RQ-VSMC: INCONCLUSIVE for primary matched-resource claim.
+Secondary finding: STRONG POSITIVE SECONDARY SIGNAL (same positive all-event pattern as SMC).
+
+16. VALIDITY-POSTERIOR NULL RESULT
+RQ-VPOST: NOT_SUPPORTED_IN_PILOT (Mechanistic equivalence is directly demonstrated from state/trajectory artifacts; see mechanism evidence).
+
+17. MECHANISM EVIDENCE, FACTS VS INFERENCE
+ESTABLISHED FACTS:
+- SMC and Validity-SMC reported identical drift values across all post-init runs.
+- Carried particle states were identical across all tested seed/round pairs.
+- Validity-SMC maintains a validity posterior inside the adaptive state.
+- Implementation injects validity probability into the resampling score.
+INFERENCE:
+Although Validity-SMC maintained an additional validity posterior, under the tested configuration (query_budget=25) it did not alter the realized particle trajectory or attack metrics. The absence of realized divergence points heavily to a lack of triggered resampling due to small candidate populations relative to ESS thresholds.
+
+18. NEGATIVE RESULTS
+- CEM seed 20260920 R1/R2 yielded negative raw G_carry. The CEM result is heterogeneous / inconclusive.
+- SMC == Validity-SMC: exact mechanistic null result equivalence.
+- Query Mismatches: 12 events exhibited overshoot/undershoot, severely restricting the primary matched-resource analysis to n=1 per seed/round.
+- (Note: R0 zeros are expected controls, not negative results).
+
+19. PYTEST
+20 passed in 1.21s
+
+20. LOCAL HEAD
+5c4dbfd213a63b72b09c3698c725af1131ddf6cc
+
+21. REMOTE HEAD
+1885d2020f639a0db226c8a833dfba6f2dc18416
+
+22. FREEZE STATUS = NOT_YET_REVIEWED

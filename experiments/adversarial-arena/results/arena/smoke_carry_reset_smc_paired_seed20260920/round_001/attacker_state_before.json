@@ -1,0 +1,1 @@
+{"carry": {"round_id": 1, "adaptive_state": {"particles": ["*CNC(=O)COCCCCCCC(=O)N*", "*CNC(=O)CCOCCCCCC(=O)N*", "*CNC(=O)NCCCCCCCC(=O)N*", "*CNC(=O)CCCCCCCCC(=C)N*"], "weights": [0.229766247903079, 0.24905950091501675, 0.250677266849381, 0.2704969843325232]}}, "reset": {"round_id": 0, "adaptive_state": {"particles": null, "weights": null}}}
