@@ -27,6 +27,9 @@ This project focuses on sequence-based deep learning models predicting polymer p
 
 For complete active specifications, view [`materials-adversarial/README.md`](materials-adversarial/README.md) and [`materials-adversarial/docs/CANONICAL_PROJECT_STATE.md`](materials-adversarial/docs/CANONICAL_PROJECT_STATE.md).
 
+### Canonical Final Report
+The consolidated, human-readable project document is [`docs/cyberbio_report_v2/CyberBio_V2_Master_Report.md`](docs/cyberbio_report_v2/CyberBio_V2_Master_Report.md). It is the canonical “everything” report for the audited project state through 21 September 2026; supporting split reports remain available in the same directory.
+
 ---
 
 ## 2. Bio-Cyber Adversarial (`bio-cyber-adversarial/`)
