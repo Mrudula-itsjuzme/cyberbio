@@ -1,3 +1,6 @@
+> [!WARNING]
+> **Superseded status notice (2026-09-21):** This document preserves historical reasoning and results, but repository-wide test counts, completeness claims, and representation-robustness conclusions in it may predate the September 21 scientific review. Current canonical sources are `REPRESENTATION_ROBUSTNESS_REVIEW_20260921.md`, `CANONICAL_PROJECT_STATE.md`, and `CLAIMS_LEDGER.md`. Current scientific-review test status is **448 passed, 1 skipped, 1 warning**. Validation-only multi-view findings must not be converted into sealed-test or multi-seed claims.
+
 # RESEARCH COMPLETION AUDIT
 
 ## 1. What is already implemented

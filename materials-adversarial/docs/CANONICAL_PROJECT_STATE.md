@@ -119,3 +119,68 @@ These suites answer related but different questions and must not be pooled into 
 
 **Conclusion & Final State**:
 The core analytical framework is mature, but claims should remain tied to the exact artifact and experiment suite that produced them. Representation sensitivity should be framed as an observed model behavior, and chemistry-changing perturbations still require an independent physical oracle (for example, DFT) before claims about true property preservation can be made.
+
+
+---
+
+## 9. September 21 Scientific Review — Canonical Addendum
+
+This addendum supersedes older repository-wide test-status and representation-inference statements.
+
+### 9.1 Current test status
+
+The current scientific-review branch reports:
+
+- **448 passed**
+- **1 skipped**
+- **1 warning**
+
+The older `401 passed, 17 failed, 11 errors` snapshot and older `429 passed` claims describe earlier repository states. They are historical audit evidence, not the current canonical test status.
+
+### 9.2 Corrected label schema
+
+New chemistry-changing candidate banks use:
+
+- `source_target`
+- `candidate_target: null`
+- `label_basis: candidate_target_requires_independent_physical_oracle`
+
+Equivalent-SMILES records may inherit the source property only after graph-equivalence validation.
+
+### 9.3 Validation-only multi-view inference result
+
+The 631-molecule validation split was evaluated with up to 16 deterministic equivalent-SMILES views per molecule, with 15.97 unique views obtained on average. No sealed test sample was opened and no model was retrained.
+
+| Model | Canonical validation MAE | Mean-ensemble validation MAE | ΔMAE |
+|---|---:|---:|---:|
+| Ordinary Transformer | 0.5186 eV | 0.5604 eV | +0.0418 eV |
+| Augmented Transformer | 0.5009 eV | 0.4844 eV | -0.0165 eV |
+| GraphMPNN | 0.4112 eV | 0.4112 eV | ≈0 |
+
+Paired molecule-bootstrap intervals for ΔMAE:
+
+- Ordinary Transformer: **+0.0022 to +0.0832 eV**
+- Augmented Transformer: **-0.0274 to -0.0060 eV**
+- GraphMPNN: approximately **-5.9e-9 to +1.0e-8 eV**
+
+The strongest supported negative result is that **multi-view inference does not rescue the frozen ordinary Transformer**.
+
+### 9.4 Representation disagreement
+
+For the ordinary Transformer, equivalent-view prediction standard deviation is associated with absolute error:
+
+- Pearson: **0.291**
+- Spearman: **0.241**
+- low-disagreement quartile mean error: **0.474 eV**
+- high-disagreement quartile mean error: **0.774 eV**
+- error >0.5 eV: **34.8%** versus **61.4%**
+
+This is a diagnostic association, not a calibrated uncertainty claim and not causal evidence.
+
+### 9.5 Remaining publication limitation
+
+Existing augmented-Transformer and GraphMPNN evaluation is reproducible under the new protocol, but their original training is not fully publication-reproducible because complete deterministic training provenance was not preserved. Only one trained seed per architecture is evaluated here.
+
+The next publication-grade ML experiment is frozen multi-seed retraining with complete checkpoint/tokenizer/scaler/split/environment provenance, followed by the same validation protocol and exactly one final sealed-test evaluation after all choices are frozen.
+
+Detailed source: [REPRESENTATION_ROBUSTNESS_REVIEW_20260921.md](REPRESENTATION_ROBUSTNESS_REVIEW_20260921.md).
