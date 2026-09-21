@@ -244,3 +244,28 @@ The remaining blocker is physical execution: a real cluster, pseudopotentials/PO
 # 11. Recommended reading order
 
 Read this overview first. Then use **Part I** if you need to defend the model mathematics, **Part II** if you need to explain how the attacks/search/defenses/oracle work, and **Part III** if someone asks “which experiment actually supports that claim?”
+
+
+# 12. Turn 7 — Scientific-integrity review and the multi-view negative result
+
+**Project fact.** A September 21 validation-only review added a stricter fail-closed evaluation layer and tested whether equivalent-SMILES multi-view inference could repair the frozen sequence model without retraining.
+
+The experiment used 631 validation molecules, requested 16 deterministic unique equivalent views per molecule, obtained 15.97 on average, used 2,000 molecule-level paired bootstrap resamples, opened no sealed test samples, and retrained no models.
+
+| Model | Canonical validation MAE | Mean-ensemble validation MAE | ΔMAE |
+|---|---:|---:|---:|
+| Ordinary Transformer | 0.5186 eV | 0.5604 eV | +0.0418 eV |
+| Augmented Transformer | 0.5009 eV | 0.4844 eV | -0.0165 eV |
+| GraphMPNN | 0.4112 eV | 0.4112 eV | ≈0 |
+
+The paired molecule-bootstrap interval for the ordinary Transformer was +0.0022 to +0.0832 eV, so view averaging did **not** rescue it. The augmented Transformer interval was -0.0274 to -0.0060 eV, indicating a modest improvement for that existing checkpoint.
+
+The conservative interpretation is that inference-time marginalization is not a universal cure for representation dependence. It may depend on representation consistency already learned during training. Because only one existing trained checkpoint per architecture was evaluated, that interaction remains a hypothesis rather than an established mechanism.
+
+Equivalent-view disagreement was also associated with higher error for the ordinary Transformer (Pearson 0.291; Spearman 0.241), but this is treated as a risk diagnostic rather than calibrated epistemic uncertainty.
+
+This review also corrected candidate-label semantics, seed-aware split tie-breaking, fail-closed graph parsing, all-pairs canonical split leakage checks, scaler/checkpoint/vocabulary integrity checks, deterministic equivalent-view generation, and molecule-level statistical sampling.
+
+Current branch test state: **448 passed, 1 skipped, 1 warning**.
+
+Detailed source: `materials-adversarial/docs/REPRESENTATION_ROBUSTNESS_REVIEW_20260921.md`.
