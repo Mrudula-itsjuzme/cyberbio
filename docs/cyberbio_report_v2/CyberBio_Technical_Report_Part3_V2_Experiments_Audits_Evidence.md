@@ -315,3 +315,120 @@ The final project is not best summarized as “we made an adversarially trained 
 4. we built bounded chemistry-changing searches and repaired their protocol bugs;
 5. we showed that high chemistry sensitivity cannot be called adversarial error without independent physics;
 6. we built the software bridge to that physical oracle and stopped at the honest external-compute boundary.
+
+
+# 24. September 21 scientific-review pass: multi-view inference and integrity gates
+
+## 24.1 Why this pass matters
+
+This pass did not add another attack family. It asked whether the existing conclusions survive stricter scientific bookkeeping and whether equivalent-SMILES inference-time marginalization can compensate for a representation-fragile sequence predictor.
+
+The answer to the second question is **no for the frozen ordinary Transformer**.
+
+## 24.2 Integrity findings and repairs
+
+The audit found:
+
+- ambiguous historical `target` fields in chemistry-changing banks;
+- a grouped split seed that did not influence tie-breaking;
+- fail-open graph parsing;
+- incomplete original training provenance for existing augmented-Transformer and GraphMPNN checkpoints;
+- candidate-pooled statistics where molecules should be the independent sampling unit;
+- incomplete historical all-pairs canonical split-overlap checking.
+
+New chemistry-changing banks now separate `source_target` from `candidate_target`, where the latter is null until an independent physical oracle exists. Equivalent-SMILES label inheritance requires graph identity.
+
+Graph parsing fails closed by default. Additional integrity gates cover split completeness/disjointness, canonical cross-split overlap, units/lineage, training-only scaler equality, checkpoint-vocabulary compatibility, OOV chemistry, equivalent-view identity, deterministic generation, molecule-level bootstrap logic, and chemistry-changing label semantics.
+
+## 24.3 Validation-only protocol
+
+- 631 validation molecules;
+- 16 requested unique equivalent views per molecule;
+- 15.97 realized on average;
+- 2,000 molecule-level paired bootstrap resamples;
+- frozen ordinary Transformer;
+- existing augmentation-trained Transformer;
+- existing GraphMPNN;
+- canonical/original serialization baselines;
+- mean, median, and 10% trimmed-mean aggregation;
+- no sealed test access;
+- no retraining.
+
+## 24.4 Multi-view result
+
+| Model | Canonical MAE | Mean-ensemble MAE | ΔMAE | Paired molecule-bootstrap interval |
+|---|---:|---:|---:|---:|
+| Ordinary Transformer | 0.5186 | 0.5604 | +0.0418 | +0.0022 to +0.0832 |
+| Augmented Transformer | 0.5009 | 0.4844 | -0.0165 | -0.0274 to -0.0060 |
+| GraphMPNN | 0.4112 | 0.4112 | ≈0 | ≈-5.9e-9 to +1.0e-8 |
+
+All values are validation-only eV results.
+
+**Measured result:** averaging equivalent views worsens the ordinary Transformer and modestly improves the existing augmented checkpoint.
+
+**Interpretation:** inference-time marginalization is not a universal rescue mechanism; it appears to depend on representation behavior already learned during training.
+
+**Hypothesis:** training-time equivalent-representation exposure interacts with inference-time view aggregation. Multi-seed retraining is required to test this.
+
+## 24.5 Disagreement diagnostic
+
+Ordinary Transformer equivalent-view disagreement versus absolute error:
+
+- Pearson = 0.291;
+- Spearman = 0.241;
+- low-disagreement quartile mean error = 0.474 eV;
+- high-disagreement quartile mean error = 0.774 eV;
+- error >0.5 eV = 34.8% vs 61.4%.
+
+This is a descriptive risk signal, not causal evidence and not yet calibrated uncertainty.
+
+## 24.6 Representation drift
+
+Ordinary Transformer:
+
+- mean drift = 0.6051 eV;
+- p90 = 1.0156 eV;
+- max observed = 4.0768 eV.
+
+GraphMPNN:
+
+- mean drift ≈ 4.8e-8 eV;
+- max ≈ 9.5e-7 eV.
+
+GraphMPNN is therefore effectively invariant to equivalent-SMILES serialization up to numerical precision, not universally robust.
+
+## 24.7 Molecule variance versus training-seed variance
+
+The 2,000-resample paired bootstrap treats molecules as the independent observational unit. It does not estimate variability from retraining the architecture under different random seeds.
+
+For metric (M), conceptually:
+
+[
+mathrm{Var}(M)
+=
+mathrm{Var}_{s}!left[mathbb{E}_{x}(Mmid s)ight]
++
+mathbb{E}_{s}!left[mathrm{Var}_{x}(Mmid s)ight].
+]
+
+The current review addresses molecule-level variability for fixed trained checkpoints. Training-seed variability remains unresolved.
+
+## 24.8 Oracle shortlist
+
+From 68,886 Phase 12B trajectory records, the preparation pipeline selected 20 unique candidate structures from 13 sources, with at most two candidates per source and fingerprint similarity 0.156-0.677.
+
+No physical calculation was run. This is candidate preparation, not physical validation.
+
+## 24.9 Test status and provenance
+
+Current scientific-review suite: **448 passed, 1 skipped, 1 warning**.
+
+Older test snapshots are historical and superseded.
+
+The existing augmented Transformer and GraphMPNN are evaluation-reproducible under the new protocol, but their original training is not fully publication-reproducible because complete seed/provenance manifests were not retained.
+
+## 24.10 Publication blocker remaining on the ML side
+
+The highest-value extension is frozen multi-seed retraining with complete provenance, followed by the same validation-only review. Only after all model/aggregation/view-count/analysis choices are frozen should the sealed test split be opened once.
+
+Full evidence and reproduction commands: `materials-adversarial/docs/REPRESENTATION_ROBUSTNESS_REVIEW_20260921.md`.
