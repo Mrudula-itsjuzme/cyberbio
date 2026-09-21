@@ -1816,3 +1816,22 @@ The final project is not best summarized as “we made an adversarially trained 
 4. we built bounded chemistry-changing searches and repaired their protocol bugs;
 5. we showed that high chemistry sensitivity cannot be called adversarial error without independent physics;
 6. we built the software bridge to that physical oracle and stopped at the honest external-compute boundary.
+
+
+\newpage
+
+# September 21, 2026 Addendum — Representation Robustness Review
+
+This master report is extended by the validation-only scientific-review pass documented in `materials-adversarial/docs/REPRESENTATION_ROBUSTNESS_REVIEW_20260921.md`.
+
+The central new result is negative: **equivalent-SMILES multi-view inference does not rescue the frozen ordinary Transformer**. Validation MAE changed from 0.5186 to 0.5604 eV, with paired molecule-bootstrap ΔMAE interval +0.0022 to +0.0832 eV. The existing augmentation-trained Transformer improved modestly from 0.5009 to 0.4844 eV, interval -0.0274 to -0.0060 eV. GraphMPNN remained unchanged at 0.4112 eV to numerical precision.
+
+This supports a narrower conclusion than "ensembling helps": inference-time marginalization is not a universal remedy for representation sensitivity. A plausible interaction with training-time representation consistency remains a **hypothesis** until independent training seeds are evaluated.
+
+The same pass formalized corrected candidate-label semantics, fail-closed graph parsing, seed-aware split generation, all-pairs canonical split-leakage checks, training-only scaler verification, checkpoint/vocabulary compatibility, equivalent-view identity checks, deterministic view generation, molecule-level bootstrap sampling, and chemistry-changing label safeguards.
+
+Equivalent-view disagreement is associated with elevated error risk for the ordinary Transformer (Pearson 0.291, Spearman 0.241; low/high disagreement quartile mean error 0.474/0.774 eV), but is not claimed as calibrated uncertainty or causal evidence.
+
+Current scientific-review suite: **448 passed, 1 skipped, 1 warning**. Historical 401-failure and 429-pass snapshots are superseded states.
+
+Remaining ML publication blocker: frozen multi-seed retraining with complete training provenance. Remaining chemistry-changing scientific blocker: independent physical-oracle execution.
