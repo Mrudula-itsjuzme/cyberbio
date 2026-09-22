@@ -40,3 +40,18 @@ Thumbs.db
 *.snm
 *.toc
 .local/physical-oracle/
+
+# Temporary generated files
+CRASH
+input_tmp.in
+ruvector.db
+.claude-flow/
+.swarm/
+*.wfc*
+*.save/
+*.igk*
+*.mix*
+__pycache__/
+node_modules/
+.vite/
+

@@ -1,3 +1,25 @@
+
+# SCIENTIFIC STATUS UPDATE (2026-09-22)
+**Final Local Status:** CONVERGENCE_FAILED
+**Reason:** Frozen convergence protocol (12 Å vacuum) exceeds the practical memory envelope of the local 15 GiB host (exhausted at 80/360 Ry on the 22-atom C/H smoke structure before SCF).
+
+**Methodological State:**
+- No protocol freeze occurred.
+- No 12-polymer calibration was run.
+- No attack-pair DFT was run.
+- No DFT sign-agreement or magnitude-error results exist.
+- No chemistry-changing drift is established as physical error.
+- The finite capped-oligomer PBE HOMO-LUMO gap is not validated as the historical periodic-chain target.
+- The 8 Å C/H smoke calculation is infrastructure evidence only, not calibration evidence.
+- Frozen signed model predictions exist for four attack pairs (all negative) and remain unchanged.
+- Test Suite: 462 passed, 1 skipped.
+- Provisioning (QE 7.6 + SSSP 1.3.0) is verified.
+- **Next defensible action:** Run the unchanged convergence design on a higher-memory host (after preregistering relaxation force threshold).
+
+*(Note: Any prior statements regarding "QE unavailable" are superseded by this updated status.)*
+
+---
+
 # Project Overview: Unified Adversarial Learning Framework for Materials Sequence Modelling
 
 > [!IMPORTANT]

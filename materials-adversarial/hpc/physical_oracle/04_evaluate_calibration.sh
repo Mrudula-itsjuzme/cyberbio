@@ -1,0 +1,3 @@
+#!/bin/bash
+# Evaluates calibration and writes CALIBRATION_ACCEPTABLE_FOR_PAIRWISE_DIRECTIONAL_VALIDATION
+# or CALIBRATION_FAILED.
