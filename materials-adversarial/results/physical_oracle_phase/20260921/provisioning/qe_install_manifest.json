@@ -1,0 +1,35 @@
+{
+  "qe_version": "7.6",
+  "upstream_release_tag": "qe-7.6",
+  "upstream_commit": "9f93ddec427d2b9a45bb72d828c6d324f62fcabd",
+  "install_method": "local pinned source build",
+  "install_prefix": "/home/mrudula/Downloads/DL_cyberbio/.local/physical-oracle/qe-7.6",
+  "configure_command": "./configure --prefix=/home/mrudula/Downloads/DL_cyberbio/.local/physical-oracle/qe-7.6 MPIF90=mpifort CC=mpicc F90=mpifort",
+  "build_command": "make -j4 pw pp && make install",
+  "compiler": {
+    "gcc": "Ubuntu GCC 13.3.0-6ubuntu2~24.04.1",
+    "gfortran": "Ubuntu GNU Fortran 13.3.0-6ubuntu2~24.04.1"
+  },
+  "mpi": "Open MPI 4.1.6; Ubuntu libopenmpi-dev 4.1.6-7ubuntu2",
+  "numerical_libraries": {
+    "lapack": "system liblapack 3.12.0-3build1.1",
+    "blas": "system libblas 3.12.0-3build1.1",
+    "fft": "Quantum ESPRESSO bundled/internal FFTW"
+  },
+  "submodules": {
+    "devxlib": "a6b89ef77b1ceda48e967921f1f5488d2df9226d",
+    "FoX": "3453648e6837658b747b895bb7bef4b1ed2eac40",
+    "libmbd": "89a3cc199c0a200c9f0f688c3229ef6b9a8d63bd"
+  },
+  "configure_artifacts": {
+    "make.inc_sha256": "98bed8dc522d2e61212d0a81224f14a882bf38720728b795f8b4c99d5ba09f06",
+    "configure.msg_sha256": "f885fc0b7739988cc1d55692248ad3d23b2167ac22e5324762d0b3ec46d9707f"
+  },
+  "executables": {
+    "pw.x": {"path": "/home/mrudula/Downloads/DL_cyberbio/.local/physical-oracle/qe-7.6/bin/pw.x", "sha256": "9a27f764a421bc48dff4da0c27bbb4c26a38df2164713253833b4eb9f00c99e4", "launch_verified_version": "7.6"},
+    "bands.x": {"path": "/home/mrudula/Downloads/DL_cyberbio/.local/physical-oracle/qe-7.6/bin/bands.x", "sha256": "67027e3bcd87d102099ca7b2dbc12aafe772d8cedb7df33f20423e1ce8826bf4", "launch_verified_version": "7.6"},
+    "projwfc.x": {"path": "/home/mrudula/Downloads/DL_cyberbio/.local/physical-oracle/qe-7.6/bin/projwfc.x", "sha256": "74daab8c7920ce2f395274dcaa29781653ad9705b95e7cd558b663ec2024f209", "launch_verified_version": "7.6"}
+  },
+  "host_os": "Pop!_OS 24.04 LTS",
+  "provenance_status": "verified"
+}

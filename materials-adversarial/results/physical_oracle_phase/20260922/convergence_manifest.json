@@ -1,0 +1,21 @@
+{
+  "status": "CONVERGENCE_FAILED",
+  "reason": "Frozen 12 angstrom minimum vacuum exceeds the local memory envelope even for the smaller completed smoke structure.",
+  "thresholds_preregistered": {
+    "successive_gap_change_eV_max": 0.05,
+    "electron_count": "exact",
+    "scf": "must converge",
+    "fatal_qe_warnings": "none",
+    "pseudopotential_hashes": "exact manifest match"
+  },
+  "reused_points": [
+    {"structure_id": "poly_405_capped_n2", "vacuum_angstrom": 8.0, "ecutwfc_ry": 80.0, "ecutrho_ry": 360.0, "scf_threshold_ry": 1e-6, "converged": true, "gap_eV": 5.1212, "runtime_seconds": 1351.99, "peak_rss_gib": 7.484, "role": "infrastructure smoke only"},
+    {"structure_id": "poly_405_capped_n2", "vacuum_angstrom": 12.0, "ecutwfc_ry": 80.0, "ecutrho_ry": 360.0, "converged": false, "failure_class": "practical_memory_exhaustion_before_scf", "fft_grid": "375^3"},
+    {"structure_id": "poly_405_capped_n2", "vacuum_angstrom": 12.0, "ecutwfc_ry": 100.0, "ecutrho_ry": 800.0, "converged": false, "failure_class": "practical_memory_exhaustion_before_scf", "fft_grid": "540^3"}
+  ],
+  "new_points_executed": 0,
+  "dimensions_not_converged": ["wavefunction cutoff", "charge-density cutoff", "vacuum", "SCF threshold", "relaxation", "repeat length"],
+  "protocol_frozen": false,
+  "calibration_started": false,
+  "attack_pairs_started": false
+}

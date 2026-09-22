@@ -20,14 +20,18 @@ class SurrogateGeometryBuilder:
         Replaces remaining '*' atoms with the capping rule (e.g. H).
         """
         rw_mol = Chem.RWMol(mol)
-        
+        atoms_to_replace = [a.GetIdx() for a in rw_mol.GetAtoms() if a.GetSymbol() == '*']
+        # PolymerRepeatGraph removes terminal dummy atoms and RDKit supplies the
+        # corresponding implicit hydrogens.  Avoid parsing an isolated ``[H]``
+        # when there is nothing left to cap.
+        if not atoms_to_replace:
+            return rw_mol.GetMol()
+
         cap_mol = Chem.MolFromSmiles(rule)
         if cap_mol is None:
             return None
             
         cap_atom_symbol = cap_mol.GetAtomWithIdx(0).GetSymbol()
-        
-        atoms_to_replace = [a.GetIdx() for a in rw_mol.GetAtoms() if a.GetSymbol() == '*']
         
         for idx in atoms_to_replace:
             rw_mol.GetAtomWithIdx(idx).SetAtomicNum(Chem.GetPeriodicTable().GetAtomicNumber(cap_atom_symbol))
@@ -53,30 +57,35 @@ class SurrogateGeometryBuilder:
             return None, {"error": "Embedding failed"}
             
         results = []
+        rejected_nonconverged = 0
         for cid in cids:
             try:
+                force_field_used = ff
                 if ff == "MMFF94":
                     if AllChem.MMFFHasAllMoleculeParams(mol_H):
                         ff_opt = AllChem.MMFFGetMoleculeForceField(mol_H, AllChem.MMFFGetMoleculeProperties(mol_H), confId=cid)
                     else:
-                        # Fallback
+                        force_field_used = "UFF_FALLBACK"
                         ff_opt = AllChem.UFFGetMoleculeForceField(mol_H, confId=cid)
                 else:
                     ff_opt = AllChem.UFFGetMoleculeForceField(mol_H, confId=cid)
                     
                 ff_opt.Initialize()
-                ff_opt.Minimize(maxIts=max_steps)
+                convergence_code = ff_opt.Minimize(maxIts=max_steps)
+                if convergence_code != 0:
+                    rejected_nonconverged += 1
+                    continue
                 energy = ff_opt.CalcEnergy()
-                results.append((cid, energy))
-            except Exception as e:
-                pass
+                results.append((cid, energy, force_field_used))
+            except Exception:
+                continue
                 
         if not results:
              return None, {"error": "Optimization failed for all conformers"}
              
         # Sort by energy
         results.sort(key=lambda x: x[1])
-        best_cid, best_energy = results[0]
+        best_cid, best_energy, best_force_field = results[0]
         
         energies = [r[1] for r in results]
         
@@ -87,7 +96,9 @@ class SurrogateGeometryBuilder:
             "energy_max": float(np.max(energies)),
             "energy_std": float(np.std(energies)),
             "selected_conformer_energy": float(best_energy),
-            "force_field_used": ff
+            "force_field_used": best_force_field,
+            "force_field_converged": True,
+            "nonconverged_conformers_rejected": rejected_nonconverged,
         }
         
         # Isolate best conformer

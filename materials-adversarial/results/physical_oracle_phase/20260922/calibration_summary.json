@@ -1,0 +1,7 @@
+{
+  "status": "NOT_RUN_CONVERGENCE_FAILED",
+  "calibration_verdict": null,
+  "records_executed": 0,
+  "metrics": null,
+  "reason": "Calibration is gated on a frozen converged protocol; the local host cannot execute the existing minimum-vacuum convergence plan."
+}

@@ -1,0 +1,7 @@
+structure_id,polymer_id,original_psmiles,stage,failure_reason
+poly_1380_capped_n3,poly_1380,[*]CC([*])(C)C(=O)OCCCCCn1c2ccccc2c2ccccc21,structure_construction,Embedding failed
+poly_1380_capped_n4,poly_1380,[*]CC([*])(C)C(=O)OCCCCCn1c2ccccc2c2ccccc21,structure_construction,Embedding failed
+poly_2803_capped_n3,poly_2803,[*]CCCCCCC(=O)NCc1ccc(CNC(=O)CCCCO[*])cc1,structure_construction,Optimization failed for all conformers
+poly_2803_capped_n4,poly_2803,[*]CCCCCCC(=O)NCc1ccc(CNC(=O)CCCCO[*])cc1,structure_construction,Embedding failed
+poly_4002_capped_n3,poly_4002,[*]C(C#N)C(C#N)(C#N)[*],structure_construction,Embedding failed
+poly_4002_capped_n4,poly_4002,[*]C(C#N)C(C#N)(C#N)[*],structure_construction,Embedding failed

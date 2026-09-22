@@ -1,0 +1,16 @@
+{
+  "status": "CONVERGENCE_FAILED",
+  "parent_preparation": "results/physical_oracle_phase/20260921",
+  "pre_run_audit": "results/physical_oracle_phase/20260922/pre_run_audit.json",
+  "convergence_manifest": "results/physical_oracle_phase/20260922/convergence_manifest.json",
+  "qe_install_manifest": "results/physical_oracle_phase/20260921/provisioning/qe_install_manifest.json",
+  "sssp_release_manifest": "results/physical_oracle_phase/20260921/provisioning/sssp_release_manifest.json",
+  "pseudopotential_manifest": "results/physical_oracle_phase/20260921/provisioning/pseudopotential_manifest.csv",
+  "smoke_result": "results/physical_oracle_phase/20260921/smoke/poly_405_capped_n2/smoke_result.json",
+  "git_commit_at_audit": "da826d3828c640e265f3785ef671ff1c34444d44",
+  "sealed_test_accessed": false,
+  "new_qe_calculations": 0,
+  "oracle_protocol_frozen_artifact_created": false,
+  "oracle_protocol_sha256_created": false,
+  "why_protocol_not_frozen": "No convergence plateau could be established and the relaxation force threshold remains unpinned."
+}

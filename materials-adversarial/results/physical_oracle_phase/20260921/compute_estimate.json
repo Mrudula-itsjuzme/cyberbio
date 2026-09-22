@@ -1,0 +1,35 @@
+{
+  "status": "SMOKE_MEASURED_CONVERGENCE_HOST_BLOCKED",
+  "warning": "The 8 angstrom C/H smoke is measured, but it cannot be extrapolated as evidence that the frozen 12 angstrom convergence structures fit local memory.",
+  "measured_smoke": {
+    "structure_id": "poly_405_capped_n2",
+    "atoms": 22,
+    "vacuum_angstrom": 8.0,
+    "cutoffs_ry": [80.0, 360.0],
+    "wall_seconds": 1351.99,
+    "core_hours": 0.375553,
+    "peak_rss_gib": 7.484,
+    "raw_generated_storage_mib": 375,
+    "retained_audit_storage_kib": 116
+  },
+  "convergence_jobs": 30,
+  "calibration_structures": 30,
+  "paired_pilot_structures_if_gate_passes": 24,
+  "planning_core_hours_per_structure": [
+    8,
+    64
+  ],
+  "planning_storage_per_structure_GB": [
+    0.5,
+    5.0
+  ],
+  "full_20_pair_structures_at_three_lengths": 120,
+  "full_shortlist_planning_core_hours": [
+    960,
+    7680
+  ],
+  "full_shortlist_planning_storage_GB": [
+    60.0,
+    600.0
+  ]
+}

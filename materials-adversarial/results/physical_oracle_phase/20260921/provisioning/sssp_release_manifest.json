@@ -1,0 +1,20 @@
+{
+  "release": "SSSP 1.3.0 PBE Precision",
+  "materials_cloud_record_id": "rcyfm-68h65",
+  "materials_cloud_version_index": 11,
+  "doi": "10.24435/materialscloud:f3-ym",
+  "publication_date": "2023-04-13",
+  "archive": {
+    "filename": "SSSP_1.3.0_PBE_precision.tar.gz",
+    "published_md5": "fde94756886f32ada7bf597547557eb5",
+    "local_sha256": "d91db6b4b3788501d535a5b84ebabf3859ea3e3ac6ea154c4be3718da50f0c85"
+  },
+  "metadata": {
+    "filename": "SSSP_1.3.0_PBE_precision.json",
+    "published_md5": "1692c5c9ce89e1c7c783f8f0eee0cbfa",
+    "local_sha256": "7b7b648915e54c8397cd8143a7385c17eeed3104ad1236cecd905126d338a4e3"
+  },
+  "selection_policy": "All required UPFs are exact members of this one curated release. SSSP intentionally selects heterogeneous generators and pseudopotential types by element; no cross-release or arbitrary-web substitution is allowed.",
+  "selected_elements": ["Br", "C", "Cl", "F", "H", "N", "O", "P", "S"],
+  "per_file_manifest": "pseudopotential_manifest.csv"
+}

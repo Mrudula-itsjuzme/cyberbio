@@ -1,0 +1,47 @@
+{
+  "status": "PREPARED_EXECUTION_BLOCKED",
+  "oracle_class": "CALIBRATABLE_FINITE_OLIGOMER_SURROGATE",
+  "historical_polyverse_match_claimed": false,
+  "physical_quantity": "Kohn-Sham HOMO-LUMO gap of a hydrogen-terminated finite oligomer",
+  "target_use": "empirically calibrated estimator of paired polymer-chain bandgap changes",
+  "functional": "PBE (protocol choice; not claimed as historical polyVERSE setting)",
+  "pseudopotential_policy": {
+    "family": "one consistent SSSP release/family for every element",
+    "required_elements": [
+      "Br",
+      "C",
+      "Cl",
+      "F",
+      "H",
+      "N",
+      "O",
+      "P",
+      "S"
+    ],
+    "files": "BLOCKED_NOT_PRESENT",
+    "hashes": "BLOCKED_NOT_PRESENT"
+  },
+  "cutoff_policy": "derive baseline from maximum recommended cutoff across selected UPFs; converge at 1.0x, 1.25x, 1.5x",
+  "charge_density_cutoff_policy": "derive from the selected pseudopotential family and verify convergence; never assume a universal dual",
+  "k_points": "Gamma only for isolated finite oligomer supercells; periodic-chain k-point study is not applicable to this surrogate",
+  "occupations": "fixed occupations for finite closed-shell systems; smearing is disallowed unless a documented ambiguity study justifies it",
+  "scf_threshold_grid_Ry": [
+    1e-06,
+    1e-08,
+    1e-10
+  ],
+  "vacuum_grid_angstrom": [
+    12.0,
+    15.0,
+    18.0,
+    22.0
+  ],
+  "geometry": {
+    "initial": "ETKDGv3 plus MMFF94, UFF only when explicitly recorded",
+    "dft_relaxation": "QE relax with fixed supercell after pseudopotentials are installed",
+    "force_threshold": "to be locked before execution from QE units and verified in convergence pilot"
+  },
+  "spin": "closed-shell non-spin-polarized only after even-electron validation; otherwise fail pending explicit spin protocol",
+  "bandgap_parser": "must parse occupied/unoccupied eigenvalues from verified QE output and reject metallic/smearing-ambiguous cases",
+  "gate_to_paired_pilot": "blocked until calibration and oligomer-length behavior are observed and classified"
+}

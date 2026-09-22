@@ -39,4 +39,4 @@ Thumbs.db
 *.out
 *.snm
 *.toc
-
+.local/physical-oracle/

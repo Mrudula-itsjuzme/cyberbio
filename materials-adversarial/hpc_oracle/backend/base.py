@@ -23,6 +23,10 @@ class ParsedOutput:
     warnings: List[str]
     failure_reason: Optional[str]
     runtime_seconds: Optional[float]
+    homo_eV: Optional[float] = None
+    lumo_eV: Optional[float] = None
+    failure_class: Optional[str] = None
+    electron_count: Optional[float] = None
 
 class OracleBackend(ABC):
     """

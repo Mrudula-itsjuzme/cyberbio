@@ -1,0 +1,30 @@
+{
+  "qe_version": "7.6",
+  "functional": "PBE",
+  "cutoff_wfc": 100.0,
+  "cutoff_rho": 800.0,
+  "conv_thr": 1e-06,
+  "vacuum_angstrom": 12.0,
+  "executables": {
+    "pw.x": "/home/mrudula/Downloads/DL_cyberbio/.local/physical-oracle/qe-7.6/bin/pw.x",
+    "bands.x": "/home/mrudula/Downloads/DL_cyberbio/.local/physical-oracle/qe-7.6/bin/bands.x",
+    "projwfc.x": "/home/mrudula/Downloads/DL_cyberbio/.local/physical-oracle/qe-7.6/bin/projwfc.x"
+  },
+  "executable_sha256": {
+    "pw.x": "9a27f764a421bc48dff4da0c27bbb4c26a38df2164713253833b4eb9f00c99e4",
+    "bands.x": "67027e3bcd87d102099ca7b2dbc12aafe772d8cedb7df33f20423e1ce8826bf4",
+    "projwfc.x": "74daab8c7920ce2f395274dcaa29781653ad9705b95e7cd558b663ec2024f209"
+  },
+  "pseudo_dir": "/home/mrudula/Downloads/DL_cyberbio/.local/physical-oracle/sssp-1.3.0-pbe-precision/upf-selected",
+  "pseudopotentials": {
+    "Br": {"filename": "br_pbe_v1.4.uspp.F.UPF", "type": "ultrasoft", "generator_family": "GBRV-1.4", "xc": "PBE", "cutoff_wfc": 90.0, "cutoff_rho": 720.0, "z_valence": 7.0, "md5": "d3ffb7b29f6225aa16fe06858fb2a80b", "sha256": "611dc0ac2804aed2e5b8a3c138f272b2a4e131009aad5279454170f948176951", "release": "SSSP 1.3.0 PBE Precision"},
+    "C": {"filename": "C.pbe-n-kjpaw_psl.1.0.0.UPF", "type": "PAW", "generator_family": "100PAW", "xc": "PBE", "cutoff_wfc": 45.0, "cutoff_rho": 360.0, "z_valence": 4.0, "md5": "5d2aebdfa2cae82b50a7e79e9516da0f", "sha256": "9900d1efd50b9848e31849f39094b33348486b400ee51e0f3922f716137cf3d7", "release": "SSSP 1.3.0 PBE Precision"},
+    "Cl": {"filename": "Cl.pbe-n-rrkjus_psl.1.0.0.UPF", "type": "ultrasoft", "generator_family": "100US", "xc": "PBE", "cutoff_wfc": 100.0, "cutoff_rho": 800.0, "z_valence": 7.0, "md5": "18cc83b4be324290a879bee3176034ba", "sha256": "a673d3adf336817175b7ffcbce2f811dd5929176c94a2c829cd1fc578ca924b8", "release": "SSSP 1.3.0 PBE Precision"},
+    "F": {"filename": "F.oncvpsp.upf", "type": "norm-conserving", "generator_family": "Dojo", "xc": "PBE", "cutoff_wfc": 90.0, "cutoff_rho": 360.0, "z_valence": 7.0, "md5": "dbf8367619a749999a0442b33b80a7e7", "sha256": "ba6ca6af365222805e3ce85564616b50a2feb562106dfbf1d725170cc7afd7b8", "release": "SSSP 1.3.0 PBE Precision"},
+    "H": {"filename": "H_ONCV_PBE-1.0.oncvpsp.upf", "type": "norm-conserving", "generator_family": "SG15", "xc": "PBE", "cutoff_wfc": 80.0, "cutoff_rho": 320.0, "z_valence": 1.0, "md5": "1790becc920ee074925cf490c71280fe", "sha256": "69d631780c0178c5239ed3dcb4a3e22c13bd13cde9beb97e123d036949da5c09", "release": "SSSP 1.3.0 PBE Precision"},
+    "N": {"filename": "N.oncvpsp.upf", "type": "norm-conserving", "generator_family": "Dojo", "xc": "PBE", "cutoff_wfc": 80.0, "cutoff_rho": 320.0, "z_valence": 5.0, "md5": "563d65bfb082928f0c9eb97172f6c357", "sha256": "36f1fc9a24ff5c788a536d4c1a53f82adca7b1fd132827fc654c124d69f274ca", "release": "SSSP 1.3.0 PBE Precision"},
+    "O": {"filename": "O.pbe-n-kjpaw_psl.0.1.UPF", "type": "PAW", "generator_family": "031PAW", "xc": "PBE", "cutoff_wfc": 75.0, "cutoff_rho": 600.0, "z_valence": 6.0, "md5": "0234752ac141de4415c5fc33072bef88", "sha256": "7c4b6ed541f83d0afdf5c1d3a8c611340f073f3e2b11e95b7963bb2ee26929aa", "release": "SSSP 1.3.0 PBE Precision"},
+    "P": {"filename": "P.pbe-n-rrkjus_psl.1.0.0.UPF", "type": "ultrasoft", "generator_family": "100US", "xc": "PBE", "cutoff_wfc": 30.0, "cutoff_rho": 240.0, "z_valence": 5.0, "md5": "8b930f418f0a4573dca56cd030ffe088", "sha256": "2d112dfec2e2d9b75a971574d9116aa92249988177791659bbcd2ba15f23c20c", "release": "SSSP 1.3.0 PBE Precision"},
+    "S": {"filename": "s_pbe_v1.4.uspp.F.UPF", "type": "ultrasoft", "generator_family": "GBRV-1.4", "xc": "PBE", "cutoff_wfc": 35.0, "cutoff_rho": 280.0, "z_valence": 6.0, "md5": "88d86576ff6df21479756cfb9bdac1df", "sha256": "84ad731864187f416f714e961c3ad2f04dcbf811618e724d277885c18cb470df", "release": "SSSP 1.3.0 PBE Precision"}
+  }
+}

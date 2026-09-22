@@ -1,0 +1,13 @@
+polymer_id,original_psmiles,canonical_psmiles,dataset_bandgap_eV,ml_split,attachment_point_count,formal_charge,elements,gap_stratum,selection_basis,oracle_role
+poly_0,[*]C=C([*])c1ccc(NC=O)cc1,*C=C(*)c1ccc(NC=O)cc1,0.071,train,2,0,C;N;O,low,target-tertile plus deterministic fingerprint farthest-point sampling,calibration
+poly_1157,[*]N=P([*])(Cl)Cl,*N=P(*)(Cl)Cl,3.5076,train,2,0,Cl;N;P,low,target-tertile plus deterministic fingerprint farthest-point sampling,calibration
+poly_746,[*]c1sc([*])c2c1OCC(CCCCCC)O2,*c1sc(*)c2c1OCC(CCCCCC)O2,2.9744,val,2,0,C;O;S,low,target-tertile plus deterministic fingerprint farthest-point sampling,calibration
+poly_405,[*]C([2H])([2H])C([*])([2H])C([2H])=C([2H])[2H],*C([2H])([2H])C(*)([2H])C([2H])=C([2H])[2H],2.522,train,2,0,C;H,low,target-tertile plus deterministic fingerprint farthest-point sampling,calibration
+poly_1380,[*]CC([*])(C)C(=O)OCCCCCn1c2ccccc2c2ccccc21,*CC(*)(C)C(=O)OCCCCCn1c2ccccc2c2ccccc21,3.7599,train,2,0,C;N;O,mid,target-tertile plus deterministic fingerprint farthest-point sampling,calibration
+poly_2741,[*]C=CC1CC([*])C2C3CCC(C3)C12,*C=CC1CC(*)C2C3CCC(C3)C12,5.1878,train,2,0,C,mid,target-tertile plus deterministic fingerprint farthest-point sampling,calibration
+poly_2466,[*]SC(C)C([*])C,*SC(C)C(*)C,4.9162,train,2,0,C;S,mid,target-tertile plus deterministic fingerprint farthest-point sampling,calibration
+poly_1969,[*]Nc1c(Br)cc([*])cc1Br,*Nc1c(Br)cc(*)cc1Br,4.4355,train,2,0,Br;C;N,mid,target-tertile plus deterministic fingerprint farthest-point sampling,calibration
+poly_2803,[*]CCCCCCC(=O)NCc1ccc(CNC(=O)CCCCO[*])cc1,*CCCCCCC(=O)NCc1ccc(CNC(=O)CCCCO*)cc1,5.2395,train,2,0,C;N;O,high,target-tertile plus deterministic fingerprint farthest-point sampling,calibration
+poly_3023,[*]C=CC1CC([*])C(C(F)(F)F)(C(F)(F)F)C1(F)F,*C=CC1CC(*)C(C(F)(F)F)(C(F)(F)F)C1(F)F,5.5,train,2,0,C;F,high,target-tertile plus deterministic fingerprint farthest-point sampling,calibration
+poly_4002,[*]C(C#N)C(C#N)(C#N)[*],*C(C#N)C(*)(C#N)C#N,6.6373,train,2,0,C;N,high,target-tertile plus deterministic fingerprint farthest-point sampling,calibration
+poly_3035,[*]c1c(F)c(F)c([*])c(F)c1F,*c1c(F)c(F)c(*)c(F)c1F,5.5133,train,2,0,C;F,high,target-tertile plus deterministic fingerprint farthest-point sampling,calibration

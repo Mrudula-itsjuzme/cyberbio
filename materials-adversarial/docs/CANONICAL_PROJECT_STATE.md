@@ -116,4 +116,4 @@ Evaluated on an identical, frozen bank of 13,863 candidate sequences across the 
 A rigorous, model-independent paired robustness benchmark comparing clean, representation-augmented, and MCMC-defended models on identical candidate banks has been successfully executed across 5 independent random seeds. 
 
 **Conclusion & Final State**:
-The project is considered analytically complete. The remaining work focuses exclusively on narrative framing (acknowledging representation sensitivity as an architectural finding rather than a bug) and defining the requirements for an independent physical oracle (e.g., DFT) as future work to validate the ground-truth properties of chemistry-changing adversarial candidates.
+The representation analysis is complete, but independent physical validation is not. QE 7.6 and SSSP 1.3.0 PBE Precision are provisioned and one infrastructure smoke converged; the frozen convergence study is **CONVERGENCE_FAILED** on this host because its 12 angstrom minimum-vacuum configurations exceed practical memory. Calibration and chemistry-changing attack-pair DFT calculations were not run. See `PHYSICAL_ORACLE_FINAL_REPORT_20260922.md`.

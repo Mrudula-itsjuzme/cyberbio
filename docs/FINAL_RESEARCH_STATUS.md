@@ -25,4 +25,4 @@ The `smoke_test_attack.py` and reproducibility scripts execute cleanly to demons
 `FINAL_REPORT.md` provides a structured, verified narrative suitable for immediate expansion into a LaTeX manuscript.
 
 ## Paper-Submission Readiness: NO
-Requires human synthesis, deeper literature review, and (if strict physical claims are desired) integration of a DFT quantum chemistry oracle.
+The pinned QE/SSSP environment and one infrastructure smoke calculation now exist, but the independent physical-oracle study stopped at **CONVERGENCE_FAILED**: the prepared 12 angstrom minimum-vacuum plan exceeds the local host's practical memory envelope, and no calibration or attack-pair DFT result exists. See `materials-adversarial/docs/PHYSICAL_ORACLE_FINAL_REPORT_20260922.md`.

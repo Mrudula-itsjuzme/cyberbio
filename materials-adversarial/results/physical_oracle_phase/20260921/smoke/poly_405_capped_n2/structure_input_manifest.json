@@ -1,0 +1,198 @@
+{
+  "source_path": "/home/mrudula/Downloads/DL_cyberbio/materials-adversarial/results/physical_oracle_phase/20260921/structures/poly_405_capped_n2.sdf",
+  "source_sha256": "7bbe7f0e3bceebc8eb96f28c1c3ec6d8586c3710acad3842b8c47209e977c37a",
+  "atoms": [
+    {
+      "element": "C",
+      "coordinates_angstrom": [
+        9.0634,
+        13.496550000000001,
+        12.0974
+      ]
+    },
+    {
+      "element": "H",
+      "coordinates_angstrom": [
+        8.0,
+        13.31325,
+        12.2886
+      ]
+    },
+    {
+      "element": "H",
+      "coordinates_angstrom": [
+        9.4363,
+        14.14705,
+        12.895900000000001
+      ]
+    },
+    {
+      "element": "C",
+      "coordinates_angstrom": [
+        9.8489,
+        12.18295,
+        12.058300000000001
+      ]
+    },
+    {
+      "element": "H",
+      "coordinates_angstrom": [
+        9.7425,
+        11.70495,
+        13.0412
+      ]
+    },
+    {
+      "element": "C",
+      "coordinates_angstrom": [
+        9.2696,
+        11.28575,
+        10.990400000000001
+      ]
+    },
+    {
+      "element": "H",
+      "coordinates_angstrom": [
+        9.311399999999999,
+        11.64465,
+        9.9632
+      ]
+    },
+    {
+      "element": "C",
+      "coordinates_angstrom": [
+        8.7143,
+        10.09165,
+        11.2344
+      ]
+    },
+    {
+      "element": "H",
+      "coordinates_angstrom": [
+        8.312999999999999,
+        9.49025,
+        10.4244
+      ]
+    },
+    {
+      "element": "H",
+      "coordinates_angstrom": [
+        8.6461,
+        9.68735,
+        12.239600000000001
+      ]
+    },
+    {
+      "element": "C",
+      "coordinates_angstrom": [
+        11.3443,
+        12.46735,
+        11.8187
+      ]
+    },
+    {
+      "element": "H",
+      "coordinates_angstrom": [
+        11.484,
+        12.93415,
+        10.834
+      ]
+    },
+    {
+      "element": "H",
+      "coordinates_angstrom": [
+        11.688699999999999,
+        13.199950000000001,
+        12.5611
+      ]
+    },
+    {
+      "element": "C",
+      "coordinates_angstrom": [
+        12.216,
+        11.21035,
+        11.9208
+      ]
+    },
+    {
+      "element": "H",
+      "coordinates_angstrom": [
+        12.0393,
+        10.71665,
+        12.8841
+      ]
+    },
+    {
+      "element": "C",
+      "coordinates_angstrom": [
+        13.672,
+        11.54645,
+        11.7593
+      ]
+    },
+    {
+      "element": "H",
+      "coordinates_angstrom": [
+        13.9767,
+        11.96585,
+        10.8025
+      ]
+    },
+    {
+      "element": "C",
+      "coordinates_angstrom": [
+        14.5977,
+        11.348650000000001,
+        12.7062
+      ]
+    },
+    {
+      "element": "H",
+      "coordinates_angstrom": [
+        14.344,
+        10.92785,
+        13.674100000000001
+      ]
+    },
+    {
+      "element": "H",
+      "coordinates_angstrom": [
+        15.6373,
+        11.60655,
+        12.5286
+      ]
+    },
+    {
+      "element": "H",
+      "coordinates_angstrom": [
+        9.1465,
+        14.04385,
+        11.1515
+      ]
+    },
+    {
+      "element": "H",
+      "coordinates_angstrom": [
+        11.945599999999999,
+        10.49225,
+        11.1384
+      ]
+    }
+  ],
+  "elements": [
+    "C",
+    "H"
+  ],
+  "nat": 22,
+  "ntyp": 2,
+  "formal_charge": 0,
+  "multiplicity": 1,
+  "electron_count": 46,
+  "occupied_bands": 23,
+  "cell_angstrom": [
+    23.6373,
+    23.6373,
+    23.6373
+  ],
+  "vacuum_angstrom": 8.0
+}

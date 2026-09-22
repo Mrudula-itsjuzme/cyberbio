@@ -1,0 +1,70 @@
+{
+  "audit_date": "2026-09-22",
+  "git": {
+    "commit": "da826d3828c640e265f3785ef671ff1c34444d44",
+    "branch": "experiments/adversarial-arena-carry-reset",
+    "working_tree_clean": false,
+    "unrelated_changes_preserved": true
+  },
+  "gate_entered": "CONVERGENCE_READY",
+  "gate_result": "CONVERGENCE_FAILED_HOST_ENVELOPE_AND_UNFROZEN_RELAXATION_POLICY",
+  "sealed_test_accessed": false,
+  "authoritative_inputs": {
+    "calibration_manifest": {"path": "results/physical_oracle_phase/20260921/calibration_manifest.csv", "sha256": "5b32e940f4f0d27f726e00c0a034fa08f89ab996c3a0ffc0e7d3dcd4d3b0344e", "records": 12, "splits": ["train", "val"]},
+    "structure_manifest": {"path": "results/physical_oracle_phase/20260921/structure_manifest.csv", "sha256": "ed36990457a68f46677d6c3a0f6af96e9c2b77fafb22df1c618916c6a7b42169", "successful": 30, "failed_preserved": 6},
+    "convergence_plan": {"path": "results/physical_oracle_phase/20260921/convergence_plan.csv", "sha256": "174dfe7c46f57a8315119b95fd35ac41a93f50257c7f3b463d33ceb01ef30155", "planned_points": 30},
+    "frozen_pairs": {"path": "results/physical_oracle_phase/20260921/paired_pilot_manifest.csv", "sha256": "e2efbc22d3c9c00907eecaa12c11b9d2fcd6f06a515f539835a5cad75716bbdb", "records": 4, "identities_frozen": true},
+    "signed_predictions": {"path": "results/physical_oracle_phase/20260921/model_predictions/signed_model_predictions.csv", "sha256": "a3ac580dd16c7a574ddaa6de7d94ada9a1279802c85fe105bc274f5ac9dd31dd", "records": 4, "all_delta_G_negative": true},
+    "structure_protocol": {"path": "hpc_oracle/configs/surrogate_structure_protocol.yaml", "sha256": "180e33f43873e8c33af0423cead0365bca3019ee4cd09d1f6e28e0ce5c283399", "embedding_seed": 42},
+    "qe_backend_config": {"path": "results/physical_oracle_phase/20260921/provisioning/qe_backend_config.json", "sha256": "e79a7fbabaca16e122bcab5f454580a5e2831da3424265e31020003067eb901a"},
+    "pseudopotential_manifest": {"path": "results/physical_oracle_phase/20260921/provisioning/pseudopotential_manifest.csv", "sha256": "011b9915e5588e58a2753264169883035ad732181676698546295e36eb573cac", "release": "SSSP 1.3.0 PBE Precision", "elements": ["Br", "C", "Cl", "F", "H", "N", "O", "P", "S"]}
+  },
+  "determinism": {
+    "calibration_selection_frozen": true,
+    "structure_generation_seed_frozen": true,
+    "successful_structure_hashes_present": true,
+    "model_checkpoint_scaler_vocabulary_hashes_present": true,
+    "attack_pair_identities_frozen": true,
+    "attack_pair_qe_structures_present": false,
+    "protocol_fully_determined": false
+  },
+  "known_measured_resource_point": {
+    "structure_id": "poly_405_capped_n2",
+    "atoms": 22,
+    "elements": ["C", "H"],
+    "cell_angstrom": 23.6373,
+    "vacuum_angstrom": 8.0,
+    "cutoffs_ry": [80.0, 360.0],
+    "peak_rss_gib": 7.484,
+    "wall_seconds": 1351.99,
+    "core_hours": 0.375553,
+    "converged": true
+  },
+  "host_envelope_analysis": {
+    "physical_memory_gib": 15.26,
+    "known_failed_point": {"structure_id": "poly_405_capped_n2", "vacuum_angstrom": 12.0, "cutoffs_ry": [80.0, 360.0], "cell_angstrom": 31.6373, "fft_grid": "375^3", "failure": "practical memory exhausted before SCF"},
+    "minimum_existing_convergence_vacuum_angstrom": 12.0,
+    "existing_representatives": ["poly_0_capped_n3", "poly_2741_capped_n3", "poly_3023_capped_n3"],
+    "representative_atom_counts": [56, 86, 71],
+    "representative_12A_cells_angstrom": [39.0762, 43.2054, 38.7738],
+    "conclusion": "Every frozen representative is larger than a directly observed 12 angstrom memory failure. Launching it locally would repeat a dominated, predictably impossible point."
+  },
+  "critical_blockers": [
+    {"code": "HOST_MEMORY_BELOW_FROZEN_CONVERGENCE_ENVELOPE", "fatal_for_current_host": true, "repair": "Run the frozen convergence jobs on a higher-memory host or approve a newly versioned smoke-vacuum protocol; do not silently replace the 12/15/18/22 angstrom grid."},
+    {"code": "RELAXATION_FORCE_THRESHOLD_UNPINNED", "fatal_for_protocol_freeze": true, "evidence": "protocol_lock.json says the threshold is to be locked before execution", "repair": "Preregister a QE force threshold and relaxation convergence/failure rule before relaxation sensitivity runs."},
+    {"code": "ATTACK_PAIR_STRUCTURES_NOT_CONSTRUCTED", "fatal_for_pair_execution": true, "repair": "After a calibration pass, deterministically construct and hash exact source/candidate structures under the frozen structure protocol."}
+  ],
+  "stale_artifacts": [
+    "results/physical_oracle_phase/20260921/convergence_plan.csv still labels points BLOCKED_MISSING_QE_AND_PSEUDOPOTENTIALS",
+    "results/physical_oracle_phase/20260921/protocol_lock.json still records missing pseudopotentials and an unpinned force threshold",
+    "results/physical_oracle_phase/20260921/compute_estimate.json predates the measured smoke runtime",
+    "docs/ORACLE_BRANCH_FINAL_STATUS.md incorrectly says pw.x and pseudopotentials are unavailable"
+  ],
+  "execution_decision": {
+    "new_qe_jobs_launched": 0,
+    "reason": "The requested stop condition applies: convergence cannot be established within the available host envelope without changing the frozen plan.",
+    "calibration_allowed": false,
+    "attack_pairs_allowed": false,
+    "final_status": "CONVERGENCE_FAILED"
+  }
+}

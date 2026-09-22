@@ -1,0 +1,34 @@
+{
+  "status": "complete_model_predictions_only",
+  "sealed_test_accessed": false,
+  "device": "cpu",
+  "torch_deterministic_algorithms": true,
+  "torch_seed": 0,
+  "definition": "delta_G_signed_eV = G(candidate) - G(source)",
+  "artifacts": {
+    "graph_checkpoint": {
+      "path": "results/phase11c_canonical_verification/1789326819/models/graph_mpnn_small/model.pt",
+      "sha256": "3fd339c5ebd0d700a05868a0d53ee752c61f378155245855252797c01bcbb81b"
+    },
+    "transformer_checkpoint": {
+      "path": "results/phase4_controlled_robustness/mix_robust_0.1/model.pt",
+      "sha256": "b81aa245444431a31ae2d95ef25fe8b6f6aae39ac95c60fd05d3303af2567dc7"
+    },
+    "scaler": {
+      "path": "results/models/transformer_regressor/scaler.json",
+      "sha256": "5ef15ad16aee156fbc9b6b7872c1534262e3622022190f17c23fc7e3dab12814"
+    },
+    "vocabulary": {
+      "path": "data/processed/vocab.json",
+      "sha256": "3dd4c162c5d84138d7bf0ea4fb04a0cb81b1b9e9ee705a0e0318a3214d8935bf"
+    },
+    "pair_manifest": {
+      "path": "results/physical_oracle_phase/20260921/paired_pilot_manifest.csv",
+      "sha256": "e2efbc22d3c9c00907eecaa12c11b9d2fcd6f06a515f539835a5cad75716bbdb"
+    },
+    "predictions": {
+      "path": "results/physical_oracle_phase/20260921/model_predictions/signed_model_predictions.csv",
+      "sha256": "a3ac580dd16c7a574ddaa6de7d94ada9a1279802c85fe105bc274f5ac9dd31dd"
+    }
+  }
+}

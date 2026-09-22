@@ -29,7 +29,16 @@ class PolymerRepeatGraph:
             
     @property
     def is_unambiguous(self) -> bool:
-        return self.is_valid and len(self.attachment_indices) == 2
+        if not self.is_valid or len(self.attachment_indices) != 2:
+            return False
+        attachments = [self.mol.GetAtomWithIdx(i) for i in self.attachment_indices]
+        if any(len(atom.GetNeighbors()) != 1 for atom in attachments):
+            return False
+        bond_types = [
+            self.mol.GetBondBetweenAtoms(atom.GetIdx(), atom.GetNeighbors()[0].GetIdx()).GetBondType()
+            for atom in attachments
+        ]
+        return bond_types[0] == bond_types[1]
 
     def build_oligomer(self, n: int) -> Optional[Chem.Mol]:
         """
@@ -80,6 +89,7 @@ class PolymerRepeatGraph:
         
         if head_bond != tail_bond:
             self.warnings.append("Mismatched bond types at attachment points.")
+            return None
             
         combo = Chem.RWMol(self.mol)
         orig_size = combo.GetNumAtoms()

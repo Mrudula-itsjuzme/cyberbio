@@ -1,0 +1,21 @@
+{
+  "status": "CONVERGENCE_FAILED_LOCAL_HOST",
+  "scope": "one-molecule infrastructure smoke completed; frozen 12 angstrom convergence floor exceeds practical local memory; calibration and attack-pair execution remain prohibited",
+  "software": {
+    "quantum_espresso": {"version": "7.6", "provenance": "verified pinned source build", "required_executables_launch_verified": true},
+    "sssp": {"release": "1.3.0 PBE Precision", "required_elements_verified": ["Br", "C", "Cl", "F", "H", "N", "O", "P", "S"]},
+    "rdkit": {"available": true, "version": "2026.03.5"}
+  },
+  "smoke": {
+    "structure_id": "poly_405_capped_n2", "converged": true,
+    "parser_valid": true, "orbital_gap_eV": 5.1212,
+    "classification": "infrastructure_only"
+  },
+  "remaining_gates": [
+    "cutoff convergence", "vacuum convergence at 12/15/18/22 angstrom",
+    "SCF threshold convergence", "relaxation force threshold lock and validation",
+    "train/validation-only calibration"
+  ],
+  "execution_allowed": false,
+  "reason": "Continue convergence on a higher-memory host and lock the relaxation force threshold before protocol freeze. The sealed ML test split remains closed."
+}

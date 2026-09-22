@@ -1,0 +1,6 @@
+{
+  "status": "NOT_RUN_CONVERGENCE_FAILED",
+  "pairs_executed": 0,
+  "reason": "Attack-pair execution is gated on convergence, protocol freeze, and an acceptable calibration verdict.",
+  "frozen_model_predictions_modified": false
+}

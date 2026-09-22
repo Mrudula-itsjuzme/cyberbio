@@ -1,4 +1,6 @@
-# Oracle Branch Final Status
+# Oracle Branch Final Status (historical, superseded)
+
+> Superseded on 2026-09-22 by `PHYSICAL_ORACLE_FINAL_REPORT_20260922.md`. The historical statements below correctly describe the older `oracle-hpc-integration` branch boundary, but they do not describe the current checkout: QE 7.6 and SSSP 1.3.0 PBE Precision are now provisioned and one infrastructure smoke converged. The current study stopped at **CONVERGENCE_FAILED** because the frozen minimum-vacuum plan exceeds local memory; calibration and attack-pair calculations remain unrun.
 
 The oracle/HPC branch (`oracle-hpc-integration`) has been formally frozen at the boundary of external compute execution. No physical DFT validation has been completed because local access to the necessary HPC resources is unavailable.
 
