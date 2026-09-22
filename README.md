@@ -7,6 +7,16 @@ The repository is structured into two main active sub-projects:
 ---
 
 ## 1. Materials Adversarial (`materials-adversarial/`)
+
+
+> [!WARNING]
+> **Scientific Status Update (2026-09-22): CONVERGENCE_FAILED**
+> The physical oracle convergence plan for this project has been halted on the local 15 GiB host because the required 12 Å vacuum regime exhausted practical memory limits (failed at 80/360 Ry on the 22-atom C/H smoke structure before SCF). 
+> * No protocol freeze occurred.
+> * No 12-polymer calibration or attack-pair DFT was run.
+> * The finite capped-oligomer PBE HOMO-LUMO gap remains unvalidated against the historical periodic-chain target.
+> The workflow is frozen and safely preserved. It must be resumed on a higher-memory host (recommended 32-64 GiB) using the HPC handoff bundle in `materials-adversarial/hpc/physical_oracle/`.
+
 **Learning to Attack and Defend: A Unified Adversarial Framework for Robust Materials Sequence Modelling**
 
 This project focuses on sequence-based deep learning models predicting polymer physical properties directly from 1D representations (PSMILES).
