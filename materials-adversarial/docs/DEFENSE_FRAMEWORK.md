@@ -37,7 +37,7 @@ where:
 
 Unlike static data augmentation that appends pre-computed perturbed sequences to a fixed training set, our closed-loop defender generates **dynamic online adversarial candidates** during training:
 1. In each training mini-batch, the attacker queries the current model state $f_\theta$.
-2. The attacker executes Metropolis-Hastings MCMC search to identify current model vulnerabilities.
+2. The attacker executes Metropolis-style model-guided stochastic search to identify current model vulnerabilities. (This is not formal Metropolis-Hastings MCMC — no proposal ratio correction is applied.)
 3. The defender computes loss on these newly discovered vulnerabilities and updates parameters $\theta$ via backpropagation.
 
 This dynamic feedback loop ensures that as the defender model learns to resist specific mutations, the attacker continuously evolves to search for new fragile directions.

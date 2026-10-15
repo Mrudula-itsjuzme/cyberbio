@@ -15,7 +15,7 @@
 ├───────────────────────────┼──────────────────────────────────┼────────────────────────────┤
 │ A. Random Baseline        │ Uniform token mutation           │ Does unguided noise work?  │
 │ B. Deterministic Sub.     │ Single atom/isostere swaps       │ Local functional group fit │
-│ C. Probabilistic MCMC     │ Metropolis-Hastings sampling     │ Stochastic loss landscape  │
+│ C. Probabilistic MCMC     │ Metropolis-style stochastic search│ Stochastic loss landscape  │
 │ D. Representation Attack  │ Non-canonical SMILES randomization│ Sensitivity to syntax     │
 │ E. Optimization-Guided    │ Beam / Evolutionary Search       │ Greedy model exploitation  │
 │ F. LLM-Guided Attack      │ LLM edit proposals + filter      │ Generative edit quality    │
@@ -38,7 +38,7 @@
 - **Performance**: Mean Drift = $0.0541\text{ eV}$, Candidate Validity = $92.0\%$.
 
 ### Family C: Probabilistic MCMC Search (`ProbabilisticMCMCAttack`)
-- **Mechanism**: Metropolis-Hastings stochastic search ($T=5.0$) utilizing 4 proposal operators (atom substitution, fragment insertion, side-chain deletion, bond alteration) filtered through `ChemicalPlausibilityValidator`.
+- **Mechanism**: Metropolis-style model-guided stochastic search ($T=5.0$) utilizing 4 proposal operators (atom substitution, fragment insertion, side-chain deletion, bond alteration) filtered through `ChemicalPlausibilityValidator`. *Note: this is not formal Metropolis-Hastings MCMC — no reverse proposal correction $q(x|y)/q(y|x)$ is computed.*
 - **Query Budget**: $Q = 20$.
 - **Performance**: Mean Drift = $0.0965\text{ eV}$ (subset), Candidate Validity = $100.0\%$.
 

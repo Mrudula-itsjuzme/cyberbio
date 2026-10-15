@@ -61,7 +61,7 @@ Six foundational papers establish the theoretical grounding and technical baseli
 - **Problem Solved**: Utilizes adversarial generator-discriminator pairs to explore chemical space and generate bioactive candidate molecules.
 - **Methodology**: Combines reinforcement learning rewards with adversarial loss functions to propose novel molecular structures.
 - **Remaining Limitation**: Designed for generative drug discovery rather than evaluating property model fragility or training robust regression defenders.
-- **Project Motivation**: Demonstrates that adversarial search can successfully explore chemical candidate space, inspiring our Metropolis-Hastings proposal mechanism.
+- **Project Motivation**: Demonstrates that adversarial search can successfully explore chemical candidate space, inspiring our Metropolis-style stochastic proposal mechanism (using a simplified symmetric acceptance rule rather than formal Metropolis-Hastings).
 
 ### Paper 6: Uncertainty Quantification in Multivariable Regression for Material Property Prediction with Bayesian Neural Networks
 - **Citation**: *Scientific Reports*, 2024.

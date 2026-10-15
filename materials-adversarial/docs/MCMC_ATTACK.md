@@ -2,13 +2,16 @@
 
 ## 1. Algorithm Overview and Theoretical Grounding
 
+> [!NOTE]
+> **Terminology Precision**: This algorithm uses a **Metropolis-style acceptance rule**, not formal Metropolis-Hastings MCMC. It does not compute the reverse proposal ratio $q(x|y)/q(y|x)$, does not target a well-defined stationary distribution, and has no convergence diagnostics. It is correctly described as "Metropolis-style model-guided stochastic search." See `CANONICAL_PROJECT_STATE.md` §5 for the full audit verdict.
+
 The **Probabilistic MCMC Attack Generator** (`ProbabilisticMCMCAttack`) formulates adversarial sequence generation as a **model-guided stochastic search** over discrete chemical mutation space. 
 
-Instead of unguided random mutations or exhaustive enumeration, the algorithm samples discrete proposal edits from a candidate distribution $q(x' | x)$ and accepts or rejects candidates using a **Metropolis-Hastings acceptance probability**:
+Instead of unguided random mutations or exhaustive enumeration, the algorithm samples discrete proposal edits from a candidate distribution $q(x' | x)$ and accepts or rejects candidates using a **Metropolis-style acceptance rule**:
 
 $$\alpha(x \to x') = \min\left(1, \exp\left( \frac{\mathcal{L}_{\text{total}}(x') - \mathcal{L}_{\text{total}}(x)}{T} \right)\right)$$
 
-where $T > 0$ is the search temperature and $\mathcal{L}_{\text{total}}$ is the multi-objective candidate score.
+where $T > 0$ is the search temperature and $\mathcal{L}_{\text{total}}$ is the multi-objective candidate score. The rule uses the simplified symmetric proposal assumption; no reverse proposal correction is applied.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────────────┐

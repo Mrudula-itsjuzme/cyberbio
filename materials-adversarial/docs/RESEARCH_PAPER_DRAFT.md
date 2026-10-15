@@ -21,7 +21,7 @@ Despite their impressive in-distribution accuracy, surrogate property models are
 
 To evaluate and enhance model security in digital materials screening pipelines, this paper presents a **unified adversarial attack and defender framework**. The primary contributions of this work are:
 1. **Unified Architecture**: Integrating sequence attack generation, chemical plausibility validation, closed-loop defender training, and uncertainty quantification within one pipeline.
-2. **Probabilistic MCMC Generator**: Formulating a Metropolis-Hastings stochastic search generator over discrete chemical sequence space using bioisosteric functional group proposal operators.
+2. **Probabilistic MCMC Generator**: Formulating a Metropolis-style model-guided stochastic search generator over discrete chemical sequence space using bioisosteric functional group proposal operators. *Note: this uses a simplified symmetric acceptance rule, not formal Metropolis-Hastings with proposal ratio correction.*
 3. **Four-Layer Plausibility Filter**: Enforcing RDKit syntax parsing, valence correctness, polymer attachment star `*` balance, molecular weight bounds ($\pm 50\%$), and Tanimoto structural similarity ($S_{\text{Tanimoto}} \ge 0.5$).
 4. **Multi-Seed Empirical Verification**: Demonstrating a **20.63% reduction in prediction drift** ($0.0965 \to 0.0766\text{ eV}$) and **83.33% reduction in epistemic uncertainty drift** ($0.0006 \to 0.0001\text{ eV}$) across 5 independent random seeds.
 5. **Tradeoff Characterization**: Explicitly documenting and analyzing the Pareto clean accuracy vs. adversarial robustness tradeoff (Clean RMSE shift $1.1439 \to 1.3672\text{ eV}$).
@@ -114,7 +114,7 @@ The plausibility filter enforces syntactic validity, valence correctness, and $S
 
 ## 8. Conclusion
 
-We presented a unified adversarial framework for robust polymer sequence modelling. By combining Metropolis-Hastings MCMC candidate generation, multi-layer chemical plausibility validation, and closed-loop min-max defender training, the framework achieves statistically verified robustness gains across 5 random seeds. Future work will extend this framework to GNN cross-model transferability and biological sequence screening.
+We presented a unified adversarial framework for robust polymer sequence modelling. By combining Metropolis-style model-guided stochastic search (a simplified Metropolis-acceptance heuristic over model prediction drift, not formal Metropolis-Hastings MCMC), multi-layer chemical plausibility validation, and closed-loop min-max defender training, the framework achieves statistically verified robustness gains across 5 random seeds. Future work will extend this framework to GNN cross-model transferability and biological sequence screening.
 
 ---
 

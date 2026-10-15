@@ -3,6 +3,9 @@
 *Branch: `experiments/attack-strategy-comparison`*
 *Canonical CyberBio results on `main` are FROZEN and unmodified.*
 
+> [!WARNING]
+> **Historical Lineage Document**: The Materials domain results in this comparison use the **OpenPoly Tg (K) lineage** (247 samples, glass-transition temperature). This is the historical exploratory lineage. The **active research lineage** uses polyVERSE Bandgap (eV) with 4,209 samples. Results here must NOT be mixed into active bandgap lineage summaries. See `materials-adversarial/docs/HISTORICAL_TG_LINEAGE.md` for context.
+
 ---
 
 ## 1. Scope and Design
@@ -18,7 +21,7 @@ This optional comparison study evaluates six attack conditions across two domain
 | Condition | Strategy |
 |---|---|
 | Random | Uniform random mutation, accept if valid |
-| MCMC | Metropolis-Hastings on drift objective |
+| MCMC | Metropolis-style stochastic search on drift objective (simplified symmetric acceptance; not formal MH) |
 | Evolutionary | Population selection on drift fitness |
 | Attribution-High | Occlusion attribution → target highest-sensitivity position |
 | Attribution-Low | Occlusion attribution → target lowest-sensitivity position |

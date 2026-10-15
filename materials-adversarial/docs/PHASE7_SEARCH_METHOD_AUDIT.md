@@ -9,12 +9,12 @@
 # Phase 7: Search Method Audit
 
 ## The Anomaly
-In Phase 7, we observed a surprising phenomenon during adaptive adversarial search: **Random Search significantly outperformed Greedy Search and Metropolis-Hastings MCMC**. Initially, this was incorrectly attributed to a highly non-convex loss landscape where greedy approaches were getting trapped in poor local optima.
+In Phase 7, we observed a surprising phenomenon during adaptive adversarial search: **Random Search significantly outperformed Greedy Search and the Metropolis-style stochastic search** (labeled "MCMC" in the project logs; see CANONICAL_PROJECT_STATE.md §5 for the terminology audit). Initially, this was incorrectly attributed to a highly non-convex loss landscape where greedy approaches were getting trapped in poor local optima.
 
 ## The Methodological Flaw
 A methodological audit revealed that this behavior was an artifact of the `attack_budget=1` (max_changes=1) constraint combined with how stateful search algorithms track their "current" state.
 
-1. **Stateful Traps**: Greedy Search and Metropolis MCMC update their internal "current state" whenever they accept a candidate. Under `max_changes=1`, any further modifications to that new state would result in a candidate that is 2-hops away from the original sequence. 
+1. **Stateful Traps**: Greedy Search and Metropolis-style stochastic search update their internal "current state" whenever they accept a candidate. Under `max_changes=1`, any further modifications to that new state would result in a candidate that is 2-hops away from the original sequence. 
 2. **Rejection Cascade**: Because the attack budget strictly enforces a maximum of 1 edit relative to the *original* sequence, all subsequent proposals generated from the 1-hop state are rejected as invalid (budget exceeded).
 3. **Algorithm Halting**: 
     - **Greedy Search** evaluates all 1-hop neighbors of the new state. Since all of them are rejected (they are 2-hops from the original), it finds no valid improvements and terminates prematurely.

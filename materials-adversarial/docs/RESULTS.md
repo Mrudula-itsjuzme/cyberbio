@@ -45,7 +45,7 @@ Evaluating attack families against the baseline model:
 | :--- | :--- | :--- | :--- | :--- |
 | **Family A: Random Mutation** | Uniform token replacement | $0.0312\text{ eV}$ | $0.1240\text{ eV}$ | $85.0\%$ |
 | **Family B: Deterministic Sub.** | Single bioisostere swaps | $0.0541\text{ eV}$ | $0.1890\text{ eV}$ | $92.0\%$ |
-| **Family C: Probabilistic MCMC** | Metropolis-Hastings ($T=5$) | $\mathbf{0.0965\text{ eV}}$ | $\mathbf{0.3152\text{ eV}}$ | $\mathbf{100.0\%}$ |
+| **Family C: Probabilistic MCMC** | Metropolis-style stochastic search ($T=5$) | $\mathbf{0.0965\text{ eV}}$ | $\mathbf{0.3152\text{ eV}}$ | $\mathbf{100.0\%}$ |
 | **Family D: SMILES Randomization**| Chemically identical SMILES | **$0.6147\text{ eV}$** | **$1.3622\text{ eV}$** | $\mathbf{100.0\%}$ |
 | **Sequence-Length Baseline** | Linear regression on length | — | — | $R^2 = 0.2294$ |
 

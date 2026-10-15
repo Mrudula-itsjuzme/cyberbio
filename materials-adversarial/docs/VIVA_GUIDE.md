@@ -78,7 +78,7 @@ Concatenating $\mathbf{z}_{\text{repr}}$ and $\mathbf{z}_{\text{chem}}$ into a f
 ## Section 5: Probabilistic MCMC Search & Plausibility Validation
 
 ### Q14: How does the Probabilistic MCMC Attack Generator work?
-**Answer**: `ProbabilisticMCMCAttack` executes a Metropolis-Hastings stochastic search over discrete chemical mutation space. At step $t$, given current sequence $x_t$, it samples a candidate edit $x'$ from proposal distribution $q(x' | x_t)$ using 4 proposal operators:
+**Answer**: `ProbabilisticMCMCAttack` executes a **Metropolis-style model-guided stochastic search** over discrete chemical mutation space. **Important**: this is *not* formal Metropolis-Hastings MCMC — no reverse proposal ratio $q(x|y)/q(y|x)$ is computed, and there is no stationary distribution target. It uses a simplified symmetric acceptance rule (CANONICAL_PROJECT_STATE.md §5). At step $t$, given current sequence $x_t$, it samples a candidate edit $x'$ from proposal distribution $q(x' | x_t)$ using 4 proposal operators:
 1. **Atom Substitution**: Swapping halogen/heteroatom tokens (e.g. $-\text{F} \leftrightarrow -\text{Cl}$).
 2. **Fragment Insertion**: Inserting small conjugated rings or linkers.
 3. **Side-Chain Deletion**: Removing aliphatic side chains.

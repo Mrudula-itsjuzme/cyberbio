@@ -13,7 +13,7 @@ We introduce representation-preserving multi-SMILES augmentation as a scientific
 * **Scaffold Split:** Reduces representation drift by ~54.5% ($0.8968 \rightarrow 0.4079$ eV) and substantially improves structural out-of-distribution predictive accuracy ($0.6998 \rightarrow 0.6630$ eV).
 
 ## 3. Secondary Stress Test: Constrained MCMC Exploration
-We designed a constrained Markov Chain Monte Carlo (MCMC) search algorithm to explore chemistry-changing local neighborhoods. Guided by RDKit valence checks, Tanimoto similarity thresholds ($S \ge 0.5$), and attachment-star preservation, this method effectively exposes local model sensitivity, discovering physically plausible structural variants that shift model predictions despite high graph similarity.
+We designed a constrained **Metropolis-style model-guided stochastic search** (informally called MCMC search in project logs) to explore chemistry-changing local neighborhoods. Guided by RDKit valence checks, Tanimoto similarity thresholds ($S \ge 0.5$), and attachment-star preservation, this method effectively exposes local model sensitivity, discovering physically plausible structural variants that shift model predictions despite high graph similarity. *This implementation does not compute reverse proposal ratios $q(x|y)/q(y|x)$ and is therefore not formal Metropolis-Hastings MCMC; it is a Metropolis-style acceptance heuristic over model prediction drift.*
 
 ## 4. Secondary Defense Experiment: Robustness Regularization
 We implemented a label-free MCMC consistency regularization term:
