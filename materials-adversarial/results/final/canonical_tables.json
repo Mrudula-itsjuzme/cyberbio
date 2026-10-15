@@ -1,0 +1,74 @@
+[
+  {
+    "Split":"Random",
+    "Model Configuration":"Baseline",
+    "Clean RMSE (eV)":0.6006785687,
+    "Clean MAE (eV)":0.4626917847,
+    "R^2":0.816969567,
+    "Rand-SMILES Drift (eV) [Repr. Preserving]":0.5990557336,
+    "MCMC Drift (eV) [Chem. Changing Stress-Test]":0.208543569
+  },
+  {
+    "Split":"Random",
+    "Model Configuration":"MCMCDefended",
+    "Clean RMSE (eV)":0.6101491095,
+    "Clean MAE (eV)":0.4617157645,
+    "R^2":0.811152606,
+    "Rand-SMILES Drift (eV) [Repr. Preserving]":0.5916323091,
+    "MCMC Drift (eV) [Chem. Changing Stress-Test]":0.1623922059
+  },
+  {
+    "Split":"Random",
+    "Model Configuration":"RandSmilesAug",
+    "Clean RMSE (eV)":0.5961516234,
+    "Clean MAE (eV)":0.4621641835,
+    "R^2":0.8197179472,
+    "Rand-SMILES Drift (eV) [Repr. Preserving]":0.3256785458,
+    "MCMC Drift (eV) [Chem. Changing Stress-Test]":0.1609152192
+  },
+  {
+    "Split":"Random",
+    "Model Configuration":"CombinedDefense",
+    "Clean RMSE (eV)":0.6391248656,
+    "Clean MAE (eV)":0.4953471449,
+    "R^2":0.7927901189,
+    "Rand-SMILES Drift (eV) [Repr. Preserving]":0.3136406268,
+    "MCMC Drift (eV) [Chem. Changing Stress-Test]":0.109682266
+  },
+  {
+    "Split":"Scaffold",
+    "Model Configuration":"Baseline",
+    "Clean RMSE (eV)":0.6998061426,
+    "Clean MAE (eV)":0.5149246538,
+    "R^2":0.7730105995,
+    "Rand-SMILES Drift (eV) [Repr. Preserving]":0.8968140853,
+    "MCMC Drift (eV) [Chem. Changing Stress-Test]":0.22183145
+  },
+  {
+    "Split":"Scaffold",
+    "Model Configuration":"MCMCDefended",
+    "Clean RMSE (eV)":0.7183816803,
+    "Clean MAE (eV)":0.5555063653,
+    "R^2":0.7608003308,
+    "Rand-SMILES Drift (eV) [Repr. Preserving]":0.6710448391,
+    "MCMC Drift (eV) [Chem. Changing Stress-Test]":0.1807035099
+  },
+  {
+    "Split":"Scaffold",
+    "Model Configuration":"RandSmilesAug",
+    "Clean RMSE (eV)":0.6630029656,
+    "Clean MAE (eV)":0.4956446623,
+    "R^2":0.7962577868,
+    "Rand-SMILES Drift (eV) [Repr. Preserving]":0.4078790797,
+    "MCMC Drift (eV) [Chem. Changing Stress-Test]":0.2046620434
+  },
+  {
+    "Split":"Scaffold",
+    "Model Configuration":"CombinedDefense",
+    "Clean RMSE (eV)":0.6803010237,
+    "Clean MAE (eV)":0.4961090624,
+    "R^2":0.7854876373,
+    "Rand-SMILES Drift (eV) [Repr. Preserving]":0.377642557,
+    "MCMC Drift (eV) [Chem. Changing Stress-Test]":0.1816269521
+  }
+]

@@ -1,0 +1,356 @@
+{
+  "status": "completed",
+  "evaluation_split": "validation",
+  "sealed_test_opened": false,
+  "seed": 20260921,
+  "seed_record": {
+    "seed": 20260921,
+    "python_random": true,
+    "numpy": true,
+    "pythonhashseed": "20260921",
+    "torch": true,
+    "torch_deterministic": true
+  },
+  "requested_views_per_molecule": 16,
+  "n_molecules": 631,
+  "models": [
+    "transformer_canonical",
+    "transformer_augmented_existing",
+    "graph_mpnn_existing"
+  ],
+  "summaries": {
+    "transformer_canonical": {
+      "n_molecules": 631,
+      "dataset_source": {
+        "n": 631,
+        "mae": 0.48620694342490794,
+        "rmse": 0.66744592515405,
+        "r2": 0.7846365771570055
+      },
+      "canonical": {
+        "n": 631,
+        "mae": 0.518619295488409,
+        "rmse": 0.7219366502592027,
+        "r2": 0.7480363139926345
+      },
+      "mean": {
+        "n": 631,
+        "mae": 0.560383663942533,
+        "rmse": 0.7547305884866554,
+        "r2": 0.7246255284242504
+      },
+      "median": {
+        "n": 631,
+        "mae": 0.548341990838149,
+        "rmse": 0.7577543759615417,
+        "r2": 0.722414562226997
+      },
+      "trimmed_mean": {
+        "n": 631,
+        "mae": 0.5547190554543843,
+        "rmse": 0.7546083754370584,
+        "r2": 0.7247147036336604
+      },
+      "disagreement_error_correlations": {
+        "prediction_std_eV": {
+          "pearson": 0.29071473256787045,
+          "spearman": 0.24073067330003275
+        },
+        "prediction_range_eV": {
+          "pearson": 0.253541647790099,
+          "spearman": 0.21787307191527938
+        },
+        "worst_case_canonical_drift_eV": {
+          "pearson": 0.32145602043354576,
+          "spearman": 0.2637345736505198
+        }
+      },
+      "representation_drift": {
+        "molecule_mean_eV": 0.6051167818253719,
+        "molecule_median_eV": 0.5006082653999329,
+        "molecule_p90_eV": 1.0155556499958038,
+        "worst_observed_eV": 4.076822996139526,
+        "prediction_variance_mean_eV2": 0.29355185201167744
+      },
+      "disagreement_group_comparison": {
+        "definition": "bottom versus top quartile of per-molecule equivalent-view prediction SD",
+        "error_threshold_eV": 0.5,
+        "low_n": 158,
+        "high_n": 158,
+        "low_mean_abs_error_eV": 0.47374732210832304,
+        "high_mean_abs_error_eV": 0.7736887230254428,
+        "low_error_rate": 0.34810126582278483,
+        "high_error_rate": 0.6139240506329114
+      },
+      "failure_mode_correlations": {
+        "smiles_length": {
+          "pearson": -0.28932920527480344,
+          "spearman": -0.24609589476442928
+        },
+        "molecular_weight": {
+          "pearson": -0.28604386993514586,
+          "spearman": -0.24918795504332766
+        },
+        "ring_count": {
+          "pearson": -0.26663527041096485,
+          "spearman": -0.23596903058144453
+        },
+        "aromatic_fraction": {
+          "pearson": -0.1275527868837224,
+          "spearman": -0.1408184179669472
+        },
+        "heteroatom_count": {
+          "pearson": -0.15915777505118248,
+          "spearman": -0.1385778458015826
+        },
+        "attachment_point_count": {
+          "pearson": -0.061996503524998484,
+          "spearman": -0.03405684015724078
+        },
+        "token_diversity": {
+          "pearson": -0.1586171888604752,
+          "spearman": -0.1325097450159442
+        },
+        "representation_length_variance": {
+          "pearson": -0.11504856362638327,
+          "spearman": -0.08823795135150217
+        }
+      },
+      "paired_bootstrap_mean_vs_canonical": {
+        "unit": "molecule",
+        "n_molecules": 631,
+        "n_resamples": 2000,
+        "seed": 20260921,
+        "mean_mae_delta_eV": 0.04176436845412407,
+        "ci95_low_eV": 0.002206990136307682,
+        "ci95_high_eV": 0.0831821792004074
+      },
+      "runtime_seconds": 26.46193036600016,
+      "prediction_evaluations": 11336,
+      "checkpoint_sha256": "0b1bb3f62ca72a897fd84c8e7f3129f8a7a9d75c1179c10debb63e46113731e4",
+      "limitation": "frozen canonical checkpoint"
+    },
+    "transformer_augmented_existing": {
+      "n_molecules": 631,
+      "dataset_source": {
+        "n": 631,
+        "mae": 0.5007796097327715,
+        "rmse": 0.6959312835190086,
+        "r2": 0.7658616833062852
+      },
+      "canonical": {
+        "n": 631,
+        "mae": 0.5008787005809899,
+        "rmse": 0.6914503031383347,
+        "r2": 0.768867128008395
+      },
+      "mean": {
+        "n": 631,
+        "mae": 0.4844009870457007,
+        "rmse": 0.6766153198813937,
+        "r2": 0.7786785908528444
+      },
+      "median": {
+        "n": 631,
+        "mae": 0.4847532230842699,
+        "rmse": 0.677803708354813,
+        "r2": 0.7779004624816049
+      },
+      "trimmed_mean": {
+        "n": 631,
+        "mae": 0.48466410719098785,
+        "rmse": 0.6770482141851442,
+        "r2": 0.7783953001160439
+      },
+      "disagreement_error_correlations": {
+        "prediction_std_eV": {
+          "pearson": 0.2191131537734826,
+          "spearman": 0.20201260186716263
+        },
+        "prediction_range_eV": {
+          "pearson": 0.21813619256491945,
+          "spearman": 0.19594384565196418
+        },
+        "worst_case_canonical_drift_eV": {
+          "pearson": 0.21011162182181328,
+          "spearman": 0.18496371165877748
+        }
+      },
+      "representation_drift": {
+        "molecule_mean_eV": 0.12728002564307567,
+        "molecule_median_eV": 0.09591278433799744,
+        "molecule_p90_eV": 0.2438412308692932,
+        "worst_observed_eV": 1.433687448501587,
+        "prediction_variance_mean_eV2": 0.01565749712646779
+      },
+      "disagreement_group_comparison": {
+        "definition": "bottom versus top quartile of per-molecule equivalent-view prediction SD",
+        "error_threshold_eV": 0.5,
+        "low_n": 158,
+        "high_n": 158,
+        "low_mean_abs_error_eV": 0.3831488005414794,
+        "high_mean_abs_error_eV": 0.6305568935824347,
+        "low_error_rate": 0.22784810126582278,
+        "high_error_rate": 0.5379746835443038
+      },
+      "failure_mode_correlations": {
+        "smiles_length": {
+          "pearson": -0.09871230924207468,
+          "spearman": 0.014545511717862045
+        },
+        "molecular_weight": {
+          "pearson": -0.152767110225588,
+          "spearman": -0.07016471154315343
+        },
+        "ring_count": {
+          "pearson": -0.037914481896741244,
+          "spearman": 0.17414617727277693
+        },
+        "aromatic_fraction": {
+          "pearson": 0.04103167707748165,
+          "spearman": 0.2052031290916118
+        },
+        "heteroatom_count": {
+          "pearson": -0.0816807436218022,
+          "spearman": -0.06426073928306383
+        },
+        "attachment_point_count": {
+          "pearson": -0.07276308506917538,
+          "spearman": -0.04892555876132077
+        },
+        "token_diversity": {
+          "pearson": 0.02323068056436912,
+          "spearman": 0.1931765227770694
+        },
+        "representation_length_variance": {
+          "pearson": 0.022146361690467863,
+          "spearman": 0.15095525202879065
+        }
+      },
+      "paired_bootstrap_mean_vs_canonical": {
+        "unit": "molecule",
+        "n_molecules": 631,
+        "n_resamples": 2000,
+        "seed": 20260921,
+        "mean_mae_delta_eV": -0.016477713535289193,
+        "ci95_low_eV": -0.02739764687769009,
+        "ci95_high_eV": -0.0060040166195514085
+      },
+      "runtime_seconds": 29.227788493000844,
+      "prediction_evaluations": 11336,
+      "checkpoint_sha256": "d06da5debd6e2a12c9e38e10b5e0783717f02999ed25742271fcf328e38cca44",
+      "limitation": "existing checkpoint; training seed/provenance incomplete, evaluated without retraining"
+    },
+    "graph_mpnn_existing": {
+      "n_molecules": 631,
+      "dataset_source": {
+        "n": 631,
+        "mae": 0.41118986559412934,
+        "rmse": 0.5953691733307181,
+        "r2": 0.8286388131081988
+      },
+      "canonical": {
+        "n": 631,
+        "mae": 0.411189864460602,
+        "rmse": 0.5953691711924773,
+        "r2": 0.8286388143390703
+      },
+      "mean": {
+        "n": 631,
+        "mae": 0.41118986697168,
+        "rmse": 0.5953691693727522,
+        "r2": 0.8286388153865892
+      },
+      "median": {
+        "n": 631,
+        "mae": 0.4111898697503962,
+        "rmse": 0.5953691737146606,
+        "r2": 0.8286388128871834
+      },
+      "trimmed_mean": {
+        "n": 631,
+        "mae": 0.41118986668987245,
+        "rmse": 0.5953691692539753,
+        "r2": 0.8286388154549628
+      },
+      "disagreement_error_correlations": {
+        "prediction_std_eV": {
+          "pearson": 0.053263465013789896,
+          "spearman": 0.02431265181729237
+        },
+        "prediction_range_eV": {
+          "pearson": 0.061135217892970745,
+          "spearman": 0.02545706905809436
+        },
+        "worst_case_canonical_drift_eV": {
+          "pearson": 0.06258993478718541,
+          "spearman": 0.02448205431995253
+        }
+      },
+      "representation_drift": {
+        "molecule_mean_eV": 4.802534835904097e-08,
+        "molecule_median_eV": 0.0,
+        "molecule_p90_eV": 1.7881393432617188e-07,
+        "worst_observed_eV": 9.5367431640625e-07,
+        "prediction_variance_mean_eV2": 9.504126858841669e-15
+      },
+      "disagreement_group_comparison": {
+        "definition": "bottom versus top quartile of per-molecule equivalent-view prediction SD",
+        "error_threshold_eV": 0.5,
+        "low_n": 388,
+        "high_n": 169,
+        "low_mean_abs_error_eV": 0.39187883312186017,
+        "high_mean_abs_error_eV": 0.4476151914269731,
+        "low_error_rate": 0.2706185567010309,
+        "high_error_rate": 0.2958579881656805
+      },
+      "failure_mode_correlations": {
+        "smiles_length": {
+          "pearson": -0.04550782078769266,
+          "spearman": -0.010197530044428265
+        },
+        "molecular_weight": {
+          "pearson": -0.0353402813519348,
+          "spearman": -0.0055416969578616195
+        },
+        "ring_count": {
+          "pearson": -0.06613088313305791,
+          "spearman": -0.025097541311463863
+        },
+        "aromatic_fraction": {
+          "pearson": -0.09699642460024688,
+          "spearman": -0.03806422790112337
+        },
+        "heteroatom_count": {
+          "pearson": 0.003704496952899071,
+          "spearman": 0.014529333965116003
+        },
+        "attachment_point_count": {
+          "pearson": -0.02950626380631237,
+          "spearman": -0.03445459299378059
+        },
+        "token_diversity": {
+          "pearson": -0.053902087696922174,
+          "spearman": -0.0051173819030880825
+        },
+        "representation_length_variance": {
+          "pearson": -0.026585468623027672,
+          "spearman": 0.016021198438037343
+        }
+      },
+      "paired_bootstrap_mean_vs_canonical": {
+        "unit": "molecule",
+        "n_molecules": 631,
+        "n_resamples": 2000,
+        "seed": 20260921,
+        "mean_mae_delta_eV": 2.5110778763598648e-09,
+        "ci95_low_eV": -5.876433893920715e-09,
+        "ci95_high_eV": 1.0423137910690726e-08
+      },
+      "runtime_seconds": 26.429215223999563,
+      "prediction_evaluations": 11336,
+      "checkpoint_sha256": "3fd339c5ebd0d700a05868a0d53ee752c61f378155245855252797c01bcbb81b",
+      "limitation": "existing checkpoint; training seed/provenance incomplete, graph invariance control only"
+    }
+  }
+}

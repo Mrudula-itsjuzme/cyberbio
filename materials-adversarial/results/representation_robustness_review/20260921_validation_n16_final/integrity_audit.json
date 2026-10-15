@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "dataset_rows": 4209,
+  "split_counts": {
+    "test": 632,
+    "train": 2946,
+    "val": 631
+  },
+  "canonical_cross_split_overlaps": {
+    "train_val": 0,
+    "train_test": 0,
+    "val_test": 0
+  },
+  "invalid_structures": 0,
+  "units": "eV",
+  "source_dataset": "polyverse_bandgap",
+  "scaler_train_delta": {
+    "mean": 0.0,
+    "std": 0.0
+  },
+  "vocab_size": 36,
+  "checkpoint_embedding_rows": 37,
+  "checkpoint_sha256": "0b1bb3f62ca72a897fd84c8e7f3129f8a7a9d75c1179c10debb63e46113731e4",
+  "scaler_sha256": "5ef15ad16aee156fbc9b6b7872c1534262e3622022190f17c23fc7e3dab12814",
+  "vocab_sha256": "3dd4c162c5d84138d7bf0ea4fb04a0cb81b1b9e9ee705a0e0318a3214d8935bf",
+  "splits_sha256": "4a9d28252d058c0c2e39cf70eb10dd2f79ad57df4e842c3f917cdfe9830ccd02"
+}

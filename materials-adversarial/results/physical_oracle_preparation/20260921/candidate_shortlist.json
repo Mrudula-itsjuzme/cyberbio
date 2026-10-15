@@ -1,0 +1,11 @@
+{
+  "status": "prepared_not_executed",
+  "oracle_calculations_performed": false,
+  "input": "results/phase12b_adaptive_search/1789331655/attack_trajectories.jsonl",
+  "n_selected": 20,
+  "selection_uses_true_labels": false,
+  "constraints": {
+    "max_per_source": 2,
+    "canonical_candidate_dedup": true
+  }
+}
