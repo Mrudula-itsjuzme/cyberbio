@@ -41,7 +41,13 @@ def grouped_split(
     for i, key in enumerate(group_keys):
         groups.setdefault(key, []).append(i)
 
-    ordered = sorted(groups, key=lambda k: len(groups[k]), reverse=True)
+    # Seeded tie-breaking matters: the old implementation accepted ``seed`` but
+    # never used it, so changing the configured split seed had no effect whenever
+    # group sizes tied.  Shuffle first, then use Python's stable size sort.
+    rng = np.random.default_rng(seed)
+    shuffled_keys = list(groups)
+    rng.shuffle(shuffled_keys)
+    ordered = sorted(shuffled_keys, key=lambda k: len(groups[k]), reverse=True)
 
     n_total = len(group_keys)
     n_train_target = int(round(train_frac * n_total))

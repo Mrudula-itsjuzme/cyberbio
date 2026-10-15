@@ -43,17 +43,17 @@ class GraphDataset(Dataset):
 
     ``strict`` controls what happens to a SMILES string that does not parse.
 
-    * ``strict=False`` (default, historical behaviour): the dataset silently walks
+    * ``strict=False`` (legacy opt-in behaviour): the dataset silently walks
       forward and returns a DIFFERENT molecule's graph. That is acceptable for clean
       training data, where it never fires, but it is dangerous for adversarial
       evaluation: a malformed attack candidate would be scored as if it were valid.
-    * ``strict=True``: raise. Adversarial / evaluation code must use this, so an
+    * ``strict=True`` (default): raise. Adversarial / evaluation code must use this, so an
       invalid candidate is rejected instead of silently replaced.
 
     See docs/FRAMEWORK_V2_BENCHMARK_AUDIT.md section 8.
     """
 
-    def __init__(self, df, max_nodes=256, strict: bool = False):
+    def __init__(self, df, max_nodes=256, strict: bool = True):
         self.smiles = df["original_representation"].tolist()
         self.targets = df["property_value"].astype(float).tolist()
         self.max_nodes = max_nodes

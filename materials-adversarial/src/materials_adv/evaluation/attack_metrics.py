@@ -22,15 +22,6 @@ from .records import AttackRecord, ValidityStatus
 
 @dataclass(frozen=True, slots=True)
 class SuccessCriterion:
-    """Configurable definition of a successful attack.
-
-    `require_valid` defaults to True. Note that under the strict-UNCHECKED policy
-    an UNCHECKED candidate is NOT valid, so with RDKit absent this criterion will
-    report zero successes -- which is the honest outcome, not a bug. Set
-    `count_unchecked_as_valid=True` only for an explicitly-labelled syntax-only
-    analysis.
-    """
-
     min_abs_drift: float = 0.0
     max_changes: int | None = None
     require_valid: bool = True
@@ -55,6 +46,12 @@ class SuccessCriterion:
             return False
         return True
 
+
+def _sum_nullable(records: Sequence[AttackRecord], field_name: str) -> float | int | None:
+    vals = [getattr(r, field_name) for r in records if getattr(r, field_name) is not None]
+    if not vals:
+        return None
+    return sum(vals)
 
 def summarize_attacks(
     records: Sequence[AttackRecord],
@@ -94,6 +91,15 @@ def summarize_attacks(
             "count_unchecked_as_valid": criterion.count_unchecked_as_valid,
         },
         "mean_changes": float(np.mean(changes)) if changes.size else None,
+        "cost_accounting": {
+            "total_target_model_queries": _sum_nullable(records, "target_model_queries"),
+            "total_proposals_generated": _sum_nullable(records, "proposals_generated"),
+            "total_rejected_invalid": _sum_nullable(records, "rejected_invalid"),
+            "total_generator_calls": _sum_nullable(records, "generator_calls"),
+            "total_attribution_queries": _sum_nullable(records, "attribution_queries"),
+            "total_search_steps": _sum_nullable(records, "search_steps"),
+            "total_runtime_seconds": _sum_nullable(records, "runtime_seconds"),
+        }
     }
 
     if abs_drifts.size:
@@ -102,7 +108,6 @@ def summarize_attacks(
                 "mean_abs_drift": float(np.mean(abs_drifts)),
                 "median_abs_drift": float(np.median(abs_drifts)),
                 "max_abs_drift": float(np.max(abs_drifts)),
-                # Signed mean reveals directional bias that abs() would hide.
                 "mean_signed_drift": float(np.mean(drifts)),
             }
         )

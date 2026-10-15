@@ -54,9 +54,19 @@ class AttackRecord:
     chemical_constraint_score: float | None = None
     sampling_probability: float | None = None
 
-    # --- Provenance ---
+    # --- Provenance & Cost Accounting ---
     seed: int | None = None
     attack_params: dict[str, Any] = field(default_factory=dict)
+    
+    # Cost accounting (explicitly nullable for backward compatibility)
+    target_model_queries: int | None = None
+    proposals_generated: int | None = None
+    rejected_invalid: int | None = None
+    generator_calls: int | None = None
+    attribution_queries: int | None = None
+    search_steps: int | None = None
+    runtime_seconds: float | None = None
+    
     schema_version: str = SCHEMA_VERSION
 
     def to_dict(self) -> dict[str, Any]:
