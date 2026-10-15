@@ -111,7 +111,9 @@ def generate_bank(
                 "candidate_representation": cand,
                 "canonical_original": c_orig,
                 "canonical_candidate": c_cand,
-                "target": target,
+                "source_target": target,
+                "candidate_target": None,
+                "label_basis": "candidate_target_requires_independent_physical_oracle",
                 "generation_seed": seed,
                 "valid": is_valid,
             })

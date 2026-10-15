@@ -1,0 +1,253 @@
+# =============================================================================
+# Canonical Experiment Registry — polyVERSE Polymer Bandgap Project
+# =============================================================================
+# This file is the single source of truth for all canonical experiments in
+# the materials-adversarial / polyVERSE bandgap lineage.
+#
+# IMPORTANT: Do NOT add historical OpenPoly Tg lineage experiments here.
+#            Historical Tg experiments are documented in docs/HISTORICAL_TG_LINEAGE.md
+# =============================================================================
+# Last updated: 2026-09-21
+# =============================================================================
+
+lineage: polyverse_bandgap
+property: Bandgap
+units: eV
+status: analytically_complete
+
+# ---------------------------------------------------------------------------
+# Dataset
+# ---------------------------------------------------------------------------
+dataset:
+  name: polyVERSE
+  file: data/processed/processed.csv
+  representation_column: original_representation
+  target_column: property_value
+  target_property: "Bandgap (eV)"
+  n_usable_records: 4209
+  split_seed: 20260815
+  split_strategy: random_70_15_15
+  split_sizes:
+    train: 2946
+    validation: 631
+    test: 632
+  split_manifest: data/processed/splits.json
+  test_sealed: true
+  vocab_file: data/processed/vocab.json
+  data_hash: de47e0dca370ab7d48fec87ad0ce5fe80269c84ba7a0a0317a73732d53a7d1ac
+
+# ---------------------------------------------------------------------------
+# Attack Taxonomy
+# ---------------------------------------------------------------------------
+attacks:
+  - name: randomized_smiles
+    code_class: SmilesRandomizationAttack
+    representation_preserving: true
+    label_inheritable: true
+    category: representation_preserving_control
+    description: >
+      Generates alternative valid SMILES for the identical molecular graph via
+      RDKit doRandom=True. The canonical molecular graph, formula, MW, and
+      Tanimoto fingerprint are 100% identical to the source. Prediction drift
+      under this attack is pure representation/serialization sensitivity.
+    validation_check: canonical_smiles_must_match_source
+
+  - name: substitution
+    code_class: SubstitutionAttack
+    representation_preserving: false
+    label_inheritable: false
+    category: chemistry_changing_stress_test
+    attack_budget: 1
+
+  - name: insertion
+    code_class: InsertionAttack
+    representation_preserving: false
+    label_inheritable: false
+    category: chemistry_changing_stress_test
+    attack_budget: 1
+
+  - name: deletion
+    code_class: DeletionAttack
+    representation_preserving: false
+    label_inheritable: false
+    category: chemistry_changing_stress_test
+    attack_budget: 1
+
+  - name: rearrangement
+    code_class: RearrangementAttack
+    representation_preserving: false
+    label_inheritable: false
+    category: chemistry_changing_stress_test
+    attack_budget: 1
+
+  - name: metropolis_style_stochastic_search
+    code_class: ProbabilisticMCMCAttack
+    representation_preserving: false
+    label_inheritable: false
+    category: chemistry_changing_stress_test
+    description: >
+      Multi-step model-guided candidate proposal with Metropolis-style acceptance
+      filter. Uses simplified symmetric acceptance rule. NOT formal Metropolis-
+      Hastings MCMC (no reverse proposal ratio q(x|y)/q(y|x) is computed).
+      See CANONICAL_PROJECT_STATE.md section 5 for the full audit verdict.
+    mcmc_terminology_note: >
+      Correctly described as Metropolis-style model-guided stochastic search.
+      Not Metropolis-Hastings MCMC.
+
+# ---------------------------------------------------------------------------
+# Defense Taxonomy
+# ---------------------------------------------------------------------------
+defenses:
+  - name: baseline
+    checkpoint_dir: results/models/transformer_regressor
+    n_train: 2946
+    scaler_source: fitted_on_this_training_set
+    training_data: data/processed/processed.csv (train split only)
+    type: clean_baseline
+
+  - name: rand_smiles_augmentation
+    checkpoint_dir: MISSING
+    # IMPORTANT: The canonical_benchmark_no_leakage.json RandSmilesAug rows
+    # (n_train=8838) were produced by run_validation_pass.py training in-memory.
+    # No persistent checkpoint was saved for these runs.
+    # The saved transformer_defended/ uses n_train=14246 from augmented_train.csv
+    # (which includes adversarial candidates) — that is a DIFFERENT model.
+    n_train_in_canonical_benchmark: 8838
+    n_train_saved_checkpoint: null
+    description: >
+      Representation-preserving multi-SMILES augmentation. 2946 original × 3
+      SMILES each (1 canonical + 2 randomized) = 8838 samples. Labels safely
+      inherited because molecular graph is unchanged. PRIMARY DEFENSE.
+    type: representation_preserving_augmentation
+    label_inheritance: justified
+
+  - name: mcmc_consistency_defense
+    checkpoint_dir: results/models/transformer_defended
+    n_train: 14246
+    scaler_source: results/models/transformer_regressor/scaler.json
+    training_data: data/processed/augmented_train.csv
+    description: >
+      Adversarially augmented training. Chemistry-changing candidates use
+      label-free consistency regularization (stop-grad teacher) — NOT original
+      label inheritance.
+    type: chemistry_changing_consistency_regularization
+    label_inheritance: not_applicable
+
+  - name: combined_defense
+    checkpoint_dir: MISSING
+    n_train_in_canonical_benchmark: 8838
+    type: combined
+
+# ---------------------------------------------------------------------------
+# Canonical Result Artifacts
+# ---------------------------------------------------------------------------
+canonical_results:
+  - artifact: results/canonical_benchmark_no_leakage.json
+    description: >
+      8-experiment leakage-free benchmark: 4 defense configs x 2 split strategies.
+      Primary canonical result for the bandgap lineage.
+    status: VERIFIED
+    git_commit: 3256c9f27e8cf44bf97e92b10c62dd4ec24ec228
+    key_metrics:
+      RandomSplit_Baseline:
+        clean_mae_eV: 0.4627
+        clean_rmse_eV: 0.6007
+        clean_r2: 0.8170
+        rand_smiles_drift_mean_eV: 0.5991
+        mcmc_drift_mean_eV: 0.2085
+      RandomSplit_RandSmilesAug:
+        clean_mae_eV: 0.4622
+        clean_rmse_eV: 0.5962
+        clean_r2: 0.8197
+        rand_smiles_drift_mean_eV: 0.3257
+        mcmc_drift_mean_eV: 0.1609
+      ScaffoldSplit_Baseline:
+        clean_mae_eV: 0.5149
+        clean_rmse_eV: 0.6998
+        clean_r2: 0.7730
+        rand_smiles_drift_mean_eV: 0.8968
+        mcmc_drift_mean_eV: 0.2218
+      ScaffoldSplit_RandSmilesAug:
+        clean_mae_eV: 0.4956
+        clean_rmse_eV: 0.6630
+        clean_r2: 0.7963
+        rand_smiles_drift_mean_eV: 0.4079
+        mcmc_drift_mean_eV: 0.2047
+
+  - artifact: results/phase2_paired_benchmark/paired_robustness.json
+    description: Frozen candidate bank evaluation on sealed 632-sample test set.
+    status: VERIFIED
+    git_commit: 3256c9f27e8cf44bf97e92b10c62dd4ec24ec228
+    model_hash_baseline: 0b1bb3f62ca72a897fd84c8e7f3129f8a7a9d75c1179c10debb63e46113731e4
+    model_hash_defended: bda109bd0bd7f7843c803ec31c842a5ed1190ed4714e1448e42c28d0c9e7c484
+
+  - artifact: results/models/transformer_regressor/metrics.json
+    description: Baseline model clean performance on sealed test set.
+    status: VERIFIED
+    metrics:
+      test_mae_eV: 0.4619
+      test_rmse_eV: 0.6235
+      test_r2: 0.8019
+      seed: 20260815
+
+# ---------------------------------------------------------------------------
+# Multi-Seed Status
+# ---------------------------------------------------------------------------
+multiseed:
+  bandgap_multiseed_status: MISSING
+  bandgap_multiseed_note: >
+    No multi-seed experiment with saved bandgap checkpoints has been executed.
+    The 5-seed data in results/phase2c/ is the historical Tg lineage — do not
+    use as evidence for bandgap claims.
+  seeds_proposed: [42, 123, 2026, 777, 999]
+  historical_tg_multiseed_artifact: "results/phase2c/ (DO NOT MIX with bandgap)"
+  run_command: "PYTHONPATH=. python scripts/run_representation_multiseed.py --config configs/canonical_experiments.yaml"
+
+# ---------------------------------------------------------------------------
+# Deprecated Experiments
+# ---------------------------------------------------------------------------
+deprecated:
+  - name: OpenPoly_Tg_All
+    artifacts:
+      - results/models/transformer_regressor_mcmc_defended
+      - results/models/transformer_regressor_residualized
+      - results/models/transformer_defended_phase2b
+      - results/models/transformer_defended_phase2b_balanced
+      - results/phase2c/
+    reason: Historical Tg (K) lineage, superseded by polyVERSE bandgap (eV)
+    documented_in: docs/HISTORICAL_TG_LINEAGE.md
+
+  - name: Phase9_ClosedLoop_Repr_Training
+    artifact: results/phase9_representation_closed_loop/
+    reason: "Output collapse R2=0.142, adversarial overfitting 4x. Verdict: NOT SUPPORTED."
+    documented_in: docs/PHASE9_REPRESENTATION_CLOSED_LOOP.md
+
+# ---------------------------------------------------------------------------
+# Reproducibility Commands
+# ---------------------------------------------------------------------------
+reproducibility:
+  smoke_test:
+    command: "PYTHONPATH=. python scripts/smoke_test_attack.py"
+    cwd: materials-adversarial/
+
+  full_validation:
+    command: "PYTHONPATH=. python scripts/run_validation_pass.py"
+    cwd: materials-adversarial/
+    note: Reproduces canonical_benchmark_no_leakage.json (in-memory training)
+
+  paired_benchmark:
+    command: "PYTHONPATH=. python scripts/run_phase2_paired_benchmark.py"
+    cwd: materials-adversarial/
+
+  multiseed_representation:
+    command: "PYTHONPATH=. python scripts/run_representation_multiseed.py --config configs/canonical_experiments.yaml"
+    cwd: materials-adversarial/
+
+  tests:
+    command: "PYTHONPATH=. pytest tests/ -q"
+    cwd: materials-adversarial/
+
+  generate_tables:
+    command: "PYTHONPATH=. python scripts/generate_final_tables.py"
+    cwd: materials-adversarial/
+    output_dir: results/final/

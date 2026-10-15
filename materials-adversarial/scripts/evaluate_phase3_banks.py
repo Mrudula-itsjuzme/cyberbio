@@ -148,7 +148,8 @@ def get_ablation_metrics(
 
     # Clean MAE
     preds_clean = predict_ablated(df_clean["original_representation"].tolist())
-    targets = df_clean["target"].values
+    target_column = "source_target" if "source_target" in df_clean else "target"
+    targets = df_clean[target_column].values
     mae_clean = float(np.mean(np.abs(preds_clean - targets)))
 
     # Rand Drift
@@ -204,7 +205,8 @@ def evaluate(run_id: str) -> None:
     # We get clean reps from df_rand, unique by source
     unique_sources_df = df_rand.drop_duplicates("source_id")
     clean_reps = unique_sources_df["original_representation"].tolist()
-    clean_targets = unique_sources_df["target"].values
+    target_column = "source_target" if "source_target" in unique_sources_df else "target"
+    clean_targets = unique_sources_df[target_column].values
     
     baseline_clean_preds = m_base.predict(clean_reps)
     baseline_clean_mae = float(np.mean(np.abs(baseline_clean_preds - clean_targets)))
