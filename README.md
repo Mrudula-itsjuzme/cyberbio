@@ -70,6 +70,14 @@ The final results, figures, and CSVs will be placed in the `results/final/` dire
 The root intentionally exposes only the two active projects and three supporting
 collections. Results are never mixed into source directories.
 
+## Single-file code references
+
+- `reference/materials_reference.py` — end-to-end Materials façade and module map.
+- `reference/bio_reference.py` — end-to-end synthetic Bio-Cyber façade and module map.
+
+These files provide one readable entrypoint per domain while delegating maintained
+logic to the modular packages.
+
 ## License
 
 The original software and documentation in this repository are released under the [MIT License](LICENSE), to the extent the contributors hold the relevant rights. Third-party datasets, pretrained models, external research materials, and any separately licensed components are **not** relicensed by this repository; consult their original sources and applicable terms before reuse.
