@@ -58,3 +58,16 @@ To extract and format all final aggregated research results (baseline comparison
 python materials-adversarial/scripts/run_final_experiments.py --full
 ```
 The final results, figures, and CSVs will be placed in the `results/final/` directory. Complete documentation of the threat model, failure cases, and ablation analysis can be found in the `docs/` folder.
+
+## Repository layout
+
+- `materials-adversarial/` — materials models, data, attacks, tests, and scoped documentation.
+- `bio-cyber-adversarial/` — synthetic bio-cyber benchmark.
+- `comparison-experiments/` and `experiments/` — bounded research studies.
+- `scripts/final-analysis/` — utilities supporting the consolidated result tables.
+- `docs/cyberbio_report_v2/` — canonical report and reading order.
+- `results/` and `artifacts/` — recorded outputs and verification evidence.
+- `archive/` — superseded reports and one-off maintenance material retained for provenance.
+
+The root intentionally contains only repository-level entry points. Historical exports
+and repair scripts are archived so they are not mistaken for current project outputs.
