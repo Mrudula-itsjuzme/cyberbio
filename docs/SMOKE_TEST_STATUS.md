@@ -5,7 +5,7 @@
 
 ## Execution Summary
 - **Status:** PASS
-- **Model / Checkpoint:** `materials-adversarial/results/phase1/model_final.pt` (Baseline TransPolymer)
+- **Model / Checkpoint:** `results/materials/experiments/phase1/model_final.pt` (Baseline TransPolymer)
 - **Target Units:** Corrected to `eV` (formerly incorrectly logged as `K`).
 - **Sample Count:** 2 test molecules evaluated
 - **Attack Used:** `ProbabilisticMCMCAttack` with a budget of 10 evaluation variants each.

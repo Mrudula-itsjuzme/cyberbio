@@ -1,6 +1,6 @@
 # Audit Report: Existing Paired Benchmark Artifact
 
-**Target Directory**: `materials-adversarial/results/phase2_paired_benchmark/`  
+**Target Directory**: `results/materials/experiments/phase2_paired_benchmark/`
 **Audit Date**: September 12, 2026  
 **Auditor**: Automated Forensic Agent  
 **Final Classification**: **`VALID BUT DEVELOPMENTAL`**

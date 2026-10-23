@@ -5,7 +5,7 @@
 - **Tests**: 429 Passed, 1 Skipped.
 - **Explainability**: Completed. MCMC occlusion evaluated.
 - **Shortcuts**: Evaluated. Strong bag-of-tokens correlations.
-- **Cross-Defense Matrix**: Computed and archived in `materials-adversarial/results/phase4_controlled_robustness/phase_e_f_results/`.
+- **Cross-Defense Matrix**: Computed and archived in `results/materials/experiments/phase4_controlled_robustness/phase_e_f_results/`.
 
 ## 2. Bio-Cyber Synthetic Robustness
 - **Status**: HALTED.

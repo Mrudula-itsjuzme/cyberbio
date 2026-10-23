@@ -41,4 +41,4 @@ A rigorous forensic audit disproved the core hypotheses of the early $T_g$ work:
 ---
 
 ## 4. Preservation Notice
-All code, scripts, and raw result artifacts for the historical $T_g$ experiments remain intact in `materials-adversarial/results/` and historical documentation (`docs/PROJECT_WORKSPACE.md`, `docs/ARCHITECTURE_FORENSIC.md`). They are preserved strictly as exploratory lineage context and must not be mixed into active polyVERSE Bandgap configurations or evaluation pipelines.
+All code, scripts, and raw result artifacts for the historical $T_g$ experiments remain intact in `results/materials/experiments/` and historical documentation (`docs/PROJECT_WORKSPACE.md`, `docs/ARCHITECTURE_FORENSIC.md`). They are preserved strictly as exploratory lineage context and must not be mixed into active polyVERSE Bandgap configurations or evaluation pipelines.

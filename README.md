@@ -61,13 +61,11 @@ The final results, figures, and CSVs will be placed in the `results/final/` dire
 
 ## Repository layout
 
-- `materials-adversarial/` — materials models, data, attacks, tests, and scoped documentation.
-- `bio-cyber-adversarial/` — synthetic bio-cyber benchmark.
-- `comparison-experiments/` and `experiments/` — bounded research studies.
-- `scripts/final-analysis/` — utilities supporting the consolidated result tables.
-- `docs/cyberbio_report_v2/` — canonical report and reading order.
-- `results/` and `artifacts/` — recorded outputs and verification evidence.
-- `archive/` — superseded reports and one-off maintenance material retained for provenance.
+- `materials-adversarial/` — active materials source, data, tests, and scoped documentation.
+- `bio-cyber-adversarial/` — active synthetic bio-cyber source, data, and tests.
+- `docs/` — canonical report plus preserved study documentation.
+- `results/` — all outputs, checkpoints, figures, manifests, and test evidence.
+- `research/` — supporting and historical experiment implementations retained for reproducibility.
 
-The root intentionally contains only repository-level entry points. Historical exports
-and repair scripts are archived so they are not mistaken for current project outputs.
+The root intentionally exposes only the two active projects and three supporting
+collections. Results are never mixed into source directories.

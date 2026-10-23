@@ -16,7 +16,7 @@ print("Model loaded.")
 
 # Load candidates from comparison-experiments
 print("Loading MCMC candidates...")
-df = pd.read_csv("../comparison-experiments/results/summaries/budget_sweep_results.csv")
+df = pd.read_csv("../results/comparison/experiments/summaries/budget_sweep_results.csv")
 # Filter for MCMC, budget 50
 df_mcmc = df[(df['attack_family'] == 'mcmc') & (df['query_budget'] == 50)].copy()
 # Pick 20 unique sources
@@ -74,7 +74,7 @@ for sid in source_ids:
         except Exception:
             pass
 
-out_dir = "../comparison-experiments/results/raw_explainability"
+out_dir = "../results/comparison/experiments/raw_explainability"
 os.makedirs(out_dir, exist_ok=True)
 res_df = pd.DataFrame(results)
 res_df.to_csv(out_dir + "/mcmc_occlusion.csv", index=False)

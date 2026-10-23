@@ -3,18 +3,18 @@
 ## A. Invalid Artifacts Found
 - Previously, `baseline_comparison.csv` was generated from hardcoded guesses of R^2 metrics rather than parsed results.
 - `docs/FAILURE_CASES.md` previously contained estimated / invented adversarial drift values.
-- `scripts/final-analysis/shortcut_analysis.py` contained hardcoded statements without conducting genuine statistical tests against real outputs.
+- `research/final-analysis/shortcut_analysis.py` contained hardcoded statements without conducting genuine statistical tests against real outputs.
 
 ## B. Unsupported Claims Removed
 - Removed the claim that sequence length uniquely *causes* failure; replaced with cautious wording indicating length and drift are *associated* and that the network learns a proxy shortcut.
 - Removed arbitrary predictions from `FAILURE_CASES.md`; it now only shows actual runs pulled from `clean_attack_records.jsonl`.
 
 ## C. Hardcoded Metrics Found & Replaced
-- `scripts/final-analysis/baseline_comparison.py`: Replaced with programmatic parsing of `materials-adversarial/results/phase6_attribution/run_01/simple_baseline_metrics.csv` and `canonical_benchmark_no_leakage.json`.
-- `scripts/final-analysis/cross_attack.py`: Replaced with parsing of `canonical_benchmark_no_leakage.json`.
-- `scripts/final-analysis/ablation_analysis.py`: Replaced with parsing of `canonical_benchmark_no_leakage.json`.
-- `scripts/final-analysis/shortcut_analysis.py`: Replaced with programmatic correlation calculation parsing `processed.csv` and `clean_attack_records.jsonl`.
-- `scripts/final-analysis/failure_cases.py`: Script created to parse strongest and weakest true valid attack runs.
+- `research/final-analysis/baseline_comparison.py`: Replaced with programmatic parsing of `results/materials/experiments/phase6_attribution/run_01/simple_baseline_metrics.csv` and `canonical_benchmark_no_leakage.json`.
+- `research/final-analysis/cross_attack.py`: Replaced with parsing of `canonical_benchmark_no_leakage.json`.
+- `research/final-analysis/ablation_analysis.py`: Replaced with parsing of `canonical_benchmark_no_leakage.json`.
+- `research/final-analysis/shortcut_analysis.py`: Replaced with programmatic correlation calculation parsing `processed.csv` and `clean_attack_records.jsonl`.
+- `research/final-analysis/failure_cases.py`: Script created to parse strongest and weakest true valid attack runs.
 
 ## D. Corrected Experiment Provenance
 - Target Property: **Bandgap in eV** (proven by dataset `processed.csv` and `canonical_benchmark_no_leakage.json`).

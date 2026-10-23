@@ -1,9 +1,9 @@
 # Bio-Cyber Data Leakage Audit
 
 **Artifacts**:
-- `bio-cyber-adversarial/results/real_state.json`
-- `bio-cyber-adversarial/results/leakage_audit.json`
-- `bio-cyber-adversarial/results/leakage_failure.md`
+- `results/bio-cyber/experiments/real_state.json`
+- `results/bio-cyber/experiments/leakage_audit.json`
+- `results/bio-cyber/experiments/leakage_failure.md`
 
 **Findings**:
 We executed simple regularized logistic regression on 1-mer, 2-mer, and 3-mer distributions of the bio-cyber dataset.

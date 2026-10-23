@@ -10,7 +10,7 @@
 - **Adversarial Prediction:** 2.4368 eV
 - **Absolute Drift:** 4.7284 eV
 - **Attack Family:** Randomization
-- **Source File:** `materials-adversarial/results/phase2_paired_benchmark/clean_attack_records.jsonl`
+- **Source File:** `results/materials/experiments/phase2_paired_benchmark/clean_attack_records.jsonl`
 
 ## Weakest Adversarial Example / Failure to Attack
 - **Sample ID:** `poly_3709`
@@ -22,4 +22,4 @@
 - **Adversarial Prediction:** 5.5640 eV
 - **Absolute Drift:** 0.0000 eV
 - **Attack Family:** Substitution
-- **Source File:** `materials-adversarial/results/phase2_paired_benchmark/clean_attack_records.jsonl`
+- **Source File:** `results/materials/experiments/phase2_paired_benchmark/clean_attack_records.jsonl`

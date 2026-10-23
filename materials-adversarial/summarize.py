@@ -2,7 +2,7 @@ import pandas as pd
 import json
 from pathlib import Path
 
-out_dir = Path("/home/mrudula/Downloads/DL_cyberbio/materials-adversarial/results/phase12_graph_adversarial/1789329207")
+out_dir = Path("/home/mrudula/Downloads/DL_cyberbio/results/materials/experiments/phase12_graph_adversarial/1789329207")
 
 corr_df = pd.read_csv(out_dir / "architecture_drift_correlation.csv")
 print("CORRELATION")

@@ -6,7 +6,7 @@
 
 ## Benchmarks
 - **Canonical benchmark**: `python3 scripts/run_comprehensive_benchmark_suite.py`
-- **Comparison benchmark**: `python3 comparison-experiments/scripts/run_comparison.py`
+- **Comparison benchmark**: `python3 research/comparison-experiments/scripts/run_comparison.py`
 - **LLM/RL/Generative benchmarks**: NOT RUN (provider blocked/compute limits).
 - **Bio-cyber benchmark**: `python3 bio-cyber-adversarial/src/evaluate.py`
 
