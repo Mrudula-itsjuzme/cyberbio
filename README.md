@@ -69,3 +69,11 @@ The final results, figures, and CSVs will be placed in the `results/final/` dire
 
 The root intentionally exposes only the two active projects and three supporting
 collections. Results are never mixed into source directories.
+
+## Single-file code references
+
+- `reference/materials_reference.py` — end-to-end Materials façade and module map.
+- `reference/bio_reference.py` — end-to-end synthetic Bio-Cyber façade and module map.
+
+These files provide one readable entrypoint per domain while delegating maintained
+logic to the modular packages.
