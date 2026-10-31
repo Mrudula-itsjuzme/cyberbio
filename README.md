@@ -69,3 +69,7 @@ The final results, figures, and CSVs will be placed in the `results/final/` dire
 
 The root intentionally exposes only the two active projects and three supporting
 collections. Results are never mixed into source directories.
+
+## License
+
+The original software and documentation in this repository are released under the [MIT License](LICENSE), to the extent the contributors hold the relevant rights. Third-party datasets, pretrained models, external research materials, and any separately licensed components are **not** relicensed by this repository; consult their original sources and applicable terms before reuse.
