@@ -1,4 +1,5 @@
-# DL Cyberbio: Adversarial Attacks and Defenses in Sequence Models
+# Cyberbio: Adversarial Robustness for Sequence Models
+### *A unified DL + probabilistic framework for robust sequence learning and defense research*
 
 This repository explores adversarial machine learning vulnerabilities and defenses in deep learning sequence models across two primary domains: **Materials Science** and **Bio-Cybersecurity**.
 
